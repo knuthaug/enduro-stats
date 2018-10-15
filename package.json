@@ -6,9 +6,9 @@
   "scripts": {
     "precommit": "npm run test",
     "start": "node src/index.js",
-    "test": "NODE_ENV=test mocha",
+    "test": "NODE_ENV=test ./node_modules/tap/bin/run.js -R spec test/*_test.js",
     "coverage": "NODE_ENV=test nyc npm test",
-    "autotest": "NODE_ENV=test supervisor -q -n exit -x mocha 'test/*_test.js'",
+    "autotest": "NODE_ENV=test supervisor -q -n exit -x ./node_modules/tap/bin/run.js -R spec 'test/*_test.js'",
     "build": "echo build stub",
     "lint": "standard"
   },
@@ -27,8 +27,7 @@
     "rewire": "latest",
     "sinon": "latest",
     "supervisor": "latest",
-    "mocha": "latest",
-    "chai": "latest",
+    "tap": "latest",
     "standard": "latest"
   }
 }
