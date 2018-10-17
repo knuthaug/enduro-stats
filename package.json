@@ -1,0 +1,33 @@
+{
+  "name": "enduro-stats",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/index.js",
+  "scripts": {
+    "precommit": "npm run test",
+    "start": "node src/index.js",
+    "test": "NODE_ENV=test ./node_modules/tap/bin/run.js -R spec test/*_test.js",
+    "coverage": "NODE_ENV=test nyc npm test",
+    "autotest": "NODE_ENV=test supervisor -q -n exit -x ./node_modules/tap/bin/run.js -R spec 'test/*_test.js'",
+    "build": "echo build stub",
+    "lint": "standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/knuthaug/enduro-stats.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/knuthaug/enduro-stats/issues"
+  },
+  "homepage": "https://github.com/knuthaug/enduro-stats#readme",
+  "devDependencies": {
+    "nock": "latest",
+    "rewire": "latest",
+    "sinon": "latest",
+    "supervisor": "latest",
+    "tap": "latest",
+    "standard": "latest"
+  }
+}
