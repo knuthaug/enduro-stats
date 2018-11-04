@@ -35,7 +35,7 @@ class EqConverter {
         return {
           name: row.NameFormatted,
           gender: row.Gender,
-          netTime: row.NetTimeFormatted,
+          time: this.convertTime(row.NetTime),
           rank: parseInt(row.RankClass, 10),
           class: (row.ClassName.indexOf(' ') !== -1) ? row.ClassName.split(/ /)[1] : row.ClassName,
           club: row.Club,
@@ -45,6 +45,16 @@ class EqConverter {
       })
     }
   }
+
+  convertTime(seconds) {
+    const fractionalSeconds = seconds.substr(seconds.length - 3, 1)
+    let secs = seconds.substr(0, seconds.length - 3)
+    secs = Number(secs)
+    const m = Math.floor(secs % 3600 / 60);
+    var s = Math.floor(secs % 3600 % 60);
+    return `${m}:${s}.${fractionalSeconds}`
+  }
 }
+
 
 module.exports = EqConverter

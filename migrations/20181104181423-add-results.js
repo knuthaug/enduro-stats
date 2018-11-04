@@ -23,7 +23,7 @@ exports.up = function(db) {
     },
     rank: 'int',
     stage: 'int',
-    time: 'timestamp',
+    time: 'time',
     status: 'string',
     class: 'string',
     rider_id: {

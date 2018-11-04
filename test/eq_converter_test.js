@@ -35,7 +35,7 @@ tap.test('parse file', async t => {
 
   t.equals(data.results[0].name, 'Anita Løvli')
   t.equals(data.results[0].gender, 'F')
-  t.equals(data.results[0].netTime, '12:37.2')
+  t.equals(data.results[0].time, '12:37.2')
   t.equals(data.results[0].rank, 1)
   t.equals(data.results[0].class, 'Kvinner')
   t.equals(data.results[0].club, '')
@@ -57,7 +57,7 @@ tap.test('parse file and format', async t => {
 
   t.equals(data.results[0].name, 'Aslak Mørstad')
   t.equals(data.results[0].gender, 'M')
-  t.equals(data.results[0].netTime, '12:52.0')
+  t.equals(data.results[0].time, '12:52.0')
   t.equals(data.results[0].rank, 1)
   t.equals(data.results[0].class, 'Menn')
   t.equals(data.results[0].club, '')
@@ -79,7 +79,7 @@ tap.test('parse file and format , other year', async t => {
 
   t.equals(data.results[0].name, 'Espen Johnsen')
   t.equals(data.results[0].gender, 'M')
-  t.equals(data.results[0].netTime, '12:47')
+  t.equals(data.results[0].time, '12:47.8')
   t.equals(data.results[0].rank, 1)
   t.equals(data.results[0].class, 'Menn')
   t.equals(data.results[0].club, '')
