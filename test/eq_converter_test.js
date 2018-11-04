@@ -31,12 +31,37 @@ tap.test('parse file', async t => {
   t.equals(data.race.date, '2012-09-29')
 
   t.equals(data.stage.name, 'FP 1 - Kongens Gruve')
+  t.equals(data.stage.number, '1')
 
   t.equals(data.results[0].name, 'Anita Løvli')
   t.equals(data.results[0].gender, 'F')
   t.equals(data.results[0].netTime, '12:37.2')
   t.equals(data.results[0].rank, 1)
-  t.equals(data.results[0].class, '4 Kvinner')
-  console.log(data)
+  t.equals(data.results[0].class, 'Kvinner')
+  t.equals(data.results[0].club, '')
+  t.equals(data.results[0].team, '')
+
+  t.end()
+})
+
+tap.test('parse file and format', async t => {
+  const eq = new EqConverter(path.join(__dirname, 'data/kongsberg-2012-menn-fe2.csv'))
+  const loaded = await eq.load()
+  const data = await loaded.parse()
+
+  t.equals(data.race.name, 'Kongsberg Sykkelenduro 2012')
+  t.equals(data.race.date, '2012-09-29')
+
+  t.equals(data.stage.name, 'FP 2 - Sachsen')
+  t.equals(data.stage.number, '2')
+
+  t.equals(data.results[0].name, 'Aslak Mørstad')
+  t.equals(data.results[0].gender, 'M')
+  t.equals(data.results[0].netTime, '12:52.0')
+  t.equals(data.results[0].rank, 1)
+  t.equals(data.results[0].class, 'Menn')
+  t.equals(data.results[0].club, '')
+  t.equals(data.results[0].team, '')
+  t.equals(data.results[data.results.length - 1].status, 'DNS')
   t.end()
 })

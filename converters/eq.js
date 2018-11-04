@@ -21,13 +21,15 @@ class EqConverter {
 
   async parse() {
     const raw = await csv(this.file)
+
     return {
       race: {
         name: raw[0].EventName,
         date: raw[0].Starttime.split(/T/)[0]
       },
       stage: {
-        name: raw[0][' "RaceName"']
+        name: raw[0][' "RaceName"'],
+        number: raw[0][' "RaceName"'].match(/(\d+)/)[1]
       },
       results: raw.map((row) => {
         return {
@@ -35,7 +37,10 @@ class EqConverter {
           gender: row.Gender,
           netTime: row.NetTimeFormatted,
           rank: parseInt(row.RankClass, 10),
-          class: row.ClassName
+          class: row.ClassName.split(/ /)[1],
+          club: row.Club,
+          team: row.Team,
+          status: row.Status
         }
       })
     }
