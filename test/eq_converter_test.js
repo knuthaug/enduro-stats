@@ -65,3 +65,25 @@ tap.test('parse file and format', async t => {
   t.equals(data.results[data.results.length - 1].status, 'DNS')
   t.end()
 })
+
+tap.test('parse file and format , other year', async t => {
+  const eq = new EqConverter(path.join(__dirname, 'data/nesbyen-2013-menn-fe3.csv'))
+  const loaded = await eq.load()
+  const data = await loaded.parse()
+
+  t.equals(data.race.name, 'NesbyEnduro')
+  t.equals(data.race.date, '2013-06-16')
+
+  t.equals(data.stage.name, 'SS3')
+  t.equals(data.stage.number, '3')
+
+  t.equals(data.results[0].name, 'Espen Johnsen')
+  t.equals(data.results[0].gender, 'M')
+  t.equals(data.results[0].netTime, '12:47')
+  t.equals(data.results[0].rank, 1)
+  t.equals(data.results[0].class, 'Menn')
+  t.equals(data.results[0].club, '')
+  t.equals(data.results[0].team, '')
+  t.equals(data.results[data.results.length - 1].status, 'TIME')
+  t.end()
+})
