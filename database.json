@@ -1,0 +1,28 @@
+{
+  "local": {
+    "driver": "pg",
+    "user": "endurostats",
+    "password": "endurostats",
+    "host": "localhost",
+    "database": "endurostats",
+    "schema": "db-schema"
+  },
+
+  "test": {
+    "driver": "pg",
+    "user": "endurostats",
+    "password": "endurostats",
+    "host": "localhost",
+    "database": "endurostats",
+    "schema": "db-schema"
+  },
+
+  "prod": {
+    "driver": "pg",
+    "user": "endurostats",
+    "password": "endurostats",
+    "host": "localhost",
+    "database": "endurostats",
+    "schema": "db-schema"
+  }
+}
