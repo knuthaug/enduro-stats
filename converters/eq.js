@@ -1,7 +1,6 @@
-const fs = require('fs')
 const { promisify } = require('util')
-
-const stat = promisify(fs.stat)
+const csv = require('neat-csv')
+const fs = require('await-fs')
 
 class EqConverter {
 
@@ -10,15 +9,37 @@ class EqConverter {
   }
 
   async load() {
-    const stats = await stat(this.filename)
+    const stats = await fs.stat(this.filename)
 
     if(stats.isFile()) {
+      this.file = await fs.readFile(this.filename, 'utf-8')
       return this
     }
 
     throw new Error(`file ${this.filename} does not exist`)
   }
 
+  async parse() {
+    const raw = await csv(this.file)
+    return {
+      race: {
+        name: raw[0].EventName,
+        date: raw[0].Starttime.split(/T/)[0]
+      },
+      stage: {
+        name: raw[0][' "RaceName"']
+      },
+      results: raw.map((row) => {
+        return {
+          name: row.NameFormatted,
+          gender: row.Gender,
+          netTime: row.NetTimeFormatted,
+          rank: parseInt(row.RankClass, 10),
+          class: row.ClassName
+        }
+      })
+    }
+  }
 }
 
 module.exports = EqConverter

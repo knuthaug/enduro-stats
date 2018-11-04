@@ -29,5 +29,9 @@
     "supervisor": "latest",
     "tap": "latest",
     "standard": "latest"
+  },
+  "dependencies": {
+    "await-fs": "1.0.0",
+    "neat-csv": "4.0.0"
   }
 }
