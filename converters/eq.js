@@ -36,6 +36,7 @@ class EqConverter {
           name: row.NameFormatted,
           gender: row.Gender,
           time: this.convertTime(row.NetTime),
+          timems: row.NetTime,
           rank: parseInt(row.RankClass, 10),
           class: (row.ClassName.indexOf(' ') !== -1) ? row.ClassName.split(/ /)[1] : row.ClassName,
           club: row.Club,

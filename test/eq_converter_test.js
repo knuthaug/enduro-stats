@@ -36,6 +36,7 @@ tap.test('parse file', async t => {
   t.equals(data.results[0].name, 'Anita Løvli')
   t.equals(data.results[0].gender, 'F')
   t.equals(data.results[0].time, '12:37.2')
+  t.equals(data.results[0].timems, '757200')
   t.equals(data.results[0].rank, 1)
   t.equals(data.results[0].class, 'Kvinner')
   t.equals(data.results[0].club, '')
