@@ -15,29 +15,38 @@ exports.setup = function(options, seedLink) {
 };
 
 exports.up = function(db) {
-  return db.createTable('races', {
+  return db.createTable('stages', {
     id: {
       type: 'int',
       primaryKey: true,
       autoIncrement: true
     },
     name: {
-      type: 'string',
-      notNull: true}
-    ,
-    stages: {
+      type: 'text',
+      notNull: true
+    },
+    number: {
       type: 'int',
       notNull: true
     },
-    date: {
-      type: 'date',
-      notNull: true
+    race_id: {
+      type: 'int',
+      notNull: true,
+      foreignKey: {
+        name: 'race_stage_id_fk',
+        table: 'races',
+        rules: {
+          onDelete: 'CASCADE',
+          onUpdate: 'RESTRICT'
+        },
+        mapping: 'id'
+      }
     }
   })
 }
 
 exports.down = function(db) {
-  return db.dropTable('races')
+  return db.dropTable('stages')
 };
 
 exports._meta = {

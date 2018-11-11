@@ -19,7 +19,7 @@ exports.up = function(db) {
     id: {
       type: 'int',
       primaryKey: true,
-      autoincrement: true
+      autoIncrement: true
     },
     rank: 'int',
     stage: 'int',

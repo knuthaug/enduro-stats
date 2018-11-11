@@ -27,6 +27,20 @@ class Db {
     }
   }
 
+  async insertStage(race, stage) {
+
+    const client = await this.pool.connect()
+    try {
+      const query = 'INSERT INTO stages(name, number, race_id) VALUES($1, $2, (SELECT r.id FROM races r WHERE r.name = $3)) ON CONFLICT(number, race_id) DO NOTHING'
+      const values = [stage.name, stage.number, race]
+      const res = await client.query(query, values)
+    } catch(error) {
+      console.log(error)
+    } finally {
+      await client.release()
+    }
+  }
+
   destroy() {
     this.pool.end()
   }

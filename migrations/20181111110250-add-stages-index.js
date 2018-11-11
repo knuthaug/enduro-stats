@@ -15,29 +15,11 @@ exports.setup = function(options, seedLink) {
 };
 
 exports.up = function(db) {
-  return db.createTable('races', {
-    id: {
-      type: 'int',
-      primaryKey: true,
-      autoIncrement: true
-    },
-    name: {
-      type: 'string',
-      notNull: true}
-    ,
-    stages: {
-      type: 'int',
-      notNull: true
-    },
-    date: {
-      type: 'date',
-      notNull: true
-    }
-  })
-}
+  return db.addIndex('stages', 'stages_stage_race_unique', ['number', 'race_id'], true)
+};
 
 exports.down = function(db) {
-  return db.dropTable('races')
+  return db.removeIndex('stages', 'stages_stage_race_unique');
 };
 
 exports._meta = {

@@ -25,7 +25,8 @@ class EqConverter {
     return {
       race: {
         name: raw[0].EventName,
-        date: raw[0].Starttime.split(/T/)[0]
+        date: raw[0].Starttime.split(/T/)[0],
+        stages: raw[0][' "RaceName"'].match(/(\d+)/)[1]
       },
       stage: {
         name: raw[0][' "RaceName"'],

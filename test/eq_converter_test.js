@@ -29,6 +29,7 @@ tap.test('parse file', async t => {
 
   t.equals(data.race.name, 'Kongsberg Sykkelenduro 2012')
   t.equals(data.race.date, '2012-09-29')
+  t.equals(data.race.stages, '1')
 
   t.equals(data.stage.name, 'FP 1 - Kongens Gruve')
   t.equals(data.stage.number, '1')
@@ -52,6 +53,7 @@ tap.test('parse file and format', async t => {
 
   t.equals(data.race.name, 'Kongsberg Sykkelenduro 2012')
   t.equals(data.race.date, '2012-09-29')
+  t.equals(data.race.stages, '2')
 
   t.equals(data.stage.name, 'FP 2 - Sachsen')
   t.equals(data.stage.number, '2')
