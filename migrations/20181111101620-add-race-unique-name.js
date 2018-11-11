@@ -15,19 +15,15 @@ exports.setup = function(options, seedLink) {
 };
 
 exports.up = function(db) {
-  return db.createTable('riders', {
-    id: {
-      type: 'int',
-      primaryKey: true,
-      autoIncrement: true
-    },
-    name: 'string',
-    gender: 'string'
+  return db.changeColumn('races', 'name', {
+    unique: true
   })
-}
+};
 
 exports.down = function(db) {
-  return db.dropTable('riders')
+  return db.changeColumn('races', 'name', {
+    unique: false
+  })
 };
 
 exports._meta = {

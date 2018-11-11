@@ -18,7 +18,8 @@ exports.up = function(db) {
   return db.createTable('races', {
     id: {
       type: 'int',
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true
     },
     name: 'string',
     stages: 'int',
@@ -27,7 +28,7 @@ exports.up = function(db) {
 }
 
 exports.down = function(db) {
-  return null;
+  return db.dropTable('races')
 };
 
 exports._meta = {

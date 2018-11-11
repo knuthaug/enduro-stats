@@ -24,6 +24,7 @@ exports.up = function(db) {
     rank: 'int',
     stage: 'int',
     time: 'time',
+    timems: 'int',
     status: 'string',
     class: 'string',
     rider_id: {
@@ -58,7 +59,7 @@ exports.up = function(db) {
 }
 
 exports.down = function(db) {
-  return null;
+  return db.dropTable('results')
 };
 
 exports._meta = {

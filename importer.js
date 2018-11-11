@@ -1,19 +1,30 @@
-const { Pool } = require('pg')
-const config = require('./config')
+const Db = require('./db.js')
+const Eq = require('./converters/eq.js')
+const fs = require('fs')
+const path = require('path')
 
-const options = {
-  host: config.get('database.host'),
-  database: config.get('database.database'),
-  user: config.get('database.username'),
-  password: config.get('database.password'),
+const db = new Db()
+
+if (process.argv.length <= 2) {
+  console.log("Usage: " + __filename + " path/to/directory")
+  process.exit(-1)
 }
 
-const pool = new Pool(options)
+const dir = process.argv[2]
+fs.readdir(dir, async function(err, items) {
+  for (var i=0; i<items.length; i++) {
+    const eq = new Eq()
+    await readFile(items[i])
+  }
+  db.destroy()
+})
 
-run()
 
-async function run() {
-  const res = await pool.query('SELECT NOW()')
-  console.log(res)
-  await pool.end()
+
+async function readFile(filename) {
+  const fullName = path.join(dir, filename)
+  const eq = new Eq(fullName)
+  await eq.load()
+  const data = await eq.parse()
+  await db.insertRace(data.race)
 }
