@@ -21,8 +21,22 @@ exports.up = function(db) {
       primaryKey: true,
       autoIncrement: true
     },
-    name: 'string',
-    gender: 'string'
+    name: {
+      type: 'string',
+      notNull: true
+    },
+    gender: {
+      type: 'string',
+      notNull: true
+    },
+    club: {
+      type: 'string',
+      notNull: false
+    },
+    team: {
+      type: 'string',
+      notNull: false
+    }
   })
 }
 

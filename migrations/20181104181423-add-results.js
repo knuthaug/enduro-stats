@@ -21,12 +21,39 @@ exports.up = function(db) {
       primaryKey: true,
       autoIncrement: true
     },
-    rank: 'int',
-    stage: 'int',
-    time: 'time',
-    timems: 'int',
-    status: 'string',
-    class: 'string',
+    rank: {
+      type: 'int',
+      notNull: true
+    },
+    time: {
+      type: 'time',
+      notNull: true
+    },
+    timems: {
+      type: 'int',
+      notNull: true
+    },
+    status: {
+      type: 'string',
+      notNull: true
+    },
+    class: {
+      type: 'string',
+      notNull: true
+    },
+    stage_id: {
+      type: 'int',
+      notNull: true,
+      foreignKey: {
+        name: 'stage_result_id_fk',
+        table: 'stages',
+        rules: {
+          onDelete: 'RESTRICT',
+          onUpdate: 'RESTRICT'
+        },
+        mapping: 'id'
+      }
+    },
     rider_id: {
       type: 'int',
       notNull: true,
