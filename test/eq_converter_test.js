@@ -53,6 +53,7 @@ tap.test('parse file and format', async t => {
 
   t.equals(data.race.name, 'Kongsberg Sykkelenduro 2012')
   t.equals(data.race.date, '2012-09-29')
+  t.equals(data.race.year, '2012')
   t.equals(data.race.stages, '2')
 
   t.equals(data.stage.name, 'FP 2 - Sachsen')
@@ -69,6 +70,19 @@ tap.test('parse file and format', async t => {
   t.end()
 })
 
+
+tap.test('parse file and format, multiday', async t => {
+  const eq = new EqConverter(path.join(__dirname, 'data/nesbyen-2015-menn-fe1.csv'))
+  const loaded = await eq.load()
+  const data = await loaded.parse()
+
+  t.equals(data.race.name, '80/20 NesbyEnduro')
+  t.equals(data.race.date, '2015-05-23')
+  t.equals(data.race.year, '2015')
+  t.equals(data.race.stages, '1')
+
+  t.end()
+})
 tap.test('parse file and format , other year', async t => {
   const eq = new EqConverter(path.join(__dirname, 'data/nesbyen-2013-menn-fe3.csv'))
   const loaded = await eq.load()

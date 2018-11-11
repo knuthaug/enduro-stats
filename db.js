@@ -17,8 +17,8 @@ class Db {
 
     const client = await this.pool.connect()
     try {
-      const query = 'INSERT INTO races(name, stages, date) VALUES($1, $2, $3) ON CONFLICT(name) DO UPDATE SET stages = $2'
-      const values = [race.name, race.stages, race.date]
+      const query = 'INSERT INTO races(name, stages, date, year) VALUES($1, $2, $3, $4) ON CONFLICT(name) DO UPDATE SET stages = $2'
+      const values = [race.name, race.stages, race.date, race.year]
       const res = await client.query(query, values)
     } catch(error) {
       console.log(error)
@@ -41,7 +41,21 @@ class Db {
     }
   }
 
-  async insertResults(raceName, raceDate, stage, results) {
+  async insertLogEntry(race, stage) {
+
+    const client = await this.pool.connect()
+    try {
+      const query = 'INSERT INTO insert_log(race_id, stage_id) VALUES($1, $2)'
+      const values = [race, stage]
+      const res = await client.query(query, values)
+    } catch(error) {
+      console.log(error)
+    } finally {
+      await client.release()
+    }
+  }
+
+  async insertResults(raceName, raceYear, stage, results) {
     for(let i = 0; i < results.length; i++) {
       const result = results[i]
       const rider = {
@@ -50,9 +64,9 @@ class Db {
         club: result.club,
         team: result.team
       }
-      console.log('rider ' + result.name)
+      //console.log('rider ' + result.name)
       const riderId = await this.insertRider(rider)
-      const raceId = await this.findRace(raceName, raceDate)
+      const raceId = await this.findRace(raceName, raceYear)
       await this.insertResult(raceId, parseInt(riderId, 10), parseInt(stage.number, 10), result)
     }
   }
@@ -84,7 +98,7 @@ class Db {
         return res.rows[0].id
       } else {
         const riderId = await this.findRider(rider.name, rider.gender)
-        console.log('found rider ' + riderId)
+        //console.log('found rider ' + riderId)
         return riderId
       }
     } catch(error) {
@@ -108,12 +122,15 @@ class Db {
     }
   }
 
-  async findRace(name, date) {
+  async findRace(name, year) {
     const client = await this.pool.connect()
     try {
-      const query = 'SELECT id FROM races where name = $1 AND date = $2'
-      const values = [name, date]
+      const query = 'SELECT id FROM races where name = $1 AND year = $2'
+      const values = [name, year]
       const res = await client.query(query, values)
+      if(!res.rows[0]) {
+        console.log(`Error: could not find race for name='${name}' and year=${year}`)
+      }
       return res.rows[0].id
     } catch(error) {
       console.log(error)

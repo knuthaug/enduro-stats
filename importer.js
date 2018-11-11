@@ -28,5 +28,5 @@ async function readFile(filename) {
   const data = await eq.parse()
   await db.insertRace(data.race)
   await db.insertStage(data.race.name, data.stage)
-  await db.insertResults(data.race.name, data.race.date, data.stage, data.results)
+  await db.insertResults(data.race.name, data.race.year, data.stage, data.results)
 }

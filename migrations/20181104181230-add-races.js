@@ -29,6 +29,10 @@ exports.up = function(db) {
       type: 'int',
       notNull: true
     },
+    year: {
+      type: 'string',
+      notNull: true
+    },
     date: {
       type: 'date',
       notNull: true
