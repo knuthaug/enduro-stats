@@ -1,2 +1,7 @@
 const app = require('./app')
-app.start()
+const log = require('./log.js')
+
+app.listen(8080, () => {
+  log.info(`Started on http://localhost:${8080}`)
+})
+

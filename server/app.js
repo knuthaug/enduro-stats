@@ -16,7 +16,8 @@ app.engine('handlebars', hbs({defaultLayout: 'main', extname: '.hbs'}));
 app.set('view engine', 'handlebars');
 
 app.get('/', function (req, res) {
-  res.render('index');
+  log.debug('request for /')
+  res.render('index')
 });
 
 app.get('/assets/js/:file', (req, res) => {
@@ -33,37 +34,4 @@ app.get('/assets/css/:file', (req, res) => {
   return res.sendFile(`css/${file}`, options)
 })
 
-// just server stuff to make testing way easier
-module.exports.start = function start () {
-  server = http.createServer(app)
-  const port = 8080
-  server.listen(port, () => {
-    log.info(`Started on http://localhost:${port}`)
-  })
-}
-
-module.exports.stop = function stop () {
-  health.destroy()
-  server.close()
-}
-
-/* eslint-disable no-process-exit */
-process.on('uncaughtException', error => {
-  log.error('shutdown - server taken down by force due to a uncaughtException')
-  log.error(error.message)
-  log.error(error.stack)
-  server.close()
-  process.nextTick(() => {
-    process.exit(1)
-  })
-})
-
-process.on('SIGINT', () => {
-  log.warn('shutdown - got SIGINT - taking down server gracefully')
-  server.close()
-  process.nextTick(() => {
-    process.exit(0)
-  })
-})
-
-module.exports.app = app
+module.exports = app

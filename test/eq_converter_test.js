@@ -1,5 +1,5 @@
 const tap = require('tap')
-const EqConverter = require('../converters/eq.js')
+const EqConverter = require('../import/converters/eq.js')
 const path = require('path')
 
 tap.test('read the file if it exists', async t => {
