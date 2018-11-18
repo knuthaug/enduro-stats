@@ -4,6 +4,7 @@ const hbs = require('express-handlebars')
 const compression = require('compression')
 const config = require('../config')
 const log = require('./log.js')
+const Db = require('./db.js')
 
 const app = express()
 
@@ -11,26 +12,26 @@ app.use(compression())
 app.disable('x-powered-by')
 
 let server
+const db = new Db()
 
 app.engine('handlebars', hbs({defaultLayout: 'main', extname: '.hbs'}));
 app.set('view engine', 'handlebars');
 
-app.get('/', function (req, res) {
+app.get('/', async function (req, res) {
   log.debug('request for /')
-  res.render('index')
-});
+  const races = await db.findRaces()
+  res.render('index', { races })
+})
 
 app.get('/assets/js/:file', (req, res) => {
   const file = req.params.file
   const options = { root: './dist' }
-
   return res.sendFile(`js/${file}`, options)
 })
 
 app.get('/assets/css/:file', (req, res) => {
   const file = req.params.file
   const options = { root: './dist' }
-
   return res.sendFile(`css/${file}`, options)
 })
 
