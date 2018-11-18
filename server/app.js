@@ -2,13 +2,16 @@ const express = require('express')
 const http = require('http')
 const hbs = require('express-handlebars')
 const compression = require('compression')
+const morgan = require('morgan')
 const config = require('../config')
 const log = require('./log.js')
 const Db = require('./db.js')
 
 const app = express()
 
+
 app.use(compression())
+app.use(morgan('tiny'))
 app.disable('x-powered-by')
 
 let server
