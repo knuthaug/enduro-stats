@@ -5,6 +5,7 @@
   "main": "server/index.js",
   "scripts": {
     "precommit": "npm run test",
+    "watch": "npm-watch start",
     "start": "nodemon server/index.js",
     "test": "NODE_ENV=test ./node_modules/tap/bin/run.js -R spec test/*_test.js",
     "coverage": "NODE_ENV=test nyc npm test",
@@ -23,16 +24,22 @@
   },
   "homepage": "https://github.com/knuthaug/enduro-stats#readme",
   "devDependencies": {
+    "babel": "6.23.0",
+    "babel-cli": "6.26.0",
+    "babel-loader": "8.0.4",
     "db-migrate-sqlite3": "0.3.1",
     "nock": "latest",
     "nodemon": "1.18.6",
+    "npm-watch": "0.4.0",
     "rewire": "latest",
     "sinon": "latest",
     "sqlite": "3.0.0",
     "standard": "latest",
     "supertest": "3.3.0",
     "supervisor": "latest",
-    "tap": "latest"
+    "tap": "latest",
+    "webpack": "4.25.1",
+    "webpack-cli": "3.1.2"
   },
   "dependencies": {
     "await-fs": "1.0.0",
@@ -45,5 +52,18 @@
     "neat-csv": "4.0.0",
     "pg": "7.6.0",
     "pino": "5.8.1"
+  },
+  "watch": {
+    "start": {
+      "patterns": [
+        "server",
+        "config",
+        "views/",
+        "views/partials",
+        "views/layouts"
+      ],
+      "extensions": "js,json,css,handlebars",
+      "ignore": "node_modules, public"
+    }
   }
 }
