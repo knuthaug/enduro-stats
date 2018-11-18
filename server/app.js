@@ -17,7 +17,7 @@ const db = new Db()
 app.engine('handlebars', hbs({defaultLayout: 'main', extname: '.hbs'}));
 app.set('view engine', 'handlebars');
 
-app.get('/', async function (req, res) {
+app.get('/', async (req, res) => {
   log.debug('request for /')
   const races = await db.findRaces()
   res.render('index', { races })
