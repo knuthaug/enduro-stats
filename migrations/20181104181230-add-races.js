@@ -34,7 +34,7 @@ exports.up = function(db) {
       notNull: true
     },
     date: {
-      type: 'date',
+      type: 'string',
       notNull: true
     }
   })

@@ -19,6 +19,17 @@ class Db {
     return this.find(query, values)
   }
 
+  async findRace(uid) {
+    const query = 'SELECT * from races WHERE uid = $1'
+    const values = [uid]
+    const rows = await this.find(query, values)
+
+    if(rows.length > 0) {
+      return rows[0]
+    }
+    return {}
+  }
+
   async find(query, values) {
     const client = await this.pool.connect()
     try {

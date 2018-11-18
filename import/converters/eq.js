@@ -1,6 +1,7 @@
 const { promisify } = require('util')
 const csv = require('neat-csv')
 const fs = require('await-fs')
+const md5 = require('md5')
 
 class EqConverter {
 
@@ -24,9 +25,10 @@ class EqConverter {
 
     return {
       race: {
-        name: raw[0].EventName.trim(),
+        name: this.name(raw[0]),
+        uid: this.checksum(raw[0]),
         date: raw[0].Starttime.split(/T/)[0],
-        year: raw[0].Starttime.split(/T/)[0].split(/-/)[0],
+        year: this.year(raw[0]),
         stages: raw[0][' "RaceName"'].match(/(\d+)/)[1]
       },
       stage: {
@@ -47,6 +49,19 @@ class EqConverter {
         }
       })
     }
+  }
+
+  name(obj) {
+    const year = this.year(obj)
+    return obj.EventName.replace(year, '').trim()
+  }
+
+  checksum(obj) {
+    return md5(this.name(obj) + this.year(obj))
+  }
+
+  year(obj) {
+    return obj.Starttime.split(/T/)[0].split(/-/)[0]
   }
 
   convertTime(seconds) {

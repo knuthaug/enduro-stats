@@ -27,8 +27,8 @@ class Db {
   }
 
   async insertRace(race) {
-    const query = 'INSERT INTO races(name, stages, date, year) VALUES($1, $2, $3, $4) ON CONFLICT(name) DO UPDATE SET stages = $2'
-    const values = [race.name, race.stages, race.date, race.year]
+    const query = 'INSERT INTO races(name, stages, date, year, uid) VALUES($1, $2, $3, $4, $5) ON CONFLICT(name) DO UPDATE SET stages = $2'
+    const values = [race.name, race.stages, race.date, race.year, race.uid]
     return this.insert(query, values)
   }
 

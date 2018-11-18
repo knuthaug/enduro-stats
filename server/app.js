@@ -23,6 +23,12 @@ app.get('/', async (req, res) => {
   res.render('index', { races })
 })
 
+app.get('/race/:uid', async (req, res) => {
+  log.debug(`request for ${req.path}`)
+  const race = await db.findRace(req.params.uid)
+  res.render('race', { race })
+})
+
 app.get('/assets/js/:file', (req, res) => {
   const file = req.params.file
   const options = { root: './dist' }

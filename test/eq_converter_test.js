@@ -27,7 +27,7 @@ tap.test('parse file', async t => {
   const loaded = await eq.load()
   const data = await loaded.parse()
 
-  t.equals(data.race.name, 'Kongsberg Sykkelenduro 2012', 'race name matches')
+  t.equals(data.race.name, 'Kongsberg Sykkelenduro', 'race name matches')
   t.equals(data.race.date, '2012-09-29', 'date matches')
   t.equals(data.race.stages, '1', 'number of stages matches stage number')
 
@@ -51,7 +51,7 @@ tap.test('parse file and format', async t => {
   const loaded = await eq.load()
   const data = await loaded.parse()
 
-  t.equals(data.race.name, 'Kongsberg Sykkelenduro 2012')
+  t.equals(data.race.name, 'Kongsberg Sykkelenduro')
   t.equals(data.race.date, '2012-09-29')
   t.equals(data.race.year, '2012')
   t.equals(data.race.stages, '2')
@@ -83,7 +83,8 @@ tap.test('parse file and format, multiday', async t => {
 
   t.end()
 })
-tap.test('parse file and format , other year', async t => {
+
+tap.test('parse file and format, other year', async t => {
   const eq = new EqConverter(path.join(__dirname, 'data/nesbyen-2013-menn-fe3.csv'))
   const loaded = await eq.load()
   const data = await loaded.parse()
@@ -102,5 +103,14 @@ tap.test('parse file and format , other year', async t => {
   t.equals(data.results[0].club, '', 'club i included')
   t.equals(data.results[0].team, '', 'team is included')
   t.equals(data.results[data.results.length - 1].status, 'TIME', 'status is time when finished')
+  t.end()
+})
+
+tap.test('race has uid, md5 of name and year', async t => {
+  const eq = new EqConverter(path.join(__dirname, 'data/nesbyen-2013-menn-fe3.csv'))
+  const loaded = await eq.load()
+  const data = await loaded.parse()
+
+  t.equals(data.race.uid, '4504e3dd07d15dec4044e6b2e32df739', 'md5 matches')
   t.end()
 })

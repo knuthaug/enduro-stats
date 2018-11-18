@@ -22,13 +22,28 @@ const races = [
   }
 ]
 
+const race = {
+  id: 1,
+  name: 'test',
+  year: 2012
+}
+
 const db = new Db()
 sinon.stub(db, 'findRaces').returns({ rows: races })
+sinon.stub(db, 'findRace').returns({ rows: race })
 app.__set__('db', db)
 
 tap.test('index page responds with 200', async t => {
   await supertest(app)
     .get('/')
+    .expect(200)
+    .expect('Content-type', 'text/html; charset=utf-8')
+  t.end()
+})
+
+tap.test('race page responds with 200', async t => {
+  await supertest(app)
+    .get('/race/b5abd441f9b8afd93fc95a897d33d2a4')
     .expect(200)
     .expect('Content-type', 'text/html; charset=utf-8')
   t.end()
