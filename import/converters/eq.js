@@ -45,7 +45,7 @@ class EqConverter {
           class: (row.ClassName.indexOf(' ') !== -1) ? row.ClassName.split(/ /)[1] : row.ClassName,
           club: row.Club,
           team: row.Team,
-          status: row.Status
+          status: this.convertStatus(row.Status)
         }
       })
     }
@@ -62,6 +62,13 @@ class EqConverter {
 
   year(obj) {
     return obj.Starttime.split(/T/)[0].split(/-/)[0]
+  }
+
+  convertStatus(status) {
+    if(status === 'TIME') {
+      return 'OK'
+    }
+    return status
   }
 
   convertTime(seconds) {

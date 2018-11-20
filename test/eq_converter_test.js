@@ -39,6 +39,7 @@ tap.test('parse file', async t => {
   t.equals(data.results[0].time, '12:37.2', 'time in minutes:seconds matches')
   t.equals(data.results[0].timems, '757200', 'time in ms inś inclued')
   t.equals(data.results[0].rank, 1, 'rank is converted')
+  t.equals(data.results[0].status, 'OK', 'status is OK')
   t.equals(data.results[0].class, 'Kvinner', 'class matches')
   t.equals(data.results[0].club, '', 'club is included')
   t.equals(data.results[0].team, '', 'team is included')
@@ -102,7 +103,7 @@ tap.test('parse file and format, other year', async t => {
   t.equals(data.results[0].class, 'Menn', 'class matches')
   t.equals(data.results[0].club, '', 'club i included')
   t.equals(data.results[0].team, '', 'team is included')
-  t.equals(data.results[data.results.length - 1].status, 'TIME', 'status is time when finished')
+  t.equals(data.results[data.results.length - 1].status, 'OK', 'status is ok when finished')
   t.end()
 })
 
