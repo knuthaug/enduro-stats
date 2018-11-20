@@ -26,15 +26,41 @@ class Db {
     }
   }
 
+  async update(query, values) {
+    const client = await this.pool.connect()
+    try {
+      const res = await client.query(query, values)
+      return res
+    } catch(error) {
+      console.log(error)
+      return { error }
+    } finally {
+      await client.release()
+    }
+  }
+
   async insertRace(race) {
-    const query = 'INSERT INTO races(name, stages, date, year, uid) VALUES($1, $2, $3, $4, $5) ON CONFLICT(name) DO UPDATE SET stages = $2'
+    const id = await this.findRace(race.name, race.year)
+    if(id) {
+      //update stage number
+      return this.update('UPDATE RACES SET stages = $1 WHERE id = $2', [race.stages, id])
+    }
+
+    const query = 'INSERT INTO races(name, stages, date, year, uid) VALUES($1, $2, $3, $4, $5)'
     const values = [race.name, race.stages, race.date, race.year, race.uid]
     return this.insert(query, values)
   }
 
-  async insertStage(race, stage) {
-    const query = 'INSERT INTO stages(name, number, race_id) VALUES($1, $2, (SELECT r.id FROM races r WHERE r.name = $3)) ON CONFLICT(number, race_id) DO NOTHING'
-    const values = [stage.name, stage.number, race]
+  async insertStage(race, stage, raceYear) {
+
+    const stageId = await this.findStage(stage.name, stage.number)
+    if(stageId){
+      console.log(`found stageId = ${stageId}`)
+      return stageId
+    } 
+
+    const query = 'INSERT INTO stages(name, number, race_id) VALUES($1, $2, (SELECT r.id FROM races r WHERE r.name = $3 AND r.year = $4))'
+    const values = [stage.name, parseInt(stage.number, 10), race, raceYear]
     return this.insert(query, values)
   }
 
@@ -45,7 +71,7 @@ class Db {
   }
 
   async insertResult(raceId, riderId, stageNumber, result) {
-    console.log('inserting row for rider ' + riderId)
+    //console.log('inserting row for rider ' + riderId)
     const query = 'INSERT INTO results(rank, time, timems, status, class, stage_id, rider_id, race_id) VALUES($1, $2, $3, $4, $5, (SELECT id from stages where race_id = $7 and number = $8), $6, $7)'
     const values = [result.rank, result.time, parseInt(result.timems, 10), result.status, result.class, riderId, raceId, stageNumber]
     return this.insert(query, values)
@@ -115,6 +141,13 @@ class Db {
     const query = 'SELECT id FROM races where name = $1 AND year = $2'
     const values = [name, year]
     return this.find(query, values, `Error: could not find race for name='${name}' and year=${year}`)
+  }
+
+  async findStage(name, stageNumber) {
+    const query = 'SELECT id FROM stages where name = $1 AND number = $2'
+    console.log(`trying to find stage for name = ${name} number=${stageNumber}`)
+    const values = [name, stageNumber]
+    return this.find(query, values, `Error: could not find stage for name='${name}' and number=${stageNumber}`)
   }
 
   destroy() {
