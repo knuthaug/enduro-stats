@@ -27,6 +27,9 @@ async function readFile(filename) {
   await eq.load()
   const data = await eq.parse()
   await db.insertRace(data.race)
-  await db.insertStage(data.race.name, data.stage)
+  await db.insertStage(data.race.name, data.stage, data.race.year)
   await db.insertResults(data.race.name, data.race.year, data.stage, data.results)
+
+  const id = await db.findRace(data.race.name, data.race.year)
+  console.log('raceid = ' + id)
 }
