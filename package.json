@@ -8,6 +8,7 @@
     "watch": "npm-watch start",
     "start": "nodemon server/index.js",
     "test": "NODE_ENV=test ./node_modules/tap/bin/run.js -R spec test/*_test.js",
+    "test:integration": "NODE_ENV=test ./node_modules/tap/bin/run.js -R spec integration-test/*_test.js",
     "coverage": "NODE_ENV=test nyc npm test",
     "autotest": "NODE_ENV=test supervisor -q -n exit -x ./node_modules/tap/bin/run.js -R spec 'test/*_test.js'",
     "build": "echo build stub",
