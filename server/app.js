@@ -11,8 +11,11 @@ const app = express()
 
 
 app.use(compression())
-app.use(morgan('tiny'))
 app.disable('x-powered-by')
+
+if(config.get('env') !== 'test') {
+  app.use(morgan('tiny'))
+}
 
 let server
 const db = new Db()
