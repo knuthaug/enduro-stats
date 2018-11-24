@@ -20,8 +20,8 @@ class StageCalculations {
 
       this.addCol(rows[i], colName, this.timeBehindBetweenRider(rows[i], rows[i - 1])) // behind prevous rider
       this.addCol(rows[i], colNameLeader, this.timeBehindBetweenRider(rows[i], rows[0])) // behind leader
-      this.addCol(rows[i],  colPercent, this.percentBehindRider(rows[i], rows[i - 1])) // behind previous rider
-      this.addCol(rows[i],  colPercentLeader, this.percentBehindRider(rows[i], rows[0])) // behind leader
+      this.addCol(rows[i], colPercent, this.percentBehindRider(rows[i], rows[i - 1])) // behind previous rider
+      this.addCol(rows[i], colPercentLeader, this.percentBehindRider(rows[i], rows[0])) // behind leader
       newRows.push(rows[i])
     }
     return newRows
@@ -58,6 +58,5 @@ class StageCalculations {
   }
 
 }
-
 
 module.exports = StageCalculations
