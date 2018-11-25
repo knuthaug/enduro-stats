@@ -30,7 +30,7 @@ exports.up = function(db) {
       notNull: true
     },
     year: {
-      type: 'string',
+      type: 'int',
       notNull: true
     },
     date: {

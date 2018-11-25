@@ -20,7 +20,6 @@ fs.readdir(dir, async function(err, items) {
 })
 
 
-
 async function readFile(filename) {
   const fullName = path.join(dir, filename)
   const eq = new Eq(fullName)

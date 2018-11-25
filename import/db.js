@@ -72,7 +72,7 @@ class Db {
 
   async insertResult(raceId, riderId, stageNumber, result) {
     //console.log('inserting row for rider ' + riderId)
-    const query = 'INSERT INTO results(rank, time, timems, status, class, stage_id, rider_id, race_id) VALUES($1, $2, $3, $4, $5, (SELECT id from stages where race_id = $7 and number = $8), $6, $7)'
+    const query = 'INSERT INTO raw_results(rank, time, timems, status, class, stage_id, rider_id, race_id) VALUES($1, $2, $3, $4, $5, (SELECT id from stages where race_id = $7 and number = $8), $6, $7)'
     const values = [result.rank, result.time, parseInt(result.timems, 10), result.status, result.class, riderId, raceId, stageNumber]
     return this.insert(query, values)
   }
@@ -126,9 +126,29 @@ class Db {
       return res.rows[0].id
     } catch(error) {
       console.log(error)
+      return undefined
     } finally {
       await client.release()
     }
+  }
+
+  async findSet(query, values, msg) {
+    const client = await this.pool.connect()
+    try {
+      const res = await client.query(query, values)
+      return res.rows
+    } catch(error) {
+      console.log(error)
+      return []
+    } finally {
+      await client.release()
+    }
+  }
+
+  async raceResults(raceName, raceYear) {
+    const query = 'SELECT * FROM raw_results where race_id = (SELECT id FROM races WHERE name = $1 and year = $2)'
+    const values = [raceName, raceYear]
+    return this.findSet(query, values, `Error finding all results for race name=${raceName}, year=${raceYear}`)
   }
 
   async findRider(name, gender) {
@@ -145,7 +165,7 @@ class Db {
 
   async findStage(name, stageNumber) {
     const query = 'SELECT id FROM stages where name = $1 AND number = $2'
-    console.log(`trying to find stage for name = ${name} number=${stageNumber}`)
+    //console.log(`trying to find stage for name = ${name} number=${stageNumber}`)
     const values = [name, stageNumber]
     return this.find(query, values, `Error: could not find stage for name='${name}' and number=${stageNumber}`)
   }
