@@ -1,79 +1,41 @@
 const tap = require('tap')
 const StageCalculations = require('../import/stage_calculations.js')
 const path = require('path')
+const fs = require('fs')
 
-const rows = [
-  {
-    id: 1,
-    timems: 450700
-  },
-  {
-    id: 2,
-    timems: 471000
-  },
-  {
-    id: 3,
-    timems: 483900
-  },
-  {
-    id: 4,
-    timems: 483900
-  },
-  {
-    id: 5,
-    timems: 486100
-  }
-]
+const rows = JSON.parse(fs.readFileSync(path.join(__dirname, './data/race-results-menn.json')))
+const rows2 = JSON.parse(fs.readFileSync(path.join(__dirname, './data/race-results-menn2.json')))
 
 const c = new StageCalculations()
-
-tap.test('calculate time behind rider in front', async t => {
-
-  const result = c.differentials(rows, 1)
-  t.equals(result[0].stage1_behindms, 0)
-  t.equals(result[1].stage1_behindms, 20300)
-  t.equals(result[2].stage1_behindms, 12900)
-
-  const result2 = c.differentials(rows, 2)
-  t.equals(result2[0].stage2_behindms, 0)
-  t.equals(result2[1].stage2_behindms, 20300)
-  t.equals(result2[2].stage1_behindms, 12900)
-})
 
 tap.test('calculate time behind leader', async t => {
 
   const result = c.differentials(rows, 1)
-  t.equals(result[0].stage1_behindleaderms, 0)
-  t.equals(result[1].stage1_behindleaderms, 20300)
-  t.equals(result[2].stage1_behindleaderms, 33200)
+  t.equals(result[0].behindleaderms, 0)
+  t.equals(result[1].behindleaderms, 20300)
+  t.equals(result[2].behindleaderms, 33200)
 
-  const result2 = c.differentials(rows, 2)
-  t.equals(result2[0].stage2_behindleaderms, 0)
-  t.equals(result2[1].stage2_behindleaderms, 20300)
-  t.equals(result2[2].stage1_behindleaderms, 33200)
+  //console.log(rows[78])
+  t.equals(result[78].behindleaderms, 0)
+  t.equals(result[79].behindleaderms, 23890)
+  t.equals(result[80].behindleaderms, 39530)
+
+  t.equals(result[result.length - 1].behindleaderms, 0) //DNS in all stages
 })
 
-tap.test('calculate time behind rider in front in percent', async t => {
+tap.test('calculate accumulated time per stage in ms', async t => {
   const result = c.differentials(rows, 1)
-  t.equals(result[0].stage1_behindpercent, 0)
-  t.equals(result[1].stage1_behindpercent, 4.504104725981806)
+  t.equals(result[0].acc_time, 450700)
+  t.equals(result[1].acc_time, 471000)
+  t.equals(result[2].acc_time, 483900)
 
-  const result2 = c.differentials(rows, 2)
-  t.equals(result2[0].stage2_behindpercent, 0)
-  t.equals(result2[1].stage2_behindpercent, 4.504104725981806)
+  t.equals(result[78].acc_time, 1222720)
+  t.equals(result[79].acc_time, 1280010)
+  t.equals(result[80].acc_time, 1282550)
 
-})
 
-tap.test('calculate time behind leader in pecent', async t => {
-  const result = c.differentials(rows, 1)
-  t.equals(result[1].stage1_behindleaderpercent, 4.504104725981806)
-  t.equals(result[2].stage1_behindleaderpercent, 7.366319059241181)
-
-  const result2 = c.differentials(rows, 2)
-  t.equals(result2[1].stage2_behindleaderpercent, 4.504104725981806)
-  t.equals(result2[2].stage2_behindleaderpercent, 7.366319059241181)
-
+  t.equals(result[result.length - 1].acc_time, 0) //DNS
   t.end()
-})
+ })
 
 

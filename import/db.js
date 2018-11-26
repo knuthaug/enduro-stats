@@ -145,9 +145,9 @@ class Db {
     }
   }
 
-  async raceResults(raceName, raceYear) {
-    const query = 'SELECT * FROM raw_results where race_id = (SELECT id FROM races WHERE name = $1 and year = $2)'
-    const values = [raceName, raceYear]
+  async raceResults(raceName, raceYear, className) {
+    const query = 'SELECT *,(SELECT number FROM stages where id = raw_results.stage_id) as stage FROM raw_results where race_id = (SELECT id FROM races WHERE name = $1 and year = $2) AND class = $3'
+    const values = [raceName, raceYear, className]
     return this.findSet(query, values, `Error finding all results for race name=${raceName}, year=${raceYear}`)
   }
 

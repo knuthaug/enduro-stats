@@ -66,6 +66,19 @@ exports.up = function(db) {
         mapping: 'id'
       }
     },
+    stage_id: {
+      type: 'int',
+      notNull: true,
+      foreignKey: {
+        name: 'rider_result_stage_id_fk',
+        table: 'stages',
+        rules: {
+          onDelete: 'CASCADE',
+          onUpdate: 'RESTRICT'
+        },
+        mapping: 'id'
+      }
+    },
     race_id: {
       type: 'int',
       notNull: true,

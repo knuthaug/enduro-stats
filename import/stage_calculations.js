@@ -1,60 +1,80 @@
 class StageCalculations {
 
-  differentials(rows, stage) {
-    const newRows = []
+  differentials(rows, race) {
+    const stageResults = []
 
-    const colName = `stage${stage}_behindms`
-    const colNameLeader = `stage${stage}_behindleaderms`
-    const colPercent = `stage${stage}_behindpercent`
-    const colPercentLeader = `stage${stage}_behindleaderpercent`
-
+    const colName = `behindms`
+    //const colNameLeader = `behindleaderms`
+    //const colPercent = `stage${stage}_behindpercent`
+    //const colPercentLeader = `stage${stage}_behindleaderpercent`
     for(let i = 0; i < rows.length; i++) {
-      if(i === 0) {
-        rows[i][colName] = 0
-        rows[i][colNameLeader] = 0
-        rows[i][colPercent] = 0
-        rows[i][colPercentLeader] = 0
-        newRows.push(rows[i])
+      const stageResult = {rider_id: rows[i].rider_id, stage: rows[i].stage, race_id: race, acc_time: 0}
+
+      if(rows[i].status === 'DNS' || rows[i].status === 'DNF') {
+        stageResults.push(this.allZeroed())
         continue
       }
 
-      this.addCol(rows[i], colName, this.timeBehindBetweenRider(rows[i], rows[i - 1])) // behind prevous rider
-      this.addCol(rows[i], colNameLeader, this.timeBehindBetweenRider(rows[i], rows[0])) // behind leader
-      this.addCol(rows[i], colPercent, this.percentBehindRider(rows[i], rows[i - 1])) // behind previous rider
-      this.addCol(rows[i], colPercentLeader, this.percentBehindRider(rows[i], rows[0])) // behind leader
-      newRows.push(rows[i])
+      if(rows[i].rank === 1) {
+        stageResult.behindleaderms = 0
+      }
+
+      stageResult.behindleaderms = this.timeBehindRider(rows[i], this.firstInStage(rows, stageResult.stage))
+
+      if(rows[i].stage === 1) {
+        stageResult.acc_time = rows[i].timems
+      } else {
+        const prevAccTime = this.stageForRider(stageResults, (rows[i].stage - 1), rows[i].rider_id).acc_time
+        stageResult.acc_time = prevAccTime + rows[i].timems
+      }
+
+      stageResults.push(stageResult)
     }
-    return newRows
+
+    return stageResults
   }
 
-  addCol(rider, colName, value) {
-    rider[colName] = value
+  allZeroed() {
+    return {
+      acc_time: 0,
+      behindleaderms: 0
+    }
   }
 
-  timeBehindBetweenRider(currentRider, previousRider) {
+  accumulatedTimeBehindRider(rows, rider, leader) {
+    const stage = rider.stage
+
+    if(stage === 1) {
+      return this.timeBehindRider(rider, leader)
+    }
+
+    const riderResults = this.allResultsForRider(rows, rider.rider_id)
+    const leaderResults = this.allResultsForRider(rows, leader.rider_id)
+
+    return 0
+
+  }
+
+  allResultsForRider(rows, riderId) {
+    return rows.filter((element) => {
+      return element.rider_id == riderId
+    })
+  }
+
+  firstInStage(rows, stageNumber) {
+    return rows.find((element) => {
+      return element.stage === stageNumber && element.rank === 1
+    })
+  }
+
+  stageForRider(rows, stageNumber, riderId) {
+    return rows.find((element) => {
+      return element.stage === stageNumber && element.rider_id === riderId
+    })
+  }
+
+  timeBehindRider(currentRider, previousRider) {
     return currentRider.timems - previousRider.timems
-  }
-
-  percentBehindRider(currentRider, previousRider) {
-    const diff = currentRider.timems - previousRider.timems
-    return (diff / previousRider.timems) * 100
-  }
-
-  percentBehind(rows, stage) {
-    const newRows = []
-
-    const colName = `stage${stage}_behindpercent`
-
-    for(let i = 0; i < rows.length; i++) {
-      if(i === 0) {
-        rows[i][colName] = 0
-        newRows.push(rows[i])
-        continue
-      }
-
-      newRows.push(rows[i])
-    }
-    return newRows
   }
 
 }
