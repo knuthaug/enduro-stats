@@ -1,11 +1,13 @@
 class StageCalculations {
 
-  differentials(rows, race) {
+  differentials(rows, race, stages) {
     const stageResults = []
+    let lastStage = 1
 
     for(let i = 0; i < rows.length; i++) {
       const stageResult = {rider_id: rows[i].rider_id, stage: rows[i].stage, race_id: race, acc_time: 0}
 
+      lastStage = rows[i].stage > lastStage ? rows[i].stage : lastStage
       if(rows[i].status === 'DNS' || rows[i].status === 'DNF') {
         stageResults.push(this.allZeroed())
         continue
@@ -27,16 +29,16 @@ class StageCalculations {
       stageResults.push(stageResult)
     }
 
-    return this.calculateTotals(stageResults)
+    return this.calculateTotals(stageResults, lastStage)
   }
 
-  calculateTotals(rows) {
+  calculateTotals(rows, lastStage) {
     const newRows = []
     let max = 0
     let maxIndex = 0
 
     const stage6 = rows.filter((r) => {
-      return r.stage === 6
+      return r.stage === lastStage
     }).sort((a, b) => {
       return a.acc_time - b.acc_time
     })
