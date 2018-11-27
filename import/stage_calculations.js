@@ -3,10 +3,6 @@ class StageCalculations {
   differentials(rows, race) {
     const stageResults = []
 
-    const colName = `behindms`
-    //const colNameLeader = `behindleaderms`
-    //const colPercent = `stage${stage}_behindpercent`
-    //const colPercentLeader = `stage${stage}_behindleaderpercent`
     for(let i = 0; i < rows.length; i++) {
       const stageResult = {rider_id: rows[i].rider_id, stage: rows[i].stage, race_id: race, acc_time: 0}
 
@@ -31,7 +27,31 @@ class StageCalculations {
       stageResults.push(stageResult)
     }
 
-    return stageResults
+    return this.calculateTotals(stageResults)
+  }
+
+  calculateTotals(rows) {
+    const newRows = []
+    let max = 0
+    let maxIndex = 0
+
+    const stage6 = rows.filter((r) => {
+      return r.stage === 6
+    }).sort((a, b) => {
+      return a.acc_time - b.acc_time
+    })
+
+    let rank = 1
+    for(let i = 0; i < stage6.length; i++) {
+      if(i === 0) {
+        stage6[0].acc_time_behind = 0
+      } else {
+        stage6[i].acc_time_behind = stage6[i].acc_time - stage6[i - 1].acc_time
+      }
+      stage6[i].total_rank = rank++
+    }
+
+    return rows
   }
 
   allZeroed() {

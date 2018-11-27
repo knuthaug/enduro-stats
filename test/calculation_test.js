@@ -33,9 +33,18 @@ tap.test('calculate accumulated time per stage in ms', async t => {
   t.equals(result[79].acc_time, 1280010)
   t.equals(result[80].acc_time, 1282550)
 
-
   t.equals(result[result.length - 1].acc_time, 0) //DNS
   t.end()
- })
+})
+
+tap.test('calculate accumulated time behind in total in ms', async t => {
+  const result = c.differentials(rows, 1)
+  t.equals(result[390].acc_time_behind, 0) //total winner
+  t.equals(result[390].total_rank, 1) //total winner
+  t.equals(result[391].acc_time_behind, 485880)
+  t.equals(result[391].total_rank, 2) 
+
+  t.end()
+})
 
 
