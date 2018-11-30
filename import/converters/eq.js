@@ -22,7 +22,6 @@ class EqConverter {
 
   async parse() {
     const raw = await csv(this.file)
-
     return {
       race: {
         name: this.name(raw[0]),

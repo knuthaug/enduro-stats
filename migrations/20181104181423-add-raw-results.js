@@ -15,7 +15,7 @@ exports.setup = function(options, seedLink) {
 };
 
 exports.up = function(db) {
-  return db.createTable('raw_results', {
+  return db.createTable('results', {
     id: {
       type: 'int',
       primaryKey: true,
@@ -41,6 +41,23 @@ exports.up = function(db) {
       type: 'string',
       notNull: true
     },
+    behind_leader_ms: {
+      type: 'int',
+      notNull: false
+    },
+    acc_time_ms: {
+      type: 'int',
+      notNull: false
+    },
+    acc_time_behind: {
+      type: 'int',
+      notNull: false
+    },
+    total_rank: {
+      type: 'int',
+      notNull: false
+    },
+
     stage_id: {
       type: 'int',
       notNull: true,
@@ -86,7 +103,7 @@ exports.up = function(db) {
 }
 
 exports.down = function(db) {
-  return db.dropTable('raw_results')
+  return db.dropTable('results')
 };
 
 exports._meta = {
