@@ -22,12 +22,12 @@ tap.test('original data is always returned', async t => {
 
 tap.test('calculate time per stage from acc_time_ms', async t => {
   const result = c.differentials(rows, 1)
-  t.equals(result[0].time_ms, 450700, 'acc_time_ms is stage time for first stage')
+  t.equals(result[0].stage_time_ms, 450700, 'acc_time_ms is stage time for first stage')
 
-  t.equals(result[80].time_ms, 321320)
+  t.equals(result[80].stage_time_ms, 321320)
   t.equals(result[80].acc_time_ms, 772020, 'stage for 2 is total time up to point')
 
-  t.equals(result[156].time_ms, 464920, 'stage time is this stages acc time minus previous ')
+  t.equals(result[156].stage_time_ms, 464920, 'stage time is this stages acc time minus previous ')
   t.equals(result[156].acc_time_ms, 1236940, 'stage for 4 is total time up to point')
 })
 
@@ -50,36 +50,31 @@ tap.test('calculate time behind leader', async t => {
   t.equals(result[2].behind_leader_ms, 33200, '3rd is more behind leader')
 
   // 321320, 340550
-  // t.equals(result[78].behind_leader_ms, 0, 'stage winner is zero behind leader')
-  // t.equals(result[79].behind_leader_ms, 19230)
-  // t.equals(result[80].behind_leader_ms, 0)
+  t.equals(result[78].behind_leader_ms, 0, 'stage winner is zero behind leader')
+  t.equals(result[79].behind_leader_ms, 6240)
+  t.equals(result[80].behind_leader_ms, 15750)
 
   t.equals(result[result.length - 1].behind_leader_ms, 0) // DNS in all stages
 })
 
-// tap.test('calculate accumulated time per stage in ms', async t => {
-//   const result = c.differentials(rows, 1)
-//   t.equals(result[0].acc_time, 450700)
-//   t.equals(result[1].acc_time, 471000)
-//   t.equals(result[2].acc_time, 483900)
+tap.test('calculate accumulated time per stage in ms', async t => {
+  const result = c.differentials(rows, 1)
+  t.equals(result[0].acc_time_ms, 450700)
+  t.equals(result[1].acc_time_ms, 471000)
+  t.equals(result[2].acc_time_ms, 483900)
 
-//   t.equals(result[78].acc_time, 1222720)
-//   t.equals(result[79].acc_time, 1280010)
-//   t.equals(result[80].acc_time, 1282550)
+  t.equals(result[result.length - 1].acc_time_ms, 0) //DNS
+  t.end()
+})
 
-//   t.equals(result[result.length - 1].acc_time, 0) //DNS
-//   t.end()
-// })
-
-// tap.test('calculate accumulated time behind in total in ms', async t => {
-//   const result = c.differentials(rows, 1)
-//   //console.log(result[391])
-
-//   t.equals(result[390].acc_time_behind, 0) //total winner
-//   t.equals(result[390].total_rank, 1) //total winner
-//   t.equals(result[391].acc_time_behind, 485880)
-//   t.equals(result[391].acc_time, 9142710)
-//   t.equals(result[391].behind_leader_ms, 111450)
-//   t.equals(result[391].total_rank, 2)
-//   t.end()
-// })
+tap.test('calculate accumulated time behind in total in ms', async t => {
+  const result = c.differentials(rows, 1)
+  
+  t.equals(result[392].acc_time_ms, 2561730) //total winner
+  t.equals(result[392].rank, 1, 'total winner has rank of 1') //total winner
+//  t.equals(result[394].acc_time_behind, 485880)
+  t.equals(result[394].acc_time_ms, 2673180)
+  t.equals(result[394].behind_leader_ms, 50330)
+  t.equals(result[394].rank, 2)
+  t.end()
+})

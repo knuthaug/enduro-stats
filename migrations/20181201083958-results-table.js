@@ -43,19 +43,19 @@ exports.up = function (db) {
     },
     acc_time_ms: {
       type: 'int',
-      notNull: false
+      notNull: true
     },
     acc_time_behind: {
       type: 'int',
-      notNull: false
+      notNull: true
     },
     behind_leader_ms: {
       type: 'int',
       notNull: false
     },
-    total_rank: {
+    stage_rank: {
       type: 'int',
-      notNull: false
+      notNull: true
     },
     stage_id: {
       type: 'int',

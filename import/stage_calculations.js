@@ -51,12 +51,12 @@ class StageCalculations {
 
     for (let i = 0; i < stageIndexes.length; i++) {
       if (i === 0) {
-        rows[stageIndexes[i]].time_ms = rows[stageIndexes[i]].acc_time_ms
+        rows[stageIndexes[i]].stage_time_ms = rows[stageIndexes[i]].acc_time_ms
       } else {
         if (this.notFinished(rows[stageIndexes[i]])) {
-          rows[stageIndexes[i]].time_ms = 0
+          rows[stageIndexes[i]].stage_time_ms = 0
         } else {
-          rows[stageIndexes[i]].time_ms = rows[stageIndexes[i]].acc_time_ms - rows[stageIndexes[i - 1]].acc_time_ms
+          rows[stageIndexes[i]].stage_time_ms = rows[stageIndexes[i]].acc_time_ms - rows[stageIndexes[i - 1]].acc_time_ms
         }
       }
     }
@@ -75,13 +75,13 @@ class StageCalculations {
     // console.log(originalStageIndex)
 
     const stageResults = rows.slice(originalStageIndex[0], originalStageIndex[originalStageIndex.length - 1] + 1).sort((a, b) => {
-      if (a.time_ms === 0) {
+      if (a.stage_time_ms === 0) {
         return 1
       }
-      if (b.time_ms === 0) {
+      if (b.stage_time_ms === 0) {
         return -1
       }
-      return a.time_ms - b.time_ms
+      return a.stage_time_ms - b.stage_time_ms
     })
     // console.log(stageResults)
 
@@ -113,7 +113,7 @@ class StageCalculations {
   }
 
   timeBehindRider (currentRider, otherRider) {
-    return currentRider.time_ms - otherRider.time_ms
+    return currentRider.stage_time_ms - otherRider.stage_time_ms
   }
 }
 

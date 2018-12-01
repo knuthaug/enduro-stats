@@ -77,14 +77,23 @@ class Db {
     return this.insert(query, values)
   }
 
-  async insertCalculatedResult (raceId, result) {
-    const query = 'UPDATE results SET total_rank = $1, acc_time_ms =$2, acc_time_behind = $3, behind_leader_ms = $4 WHERE id = $5'
+  async insertCalculatedResults (raceId, result) {
+    const query = 'INSERT INTO results(rank, acc_time_ms, status, class, stage_id, rider_id, race_id, time_ms, stage_rank, behind_leader_ms) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)'
     for (let i = 0; i < result.length; i++) {
       // console.log(result[i])
       const stageId = await this.findStageByRace(raceId, result[i].stage)
-      const values = [result[i].total_rank, result[i].acc_time_ms, result[i].acc_time_behind, result[i].behind_leader_ms, result[i].id]
+      const values = [result[i].rank,
+                      result[i].acc_time_ms,
+                      result[i].status,
+                      result[i].class,
+                      stageId,
+                      result[i].rider_id,
+                      raceId, 
+                      result[i].time_ms,
+                      result[i].stage_rank, 
+                      result[i].behind_leader_ms]
       // console.log(values)
-      this.update(query, values)
+      this.insert(query, values)
     }
   }
 

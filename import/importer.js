@@ -23,10 +23,10 @@ fs.readdir(dir, async function (err, items) {
   const id = await db.findRace(values[0], values[1])
   console.log('raceid = ' + id)
   const results = await db.rawRaceResults(values[0], values[1], 'Menn')
-  console.log(results)
-  // const calcs = await calc.differentials(results, id)
+  //console.log(results)
+  const calcs = await calc.differentials(results, id)
   // console.log(calcs)
-  // await db.insertCalculatedResult(id, calcs)
+  await db.insertCalculatedResults(id, calcs)
 
   db.destroy()
 })
