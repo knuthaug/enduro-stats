@@ -26,11 +26,11 @@ exports.up = function (db) {
       notNull: true
     },
     time: {
-      type: 'time',
+      type: 'string',
       notNull: true
     },
     stage_time_ms: {
-      type: 'time',
+      type: 'int',
       notNull: true
     },
     status: {
@@ -47,7 +47,7 @@ exports.up = function (db) {
     },
     acc_time_behind: {
       type: 'int',
-      notNull: true
+      notNull: false
     },
     behind_leader_ms: {
       type: 'int',

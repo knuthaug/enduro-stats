@@ -78,19 +78,20 @@ class Db {
   }
 
   async insertCalculatedResults (raceId, result) {
-    const query = 'INSERT INTO results(rank, acc_time_ms, status, class, stage_id, rider_id, race_id, time_ms, stage_rank, behind_leader_ms) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)'
+    const query = 'INSERT INTO results(rank, time, acc_time_ms, status, class, stage_id, rider_id, race_id, stage_time_ms, stage_rank, behind_leader_ms) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)'
     for (let i = 0; i < result.length; i++) {
       // console.log(result[i])
       const stageId = await this.findStageByRace(raceId, result[i].stage)
       const values = [result[i].rank,
+                      result[i].time,
                       result[i].acc_time_ms,
                       result[i].status,
                       result[i].class,
                       stageId,
                       result[i].rider_id,
-                      raceId, 
-                      result[i].time_ms,
-                      result[i].stage_rank, 
+                      raceId,
+                      result[i].stage_time_ms,
+                      result[i].stage_rank,
                       result[i].behind_leader_ms]
       // console.log(values)
       this.insert(query, values)
@@ -109,7 +110,7 @@ class Db {
       const riderId = await this.insertRider(rider)
       const raceId = await this.findRace(raceName, raceYear)
       await this.insertRawResult(raceId, parseInt(riderId, 10), parseInt(stage.number, 10), result)
-      console.log(`insert for rider=${riderId}`)
+      //console.log(`insert for rider=${riderId}`)
     }
   }
 

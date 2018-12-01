@@ -25,7 +25,7 @@ fs.readdir(dir, async function (err, items) {
   const results = await db.rawRaceResults(values[0], values[1], 'Menn')
   //console.log(results)
   const calcs = await calc.differentials(results, id)
-  // console.log(calcs)
+  //console.log(calcs)
   await db.insertCalculatedResults(id, calcs)
 
   db.destroy()
