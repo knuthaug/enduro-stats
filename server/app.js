@@ -9,19 +9,18 @@ const Db = require('./db.js')
 
 const app = express()
 
-
 app.use(compression())
 app.disable('x-powered-by')
 
-if(config.get('env') !== 'test') {
+if (config.get('env') !== 'test') {
   app.use(morgan('tiny'))
 }
 
 let server
 const db = new Db()
 
-app.engine('handlebars', hbs({defaultLayout: 'main', extname: '.hbs'}));
-app.set('view engine', 'handlebars');
+app.engine('handlebars', hbs({ defaultLayout: 'main', extname: '.hbs' }))
+app.set('view engine', 'handlebars')
 
 app.get('/', async (req, res) => {
   log.debug('request for /')

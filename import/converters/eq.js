@@ -4,15 +4,14 @@ const fs = require('await-fs')
 const md5 = require('md5')
 
 class EqConverter {
-
-  constructor(filename) {
+  constructor (filename) {
     this.filename = filename
   }
 
-  async load() {
+  async load () {
     const stats = await fs.stat(this.filename)
 
-    if(stats.isFile()) {
+    if (stats.isFile()) {
       this.file = await fs.readFile(this.filename, 'utf-8')
       return this
     }
@@ -20,7 +19,7 @@ class EqConverter {
     throw new Error(`file ${this.filename} does not exist`)
   }
 
-  async parse() {
+  async parse () {
     const raw = await csv(this.file)
     return {
       race: {
@@ -39,7 +38,7 @@ class EqConverter {
           name: row.NameFormatted,
           gender: row.Gender,
           time: this.convertTime(row.NetTime),
-          timems: row.NetTime,
+          acc_time_ms: row.NetTime,
           rank: parseInt(row.RankClass, 10),
           class: (row.ClassName.indexOf(' ') !== -1) ? row.ClassName.split(/ /)[1] : row.ClassName,
           club: row.Club,
@@ -50,35 +49,34 @@ class EqConverter {
     }
   }
 
-  name(obj) {
+  name (obj) {
     const year = this.year(obj)
     return obj.EventName.replace(year, '').trim()
   }
 
-  checksum(obj) {
+  checksum (obj) {
     return md5(this.name(obj) + this.year(obj))
   }
 
-  year(obj) {
+  year (obj) {
     return obj.Starttime.split(/T/)[0].split(/-/)[0]
   }
 
-  convertStatus(status) {
-    if(status === 'TIME') {
+  convertStatus (status) {
+    if (status === 'TIME') {
       return 'OK'
     }
     return status
   }
 
-  convertTime(seconds) {
+  convertTime (seconds) {
     const fractionalSeconds = seconds.substr(seconds.length - 3, 1)
     let secs = seconds.substr(0, seconds.length - 3)
     secs = Number(secs)
-    const m = Math.floor(secs % 3600 / 60);
-    var s = Math.floor(secs % 3600 % 60);
+    const m = Math.floor(secs % 3600 / 60)
+    var s = Math.floor(secs % 3600 % 60)
     return `${m}:${s}.${fractionalSeconds}`
   }
 }
-
 
 module.exports = EqConverter

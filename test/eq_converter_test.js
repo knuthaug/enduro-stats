@@ -15,7 +15,7 @@ tap.test('If file does not exist, throw error', async t => {
 
   try {
     await eq.load()
-  } catch(error) {
+  } catch (error) {
     t.isA(error, 'Error')
   }
 
@@ -37,7 +37,7 @@ tap.test('parse file', async t => {
   t.equals(data.results[0].name, 'Anita Løvli', 'name matches source')
   t.equals(data.results[0].gender, 'F', 'gender is converted')
   t.equals(data.results[0].time, '12:37.2', 'time in minutes:seconds matches')
-  t.equals(data.results[0].timems, '757200', 'time in ms inś inclued')
+  t.equals(data.results[0].acc_time_ms, '757200', 'acc_time_ms for first stage is same as stage')
   t.equals(data.results[0].rank, 1, 'rank is converted')
   t.equals(data.results[0].status, 'OK', 'status is OK')
   t.equals(data.results[0].class, 'Kvinner', 'class matches')
@@ -63,6 +63,7 @@ tap.test('parse file and format', async t => {
   t.equals(data.results[0].name, 'Aslak Mørstad')
   t.equals(data.results[0].gender, 'M')
   t.equals(data.results[0].time, '12:52.0')
+  t.equals(data.results[0].acc_time_ms, '772020')
   t.equals(data.results[0].rank, 1)
   t.equals(data.results[0].class, 'Menn')
   t.equals(data.results[0].club, '')
@@ -70,7 +71,6 @@ tap.test('parse file and format', async t => {
   t.equals(data.results[data.results.length - 1].status, 'DNS')
   t.end()
 })
-
 
 tap.test('parse file and format, multiday', async t => {
   const eq = new EqConverter(path.join(__dirname, 'data/nesbyen-2015-menn-fe1.csv'))

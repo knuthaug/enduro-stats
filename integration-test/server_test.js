@@ -17,7 +17,7 @@ const races = [
   },
   {
     id: 2,
-    name: "test2",
+    name: 'test2',
     year: 2013
   }
 ]

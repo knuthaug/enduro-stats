@@ -1,137 +1,120 @@
 class StageCalculations {
-
-  differentials(rows, race, stage_id) {
-    const stageResults = []
+  differentials (rows, race, stageId) {
     let stages = []
 
-    for(let i = 0; i < rows.length; i++) {
-      const stageResult = {
-        id: rows[i].id,
-        rank: rows[i].rank,
-        status: rows[i].status,
-        time: rows[i].time,
-        timems: rows[i].timems,
-        rider_id: rows[i].rider_id,
-        stage: rows[i].stage,
-        class: rows[i].class,
-        race_id: race,
-        stage_id: rows[i].stage_id,
-        acc_time: 0
-      }
+    // calculate stage times for all riders
+    const riders = rows.map((el) => {
+      return el.rider_id
+    }).filter((value, index, self) => {
+      return self.indexOf(value) === index
+    })
 
+    for (let i = 0; i < riders.length; i++) {
+      this.stageTimes(rows, riders[i])
+    }
+
+    for (let i = 0; i < rows.length; i++) {
       const found = stages.findIndex((el) => {
         return el === rows[i].stage
       })
 
-      if(found === -1) {
+      if (found === -1) {
         stages.push(rows[i].stage)
       }
 
-      if(rows[i].status === 'DNS' || rows[i].status === 'DNF') {
-        stageResults.push(this.allZeroed(stageResult.rider_id, stageResult.stage, race, rows[i].status))
+      if (rows[i].status === 'DNS' || rows[i].status === 'DNF') {
+        rows[i].behind_leader_ms = 0
         continue
       }
 
-      if(rows[i].rank === 1) {
-        stageResult.behind_leader_ms = 0
-      }
-
-      stageResult.behind_leader_ms = this.timeBehindRider(rows[i], this.firstInStage(rows, stageResult.stage))
-
-      if(rows[i].stage === 1) {
-        stageResult.acc_time = rows[i].timems
-      } else {
-        const prevAccTime = this.stageForRider(stageResults, (rows[i].stage - 1), rows[i].rider_id).acc_time
-        stageResult.acc_time = prevAccTime + rows[i].timems
-      }
-
-      stageResults.push(stageResult)
+    // return this.calculateTotals(stageResults, stages)
     }
-    return this.calculateTotals(stageResults, stages)
-  }
 
-  calculateTotals(rows, stages) {
-    for(let i = 0; i < stages.length; i++) {
-      const res = this.calculateTotalsForStage(rows, stages[i])
+    // calculate stage ranks
+    // console.log(stages)
+    for (let i = 0; i < stages.length; i++) {
+      this.stageRanks(rows, stages[i])
     }
+
     return rows
   }
 
-  calculateTotalsForStage(rows, stage) {
-    let max = 0
-    let maxIndex = 0
-
-    const last = rows.filter((r) => {
-      return r.stage === stage
-    }).sort((a, b) => {
-      return a.rank - b.rank
+  stageTimes (rows, riderId) {
+    // find all stage for rider, indexes
+    const stageIndexes = rows.map((r, index) => {
+      if (r.rider_id === riderId) {
+        return index
+      }
+    }).filter((e) => {
+      return typeof e !== 'undefined'
     })
 
-    //console.log(last)
-    //console.log('---------------------------------------------------------------------------------')
+    for (let i = 0; i < stageIndexes.length; i++) {
+      if (i === 0) {
+        rows[stageIndexes[i]].time_ms = rows[stageIndexes[i]].acc_time_ms
+      } else {
+        if (this.notFinished(rows[stageIndexes[i]])) {
+          rows[stageIndexes[i]].time_ms = 0
+        } else {
+          rows[stageIndexes[i]].time_ms = rows[stageIndexes[i]].acc_time_ms - rows[stageIndexes[i - 1]].acc_time_ms
+        }
+      }
+    }
+  }
+
+  stageRanks (rows, stageNum) {
+    // find all results for stageId
+    const originalStageIndex = rows.map((r, index) => {
+      if (r.stage === stageNum) {
+        return index
+      }
+      return undefined
+    }).filter((e) => {
+      return typeof e !== 'undefined'
+    })
+    // console.log(originalStageIndex)
+
+    const stageResults = rows.slice(originalStageIndex[0], originalStageIndex[originalStageIndex.length - 1] + 1).sort((a, b) => {
+      if (a.time_ms === 0) {
+        return 1
+      }
+      if (b.time_ms === 0) {
+        return -1
+      }
+      return a.time_ms - b.time_ms
+    })
+    // console.log(stageResults)
 
     let rank = 1
-    for(let i = 0; i < last.length; i++) {
-      if(i === 0) { //first in stage results equal rank 1
-        //console.log(`setting acc_time_behind=0 for ${last[0].rider_id}`)
-        last[0].acc_time_behind = 0
+
+    for (let i = 0; i < stageResults.length; i++) {
+      stageResults[i].stage_rank = rank++
+      if (stageResults[i].stage_rank === 1) {
+        stageResults[i].behind_leader_ms = 0
       } else {
-        last[i].acc_time_behind = last[i].acc_time - last[i - 1].acc_time
+        if (this.notFinished(stageResults[i])) {
+          stageResults[i].behind_leader_ms = 0
+        } else {
+          stageResults[i].behind_leader_ms = this.timeBehindRider(stageResults[i], this.firstInStage(stageResults, stageResults[i].stage))
+        }
       }
-      last[i].total_rank = rank++
     }
+    rows.splice(originalStageIndex[0], originalStageIndex.length, ...stageResults)
   }
 
-  allZeroed(rider_id, stage, race_id, status) {
-    return {
-      rider_id,
-      stage,
-      status,
-      rank: 999,
-      race_id,
-      acc_time_behind: 0,
-      total_rank: 0,
-      acc_time: 0,
-      behind_leader_ms: 0
-    }
+  notFinished (obj) {
+    return obj.status === 'DNS' || obj.status === 'DNF'
   }
 
-  accumulatedTimeBehindRider(rows, rider, leader) {
-    const stage = rider.stage
-
-    if(stage === 1) {
-      return this.timeBehindRider(rider, leader)
-    }
-
-    const riderResults = this.allResultsForRider(rows, rider.rider_id)
-    const leaderResults = this.allResultsForRider(rows, leader.rider_id)
-
-    return 0
-
-  }
-
-  allResultsForRider(rows, riderId) {
-    return rows.filter((element) => {
-      return element.rider_id == riderId
-    })
-  }
-
-  firstInStage(rows, stageNumber) {
+  firstInStage (rows, stageNumber) {
     return rows.find((element) => {
-      return element.stage === stageNumber && element.rank === 1
+      return element.stage === stageNumber && element.stage_rank === 1
     })
   }
 
-  stageForRider(rows, stageNumber, riderId) {
-    return rows.find((element) => {
-      return element.stage === stageNumber && element.rider_id === riderId
-    })
+  timeBehindRider (currentRider, otherRider) {
+    return currentRider.time_ms - otherRider.time_ms
   }
-
-  timeBehindRider(currentRider, previousRider) {
-    return currentRider.timems - previousRider.timems
-  }
-
 }
 
 module.exports = StageCalculations

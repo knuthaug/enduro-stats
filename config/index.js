@@ -15,7 +15,7 @@ const config = convict({
   },
   database: {
     host: {
-      default: 'localhost',
+      default: 'localhost'
     },
     username: {
       default: 'endurostats'
