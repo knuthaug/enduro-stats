@@ -111,7 +111,8 @@ class Db {
         name: result.name,
         gender: result.gender,
         club: result.club,
-        team: result.team
+        team: result.team,
+        uid: result.rider_uid
       }
 
       const riderId = await this.insertRider(rider)
@@ -123,8 +124,8 @@ class Db {
 
   async insertRider (rider) {
     const client = await this.pool.connect()
-    const query = 'WITH inserted as (INSERT INTO riders(name, gender, club, team) VALUES($1, $2, $3, $4) ON CONFLICT(name, gender) DO NOTHING RETURNING *) select id FROM inserted'
-    const values = [rider.name, rider.gender, rider.club, rider.team]
+    const query = 'WITH inserted as (INSERT INTO riders(name, gender, club, team, uid) VALUES($1, $2, $3, $4, $5) ON CONFLICT(name, gender) DO NOTHING RETURNING *) select id FROM inserted'
+    const values = [rider.name, rider.gender, rider.club, rider.team, rider.uid]
 
     try {
       const res = await client.query(query, values)

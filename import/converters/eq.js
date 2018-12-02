@@ -3,6 +3,7 @@ const csv = require('neat-csv')
 const fs = require('await-fs')
 const md5 = require('md5')
 const logger = require('../logger.js')
+const spellcheck = require('../spellcheck.js')
 
 class EqConverter {
   constructor (filename) {
@@ -37,9 +38,10 @@ class EqConverter {
         number: raw[0][' "RaceName"'].match(/(\d+)/)[1]
       },
       results: raw.map((row) => {
+        const name = spellcheck.check(row.NameFormatted)
         return {
-          rider_uid: this.checksum(row.NameFormatted),
-          name: row.NameFormatted,
+          rider_uid: this.checksum(name),
+          name,
           gender: row.Gender,
           time: this.convertTime(row.NetTime),
           acc_time_ms: row.NetTime,

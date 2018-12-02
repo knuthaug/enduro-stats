@@ -29,6 +29,11 @@ exports.up = function (db) {
       type: 'string',
       notNull: true
     },
+    uid: {
+      type: 'string',
+      notNull: true,
+      unique: true
+    },
     club: {
       type: 'string',
       notNull: false
