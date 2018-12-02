@@ -67,13 +67,24 @@ tap.test('calculate accumulated time per stage in ms', async t => {
   t.end()
 })
 
-tap.test('calculate accumulated time behind in total in ms', async t => {
+tap.test('Misc. tests', async t => {
   const result = c.differentials(rows, 1)
-  
+
   t.equals(result[392].acc_time_ms, 2561730) //total winner
   t.equals(result[392].rank, 1, 'total winner has rank of 1') //total winner
-//  t.equals(result[394].acc_time_behind, 485880)
+  //  t.equals(result[394].acc_time_behind, 485880)
   t.equals(result[394].acc_time_ms, 2673180)
+  t.equals(result[394].behind_leader_ms, 50330)
+  t.equals(result[394].rank, 2)
+  t.end()
+})
+
+tap.test('calculate accumulated time behind in total in ms', async t => {
+  const result = c.differentials(rows, 1)
+
+  t.equals(result[392].acc_time_behind, 0) //total winner
+  t.equals(result[392].rank, 1, 'total winner has rank of 1') //total winner
+  t.equals(result[394].acc_time_behind, 111450)
   t.equals(result[394].behind_leader_ms, 50330)
   t.equals(result[394].rank, 2)
   t.end()

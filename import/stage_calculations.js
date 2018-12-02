@@ -98,6 +98,15 @@ class StageCalculations {
           stageResults[i].behind_leader_ms = this.timeBehindRider(stageResults[i], this.firstInStage(stageResults, stageResults[i].stage))
         }
       }
+
+      //acc_time_behind
+      if(stageResults[i].stage === 6) {
+        if(stageResults[i].rank === 1) {
+          stageResults[i].acc_time_behind = 0
+        } else {
+          stageResults[i].acc_time_behind = this.accTimeBehindRider(stageResults[i], this.firstInRace(stageResults, stageResults[i].stage))
+        }
+      }
     }
     rows.splice(originalStageIndex[0], originalStageIndex.length, ...stageResults)
   }
@@ -112,8 +121,18 @@ class StageCalculations {
     })
   }
 
+  firstInRace (rows, stageNumber) {
+    return rows.find((element) => {
+      return element.stage === stageNumber && element.rank === 1
+    })
+  }
+
   timeBehindRider (currentRider, otherRider) {
     return currentRider.stage_time_ms - otherRider.stage_time_ms
+  }
+
+  accTimeBehindRider (currentRider, otherRider) {
+    return currentRider.acc_time_ms - otherRider.acc_time_ms
   }
 }
 
