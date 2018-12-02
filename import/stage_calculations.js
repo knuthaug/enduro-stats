@@ -55,9 +55,11 @@ class StageCalculations {
       } else {
         if (this.notFinished(rows[stageIndexes[i]])) {
           rows[stageIndexes[i]].stage_time_ms = 0
-        } else {
-          rows[stageIndexes[i]].stage_time_ms = rows[stageIndexes[i]].acc_time_ms - rows[stageIndexes[i - 1]].acc_time_ms
+          continue
         }
+
+        rows[stageIndexes[i]].stage_time_ms = rows[stageIndexes[i]].acc_time_ms - rows[stageIndexes[i - 1]].acc_time_ms
+
       }
     }
   }
@@ -94,9 +96,11 @@ class StageCalculations {
       } else {
         if (this.notFinished(stageResults[i])) {
           stageResults[i].behind_leader_ms = 0
-        } else {
-          stageResults[i].behind_leader_ms = this.timeBehindRider(stageResults[i], this.firstInStage(stageResults, stageResults[i].stage))
+          continue
         }
+
+        stageResults[i].behind_leader_ms = this.timeBehindRider(stageResults[i], this.firstInStage(stageResults, stageResults[i].stage))
+
       }
 
       //acc_time_behind
@@ -104,6 +108,11 @@ class StageCalculations {
         if(stageResults[i].rank === 1) {
           stageResults[i].acc_time_behind = 0
         } else {
+          if(this.notFinished(stageResults[i])) {
+            stageResults[i].acc_time_behind = 0
+            continue
+          }
+
           stageResults[i].acc_time_behind = this.accTimeBehindRider(stageResults[i], this.firstInRace(stageResults, stageResults[i].stage))
         }
       }
