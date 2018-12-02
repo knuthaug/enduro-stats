@@ -20,8 +20,8 @@ class Db {
       const res = await client.query(query, values)
       return res
     } catch (error) {
-      console.log(`error for insert! Query: ${query}, values:${values}`)
-      console.log(error)
+      logger.error(`error for insert! Query: ${query}, values:${values}`)
+      logger.error(error)
       return { error }
     } finally {
       await client.release()
@@ -34,8 +34,8 @@ class Db {
       const res = await client.query(query, values)
       return res
     } catch (error) {
-      console.log(`error for update! Query: ${query}, values:${values}`)
-      console.log(error)
+      logger.error(`error for update! Query: ${query}, values:${values}`)
+      logger.error(error)
       return { error }
     } finally {
       await client.release()
@@ -58,11 +58,13 @@ class Db {
 
   async insertStage (race, stage, raceYear) {
     const stageId = await this.findStage(stage.name, stage.number)
+
     if (stageId) {
-      console.log(`found stageId = ${stageId}`)
+      logger.debug(`found stageId = ${stageId}`)
       return stageId
     }
 
+    logger.info(`Inserting stage ${stage.name}, stage number ${stage.number} for year ${raceYear}`)
     const query = 'INSERT INTO stages(name, number, race_id) VALUES($1, $2, (SELECT r.id FROM races r WHERE r.name = $3 AND r.year = $4))'
     const values = [stage.name, parseInt(stage.number, 10), race, parseInt(raceYear, 10)]
     return this.insert(query, values)
@@ -111,10 +113,11 @@ class Db {
         club: result.club,
         team: result.team
       }
+
       const riderId = await this.insertRider(rider)
       const raceId = await this.findRace(raceName, raceYear)
       await this.insertRawResult(raceId, parseInt(riderId, 10), parseInt(stage.number, 10), result)
-      //console.log(`insert for rider=${riderId}`)
+      logger.info(`inserting raw result for rider ${riderId}`)
     }
   }
 
@@ -127,15 +130,16 @@ class Db {
       const res = await client.query(query, values)
       // console.log(res.rows)
       if (res.rows.length === 1) {
+        logger.info(`Inserted rider ${res.rows[0].id}`)
         return res.rows[0].id
       } else {
         const riderId = await this.findRider(rider.name, rider.gender)
-        // console.log('found rider ' + riderId)
+        logger.info(`Found existing rider rider ${riderId}`)
         return riderId
       }
     } catch (error) {
-      console.log(`Error for inserting rider: query:${query}: values${values}`)
-      console.log(error)
+      logger.error(`Error for inserting rider: query:${query}: values${values}`)
+      logger.error(error)
     } finally {
       await client.release()
     }
@@ -146,12 +150,12 @@ class Db {
     try {
       const res = await client.query(query, values)
       if (!res.rows[0]) {
-        console.log(msg)
+        logger.warn(msg)
         return 0
       }
       return res.rows[0].id
     } catch (error) {
-      console.log(error)
+      logger.error(error)
       return undefined
     } finally {
       await client.release()
@@ -164,7 +168,7 @@ class Db {
       const res = await client.query(query, values)
       return res.rows
     } catch (error) {
-      console.log(error)
+      logger.error(error)
       return []
     } finally {
       await client.release()
@@ -172,7 +176,7 @@ class Db {
   }
 
   async rawRaceResults (raceName, raceYear, className) {
-    // console.log(`raceResults:${raceName}, ${raceYear}, ${className}`)
+    logger.info(`raceResults:${raceName}, ${raceYear}, ${className}`)
     const query = 'SELECT *,(SELECT number FROM stages where id = raw_results.stage_id) as stage FROM raw_results where race_id = (SELECT id FROM races WHERE name = $1 and year = $2) AND class = $3'
     const values = [raceName, raceYear, className]
     return this.findSet(query, values, `Error finding all results for race name=${raceName}, year=${raceYear}`)
