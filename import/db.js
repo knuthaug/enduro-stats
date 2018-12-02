@@ -1,5 +1,6 @@
 const { Pool } = require('pg')
 const config = require('../config')
+const logger = require('./logger.js')
 
 const options = {
   host: config.get('database.host'),
@@ -45,9 +46,11 @@ class Db {
     const id = await this.findRace(race.name, race.year)
     if (id) {
       // update stage number
+      logger.info(`updating race ${race.name} year=${race.year} with stage = ${race.stages}`)
       return this.update('UPDATE RACES SET stages = $1 WHERE id = $2', [race.stages, id])
     }
 
+    logger.info(`Inserting race ${race.name} year=${race.year} into races`)
     const query = 'INSERT INTO races(name, stages, date, year, uid) VALUES($1, $2, $3, $4, $5)'
     const values = [race.name, race.stages, race.date, race.year, race.uid]
     return this.update(query, values)

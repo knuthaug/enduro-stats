@@ -3,6 +3,7 @@ const Eq = require('./converters/eq.js')
 const fs = require('fs')
 const path = require('path')
 const StageCalculations = require('./stage_calculations.js')
+const logger = require('./logger.js')
 
 const db = new Db()
 const calc = new StageCalculations()
@@ -19,9 +20,10 @@ fs.readdir(dir, async function (err, items) {
     values = await readFile(items[i])
   }
 
-  console.log(`race=${values[0]}, year=${values[1]}`)
+  //console.log(`race=${values[0]}, year=${values[1]}`)
   const id = await db.findRace(values[0], values[1])
-  console.log('raceid = ' + id)
+  //console.log('raceid = ' + id)
+  logger.info(`Reading back results for race ${values[0]}, year=${values[1]}`)
   const results = await db.rawRaceResults(values[0], values[1], 'Menn')
   //console.log(results)
   const calcs = await calc.differentials(results, id)

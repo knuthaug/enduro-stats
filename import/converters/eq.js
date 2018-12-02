@@ -2,6 +2,7 @@ const { promisify } = require('util')
 const csv = require('neat-csv')
 const fs = require('await-fs')
 const md5 = require('md5')
+const logger = require('../logger.js')
 
 class EqConverter {
   constructor (filename) {
@@ -12,10 +13,12 @@ class EqConverter {
     const stats = await fs.stat(this.filename)
 
     if (stats.isFile()) {
+      logger.info(`readin file ${this.filename}`)
       this.file = await fs.readFile(this.filename, 'utf-8')
       return this
     }
 
+    logger.error(`File ${this.filename} was not found`)
     throw new Error(`file ${this.filename} does not exist`)
   }
 

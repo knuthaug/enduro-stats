@@ -13,6 +13,11 @@ const config = convict({
     default: 'debug',
     env: 'APP_LOGLEVEL'
   },
+  import: {
+    loglevel: {
+      default: 'info'
+    }
+  },
   database: {
     host: {
       default: 'localhost'
