@@ -115,3 +115,12 @@ tap.test('race has uid, md5 of name and year', async t => {
   t.equals(data.race.uid, '4504e3dd07d15dec4044e6b2e32df739', 'md5 matches')
   t.end()
 })
+
+tap.test('rider has uid, md5 of name', async t => {
+  const eq = new EqConverter(path.join(__dirname, 'data/nesbyen-2013-menn-fe3.csv'))
+  const loaded = await eq.load()
+  const data = await loaded.parse()
+
+  t.equals(data.results[0].rider_uid, '603fb3e38346461ff2ba9ac4c35ff7fb', 'md5 matches')
+  t.end()
+})

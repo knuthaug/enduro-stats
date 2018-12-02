@@ -27,7 +27,7 @@ class EqConverter {
     return {
       race: {
         name: this.name(raw[0]),
-        uid: this.checksum(raw[0]),
+        uid: this.raceChecksum(raw[0]),
         date: raw[0].Starttime.split(/T/)[0],
         year: this.year(raw[0]),
         stages: raw[0][' "RaceName"'].match(/(\d+)/)[1]
@@ -38,6 +38,7 @@ class EqConverter {
       },
       results: raw.map((row) => {
         return {
+          rider_uid: this.checksum(row.NameFormatted),
           name: row.NameFormatted,
           gender: row.Gender,
           time: this.convertTime(row.NetTime),
@@ -57,8 +58,12 @@ class EqConverter {
     return obj.EventName.replace(year, '').trim()
   }
 
-  checksum (obj) {
-    return md5(this.name(obj) + this.year(obj))
+  raceChecksum (obj) {
+    return this.checksum(this.name(obj) + this.year(obj))
+  }
+
+  checksum (string) {
+    return md5(string)
   }
 
   year (obj) {
