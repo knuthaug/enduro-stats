@@ -36,13 +36,19 @@ app.get('/race/:uid', async (req, res) => {
 
 app.get('/assets/js/:file', (req, res) => {
   const file = req.params.file
-  const options = { root: './dist' }
+  const options = { root: './server/dist' }
   return res.sendFile(`js/${file}`, options)
+})
+
+app.get('/assets/js/vendor/:file', (req, res) => {
+  const file = req.params.file
+  const options = { root: './server/dist/' }
+  return res.sendFile(`js/vendor/${file}`, options)
 })
 
 app.get('/assets/css/:file', (req, res) => {
   const file = req.params.file
-  const options = { root: './dist' }
+  const options = { root: './server/dist' }
   return res.sendFile(`css/${file}`, options)
 })
 
