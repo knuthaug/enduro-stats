@@ -13,9 +13,15 @@ class Db {
     this.pool = new Pool(options)
   }
 
-  async findRaces () {
-    const query = 'SELECT * from races ORDER by YEAR'
+  async findRaces (limit) {
+    let query = 'SELECT * from races ORDER by YEAR DESC'
     const values = []
+
+    if(limit) {
+      query = `${query} LIMIT $1`
+      values[0] = limit
+    }
+
     return this.find(query, values)
   }
 

@@ -7,6 +7,7 @@ const config = require('../config')
 const log = require('./log.js')
 const Db = require('./db.js')
 const hashedAssets = require('../views/helpers/hashed-assets.js')
+const compare = require('../views/helpers/compare.js')
 
 const app = express()
 
@@ -20,19 +21,25 @@ if (config.get('env') !== 'test') {
 let server
 const db = new Db()
 
-app.engine('handlebars', hbs({ defaultLayout: 'main', extname: '.hbs', helpers: { hashedAssets } }))
+app.engine('handlebars', hbs({ defaultLayout: 'main', extname: '.hbs', helpers: { hashedAssets, compare } }))
 app.set('view engine', 'handlebars')
 
 app.get('/', async (req, res) => {
   log.debug('request for /')
-  const races = await db.findRaces()
+  const races = await db.findRaces(6)
   res.render('index', { races })
 })
 
-app.get('/race/:uid', async (req, res) => {
+app.get('/ritt/:uid', async (req, res) => {
   log.debug(`request for ${req.path}`)
   const race = await db.findRace(req.params.uid)
-  res.render('race', { race })
+  res.render('race', { race, active: 'ritt' })
+})
+
+app.get('/ritt', async (req, res) => {
+  log.debug(`request for ${req.path}`)
+  const races = await db.findRaces()
+  res.render('races', { races, active: 'ritt' })
 })
 
 app.get('/assets/js/:file', (req, res) => {
