@@ -14,27 +14,35 @@
     </head>
 
     <body>
-      <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-        <header class="masthead mb-auto">
-          <div class="inner">
-            <a class="nav-link" href="/"><h3 class="masthead-brand">Norsk enduro</h3></a>
-            <nav class="nav nav-masthead justify-content-center">
-              <a class="nav-link {{#compare active '===' 'ritt'}}active{{/compare}}" href="/ritt">Ritt</a>
-              <a class="nav-link {{#compare active '===' 'ryttere'}}active{{/compare}}" href="/ryttere">Ryttere</a>
-            </nav>
-          </div>
-        </header>
 
-        <main role="main" class="inner cover">
-          {{{ body }}}
-        </main>
-
-        <footer class="mastfoot mt-auto">
-          <div class="inner">
-            <p>Knut Haugen @ 2018.</a></p>
+      <header>
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+          <a class="navbar-brand" href="/">Norsk enduro</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="/ritt">Ritt {{#compare active '===' 'ritt'}}<span class="sr-only">(current)</span>{{/compare}}</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/ryttere">Ryttere {{#compare active '===' 'ryttere'}}<span class="sr-only">(current)</span>{{/compare}}</a>
+              </li>
+            </ul>
           </div>
-        </footer>
-      </div>
+        </nav>
+      </header>
+
+      <main role="main" class="container">
+        {{{ body }}}
+      </main>
+      <footer class="footer">
+        <div class="container">
+          <span class="text-muted">Knut Haugen @ 2018.</span>
+        </div>
+      </footer>
     </body>
     <script src="/assets/js/{{hashedAssets 'bundle.js'}}" crossorigin="anonymous"></script>
   </html>

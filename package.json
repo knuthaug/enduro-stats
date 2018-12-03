@@ -5,9 +5,10 @@
   "main": "server/index.js",
   "scripts": {
     "precommit": "npm run test",
-    "watch": "npm-watch start",
+    "watch": "npm-watch start:local",
     "clean": "rimraf bundlemap-js.json server/dist/js server/dist/css",
-    "start": "nodemon server/index.js",
+    "start:local": "npm run build && npm start",
+    "start": "node server/index.js",
     "test": "NODE_ENV=test ./node_modules/tap/bin/run.js -R spec test/*_test.js",
     "test:integration": "NODE_ENV=test ./node_modules/tap/bin/run.js -R spec integration-test/*_test.js",
     "coverage": "NODE_ENV=test nyc npm test",
@@ -74,6 +75,8 @@
     "start": {
       "patterns": [
         "server",
+        "server/src/js",
+        "server/src/css",
         "config",
         "views/",
         "views/partials",
