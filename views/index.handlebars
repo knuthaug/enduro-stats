@@ -1,4 +1,12 @@
+<div class="row">
+  <div class="col">
+  </div>
+  <div class="col-8">
+    {{#each races}}
+    <a href="/race/{{uid}}">{{name}} {{year}}</a><br/>
+    {{/each}}
+  </div>
+  <div class="col">
+  </div>
+</div>
 
-{{#each races}}
-  <h3><a href="/race/{{uid}}">{{name}} {{year}}</a></h3>
-{{/each}}

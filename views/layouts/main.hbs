@@ -14,8 +14,28 @@
     </head>
 
     <body>
-      {{{ body }}}
+      <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <header class="masthead mb-auto">
+        <div class="inner">
+          <h3 class="masthead-brand">Norsk enduro</h3>
+          <nav class="nav nav-masthead justify-content-center">
+            <a class="nav-link active" href="#">Home</a>
+            <a class="nav-link" href="/ritt">Ritt</a>
+            <a class="nav-link" href="/ryttere">Ryttere</a>
+          </nav>
+        </div>
+        </header>
 
+        <main role="main" class="inner cover">
+          {{{ body }}}
+        </main>
+
+        <footer class="mastfoot mt-auto">
+          <div class="inner">
+            <p>Knut Haugen @ 2018.</p>
+          </div>
+        </footer>
+      </div>
     </body>
     <script src="/assets/js/{{hashedAssets 'bundle.js'}}" crossorigin="anonymous"></script>
   </html>
