@@ -6,6 +6,7 @@ const morgan = require('morgan')
 const config = require('../config')
 const log = require('./log.js')
 const Db = require('./db.js')
+const hashedAssets = require('../views/helpers/hashed-assets.js')
 
 const app = express()
 
@@ -19,7 +20,7 @@ if (config.get('env') !== 'test') {
 let server
 const db = new Db()
 
-app.engine('handlebars', hbs({ defaultLayout: 'main', extname: '.hbs' }))
+app.engine('handlebars', hbs({ defaultLayout: 'main', extname: '.hbs', helpers: { hashedAssets } }))
 app.set('view engine', 'handlebars')
 
 app.get('/', async (req, res) => {

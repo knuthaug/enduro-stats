@@ -6,7 +6,7 @@ const sourceMapEnabled = isProduction
 module.exports = {
   mode: isProduction ? 'production' : 'development',
   entry: {
-    main: './server/src/js/index.js',
+    bundle: './server/src/js/index.js',
   },
   output: {
     filename: '[name]-[chunkhash].js',
@@ -29,5 +29,8 @@ module.exports = {
       }
 
     ]
-  }
+  },
+  plugins: [
+    new AssetsPlugin({ filename: 'bundlemap-js.json' })
+  ]
 }

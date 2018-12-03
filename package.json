@@ -6,15 +6,15 @@
   "scripts": {
     "precommit": "npm run test",
     "watch": "npm-watch start",
-    "clean": "rimraf server/dist/js server/dist/css",
+    "clean": "rimraf bundlemap-js.json server/dist/js server/dist/css",
     "start": "nodemon server/index.js",
     "test": "NODE_ENV=test ./node_modules/tap/bin/run.js -R spec test/*_test.js",
     "test:integration": "NODE_ENV=test ./node_modules/tap/bin/run.js -R spec integration-test/*_test.js",
     "coverage": "NODE_ENV=test nyc npm test",
     "autotest": "NODE_ENV=test supervisor -q -n exit -x ./node_modules/tap/bin/run.js -R spec 'test/*_test.js'",
     "build:js": "webpack",
-    "build:css": "postcss server/src/css/main.css -o server/dist/css/main.css",
-    "build": "npm run build:js && npm run build:css",
+    "build:css": "postcss server/src/css/main.css -o server/dist/css/bundle.css && cp server/src/css/bootstrap* server/dist/css/",
+    "build": "npm run clean && npm run build:js && npm run build:css",
     "lint": "standard"
   },
   "repository": {
