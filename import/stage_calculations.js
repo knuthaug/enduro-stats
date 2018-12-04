@@ -26,14 +26,10 @@ class StageCalculations {
         rows[i].behind_leader_ms = 0
         continue
       }
-
-    // return this.calculateTotals(stageResults, stages)
     }
 
-    // calculate stage ranks
-    // console.log(stages)
     for (let i = 0; i < stages.length; i++) {
-      this.stageRanks(rows, stages[i])
+      this.stageRanks(rows, stages[i], stages[stages.length - 1])
     }
 
     return rows
@@ -64,7 +60,7 @@ class StageCalculations {
     }
   }
 
-  stageRanks (rows, stageNum) {
+  stageRanks (rows, stageNum, maxStage) {
     // find all results for stageId
     const originalStageIndex = rows.map((r, index) => {
       if (r.stage === stageNum) {
@@ -103,8 +99,8 @@ class StageCalculations {
 
       }
 
-      //acc_time_behind
-      if(stageResults[i].stage === 6) {
+      //acc_time_behind, just for last stage
+      if(stageResults[i].stage === maxStage) {
         if(stageResults[i].rank === 1) {
           stageResults[i].acc_time_behind = 0
         } else {
@@ -112,7 +108,6 @@ class StageCalculations {
             stageResults[i].acc_time_behind = 0
             continue
           }
-
           stageResults[i].acc_time_behind = this.accTimeBehindRider(stageResults[i], this.firstInRace(stageResults, stageResults[i].stage))
         }
       }
@@ -125,9 +120,11 @@ class StageCalculations {
   }
 
   firstInStage (rows, stageNumber) {
-    return rows.find((element) => {
+    const first = rows.find((element) => {
       return element.stage === stageNumber && element.stage_rank === 1
     })
+    console.log(`first in stage ${first.rider_id} for stage=${stageNumber}`)
+    return first
   }
 
   firstInRace (rows, stageNumber) {

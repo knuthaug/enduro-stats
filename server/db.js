@@ -36,6 +36,17 @@ class Db {
     return {}
   }
 
+  async classesForRace (uid) {
+    const query = 'SELECT DISTINCT class from results where race_id = (SELECT id FROM races WHERE uid = $1)'
+    const values = [uid]
+    const rows = await this.find(query, values)
+
+    if (rows.length > 0) {
+      return rows.map((r) => { return r.class })
+    }
+    return []
+  }
+
   async find (query, values) {
     const client = await this.pool.connect()
     try {

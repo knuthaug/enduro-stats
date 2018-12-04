@@ -7,6 +7,7 @@ const logger = require('./logger.js')
 
 const db = new Db()
 const calc = new StageCalculations()
+
 if (process.argv.length <= 2) {
   console.log('Usage: ' + __filename + ' path/to/directory')
   process.exit(-1)
@@ -22,13 +23,19 @@ fs.readdir(dir, async function (err, items) {
 
   //console.log(`race=${values[0]}, year=${values[1]}`)
   const id = await db.findRace(values[0], values[1])
-  //console.log('raceid = ' + id)
-  logger.info(`Reading back results for race ${values[0]}, year=${values[1]}`)
-  const results = await db.rawRaceResults(values[0], values[1], 'Menn')
-  //console.log(results)
-  const calcs = await calc.differentials(results, id)
-  //console.log(calcs)
-  await db.insertCalculatedResults(id, calcs)
+
+  const classes = await db.classesForRace(id)
+  for(let i = 0; i < classes.length; i++) {
+    if(classes[i].class === 'Lag') {
+      continue
+    }
+    
+    logger.info(`Reading back results for race ${values[0]}, year=${values[1]}, class=${classes[i].class}`)
+    const results = await db.rawRaceResults(values[0], values[1], classes[i].class)
+    logger.info(`got ${results.length} rows`)
+    const calcs = await calc.differentials(results, id)
+    await db.insertCalculatedResults(id, calcs)
+  }
 
   db.destroy()
 })

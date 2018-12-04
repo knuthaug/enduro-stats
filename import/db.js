@@ -176,6 +176,12 @@ class Db {
     }
   }
 
+  async classesForRace (raceId) {
+    const query = 'SELECT DISTINCT class from raw_results WHERE race_id = $1'
+    const values = [raceId]
+    return this.findSet(query, values, `Error finding all classes for race name=${raceId}`)
+  }
+
   async rawRaceResults (raceName, raceYear, className) {
     logger.info(`raceResults:${raceName}, ${raceYear}, ${className}`)
     const query = 'SELECT *,(SELECT number FROM stages where id = raw_results.stage_id) as stage FROM raw_results where race_id = (SELECT id FROM races WHERE name = $1 and year = $2) AND class = $3'

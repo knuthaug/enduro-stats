@@ -33,7 +33,14 @@ app.get('/', async (req, res) => {
 app.get('/ritt/:uid', async (req, res) => {
   log.debug(`request for ${req.path}`)
   const race = await db.findRace(req.params.uid)
-  res.render('race', { race, active: 'ritt' })
+  const raceClasses = await db.classesForRace(req.params.uid)
+
+  const results = { }
+  for(let i = 0; i < raceClasses.length; i++) {
+    results[raceClasses[i]] = []
+  }
+  console.log(results)
+  res.render('race', { race, results, active: 'ritt' })
 })
 
 app.get('/ritt', async (req, res) => {
