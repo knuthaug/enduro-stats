@@ -1,4 +1,3 @@
-## Roots and rain
 
 * list users with stage times and total
  - name, club, team, stages, total, diff
