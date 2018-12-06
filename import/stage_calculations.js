@@ -1,18 +1,26 @@
 class StageCalculations {
-  differentials (rows, race, stageId) {
+  differentials (rows) {
     let stages = []
 
-    // calculate stage times for all riders
-    const riders = rows.map((el) => {
-      return el.rider_id
-    }).filter((value, index, self) => {
-      return self.indexOf(value) === index
-    })
+    const riders = this.findAllRiders(rows)
 
-    for (let i = 0; i < riders.length; i++) {
-      this.stageTimes(rows, riders[i])
-    }
+    this.findStageTimes(rows, riders)
+    this.findTimeBehindLeader(rows, stages)
+    this.findStageRanks(rows, stages)
+    this.fillMissingStages(rows, riders, stages)
+    this.findFinalRank(rows, riders, stages)
+    return rows
+  }
 
+  findAllRiders(rows) {
+      return rows.map((el) => {
+        return el.rider_id
+      }).filter((value, index, self) => {
+        return self.indexOf(value) === index
+      })
+  }
+
+  findTimeBehindLeader(rows, stages) {
     for (let i = 0; i < rows.length; i++) {
       const found = stages.findIndex((el) => {
         return el === rows[i].stage
@@ -27,12 +35,91 @@ class StageCalculations {
         continue
       }
     }
+  }
 
+  findStageTimes(rows, riders) {
+    for (let i = 0; i < riders.length; i++) {
+      this.stageTimes(rows, riders[i])
+    }
+  }
+
+  findStageRanks(rows, stages) {
     for (let i = 0; i < stages.length; i++) {
       this.stageRanks(rows, stages[i], stages[stages.length - 1])
     }
+  }
 
-    return rows
+  findFinalRank(rows, riders, stages) {
+    const indexes = {}
+    for(let i = 0; i < rows.length; i++) {
+      if(rows[i].stage === stages[stages.length - 1]) {
+        indexes[rows[i].id] = i
+      }
+    }
+
+    const lastStages = rows.filter((r) => {
+      return r.stage === stages[stages.length - 1]
+    }).sort(this.sortByAccTime)
+
+    let rank = 1
+    for(let i = 0; i < lastStages.length; i++) {
+      const rowIndex = indexes[lastStages[i].id]
+      rows[rowIndex].final_rank = rank++
+    }
+  }
+
+  sortByAccTime(a, b) {
+    if(a.acc_time_ms === 0) {
+      return 1
+    }
+
+    if(b.acc_time_ms === 0) {
+      return -1
+    }
+
+    if(a.acc_time_ms > b.acc_time_ms) {
+      return 1
+    } else if (b.acc_time_ms > a.acc_time_ms) {
+      return -1
+    }
+    return 0
+  }
+
+  fillMissingStages(rows, riders, stages) {
+    //make sure all riders have results for each stageRanks
+    for(let i = 0; i < riders.length; i++) {
+      const ro = rows.filter((r) => {
+        return r.rider_id == riders[i]
+      })
+
+      if (ro.length < stages.length) {
+        for(let j = 0; j < stages.length; j++) {
+          const found = ro.find((r) => {
+            return r.stage === stages[j]
+          })
+
+          if(!found) {
+            rows.push(this.defaultResult(stages[j], stages[i], ro[0].race_id, ro[0].rider_id, ro[0].class))
+          } 
+        }
+      }
+    }
+  }
+
+  defaultResult(stage, stageId, raceId, riderId, clazz) {
+    return {
+      rank: 999,
+      stage,
+      time: '00:00.0',
+      class: clazz,
+      acc_time_ms: 0,
+      rider_id: riderId,
+      stage_id: stageId,
+      race_id: raceId,
+      stage_rank: 999,
+      stage_time_ms: 0,
+      status: 'DNS'
+    }
   }
 
   stageTimes (rows, riderId) {
@@ -55,7 +142,6 @@ class StageCalculations {
         }
 
         rows[stageIndexes[i]].stage_time_ms = rows[stageIndexes[i]].acc_time_ms - rows[stageIndexes[i - 1]].acc_time_ms
-
       }
     }
   }

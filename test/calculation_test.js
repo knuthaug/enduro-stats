@@ -4,12 +4,12 @@ const path = require('path')
 const fs = require('fs')
 
 const rows = JSON.parse(fs.readFileSync(path.join(__dirname, './data/race-results-menn.json')))
-// const rows2 = JSON.parse(fs.readFileSync(path.join(__dirname, './data/race-results-menn2.json')))
+const rows2 = JSON.parse(fs.readFileSync(path.join(__dirname, './data/race-results-menn2.json')))
 
 const c = new StageCalculations()
 
 tap.test('original data is always returned', async t => {
-  const result = c.differentials(rows, 1)
+  const result = c.differentials(rows)
   t.equals(result[0].rider_id, 22, 'rider_id is the same')
   t.equals(result[0].race_id, 1, 'race id is the same')
   t.equals(result[0].stage, 1, 'stage number is 1')
@@ -21,7 +21,7 @@ tap.test('original data is always returned', async t => {
 })
 
 tap.test('calculate time per stage from acc_time_ms', async t => {
-  const result = c.differentials(rows, 1)
+  const result = c.differentials(rows)
   t.equals(result[0].stage_time_ms, 450700, 'acc_time_ms is stage time for first stage')
 
   t.equals(result[80].stage_time_ms, 321320)
@@ -32,7 +32,7 @@ tap.test('calculate time per stage from acc_time_ms', async t => {
 })
 
 tap.test('calculate stage rank based on time_ms per stage', async t => {
-  const result = c.differentials(rows, 1)
+  const result = c.differentials(rows)
   t.equals(result[0].stage_rank, 1, 'lowest time gets stage_rank 1')
   t.equals(result[1].stage_rank, 2, 'second lowest time gets stage_rank 2')
 
@@ -43,8 +43,29 @@ tap.test('calculate stage rank based on time_ms per stage', async t => {
   t.equals(result[78].stage_rank, 1, 'stage_rank 1 for lowest time')
 })
 
+tap.test('calculate final rank based on acc_time_ms for last stage', async t => {
+  const result = c.differentials(rows)
+
+  const first = result.find((r) => {
+    return r.rider_id === 22 && r.stage === 6
+  })
+
+  const second = result.find((r) => {
+    return r.rider_id === 26 && r.stage === 6
+  })
+
+  const third = result.find((r) => {
+    return r.rider_id === 25 && r.stage === 6
+  })
+
+  t.equals(first.final_rank, 1, 'lowest time gets stage_rank 1')
+  t.equals(second.final_rank, 2, 'second lowest time gets stage_rank 2')
+  t.equals(third.final_rank, 3, 'third lowest time gets stage_rank 3')
+
+})
+
 tap.test('calculate time behind leader', async t => {
-  const result = c.differentials(rows, 1)
+  const result = c.differentials(rows)
   t.equals(result[0].behind_leader_ms, 0, 'stage winner is 0 behind leader')
   t.equals(result[1].behind_leader_ms, 20300, 'stage second is time_ms behind leader for stage')
   t.equals(result[2].behind_leader_ms, 33200, '3rd is more behind leader')
@@ -58,7 +79,7 @@ tap.test('calculate time behind leader', async t => {
 })
 
 tap.test('calculate accumulated time per stage in ms', async t => {
-  const result = c.differentials(rows, 1)
+  const result = c.differentials(rows)
   t.equals(result[0].acc_time_ms, 450700)
   t.equals(result[1].acc_time_ms, 471000)
   t.equals(result[2].acc_time_ms, 483900)
@@ -68,7 +89,7 @@ tap.test('calculate accumulated time per stage in ms', async t => {
 })
 
 tap.test('Misc. tests', async t => {
-  const result = c.differentials(rows, 1)
+  const result = c.differentials(rows)
 
   t.equals(result[392].acc_time_ms, 2561730) //total winner
   t.equals(result[392].rank, 1, 'total winner has rank of 1') //total winner
@@ -80,12 +101,27 @@ tap.test('Misc. tests', async t => {
 })
 
 tap.test('calculate accumulated time behind in total in ms', async t => {
-  const result = c.differentials(rows, 1)
+  const result = c.differentials(rows)
 
   t.equals(result[392].acc_time_behind, 0) //total winner
   t.equals(result[392].rank, 1, 'total winner has rank of 1') //total winner
   t.equals(result[394].acc_time_behind, 111450)
   t.equals(result[394].behind_leader_ms, 50330)
   t.equals(result[394].rank, 2)
+  t.end()
+})
+
+tap.test('Make sure all riders have all stages represented', async t => {
+  const result = c.differentials(rows2)
+
+  t.equals(result[0].rank, 1)
+
+  const rows = result.filter((r) => {
+    return r.rider_id == result[0].rider_id
+  })
+
+  //console.log(rows[1])
+  t.equals(rows[2].rank, 999)
+  t.equals(rows.length, 5)
   t.end()
 })
