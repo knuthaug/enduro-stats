@@ -2,9 +2,25 @@
   <div class="col-2">
   </div>
   <div class="col-8">
-    {{#each riders}}
-    <a href="/rytter/{{uid}}">{{name}}</a>
-    {{/each}}
+    <table class="table table-hover table-dark table-striped table-sm">
+      <thead>
+        <tr>
+          <th scope="col">Navn</th>
+          <th scope="col">Klubb</th>
+          <th scope="col">Ritt</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each riders}}
+        <tr>
+          <td><a href="/rytter/{{uid}}">{{name}}</a></td>
+          <td><a href="/rytter/{{uid}}">{{club}}</a></td>
+          <td><a href="/rytter/{{uid}}">{{count}}</a></td>
+        </tr>
+        {{/each}}
+        <tr>
+      </tbody>
+    </table>   
   </div>
 </div>
 

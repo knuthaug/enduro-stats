@@ -29,10 +29,10 @@ fs.readdir(dir, async function (err, items) {
     if(classes[i].class === 'Lag') {
       continue
     }
-    
+
     logger.info(`Reading back results for race ${values[0]}, year=${values[1]}, class=${classes[i].class}`)
     const results = await db.rawRaceResults(values[0], values[1], classes[i].class)
-    logger.info(`got ${results.length} rows`)
+    logger.debug(`got ${results.length} rows`)
     const calcs = await calc.differentials(results, id)
     await db.insertCalculatedResults(id, calcs)
   }

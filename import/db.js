@@ -44,6 +44,7 @@ class Db {
 
   async insertRace (race) {
     const id = await this.findRace(race.name, race.year)
+
     if (id) {
       // update stage number
       logger.info(`updating race ${race.name} year=${race.year} with stage = ${race.stages}`)
@@ -74,6 +75,21 @@ class Db {
     const query = 'INSERT INTO insert_log(race_id, stage_id) VALUES($1, $2)'
     const values = [race, stage]
     return this.insert(query, values)
+  }
+
+  async insertRaceForRider (raceId, riderId ) {
+
+    const q = 'SELECT id from rider_races WHERE race_id = $1 AND rider_id = $2'
+    const found = await this.find(q, [raceId, riderId])
+    logger.info(`found rider_race id=${found}`)
+    if (!found) {
+      logger.info(`inserting rider_race for race=${raceId}, rider=${riderId}`)
+      const query = 'INSERT INTO rider_races(race_id, rider_id) VALUES($1, $2)'
+      const values = [raceId, riderId]
+      return this.insert(query, values)      
+    }
+
+    return found
   }
 
   async insertRawResult (raceId, riderId, stageNumber, result) {
@@ -117,6 +133,7 @@ class Db {
 
       const riderId = await this.insertRider(rider)
       const raceId = await this.findRace(raceName, raceYear)
+      await this.insertRaceForRider(raceId, riderId)
       await this.insertRawResult(raceId, parseInt(riderId, 10), parseInt(stage.number, 10), result)
       logger.info(`inserting raw result for rider ${riderId}`)
     }

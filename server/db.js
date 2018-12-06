@@ -48,18 +48,13 @@ class Db {
   }
 
   async findAllRiders () {
-    const query = 'SELECT * from riders'
-    const values = [uid]
-    const rows = await this.find(query, values)
-
-    if (rows.length > 0) {
-      return rows[0]
-    }
-    return {}
+    const query = 'select riders.uid, riders.name, riders.club, (SELECT count(race_id) from rider_races where rider_id = riders.id) from riders order by count DESC'
+    const values = []
+    return this.find(query, values)
   }
 
   async findRacesForRider(uid) {
-    const query = 'SELECT DISTINCT race_id, uid, name, year FROM results INNER JOIN races ON results.race_id = races.id where rider_id = (SELECT id FROM riders WHERE uid = $1) ORDER by year DESC'
+    const query = 'select rider_id, races.name, races.year, races.uid from rider_races JOIN races ON races.id  = race_id WHERE rider_id = (SELECT id from riders where uid = $1) group by rider_id, races.name, races.year, races.uid'
     const values = [uid]
     return this.find(query, values)
   }

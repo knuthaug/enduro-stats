@@ -15,7 +15,7 @@ class EqConverter {
     const stats = await fs.stat(this.filename)
 
     if (stats.isFile()) {
-      logger.info(`readin file ${this.filename}`)
+      logger.info(`reading file ${this.filename}`)
       this.file = await fs.readFile(this.filename, 'utf-8')
       return this
     }

@@ -72,7 +72,7 @@
     "pino": "5.8.1"
   },
   "watch": {
-    "start": {
+    "start:local": {
       "patterns": [
         "server",
         "server/src/js",
@@ -83,7 +83,10 @@
         "views/layouts"
       ],
       "extensions": "js,json,css,handlebars",
-      "ignore": "node_modules, public"
+      "ignore": ["node_modules",
+                 "server/dist/js",
+                 "server/dist/css"
+                ]
     }
   }
 }
