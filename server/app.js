@@ -6,10 +6,13 @@ const morgan = require('morgan')
 const config = require('../config')
 const log = require('./log.js')
 const Db = require('./db.js')
+const resultViewMapper = require('./resultViewMapper.js')
+
 const hashedAssets = require('../views/helpers/hashed-assets.js')
 const compare = require('../views/helpers/compare.js')
 const propFor = require('../views/helpers/propFor.js')
-const resultViewMapper = require('./resultViewMapper.js')
+const toJson = require('../views/helpers/toJson.js')
+const isDNF = require('../views/helpers/isDNF.js')
 
 const app = express()
 
@@ -26,7 +29,7 @@ const db = new Db()
 app.engine('handlebars', hbs({
   defaultLayout: 'main',
   extname: '.hbs',
-  helpers: { hashedAssets, compare, propFor },
+  helpers: { hashedAssets, compare, propFor, toJson, isDNF },
   partialsDir: 'views/partials'
 }))
 

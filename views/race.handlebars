@@ -29,7 +29,7 @@
           <th scope="row">{{rank}}</th>
           <td>{{name}}</td>
           {{#each ../../stages}}
-          <td>{{lookup ../this (propFor this 'time')}} <span class="stagerank"> ({{lookup ../this (propFor this 'rank')}})</span></td>
+          <td>{{> stagetime result=../this stage=this }}</span></td>
           {{/each}}
           <td>{{acc_time}}</td>
           <td>{{acc_time_behind}}</td>

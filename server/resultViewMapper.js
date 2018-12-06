@@ -27,7 +27,7 @@ module.exports = function resultViewMapper(classes, results) {
     riders[rider].name = results[i].name
     riders[rider].class = results[i].class
     riders[rider].rider_id = results[i].rider_id
-    riders[rider][`stage${results[i].stage}_time`] = convertMsToTime(results[i].stage_time_ms)
+    riders[rider][`stage${results[i].stage}_time`] = time(results[i].stage_time_ms, results[i].status)
     riders[rider][`stage${results[i].stage}_rank`] = results[i].stage_rank
 
     if(results[i].stage === lastStage) {
@@ -44,6 +44,13 @@ module.exports = function resultViewMapper(classes, results) {
   }
 
   return [stages, out]
+}
+
+function time(time, status) {
+  if(time === 0) {
+    return status
+  }
+  return convertMsToTime(time)
 }
 
 function compareRank(a, b) {

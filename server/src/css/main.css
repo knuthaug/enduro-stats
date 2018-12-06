@@ -35,6 +35,14 @@ a:hover {
   font-size: 85%;
 }
 
+.dnf {
+  text-transform: uppercase;
+  background-color: white;
+  color: #333;
+  font-size: 75%;
+  padding: 2px;
+}
+
 .stagerank {
   font-size: 80%;
 }

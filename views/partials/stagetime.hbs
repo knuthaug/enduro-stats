@@ -1,0 +1,5 @@
+{{#if (isDNF result stage)}}
+  <span class=dnf>{{lookup result (propFor stage 'time')}}</span>
+{{else}}
+  {{lookup result (propFor stage 'time')}} <span class="stagerank"> ({{lookup result (propFor stage 'rank')}})
+{{/if}}
