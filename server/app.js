@@ -56,6 +56,19 @@ app.get('/ritt', async (req, res) => {
   res.render('races', { races, active: 'ritt' })
 })
 
+app.get('/rytter/:uid', async (req, res) => {
+  log.debug(`request for ${req.path}`)
+  const rider = await db.findRider(req.params.uid)
+  const races = await db.findRacesForRider(req.params.uid)
+  res.render('rider', { rider, races, active: 'ryttere' })
+})
+
+app.get('/ryttere', async (req, res) => {
+  log.debug(`request for ${req.path}`)
+  const riders = await db.findAllRiders()
+  res.render('riders', { riders, active: 'ryttere' })
+})
+
 app.get('/assets/js/:file', (req, res) => {
   const file = req.params.file
   const options = { root: './server/dist' }

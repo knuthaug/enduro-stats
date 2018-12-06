@@ -27,7 +27,7 @@
         {{#each this}}
         <tr>
           <th scope="row">{{rank}}</th>
-          <td>{{name}}</td>
+          <td><a href="/rytter/{{uid}}">{{name}}</a></td>
           {{#each ../../stages}}
           <td>{{> stagetime result=../this stage=this }}</span></td>
           {{/each}}

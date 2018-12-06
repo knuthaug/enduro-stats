@@ -31,6 +31,9 @@ const race = {
 const db = new Db()
 sinon.stub(db, 'findRaces').returns({ rows: races })
 sinon.stub(db, 'findRace').returns({ rows: race })
+sinon.stub(db, 'classesForRace').returns({ rows: [ 'Menn', 'Kvinner']})
+//sinon.stub(db, 'raceResults').returns({ rows: [ 'Menn', 'Kvinner']})
+
 app.__set__('db', db)
 
 tap.test('index page responds with 200', async t => {
@@ -41,10 +44,11 @@ tap.test('index page responds with 200', async t => {
   t.end()
 })
 
-tap.test('race page responds with 200', async t => {
+tap.test('race page responds with 200 for one race', async t => {
   await supertest(app)
     .get('/ritt/b5abd441f9b8afd93fc95a897d33d2a4')
     .expect(200)
     .expect('Content-type', 'text/html; charset=utf-8')
   t.end()
 })
+

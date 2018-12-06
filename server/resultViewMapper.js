@@ -23,6 +23,7 @@ module.exports = function resultViewMapper(classes, results) {
     }
 
     //fill rider object with values
+    riders[rider].uid = results[i].uid
     riders[rider].rank = results[i].rank
     riders[rider].name = results[i].name
     riders[rider].class = results[i].class

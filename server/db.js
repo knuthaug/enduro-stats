@@ -36,6 +36,34 @@ class Db {
     return {}
   }
 
+  async findRider (uid) {
+    const query = 'SELECT * from riders WHERE uid = $1'
+    const values = [uid]
+    const rows = await this.find(query, values)
+
+    if (rows.length > 0) {
+      return rows[0]
+    }
+    return {}
+  }
+
+  async findAllRiders () {
+    const query = 'SELECT * from riders'
+    const values = [uid]
+    const rows = await this.find(query, values)
+
+    if (rows.length > 0) {
+      return rows[0]
+    }
+    return {}
+  }
+
+  async findRacesForRider(uid) {
+    const query = 'SELECT DISTINCT race_id, uid, name, year FROM results INNER JOIN races ON results.race_id = races.id where rider_id = (SELECT id FROM riders WHERE uid = $1) ORDER by year DESC'
+    const values = [uid]
+    return this.find(query, values)
+  }
+
   async classesForRace (uid) {
     const query = 'SELECT DISTINCT class from results where race_id = (SELECT id FROM races WHERE uid = $1)'
     const values = [uid]
@@ -48,7 +76,7 @@ class Db {
   }
 
   async raceResults(uid) {
-    const query = 'SELECT *, (SELECT number FROM stages WHERE id = results.stage_id) as stage, (SELECT name FROM riders where id = results.rider_id) as name FROM results WHERE race_id = (SELECT id FROM races where uid = $1) ORDER BY class, stage_id, rank'
+    const query = 'SELECT *, (SELECT number FROM stages WHERE id = results.stage_id) as stage, (SELECT name FROM riders where id = results.rider_id) as name, (SELECT uid from riders WHERE id = results.rider_id) as uid FROM results WHERE race_id = (SELECT id FROM races where uid = $1) ORDER BY class, stage_id, rank'
     const values = [uid]
     return this.find(query, values)
   }
