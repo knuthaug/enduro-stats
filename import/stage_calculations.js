@@ -123,7 +123,7 @@ class StageCalculations {
     const first = rows.find((element) => {
       return element.stage === stageNumber && element.stage_rank === 1
     })
-    console.log(`first in stage ${first.rider_id} for stage=${stageNumber}`)
+    //console.log(`first in stage ${first.rider_id} for stage=${stageNumber}`)
     return first
   }
 

@@ -8,6 +8,7 @@ const log = require('./log.js')
 const Db = require('./db.js')
 const hashedAssets = require('../views/helpers/hashed-assets.js')
 const compare = require('../views/helpers/compare.js')
+const resultViewMapper = require('./resultViewMapper.js')
 
 const app = express()
 
@@ -34,12 +35,9 @@ app.get('/ritt/:uid', async (req, res) => {
   log.debug(`request for ${req.path}`)
   const race = await db.findRace(req.params.uid)
   const raceClasses = await db.classesForRace(req.params.uid)
+  const raceResults = await db.raceResults(req.params.uid)
 
-  const results = { }
-  for(let i = 0; i < raceClasses.length; i++) {
-    results[raceClasses[i]] = []
-  }
-  console.log(results)
+  const results = resultViewMapper(raceClasses, raceResults)
   res.render('race', { race, results, active: 'ritt' })
 })
 

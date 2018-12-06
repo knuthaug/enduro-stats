@@ -4,6 +4,7 @@ const fs = require('await-fs')
 const md5 = require('md5')
 const logger = require('../logger.js')
 const spellcheck = require('../spellcheck.js')
+const { convertMsToTime } = require('../../lib/time.js')
 
 class EqConverter {
   constructor (filename) {
@@ -43,7 +44,7 @@ class EqConverter {
           rider_uid: this.checksum(name),
           name,
           gender: row.Gender,
-          time: this.convertTime(row.NetTime),
+          time: convertMsToTime(row.NetTime),
           acc_time_ms: row.NetTime,
           rank: parseInt(row.RankClass, 10),
           class: (row.ClassName.indexOf(' ') !== -1) ? row.ClassName.split(/ /)[1] : row.ClassName,
@@ -77,15 +78,6 @@ class EqConverter {
       return 'OK'
     }
     return status
-  }
-
-  convertTime (seconds) {
-    const fractionalSeconds = seconds.substr(seconds.length - 3, 1)
-    let secs = seconds.substr(0, seconds.length - 3)
-    secs = Number(secs)
-    const m = Math.floor(secs % 3600 / 60)
-    var s = Math.floor(secs % 3600 % 60)
-    return `${m}:${s}.${fractionalSeconds}`
   }
 }
 
