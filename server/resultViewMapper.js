@@ -3,6 +3,7 @@ const { convertMsToTime } = require('../lib/time.js')
 module.exports = function resultViewMapper(classes, results) {
   const out = {}
   const riders = {}
+  const stages = []
 
   const lastStage = results.reduce((acc, current) => {
     return current.stage > acc ? current.stage : acc
@@ -10,12 +11,20 @@ module.exports = function resultViewMapper(classes, results) {
 
   for(let i = 0; i < results.length; i++) {
     const rider = results[i].rider_id
+
+    if(!stages.find((s) => {
+      return s === results[i].stage
+    })) {
+      stages.push(results[i].stage)
+    }
+
     if(!riders.hasOwnProperty(rider)) {
       riders[rider] = {}
     }
 
     //fill rider object with values
     riders[rider].rank = results[i].rank
+    riders[rider].name = results[i].name
     riders[rider].class = results[i].class
     riders[rider].rider_id = results[i].rider_id
     riders[rider][`stage${results[i].stage}_time`] = convertMsToTime(results[i].stage_time_ms)
@@ -34,7 +43,7 @@ module.exports = function resultViewMapper(classes, results) {
     }).sort(compareRank)
   }
 
-  return out
+  return [stages, out]
 }
 
 function compareRank(a, b) {

@@ -11,17 +11,14 @@
     {{#each results}}
     <h3>{{@key}}</h3>
 
-    <table class="table table-dark table-striped">
+    <table class="table table-dark table-striped table-sm">
       <thead>
         <tr>
           <th scope="col">Plass</th>
           <th scope="col">Navn</th>
-          <th scope="col">Etappe 1</th>
-          <th scope="col">Etappe 2</th>
-          <th scope="col">Etappe 3</th>
-          <th scope="col">Etappe 4</th>
-          <th scope="col">Etappe 5</th>
-          <th scope="col">Etappe 6</th>
+          {{#each ../stages}}
+          <th scope="col">Etappe {{this}}</th>
+          {{/each}}
           <th scope="col">Totaltid</th>
           <th scope="col">Etter vinner</th>
         </tr>
@@ -31,12 +28,9 @@
         <tr>
           <th scope="row">{{rank}}</th>
           <td>{{name}}</td>
-          <td>{{stage1_time}} ({{stage1_rank}})</td>
-          <td>{{stage2_time}} ({{stage2_rank}})</td>
-          <td>{{stage3_time}} ({{stage3_rank}})</td>
-          <td>{{stage4_time}} ({{stage4_rank}})</td>
-          <td>{{stage5_time}} ({{stage5_rank}})</td>
-          <td>{{stage6_time}} ({{stage6_rank}})</td>
+          {{#each ../../stages}}
+          <td>{{lookup ../this (propFor this 'time')}} <span class="stagerank"> ({{lookup ../this (propFor this 'rank')}})</span></td>
+          {{/each}}
           <td>{{acc_time}}</td>
           <td>{{acc_time_behind}}</td>
         </tr>

@@ -4,11 +4,18 @@ const path = require('path')
 
 const mapper = require('../server/resultViewMapper.js')
 const data = JSON.parse(fs.readFileSync(path.join(__dirname, './data/race-results-complete.json')).toString())
-const r = mapper(['Menn', 'Kvinner'], data)
+const [stages, r] = mapper(['Menn', 'Kvinner'], data)
 
 tap.test('results are mapped to class names', (t) => {
   t.equals(r.hasOwnProperty('Menn'), true, 'Has class Menn')
   t.equals(r.hasOwnProperty('Kvinner'), true, 'Has class Kvinner')
+  t.end()
+})
+
+tap.test('returns overview of stages for race', async t => {
+  t.equals(stages.length, 6)
+  t.equals(stages[0], 1)
+  t.equals(stages[stages.length - 1], 6)
   t.end()
 })
 

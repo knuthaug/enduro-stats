@@ -48,7 +48,7 @@ class Db {
   }
 
   async raceResults(uid) {
-    const query = 'SELECT *,(SELECT number FROM stages WHERE id = results.stage_id) as stage FROM results WHERE race_id = (SELECT id FROM races where uid = $1) ORDER BY class, stage_id, rank'
+    const query = 'SELECT *, (SELECT number FROM stages WHERE id = results.stage_id) as stage, (SELECT name FROM riders where id = results.rider_id) as name FROM results WHERE race_id = (SELECT id FROM races where uid = $1) ORDER BY class, stage_id, rank'
     const values = [uid]
     return this.find(query, values)
   }

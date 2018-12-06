@@ -8,6 +8,7 @@ const log = require('./log.js')
 const Db = require('./db.js')
 const hashedAssets = require('../views/helpers/hashed-assets.js')
 const compare = require('../views/helpers/compare.js')
+const propFor = require('../views/helpers/propFor.js')
 const resultViewMapper = require('./resultViewMapper.js')
 
 const app = express()
@@ -22,7 +23,13 @@ if (config.get('env') !== 'test') {
 let server
 const db = new Db()
 
-app.engine('handlebars', hbs({ defaultLayout: 'main', extname: '.hbs', helpers: { hashedAssets, compare } }))
+app.engine('handlebars', hbs({
+  defaultLayout: 'main',
+  extname: '.hbs',
+  helpers: { hashedAssets, compare, propFor },
+  partialsDir: 'views/partials'
+}))
+
 app.set('view engine', 'handlebars')
 
 app.get('/', async (req, res) => {
@@ -36,9 +43,8 @@ app.get('/ritt/:uid', async (req, res) => {
   const race = await db.findRace(req.params.uid)
   const raceClasses = await db.classesForRace(req.params.uid)
   const raceResults = await db.raceResults(req.params.uid)
-
-  const results = resultViewMapper(raceClasses, raceResults)
-  res.render('race', { race, results, active: 'ritt' })
+  const [stages, results] = resultViewMapper(raceClasses, raceResults)
+  res.render('race', { race, stages, results, active: 'ritt' })
 })
 
 app.get('/ritt', async (req, res) => {
