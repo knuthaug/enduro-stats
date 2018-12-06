@@ -77,16 +77,17 @@ class Db {
     return this.insert(query, values)
   }
 
-  async insertRaceForRider (raceId, riderId ) {
+  async insertRaceForRider (raceId, riderId, finalRank) {
 
     const q = 'SELECT id from rider_races WHERE race_id = $1 AND rider_id = $2'
     const found = await this.find(q, [raceId, riderId])
     logger.info(`found rider_race id=${found}`)
+
     if (!found) {
       logger.info(`inserting rider_race for race=${raceId}, rider=${riderId}`)
-      const query = 'INSERT INTO rider_races(race_id, rider_id) VALUES($1, $2)'
-      const values = [raceId, riderId]
-      return this.insert(query, values)      
+      const query = 'INSERT INTO rider_races(race_id, rider_id, final_rank) VALUES($1, $2, $3)'
+      const values = [raceId, riderId, finalRank]
+      return this.insert(query, values)
     }
 
     return found
@@ -116,8 +117,21 @@ class Db {
                       result[i].behind_leader_ms,
                       result[i].acc_time_behind]
       // console.log(values)
-      this.insert(query, values)
+      await this.insert(query, values)
+      await this.insertRaceForRider(raceId, result[i].rider_id, this.finalRank(result, result[i].rider_id))
+
     }
+  }
+
+  finalRank(rows, riderId) {
+    const lastStage = rows.reduce((acc, current) => {
+      return current.stage > acc ? current.stage : acc
+    }, 0)
+
+    return rows.find((r) => {
+      return r.rider_id === riderId && r.stage === lastStage
+    }).rank
+
   }
 
   async insertRawResults (raceName, raceYear, stage, results) {
@@ -133,7 +147,6 @@ class Db {
 
       const riderId = await this.insertRider(rider)
       const raceId = await this.findRace(raceName, raceYear)
-      await this.insertRaceForRider(raceId, riderId)
       await this.insertRawResult(raceId, parseInt(riderId, 10), parseInt(stage.number, 10), result)
       logger.info(`inserting raw result for rider ${riderId}`)
     }

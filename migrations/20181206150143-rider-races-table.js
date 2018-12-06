@@ -21,6 +21,9 @@ exports.up = function(db) {
       primaryKey: true,
       autoIncrement: true
     },
+    final_rank: {
+      type: 'int',
+    },
     rider_id: {
       type: 'int',
       notNull: true,
