@@ -38,7 +38,7 @@ fs.readdir(dir, async function (err, items) {
 
   const classes = await db.classesForRace(id)
   for(let i = 0; i < classes.length; i++) {
-    if(classes[i].class === 'Lag') {
+    if(classes[i].class === 'Lag Rekrutt') {
       continue
     }
 

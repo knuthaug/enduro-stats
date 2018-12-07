@@ -133,6 +133,8 @@ tap.test('test class name transcribing', t => {
   t.equals(eq.className('K junior'), 'Kvinner junior')
   t.equals(eq.className('k junior'), 'Kvinner junior')
   t.equals(eq.className('m jr'), 'Menn junior')
+  t.equals(eq.className('3 Lag rekrutt'), 'Lag rekrutt')
+  t.equals(eq.className('3Lag rekrutt'), 'Lag rekrutt')
   t.equals(eq.className('Lag'), 'Lag')
   t.end()
 })

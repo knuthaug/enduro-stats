@@ -74,6 +74,8 @@ class EqConverter {
       return 'Menn senior'
     } else if(/^K|Kvinner/i.test(name)) {
       return 'Kvinner senior'
+    } else if (/^\d/.test(name)) {
+      return name.replace(/^\d\s?/, '')
     }
     return name
   }

@@ -41,6 +41,10 @@ exports.up = function (db) {
       type: 'int',
       notNull: false
     },
+    stage_time_ms: {
+      type: 'int',
+      notNull: false
+    },
     stage_id: {
       type: 'int',
       notNull: true,
