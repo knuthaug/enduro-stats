@@ -54,15 +54,28 @@ class EqConverter {
           status: this.convertStatus(row.Status)
         }
 
-        if(opts.acc) {//accumulative mode, stage times are this stage plus the one before. 
-          ret.acc_time_ms = row.NetTime
-        } else { //stage time is just that
-          ret.stage_time_ms = row.NetTime
-        }
+        return this.setTime(ret, opts, row.NetTime)
 
-        return ret
       })
     }
+  }
+
+  setTime(obj, opts, time) {
+    if(opts.acc) {//accumulative mode, stage times are this stage plus the one before.
+      if(obj.status !== 'OK') {
+        obj.acc_time_ms = 0
+      } else {
+        obj.acc_time_ms = time
+      }
+    } else { //stage time is just that
+      if(obj.status !== 'OK') {
+        obj.stage_time_ms = 0
+      } else {
+        obj.stage_time_ms = time
+      }
+    }
+
+    return obj
   }
 
   className(name) {

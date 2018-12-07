@@ -160,3 +160,16 @@ tap.test('Make sure all riders have all stages represented', async t => {
   t.equals(ro.length, 5)
   t.end()
 })
+
+tap.test('Handle stages where there are times and dnf/error status', async t => {
+  const rows = JSON.parse(fs.readFileSync(path.join(__dirname, './data/race-results-menn-traktor2015.json')))
+  const res = c.differentials(rows)
+
+  const problem = res.find((r) => {
+    return r.rider_id == 141 && r.stage === 5
+  })
+
+  t.equals(problem.final_rank, 111)
+  //t.equals(ro.length, 5)
+  t.end()
+})
