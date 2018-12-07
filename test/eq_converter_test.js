@@ -198,3 +198,20 @@ tap.test('handle results with time in different named column', async t => {
   t.equals(data.results[0].team, '')
   t.end()
 })
+
+
+tap.test('handle jr men from 2014 nesbyen (funky data)', async t => {
+  const eq = new EqConverter(path.join(__dirname, 'data/nesbyen-2014-menn-jr-fe1.csv'))
+  const loaded = await eq.load()
+  const data = await loaded.parse({ acc: false })
+
+  t.equals(data.results[0].name, 'Ted Johansen')
+  t.equals(data.results[0].gender, 'M')
+  t.equals(data.results[0].rank, 1)
+  t.equals(data.results[0].stage_time_ms, 547300, 'time should be correct in ms')
+  t.equals(data.results[0].time, '09:07.3', 'time should be correct in ms')
+  t.equals(data.results[0].class, 'Menn junior')
+  t.equals(data.results[0].club, 'IF Frøy')
+  t.equals(data.results[0].team, '')
+  t.end()
+})

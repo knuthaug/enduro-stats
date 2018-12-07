@@ -15,7 +15,7 @@ class StageCalculations {
 
     this.findStageTimes(rows, riders, options.accumulate)
     this.findTimeBehindLeader(rows, stages, stageIds)
-    this.findStageRanks(rows, stages)
+    this.findStageRanks(rows, stages, options.accumulate)
     this.fillMissingStages(rows, riders, stages, stageIds)
     this.findFinalRanks(rows, riders, stages)
     return rows
@@ -58,9 +58,9 @@ class StageCalculations {
     }
   }
 
-  findStageRanks (rows, stages) {
+  findStageRanks (rows, stages, accumulative) {
     for (let i = 0; i < stages.length; i++) {
-      this.stageRanks(rows, stages[i], stages[stages.length - 1])
+      this.stageRanks(rows, stages[i], stages[stages.length - 1], accumulative)
     }
   }
 
@@ -196,14 +196,14 @@ class StageCalculations {
       if(i === 0) { //first stage
         rows[stageIndexes[i]].acc_time_ms = rows[stageIndexes[i]].stage_time_ms
       } else {
-        rows[stageIndexes[i]].acc_time_ms = rows[stageIndexes[i]].stage_time_ms + rows[stageIndexes[i - 1 ]].stage_time_ms
+        rows[stageIndexes[i]].acc_time_ms = rows[stageIndexes[i]].stage_time_ms + rows[stageIndexes[i - 1]].acc_time_ms
       }
     }
   }
 
 
 
-  stageRanks (rows, stageNum, maxStage) {
+  stageRanks (rows, stageNum, maxStage, accumulative) {
     // find all results for stageId
     const originalStageIndex = rows.map((r, index) => {
       if (r.stage === stageNum) {
@@ -238,19 +238,37 @@ class StageCalculations {
           continue
         }
 
-        stageResults[i].behind_leader_ms = this.timeBehindRider(stageResults[i], this.firstInStage(stageResults, stageResults[i].stage))
+        if(accumulative) {
+          stageResults[i].behind_leader_ms = this.timeBehindRider(stageResults[i], this.firstInStage(stageResults, stageResults[i].stage))
+        } else {
+          stageResults[i].behind_leader_ms = -1
+        }
       }
 
       // acc_time_behind, just for last stage
-      if (stageResults[i].stage === maxStage) {
-        if (stageResults[i].rank === 1) {
-          stageResults[i].acc_time_behind = 0
-        } else {
-          if (this.notFinished(stageResults[i])) {
+      if(accumulative) {
+        if (stageResults[i].stage === maxStage) {
+          if (stageResults[i].rank === 1) {
             stageResults[i].acc_time_behind = 0
-            continue
+          } else {
+            if (this.notFinished(stageResults[i])) {
+              stageResults[i].acc_time_behind = 0
+              continue
+            }
+            stageResults[i].acc_time_behind = this.accTimeBehindRider(stageResults[i], this.firstInRace(stageResults, maxStage))
           }
-          stageResults[i].acc_time_behind = this.accTimeBehindRider(stageResults[i], this.firstInRace(stageResults, stageResults[i].stage))
+        }
+      } else {
+        if (stageResults[i].stage === maxStage) {
+          if (stageResults[i].stage_rank === 1) {
+            stageResults[i].acc_time_behind = 0
+          } else {
+            if (this.notFinished(stageResults[i])) {
+              stageResults[i].acc_time_behind = 0
+              continue
+            }
+            stageResults[i].acc_time_behind = this.accTimeBehindRider(stageResults[i], this.firstInRaceByTime(stageResults, maxStage))
+          }
         }
       }
     }
@@ -262,17 +280,27 @@ class StageCalculations {
   }
 
   firstInStage (rows, stageNumber) {
-    const first = rows.find((element) => {
+    return rows.find((element) => {
       return element.stage === stageNumber && element.stage_rank === 1
     })
-    // console.log(`first in stage ${first.rider_id} for stage=${stageNumber}`)
-    return first
   }
 
   firstInRace (rows, stageNumber) {
     return rows.find((element) => {
       return element.stage === stageNumber && element.rank === 1
     })
+  }
+
+  firstInRaceByTime (rows, stageNumber) {
+    const sorted = rows.sort((a, b) => {
+      if(a.acc_time_ms > b.acc_time_ms) {
+        return 1
+      } else if (a.acc_time_ms < b.acc_time_ms) {
+        return -1
+      }
+      return 0
+    })
+    return sorted[0]
   }
 
   timeBehindRider (currentRider, otherRider) {
