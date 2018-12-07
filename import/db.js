@@ -48,26 +48,28 @@ class Db {
     if (id) {
       // update stage number
       logger.info(`updating race ${race.name} year=${race.year} with stage = ${race.stages}`)
-      return this.update('UPDATE RACES SET stages = $1 WHERE id = $2', [race.stages, id])
+      await this.update('UPDATE RACES SET stages = $1 WHERE id = $2', [race.stages, id])
+      return id
     }
 
     logger.info(`Inserting race ${race.name} year=${race.year} into races`)
     const query = 'INSERT INTO races(name, stages, date, year, uid) VALUES($1, $2, $3, $4, $5)'
     const values = [race.name, race.stages, race.date, race.year, race.uid]
-    return this.update(query, values)
+    await this.update(query, values)
+    return this.findRace(race.name, race.year)
   }
 
-  async insertStage (race, stage, raceYear) {
-    const stageId = await this.findStage(stage.name, stage.number)
+  async insertStage (race, stage, raceId) {
+    const stageId = await this.findStage(stage.name, stage.number, raceId)
 
     if (stageId) {
       logger.debug(`found stageId = ${stageId}`)
       return stageId
     }
 
-    logger.info(`Inserting stage ${stage.name}, stage number ${stage.number} for year ${raceYear}`)
-    const query = 'INSERT INTO stages(name, number, race_id) VALUES($1, $2, (SELECT r.id FROM races r WHERE r.name = $3 AND r.year = $4))'
-    const values = [stage.name, parseInt(stage.number, 10), race, parseInt(raceYear, 10)]
+    logger.info(`Inserting stage ${stage.name}, stage number ${stage.number} for race id ${raceId}`)
+    const query = 'INSERT INTO stages(name, number, race_id) VALUES($1, $2, $3)'
+    const values = [stage.name, parseInt(stage.number, 10), raceId]
     return this.insert(query, values)
   }
 
@@ -232,11 +234,11 @@ class Db {
     return this.find(query, values, `Error: could not find race for name='${name}' and year=${year}`)
   }
 
-  async findStage (name, stageNumber) {
-    const query = 'SELECT id FROM stages where name = $1 AND number = $2'
+  async findStage (name, stageNumber, raceId) {
+    const query = 'SELECT id FROM stages where name = $1 AND number = $2 and race_id = $3'
     // console.log(`trying to find stage for name = ${name} number=${stageNumber}`)
-    const values = [name, stageNumber]
-    return this.find(query, values, `Error: could not find stage for name='${name}' and number=${stageNumber}`)
+    const values = [name, stageNumber, raceId]
+    return this.find(query, values, `Error: could not find stage for name='${name}' and number=${stageNumber}, raceId=${raceId}`)
   }
 
   async findStageByRace (raceId, stageNumber) {

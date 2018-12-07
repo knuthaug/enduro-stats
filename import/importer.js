@@ -62,8 +62,8 @@ async function readFile (filename) {
   const eq = new Eq(fullName)
   await eq.load()
   const data = await eq.parse({ acc: options.accumulate})
-  await db.insertRace(data.race)
-  const stageId = await db.insertStage(data.race.name, data.stage, data.race.year)
+  const raceId = await db.insertRace(data.race)
+  const stageId = await db.insertStage(data.race.name, data.stage, raceId)
   await db.insertRawResults(data.race.name, data.race.year, data.stage, data.results)
   return [data.race.name, data.race.year]
 }
