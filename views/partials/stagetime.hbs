@@ -1,5 +1,16 @@
 {{#if (isDNF result stage)}}
-  <span class=dnf>{{lookup result (propFor stage 'time')}}</span>
-{{else}}
+  <span class=dnf title="Ikke fullført etappe">{{lookup result (propFor stage 'time')}}</span>
+{{/if}}
+
+{{#if (isDNS result stage)}}
+  <span class=dnf title="Ikke påstartet etappe">{{lookup result (propFor stage 'time')}}</span>
+{{/if}}
+
+{{#if (isError result stage)}}
+  <span class=dnf title="Tiden indikerer en feil i tidtagingen, f.eks at tiden er negativ, mye mindre enn de andre rytterne eller 0">{{lookup result (propFor stage 'time')}}</span>
+{{/if}}
+
+
+{{#if (isOK result stage)}}
   {{lookup result (propFor stage 'time')}} <span class="stagerank"> ({{lookup result (propFor stage 'rank')}})
 {{/if}}

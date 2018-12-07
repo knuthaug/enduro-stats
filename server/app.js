@@ -13,6 +13,9 @@ const compare = require('../views/helpers/compare.js')
 const propFor = require('../views/helpers/propFor.js')
 const toJson = require('../views/helpers/toJson.js')
 const isDNF = require('../views/helpers/isDNF.js')
+const isDNS = require('../views/helpers/isDNS.js')
+const isError = require('../views/helpers/isError.js')
+const isOK = require('../views/helpers/isOK.js')
 
 const app = express()
 
@@ -29,7 +32,7 @@ const db = new Db()
 app.engine('handlebars', hbs({
   defaultLayout: 'main',
   extname: '.hbs',
-  helpers: { hashedAssets, compare, propFor, toJson, isDNF },
+  helpers: { hashedAssets, compare, propFor, toJson, isDNF, isDNS, isError, isOK },
   partialsDir: 'views/partials'
 }))
 
