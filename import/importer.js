@@ -4,16 +4,24 @@ const fs = require('fs')
 const path = require('path')
 const StageCalculations = require('./stage_calculations.js')
 const logger = require('./logger.js')
+const cmd = require('command-line-args')
 
 const db = new Db()
 const calc = new StageCalculations()
 
-if (process.argv.length <= 2) {
-  console.log('Usage: ' + __filename + ' path/to/directory')
+const optionDefinitions = [
+  { name: 'accumulate', alias: 'a', type: Boolean },
+  { name: 'dir', alias: 'd', type: String },
+]
+
+const options = cmd(optionDefinitions)
+
+if (!options.hasOwnProperty('dir')) {
+  console.log('Usage: [-a] -f path/to/directory')
   process.exit(-1)
 }
 
-const dir = process.argv[2]
+const dir = options.dir
 fs.readdir(dir, async function (err, items) {
   let values = []
   for (var i = 0; i < items.length; i++) {
@@ -33,8 +41,13 @@ fs.readdir(dir, async function (err, items) {
     logger.info(`Reading back results for race ${values[0]}, year=${values[1]}, class=${classes[i].class}`)
     const results = await db.rawRaceResults(values[0], values[1], classes[i].class)
     logger.debug(`got ${results.length} rows`)
-    const calcs = await calc.differentials(results, id)
-    await db.insertCalculatedResults(id, calcs)
+
+    if(options.accumulate) {
+      const calcs = await calc.differentials(results, id)
+      await db.insertCalculatedResults(id, calcs)
+    } else {
+      console.log('Not calculating yet because of lack of support')
+    }
   }
 
   db.destroy()

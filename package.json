@@ -61,6 +61,7 @@
   },
   "dependencies": {
     "await-fs": "1.0.0",
+    "command-line-args": "5.0.2",
     "compression": "1.7.3",
     "convict": "4.4.0",
     "express": "4.16.4",
@@ -83,10 +84,11 @@
         "views/layouts"
       ],
       "extensions": "js,json,css,handlebars",
-      "ignore": ["node_modules",
-                 "server/dist/js",
-                 "server/dist/css"
-                ]
+      "ignore": [
+        "node_modules",
+        "server/dist/js",
+        "server/dist/css"
+      ]
     }
   }
 }

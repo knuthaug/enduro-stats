@@ -47,13 +47,26 @@ class EqConverter {
           time: convertMsToTime(row.NetTime),
           acc_time_ms: row.NetTime,
           rank: parseInt(row.RankClass, 10),
-          class: (row.ClassName.indexOf(' ') !== -1) ? row.ClassName.split(/ /)[1] : row.ClassName,
+          class: this.className(row.ClassName),
           club: row.Club,
           team: row.Team,
           status: this.convertStatus(row.Status)
         }
       })
     }
+  }
+
+  className(name) {
+    if(/M.+junior|m.+jr/i.test(name)) {
+      return 'Menn junior'
+    } else if(/K.+junior|k.+jr/i.test(name)) {
+        return 'Kvinner junior'
+      } else if(/^M|Menn/i.test(name)) {
+      return 'Menn senior'
+    } else if(/^K|Kvinner/i.test(name)) {
+      return 'Kvinner senior'
+    }
+    return name
   }
 
   name (obj) {
