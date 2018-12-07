@@ -16,6 +16,10 @@ const optionDefinitions = [
 
 const options = cmd(optionDefinitions)
 
+if (!options.hasOwnProperty('accumulate')) {
+  options.accumulate = false
+}
+
 if (!options.hasOwnProperty('dir')) {
   console.log('Usage: [-a] -f path/to/directory')
   process.exit(-1)
@@ -57,7 +61,7 @@ async function readFile (filename) {
   const fullName = path.join(dir, filename)
   const eq = new Eq(fullName)
   await eq.load()
-  const data = await eq.parse()
+  const data = await eq.parse({ acc: options.accumulate})
   await db.insertRace(data.race)
   const stageId = await db.insertStage(data.race.name, data.stage, data.race.year)
   await db.insertRawResults(data.race.name, data.race.year, data.stage, data.results)

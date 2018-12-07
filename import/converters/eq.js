@@ -24,7 +24,9 @@ class EqConverter {
     throw new Error(`file ${this.filename} does not exist`)
   }
 
-  async parse () {
+  async parse (options) {
+    const opts = options || { acc: true }
+
     const raw = await csv(this.file)
     return {
       race: {
@@ -40,18 +42,25 @@ class EqConverter {
       },
       results: raw.map((row) => {
         const name = spellcheck.check(row.NameFormatted)
-        return {
+        const ret = {
           rider_uid: this.checksum(name),
           name,
           gender: row.Gender,
           time: convertMsToTime(row.NetTime),
-          acc_time_ms: row.NetTime,
           rank: parseInt(row.RankClass, 10),
           class: this.className(row.ClassName),
           club: row.Club,
           team: row.Team,
           status: this.convertStatus(row.Status)
         }
+
+        if(opts.acc) {//accumulative mode, stage times are this stage plus the one before. 
+          ret.acc_time_ms = row.NetTime
+        } else { //stage time is just that
+          ret.stage_time_ms = row.NetTime
+        }
+
+        return ret
       })
     }
   }

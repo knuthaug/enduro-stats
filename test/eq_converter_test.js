@@ -136,3 +136,31 @@ tap.test('test class name transcribing', t => {
   t.equals(eq.className('Lag'), 'Lag')
   t.end()
 })
+
+tap.test('handle eq files not in accumulative mode', async t => {
+  const eq = new EqConverter(path.join(__dirname, 'data/nesbyen-2014-menn-fe1.csv'))
+  const loaded = await eq.load()
+  const data = await loaded.parse({ acc: false })
+
+  t.equals(data.race.name, 'NesbyEnduro 80twenty')
+  t.equals(data.race.date, '2014-08-03')
+  t.equals(data.race.year, '2014')
+  t.equals(data.race.stages, '1')
+
+  t.equals(data.stage.name, 'SS1')
+  t.equals(data.stage.number, '1')
+
+  t.equals(data.results[0].name, 'Ove Grøndal')
+  t.equals(data.results[0].gender, 'M')
+  t.equals(data.results[0].time, '07:46.0')
+  t.equals(data.results[0].stage_time_ms, '466068')
+  t.equals(data.results[0].rank, 1)
+  t.equals(data.results[0].class, 'Menn senior')
+  t.equals(data.results[0].club, '')
+  t.equals(data.results[0].team, '')
+
+  t.equals(data.results[1].rank, 2)
+  t.equals(data.results[1].stage_time_ms, '477981')
+
+  t.end()
+})
