@@ -33,9 +33,9 @@ fs.readdir(dir, async function (err, items) {
   }
 
   // console.log(`race=${values[0]}, year=${values[1]}`)
-  const id = await db.findRace(values[0], values[1])
+  const raceId = await db.findRace(values[0], values[1])
 
-  const classes = await db.classesForRace(id)
+  const classes = await db.classesForRace(raceId)
   for (let i = 0; i < classes.length; i++) {
     if (classes[i].class === 'Lag Rekrutt') {
       continue
@@ -45,12 +45,8 @@ fs.readdir(dir, async function (err, items) {
     const results = await db.rawRaceResults(values[0], values[1], classes[i].class)
     logger.debug(`got ${results.length} rows`)
 
-    if (options.accumulate) {
-      const calcs = await calc.differentials(results, id)
-      await db.insertCalculatedResults(id, calcs)
-    } else {
-      console.log('Not calculating yet because of lack of support')
-    }
+    const calcs = await calc.differentials(results, options)
+    await db.insertCalculatedResults(raceId, calcs)
   }
 
   db.destroy()

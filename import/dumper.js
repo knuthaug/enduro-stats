@@ -5,7 +5,7 @@ const db = new Db()
 call()
 
 async function call () {
-  const results = await db.rawRaceResults('NesbyEnduro 80twenty', 2014, 'Menn senior')
+  const results = await db.rawRaceResults('80/20 NesbyEnduro', 2015, 'Menn senior')
   console.log(JSON.stringify(results, null, 2))
   db.destroy()
 }

@@ -6,14 +6,14 @@ const ERROR_RANK = 999
 class StageCalculations {
   differentials (rows, options) {
     if(!options) {
-      options = { acc: true }
+      options = { accumulate: true }
     }
     const stages = []
     const stageIds = {}
 
     const riders = this.findAllRiders(rows)
 
-    this.findStageTimes(rows, riders, options.acc)
+    this.findStageTimes(rows, riders, options.accumulate)
     this.findTimeBehindLeader(rows, stages, stageIds)
     this.findStageRanks(rows, stages)
     this.fillMissingStages(rows, riders, stages, stageIds)
