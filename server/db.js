@@ -17,7 +17,7 @@ class Db {
     let query = 'SELECT * from races ORDER by YEAR DESC'
     const values = []
 
-    if(limit) {
+    if (limit) {
       query = `${query} LIMIT $1`
       values[0] = limit
     }
@@ -53,7 +53,7 @@ class Db {
     return this.find(query, values)
   }
 
-  async findRacesForRider(uid) {
+  async findRacesForRider (uid) {
     const query = 'select rider_id, final_rank, races.name, races.year, races.uid from rider_races JOIN races ON races.id  = race_id WHERE rider_id = (SELECT id from riders where uid = $1) group by rider_id, races.name, races.year, races.uid, final_rank'
     const values = [uid]
     return this.find(query, values)
@@ -70,7 +70,7 @@ class Db {
     return []
   }
 
-  async raceResults(uid) {
+  async raceResults (uid) {
     const query = 'SELECT *, (SELECT number FROM stages WHERE id = results.stage_id) as stage, (SELECT name FROM riders where id = results.rider_id) as name, (SELECT uid from riders WHERE id = results.rider_id) as uid FROM results WHERE race_id = (SELECT id FROM races where uid = $1) ORDER BY class, stage_id, final_rank'
     const values = [uid]
     return this.find(query, values)

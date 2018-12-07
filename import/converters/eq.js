@@ -1,4 +1,3 @@
-const { promisify } = require('util')
 const csv = require('neat-csv')
 const fs = require('await-fs')
 const md5 = require('md5')
@@ -55,20 +54,19 @@ class EqConverter {
         }
 
         return this.setTime(ret, opts, row.NetTime)
-
       })
     }
   }
 
-  setTime(obj, opts, time) {
-    if(opts.acc) {//accumulative mode, stage times are this stage plus the one before.
-      if(obj.status !== 'OK') {
+  setTime (obj, opts, time) {
+    if (opts.acc) { // accumulative mode, stage times are this stage plus the one before.
+      if (obj.status !== 'OK') {
         obj.acc_time_ms = 0
       } else {
         obj.acc_time_ms = time
       }
-    } else { //stage time is just that
-      if(obj.status !== 'OK') {
+    } else { // stage time is just that
+      if (obj.status !== 'OK') {
         obj.stage_time_ms = 0
       } else {
         obj.stage_time_ms = time
@@ -78,14 +76,14 @@ class EqConverter {
     return obj
   }
 
-  className(name) {
-    if(/M.+junior|m.+jr/i.test(name)) {
+  className (name) {
+    if (/M.+junior|m.+jr/i.test(name)) {
       return 'Menn junior'
-    } else if(/K.+junior|k.+jr/i.test(name)) {
-        return 'Kvinner junior'
-      } else if(/^M|Menn/i.test(name)) {
+    } else if (/K.+junior|k.+jr/i.test(name)) {
+      return 'Kvinner junior'
+    } else if (/^M|Menn/i.test(name)) {
       return 'Menn senior'
-    } else if(/^K|Kvinner/i.test(name)) {
+    } else if (/^K|Kvinner/i.test(name)) {
       return 'Kvinner senior'
     } else if (/^\d/.test(name)) {
       return name.replace(/^\d\s?/, '')

@@ -1,20 +1,20 @@
-'use strict';
+'use strict'
 
-var dbm;
-var type;
-var seed;
+var dbm
+var type
+var seed
 
 /**
   * We receive the dbmigrate dependency from dbmigrate initially.
   * This enables us to not have to rely on NODE_PATH.
   */
-exports.setup = function(options, seedLink) {
-  dbm = options.dbmigrate;
-  type = dbm.dataType;
-  seed = seedLink;
-};
+exports.setup = function (options, seedLink) {
+  dbm = options.dbmigrate
+  type = dbm.dataType
+  seed = seedLink
+}
 
-exports.up = function(db) {
+exports.up = function (db) {
   return db.createTable('rider_races', {
     id: {
       type: 'int',
@@ -22,7 +22,7 @@ exports.up = function(db) {
       autoIncrement: true
     },
     final_rank: {
-      type: 'int',
+      type: 'int'
     },
     rider_id: {
       type: 'int',
@@ -53,12 +53,12 @@ exports.up = function(db) {
       }
     }
   })
-};
+}
 
-exports.down = function(db) {
+exports.down = function (db) {
   return db.dropTable('rider_races')
-};
+}
 
 exports._meta = {
-  "version": 1
-};
+  'version': 1
+}

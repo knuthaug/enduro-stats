@@ -24,5 +24,3 @@ tap.test('handles hours', (t) => {
   t.equals(convertMsToTime(4345456), '01:12:25.4')
   t.end()
 })
-
-

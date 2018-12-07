@@ -116,7 +116,7 @@ tap.test('calculate accumulated time per stage in ms', async t => {
   t.equals(result[1].acc_time_ms, 471000)
   t.equals(result[2].acc_time_ms, 483900)
 
-  t.equals(result[result.length - 1].acc_time_ms, 0) //DNS
+  t.equals(result[result.length - 1].acc_time_ms, 0) // DNS
   t.end()
 })
 
@@ -124,8 +124,8 @@ tap.test('Misc. tests', async t => {
   const rows = JSON.parse(fs.readFileSync(path.join(__dirname, './data/race-results-menn.json')))
   const result = c.differentials(rows)
 
-  t.equals(result[392].acc_time_ms, 2561730) //total winner
-  t.equals(result[392].rank, 1, 'total winner has rank of 1') //total winner
+  t.equals(result[392].acc_time_ms, 2561730) // total winner
+  t.equals(result[392].rank, 1, 'total winner has rank of 1') // total winner
   //  t.equals(result[394].acc_time_behind, 485880)
   t.equals(result[394].acc_time_ms, 2673180)
   t.equals(result[394].behind_leader_ms, 50330)
@@ -137,8 +137,8 @@ tap.test('calculate accumulated time behind in total in ms', async t => {
   const rows = JSON.parse(fs.readFileSync(path.join(__dirname, './data/race-results-menn.json')))
   const result = c.differentials(rows)
 
-  t.equals(result[392].acc_time_behind, 0) //total winner
-  t.equals(result[392].rank, 1, 'total winner has rank of 1') //total winner
+  t.equals(result[392].acc_time_behind, 0) // total winner
+  t.equals(result[392].rank, 1, 'total winner has rank of 1') // total winner
   t.equals(result[394].acc_time_behind, 111450)
   t.equals(result[394].behind_leader_ms, 50330)
   t.equals(result[394].rank, 2)
@@ -152,10 +152,10 @@ tap.test('Make sure all riders have all stages represented', async t => {
   t.equals(res[0].rank, 1)
 
   const ro = res.filter((r) => {
-    return r.rider_id == res[0].rider_id
+    return r.rider_id === res[0].rider_id
   })
 
-  //console.log(rows[1])
+  // console.log(rows[1])
   t.equals(ro[2].rank, 999)
   t.equals(ro.length, 5)
   t.end()
@@ -166,10 +166,10 @@ tap.test('Handle stages where there are times and dnf/error status', async t => 
   const res = c.differentials(rows)
 
   const problem = res.find((r) => {
-    return r.rider_id == 141 && r.stage === 5
+    return r.rider_id === 141 && r.stage === 5
   })
 
   t.equals(problem.final_rank, 111)
-  //t.equals(ro.length, 5)
+  // t.equals(ro.length, 5)
   t.end()
 })

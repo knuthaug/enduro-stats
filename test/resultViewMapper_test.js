@@ -39,6 +39,3 @@ tap.test('For stages either DNF or DNS, stage_time is replaced', (t) => {
   t.equals(men[74].stage6_time, 'DNS', 'stage time of zero is DNS if status is DNS')
   t.end()
 })
-
-
-

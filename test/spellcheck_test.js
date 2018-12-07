@@ -26,5 +26,3 @@ tap.test('utf-8 names are supported', (t) => {
   t.equals(sp.check('öivind äsen'), 'Öivind Äsen', 'swedish chars uppercased')
   t.end()
 })
-
-

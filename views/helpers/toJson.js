@@ -1,3 +1,3 @@
-module.exports = function toJson(arg) {
+module.exports = function toJson (arg) {
   return JSON.stringify(arg)
 }

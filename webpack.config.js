@@ -6,7 +6,7 @@ const sourceMapEnabled = isProduction
 module.exports = {
   mode: isProduction ? 'production' : 'development',
   entry: {
-    bundle: './server/src/js/index.js',
+    bundle: './server/src/js/index.js'
   },
   output: {
     filename: '[name]-[chunkhash].js',
@@ -14,7 +14,7 @@ module.exports = {
   },
   devtool: sourceMapEnabled ? 'source-map' : false,
   optimization: {
-    minimize: isProduction,
+    minimize: isProduction
   },
   module: {
     rules: [

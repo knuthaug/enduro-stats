@@ -1,6 +1,4 @@
 const Db = require('../import/db.js')
-const fs = require('fs')
-const path = require('path')
 
 const db = new Db()
 
