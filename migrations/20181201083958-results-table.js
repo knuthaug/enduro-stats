@@ -49,6 +49,10 @@ exports.up = function (db) {
       type: 'int',
       notNull: false
     },
+    final_rank: {
+      type: 'int',
+      notNull: false
+    },
     behind_leader_ms: {
       type: 'int',
       notNull: false

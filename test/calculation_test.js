@@ -3,12 +3,10 @@ const StageCalculations = require('../import/stage_calculations.js')
 const path = require('path')
 const fs = require('fs')
 
-const rows = JSON.parse(fs.readFileSync(path.join(__dirname, './data/race-results-menn.json')))
-const rows2 = JSON.parse(fs.readFileSync(path.join(__dirname, './data/race-results-menn2.json')))
-
 const c = new StageCalculations()
 
 tap.test('original data is always returned', async t => {
+  const rows = JSON.parse(fs.readFileSync(path.join(__dirname, './data/race-results-menn.json')))
   const result = c.differentials(rows)
   t.equals(result[0].rider_id, 22, 'rider_id is the same')
   t.equals(result[0].race_id, 1, 'race id is the same')
@@ -18,9 +16,11 @@ tap.test('original data is always returned', async t => {
   t.equals(result[0].acc_time_ms, 450700, 'acc_time_ms is stage time for first stage')
   t.equals(result[0].time, '00:07:30.7')
   t.equals(result[0].status, 'OK')
+  t.end()
 })
 
 tap.test('calculate time per stage from acc_time_ms', async t => {
+  const rows = JSON.parse(fs.readFileSync(path.join(__dirname, './data/race-results-menn.json')))
   const result = c.differentials(rows)
   t.equals(result[0].stage_time_ms, 450700, 'acc_time_ms is stage time for first stage')
 
@@ -29,9 +29,11 @@ tap.test('calculate time per stage from acc_time_ms', async t => {
 
   t.equals(result[156].stage_time_ms, 464920, 'stage time is this stages acc time minus previous ')
   t.equals(result[156].acc_time_ms, 1236940, 'stage for 4 is total time up to point')
+  t.end()
 })
 
 tap.test('calculate stage rank based on time_ms per stage', async t => {
+  const rows = JSON.parse(fs.readFileSync(path.join(__dirname, './data/race-results-menn.json')))
   const result = c.differentials(rows)
   t.equals(result[0].stage_rank, 1, 'lowest time gets stage_rank 1')
   t.equals(result[1].stage_rank, 2, 'second lowest time gets stage_rank 2')
@@ -41,9 +43,11 @@ tap.test('calculate stage rank based on time_ms per stage', async t => {
   t.equals(result[80].stage_rank, 3, 'stage rank 3 for 3rd lowest time of stage')
   t.equals(result[79].stage_rank, 2, 'stage_rank 2 for second lowest time')
   t.equals(result[78].stage_rank, 1, 'stage_rank 1 for lowest time')
+  t.end()
 })
 
 tap.test('calculate final rank based on acc_time_ms for last stage', async t => {
+  const rows = JSON.parse(fs.readFileSync(path.join(__dirname, './data/race-results-menn.json')))
   const result = c.differentials(rows)
 
   const first = result.find((r) => {
@@ -61,10 +65,26 @@ tap.test('calculate final rank based on acc_time_ms for last stage', async t => 
   t.equals(first.final_rank, 1, 'lowest time gets stage_rank 1')
   t.equals(second.final_rank, 2, 'second lowest time gets stage_rank 2')
   t.equals(third.final_rank, 3, 'third lowest time gets stage_rank 3')
-
+  t.end()
 })
 
+tap.test('final rank should reflect bad records', async t => {
+  const rows = JSON.parse(fs.readFileSync(path.join(__dirname, './data/race-results-menn2.json')))
+  const res = c.differentials(rows)
+
+  const badRecord = res.find((r) => {
+    return r.rider_id === 723 && r.stage === 5
+  })
+
+  console.log(badRecord)
+  t.equals(badRecord.status, 'ERROR', 'status error for bad records')
+  t.equals(badRecord.final_rank, 35, 'error gets rank last rank in race')
+  t.end()
+})
+
+
 tap.test('calculate time behind leader', async t => {
+  const rows = JSON.parse(fs.readFileSync(path.join(__dirname, './data/race-results-menn.json')))
   const result = c.differentials(rows)
   t.equals(result[0].behind_leader_ms, 0, 'stage winner is 0 behind leader')
   t.equals(result[1].behind_leader_ms, 20300, 'stage second is time_ms behind leader for stage')
@@ -76,9 +96,11 @@ tap.test('calculate time behind leader', async t => {
   t.equals(result[80].behind_leader_ms, 15750)
 
   t.equals(result[result.length - 1].behind_leader_ms, 0) // DNS in all stages
+  t.end()
 })
 
 tap.test('calculate accumulated time per stage in ms', async t => {
+  const rows = JSON.parse(fs.readFileSync(path.join(__dirname, './data/race-results-menn.json')))
   const result = c.differentials(rows)
   t.equals(result[0].acc_time_ms, 450700)
   t.equals(result[1].acc_time_ms, 471000)
@@ -89,6 +111,7 @@ tap.test('calculate accumulated time per stage in ms', async t => {
 })
 
 tap.test('Misc. tests', async t => {
+  const rows = JSON.parse(fs.readFileSync(path.join(__dirname, './data/race-results-menn.json')))
   const result = c.differentials(rows)
 
   t.equals(result[392].acc_time_ms, 2561730) //total winner
@@ -101,6 +124,7 @@ tap.test('Misc. tests', async t => {
 })
 
 tap.test('calculate accumulated time behind in total in ms', async t => {
+  const rows = JSON.parse(fs.readFileSync(path.join(__dirname, './data/race-results-menn.json')))
   const result = c.differentials(rows)
 
   t.equals(result[392].acc_time_behind, 0) //total winner
@@ -112,16 +136,17 @@ tap.test('calculate accumulated time behind in total in ms', async t => {
 })
 
 tap.test('Make sure all riders have all stages represented', async t => {
-  const result = c.differentials(rows2)
+  const rows = JSON.parse(fs.readFileSync(path.join(__dirname, './data/race-results-menn2.json')))
+  const res = c.differentials(rows)
 
-  t.equals(result[0].rank, 1)
+  t.equals(res[0].rank, 1)
 
-  const rows = result.filter((r) => {
-    return r.rider_id == result[0].rider_id
+  const ro = res.filter((r) => {
+    return r.rider_id == res[0].rider_id
   })
 
   //console.log(rows[1])
-  t.equals(rows[2].rank, 999)
-  t.equals(rows.length, 5)
+  t.equals(ro[2].rank, 999)
+  t.equals(ro.length, 5)
   t.end()
 })

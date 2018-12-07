@@ -1,3 +1,8 @@
+const ERROR_STATUS = 'ERROR'
+const DNS_STATUS = 'DNS'
+const DNF_STATUS = 'DNF'
+const ERROR_RANK = 999
+
 class StageCalculations {
   differentials (rows) {
     let stages = []
@@ -30,7 +35,7 @@ class StageCalculations {
         stages.push(rows[i].stage)
       }
 
-      if (rows[i].status === 'DNS' || rows[i].status === 'DNF') {
+      if (this.notFinished(rows[i])) {
         rows[i].behind_leader_ms = 0
         continue
       }
@@ -108,7 +113,7 @@ class StageCalculations {
 
   defaultResult(stage, stageId, raceId, riderId, clazz) {
     return {
-      rank: 999,
+      rank: ERROR_RANK,
       stage,
       time: '00:00.0',
       class: clazz,
@@ -116,9 +121,9 @@ class StageCalculations {
       rider_id: riderId,
       stage_id: stageId,
       race_id: raceId,
-      stage_rank: 999,
+      stage_rank: ERROR_RANK,
       stage_time_ms: 0,
-      status: 'DNS'
+      status: DNS_STATUS
     }
   }
 
@@ -134,14 +139,28 @@ class StageCalculations {
 
     for (let i = 0; i < stageIndexes.length; i++) {
       if (i === 0) {
-        rows[stageIndexes[i]].stage_time_ms = rows[stageIndexes[i]].acc_time_ms
+        if(rows[stageIndexes[i]].acc_time_ms < 0) {
+          rows[stageIndexes[i]].stage_time_ms = 0
+          rows[stageIndexes[i]].status = ERROR_STATUS
+          rows[stageIndexes[i]].acc_time_ms = 0
+        } else {
+          rows[stageIndexes[i]].stage_time_ms = rows[stageIndexes[i]].acc_time_ms
+        }
       } else {
         if (this.notFinished(rows[stageIndexes[i]])) {
           rows[stageIndexes[i]].stage_time_ms = 0
           continue
         }
+        const diff = rows[stageIndexes[i]].acc_time_ms - rows[stageIndexes[i - 1]].acc_time_ms
 
-        rows[stageIndexes[i]].stage_time_ms = rows[stageIndexes[i]].acc_time_ms - rows[stageIndexes[i - 1]].acc_time_ms
+        if(diff < 0) {
+          rows[stageIndexes[i]].stage_time_ms = 0
+          rows[stageIndexes[i]].status = ERROR_STATUS
+          rows[stageIndexes[i]].acc_time_ms = 0
+        } else {
+          rows[stageIndexes[i]].stage_time_ms = diff
+        }
+
       }
     }
   }
@@ -202,7 +221,7 @@ class StageCalculations {
   }
 
   notFinished (obj) {
-    return obj.status === 'DNS' || obj.status === 'DNF'
+    return obj.status === DNS_STATUS || obj.status === DNF_STATUS || obj.status === ERROR_STATUS
   }
 
   firstInStage (rows, stageNumber) {
