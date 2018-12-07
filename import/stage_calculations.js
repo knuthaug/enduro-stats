@@ -5,15 +5,16 @@ const ERROR_RANK = 999
 
 class StageCalculations {
   differentials (rows) {
-    let stages = []
+    const stages = []
+    const stageIds = {}
 
     const riders = this.findAllRiders(rows)
 
     this.findStageTimes(rows, riders)
-    this.findTimeBehindLeader(rows, stages)
+    this.findTimeBehindLeader(rows, stages, stageIds)
     this.findStageRanks(rows, stages)
-    this.fillMissingStages(rows, riders, stages)
-    this.findFinalRank(rows, riders, stages)
+    this.fillMissingStages(rows, riders, stages, stageIds)
+    this.findFinalRanks(rows, riders, stages)
     return rows
   }
 
@@ -25,7 +26,7 @@ class StageCalculations {
       })
   }
 
-  findTimeBehindLeader(rows, stages) {
+  findTimeBehindLeader(rows, stages, stageIds) {
     for (let i = 0; i < rows.length; i++) {
       const found = stages.findIndex((el) => {
         return el === rows[i].stage
@@ -33,6 +34,7 @@ class StageCalculations {
 
       if (found === -1) {
         stages.push(rows[i].stage)
+        stageIds[rows[i].stage] = rows[i].stage_id
       }
 
       if (this.notFinished(rows[i])) {
@@ -54,7 +56,7 @@ class StageCalculations {
     }
   }
 
-  findFinalRank(rows, riders, stages) {
+  findFinalRanks(rows, riders, stages) {
     const indexes = {}
     for(let i = 0; i < rows.length; i++) {
       if(rows[i].stage === stages[stages.length - 1]) {
@@ -90,7 +92,7 @@ class StageCalculations {
     return 0
   }
 
-  fillMissingStages(rows, riders, stages) {
+  fillMissingStages(rows, riders, stages, stageIds) {
     //make sure all riders have results for each stageRanks
     for(let i = 0; i < riders.length; i++) {
       const ro = rows.filter((r) => {
@@ -104,15 +106,22 @@ class StageCalculations {
           })
 
           if(!found) {
-            rows.push(this.defaultResult(stages[j], stages[i], ro[0].race_id, ro[0].rider_id, ro[0].class))
+            rows.push(this.defaultResult(stages[j], stageIds[j], ro[0].race_id, ro[0].rider_id, ro[0].class, this.maxId(rows)))
           } 
         }
       }
     }
   }
 
-  defaultResult(stage, stageId, raceId, riderId, clazz) {
+  maxId(r) {
+    return r.reduce((acc, current) => {
+      return current.id > acc ? current.id : acc
+    }, 0)
+  }
+
+  defaultResult(stage, stageId, raceId, riderId, clazz, id) {
     return {
+      id: id + 1,
       rank: ERROR_RANK,
       stage,
       time: '00:00.0',

@@ -24,7 +24,7 @@ module.exports = function resultViewMapper(classes, results) {
 
     //fill rider object with values
     riders[rider].uid = results[i].uid
-    riders[rider].rank = results[i].rank
+    riders[rider].final_rank = results[i].final_rank
     riders[rider].name = results[i].name
     riders[rider].class = results[i].class
     riders[rider].rider_id = results[i].rider_id
@@ -55,9 +55,9 @@ function time(time, status) {
 }
 
 function compareRank(a, b) {
-  if (a.rank < b.rank) {
+  if (a.final_rank < b.final_rank) {
     return -1
-  } else if (a.rank > b.rank) {
+  } else if (a.final_rank > b.final_rank) {
     return 1
   }
   return 0

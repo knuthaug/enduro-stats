@@ -76,12 +76,22 @@ tap.test('final rank should reflect bad records', async t => {
     return r.rider_id === 723 && r.stage === 5
   })
 
-  console.log(badRecord)
   t.equals(badRecord.status, 'ERROR', 'status error for bad records')
   t.equals(badRecord.final_rank, 35, 'error gets rank last rank in race')
   t.end()
 })
 
+tap.test('DNS/DNF records must have final_rank set', async t => {
+  const rows = JSON.parse(fs.readFileSync(path.join(__dirname, './data/race-results-menn2.json')))
+  const res = c.differentials(rows)
+
+  const dns = res.find((r) => {
+    return r.rider_id === 697 && r.stage === 5
+  })
+
+  t.equals(dns.final_rank, 34, 'DNS gets rank last rank in race')
+  t.end()
+})
 
 tap.test('calculate time behind leader', async t => {
   const rows = JSON.parse(fs.readFileSync(path.join(__dirname, './data/race-results-menn.json')))

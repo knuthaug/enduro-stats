@@ -23,7 +23,7 @@ tap.test('returns overview of stages for race', async t => {
 
 tap.test('total winner in class is first in result array', (t) => {
   const men = r.Menn
-  t.equals(men[0].rank, 1, 'total rank 1 is first')
+  t.equals(men[0].final_rank, 1, 'total rank 1 is first')
   t.equals(men[0].stage1_time, '07:30.7', 'stage times are per stage')
   t.equals(men[0].stage1_rank, 1, 'stage rank is included')
   t.equals(men[0].stage2_rank, 3, 'stage rank is included')
@@ -35,7 +35,7 @@ tap.test('total winner in class is first in result array', (t) => {
 
 tap.test('For stages either DNF or DNS, stage_time is replaced', (t) => {
   const men = r.Menn
-  t.equals(men[67].stage6_time, 'DNF', 'stage time of zero is DNF')
+  t.equals(men[68].stage6_time, 'DNF', 'stage time of zero is DNF')
   t.equals(men[74].stage6_time, 'DNS', 'stage time of zero is DNS if status is DNS')
   t.end()
 })
