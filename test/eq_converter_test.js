@@ -192,6 +192,7 @@ tap.test('handle results with time in different named column', async t => {
   t.equals(data.results[0].gender, 'M')
   t.equals(data.results[0].rank, 1)
   t.equals(data.results[0].stage_time_ms, 695000, 'time should be correct in ms')
+  t.equals(data.results[0].time, '11:35.0', 'time should be correct in ms')
   t.equals(data.results[0].class, 'Menn senior')
   t.equals(data.results[0].club, 'SK Rye sykkel')
   t.equals(data.results[0].team, '')
