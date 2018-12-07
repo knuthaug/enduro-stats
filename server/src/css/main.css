@@ -6,7 +6,6 @@
 
 body {
   /* Margin bottom by footer height */
-  padding-top: 3rem;
   padding-bottom: 3rem;
   background-color: #333;
   color: #fff;
@@ -31,6 +30,10 @@ a:hover {
   background-color: #333;
 }
 
+.row {
+  padding-bottom: 10px;
+}
+
 .table {
   font-size: 85%;
 }
@@ -45,4 +48,9 @@ a:hover {
 
 .stagerank {
   font-size: 80%;
+}
+
+.toplink {
+  position: relative;
+  top: 7px;
 }

@@ -131,7 +131,7 @@ class Db {
 
     return rows.find((r) => {
       return r.rider_id === riderId && r.stage === lastStage
-    }).rank
+    }).final_rank
 
   }
 
