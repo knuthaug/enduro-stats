@@ -166,3 +166,17 @@ tap.test('handle eq files not in accumulative mode', async t => {
 
   t.end()
 })
+
+tap.test('include club', async t => {
+  const eq = new EqConverter(path.join(__dirname, 'data/traktor-2015-menn-fe1.csv'))
+  const loaded = await eq.load()
+  const data = await loaded.parse({ acc: false })
+
+  t.equals(data.results[0].name, 'Espen Johnsen')
+  t.equals(data.results[0].gender, 'M')
+  t.equals(data.results[0].rank, 1)
+  t.equals(data.results[0].class, 'Menn senior')
+  t.equals(data.results[0].club, 'Bergen MTB Klubb')
+  t.equals(data.results[0].team, '')
+  t.end()
+})
