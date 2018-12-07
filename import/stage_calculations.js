@@ -4,13 +4,16 @@ const DNF_STATUS = 'DNF'
 const ERROR_RANK = 999
 
 class StageCalculations {
-  differentials (rows) {
+  differentials (rows, options) {
+    if(!options) {
+      options = { acc: true }
+    }
     const stages = []
     const stageIds = {}
 
     const riders = this.findAllRiders(rows)
 
-    this.findStageTimes(rows, riders)
+    this.findStageTimes(rows, riders, options.acc)
     this.findTimeBehindLeader(rows, stages, stageIds)
     this.findStageRanks(rows, stages)
     this.fillMissingStages(rows, riders, stages, stageIds)
@@ -44,9 +47,14 @@ class StageCalculations {
     }
   }
 
-  findStageTimes (rows, riders) {
+  findStageTimes (rows, riders, accumulative) {
     for (let i = 0; i < riders.length; i++) {
-      this.stageTimes(rows, riders[i])
+      if(accumulative) {
+        this.stageTimesAccumulative(rows, riders[i])
+      } else {
+        this.stageTimes(rows, riders[i])
+      }
+
     }
   }
 
@@ -136,7 +144,7 @@ class StageCalculations {
     }
   }
 
-  stageTimes (rows, riderId) {
+  stageTimesAccumulative (rows, riderId) {
     // find all stage for rider, indexes
     const stageIndexes = rows.map((r, index) => {
       if (r.rider_id === riderId) {
@@ -172,6 +180,28 @@ class StageCalculations {
       }
     }
   }
+
+  //calculate acc_time_ms since stage_time_ms is set earlier
+   stageTimes (rows, riderId) {
+    // find all stage for rider, indexes
+    const stageIndexes = rows.map((r, index) => {
+      if (r.rider_id === riderId) {
+        return index
+      }
+    }).filter((e) => {
+      return typeof e !== 'undefined'
+    })
+
+    for (let i = 0; i < stageIndexes.length; i++) {
+      if(i === 0) { //first stage
+        rows[stageIndexes[i]].acc_time_ms = rows[stageIndexes[i]].stage_time_ms
+      } else {
+        rows[stageIndexes[i]].acc_time_ms = rows[stageIndexes[i]].stage_time_ms + rows[stageIndexes[i - 1 ]].stage_time_ms
+      }
+    }
+  }
+
+
 
   stageRanks (rows, stageNum, maxStage) {
     // find all results for stageId

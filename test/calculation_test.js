@@ -173,3 +173,24 @@ tap.test('Handle stages where there are times and dnf/error status', async t => 
   // t.equals(ro.length, 5)
   t.end()
 })
+
+tap.test('Handle races in non-accumulative mode', async t => {
+  const rows = JSON.parse(fs.readFileSync(path.join(__dirname, './data/race-results-menn-nesbyen-2014.json')))
+  const res = c.differentials(rows, { acc: false })
+
+  t.equals(res[0].stage_time_ms, 466068, 'milliseconds per stage')
+  t.equals(res[0].stage_rank, 1, 'milliseconds per stage')
+  t.equals(res[0].acc_time_ms, 466068, 'acc time for first stage is stage_time for stage')
+
+  const found = res.filter((r) => {
+    return r.rider_id === 38
+  })
+
+  t.equals(found[1].stage, 2, 'stage is 2')
+  t.equals(found[1].stage_time_ms, 493241, 'stage is 2')
+  t.equals(found[1].acc_time_ms, 959309, 'acc_time for second stage is previous stage plus this')
+
+  //final_rank
+  t.equals(found[3].final_rank, 6, 'final rank is correct')
+  t.end()
+})
