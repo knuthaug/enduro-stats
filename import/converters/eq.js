@@ -53,7 +53,7 @@ class EqConverter {
           status: this.convertStatus(row.Status)
         }
 
-        return this.setTime(ret, opts, row.NetTime)
+        return this.setTime(ret, opts, parseInt(row.NetTime, 10))
       })
     }
   }
