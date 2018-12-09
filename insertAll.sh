@@ -9,3 +9,8 @@ node import/importer.js -a -d ~/Dropbox/privat/sykkel/enduro-resultater/2015/nes
 node import/importer.js -a -d ~/Dropbox/privat/sykkel/enduro-resultater/2015/oppdal/ #ok!
 node import/importer.js -a -d ~/Dropbox/privat/sykkel/enduro-resultater/2015/oslo/ # ok!
 node import/importer.js -a -d ~/Dropbox/privat/sykkel/enduro-resultater/2015/traktor/ # ok!
+node import/importer.js -a -d ~/Dropbox/privat/sykkel/enduro-resultater/2016/hafjell # ok!
+node import/importer.js -a -d ~/Dropbox/privat/sykkel/enduro-resultater/2016/oppdal # ok!
+node import/importer.js -a -d ~/Dropbox/privat/sykkel/enduro-resultater/2016/traktor # ok!
+node import/importer.js -a -d ~/Dropbox/privat/sykkel/enduro-resultater/2016/voss # ok!
+#node import/importer.js -a -d ~/Dropbox/privat/sykkel/enduro-resultater/2016/harstad # not ok!

@@ -23,7 +23,9 @@ exports.up = function (db) {
     },
     name: {
       type: 'string',
-      notNull: true },
+      notNull: true,
+      unique: false
+    },
     stages: {
       type: 'int',
       notNull: true
