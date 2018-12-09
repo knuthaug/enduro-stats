@@ -1,0 +1,82 @@
+[
+  {
+    "id": 7,
+    "name": "80/20 HafjellEnduro",
+    "stages": 5,
+    "year": 2016,
+    "date": "2016-09-17",
+    "uid": "d511a7d083243a59daa83d107836043f"
+  },
+  {
+    "id": 8,
+    "name": "80/20 OppdalEnduro",
+    "stages": 4,
+    "year": 2016,
+    "date": "2016-08-28",
+    "uid": "d467d48ab340ae5ce890df2a5aa626ac"
+  },
+  {
+    "id": 9,
+    "name": "80/20 TraktorEnduro",
+    "stages": 6,
+    "year": 2016,
+    "date": "2016-06-19",
+    "uid": "f8312976345e880362d62ca318bf7cb5"
+  },
+  {
+    "id": 10,
+    "name": "Enduro-MTB Race",
+    "stages": 3,
+    "year": 2016,
+    "date": "2016-06-29",
+    "uid": "89da683f8cec649db8da6d4290763f13"
+  },
+  {
+    "id": 5,
+    "name": "80/20 OsloEnduro",
+    "stages": 5,
+    "year": 2015,
+    "date": "2015-08-16",
+    "uid": "9b936df4db09c0e7cc73c77bf63616fc"
+  },
+  {
+    "id": 6,
+    "name": "80/20 TraktorEnduro",
+    "stages": 5,
+    "year": 2015,
+    "date": "2015-06-07",
+    "uid": "2069252438ae5c346cabc7bca29ad58c"
+  },
+  {
+    "id": 3,
+    "name": "80/20 NesbyEnduro",
+    "stages": 6,
+    "year": 2015,
+    "date": "2015-05-23",
+    "uid": "628fcc8dcb50710021dac1d51bd7452b"
+  },
+  {
+    "id": 4,
+    "name": "80/20 OppdalEnduro",
+    "stages": 4,
+    "year": 2015,
+    "date": "2015-08-30",
+    "uid": "4f22fa91e965680c428b39d30b98fad2"
+  },
+  {
+    "id": 2,
+    "name": "NesbyEnduro",
+    "stages": 5,
+    "year": 2013,
+    "date": "2013-06-16",
+    "uid": "4504e3dd07d15dec4044e6b2e32df739"
+  },
+  {
+    "id": 1,
+    "name": "Kongsberg Sykkelenduro",
+    "stages": 6,
+    "year": 2012,
+    "date": "2012-09-29",
+    "uid": "b5abd441f9b8afd93fc95a897d33d2a4"
+  }
+]
