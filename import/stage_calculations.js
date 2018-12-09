@@ -3,6 +3,9 @@ const DNS_STATUS = 'DNS'
 const DNF_STATUS = 'DNF'
 const ERROR_RANK = 999
 
+const { indexOf, maxValue, rowsForRider,
+        find, stagesForRider, stageIndexesForStage } = require('./listUtil.js')
+
 class StageCalculations {
   differentials (rows, options) {
     if(!options) {
@@ -29,13 +32,16 @@ class StageCalculations {
     })
   }
 
+  findStageTimes (rows, riders, accumulative) {
+    for (let i = 0; i < riders.length; i++) {
+      this.stageTimesAccumulative(rows, riders[i])
+    }
+  }
+
   findTimeBehindLeader (rows, stages, stageIds) {
     for (let i = 0; i < rows.length; i++) {
-      const found = stages.findIndex((el) => {
-        return el === rows[i].stage
-      })
 
-      if (found === -1) {
+      if (indexOf(stages, rows[i].stage) === -1) {
         stages.push(rows[i].stage)
         stageIds[rows[i].stage] = rows[i].stage_id
       }
@@ -44,12 +50,6 @@ class StageCalculations {
         rows[i].behind_leader_ms = 0
         continue
       }
-    }
-  }
-
-  findStageTimes (rows, riders, accumulative) {
-    for (let i = 0; i < riders.length; i++) {
-      this.stageTimesAccumulative(rows, riders[i])
     }
   }
 
@@ -62,20 +62,28 @@ class StageCalculations {
   findFinalRanks (rows, riders, stages) {
     const indexes = {}
     for (let i = 0; i < rows.length; i++) {
-      if (rows[i].stage === stages[stages.length - 1]) {
+      if (this.isLastStage(rows[i], stages)) {
         indexes[rows[i].id] = i
       }
     }
 
-    const lastStages = rows.filter((r) => {
-      return r.stage === stages[stages.length - 1]
-    }).sort(this.sortByAccTime)
+    const lastStages = this.lastStages(rows, stages)
 
     let rank = 1
     for (let i = 0; i < lastStages.length; i++) {
       const rowIndex = indexes[lastStages[i].id]
       rows[rowIndex].final_rank = rank++
     }
+  }
+
+  lastStages(rows, stages) {
+    return rows.filter((r) => {
+      return r.stage === stages[stages.length - 1]
+    }).sort(this.sortByAccTime)
+  }
+
+  isLastStage(row, stages) {
+    return row.stage === stages[stages.length - 1]
   }
 
   sortByAccTime (a, b) {
@@ -98,28 +106,21 @@ class StageCalculations {
   fillMissingStages (rows, riders, stages, stageIds) {
     // make sure all riders have results for each stageRanks
     for (let i = 0; i < riders.length; i++) {
-      const ro = rows.filter((r) => {
-        return r.rider_id === riders[i]
-      })
+      const ro = rowsForRider(rows, riders[i])
 
-      if (ro.length < stages.length) {
+      if (ro.length < stages.length) { //missing stages
         for (let j = 0; j < stages.length; j++) {
-          const found = ro.find((r) => {
-            return r.stage === stages[j]
-          })
-
-          if (!found) {
-            rows.push(this.defaultResult(stages[j], stageIds[j], ro[0].race_id, ro[0].rider_id, ro[0].class, this.maxId(rows)))
+          if (! find(ro, 'stage', stages[j])) {
+            rows.push(this.defaultResult(stages[j],
+                                         stageIds[j],
+                                         ro[0].race_id,
+                                         ro[0].rider_id,
+                                         ro[0].class,
+                                         maxValue(rows, 'id')))
           }
         }
       }
     }
-  }
-
-  maxId (r) {
-    return r.reduce((acc, current) => {
-      return current.id > acc ? current.id : acc
-    }, 0)
   }
 
   defaultResult (stage, stageId, raceId, riderId, clazz, id) {
@@ -141,13 +142,7 @@ class StageCalculations {
 
   stageTimesAccumulative (rows, riderId) {
     // find all stage for rider, indexes
-    const stageIndexes = rows.map((r, index) => {
-      if (r.rider_id === riderId) {
-        return index
-      }
-    }).filter((e) => {
-      return typeof e !== 'undefined'
-    })
+    const stageIndexes = stagesForRider(rows, riderId)
 
     for (let i = 0; i < stageIndexes.length; i++) {
       if (i === 0) {
@@ -176,19 +171,8 @@ class StageCalculations {
     }
   }
 
-  stageRanks (rows, stageNum, maxStage, accumulative) {
-    // find all results for stageId
-    const originalStageIndex = rows.map((r, index) => {
-      if (r.stage === stageNum) {
-        return index
-      }
-      return undefined
-    }).filter((e) => {
-      return typeof e !== 'undefined'
-    })
-    // console.log(originalStageIndex)
-
-    const stageResults = rows.slice(originalStageIndex[0], originalStageIndex[originalStageIndex.length - 1] + 1).sort((a, b) => {
+  sortedStageTimes(rows, start, end) {
+    return rows.slice(start, end).sort((a, b) => {
       if (a.stage_time_ms === 0) {
         return 1
       }
@@ -197,8 +181,15 @@ class StageCalculations {
       }
       return a.stage_time_ms - b.stage_time_ms
     })
-    // console.log(stageResults)
+  }
 
+  stageRanks (rows, stageNum, maxStage, accumulative) {
+    // find all results for stageId
+    const originalStageIndex = stageIndexesForStage(rows, stageNum)
+
+    const stageResults = this.sortedStageTimes(rows,
+                                               originalStageIndex[0],
+                                               originalStageIndex[originalStageIndex.length - 1] + 1)
     let rank = 1
 
     for (let i = 0; i < stageResults.length; i++) {
