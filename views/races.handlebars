@@ -3,7 +3,10 @@
   </div>
   <div class="col-8">
     {{#each races}}
-    <a href="/ritt/{{uid}}">{{name}} {{year}}</a><br/>
+    <h3 class="m-m-t">{{year}}</h3>
+     {{#each races}}
+      <a class="padded-link" href="/ritt/{{uid}}">{{name}} {{year}}</a><br/>
+     {{/each}}
     {{/each}}
   </div>
   <div class="col-2">

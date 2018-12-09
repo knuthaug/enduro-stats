@@ -1,13 +1,29 @@
 
 module.exports = function raceViewMapper (races) {
-  const out = {}
+  const out = []
 
-  for (let i = 0; i < races.length; i++) {
-    if(!out.hasOwnProperty(races[i].year)) {
-      out[races[i].year] = []
+  const sorted = races.sort((a, b) => {
+    if (a.year > b.year) {
+      return -1
+    } else if (a.year < b.year) {
+      return 1
     }
+    return 0
+  })
 
-    out[races[i].year].push(races[i])
+  for (let i = 0; i < sorted.length; i++) {
+    const row = {}
+    const year = sorted[i].year
+
+    if(!out.find((r) => {
+      return r.year === year
+    })) {
+      row.year = year
+      row.races = sorted.filter((r) => {
+        return r.year === year
+      })
+      out.push(row)
+    }
   }
 
   return out

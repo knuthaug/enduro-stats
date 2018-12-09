@@ -38,6 +38,14 @@ a:hover {
   font-size: 85%;
 }
 
+.padded-link {
+  margin-left: 1rem;
+}
+
+.m-m-t {
+  margin-top: 1.5rem;
+}
+
 .dnf {
   text-transform: uppercase;
   background-color: white;
