@@ -7,6 +7,7 @@ const config = require('../config')
 const log = require('./log.js')
 const Db = require('./db.js')
 const resultViewMapper = require('./resultViewMapper.js')
+const raceViewMapper = require('./raceViewMapper.js')
 
 const hashedAssets = require('../views/helpers/hashed-assets.js')
 const compare = require('../views/helpers/compare.js')
@@ -55,7 +56,7 @@ app.get('/ritt/:uid', async (req, res) => {
 
 app.get('/ritt', async (req, res) => {
   log.debug(`request for ${req.path}`)
-  const races = await db.findRaces()
+  const races = raceViewMapper(await db.findRaces())
   res.render('races', { races, active: 'ritt' })
 })
 
