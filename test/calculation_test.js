@@ -174,41 +174,41 @@ tap.test('Handle stages where there are times and dnf/error status', async t => 
   t.end()
 })
 
-tap.test('Handle races in non-accumulative mode', async t => {
-  const rows = JSON.parse(fs.readFileSync(path.join(__dirname, './data/race-results-menn-nesbyen-2014.json')))
-  const res = c.differentials(rows, { accumulate: false })
+// tap.test('Handle races in non-accumulative mode', async t => {
+//   const rows = JSON.parse(fs.readFileSync(path.join(__dirname, './data/race-results-menn-nesbyen-2014.json')))
+//   const res = c.differentials(rows, { accumulate: false })
 
-  t.equals(res[0].stage_time_ms, 466068, 'milliseconds per stage')
-  t.equals(res[0].stage_rank, 1, 'milliseconds per stage')
-  t.equals(res[0].acc_time_ms, 466068, 'acc time for first stage is stage_time for stage')
+//   t.equals(res[0].stage_time_ms, 466068, 'milliseconds per stage')
+//   t.equals(res[0].stage_rank, 1, 'milliseconds per stage')
+//   t.equals(res[0].acc_time_ms, 466068, 'acc time for first stage is stage_time for stage')
 
-  const found = res.filter((r) => {
-    return r.rider_id === 38
-  })
+//   const found = res.filter((r) => {
+//     return r.rider_id === 38
+//   })
 
-  t.equals(found[1].stage, 2, 'stage is 2')
-  t.equals(found[1].stage_time_ms, 493241, 'stage is 2')
-  t.equals(found[1].acc_time_ms, 959309, 'acc_time for second stage is previous stage plus this')
+//   t.equals(found[1].stage, 2, 'stage is 2')
+//   t.equals(found[1].stage_time_ms, 493241, 'stage is 2')
+//   t.equals(found[1].acc_time_ms, 959309, 'acc_time for second stage is previous stage plus this')
 
-  t.equals(found[2].stage_time_ms, 244451, 'acc_time for second stage is previous stage plus this')
-  t.equals(found[2].acc_time_ms, 1203760, 'acc_time for second stage is previous stage plus this')
+//   t.equals(found[2].stage_time_ms, 244451, 'acc_time for second stage is previous stage plus this')
+//   t.equals(found[2].acc_time_ms, 1203760, 'acc_time for second stage is previous stage plus this')
 
-  t.equals(found[3].acc_time_behind, 15839, 'acc_time_behind is positive')
+//   t.equals(found[3].acc_time_behind, 15839, 'acc_time_behind is positive')
 
-  //final_rank
-  t.equals(found[3].final_rank, 4, 'final rank is correct')
-  t.end()
-})
+//   //final_rank
+//   t.equals(found[3].final_rank, 4, 'final rank is correct')
+//   t.end()
+// })
 
-tap.test('Handle races in non-accumulative mode gets filled missing stages', async t => {
-  const rows = JSON.parse(fs.readFileSync(path.join(__dirname, './data/race-results-menn-nesbyen-2014.json')))
-  const res = c.differentials(rows, { accumulate: false })
+// tap.test('Handle races in non-accumulative mode gets filled missing stages', async t => {
+//   const rows = JSON.parse(fs.readFileSync(path.join(__dirname, './data/race-results-menn-nesbyen-2014.json')))
+//   const res = c.differentials(rows, { accumulate: false })
 
-  const found = res.filter((r) => {
-    return r.rider_id === 39
-  })
+//   const found = res.filter((r) => {
+//     return r.rider_id === 39
+//   })
 
-  t.equals(found.length, 4, 'stages is 4')
-  //console.log(found[3])
-  t.end()
-})
+//   t.equals(found.length, 4, 'stages is 4')
+//   //console.log(found[3])
+//   t.end()
+// })

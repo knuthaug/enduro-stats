@@ -49,12 +49,7 @@ class StageCalculations {
 
   findStageTimes (rows, riders, accumulative) {
     for (let i = 0; i < riders.length; i++) {
-      if(accumulative) {
-        this.stageTimesAccumulative(rows, riders[i])
-      } else {
-        this.stageTimes(rows, riders[i])
-      }
-
+      this.stageTimesAccumulative(rows, riders[i])
     }
   }
 
@@ -181,28 +176,6 @@ class StageCalculations {
     }
   }
 
-  //calculate acc_time_ms since stage_time_ms is set earlier
-   stageTimes (rows, riderId) {
-    // find all stage for rider, indexes
-    const stageIndexes = rows.map((r, index) => {
-      if (r.rider_id === riderId) {
-        return index
-      }
-    }).filter((e) => {
-      return typeof e !== 'undefined'
-    })
-
-    for (let i = 0; i < stageIndexes.length; i++) {
-      if(i === 0) { //first stage
-        rows[stageIndexes[i]].acc_time_ms = rows[stageIndexes[i]].stage_time_ms
-      } else {
-        rows[stageIndexes[i]].acc_time_ms = rows[stageIndexes[i]].stage_time_ms + rows[stageIndexes[i - 1]].acc_time_ms
-      }
-    }
-  }
-
-
-
   stageRanks (rows, stageNum, maxStage, accumulative) {
     // find all results for stageId
     const originalStageIndex = rows.map((r, index) => {
@@ -246,29 +219,15 @@ class StageCalculations {
       }
 
       // acc_time_behind, just for last stage
-      if(accumulative) {
-        if (stageResults[i].stage === maxStage) {
-          if (stageResults[i].rank === 1) {
+      if (stageResults[i].stage === maxStage) {
+        if (stageResults[i].rank === 1) {
+          stageResults[i].acc_time_behind = 0
+        } else {
+          if (this.notFinished(stageResults[i])) {
             stageResults[i].acc_time_behind = 0
-          } else {
-            if (this.notFinished(stageResults[i])) {
-              stageResults[i].acc_time_behind = 0
-              continue
-            }
-            stageResults[i].acc_time_behind = this.accTimeBehindRider(stageResults[i], this.firstInRace(stageResults, maxStage))
+            continue
           }
-        }
-      } else {
-        if (stageResults[i].stage === maxStage) {
-          if (stageResults[i].stage_rank === 1) {
-            stageResults[i].acc_time_behind = 0
-          } else {
-            if (this.notFinished(stageResults[i])) {
-              stageResults[i].acc_time_behind = 0
-              continue
-            }
-            stageResults[i].acc_time_behind = this.accTimeBehindRider(stageResults[i], this.firstInRaceByTime(stageResults, maxStage))
-          }
+          stageResults[i].acc_time_behind = this.accTimeBehindRider(stageResults[i], this.firstInRace(stageResults, maxStage))
         }
       }
     }
