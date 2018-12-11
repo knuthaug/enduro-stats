@@ -2,20 +2,51 @@ const csv = require('neat-csv')
 const fs = require('await-fs')
 const md5 = require('md5')
 const logger = require('../logger.js')
-const spellcheck = require('../spellcheck.js')
-const { convertMsToTime } = require('../../lib/time.js')
+const { check, normalizeCase } = require('../spellcheck.js')
+const { convertMsToTime, convertTimeToMs } = require('../../lib/time.js')
 
 class EqConverter {
-  constructor (filename) {
+
+
+  constructor (filename, options) {
     this.filename = filename
+    this.options = options || { }
+
+    if(!this.options.hasOwnProperty('mode')) {
+      this.options.mode = 'normal'
+    }
+
+    if(!this.options.hasOwnProperty('acc')) {
+      this.options.acc = 'true'
+    }
+
+    if(this.options.hasOwnProperty('datafile')) {
+      this.datafileName = options.datafile
+    } 
+
+    this.parsers = {
+      normal: this.parseNormal,
+      complete: this.parseComplete
+    }
+
   }
 
   async load () {
+
     const stats = await fs.stat(this.filename)
 
     if (stats.isFile()) {
       logger.info(`reading file ${this.filename}`)
       this.file = await fs.readFile(this.filename, 'utf-8')
+
+      if(this.datafileName) {
+        const stats = await fs.stat(this.datafileName)
+
+        if (stats.isFile()) {
+          logger.info(`reading data file ${this.filename} for extra data`)
+          this.datafile = await fs.readFile(this.datafileName, 'utf-8')
+        }
+      }
       return this
     }
 
@@ -23,9 +54,63 @@ class EqConverter {
     throw new Error(`file ${this.filename} does not exist`)
   }
 
-  async parse (options) {
-    const opts = options || { acc: true }
+  async parse() {
+    if(this.parsers.hasOwnProperty(this.options.mode)) {
+      return this.parsers[this.options.mode].call(this)
+    } else {
+      console.log(`Unknown parser ${this.options.mode} specified`)
+      return {}
+    }
+  }
 
+  async parseComplete() {
+    let race = {}
+    if(this.datafile) {
+      race = JSON.parse(this.datafile)
+    }
+
+    race.uid = this.checksum(race.name + race.year)
+    const stages = await this.parseStages()
+    return {
+      race,
+      stages
+    }
+  }
+
+  async parseStages() {
+    const raw = await csv(this.file, { separator: ';'})
+    const stages = []
+    let stageNum = 1
+    const stageList = [ ...new Set(raw.map((r) =>  r.Race ))]
+
+    for(let i = 0; i < stageList.length; i++) {
+      const stageResults = raw.filter((r) => {
+        return r.Race === stageList[i]
+      })
+
+      stages.push({
+        name: stageList[i], number: stageNum++,
+        results: stageResults.map((r) => {
+          return {
+            rider_uid: this.checksum(check(`${r.Firstname} ${r.Surname}`)),
+            name: check(`${r.Firstname} ${r.Surname}`),
+            gender: r.Gender,
+            class: this.className(r.Class),
+            club: this.clubName(r.Club),
+            time: r['Total Time'],
+            stage_rank: parseInt(r.Rank, 10),
+            stage_time_ms: convertTimeToMs(r['Total Time']),
+            behind_leader_ms: convertTimeToMs(r['Diff Winner']),
+            status: this.convertStatusComplete(r)
+          }
+        })
+      })
+    }
+
+    return stages
+  }
+
+  async parseNormal () {
     const raw = await csv(this.file)
     return {
       race: {
@@ -40,7 +125,7 @@ class EqConverter {
         number: raw[0][' "RaceName"'].match(/(\d+)/)[1]
       },
       results: raw.map((row) => {
-        const name = spellcheck.check(row.NameFormatted)
+        const name = check(row.NameFormatted)
         const ret = {
           rider_uid: this.checksum(name),
           name,
@@ -53,18 +138,18 @@ class EqConverter {
           status: this.convertStatus(row.Status)
         }
 
-        return this.setTime(ret, opts, parseInt(row.NetTime, 10))
+        return this.setTime(ret, parseInt(row.NetTime, 10))
       })
     }
   }
 
-  setTime (obj, opts, time) {
-    if (opts.acc) { // accumulative mode, stage times are this stage plus the one before.
+  setTime (obj, time) {
+    if (this.options.acc) { // accumulative mode, stage times are this stage plus the one before.
       if (obj.status !== 'OK') {
         obj.acc_time_ms = 0
       } else {
         obj.acc_time_ms = time
-      }
+      } {}
     } else { // stage time is just that
       if (obj.status !== 'OK') {
         obj.stage_time_ms = 0
@@ -74,6 +159,10 @@ class EqConverter {
     }
 
     return obj
+  }
+
+  clubName (name) {
+    return normalizeCase(name)
   }
 
   className (name) {
@@ -113,6 +202,10 @@ class EqConverter {
       return 'OK'
     }
     return status
+  }
+
+  convertStatusComplete (row) {
+    return 'OK'
   }
 }
 

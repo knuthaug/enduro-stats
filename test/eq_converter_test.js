@@ -23,7 +23,7 @@ tap.test('If file does not exist, throw error', async t => {
 })
 
 tap.test('parse file', async t => {
-  const eq = new EqConverter(path.join(__dirname, 'data/kongsberg-2012-kvinner-fe1.csv'))
+  const eq = new EqConverter(path.join(__dirname, 'data/kongsberg-2012-kvinner-fe1.csv'), { mode: 'normal'})
   const loaded = await eq.load()
   const data = await loaded.parse()
 
@@ -48,7 +48,7 @@ tap.test('parse file', async t => {
 })
 
 tap.test('parse file and format', async t => {
-  const eq = new EqConverter(path.join(__dirname, 'data/kongsberg-2012-menn-fe2.csv'))
+  const eq = new EqConverter(path.join(__dirname, 'data/kongsberg-2012-menn-fe2.csv'), { mode: 'normal'})
   const loaded = await eq.load()
   const data = await loaded.parse()
 
@@ -73,7 +73,7 @@ tap.test('parse file and format', async t => {
 })
 
 tap.test('parse file and format, multiday', async t => {
-  const eq = new EqConverter(path.join(__dirname, 'data/nesbyen-2015-menn-fe1.csv'))
+  const eq = new EqConverter(path.join(__dirname, 'data/nesbyen-2015-menn-fe1.csv'), {mode: 'normal'})
   const loaded = await eq.load()
   const data = await loaded.parse()
 
@@ -86,7 +86,7 @@ tap.test('parse file and format, multiday', async t => {
 })
 
 tap.test('parse file and format, other year', async t => {
-  const eq = new EqConverter(path.join(__dirname, 'data/nesbyen-2013-menn-fe3.csv'))
+  const eq = new EqConverter(path.join(__dirname, 'data/nesbyen-2013-menn-fe3.csv'), { mode: 'normal'})
   const loaded = await eq.load()
   const data = await loaded.parse()
 
@@ -108,7 +108,7 @@ tap.test('parse file and format, other year', async t => {
 })
 
 tap.test('race has uid, md5 of name and year', async t => {
-  const eq = new EqConverter(path.join(__dirname, 'data/nesbyen-2013-menn-fe3.csv'))
+  const eq = new EqConverter(path.join(__dirname, 'data/nesbyen-2013-menn-fe3.csv'), { mode: 'normal'})
   const loaded = await eq.load()
   const data = await loaded.parse()
 
@@ -117,7 +117,7 @@ tap.test('race has uid, md5 of name and year', async t => {
 })
 
 tap.test('rider has uid, md5 of name', async t => {
-  const eq = new EqConverter(path.join(__dirname, 'data/nesbyen-2013-menn-fe3.csv'))
+  const eq = new EqConverter(path.join(__dirname, 'data/nesbyen-2013-menn-fe3.csv'), { mode: 'normal'})
   const loaded = await eq.load()
   const data = await loaded.parse()
 
@@ -140,9 +140,9 @@ tap.test('test class name transcribing', t => {
 })
 
 tap.test('handle eq files not in accumulative mode', async t => {
-  const eq = new EqConverter(path.join(__dirname, 'data/nesbyen-2014-menn-fe1.csv'))
+  const eq = new EqConverter(path.join(__dirname, 'data/nesbyen-2014-menn-fe1.csv'), { acc: false, mode: 'normal' })
   const loaded = await eq.load()
-  const data = await loaded.parse({ acc: false })
+  const data = await loaded.parse()
 
   t.equals(data.race.name, 'NesbyEnduro 80twenty')
   t.equals(data.race.date, '2014-08-03')
@@ -168,9 +168,9 @@ tap.test('handle eq files not in accumulative mode', async t => {
 })
 
 tap.test('include club', async t => {
-  const eq = new EqConverter(path.join(__dirname, 'data/traktor-2015-menn-fe1.csv'))
+  const eq = new EqConverter(path.join(__dirname, 'data/traktor-2015-menn-fe1.csv'), { acc: false, mode: 'normal' })
   const loaded = await eq.load()
-  const data = await loaded.parse({ acc: false })
+  const data = await loaded.parse()
 
   t.equals(data.results[0].name, 'Espen Johnsen', 'Name if first is Espen Johnsen')
   t.equals(data.results[0].gender, 'M', 'Gender is M')
@@ -184,9 +184,9 @@ tap.test('include club', async t => {
 
 
 tap.test('handle results with time in different named column', async t => {
-  const eq = new EqConverter(path.join(__dirname, 'data/nesbyen-2015-menn-fe1.csv'))
+  const eq = new EqConverter(path.join(__dirname, 'data/nesbyen-2015-menn-fe1.csv'), { acc: false, mode: 'normal' })
   const loaded = await eq.load()
-  const data = await loaded.parse({ acc: false })
+  const data = await loaded.parse()
 
   t.equals(data.results[0].name, 'Zakarias Blom Johansen')
   t.equals(data.results[0].gender, 'M')
@@ -201,9 +201,9 @@ tap.test('handle results with time in different named column', async t => {
 
 
 tap.test('handle jr men from 2014 nesbyen (funky data)', async t => {
-  const eq = new EqConverter(path.join(__dirname, 'data/nesbyen-2014-menn-jr-fe1.csv'))
+  const eq = new EqConverter(path.join(__dirname, 'data/nesbyen-2014-menn-jr-fe1.csv'), { acc: false, mode: 'normal' })
   const loaded = await eq.load()
-  const data = await loaded.parse({ acc: false })
+  const data = await loaded.parse()
 
   t.equals(data.results[0].name, 'Ted Johansen')
   t.equals(data.results[0].gender, 'M')

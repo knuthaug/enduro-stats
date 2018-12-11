@@ -20,8 +20,8 @@ function normalizeCase (name) {
     .replace(/[|]/g, '') // cleanup
     .replace(/^\w|\s\w/g, upperCase)
     .replace(/-[a-z]/g, upperCase) // convert first char after hyphen to UPPERCASE
-    .replace(/^[æøå]|\s[æøå]/g, upperCase) // convert first char after hyphen to UPPERCASE
-    .replace(/^[äö]|\s[äö]/g, upperCase) // convert first char after hyphen to UPPERCASE
+    .replace(/^[æøå]|\s[æøå]/g, upperCase) // norwegian chars
+    .replace(/^[äö]|\s[äö]/g, upperCase) // swedish chars
 }
 
 function upperCase (str) {
@@ -29,3 +29,4 @@ function upperCase (str) {
 }
 
 module.exports.check = check
+module.exports.normalizeCase = normalizeCase
