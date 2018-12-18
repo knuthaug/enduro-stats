@@ -23,10 +23,14 @@ exports.up = function (db) {
     },
     rank: {
       type: 'int',
-      notNull: true
+      notNull: false
+    },
+    stage_rank: {
+      type: 'int',
+      notNull: false
     },
     time: {
-      type: 'time',
+      type: 'string',
       notNull: true
     },
     status: {

@@ -55,9 +55,30 @@ if(dir) {
   })
 }
 
+
+//single file results
+if(options.file) {
+  const dirNameParts = options.file.split(/\//)
+  const dirName = dirNameParts.slice(0, dirNameParts.length-1).join('/')
+  readCompleteRaceFile(options.file, path.join(dirName, 'racedata.json'))
+}
+
+async function readCompleteRaceFile (filename, datafile) {
+  const eq = new Eq(filename, {mode: 'complete', datafile})
+  await eq.load()
+  const data = await eq.parse({ acc: options.accumulate})
+  //console.log(data.stages[0].results)
+  for(let i = 0; i < data.stages.length; i++) {
+    const raceId = await db.insertRace(data.race, data.stages[i].number)
+    await db.insertStage(data.race.name, data.stages[i], raceId)
+    await db.insertRawResults(data.race.name, data.race.year, data.stages[i], data.stages[i].results)
+  }
+  return [data.race.name, data.race.year]
+}
+
 async function readSingleStageFile (filename) {
   const fullName = path.join(dir, filename)
-  const eq = new Eq(fullName)
+  const eq = new Eq(fullName, {mode: 'normal'})
   await eq.load()
   const data = await eq.parse({ acc: options.accumulate })
   const raceId = await db.insertRace(data.race, data.stages[0].number)

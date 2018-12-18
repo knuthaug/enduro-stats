@@ -22,7 +22,7 @@ class EqConverter {
 
     if(this.options.hasOwnProperty('datafile')) {
       this.datafileName = options.datafile
-    } 
+    }
 
     this.parsers = {
       normal: this.parseNormal,
@@ -43,10 +43,12 @@ class EqConverter {
         const stats = await fs.stat(this.datafileName)
 
         if (stats.isFile()) {
-          logger.info(`reading data file ${this.filename} for extra data`)
+          logger.info(`reading data file ${this.datafileName} for extra data`)
           this.datafile = await fs.readFile(this.datafileName, 'utf-8')
+        } else {
+          logger.error(`Data file ${this.datafileName} was not found`)
         }
-      }
+      } 
       return this
     }
 
@@ -195,7 +197,11 @@ class EqConverter {
   }
 
   year (obj) {
-    return obj.Starttime.split(/T/)[0].split(/-/)[0]
+    if(obj.hasOwnProperty('Starttime')) {
+      return obj.Starttime.split(/T/)[0].split(/-/)[0]
+    }
+    console.log(obj)
+    return obj.TimeOfDay.split(/T/)[0].split(/-/)[0]
   }
 
   convertStatus (status) {
