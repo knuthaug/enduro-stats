@@ -3,7 +3,7 @@ const EqConverter = require('../import/converters/eq.js')
 const path = require('path')
 
 tap.test('parse complete result file', async t => {
-  const eq = new EqConverter(path.join(__dirname, 'data/nesbyen-2013.csv'), {
+  const eq = new EqConverter(path.join(__dirname, 'data/oslo-2013.csv'), {
     acc: false,
     mode: 'complete',
     datafile: path.join(__dirname, 'data/racedata.json')
@@ -11,15 +11,15 @@ tap.test('parse complete result file', async t => {
   const loaded = await eq.load()
   const data = await loaded.parse()
 
-  t.equals(data.race.name, 'NesbyEnduro', 'race name matches')
+  t.equals(data.race.name, 'Oslo enduro', 'race name matches')
   t.equals(data.race.year, 2013, 'race year matches')
-  t.equals(data.race.uid, '4504e3dd07d15dec4044e6b2e32df739', 'race uid matches')
+  t.equals(data.race.uid, '0220cbd5bc43a80de8e69070c3f2872c', 'race uid matches')
   t.equals(data.stages.length, 5, 'stages matches stage number')
   //t.equals(data.race.stages, 5, 'stages in number too')
 })
 
-tap.test('Object details for stages', async t => {
-  const eq = new EqConverter(path.join(__dirname, 'data/nesbyen-2013.csv'), {
+tap.test('Object details for stages, non-accumulative mode', async t => {
+  const eq = new EqConverter(path.join(__dirname, 'data/oslo-2013.csv'), {
     acc: false,
     mode: 'complete',
     datafile: path.join(__dirname, 'data/racedata.json')

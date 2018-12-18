@@ -10,6 +10,16 @@ function find(list, prop, value) {
   })
 }
 
+function findAllRiders (rows) {
+  return rows.map((el) => {
+    return el.rider_id
+  }).filter((value, index, self) => {
+    return self.indexOf(value) === index
+  })
+}
+
+
+
 function maxValue (list, prop) {
   return list.reduce((acc, current) => {
     return current[prop] > acc ? current[prop] : acc
@@ -48,3 +58,4 @@ module.exports.rowsForRider = rowsForRider
 module.exports.find = find
 module.exports.stagesForRider = stagesForRider
 module.exports.stageIndexesForStage = stageIndexesForStage
+module.exports.findAllRiders = findAllRiders
