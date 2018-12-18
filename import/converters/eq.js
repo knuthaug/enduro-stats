@@ -117,29 +117,30 @@ class EqConverter {
         name: this.name(raw[0]),
         uid: this.raceChecksum(raw[0]),
         date: raw[0].Starttime.split(/T/)[0],
-        year: this.year(raw[0]),
-        stages: raw[0][' "RaceName"'].match(/(\d+)/)[1]
+        year: this.year(raw[0])
       },
-      stage: {
-        name: raw[0][' "RaceName"'].trim(),
-        number: raw[0][' "RaceName"'].match(/(\d+)/)[1]
-      },
-      results: raw.map((row) => {
-        const name = check(row.NameFormatted)
-        const ret = {
-          rider_uid: this.checksum(name),
-          name,
-          gender: row.Gender,
-          time: convertMsToTime(row.NetTime),
-          rank: parseInt(row.RankClass, 10),
-          class: this.className(row.ClassName),
-          club: row.Club,
-          team: row.Team,
-          status: this.convertStatus(row.Status)
-        }
+      stages: [
+        {
+          name: raw[0][' "RaceName"'].trim(),
+          number: raw[0][' "RaceName"'].match(/(\d+)/)[1],
+          results: raw.map((row) => {
+            const name = check(row.NameFormatted)
+            const ret = {
+              rider_uid: this.checksum(name),
+              name,
+              gender: row.Gender,
+              time: convertMsToTime(row.NetTime),
+              rank: parseInt(row.RankClass, 10),
+              class: this.className(row.ClassName),
+              club: row.Club,
+              team: row.Team,
+              status: this.convertStatus(row.Status)
+            }
 
-        return this.setTime(ret, parseInt(row.NetTime, 10))
-      })
+            return this.setTime(ret, parseInt(row.NetTime, 10))
+          })
+        }
+      ]
     }
   }
 
