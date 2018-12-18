@@ -23,7 +23,7 @@ exports.up = function (db) {
     },
     rank: {
       type: 'int',
-      notNull: true
+      notNull: false
     },
     time: {
       type: 'string',

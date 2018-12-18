@@ -2,12 +2,14 @@ const Db = require('./db.js')
 const Eq = require('./converters/eq.js')
 const fs = require('fs')
 const path = require('path')
-const StageCalculations = require('./stage_calculations.js')
+const AccumulatedStageCalculations = require('./accumulated_stage_calculations.js')
+const NormalStageCalculations = require('./normal_stage_calculations.js')
 const logger = require('./logger.js')
 const cmd = require('command-line-args')
 
 const db = new Db()
-const calc = new StageCalculations()
+const accCalc = new AccumulatedStageCalculations()
+const normalCalc = new NormalStageCalculations()
 
 const optionDefinitions = [
   { name: 'accumulate', alias: 'a', type: Boolean },
@@ -47,7 +49,13 @@ if(dir) {
       const results = await db.rawRaceResults(values[0], values[1], classes[i].class)
       logger.debug(`got ${results.length} rows`)
 
-      const calcs = await calc.differentials(results, options)
+      let calcs
+      if(options.accumulate) {
+        calcs = await accCalc.differentials(results, options)
+      } else {
+        calcs = await normalCalc.differentials(results, options)
+      }
+
       await db.insertCalculatedResults(raceId, calcs)
     }
 
@@ -60,7 +68,30 @@ if(dir) {
 if(options.file) {
   const dirNameParts = options.file.split(/\//)
   const dirName = dirNameParts.slice(0, dirNameParts.length-1).join('/')
-  readCompleteRaceFile(options.file, path.join(dirName, 'racedata.json'))
+  calculateComplete(dirName)
+}
+
+async function calculateComplete(dirName) {
+  const meta = await readCompleteRaceFile(options.file, path.join(dirName, 'racedata.json'))
+  const raceId = await db.findRace(meta[0], meta[1])
+
+  const classes = await db.classesForRace(raceId)
+  for (let i = 0; i < classes.length; i++) {
+    logger.info(`Reading back results for race ${meta[0]}, year=${meta[1]}, class=${classes[i].class}`)
+    const results = await db.rawRaceResults(meta[0], meta[1], classes[i].class)
+    logger.debug(`got ${results.length} rows`)
+
+    let calcs
+    if(options.accumulate) {
+      calcs = await accCalc.differentials(results, options)
+    } else {
+      calcs = await normalCalc.differentials(results, options)
+    }
+
+    console.log(calcs)
+    //await db.insertCalculatedResults(raceId, calcs)
+  }
+  db.destroy()
 }
 
 async function readCompleteRaceFile (filename, datafile) {
