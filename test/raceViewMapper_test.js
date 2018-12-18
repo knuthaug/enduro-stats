@@ -13,8 +13,8 @@ tap.test('maps to years', (t) => {
   t.end()
 })
 
- tap.test('maps to years cont', (t) => {
-   t.equals(r[1].races.length, 4, 'Has list per year')
-   t.equals(r[1].races[0].name, '80/20 OsloEnduro', 'Has list with names per year')
-   t.end()
- })
+tap.test('maps to years cont', (t) => {
+  t.equals(r[1].races.length, 4, 'Has list per year')
+  t.equals(r[1].races[0].name, '80/20 OsloEnduro', 'Has list with names per year')
+  t.end()
+})

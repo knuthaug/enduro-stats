@@ -6,21 +6,19 @@ const { check, normalizeCase } = require('../spellcheck.js')
 const { convertMsToTime, convertTimeToMs } = require('../../lib/time.js')
 
 class EqConverter {
-
-
   constructor (filename, options) {
     this.filename = filename
     this.options = options || { }
 
-    if(!this.options.hasOwnProperty('mode')) {
+    if (!this.options.hasOwnProperty('mode')) {
       this.options.mode = 'normal'
     }
 
-    if(!this.options.hasOwnProperty('acc')) {
+    if (!this.options.hasOwnProperty('acc')) {
       this.options.acc = 'true'
     }
 
-    if(this.options.hasOwnProperty('datafile')) {
+    if (this.options.hasOwnProperty('datafile')) {
       this.datafileName = options.datafile
     }
 
@@ -28,18 +26,16 @@ class EqConverter {
       normal: this.parseNormal,
       complete: this.parseComplete
     }
-
   }
 
   async load () {
-
     const stats = await fs.stat(this.filename)
 
     if (stats.isFile()) {
       logger.info(`reading file ${this.filename}`)
       this.file = await fs.readFile(this.filename, 'utf-8')
 
-      if(this.datafileName) {
+      if (this.datafileName) {
         const stats = await fs.stat(this.datafileName)
 
         if (stats.isFile()) {
@@ -48,7 +44,7 @@ class EqConverter {
         } else {
           logger.error(`Data file ${this.datafileName} was not found`)
         }
-      } 
+      }
       return this
     }
 
@@ -56,8 +52,8 @@ class EqConverter {
     throw new Error(`file ${this.filename} does not exist`)
   }
 
-  async parse() {
-    if(this.parsers.hasOwnProperty(this.options.mode)) {
+  async parse () {
+    if (this.parsers.hasOwnProperty(this.options.mode)) {
       return this.parsers[this.options.mode].call(this)
     } else {
       console.log(`Unknown parser ${this.options.mode} specified`)
@@ -65,9 +61,9 @@ class EqConverter {
     }
   }
 
-  async parseComplete() {
+  async parseComplete () {
     let race = {}
-    if(this.datafile) {
+    if (this.datafile) {
       race = JSON.parse(this.datafile)
     }
 
@@ -79,19 +75,20 @@ class EqConverter {
     }
   }
 
-  async parseStages() {
-    const raw = await csv(this.file, { separator: ';'})
+  async parseStages () {
+    const raw = await csv(this.file, { separator: ';' })
     const stages = []
     let stageNum = 1
-    const stageList = [ ...new Set(raw.map((r) =>  r.Race ))]
+    const stageList = [...new Set(raw.map((r) => r.Race))]
 
-    for(let i = 0; i < stageList.length; i++) {
+    for (let i = 0; i < stageList.length; i++) {
       const stageResults = raw.filter((r) => {
         return r.Race === stageList[i]
       })
 
       stages.push({
-        name: stageList[i], number: stageNum++,
+        name: stageList[i],
+        number: stageNum++,
         results: stageResults.map((r) => {
           return {
             rider_uid: this.checksum(check(`${r.Firstname} ${r.Surname}`)),
@@ -152,7 +149,7 @@ class EqConverter {
         obj.acc_time_ms = 0
       } else {
         obj.acc_time_ms = time
-      } {}
+      }
     } else { // stage time is just that
       if (obj.status !== 'OK') {
         obj.stage_time_ms = 0
@@ -197,7 +194,7 @@ class EqConverter {
   }
 
   year (obj) {
-    if(obj.hasOwnProperty('Starttime')) {
+    if (obj.hasOwnProperty('Starttime')) {
       return obj.Starttime.split(/T/)[0].split(/-/)[0]
     }
     console.log(obj)

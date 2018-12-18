@@ -1,10 +1,10 @@
-function indexOf(list, prop) {
+function indexOf (list, prop) {
   return list.findIndex((el) => {
     return el === prop
   })
 }
 
-function find(list, prop, value) {
+function find (list, prop, value) {
   return list.find((r) => {
     return r[prop] === value
   })
@@ -18,29 +18,27 @@ function findAllRiders (rows) {
   })
 }
 
-
-
 function maxValue (list, prop) {
   return list.reduce((acc, current) => {
     return current[prop] > acc ? current[prop] : acc
   }, 0)
 }
 
-function rowsForRider(list, riderId) {
+function rowsForRider (list, riderId) {
   return list.filter((r) => {
     return r.rider_id === riderId
   })
 }
 
-function stagesForRider(list, riderId) {
+function stagesForRider (list, riderId) {
   return rowIndexByProp(list, 'rider_id', riderId)
 }
 
-function stageIndexesForStage(list, stageNum) {
+function stageIndexesForStage (list, stageNum) {
   return rowIndexByProp(list, 'stage', stageNum)
 }
 
-function rowIndexByProp(list, prop, value) {
+function rowIndexByProp (list, prop, value) {
   return list.map((r, index) => {
     if (r[prop] === value) {
       return index
@@ -49,8 +47,6 @@ function rowIndexByProp(list, prop, value) {
     return typeof e !== 'undefined'
   })
 }
-
-
 
 module.exports.indexOf = indexOf
 module.exports.maxValue = maxValue

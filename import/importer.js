@@ -29,7 +29,7 @@ if (!options.hasOwnProperty('dir') && !options.hasOwnProperty('file')) {
 }
 
 const dir = options.dir
-if(dir) {
+if (dir) {
   fs.readdir(dir, async function (err, items) {
     let values = []
     for (var i = 0; i < items.length; i++) {
@@ -50,7 +50,7 @@ if(dir) {
       logger.debug(`got ${results.length} rows`)
 
       let calcs
-      if(options.accumulate) {
+      if (options.accumulate) {
         calcs = await accCalc.differentials(results, options)
       } else {
         calcs = await normalCalc.differentials(results, options)
@@ -63,15 +63,14 @@ if(dir) {
   })
 }
 
-
-//single file results
-if(options.file) {
+// single file results
+if (options.file) {
   const dirNameParts = options.file.split(/\//)
-  const dirName = dirNameParts.slice(0, dirNameParts.length-1).join('/')
+  const dirName = dirNameParts.slice(0, dirNameParts.length - 1).join('/')
   calculateComplete(dirName)
 }
 
-async function calculateComplete(dirName) {
+async function calculateComplete (dirName) {
   const meta = await readCompleteRaceFile(options.file, path.join(dirName, 'racedata.json'))
   const raceId = await db.findRace(meta[0], meta[1])
 
@@ -82,24 +81,24 @@ async function calculateComplete(dirName) {
     logger.debug(`got ${results.length} rows`)
 
     let calcs
-    if(options.accumulate) {
+    if (options.accumulate) {
       calcs = await accCalc.differentials(results, options)
     } else {
       calcs = await normalCalc.differentials(results, options)
     }
 
     console.log(calcs)
-    //await db.insertCalculatedResults(raceId, calcs)
+    // await db.insertCalculatedResults(raceId, calcs)
   }
   db.destroy()
 }
 
 async function readCompleteRaceFile (filename, datafile) {
-  const eq = new Eq(filename, {mode: 'complete', datafile})
+  const eq = new Eq(filename, { mode: 'complete', datafile })
   await eq.load()
-  const data = await eq.parse({ acc: options.accumulate})
-  //console.log(data.stages[0].results)
-  for(let i = 0; i < data.stages.length; i++) {
+  const data = await eq.parse({ acc: options.accumulate })
+  // console.log(data.stages[0].results)
+  for (let i = 0; i < data.stages.length; i++) {
     const raceId = await db.insertRace(data.race, data.stages[i].number)
     await db.insertStage(data.race.name, data.stages[i], raceId)
     await db.insertRawResults(data.race.name, data.race.year, data.stages[i], data.stages[i].results)
@@ -109,7 +108,7 @@ async function readCompleteRaceFile (filename, datafile) {
 
 async function readSingleStageFile (filename) {
   const fullName = path.join(dir, filename)
-  const eq = new Eq(fullName, {mode: 'normal'})
+  const eq = new Eq(fullName, { mode: 'normal' })
   await eq.load()
   const data = await eq.parse({ acc: options.accumulate })
   const raceId = await db.insertRace(data.race, data.stages[0].number)

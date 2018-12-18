@@ -15,7 +15,7 @@ module.exports = function raceViewMapper (races) {
     const row = {}
     const year = sorted[i].year
 
-    if(!out.find((r) => {
+    if (!out.find((r) => {
       return r.year === year
     })) {
       row.year = year

@@ -1,19 +1,15 @@
 const { indexOf, maxValue, rowsForRider, findAllRiders,
-        find, stagesForRider, stageIndexesForStage } = require('./listUtil.js')
+  find, stagesForRider, stageIndexesForStage } = require('./listUtil.js')
 
 class NormalStageCalculations {
-  constructor() {
-  }
-
-  differentials(rows) {
-
+  differentials (rows) {
     const riders = findAllRiders(rows)
     this.accStageTimes(rows, riders)
 
     return rows
   }
 
-  accStageTimes(rows, riders) {
+  accStageTimes (rows, riders) {
     for (let i = 0; i < riders.length; i++) {
       this.stageTimes(rows, riders[i])
     }
@@ -32,6 +28,5 @@ class NormalStageCalculations {
     }
   }
 }
-
 
 module.exports = NormalStageCalculations

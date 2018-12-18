@@ -15,7 +15,7 @@ tap.test('parse complete result file', async t => {
   t.equals(data.race.year, 2013, 'race year matches')
   t.equals(data.race.uid, '0220cbd5bc43a80de8e69070c3f2872c', 'race uid matches')
   t.equals(data.stages.length, 5, 'stages matches stage number')
-  //t.equals(data.race.stages, 5, 'stages in number too')
+  // t.equals(data.race.stages, 5, 'stages in number too')
 })
 
 tap.test('Object details for stages, non-accumulative mode', async t => {
@@ -33,7 +33,7 @@ tap.test('Object details for stages, non-accumulative mode', async t => {
   t.equals(stage1.number, 1, 'stage number matches')
   t.equals(stage1.results.length, 68, 'stage name matches')
   const rider = stage1.results[0]
-  //console.log(stage1.results[0])
+  // console.log(stage1.results[0])
 
   t.equals(rider.name, 'Stina Bondehagen', 'name is correct')
   t.equals(rider.rider_uid, '105fe7e9a0446b152bef347939aeba57', 'uid is correct')

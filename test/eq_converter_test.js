@@ -23,7 +23,7 @@ tap.test('If file does not exist, throw error', async t => {
 })
 
 tap.test('parse file with one stage in it', async t => {
-  const eq = new EqConverter(path.join(__dirname, 'data/kongsberg-2012-kvinner-fe1.csv'), { mode: 'normal'})
+  const eq = new EqConverter(path.join(__dirname, 'data/kongsberg-2012-kvinner-fe1.csv'), { mode: 'normal' })
   const loaded = await eq.load()
   const data = await loaded.parse()
 
@@ -50,7 +50,7 @@ tap.test('parse file with one stage in it', async t => {
 })
 
 tap.test('parse file and format', async t => {
-  const eq = new EqConverter(path.join(__dirname, 'data/kongsberg-2012-menn-fe2.csv'), { mode: 'normal'})
+  const eq = new EqConverter(path.join(__dirname, 'data/kongsberg-2012-menn-fe2.csv'), { mode: 'normal' })
   const loaded = await eq.load()
   const data = await loaded.parse()
 
@@ -77,7 +77,7 @@ tap.test('parse file and format', async t => {
 })
 
 tap.test('parse file and format, multiday', async t => {
-  const eq = new EqConverter(path.join(__dirname, 'data/nesbyen-2015-menn-fe1.csv'), {mode: 'normal'})
+  const eq = new EqConverter(path.join(__dirname, 'data/nesbyen-2015-menn-fe1.csv'), { mode: 'normal' })
   const loaded = await eq.load()
   const data = await loaded.parse()
 
@@ -90,7 +90,7 @@ tap.test('parse file and format, multiday', async t => {
 })
 
 tap.test('parse file and format, other year', async t => {
-  const eq = new EqConverter(path.join(__dirname, 'data/nesbyen-2013-menn-fe3.csv'), { mode: 'normal'})
+  const eq = new EqConverter(path.join(__dirname, 'data/nesbyen-2013-menn-fe3.csv'), { mode: 'normal' })
   const loaded = await eq.load()
   const data = await loaded.parse()
 
@@ -114,7 +114,7 @@ tap.test('parse file and format, other year', async t => {
 })
 
 tap.test('race has uid, md5 of name and year', async t => {
-  const eq = new EqConverter(path.join(__dirname, 'data/nesbyen-2013-menn-fe3.csv'), { mode: 'normal'})
+  const eq = new EqConverter(path.join(__dirname, 'data/nesbyen-2013-menn-fe3.csv'), { mode: 'normal' })
   const loaded = await eq.load()
   const data = await loaded.parse()
 
@@ -123,7 +123,7 @@ tap.test('race has uid, md5 of name and year', async t => {
 })
 
 tap.test('rider has uid, md5 of name', async t => {
-  const eq = new EqConverter(path.join(__dirname, 'data/nesbyen-2013-menn-fe3.csv'), { mode: 'normal'})
+  const eq = new EqConverter(path.join(__dirname, 'data/nesbyen-2013-menn-fe3.csv'), { mode: 'normal' })
   const loaded = await eq.load()
   const data = await loaded.parse()
   const r = data.stages[0].results
@@ -192,7 +192,6 @@ tap.test('include club', async t => {
   t.end()
 })
 
-
 tap.test('handle results with time in different named column', async t => {
   const eq = new EqConverter(path.join(__dirname, 'data/nesbyen-2015-menn-fe1.csv'), { acc: false, mode: 'normal' })
   const loaded = await eq.load()
@@ -209,7 +208,6 @@ tap.test('handle results with time in different named column', async t => {
   t.equals(r[0].team, '')
   t.end()
 })
-
 
 tap.test('handle jr men from 2014 nesbyen (funky data)', async t => {
   const eq = new EqConverter(path.join(__dirname, 'data/nesbyen-2014-menn-jr-fe1.csv'), { acc: false, mode: 'normal' })
