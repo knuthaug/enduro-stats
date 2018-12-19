@@ -78,6 +78,7 @@ class EqConverter {
 
   async parseStages () {
     const raw = await csv(this.file, { separator: ';' })
+    //console.log(raw)
     const stages = []
     let stageNum = 1
     const stageList = [...new Set(raw.map((r) => r.Race))]
@@ -91,6 +92,7 @@ class EqConverter {
         name: stageList[i],
         number: stageNum++,
         results: stageResults.map((r) => {
+
           return {
             rider_uid: this.checksum(check(`${r.Firstname} ${r.Surname}`)),
             name: check(`${r.Firstname} ${r.Surname}`),
