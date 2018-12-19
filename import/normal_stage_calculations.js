@@ -39,6 +39,7 @@ class NormalStageCalculations extends StageCalculations {
           continue
         }
 
+
         stageResults[i].behind_leader_ms = this.timeBehindRider(stageResults[i], this.firstInStage(stageResults, stageResults[i].stage))
       }
 
