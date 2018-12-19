@@ -99,7 +99,8 @@ class EqConverter {
             time: r['Total Time'],
             stage_rank: this.options.acc ? null : parseInt(r.Rank, 10),
             rank: this.options.acc ? parseInt(r.Rank, 10) : null,
-            stage_time_ms: convertTimeToMs(r['Total Time']),
+            stage_time_ms: this.options.acc ? null : convertTimeToMs(r['Total Time']),
+            acc_time_ms: this.options.acc ? convertTimeToMs(r['Total Time']) : null,
             behind_leader_ms: convertTimeToMs(r['Diff Winner']),
             status: this.convertStatusComplete(r)
           }
