@@ -26,3 +26,9 @@ tap.test('utf-8 names are supported', (t) => {
   t.equals(sp.check('öivind äsen'), 'Öivind Äsen', 'swedish chars uppercased')
   t.end()
 })
+
+tap.test('multiple spaces are truncated', (t) => {
+  t.equals(sp.check('øivind  åsen'), 'Øivind Åsen', 'Multiple spaces to one')
+  t.equals(sp.check('  öivind  äsen '), 'Öivind Äsen', 'multiple spaces to one, leading and trailing is trimmed')
+  t.end()
+})
