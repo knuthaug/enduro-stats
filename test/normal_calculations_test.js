@@ -28,3 +28,35 @@ tap.test('acc_time_ms is calculated', async t => {
   t.equals(result[63].acc_time_ms, 248000, 'acc_time_ms for second stage is first plus second')
   t.end()
 })
+
+tap.test('make sure all riders have all stages', async t => {
+
+  for(let i = 1; i < 6; i++) {
+    let stageLength = rows.filter((r) => {
+      return r.stage === i
+    }).length
+    t.equals(stageLength, 61, 'all riders have all stages set')
+  }
+
+  t.end()
+})
+
+tap.test('calculate final rank based on acc_time_ms for last stage', async t => {
+
+  const first = result.find((r) => {
+    return r.rider_id === 5 && r.stage === 5
+  })
+
+  const second = result.find((r) => {
+    return r.rider_id === 12 && r.stage === 5
+  })
+
+  const third = result.find((r) => {
+    return r.rider_id === 7 && r.stage === 5
+  })
+
+  t.equals(first.final_rank, 1, 'lowest time gets stage_rank 1')
+  t.equals(second.final_rank, 2, 'second lowest time gets stage_rank 2')
+  t.equals(third.final_rank, 3, 'third lowest time gets stage_rank 3')
+  t.end()
+})

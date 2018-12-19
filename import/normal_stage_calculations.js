@@ -1,11 +1,16 @@
 const { indexOf, maxValue, rowsForRider, findAllRiders,
   find, stagesForRider, stageIndexesForStage } = require('./listUtil.js')
 
-class NormalStageCalculations {
+const StageCalculations = require('./stage_calculations.js')
+
+class NormalStageCalculations extends StageCalculations {
   differentials (rows) {
     const riders = findAllRiders(rows)
-    this.accStageTimes(rows, riders)
+    const {stages, stageIds} = this.stagesAndStageIds(rows)
 
+    this.accStageTimes(rows, riders)
+    this.fillMissingStages(rows, riders, stages, stageIds)
+    this.findFinalRanks(rows, riders, stages)
     return rows
   }
 
