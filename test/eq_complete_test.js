@@ -31,7 +31,7 @@ tap.test('Object details for stages, non-accumulative mode', async t => {
 
   t.equals(stage1.name, 'SS1', 'stage name matches')
   t.equals(stage1.number, 1, 'stage number matches')
-  t.equals(stage1.results.length, 68, 'stage name matches')
+  t.equals(stage1.results.length, 68, 'stage result length matches')
   const rider = stage1.results[0]
   // console.log(stage1.results[0])
 
@@ -46,4 +46,34 @@ tap.test('Object details for stages, non-accumulative mode', async t => {
   t.equals(rider.stage_rank, 1, 'rank is correct')
 
   t.equals(stage1.results[1].behind_leader_ms, 1000, 'time behind leader in stage is correct')
+})
+
+tap.test('Object details for stages, accumulative mode', async t => {
+  const eq = new EqConverter(path.join(__dirname, 'data/complete-acc-race.csv'), {
+    acc: true,
+    mode: 'complete',
+    datafile: path.join(__dirname, 'data/complete-acc-racedata.json')
+  })
+
+  const loaded = await eq.load()
+  const data = await loaded.parse()
+  const stage1 = data.stages[0]
+
+  t.equals(stage1.name, 'FP 1 - Kongens Gruve', 'stage name matches')
+  t.equals(stage1.number, 1, 'stage number matches')
+  t.equals(stage1.results.length, 100, 'stage result length matches')
+  const rider = stage1.results[0]
+
+  t.equals(rider.name, 'Anita Løvli', 'name is correct')
+  t.equals(rider.rider_uid, 'e2c668db34a035fcf81263563b8033e3', 'uid is correct')
+  t.equals(rider.time, '12:37.2', 'time is correct')
+  t.equals(rider.gender, 'F', 'Gender is correct')
+  t.equals(rider.class, 'Kvinner senior', 'class is correct')
+  t.equals(rider.club, 'Kongsberg', 'club is correct')
+  t.equals(rider.stage_time_ms, 757002, 'time in ms is correct')
+  t.equals(rider.behind_leader_ms, 0, 'time behind leader in stage is correct')
+  t.equals(rider.stage_rank, null, 'stage_rank is null')
+  t.equals(rider.rank, 1, 'rank is 1')
+
+  t.equals(stage1.results[1].behind_leader_ms, 156008, 'time behind leader in stage is correct')
 })

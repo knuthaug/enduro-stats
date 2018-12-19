@@ -15,7 +15,7 @@ class EqConverter {
     }
 
     if (!this.options.hasOwnProperty('acc')) {
-      this.options.acc = 'true'
+      this.options.acc = true
     }
 
     if (this.options.hasOwnProperty('datafile')) {
@@ -97,7 +97,8 @@ class EqConverter {
             class: this.className(r.Class),
             club: this.clubName(r.Club),
             time: r['Total Time'],
-            stage_rank: parseInt(r.Rank, 10),
+            stage_rank: this.options.acc ? null : parseInt(r.Rank, 10),
+            rank: this.options.acc ? parseInt(r.Rank, 10) : null,
             stage_time_ms: convertTimeToMs(r['Total Time']),
             behind_leader_ms: convertTimeToMs(r['Diff Winner']),
             status: this.convertStatusComplete(r)
@@ -197,7 +198,7 @@ class EqConverter {
     if (obj.hasOwnProperty('Starttime')) {
       return obj.Starttime.split(/T/)[0].split(/-/)[0]
     }
-    console.log(obj)
+
     return obj.TimeOfDay.split(/T/)[0].split(/-/)[0]
   }
 
