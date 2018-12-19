@@ -76,7 +76,7 @@ async function calculateComplete (dirName) {
 
   const classes = await db.classesForRace(raceId)
   for (let i = 0; i < classes.length; i++) {
-    if (classes[i].class === 'Lag Rekrutt') {
+    if (classes[i].class === 'Lag Rekrutt' || classes[i].class === 'Boys 12-17') {
       continue
     }
 

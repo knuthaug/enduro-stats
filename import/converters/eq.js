@@ -175,7 +175,7 @@ class EqConverter {
       return 'Kvinner junior'
     } else if (/^M|Menn/i.test(name)) {
       return 'Menn senior'
-    } else if (/^K|Kvinner/i.test(name)) {
+    } else if (/^K|Kvinner/i.test(name) || /Women/i.test(name)) {
       return 'Kvinner senior'
     } else if (/^\d/.test(name)) {
       return name.replace(/^\d\s?/, '')
