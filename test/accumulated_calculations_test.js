@@ -172,4 +172,3 @@ tap.test('Handle stages where there are times and dnf/error status', async t => 
   t.equals(problem.final_rank, 111)
   t.end()
 })
-

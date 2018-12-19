@@ -87,8 +87,8 @@ async function calculateComplete (dirName) {
       calcs = await normalCalc.differentials(results, options)
     }
 
-    console.log(calcs)
-    // await db.insertCalculatedResults(raceId, calcs)
+    // console.log(calcs)
+    await db.insertCalculatedResults(raceId, calcs)
   }
   db.destroy()
 }

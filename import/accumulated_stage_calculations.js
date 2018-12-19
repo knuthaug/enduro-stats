@@ -1,18 +1,13 @@
-const ERROR_STATUS = 'ERROR'
-const DNS_STATUS = 'DNS'
-const DNF_STATUS = 'DNF'
-const ERROR_RANK = 999
+const { ERROR_STATUS } = require('./constants.js')
 
-const { indexOf, maxValue, rowsForRider, findAllRiders,
-  find, stagesForRider, stageIndexesForStage } = require('./listUtil.js')
+const { findAllRiders, stagesForRider, stageIndexesForStage } = require('./listUtil.js')
 
 const StageCalculations = require('./stage_calculations.js')
 
 class AccumulatedStageCalculations extends StageCalculations {
-
   differentials (rows, options) {
     const riders = findAllRiders(rows)
-    const {stages, stageIds} = this.stagesAndStageIds(rows)
+    const { stages, stageIds } = this.stagesAndStageIds(rows)
 
     this.findStageTimes(rows, riders)
     this.findTimeBehindLeader(rows, stages, stageIds)
@@ -74,18 +69,6 @@ class AccumulatedStageCalculations extends StageCalculations {
     }
   }
 
-  sortedStageTimes (rows, start, end) {
-    return rows.slice(start, end).sort((a, b) => {
-      if (a.stage_time_ms === 0) {
-        return 1
-      }
-      if (b.stage_time_ms === 0) {
-        return -1
-      }
-      return a.stage_time_ms - b.stage_time_ms
-    })
-  }
-
   stageRanks (rows, stageNum, maxStage) {
     // find all results for stageId
     const originalStageIndex = stageIndexesForStage(rows, stageNum)
@@ -122,42 +105,6 @@ class AccumulatedStageCalculations extends StageCalculations {
       }
     }
     rows.splice(originalStageIndex[0], originalStageIndex.length, ...stageResults)
-  }
-
-  notFinished (obj) {
-    return obj.status === DNS_STATUS || obj.status === DNF_STATUS || obj.status === ERROR_STATUS
-  }
-
-  firstInStage (rows, stageNumber) {
-    return rows.find((element) => {
-      return element.stage === stageNumber && element.stage_rank === 1
-    })
-  }
-
-  firstInRace (rows, stageNumber) {
-    return rows.find((element) => {
-      return element.stage === stageNumber && element.rank === 1
-    })
-  }
-
-  firstInRaceByTime (rows, stageNumber) {
-    const sorted = rows.sort((a, b) => {
-      if (a.acc_time_ms > b.acc_time_ms) {
-        return 1
-      } else if (a.acc_time_ms < b.acc_time_ms) {
-        return -1
-      }
-      return 0
-    })
-    return sorted[0]
-  }
-
-  timeBehindRider (currentRider, otherRider) {
-    return currentRider.stage_time_ms - otherRider.stage_time_ms
-  }
-
-  accTimeBehindRider (currentRider, otherRider) {
-    return currentRider.acc_time_ms - otherRider.acc_time_ms
   }
 }
 
