@@ -35,7 +35,7 @@
           <th scope="row">{{final_rank}}</th>
           <td><a href="/rytter/{{uid}}">{{name}}</a></td>
           {{#each ../../stages}}
-          <td>{{> stagetime result=../this stage=this }}</span></td>
+          <td title="nr. {{lookup ../this (propFor this 'rank')}} på etappen, {{lookup ../this (propFor this 'behind_leader')}} bak etappevinner">{{> stagetime result=../this stage=this }}</span></td>
           {{/each}}
           <td>{{acc_time}}</td>
           <td>{{acc_time_behind}}</td>

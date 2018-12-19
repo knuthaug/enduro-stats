@@ -30,6 +30,7 @@ module.exports = function resultViewMapper (classes, results) {
     riders[rider].rider_id = results[i].rider_id
     riders[rider][`stage${results[i].stage}_time`] = time(results[i].stage_time_ms, results[i].status)
     riders[rider][`stage${results[i].stage}_rank`] = results[i].stage_rank
+    riders[rider][`stage${results[i].stage}_behind_leader`] = convertMsToTime(results[i].behind_leader_ms)
 
     if (results[i].stage === lastStage) {
       // last stage, add in acc_time_behind
