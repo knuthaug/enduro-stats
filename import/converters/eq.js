@@ -212,6 +212,10 @@ class EqConverter {
   }
 
   convertStatusComplete (row) {
+    if(row.Status) {
+      return row.Status
+    }
+
     if(convertTimeToMs(row['Total Time']) === 0) {
       return 'DNS'
     }

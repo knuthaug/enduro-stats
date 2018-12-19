@@ -83,7 +83,6 @@ async function calculateComplete (dirName) {
     logger.info(`Reading back results for race ${meta[0]}, year=${meta[1]}, class=${classes[i].class}`)
     const results = await db.rawRaceResults(meta[0], meta[1], classes[i].class)
     logger.debug(`got ${results.length} rows`)
-
     let calcs
     if (options.accumulate) {
       calcs = await accCalc.differentials(results, options)
@@ -101,7 +100,7 @@ async function readCompleteRaceFile (filename, datafile) {
   const eq = new Eq(filename, { mode: 'complete', datafile, acc: options.accumulate })
   await eq.load()
   const data = await eq.parse()
-  // console.log(data.stages[0].results)
+
   for (let i = 0; i < data.stages.length; i++) {
     const raceId = await db.insertRace(data.race, data.stages[i].number)
     await db.insertStage(data.race.name, data.stages[i], raceId)
