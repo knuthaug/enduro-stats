@@ -13,13 +13,36 @@ class AccumulatedStageCalculations extends StageCalculations {
     this.findTimeBehindLeader(rows, stages, stageIds)
     this.findStageRanks(rows, stages)
     this.fillMissingStages(rows, riders, stages, stageIds)
+    this.sanityCheck(rows, riders)
     this.findFinalRanks(rows, riders, stages)
     return rows
   }
 
-  findStageTimes (rows, riders, accumulative) {
+  findStageTimes (rows, riders) {
     for (let i = 0; i < riders.length; i++) {
       this.stageTimes(rows, riders[i])
+    }
+  }
+
+  sanityCheck (rows, riders) {
+    for (let i = 0; i < riders.length; i++) {
+      this.checkRiderResults(rows, riders[i])
+    }
+  }
+
+  checkRiderResults(rows, riderId) {
+    const stageIndexes = stagesForRider(rows, riderId)
+
+    let err = false
+    for (let i = 0; i < stageIndexes.length; i++) {
+      if(this.notFinished(rows[stageIndexes[i]])) {
+        err = true
+      }
+      if(err) {
+        rows[stageIndexes[i]].acc_time_ms = 0
+        rows[stageIndexes[i]].behind_leader_ms = 0
+        rows[stageIndexes[i]].acc_time_behind = 0
+      }
     }
   }
 
