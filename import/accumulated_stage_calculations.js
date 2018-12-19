@@ -25,6 +25,7 @@ class AccumulatedStageCalculations extends StageCalculations {
   }
 
   sanityCheck (rows, riders) {
+    console.log('doing sanity check run')
     for (let i = 0; i < riders.length; i++) {
       this.checkRiderResults(rows, riders[i])
     }
@@ -35,9 +36,12 @@ class AccumulatedStageCalculations extends StageCalculations {
 
     let err = false
     for (let i = 0; i < stageIndexes.length; i++) {
-      if(this.notFinished(rows[stageIndexes[i]])) {
+      if(this.notFinished(rows[stageIndexes[i]]) || rows[stageIndexes[i]].stage_time_ms === 0) {
         err = true
       }
+    }
+
+    for (let i = 0; i < stageIndexes.length; i++) {
       if(err) {
         rows[stageIndexes[i]].acc_time_ms = 0
         rows[stageIndexes[i]].behind_leader_ms = 0
