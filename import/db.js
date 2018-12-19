@@ -82,10 +82,10 @@ class Db {
   async insertRaceForRider (raceId, riderId, finalRank) {
     const q = 'SELECT id from rider_races WHERE race_id = $1 AND rider_id = $2'
     const found = await this.find(q, [raceId, riderId])
-    logger.info(`found rider_race id=${found}`)
+    logger.info(`found rider_race id=${found}. Inserting raw results for rider`)
 
     if (!found) {
-      logger.info(`inserting rider_race for race=${raceId}, rider=${riderId}`)
+      //logger.info(`inserting rider_race for race=${raceId}, rider=${riderId}`)
       const query = 'INSERT INTO rider_races(race_id, rider_id, final_rank) VALUES($1, $2, $3)'
       const values = [raceId, riderId, finalRank]
       return this.insert(query, values)

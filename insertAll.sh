@@ -4,6 +4,7 @@
 #2012
 node import/importer.js -a -f ~/Dropbox/privat/sykkel/enduro-resultater/2012/kongsberg/kongsberg-2012.csv #ok!
 node import/importer.js  -f ~/Dropbox/privat/sykkel/enduro-resultater/2012/nesbyen/nesbyen-2012.csv #ok!
+node import/importer.js  -f ~/Dropbox/privat/sykkel/enduro-resultater/2012/oslo/oslo-2012.csv #ok!
 
 #2013
 node import/importer.js -a -f ~/Dropbox/privat/sykkel/enduro-resultater/2013/nesbyen/nesbyen-2013.csv #ok!
