@@ -26,6 +26,7 @@ class EqConverter {
       normal: this.parseNormal,
       complete: this.parseComplete
     }
+
   }
 
   async load () {
