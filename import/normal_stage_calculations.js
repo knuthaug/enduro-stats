@@ -1,4 +1,4 @@
-const { ERROR_STATUS } = require('./constants.js')
+const { ERROR_STATUS, OK_STATUS } = require('./constants.js')
 const { findAllRiders, stagesForRider, stageIndexesForStage } = require('./listUtil.js')
 
 const StageCalculations = require('./stage_calculations.js')
@@ -83,8 +83,11 @@ class NormalStageCalculations extends StageCalculations {
       }
 
       // fix erroneous times with ok status
-      if (rows[stageIndexes[i]].stage_time_ms === 0) {
+      if (rows[stageIndexes[i]].stage_time_ms === 0 && rows[stageIndexes[i]].status === OK_STATUS) {
         rows[stageIndexes[i]].status = ERROR_STATUS
+        rows[stageIndexes[i]].acc_time_ms = 0
+      } else if(rows[stageIndexes[i]].stage_time_ms === 0) {
+        rows[stageIndexes[i]].acc_time_ms = 0
       }
     }
   }

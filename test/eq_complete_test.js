@@ -64,8 +64,6 @@ tap.test('Object details for stages, accumulative mode', async t => {
   t.equals(stage1.results.length, 100, 'stage result length matches')
   const rider = stage1.results[0]
 
-  console.log(rider)
-
   t.equals(rider.name, 'Anita Løvli', 'name is correct')
   t.equals(rider.rider_uid, 'e2c668db34a035fcf81263563b8033e3', 'uid is correct')
   t.equals(rider.time, '12:37.2', 'time is correct')

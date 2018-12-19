@@ -60,6 +60,7 @@ tap.test('change stage time of zero into status ERROR', async t => {
   })
   t.equals(problem.stage_time_ms, 0, 'time is zero')
   t.equals(problem.status, 'ERROR', 'status is error')
+  t.equals(problem.acc_time_ms, 0, 'acc_time_ms is zero')
   t.end()
 })
 
