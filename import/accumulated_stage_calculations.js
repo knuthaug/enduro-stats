@@ -25,7 +25,6 @@ class AccumulatedStageCalculations extends StageCalculations {
   }
 
   sanityCheck (rows, riders) {
-    console.log('doing sanity check run')
     for (let i = 0; i < riders.length; i++) {
       this.checkRiderResults(rows, riders[i])
     }
