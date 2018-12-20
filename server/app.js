@@ -48,10 +48,20 @@ app.get('/', async (req, res) => {
 app.get('/ritt/:uid', async (req, res) => {
   log.debug(`request for ${req.path}`)
   const race = await db.findRace(req.params.uid)
+  const links = await db.findRaceLinks(race.id)
   const raceClasses = await db.classesForRace(req.params.uid)
   const raceResults = await db.raceResults(req.params.uid)
   const [stages, results] = resultViewMapper(raceClasses, raceResults)
-  res.render('race', { race, stages, results, active: 'ritt' })
+  const noResults = Object.values(results).length > 0
+
+  res.render('race', {
+    race,
+    stages,
+    results,
+    links,
+    noResults,
+    tables: true, 
+    active: 'ritt' })
 })
 
 app.get('/ritt', async (req, res) => {

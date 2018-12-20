@@ -1,6 +1,8 @@
+const md5 = require('md5')
 const Db = require('./db.js')
 const Eq = require('./converters/eq.js')
 const fs = require('fs')
+const afs = require('await-fs')
 const path = require('path')
 const AccumulatedStageCalculations = require('./accumulated_stage_calculations.js')
 const NormalStageCalculations = require('./normal_stage_calculations.js')
@@ -14,7 +16,8 @@ const normalCalc = new NormalStageCalculations()
 const optionDefinitions = [
   { name: 'accumulate', alias: 'a', type: Boolean },
   { name: 'dir', alias: 'd', type: String },
-  { name: 'file', alias: 'f', type: String }
+  { name: 'file', alias: 'f', type: String },
+  { name: 'racedata', alias: 'r', type: String }
 ]
 
 const options = cmd(optionDefinitions)
@@ -23,7 +26,7 @@ if (!options.hasOwnProperty('accumulate')) {
   options.accumulate = false
 }
 
-if (!options.hasOwnProperty('dir') && !options.hasOwnProperty('file')) {
+if (!options.hasOwnProperty('dir') && !options.hasOwnProperty('file') && !options.hasOwnProperty('racedata')) {
   console.log('Usage: [-a] -d path/to/directory || -f path/to/file')
   process.exit(-1)
 }
@@ -65,6 +68,28 @@ if (options.file) {
   const dirNameParts = options.file.split(/\//)
   const dirName = dirNameParts.slice(0, dirNameParts.length - 1).join('/')
   calculateComplete(dirName)
+}
+
+if (options.racedata) {
+  readRaceData(options.racedata)
+}
+
+async function readRaceData(file) {
+  const stats = await afs.stat(file)
+
+  if (stats.isFile()) {
+    logger.info(`reading data file ${file} for extra data`)
+    const datafile = await afs.readFile(file, 'utf-8')
+    const data = JSON.parse(datafile)
+    data.uid = md5(data.name + data.year)
+    const raceId = await db.insertRace(data, 0)
+
+    if(data.hasOwnProperty('links')) {
+      db.insertRaceLinks(raceId, data.links)
+    }
+  } else {
+    logger.error(`Data file ${file} was not found`)
+  }
 }
 
 async function calculateComplete (dirName) {

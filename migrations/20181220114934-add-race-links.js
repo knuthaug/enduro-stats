@@ -29,6 +29,10 @@ exports.up = function(db) {
       type: 'string',
       notNull: true
     },
+    description: {
+      type: 'string',
+      notNull: true
+    },
     race_id: {
       type: 'int',
       notNull: true,

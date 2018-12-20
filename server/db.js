@@ -36,6 +36,12 @@ class Db {
     return {}
   }
 
+  async findRaceLinks (id) {
+    const query = 'SELECT * from race_links WHERE race_id = $1'
+    const values = [id]
+    return await this.find(query, values)
+  }
+
   async findRider (uid) {
     const query = 'SELECT * from riders WHERE uid = $1'
     const values = [uid]

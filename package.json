@@ -13,8 +13,8 @@
     "test:integration": "NODE_ENV=test ./node_modules/tap/bin/run.js -R spec integration-test/*_test.js",
     "coverage": "NODE_ENV=test nyc npm test",
     "autotest": "NODE_ENV=test supervisor -q -n exit -x ./node_modules/tap/bin/run.js -R spec 'test/*_test.js'",
-    "build:js": "webpack",
-    "build:css": "postcss server/src/css/main.css -o server/dist/css/bundle.css && cp server/src/css/bootstrap* server/dist/css/",
+    "build:js": "webpack && cp server/src/js/table* server/dist/js/",
+    "build:css": "postcss server/src/css/main.css -o server/dist/css/bundle.css && cp server/src/css/bootstrap* server/dist/css/ && cp server/src/css/sort-table.css server/dist/css/",
     "build": "npm run clean && npm run build:js && npm run build:css",
     "lint": "standard"
   },
@@ -70,7 +70,8 @@
     "morgan": "1.9.1",
     "neat-csv": "4.0.0",
     "pg": "7.6.0",
-    "pino": "5.8.1"
+    "pino": "5.8.1",
+    "tablesort": "5.1.0"
   },
   "watch": {
     "start": {

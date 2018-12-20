@@ -63,3 +63,10 @@ a:hover {
   top: 7px;
 }
 
+.middle-align {
+  padding-top: 4px;
+}
+
+.btn {
+  padding: 0.200rem 0.55rem;
+}
