@@ -82,7 +82,6 @@ async function calculateComplete (dirName) {
 
     logger.info(`Reading back results for race ${meta[0]}, year=${meta[1]}, class=${classes[i].class}`)
     const results = await db.rawRaceResults(meta[0], meta[1], classes[i].class)
-
     logger.debug(`got ${results.length} rows`)
 
     let calcs
