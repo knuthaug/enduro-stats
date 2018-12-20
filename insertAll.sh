@@ -23,6 +23,7 @@ node import/importer.js -a -f ~/Dropbox/privat/sykkel/enduro-resultater/2015/lus
 node import/importer.js -a -f ~/Dropbox/privat/sykkel/enduro-resultater/2015/oppdal/oppdal-2015.csv #ok!
 node import/importer.js -a -f ~/Dropbox/privat/sykkel/enduro-resultater/2015/oslo/oslo-2015.csv # ok!
 node import/importer.js -a -f ~/Dropbox/privat/sykkel/enduro-resultater/2015/traktor/traktor-2015.csv # ok!
+node import/importer.js  -f ~/Dropbox/privat/sykkel/enduro-resultater/2015/frei/frei-2015.csv # ok!
 
 #2016
 node import/importer.js -a -f ~/Dropbox/privat/sykkel/enduro-resultater/2016/hafjell/hafjell-2016.csv # ok!
