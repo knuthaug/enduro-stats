@@ -4,10 +4,15 @@ module.exports = function resultViewMapper (classes, results) {
   const out = {}
   const riders = {}
   const stages = []
+  const lastStages = {}
 
-  const lastStage = results.reduce((acc, current) => {
-    return current.stage > acc ? current.stage : acc
-  }, 0)
+  classes.forEach((cls) => {
+    lastStages[cls] = results.filter((r) => {
+      return r.class === cls
+    }).reduce((acc, current) => {
+      return current.stage > acc ? current.stage : acc
+    }, 0)
+  })
 
   for (let i = 0; i < results.length; i++) {
     const rider = results[i].rider_id
@@ -32,7 +37,7 @@ module.exports = function resultViewMapper (classes, results) {
     riders[rider][`stage${results[i].stage}_rank`] = results[i].stage_rank
     riders[rider][`stage${results[i].stage}_behind_leader`] = convertMsToTime(results[i].behind_leader_ms)
 
-    if (results[i].stage === lastStage) {
+    if (results[i].stage === lastStages[results[i].class]) {
       // last stage, add in acc_time_behind
       riders[rider]['acc_time_behind'] = convertMsToTime(results[i].acc_time_behind)
       riders[rider]['acc_time'] = convertMsToTime(results[i].acc_time_ms)

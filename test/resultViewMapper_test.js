@@ -5,8 +5,10 @@ const path = require('path')
 const mapper = require('../server/resultViewMapper.js')
 const data = JSON.parse(fs.readFileSync(path.join(__dirname, './data/race-results-complete.json')).toString())
 const data2 = JSON.parse(fs.readFileSync(path.join(__dirname, './data/race-results-complete2.json')).toString())
+const data3 = JSON.parse(fs.readFileSync(path.join(__dirname, './data/race-results-complete-class-diff.json')).toString())
 const [stages, r] = mapper(['Menn', 'Kvinner'], data)
 const [stages2, r2] = mapper(['Menn', 'Kvinner'], data2)
+const [stages3, r3] = mapper(['Menn senior', 'Sport'], data3)
 
 tap.test('results are mapped to class names', (t) => {
   t.equals(r.hasOwnProperty('Menn'), true, 'Has class Menn')
@@ -37,5 +39,14 @@ tap.test('For stages either DNF or DNS, stage_time is replaced', (t) => {
   const men = r.Menn
   t.equals(men[68].stage6_time, 'DNF', 'stage time of zero is DNF')
   t.equals(men[74].stage6_time, 'DNS', 'stage time of zero is DNS if status is DNS')
+  t.end()
+})
+
+tap.test('For classes with fewer stages, total is calculated for last', (t) => {
+  const sport = r3.Sport
+  t.equals(sport[0].acc_time, '27:44.0', 'total time is included for fewer stages')
+  t.equals(sport[0].acc_time_behind, '00:00.0', 'total time is included for fewer stages')
+  t.equals(sport[1].acc_time, '30:27.0', 'total time is included for fewer stages')
+  t.equals(sport[1].acc_time_behind, '02:43.0', 'total time is included for fewer stages')
   t.end()
 })
