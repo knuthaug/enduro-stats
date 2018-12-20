@@ -16,7 +16,9 @@ const subs = {
   'Oscar Schiøtz Smith Rekrutt': 'Oscar Schiøtz Smith',
   'Rikke Westivg': 'Rikke Westvig',
   'Synne Marie Moss Opsand': 'Synne Opsand',
-  'Tim Glazebrook': 'Timothy Glazebrook'
+  'Tim Glazebrook': 'Timothy Glazebrook',
+  'Silje K. Holmsen': 'Silje Katarina Holmsen',
+  'Silje Holmsen': 'Silje Katarina Holmsen'
 }
 
 function check (name) {
