@@ -1,7 +1,16 @@
 <div class="row">
+  <div class="col-2"></div>
+  <div class="col-8">
+    <p>Norsk enduro er et forsøk på å samle resultater fra alle norske enduroritt, og hente ut mere
+      data fra dem. Man kan analysere ryttere fremgang fra ritt til ritt, se hvor tett eller spredd ut resultatene er i rittene og se historikken på hvilke ryttere som gjør det best over tid, og ikke minst se hvordan norsk enduro har utviklet seg på et større plan siden den relativt spede starten i 2012 og fram til nå. </p>
+    <p>Per nå er ikke alle rittene samlet her, da resultatene ikke lenger er å oppdrive på det regulære internettet. Sitter du på resultatene fra noen av rittene som mangler, hører jeg gjerne fra deg!</p>
+  </div>
+</div>
+<div class="row">
   <div class="col-2">
   </div>
   <div class="col-8">
+    <h3>Siste resultater</h3>
     {{#each races}}
     <a href="/ritt/{{uid}}">{{name}} {{year}}</a><br/>
     {{/each}}
