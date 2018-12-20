@@ -53,10 +53,21 @@ class Db {
     }
 
     logger.info(`Inserting race ${race.name} year=${race.year} into races`)
-    const query = 'INSERT INTO races(name, stages, date, year, uid) VALUES($1, $2, $3, $4, $5)'
-    const values = [race.name, stages, race.date, race.year, race.uid]
+    const query = 'INSERT INTO races(name, stages, date, year, uid, text, series) VALUES($1, $2, $3, $4, $5, $6, $7)'
+    const values = [race.name, stages, race.date, race.year, race.uid, race.text, race.series]
     await this.update(query, values)
     return this.findRace(race.name, race.year)
+  }
+
+  async insertRaceLinks (raceId, links) {
+
+    logger.info(`Inserting race links for race id ${raceId}`)
+    const query = 'INSERT INTO race_links(type, url, race_id) VALUES($1, $2, $3)'
+
+    for(let i = 0; i < links.length; i++) {
+      const values = [links[i].type, links[i].url, raceId]
+      this.insert(query, values)
+    }
   }
 
   async insertStage (race, stage, raceId) {

@@ -1,4 +1,9 @@
 {
   "name": "Oslo enduro",
-  "year": 2013
+  "year": 2013,
+  "series": "test",
+  "links": [
+    { "type": "film", "url": "https://vimeo.com/129686318" },
+    { "type": "results", "url": "http://www.8020es.no/s/ResultatListeNesbyEnduro_2015.pdf"}
+  ]
 }

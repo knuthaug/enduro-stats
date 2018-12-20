@@ -18,6 +18,18 @@ tap.test('parse complete result file', async t => {
   // t.equals(data.race.stages, 5, 'stages in number too')
 })
 
+tap.test('all racedata fields are included', async t => {
+  const eq = new EqConverter(path.join(__dirname, 'data/oslo-2013.csv'), {
+    acc: false,
+    mode: 'complete',
+    datafile: path.join(__dirname, 'data/racedata.json')
+  })
+  const loaded = await eq.load()
+  const data = await loaded.parse()
+
+  t.equals(data.race.series, 'test', 'series name is parsed')
+  t.equals(data.race.links.length, 2, 'links are parsed')
+})
 tap.test('Object details for stages, non-accumulative mode', async t => {
   const eq = new EqConverter(path.join(__dirname, 'data/oslo-2013.csv'), {
     acc: false,
