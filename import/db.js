@@ -159,7 +159,7 @@ class Db {
       const riderId = await this.insertRider(rider)
       const raceId = await this.findRace(raceName, raceYear)
       await this.insertRawResult(raceId, parseInt(riderId, 10), parseInt(stage.number, 10), result)
-      logger.info(`inserting raw result for rider ${riderId}`)
+      //logger.info(`inserting raw result for rider ${riderId}`)
     }
   }
 
