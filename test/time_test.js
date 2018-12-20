@@ -28,10 +28,12 @@ tap.test('handles hours', (t) => {
 tap.test('converts from time to ms', (t) => {
   t.equals(convertTimeToMs(undefined), 0, 'undefined is 0')
   t.equals(convertTimeToMs(null), 0, 'null is 0')
-  t.equals(convertTimeToMs('00.12'), 12, '. is millisecond divider')
+  t.equals(convertTimeToMs('00.12'), 120, '. is millisecond divider')
+  t.equals(convertTimeToMs('00.1'), 100, '. is millisecond divider')
   t.equals(convertTimeToMs('2:00'), 120000, 'just minutes')
   t.equals(convertTimeToMs('2:15'), 135000, 'minutes and second')
   t.equals(convertTimeToMs('02:15'), 135000, 'supports leading zero')
   t.equals(convertTimeToMs('01:02:15'), 3735000, 'supports hours')
+  t.equals(convertTimeToMs('06:04.6'), 364600, 'supports hours')
   t.end()
 })

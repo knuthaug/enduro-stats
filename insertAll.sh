@@ -16,6 +16,8 @@ echo "  Nesbyen"
 node import/importer.js -a -f ~/Dropbox/privat/sykkel/enduro-resultater/2013/nesbyen/nesbyen-2013.csv #ok!
 echo "  Oslo"
 node import/importer.js -f ~/Dropbox/privat/sykkel/enduro-resultater/2013/oslo/oslo-2013.csv # ok!
+echo "  Sogndal"
+node import/importer.js -f ~/Dropbox/privat/sykkel/enduro-resultater/2013/sogndal/sogndal-2013.csv # ok!
 
 #2014
 echo "2014:"
@@ -54,6 +56,7 @@ node import/importer.js -a -f ~/Dropbox/privat/sykkel/enduro-resultater/2016/opp
 echo "  Traktor"
 node import/importer.js -a -f ~/Dropbox/privat/sykkel/enduro-resultater/2016/traktor/traktor-2016.csv # ok!
 echo "  Voss"
-node import/importer.js -a -f ~/Dropbox/privat/sykkel/enduro-resultater/2016/voss/voss-2016.csv # not ok!
-
+node import/importer.js -a -f ~/Dropbox/privat/sykkel/enduro-resultater/2016/voss/voss-2016.csv # ok!
+echo "  Hemsedal"
+node import/importer.js -f ~/Dropbox/privat/sykkel/enduro-resultater/2016/hemsedal/hemsedal-2016.csv #ok
 
