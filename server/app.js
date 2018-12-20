@@ -8,6 +8,7 @@ const log = require('./log.js')
 const Db = require('./db.js')
 const resultViewMapper = require('./resultViewMapper.js')
 const raceViewMapper = require('./raceViewMapper.js')
+const riderViewMapper = require('./riderViewMapper.js')
 
 const hashedAssets = require('../views/helpers/hashed-assets.js')
 const compare = require('../views/helpers/compare.js')
@@ -73,8 +74,21 @@ app.get('/ritt', async (req, res) => {
 app.get('/rytter/:uid', async (req, res) => {
   log.debug(`request for ${req.path}`)
   const rider = await db.findRider(req.params.uid)
-  const races = await db.findRacesForRider(req.params.uid)
-  res.render('rider', { rider, races, active: 'ryttere' })
+  const races = riderViewMapper(await db.raceResultsForRider(req.params.uid))
+
+  const raceIds = races.map((r) => {
+    return {race: r.race, class: r.class }
+  })
+
+  const ridersPerClass = await db.ridersForClassAndRace(raceIds)
+  const results = races.map((r) => {
+    return Object.assign(r, { count: ridersPerClass[r.race]})
+  })
+  console.log(results)
+  res.render('rider', {
+    rider,
+    results,
+    active: 'ryttere' })
 })
 
 app.get('/ryttere', async (req, res) => {

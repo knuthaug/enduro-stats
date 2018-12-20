@@ -60,7 +60,14 @@ class Db {
   }
 
   async findRacesForRider (uid) {
-    const query = 'select rider_id, final_rank, races.name, races.year, races.uid from rider_races JOIN races ON races.id  = race_id WHERE rider_id = (SELECT id from riders where uid = $1) group by rider_id, races.name, races.year, races.uid, final_rank'
+    const query = 'select rider_id, final_rank, races.name, races.year, races.id, races.uid from rider_races JOIN races ON races.id  = race_id WHERE rider_id = (SELECT id from riders where uid = $1) group by rider_id, races.name, races.year, races.uid, races.id, final_rank'
+    const values = [uid]
+    return this.find(query, values)
+  }
+
+  async raceResultsForRider(uid) {
+    const query = 'SELECT results.*, race_id, ra.name, ra.uid, ra.date FROM results LEFT OUTER JOIN (SELECT id, name, uid, date from races) AS ra ON ra.id = results.race_id WHERE results.rider_id = (SELECT id from riders where uid = $1)'
+
     const values = [uid]
     return this.find(query, values)
   }
@@ -74,6 +81,18 @@ class Db {
       return rows.map((r) => { return r.class })
     }
     return []
+  }
+
+  async ridersForClassAndRace(races) {
+
+    const out = {}
+    const query = `select race_id, stage_id, count(id) from results where race_id = $1 and class = $2 group by race_id, stage_id order by race_id limit 1`
+
+    for(let i = 0; i < races.length; i++) {
+      const row = await this.find(query, [races[i].race, races[i].class])
+      out[row[0].race_id] = row[0].count
+    }
+    return out
   }
 
   async raceResults (uid) {

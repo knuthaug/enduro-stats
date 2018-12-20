@@ -5,51 +5,35 @@
     <h2>{{rider.name}} {{rider.club}}</h2>
   </div>
 </div>
-<div class="row">
-  <div class="col-2">
-  </div>
-  <div class="col-8">
-    <h3>Ritt</h3>
-    <table class="table table-hover table-dark table-striped table-sm">
-      <thead>
-        <tr>
-          <th scope="col">Ritt</th>
-          <th scope="col">Plassering</th>
-        </tr>
-      </thead>
-      <tbody>
-        {{#each races}}
-        <tr>
-          <td><a href="/ritt/{{uid}}">{{name}} {{year}}</a></td>
-          <td>{{final_rank}}</td>
-        </tr>
-        {{/each}}
-        <tr>
-      </tbody>
-    </table>
-  </div>
-</div>
 
 <div class="row">
-  <div class="col-12">
+  <div class="col-2"></div>
+  <div class="col-8">
     <h3>Resultater</h3>
     <table class="table table-hover table-dark table-striped table-sm">
       <thead>
         <tr>
+          <th scope="col">Dato</th>
           <th scope="col">Ritt</th>
+          <th scope="col">Klasse</th>
           <th scope="col">Plassering</th>
+          <th scope="col">Totaltid</th>
         </tr>
       </thead>
       <tbody>
-        {{#each races}}
+        {{#each results}}
         <tr>
-          <td><a href="/ritt/{{uid}}">{{name}} {{year}}</a></td>
-          <td>{{final_rank}}</td>
+          <td>{{date}}</a></td>
+          <td><a href="/ritt/{{uid}}#{{class}}">{{raceName}}</a></td>
+          <td>{{class}}</td>
+          <td>{{rank}}/{{count}}</td>
+          <td>{{time}}</td>
         </tr>
         {{/each}}
         <tr>
       </tbody>
     </table>
   </div>
+  <div class="col-2"></div>
 </div>
 

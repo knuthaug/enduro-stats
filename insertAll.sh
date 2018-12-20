@@ -38,7 +38,6 @@ node import/importer.js -f ~/Dropbox/privat/sykkel/enduro-resultater/2014/sognda
 echo "2015:"
 echo "  Nesbyen"
 node import/importer.js -a -f ~/Dropbox/privat/sykkel/enduro-resultater/2015/nesbyen/nesbyen-2015.csv
-
 echo "  Luster"
 node import/importer.js -a -f ~/Dropbox/privat/sykkel/enduro-resultater/2015/luster/luster-2015.csv
 echo "  Oppdal"
