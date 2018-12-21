@@ -12,6 +12,7 @@ module.exports = (left, operator, right, options) => {
 
   /*eslint-disable */
   var operators = {
+    '%':     (l, r) => {return l % r; },
     '==':     (l, r) => {return l == r; },
     '===':    (l, r) => {return l === r; },
     '!=':     (l, r) => {return l != r; },

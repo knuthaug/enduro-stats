@@ -1,15 +1,21 @@
 <div class="row">
   <div class="col-2">
   </div>
-  <div class="col-8">
-    {{#each races}}
+  {{#each races}}
+  <div class="col-3">
     <h3 class="m-m-t">{{year}}</h3>
      {{#each races}}
-      <a class="padded-link" href="/ritt/{{uid}}">{{name}} {{year}}</a><br/>
-     {{/each}}
+    <a class="padded-link" href="/ritt/{{uid}}">{{name}} {{year}}</a><br/>
     {{/each}}
   </div>
-  <div class="col-2">
+  {{#compare @index '%' 2}}
+   </div>
+    <div class="row">
+      <div class="col-2"></div>
+      {{/compare}}
+    {{/each}}
   </div>
+<div class="col-2">
+</div>
 </div>
 
