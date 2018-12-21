@@ -85,7 +85,7 @@ async function readRaceData(file) {
     const raceId = await db.insertRace(data, 0)
 
     if(data.hasOwnProperty('links')) {
-      db.insertRaceLinks(raceId, data.links)
+      await db.insertRaceLinks(raceId, data.links)
     }
   } else {
     logger.error(`Data file ${file} was not found`)

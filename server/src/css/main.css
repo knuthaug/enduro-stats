@@ -26,6 +26,10 @@ a:hover {
   color: #fff;
 }
 
+.icon {
+  width: 20px;
+  height: 20px;
+}
 .navbar-bg {
   background-color: #333;
 }
