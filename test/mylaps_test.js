@@ -52,5 +52,3 @@ tap.test('Object details for stages', async t => {
   t.equals(stage1.results[21].stage_time_ms, 0)
   t.equals(stage1.results[21].status, 'DNS')
 })
-
-

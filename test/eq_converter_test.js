@@ -102,7 +102,7 @@ tap.test('parse file and format, other year', async t => {
 
   const r = data.stages[0].results
 
-  t.equals(r[0].name, 'Espen Johnsen', 'name matches')
+  t.equals(r[0].name, 'Espen Bergli-Johnsen', 'name matches')
   t.equals(r[0].gender, 'M', 'gender matches')
   t.equals(r[0].time, '12:47.8', 'time matches')
   t.equals(r[0].rank, 1, 'rank matches')
@@ -128,7 +128,7 @@ tap.test('rider has uid, md5 of name', async t => {
   const data = await loaded.parse()
   const r = data.stages[0].results
 
-  t.equals(r[0].rider_uid, '603fb3e38346461ff2ba9ac4c35ff7fb', 'md5 matches')
+  t.equals(r[0].rider_uid, 'e3fdd33aa6dc207cb5c2b2ec7308bff1', 'md5 matches')
   t.end()
 })
 
@@ -182,7 +182,7 @@ tap.test('include club', async t => {
   const data = await loaded.parse()
   const r = data.stages[0].results
 
-  t.equals(r[0].name, 'Espen Johnsen', 'Name if first is Espen Johnsen')
+  t.equals(r[0].name, 'Espen Bergli-Johnsen', 'Name if first is Espen Johnsen')
   t.equals(r[0].gender, 'M', 'Gender is M')
   t.equals(r[0].rank, 1, 'rank is first')
   t.equals(r[0].stage_time_ms, 397000, 'time should be correct in ms')

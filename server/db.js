@@ -39,7 +39,7 @@ class Db {
   async findRaceLinks (id) {
     const query = 'SELECT * from race_links WHERE race_id = $1'
     const values = [id]
-    return await this.find(query, values)
+    return this.find(query, values)
   }
 
   async findRider (uid) {
@@ -65,7 +65,7 @@ class Db {
     return this.find(query, values)
   }
 
-  async raceResultsForRider(uid) {
+  async raceResultsForRider (uid) {
     const query = 'SELECT results.*, race_id, ra.name, ra.uid, ra.date FROM results LEFT OUTER JOIN (SELECT id, name, uid, date from races) AS ra ON ra.id = results.race_id WHERE results.rider_id = (SELECT id from riders where uid = $1)'
 
     const values = [uid]
@@ -83,12 +83,11 @@ class Db {
     return []
   }
 
-  async ridersForClassAndRace(races) {
-
+  async ridersForClassAndRace (races) {
     const out = {}
     const query = `select race_id, stage_id, count(id) from results where race_id = $1 and class = $2 group by race_id, stage_id order by race_id limit 1`
 
-    for(let i = 0; i < races.length; i++) {
+    for (let i = 0; i < races.length; i++) {
       const row = await this.find(query, [races[i].race, races[i].class])
       out[row[0].race_id] = row[0].count
     }

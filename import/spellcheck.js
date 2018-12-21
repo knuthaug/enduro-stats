@@ -10,7 +10,7 @@ const subs = {
   'Anders Paalgardkleven': 'Anders Paalgard Kleven',
   'Bård Stokke': 'Bård Sturla Stokke',
   'Christoffer E Bakke': 'Christoffer Engebretsen Bakke',
-  'Elinborg Olafsdottir' : 'Elinborg Ólafsdóttir',
+  'Elinborg Olafsdottir': 'Elinborg Ólafsdóttir',
   'Johan- Jørgen Lindgaard-Strømberg': 'Johan-Jørgen Lindgaard-Strømberg',
   'Mads Pedersen Rekrutt': 'Mads Pedersen',
   'Oscar Schiøtz Smith Rekrutt': 'Oscar Schiøtz Smith',

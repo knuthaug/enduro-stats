@@ -60,11 +60,10 @@ class Db {
   }
 
   async insertRaceLinks (raceId, links) {
-
     logger.info(`Inserting race links for race id ${raceId}`)
     const query = 'INSERT INTO race_links(type, url, description, race_id) VALUES($1, $2, $3, $4)'
 
-    for(let i = 0; i < links.length; i++) {
+    for (let i = 0; i < links.length; i++) {
       const values = [links[i].type, links[i].url, links[i].desc, raceId]
       this.insert(query, values)
     }
@@ -96,7 +95,7 @@ class Db {
     logger.info(`found rider_race id=${found}. Inserting raw results for rider`)
 
     if (!found) {
-      //logger.info(`inserting rider_race for race=${raceId}, rider=${riderId}`)
+      // logger.info(`inserting rider_race for race=${raceId}, rider=${riderId}`)
       const query = 'INSERT INTO rider_races(race_id, rider_id, final_rank) VALUES($1, $2, $3)'
       const values = [raceId, riderId, finalRank]
       return this.insert(query, values)
@@ -159,7 +158,7 @@ class Db {
       const riderId = await this.insertRider(rider)
       const raceId = await this.findRace(raceName, raceYear)
       await this.insertRawResult(raceId, parseInt(riderId, 10), parseInt(stage.number, 10), result)
-      //logger.info(`inserting raw result for rider ${riderId}`)
+      // logger.info(`inserting raw result for rider ${riderId}`)
     }
   }
 

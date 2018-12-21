@@ -6,7 +6,6 @@ const { convertMsToTime, convertTimeToMs } = require('../../lib/time.js')
 const Converter = require('./converter.js')
 
 class Mylaps extends Converter {
-
   constructor (filename, options) {
     super()
     this.filename = filename
@@ -53,87 +52,85 @@ class Mylaps extends Converter {
     return { race, stages }
   }
 
-  async parseStages() {
+  async parseStages () {
     const raw = await csv(this.file, { separator: ';' })
-    //console.log(raw)
+    // console.log(raw)
 
     const stages = this.findStages(raw)
 
-    for(let i = 0; i < stages.length; i++) {
+    for (let i = 0; i < stages.length; i++) {
       const stage = stages[i]
       stage.results = []
-      for(let j = 0; j < raw.length; j++) {
+      for (let j = 0; j < raw.length; j++) {
         stage.results.push({
           time: this.convertTime(raw[j][stage.name], raw[j][`${stage.name} Pos`]),
           name: check(raw[j].name),
           rider_uid: this.checksum(raw[j].name),
           gender: raw[j].gender,
           class: this.className(raw[j].Class),
-          club: raw[j].club || '',
+          club: raw[j].club || '',
           stage_time_ms: this.convertTimeMs(raw[j][stage.name], raw[j][`${stage.name} Pos`]),
           acc_time_ms: null,
           stage_rank: parseInt(raw[j][`${stage.name} Pos`], 10),
-          status: this.setStatus(raw[j][`${stage.name} Pos`],)
+          status: this.setStatus(raw[j][`${stage.name} Pos`])
         })
       }
     }
 
-    //fix dns/dnf pos
-    for(let i = 0; i < stages.length; i++) {
+    // fix dns/dnf pos
+    for (let i = 0; i < stages.length; i++) {
       const stage = stages[i]
       let pos = 0
-      for(let j = 0; j < stage.results.length; j++) {
-        if(Number.isNaN(stage.results[j].stage_rank)| Number.isNaN(stage.results[j].stage_rank)) {
+      for (let j = 0; j < stage.results.length; j++) {
+        if (Number.isNaN(stage.results[j].stage_rank) | Number.isNaN(stage.results[j].stage_rank)) {
           stage.results[j].stage_rank = pos++ + 1
         } else {
           pos = stage.results[j].stage_rank
         }
-
       }
     }
 
     return stages
   }
 
-  convertTimeMs(time, pos) {
-    if(pos !== 'DNS' && pos !== 'DNF') {
+  convertTimeMs (time, pos) {
+    if (pos !== 'DNS' && pos !== 'DNF') {
       return convertTimeToMs(time)
     }
 
     return 0
   }
 
-  convertTime(time, pos) {
-    if(pos !== 'DNS' && pos !== 'DNF') {
+  convertTime (time, pos) {
+    if (pos !== 'DNS' && pos !== 'DNF') {
       return time
     }
 
     return '00:00:00'
   }
 
-  setStatus(pos) {
-    if(pos !== 'DNS' && pos !== 'DNF') {
+  setStatus (pos) {
+    if (pos !== 'DNS' && pos !== 'DNF') {
       return 'OK'
     }
     return pos
   }
 
-  findStages(rows) {
+  findStages (rows) {
     const stages = []
     let stageNum = 1
     const row = rows[0]
     const keys = Object.keys(row)
 
-    for(let i = 0; i < keys.length; i++) {
+    for (let i = 0; i < keys.length; i++) {
       const k = keys[i]
       const key = 'FE' + stageNum++
-      if(row.hasOwnProperty(key) && !stages.find((e) => { return e.name === key })) {
+      if (row.hasOwnProperty(key) && !stages.find((e) => { return e.name === key })) {
         stages.push({ name: key, number: stageNum - 1 })
       }
     }
     return stages
   }
 }
-
 
 module.exports = Mylaps

@@ -39,7 +39,6 @@ class NormalStageCalculations extends StageCalculations {
           continue
         }
 
-
         stageResults[i].behind_leader_ms = this.timeBehindRider(stageResults[i], this.firstInStage(stageResults, stageResults[i].stage))
       }
 
@@ -87,7 +86,7 @@ class NormalStageCalculations extends StageCalculations {
       if (rows[stageIndexes[i]].stage_time_ms === 0 && rows[stageIndexes[i]].status === OK_STATUS) {
         rows[stageIndexes[i]].status = ERROR_STATUS
         rows[stageIndexes[i]].acc_time_ms = 0
-      } else if(rows[stageIndexes[i]].stage_time_ms === 0) {
+      } else if (rows[stageIndexes[i]].stage_time_ms === 0) {
         rows[stageIndexes[i]].acc_time_ms = 0
       }
     }

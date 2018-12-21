@@ -18,7 +18,6 @@ tap.test('Data fields for mapped array', (t) => {
   t.equals(r[0].rank, 1, 'rank in race')
   t.equals(r[0].time, '17:15.0', 'total time in race')
   t.equals(r[0].class, 'Menn senior', 'total time in race')
-  //console.log(r)
+  // console.log(r)
   t.end()
 })
-

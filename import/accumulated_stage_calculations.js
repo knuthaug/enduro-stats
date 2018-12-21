@@ -30,18 +30,18 @@ class AccumulatedStageCalculations extends StageCalculations {
     }
   }
 
-  checkRiderResults(rows, riderId) {
+  checkRiderResults (rows, riderId) {
     const stageIndexes = stagesForRider(rows, riderId)
 
     let err = false
     for (let i = 0; i < stageIndexes.length; i++) {
-      if(this.notFinished(rows[stageIndexes[i]]) || rows[stageIndexes[i]].stage_time_ms === 0) {
+      if (this.notFinished(rows[stageIndexes[i]]) || rows[stageIndexes[i]].stage_time_ms === 0) {
         err = true
       }
     }
 
     for (let i = 0; i < stageIndexes.length; i++) {
-      if(err) {
+      if (err) {
         rows[stageIndexes[i]].acc_time_ms = 0
         rows[stageIndexes[i]].behind_leader_ms = 0
         rows[stageIndexes[i]].acc_time_behind = 0

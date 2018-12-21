@@ -34,7 +34,7 @@ if (!options.hasOwnProperty('dir') && !options.hasOwnProperty('file') && !option
 const dir = options.dir
 if (dir) {
   fs.readdir(dir, async function (err, items) {
-    let raceName, raceYear, raceId 
+    let raceName, raceYear, raceId
     for (var i = 0; i < items.length; i++) {
       let { raceName, raceYear, raceId } = await readSingleStageFile(items[i])
     }
@@ -45,8 +45,8 @@ if (dir) {
         continue
       }
 
-      logger.info(`Reading back results for race ${values[0]}, year=${values[1]}, class=${classes[i].class}`)
-      const results = await db.rawRaceResults(values[0], values[1], classes[i].class)
+      logger.info(`Reading back results for race ${raceName}, year=${raceYear}, class=${classes[i].class}`)
+      const results = await db.rawRaceResults(raceName, raceYear, classes[i].class)
       logger.debug(`got ${results.length} rows`)
 
       let calcs
@@ -74,7 +74,7 @@ if (options.racedata) {
   readRaceData(options.racedata)
 }
 
-async function readRaceData(file) {
+async function readRaceData (file) {
   const stats = await afs.stat(file)
 
   if (stats.isFile()) {
@@ -84,7 +84,7 @@ async function readRaceData(file) {
     data.uid = md5(data.name + data.year)
     const raceId = await db.insertRace(data, 0)
 
-    if(data.hasOwnProperty('links')) {
+    if (data.hasOwnProperty('links')) {
       await db.insertRaceLinks(raceId, data.links)
     }
   } else {
@@ -130,7 +130,7 @@ async function readCompleteRaceFile (filename, datafile) {
     await db.insertRawResults(data.race.name, data.race.year, data.stages[i], data.stages[i].results)
   }
 
-  if(data.race.hasOwnProperty('links')) {
+  if (data.race.hasOwnProperty('links')) {
     db.insertRaceLinks(raceId, data.race.links)
   }
 

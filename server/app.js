@@ -61,7 +61,7 @@ app.get('/ritt/:uid', async (req, res) => {
     results,
     links,
     noResults,
-    tables: true, 
+    tables: true,
     active: 'ritt' })
 })
 
@@ -77,12 +77,12 @@ app.get('/rytter/:uid', async (req, res) => {
   const races = riderViewMapper(await db.raceResultsForRider(req.params.uid))
 
   const raceIds = races.map((r) => {
-    return {race: r.race, class: r.class }
+    return { race: r.race, class: r.class }
   })
 
   const ridersPerClass = await db.ridersForClassAndRace(raceIds)
   const results = races.map((r) => {
-    return Object.assign(r, { count: ridersPerClass[r.race]})
+    return Object.assign(r, { count: ridersPerClass[r.race] })
   })
   console.log(results)
   res.render('rider', {

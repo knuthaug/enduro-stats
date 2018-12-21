@@ -27,7 +27,6 @@ class EqConverter extends Converter {
       normal: this.parseNormal,
       complete: this.parseComplete
     }
-
   }
 
   async load () {
@@ -79,7 +78,7 @@ class EqConverter extends Converter {
 
   async parseStages () {
     const raw = await csv(this.file, { separator: ';' })
-    //console.log(raw)
+    // console.log(raw)
     const stages = []
     let stageNum = 1
     const stageList = [...new Set(raw.map((r) => r.Race))]
@@ -93,7 +92,6 @@ class EqConverter extends Converter {
         name: stageList[i],
         number: stageNum++,
         results: stageResults.map((r) => {
-
           return {
             rider_uid: this.checksum(check(`${r.Firstname} ${r.Surname}`)),
             name: check(`${r.Firstname} ${r.Surname}`),
@@ -192,11 +190,11 @@ class EqConverter extends Converter {
   }
 
   convertStatusComplete (row) {
-    if(row.Status) {
+    if (row.Status) {
       return row.Status
     }
 
-    if(convertTimeToMs(row['Total Time']) === 0) {
+    if (convertTimeToMs(row['Total Time']) === 0) {
       return 'DNS'
     }
     return 'OK'

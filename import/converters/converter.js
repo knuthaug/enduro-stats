@@ -23,7 +23,6 @@ class Converter {
     }
     return name
   }
-
 }
 
 module.exports = Converter
