@@ -14,7 +14,7 @@ class Db {
   }
 
   async findRaces (limit) {
-    let query = 'SELECT * from races ORDER by YEAR DESC'
+    let query = 'SELECT * from races ORDER by YEAR DESC, date DESC'
     const values = []
 
     if (limit) {
