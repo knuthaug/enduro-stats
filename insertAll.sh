@@ -20,6 +20,8 @@ echo "  Sogndal"
 node import/importer.js -f ~/Dropbox/privat/sykkel/enduro-resultater/2013/sogndal/sogndal-2013.csv
 echo "  Kongsberg"
 node import/importer.js -r ~/Dropbox/privat/sykkel/enduro-resultater/2013/kongsberg/racedata.json
+echo "  Traktor"
+node import/importer.js -r ~/Dropbox/privat/sykkel/enduro-resultater/2013/traktor/racedata.json
 
 #2014
 echo "2014:"
