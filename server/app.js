@@ -42,7 +42,7 @@ app.set('view engine', 'handlebars')
 
 app.get('/', async (req, res) => {
   log.debug('request for /')
-  const races = await db.findRaces(6)
+  const races = await db.findRaces(10)
   res.render('index', { races })
 })
 
