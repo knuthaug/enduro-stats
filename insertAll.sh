@@ -74,3 +74,6 @@ node import/importer.js -r ~/Dropbox/privat/sykkel/enduro-resultater/2016/frei/r
 echo "  Nesbyen"
 node import/importer.js -r ~/Dropbox/privat/sykkel/enduro-resultater/2016/nesbyen/racedata.json
 
+echo "2017:"
+echo "  Hemsedal"
+node import/importer.js -f ~/Dropbox/privat/sykkel/enduro-resultater/2017/hemsedal/hemsedal-2017.csv
