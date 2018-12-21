@@ -1,12 +1,13 @@
 const csv = require('neat-csv')
 const fs = require('await-fs')
-const md5 = require('md5')
 const logger = require('../logger.js')
 const { check, normalizeCase } = require('../spellcheck.js')
 const { convertMsToTime, convertTimeToMs } = require('../../lib/time.js')
+const Converter = require('./converter.js')
 
-class EqConverter {
+class EqConverter extends Converter {
   constructor (filename, options) {
+    super()
     this.filename = filename
     this.options = options || { }
 
@@ -170,32 +171,9 @@ class EqConverter {
     return normalizeCase(name)
   }
 
-  className (name) {
-    if (/M.+junior|m.+jr/i.test(name)) {
-      return 'Menn junior'
-    } else if (/K.+junior|k.+jr/i.test(name)) {
-      return 'Kvinner junior'
-    } else if (/^M|Menn/i.test(name)) {
-      return 'Menn senior'
-    } else if (/^K|Kvinner/i.test(name) || /Women/i.test(name)) {
-      return 'Kvinner senior'
-    } else if (/^\d/.test(name)) {
-      return name.replace(/^\d\s?/, '')
-    }
-    return name
-  }
-
   name (obj) {
     const year = this.year(obj)
     return obj.EventName.replace(year, '').trim()
-  }
-
-  raceChecksum (obj) {
-    return this.checksum(this.name(obj) + this.year(obj))
-  }
-
-  checksum (string) {
-    return md5(string)
   }
 
   year (obj) {

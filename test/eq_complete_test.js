@@ -30,6 +30,7 @@ tap.test('all racedata fields are included', async t => {
   t.equals(data.race.series, 'test', 'series name is parsed')
   t.equals(data.race.links.length, 2, 'links are parsed')
 })
+
 tap.test('Object details for stages, non-accumulative mode', async t => {
   const eq = new EqConverter(path.join(__dirname, 'data/oslo-2013.csv'), {
     acc: false,
