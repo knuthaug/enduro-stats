@@ -1,5 +1,6 @@
 const bootstrap = require('bootstrap')
 const tablesort = require('tablesort')
+const feather = require('feather-icons')
 
 function extendTableSort() {
   var cleanNumber = function(i) {
@@ -35,5 +36,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   for(var i = 0; i < tables.length; i++) {
     tablesort(tables[i], { descending: true })
   }
+
+  feather.replace()
 })
 

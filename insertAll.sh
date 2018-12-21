@@ -48,6 +48,8 @@ echo "  Traktor"
 node import/importer.js -a -f ~/Dropbox/privat/sykkel/enduro-resultater/2015/traktor/traktor-2015.csv
 echo "  Frei"
 node import/importer.js  -f ~/Dropbox/privat/sykkel/enduro-resultater/2015/frei/frei-2015.csv
+echo "  Molde"
+node import/importer.js -r ~/Dropbox/privat/sykkel/enduro-resultater/2015/molde/racedata.json
 
 #2016
 echo "2016:"
@@ -61,4 +63,6 @@ echo "  Voss"
 node import/importer.js -a -f ~/Dropbox/privat/sykkel/enduro-resultater/2016/voss/voss-2016.csv
 echo "  Hemsedal"
 node import/importer.js -f ~/Dropbox/privat/sykkel/enduro-resultater/2016/hemsedal/hemsedal-2016.csv
+echo "  Frei"
+node import/importer.js -r ~/Dropbox/privat/sykkel/enduro-resultater/2016/frei/racedata.json
 
