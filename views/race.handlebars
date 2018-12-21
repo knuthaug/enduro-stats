@@ -4,8 +4,8 @@
   <div class="col-8">
     <h2><a name="top">{{race.name}} {{race.year}}</a></h2>
     <div class="row">
-      <div class="col-3 middle-align">{{race.date}}</div>
-      <div class="col-3 middle-align">{{race.stages}} etapper</div>
+      <div class="col-3 middle-align">{{race.date}}, {{race.stages}} etapper</div>
+      <div class="col-3 middle-align">{{> series race}}</div>
       {{#if noResults}}
       <div class="col-6">{{#each results}}<a class="btn btn-outline-light" title="Hopp til resultater for {{@key}}" href="#{{@key}}">{{@key}}</a> {{/each}}</div>{{/if}}
     </div>
