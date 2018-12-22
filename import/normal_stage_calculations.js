@@ -45,7 +45,7 @@ class NormalStageCalculations extends StageCalculations {
 
       // acc_time_behind, just for last stage
       if (stageResults[i].stage === maxStage) {
-        if (stageResults[i].rank === 1) {
+        if (stageResults[i].final_rank === 1) {
           stageResults[i].acc_time_behind = 0
         } else {
           if (this.notFinished(stageResults[i])) {

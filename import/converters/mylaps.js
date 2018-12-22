@@ -94,7 +94,7 @@ class Mylaps extends Converter {
   }
 
   stageRank(rank) {
-    if(rank === 0) {
+    if(rank === 0 || rank === 'DNS' || rank === 'DNF') {
       return 999
     }
 
@@ -124,7 +124,10 @@ class Mylaps extends Converter {
       return 'DNS'
     }  else if (time === '00:00:00') {
       return 'DNS'
-    } else if (pos !== 'DNS' && pos !== 'DNF') {
+    } else if (pos === 'DNS' || pos === 'DNF') {
+      return pos
+    }
+    else if (pos !== 'DNS' && pos !== 'DNF') {
       return 'OK'
     }
     return pos
