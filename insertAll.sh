@@ -91,3 +91,5 @@ echo "  Traktor"
 node import/importer.js -m -f ~/Dropbox/privat/sykkel/enduro-resultater/2017/traktor/traktor-2017.csv
 echo "  Hafjell"
 node import/importer.js -m -f ~/Dropbox/privat/sykkel/enduro-resultater/2017/hafjell/hafjell-2017.csv
+echo "  Ringerike"
+node import/importer.js -m -f ~/Dropbox/privat/sykkel/enduro-resultater/2017/ringerike/ringerike-2017.csv
