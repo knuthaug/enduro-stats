@@ -81,9 +81,13 @@ app.get('/rytter/:uid', async (req, res) => {
   })
 
   const ridersPerClass = await db.ridersForClassAndRace(raceIds)
+
   const results = races.map((r) => {
     return Object.assign(r, { count: ridersPerClass[r.race] })
+  }).sort((a, b) => {
+    return b.year - a.year
   })
+
   console.log(results)
   res.render('rider', {
     rider,

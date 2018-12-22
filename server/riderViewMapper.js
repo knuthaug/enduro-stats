@@ -26,6 +26,7 @@ function addFields (row, res) {
 function toRow (r) {
   return {
     race: r.race_id,
+    year: r.year,
     date: r.date,
     raceName: r.name,
     class: r.class,
