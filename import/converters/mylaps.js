@@ -71,8 +71,8 @@ class Mylaps extends Converter {
           club: raw[j].club || '',
           stage_time_ms: this.convertTimeMs(raw[j][stage.name], raw[j][`${stage.name} Pos`]),
           acc_time_ms: null,
-          stage_rank: parseInt(raw[j][`${stage.name} Pos`], 10),
-          status: this.setStatus(raw[j][`${stage.name} Pos`])
+          stage_rank: this.stageRank(parseInt(raw[j][`${stage.name} Pos`], 10)),
+          status: this.setStatus(raw[j][`${stage.name} Pos`], raw[j][stage.name])
         })
       }
     }
@@ -93,9 +93,19 @@ class Mylaps extends Converter {
     return stages
   }
 
+  stageRank(rank) {
+    if(rank === 0) {
+      return 999
+    }
+
+    return rank
+  }
+
   convertTimeMs (time, pos) {
     if (pos !== 'DNS' && pos !== 'DNF') {
       return convertTimeToMs(time)
+    } else if (pos === 0 || pos === '0') {
+      return 0
     }
 
     return 0
@@ -109,8 +119,12 @@ class Mylaps extends Converter {
     return '00:00:00'
   }
 
-  setStatus (pos) {
-    if (pos !== 'DNS' && pos !== 'DNF') {
+  setStatus (pos, time) {
+    if(pos === 0 || pos === '0') {
+      return 'DNS'
+    }  else if (time === '00:00:00') {
+      return 'DNS'
+    } else if (pos !== 'DNS' && pos !== 'DNF') {
       return 'OK'
     }
     return pos
