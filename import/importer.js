@@ -1,6 +1,7 @@
 const md5 = require('md5')
 const Db = require('./db.js')
 const Eq = require('./converters/eq.js')
+const Mylaps = require('./converters/mylaps.js')
 const fs = require('fs')
 const afs = require('await-fs')
 const path = require('path')
@@ -16,6 +17,7 @@ const normalCalc = new NormalStageCalculations()
 const optionDefinitions = [
   { name: 'accumulate', alias: 'a', type: Boolean },
   { name: 'dir', alias: 'd', type: String },
+  { name: 'mylaps', alias: 'm', type: Boolean },
   { name: 'file', alias: 'f', type: String },
   { name: 'racedata', alias: 'r', type: String }
 ]
@@ -24,6 +26,10 @@ const options = cmd(optionDefinitions)
 
 if (!options.hasOwnProperty('accumulate')) {
   options.accumulate = false
+}
+
+if (!options.hasOwnProperty('mylaps')) {
+  options.mylaps = false
 }
 
 if (!options.hasOwnProperty('dir') && !options.hasOwnProperty('file') && !options.hasOwnProperty('racedata')) {
@@ -93,7 +99,7 @@ async function readRaceData (file) {
 }
 
 async function calculateComplete (dirName) {
-  const { raceName, raceYear, raceId } = await readCompleteRaceFile(options.file, path.join(dirName, 'racedata.json'))
+  const { raceName, raceYear, raceId } = await readCompleteRaceFile(options.file, path.join(dirName, 'racedata.json'), options.mylaps)
 
   const classes = await db.classesForRace(raceId)
   for (let i = 0; i < classes.length; i++) {
@@ -118,10 +124,19 @@ async function calculateComplete (dirName) {
   db.destroy()
 }
 
-async function readCompleteRaceFile (filename, datafile) {
-  const eq = new Eq(filename, { mode: 'complete', datafile, acc: options.accumulate })
-  await eq.load()
-  const data = await eq.parse()
+async function readCompleteRaceFile (filename, datafile, mylaps) {
+  let data = {}
+
+  if(!mylaps) {
+    const eq = new Eq(filename, { mode: 'complete', datafile, acc: options.accumulate })
+    await eq.load()
+    data = await eq.parse()
+  } else {
+    const ml = new Mylaps(filename, { datafile })
+    await ml.load()
+    data = await ml.parse()
+  }
+
   let raceId
 
   for (let i = 0; i < data.stages.length; i++) {
