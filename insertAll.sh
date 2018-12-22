@@ -85,3 +85,5 @@ echo "  Nesbyen"
 node import/importer.js -f ~/Dropbox/privat/sykkel/enduro-resultater/2017/nesbyen/nesbyen-2017.csv
 echo "  Bodø"
 node import/importer.js -m -f ~/Dropbox/privat/sykkel/enduro-resultater/2017/bodø/bodø-2017.csv
+echo "  Telemark"
+node import/importer.js -r ~/Dropbox/privat/sykkel/enduro-resultater/2017/skien/racedata.json
