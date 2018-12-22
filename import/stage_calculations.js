@@ -1,6 +1,6 @@
 const { ERROR_STATUS, ERROR_RANK, DNS_STATUS, DNF_STATUS } = require('./constants.js')
 
-const { indexOf, maxValue, rowsForRider, find } = require('./listUtil.js')
+const { indexOf, maxValue, stagesForRider, rowsForRider, find } = require('./listUtil.js')
 
 class StageCalculations {
   stagesAndStageIds (rows) {
@@ -32,6 +32,32 @@ class StageCalculations {
       rows[rowIndex].final_rank = rank++
     }
   }
+
+  sanityCheck (rows, riders) {
+    for (let i = 0; i < riders.length; i++) {
+      this.checkRiderResults(rows, riders[i])
+    }
+  }
+
+  checkRiderResults (rows, riderId) {
+    const stageIndexes = stagesForRider(rows, riderId)
+
+    let err = false
+    for (let i = 0; i < stageIndexes.length; i++) {
+      if (this.notFinished(rows[stageIndexes[i]]) || rows[stageIndexes[i]].stage_time_ms === 0) {
+        err = true
+      }
+    }
+
+    for (let i = 0; i < stageIndexes.length; i++) {
+      if (err) {
+        rows[stageIndexes[i]].acc_time_ms = 0
+        rows[stageIndexes[i]].behind_leader_ms = 0
+        rows[stageIndexes[i]].acc_time_behind = 0
+      }
+    }
+  }
+
 
   lastStages (rows, stages) {
     return rows.filter((r) => {

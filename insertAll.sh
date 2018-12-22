@@ -87,3 +87,7 @@ echo "  Bodø"
 node import/importer.js -m -f ~/Dropbox/privat/sykkel/enduro-resultater/2017/bodø/bodø-2017.csv
 echo "  Telemark"
 node import/importer.js -r ~/Dropbox/privat/sykkel/enduro-resultater/2017/skien/racedata.json
+echo "  Traktor"
+node import/importer.js -m -f ~/Dropbox/privat/sykkel/enduro-resultater/2017/traktor/traktor-2017.csv
+echo "  Hafjell"
+node import/importer.js -m -f ~/Dropbox/privat/sykkel/enduro-resultater/2017/hafjell/hafjell-2017.csv

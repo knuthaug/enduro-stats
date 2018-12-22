@@ -12,6 +12,7 @@ class NormalStageCalculations extends StageCalculations {
     this.findFinalRanks(rows, riders, stages)
     this.findRelativeStageTimes(rows, stages)
     this.fillMissingStages(rows, riders, stages, stageIds)
+    this.sanityCheck(rows, riders)
     this.findFinalRanks(rows, riders, stages)
     return rows
   }
