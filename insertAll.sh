@@ -109,5 +109,10 @@ echo "  Nesfjella"
 node import/importer.js -m -f ~/Dropbox/privat/sykkel/enduro-resultater/2018/nesfjella/nesfjella-2018.csv
 echo "  Hafjell"
 node import/importer.js -m -f ~/Dropbox/privat/sykkel/enduro-resultater/2018/hafjell/hafjell-2018.csv
+echo "  Hakadal"
+node import/importer.js -m -f ~/Dropbox/privat/sykkel/enduro-resultater/2018/hakadal/hakadal-2018.csv
+echo "  Ringerike"
+node import/importer.js -m -f ~/Dropbox/privat/sykkel/enduro-resultater/2018/ringerike/ringerike-2018.csv
+
 
 
