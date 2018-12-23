@@ -75,6 +75,29 @@ tap.test('behind_leader_ms is calculated', async t => {
   t.end()
 })
 
+tap.test('behind_leader_ms handles dns and then times', async t => {
+  const c = new StageCalculations()
+  const rows = JSON.parse(fs.readFileSync(path.join(__dirname, './data/race-results-traktor2017-kvinner.json')))
+  const result = c.differentials(rows)
+
+  t.equals(result[0].behind_leader_ms, 0, 'stage winner is 0 seconds behind leader')
+  t.equals(result[0].stage_rank, 1, 'shared first in stage')
+
+  t.equals(result[1].behind_leader_ms, 3000, 'stage second is 2 seconds behind leader')
+  t.equals(result[1].stage_rank, 2, 'shared first in stage')
+
+  const lastStage = result.filter((r) => {
+    return r.stage === 6
+  }).sort((a, b) => {
+    return a.final_rank - b.final_rank
+  })
+
+  t.equals(lastStage[0].final_rank, 1, 'final_rank is 1')
+  t.equals(lastStage[0].acc_time_behind, 0, 'final_rank is 1')
+  t.equals(lastStage[1].acc_time_behind, 36000, 'final_rank is 1')
+  t.end()
+})
+
 tap.test('calculate final rank based on acc_time_ms for last stage', async t => {
   const first = result.find((r) => {
     return r.rider_id === 5 && r.stage === 5

@@ -10,7 +10,9 @@ class Converter {
   }
 
   className (name) {
-    if (/M.+junior|m.+jr/i.test(name)) {
+    if (/Master/i.test(name)) {
+      return 'Master menn'
+    } else if (/M.+junior|m.+jr/i.test(name)) {
       return 'Menn junior'
     } else if (/K.+junior|k.+jr/i.test(name)) {
       return 'Kvinner junior'
