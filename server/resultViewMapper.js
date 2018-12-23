@@ -52,7 +52,9 @@ module.exports = function resultViewMapper (classes, results) {
     }).sort(compareRank)
   }
 
-  return [stages, out]
+  return [stages.sort((a, b) => {
+    return a - b
+  }), out]
 }
 
 function time (time, status) {
