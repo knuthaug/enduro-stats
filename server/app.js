@@ -43,7 +43,8 @@ app.set('view engine', 'handlebars')
 app.get('/', async (req, res) => {
   log.debug('request for /')
   const races = await db.findRaces(10)
-  res.render('index', { races })
+  const { raceCount, riderCount, stageCount } = await db.statCounts()
+  res.render('index', { races, raceCount, riderCount, stageCount })
 })
 
 app.get('/ritt/:uid', async (req, res) => {

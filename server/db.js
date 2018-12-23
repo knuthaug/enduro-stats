@@ -100,11 +100,37 @@ class Db {
     return this.find(query, values)
   }
 
+  async statCounts() {
+    const query = 'select count(id) from races'
+    const raceCount = await this.findOne(query, [], 'count')
+
+    const query2 = 'select count(id) from riders'
+    const riderCount = await this.findOne(query2, [], 'count')
+
+    const query3 = 'select count(id) from stages'
+    const stageCount = await this.findOne(query3, [], 'count')
+
+    return { raceCount, riderCount, stageCount }
+  }
+
   async find (query, values) {
     const client = await this.pool.connect()
     try {
       const res = await client.query(query, values)
       return res.rows
+    } catch (error) {
+      console.log(error)
+      return []
+    } finally {
+      await client.release()
+    }
+  }
+
+  async findOne (query, values, field) {
+    const client = await this.pool.connect()
+    try {
+      const res = await client.query(query, values)
+      return res.rows[0][field]
     } catch (error) {
       console.log(error)
       return []
