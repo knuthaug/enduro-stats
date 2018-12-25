@@ -121,7 +121,7 @@ echo "  Frei"
 node import/importer.js -f ~/Dropbox/privat/sykkel/enduro-resultater/2018/frei/frei-2018.csv
 echo "  Harstad"
 node import/importer.js -f ~/Dropbox/privat/sykkel/enduro-resultater/2018/harstad/harstad-2018.csv
-echo "  Harstad"
+echo "  Hemsedal"
 node import/importer.js -m -f ~/Dropbox/privat/sykkel/enduro-resultater/2018/hemsedal/hemsedal-2018.csv
 
 
