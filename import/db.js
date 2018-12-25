@@ -95,7 +95,7 @@ class Db {
     logger.info(`found rider_race id=${found}. Inserting raw results for rider`)
 
     if (!found) {
-      // logger.info(`inserting rider_race for race=${raceId}, rider=${riderId}`)
+      logger.info(`inserting rider_race for race=${raceId}, rider=${riderId}`)
       const query = 'INSERT INTO rider_races(race_id, rider_id, final_rank) VALUES($1, $2, $3)'
       const values = [raceId, riderId, finalRank]
       return this.insert(query, values)
