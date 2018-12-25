@@ -14,7 +14,8 @@ class Converter {
       return 'Menn master'
     } else if (/kvinner menn|kvinner master/i.test(name)) {
       return 'Kvinner master'
-    } else if (/Funduro/i.test(name) || /Explorer/i.test(name) || /M\d\d|K\d\d/i.test(name) ) {
+    } else if (/Funduro/i.test(name) || /Explorer/i.test(name)
+               || /M\d\d|K\d\d/i.test(name) || /Menn \d\d|Kvinner \d\d/i.test(name) ) {
       return name
     } else if (/M.+junior|m.+jr/i.test(name)) {
       return 'Menn junior'

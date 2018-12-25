@@ -39,6 +39,8 @@ echo "  Molde"
 node import/importer.js -f ~/Dropbox/privat/sykkel/enduro-resultater/2014/molde/molde-2014.csv
 echo "  Frei"
 node import/importer.js -r ~/Dropbox/privat/sykkel/enduro-resultater/2014/frei/racedata.json
+echo "  Hillbilly"
+node import/importer.js -f ~/Dropbox/privat/sykkel/enduro-resultater/2014/hillbilly/hillbilly-2014.csv
 
 #2015
 echo "2015:"
@@ -56,6 +58,8 @@ echo "  Frei"
 node import/importer.js  -f ~/Dropbox/privat/sykkel/enduro-resultater/2015/frei/frei-2015.csv
 echo "  Molde"
 node import/importer.js -r ~/Dropbox/privat/sykkel/enduro-resultater/2015/molde/racedata.json
+echo "  Hillbilly"
+node import/importer.js -f ~/Dropbox/privat/sykkel/enduro-resultater/2015/hillbilly/hillbilly-2015.csv
 
 #2016
 echo "2016:"
@@ -72,7 +76,7 @@ node import/importer.js -f ~/Dropbox/privat/sykkel/enduro-resultater/2016/hemsed
 echo "  Frei"
 node import/importer.js -r ~/Dropbox/privat/sykkel/enduro-resultater/2016/frei/racedata.json
 echo "  Nesbyen"
-node import/importer.js -r ~/Dropbox/privat/sykkel/enduro-resultater/2016/nesbyen/racedata.json
+node import/importer.js -m -f ~/Dropbox/privat/sykkel/enduro-resultater/2016/nesbyen/nesbyen-2016.csv
 
 echo "2017:"
 echo "  Hemsedal"
@@ -117,5 +121,7 @@ echo "  Frei"
 node import/importer.js -f ~/Dropbox/privat/sykkel/enduro-resultater/2018/frei/frei-2018.csv
 echo "  Harstad"
 node import/importer.js -f ~/Dropbox/privat/sykkel/enduro-resultater/2018/harstad/harstad-2018.csv
+echo "  Harstad"
+node import/importer.js -m -f ~/Dropbox/privat/sykkel/enduro-resultater/2018/hemsedal/hemsedal-2018.csv
 
 

@@ -51,11 +51,12 @@ const subs = {
 }
 
 function check (name) {
-  if (subs.hasOwnProperty(name)) {
-    return subs[name]
+  const n = normalizeCase(name)
+  if (subs.hasOwnProperty(n)) {
+    return subs[n]
   }
 
-  return normalizeCase(name)
+  return n
 }
 
 function normalizeCase (name) {
