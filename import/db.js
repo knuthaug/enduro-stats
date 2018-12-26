@@ -42,6 +42,11 @@ class Db {
     }
   }
 
+  async updateClub(id, club) {
+    const query = 'UPDATE riders set club = $1 where id = $2'
+    return this.update(query, [club, id])
+  }
+
   async insertRace (race, stages) {
     const id = await this.findRace(race.name, race.year)
 
@@ -174,9 +179,15 @@ class Db {
         logger.info(`Inserted rider ${res.rows[0].id}`)
         return res.rows[0].id
       } else {
-        const riderId = await this.findRider(rider.name, rider.gender)
-        logger.info(`Found existing rider rider ${riderId}`)
-        return riderId
+        const { id, club, name, uid, gender } = await this.findRider(rider.name, rider.gender)
+        logger.info(`Found existing rider rider ${id} (club=${club} | rider.club=${rider.club})`)
+
+        if((typeof club === 'undefined' && rider.club !== '') && club !== rider.club ) {
+          logger.info(`updating club for rider ${id}, setting club=${rider.club}`)
+          await this.updateClub(id, rider.club)
+        }
+
+        return id
       }
     } catch (error) {
       logger.error(`Error for inserting rider: query:${query}: values${values}`)
@@ -185,6 +196,7 @@ class Db {
       await client.release()
     }
   }
+
 
   async find (query, values, msg) {
     const client = await this.pool.connect()
@@ -195,6 +207,23 @@ class Db {
         return 0
       }
       return res.rows[0].id
+    } catch (error) {
+      logger.error(error)
+      return undefined
+    } finally {
+      await client.release()
+    }
+  }
+
+  async findAll (query, values, msg) {
+    const client = await this.pool.connect()
+    try {
+      const res = await client.query(query, values)
+      if (!res.rows[0]) {
+        logger.warn(msg)
+        return 0
+      }
+      return res.rows[0]
     } catch (error) {
       logger.error(error)
       return undefined
@@ -232,7 +261,8 @@ class Db {
   async findRider (name, gender) {
     const query = 'SELECT id FROM riders where name = $1 AND gender = $2'
     const values = [name, gender]
-    return this.find(query, values, `Error: could not find rider for name='${name}' and and gender=${gender}`)
+    const val = await this.findAll(query, values, `Error: could not find rider for name='${name}' and and gender=${gender}`)
+    return { id:val.id, club: val.club, uid: val.uid, gender: val.gender, name: val.name }
   }
 
   async findRace (name, year) {

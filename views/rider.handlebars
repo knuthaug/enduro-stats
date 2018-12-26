@@ -1,14 +1,11 @@
 <div class="row">
-  <div class="col-2">
+  <div class="col-3">
+    <h4>{{rider.name}}</h4>
+    <p>Klubb: {{rider.club}}<br/>
+      Ritt: {{numRaces}}<br/>
+    Første ritt: {{startYear}}</p>
   </div>
-  <div class="col-8">
-    <h2>{{rider.name}} {{rider.club}}</h2>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-2"></div>
-  <div class="col-8">
+  <div class="col-9">
     <h3>Resultater</h3>
     <table class="table table-hover table-dark table-striped table-sm">
       <thead>
@@ -33,7 +30,8 @@
         <tr>
       </tbody>
     </table>
+
   </div>
-  <div class="col-2"></div>
 </div>
+
 

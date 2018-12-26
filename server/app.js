@@ -76,6 +76,7 @@ app.get('/rytter/:uid', async (req, res) => {
   log.debug(`request for ${req.path}`)
   const rider = await db.findRider(req.params.uid)
   const races = riderViewMapper(await db.raceResultsForRider(req.params.uid))
+  const numRaces = races.length
 
   const raceIds = races.map((r) => {
     return { race: r.race, class: r.class }
@@ -89,9 +90,11 @@ app.get('/rytter/:uid', async (req, res) => {
     return b.year - a.year
   })
 
-  console.log(results)
+  const startYear = results[results.length - 1].year
   res.render('rider', {
     rider,
+    numRaces,
+    startYear,
     results,
     active: 'ryttere' })
 })
