@@ -90,11 +90,15 @@ app.get('/rytter/:uid', async (req, res) => {
     return b.year - a.year
   })
 
+  const { year, avg } = bestSeason(results)
+
   const startYear = results[results.length - 1].year
   res.render('rider', {
     rider,
     numRaces,
     startYear,
+    year,
+    avg,
     results,
     active: 'ryttere' })
 })
@@ -122,5 +126,40 @@ app.get('/assets/css/:file', (req, res) => {
   const options = { root: './server/dist' }
   return res.sendFile(`css/${file}`, options)
 })
+
+function bestSeason(rows) {
+  const years = { }
+  for(let i = 0; i < rows.length; i++) {
+    if(!years.hasOwnProperty(rows[i].year)) {
+      years[rows[i].year] = []
+    }
+
+    if(rows[i].time_behind !== 'DNS' && rows[i].time_behind !== 'DNF') {
+      years[rows[i].year].push(rows[i].rank)
+    }
+  }
+
+  const avgs = {}
+  Object.keys(years).forEach((y) => {
+    const a = years[y].reduce((a, b) =>{
+      return a + b
+    }, 0) / years[y].length
+    avgs[y] = {}
+    avgs[y].sum = years[y].length - a
+    avgs[y].avg = a
+  })
+
+  let max = 0
+  let year = 2000
+  const keys = Object.keys(avgs)
+  for(let i = 0; i < keys.length; i++) {
+    if(avgs[keys[i]].sum > max) {
+      max = avgs[keys[i]].sum
+      year = keys[i]
+    }
+  }
+
+  return { year, avg: avgs[year].avg }
+}
 
 module.exports = app

@@ -19,7 +19,8 @@ module.exports = function resultViewMapper (results) {
 function addFields (row, res) {
   return Object.assign(row, {
     rank: res.final_rank,
-    time: time(res.acc_time_ms, res.status)
+    time: time(res.acc_time_ms, res.status),
+    time_behind: accTime(res.acc_time_behind, res.status)
   })
 }
 
@@ -36,6 +37,13 @@ function toRow (r) {
 
 function time (time, status) {
   if (time === 0) {
+    return status
+  }
+  return convertMsToTime(time)
+}
+
+function accTime (time, status) {
+  if (status === 'DNF' || status === 'DNS') {
     return status
   }
   return convertMsToTime(time)

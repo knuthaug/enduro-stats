@@ -3,7 +3,10 @@
     <h4>{{rider.name}}</h4>
     <p>Klubb: {{rider.club}}<br/>
       Ritt: {{numRaces}}<br/>
-    Første ritt: {{startYear}}</p>
+      Første ritt: {{startYear}}<br/>
+      Beste sesong: {{year}}<br/>
+      Snittplassering beste år: {{avg}}<br/>
+    </p>
   </div>
   <div class="col-9">
     <h3>Resultater</h3>
@@ -24,7 +27,7 @@
           <td><a href="/ritt/{{uid}}#{{class}}">{{raceName}}</a></td>
           <td>{{class}}</td>
           <td>{{rank}}/{{count}}</td>
-          <td>{{time}}</td>
+          <td>{{time}}/<span title="Tid etter vinner i klasse">{{time_behind}}</td>
         </tr>
         {{/each}}
         <tr>
