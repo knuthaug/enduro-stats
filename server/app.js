@@ -23,6 +23,7 @@ const app = express()
 
 app.use(compression())
 app.disable('x-powered-by')
+app.use(express.urlencoded());
 
 if (config.get('env') !== 'test') {
   app.use(morgan('tiny'))
@@ -64,6 +65,15 @@ app.get('/ritt/:uid', async (req, res) => {
     noResults,
     tables: true,
     active: 'ritt' })
+})
+
+app.post('/sok/', async(req, res) => {
+  console.log(req.body)
+  const results = await db.search(req.body.search)
+
+  res.render('search', {
+    results
+  })
 })
 
 app.get('/ritt', async (req, res) => {
@@ -161,6 +171,9 @@ function bestSeason(rows) {
 
   console.log(avgs)
   console.log(year)
+  if(year === 2000) {
+    return { year: 0, avg: 0 }
+  }
   return { year, avg: parseFloat(avgs[year].avg, 10).toFixed(1) }
 }
 

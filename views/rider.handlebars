@@ -4,8 +4,10 @@
     <p>Klubb: {{rider.club}}<br/>
       Ritt: {{numRaces}}<br/>
       Første ritt: {{startYear}}<br/>
-      Beste sesong: {{year}}<br/>
-      Snittplassering beste år: {{avg}}<br/>
+      {{#compare year '!==' 0}}
+      Beste sesong: {{../year}}<br/>
+      Snittplassering beste år: {{../avg}}<br/>
+      {{/compare}}
     </p>
   </div>
   <div class="col-9">
