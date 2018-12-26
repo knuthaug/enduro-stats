@@ -38,6 +38,10 @@ document.addEventListener('DOMContentLoaded', function (event) {
   }
 
   feather.replace()
+  setupSearch()
+})
+
+function setupSearch() {
   var form = document.getElementById('searchForm')
   var search = document.getElementById('searchField')
   var list = document.getElementById('searchList')
@@ -50,17 +54,14 @@ document.addEventListener('DOMContentLoaded', function (event) {
   })
 
   search.addEventListener("keyup", function(event){
-
     if(event.code) {
       searchHint(event)
     }
-
   })
 
   search.addEventListener('change', function(e) {
     let _value = null;
 
-    let search = document.getElementById('searchField')
     let input_value = search.value;
     let options = document.getElementById('searchList').children;
     let i = options.length;
@@ -85,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
   window.searchHintXHR = new XMLHttpRequest()
 
-})
+}
 
 function searchHint(event) {
   // retireve the input element

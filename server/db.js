@@ -100,14 +100,21 @@ class Db {
     return this.find(query, values)
   }
 
-  async search(search) {
-    const query = "select id, name, uid from riders where search @@ to_tsquery('norwegian', $1);"
-    return this.find(query, [search])
+  async search(search, limit) {
+
+    const l = limit || 15
+
+    if(search.indexOf(' ') !== -1) {
+      search = search.replace(/ /, ' & ')
+    }
+    const query = "select id, name, uid from riders where search @@ to_tsquery('norwegian', $1) limit $2"
+    return this.find(query, [search, l])
   }
 
-  async searchLike(search) {
-    const query = "select id, name, uid from riders where name ilike $1"
-    return this.find(query, [`%${search}%`])
+  async searchLike(search, limit) {
+    const l = limit || 15
+    const query = "select id, name, uid from riders where name ilike $1 limit $2"
+    return this.find(query, [`%${search}%`, l])
   }
 
   async statCounts() {

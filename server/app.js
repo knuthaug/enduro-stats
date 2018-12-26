@@ -71,8 +71,7 @@ app.post('/sok/', async(req, res) => {
   let results = await db.search(req.body.search)
 
   if(results.length === 0) {
-    log.debug('doing extra search with like')
-    results = await db.searchLike(req.body.search)
+    results = await db.searchLike(req.body.search, 50)
   }
 
   res.render('search', {
@@ -85,7 +84,6 @@ app.get('/api/search', async (req, res) => {
   let results = await db.search(req.query.q)
 
   if(results.length === 0) {
-    log.debug('doing extra search with like')
     results = await db.searchLike(req.query.q)
   }
 
