@@ -105,6 +105,11 @@ class Db {
     return this.find(query, [search])
   }
 
+  async searchLike(search) {
+    const query = "select id, name, uid from riders where name ilike $1"
+    return this.find(query, [`%${search}%`])
+  }
+
   async statCounts() {
     const query = 'select count(id) from races'
     const raceCount = await this.findOne(query, [], 'count')

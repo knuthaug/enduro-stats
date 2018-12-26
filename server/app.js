@@ -68,12 +68,28 @@ app.get('/ritt/:uid', async (req, res) => {
 })
 
 app.post('/sok/', async(req, res) => {
-  console.log(req.body)
-  const results = await db.search(req.body.search)
+  let results = await db.search(req.body.search)
+
+  if(results.length === 0) {
+    log.debug('doing extra search with like')
+    results = await db.searchLike(req.body.search)
+  }
 
   res.render('search', {
     results
   })
+})
+
+app.get('/api/search', async (req, res) => {
+
+  let results = await db.search(req.query.q)
+
+  if(results.length === 0) {
+    log.debug('doing extra search with like')
+    results = await db.searchLike(req.query.q)
+  }
+
+  res.json(results)
 })
 
 app.get('/ritt', async (req, res) => {
