@@ -149,7 +149,7 @@ function bestSeason(rows) {
     avgs[y].avg = a
   })
 
-  let max = 0
+  let max = -1000
   let year = 2000
   const keys = Object.keys(avgs)
   for(let i = 0; i < keys.length; i++) {
@@ -159,7 +159,9 @@ function bestSeason(rows) {
     }
   }
 
-  return { year, avg: avgs[year].avg }
+  console.log(avgs)
+  console.log(year)
+  return { year, avg: parseFloat(avgs[year].avg, 10).toFixed(1) }
 }
 
 module.exports = app
