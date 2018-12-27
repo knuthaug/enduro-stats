@@ -20,16 +20,20 @@ const config = convict({
   },
   database: {
     host: {
-      default: 'localhost'
+      default: 'localhost',
+      env: 'DATABASE_HOST'
     },
     username: {
-      default: 'endurostats'
+      default: 'endurostats',
+      env: 'DATABASE_USER'
     },
     password: {
-      default: 'endurostats'
+      default: 'endurostats',
+      env: 'DATABASE_PASSWORD'
     },
     database: {
-      default: 'endurostats'
+      default: 'endurostats',
+      env: 'DATABASE'
     }
   }
 })

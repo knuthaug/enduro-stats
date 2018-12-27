@@ -19,10 +19,10 @@
 
   "prod": {
     "driver": "pg",
-    "user": "endurostats",
-    "password": "endurostats",
-    "host": "localhost",
-    "database": "endurostats",
+    "user": "postgres",
+    "password": "OYFsYz2Yhl8cC0f7TJX2ayhjEgn0fWYWjQlzZ3P9",
+    "host": "35.233.118.177",
+    "database": "postgres",
     "schema": "db-schema"
   }
 }

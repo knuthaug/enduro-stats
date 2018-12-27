@@ -46,6 +46,7 @@ app.get('/', async (req, res) => {
   const races = await db.findRaces(10)
   const { raceCount, riderCount, stageCount } = await db.statCounts()
   res.render('index', { races, raceCount, riderCount, stageCount })
+//  res.render('index', { })
 })
 
 app.get('/ritt/:uid', async (req, res) => {
@@ -136,19 +137,13 @@ app.get('/ryttere', async (req, res) => {
 app.get('/assets/js/:file', (req, res) => {
   const file = req.params.file
   const options = { root: './server/dist' }
-  return res.sendFile(`js/${file}`, options)
-})
-
-app.get('/assets/js/vendor/:file', (req, res) => {
-  const file = req.params.file
-  const options = { root: './server/dist/' }
-  return res.sendFile(`js/vendor/${file}`, options)
+  return res.set({'Cache-Control': 'public, max-age=100000'}).sendFile(`js/${file}`, options)
 })
 
 app.get('/assets/css/:file', (req, res) => {
   const file = req.params.file
   const options = { root: './server/dist' }
-  return res.sendFile(`css/${file}`, options)
+  return res.set({'Cache-Control': 'public, max-age=300'}).sendFile(`css/${file}`, options)
 })
 
 function bestSeason(rows) {
@@ -183,8 +178,6 @@ function bestSeason(rows) {
     }
   }
 
-  console.log(avgs)
-  console.log(year)
   if(year === 2000) {
     return { year: 0, avg: 0 }
   }
