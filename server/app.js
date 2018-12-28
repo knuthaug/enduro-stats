@@ -9,6 +9,7 @@ const Db = require('./db.js')
 const resultViewMapper = require('./resultViewMapper.js')
 const raceViewMapper = require('./raceViewMapper.js')
 const riderViewMapper = require('./riderViewMapper.js')
+const bestSeason = require('./bestSeason.js')
 
 const hashedAssets = require('../views/helpers/hashed-assets.js')
 const compare = require('../views/helpers/compare.js')
@@ -18,7 +19,7 @@ const isDNF = require('../views/helpers/isDNF.js')
 const isDNS = require('../views/helpers/isDNS.js')
 const isError = require('../views/helpers/isError.js')
 const isOK = require('../views/helpers/isOK.js')
-
+const DEFAULT_CACHE_TIME_PAGES = 5000
 const app = express()
 
 app.use(compression())
@@ -45,7 +46,7 @@ app.get('/', async (req, res) => {
   log.debug('request for /')
   const races = await db.findRaces(10)
   const { raceCount, riderCount, stageCount } = await db.statCounts()
-  res.render('index', { races, raceCount, riderCount, stageCount })
+  render(res, 'index', { races, raceCount, riderCount, stageCount }, 60)
 //  res.render('index', { })
 })
 
@@ -58,14 +59,14 @@ app.get('/ritt/:uid', async (req, res) => {
   const [stages, results] = resultViewMapper(raceClasses, raceResults)
   const noResults = Object.values(results).length > 0
 
-  res.render('race', {
+  render(res, 'race', {
     race,
     stages,
     results,
     links,
     noResults,
     tables: true,
-    active: 'ritt' })
+    active: 'ritt' }, DEFAULT_CACHE_TIME_PAGES)
 })
 
 app.post('/sok/', async(req, res) => {
@@ -94,7 +95,7 @@ app.get('/api/search', async (req, res) => {
 app.get('/ritt', async (req, res) => {
   log.debug(`request for ${req.path}`)
   const races = raceViewMapper(await db.findRaces())
-  res.render('races', { races, active: 'ritt' })
+  render(res, 'races', { races, active: 'ritt' }, DEFAULT_CACHE_TIME_PAGES)
 })
 
 app.get('/rytter/:uid', async (req, res) => {
@@ -118,70 +119,48 @@ app.get('/rytter/:uid', async (req, res) => {
   const { year, avg } = bestSeason(results)
 
   const startYear = results[results.length - 1].year
-  res.render('rider', {
+  render(res, 'rider', {
     rider,
     numRaces,
     startYear,
     year,
     avg,
     results,
-    active: 'ryttere' })
+    active: 'ryttere' }, DEFAULT_CACHE_TIME_PAGES)
 })
 
 app.get('/ryttere', async (req, res) => {
   log.debug(`request for ${req.path}`)
   const riders = await db.findAllRiders()
-  res.render('riders', { riders, active: 'ryttere' })
+  render(res, 'riders', { riders, active: 'ryttere' }, DEFAULT_CACHE_TIME_PAGES)
 })
 
 app.get('/assets/js/:file', (req, res) => {
   const file = req.params.file
   const options = { root: './server/dist' }
-  return res.set({'Cache-Control': 'public, max-age=100000'}).sendFile(`js/${file}`, options)
+
+  if(/bundle/.test(file)) {
+    return res.set({'Cache-Control': 'public, max-age=100000'}).sendFile(`js/${file}`, options)
+  }
+  return res.set({'Cache-Control': 'public, max-age=1000'}).sendFile(`js/${file}`, options)
 })
 
 app.get('/assets/css/:file', (req, res) => {
   const file = req.params.file
   const options = { root: './server/dist' }
-  return res.set({'Cache-Control': 'public, max-age=300'}).sendFile(`css/${file}`, options)
+
+  if(/bundle/.test(file)) {
+    return res.set({'Cache-Control': 'public, max-age=100000'}).sendFile(`css/${file}`, options)    
+  }
+  return res.set({'Cache-Control': 'public, max-age=1000'}).sendFile(`css/${file}`, options)
 })
 
-function bestSeason(rows) {
-  const years = { }
-  for(let i = 0; i < rows.length; i++) {
-    if(!years.hasOwnProperty(rows[i].year)) {
-      years[rows[i].year] = []
-    }
-
-    if(rows[i].time_behind !== 'DNS' && rows[i].time_behind !== 'DNF') {
-      years[rows[i].year].push(rows[i].rank)
-    }
-  }
-
-  const avgs = {}
-  Object.keys(years).forEach((y) => {
-    const a = years[y].reduce((a, b) =>{
-      return a + b
-    }, 0) / years[y].length
-    avgs[y] = {}
-    avgs[y].sum = years[y].length - a
-    avgs[y].avg = a
-  })
-
-  let max = -1000
-  let year = 2000
-  const keys = Object.keys(avgs)
-  for(let i = 0; i < keys.length; i++) {
-    if(avgs[keys[i]].sum > max) {
-      max = avgs[keys[i]].sum
-      year = keys[i]
-    }
-  }
-
-  if(year === 2000) {
-    return { year: 0, avg: 0 }
-  }
-  return { year, avg: parseFloat(avgs[year].avg, 10).toFixed(1) }
+function render(res, template, context, maxAge) {
+  return res
+    .set({'Cache-Control': `public, max-age=${maxAge}`})
+    .render(template, context)
 }
+
+
 
 module.exports = app
