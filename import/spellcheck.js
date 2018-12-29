@@ -1,3 +1,6 @@
+const clubSubs = {
+  'Bmk': 'Bergen MTB klubb'
+}
 
 const subs = {
   'Greg Shaw': 'Greg Saw',
@@ -34,6 +37,7 @@ const subs = {
   'Hans Christian Kivespussi Kåsen': 'Hans Christian Kåsen',
   'Henrik Mühlbradt': 'Henrik Mülhbradt',
   'Henrik Muhlbradt': 'Henrik Mülhbradt',
+  'Henrik Mülbradt': 'Henrik Mülhbradt',
   'Johannes Lagos': 'Johannes Dvorak Lagos',
   'Julie Appelkvist': 'Julie E. H. Appelkvist',
   'Julie H. Appelkvist': 'Julie E. H. Appelkvist',
@@ -48,10 +52,48 @@ const subs = {
   'Tobias Sandengren': 'Tobias Sandengen',
   'Trygve Veslum': 'Trygve Stansberg Veslum',
   'Zakarias Johansen': 'Zakarias Blom Johansen',
-  'Ove Tigergutt Grøndal': 'Ove Grøndal'
+  'Ove Tigergutt Grøndal': 'Ove Grøndal',
+  'Aleksander Dystetud': 'Aleksander Dystetud',
+  'Aleksander Ødegaard': 'Aleksander Ødegård',
+  'Anne Melboe': 'Anne Melbø',
+  'Anne Melnø': 'Anne Melbø',
+  'Astri Knudsen': 'Astrid Knudsen',
+  'Bård S Pettersen': 'Bård Stærkebye Pettersen',
+  'Bård Pettersen': 'Bård Stærkebye Pettersen',
+  'Emil Carlson': 'Emil Aamli Carlson',
+  'Ida Nærum': 'Ida Rydland Nærum',
+  'Jon Håvard H.appelkvist': 'Jon Håvard Appelkvist',
+  'Glenn Mørk': 'Glenn Roger Mørk',
+  'Geir Bjørndalen': 'Geir Vidar Bjørndalen',
+  'Helene Moland': 'Helene Thon Moland',
+  'Henning Hovlan': 'Henning Hovland',
+  'Klaus Kjærnet': 'Klaus Jørgen Kjærnet',
+  'Magnus Grønberg': 'Magnus Grönberg',
+  'Mari Guton': 'Mari Guton Olsen',
+  'Marit Skjelbred Knudsen': 'Marit Skjelbred-Knudsen',
+  'Marie Pettersson': 'Marie Petterson',
+  'Martin Solheim': 'Martin Solheim Sigleye',
+  'Mats Uverud Nyegaard': 'Mats Nyegaard',
+  'Michael Cook': 'Michael Overbeck Cook',
+  'Noah Holmefjord Dalland': 'Noah Holmefjord-Dalland',
+  'Ole Henrik Løland Eriksen': 'Ole Henrik Eriksen',
+  'Per Christian Dahl Larsen': 'Per Christian Dahl',
+  'Pål Gimmestad': 'Pål Kristian Gimmestad',
+  'Steinar Holoes': 'Steinar Holøs',
+  'Trygve Loyd': 'Trygve Loyd Sannesmoen',
+  'Rickard Sundell': 'Tage Rickard Sundell'
 }
 
 function check (name) {
+  const n = normalizeCase(name)
+  if (subs.hasOwnProperty(n)) {
+    return subs[n]
+  }
+
+  return n
+}
+
+function checkClub (name) {
   const n = normalizeCase(name)
   if (subs.hasOwnProperty(n)) {
     return subs[n]
@@ -77,4 +119,5 @@ function upperCase (str) {
 }
 
 module.exports.check = check
+module.exports.checkClub = checkClub
 module.exports.normalizeCase = normalizeCase
