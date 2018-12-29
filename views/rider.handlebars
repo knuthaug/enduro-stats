@@ -15,6 +15,7 @@
     <table class="table table-hover table-dark table-striped table-sm">
       <thead>
         <tr>
+          <th scope="col"></th>
           <th scope="col">Dato</th>
           <th scope="col">Ritt</th>
           <th scope="col">Klasse</th>
@@ -25,11 +26,19 @@
       <tbody>
         {{#each results}}
         <tr>
+          <td>{{> icon type='plus'}}</td>
           <td>{{date}}</a></td>
           <td><a href="/ritt/{{uid}}#{{class}}">{{raceName}}</a></td>
           <td>{{class}}</td>
           <td>{{rank}}/{{count}}</td>
-          <td>{{time}}/<span title="{{time_behind}}  etter vinner i klassen">{{time_behind}}</td>
+          <td>{{time}}/<span title="{{time_behind}} etter vinner i klassen">{{time_behind}}</td>
+        </tr>
+        <tr>
+          <td colspan="6" class="hide">
+            <div class="row">
+              <div class="col-1"></div>
+            </div>
+          </td>
         </tr>
         {{/each}}
         <tr>

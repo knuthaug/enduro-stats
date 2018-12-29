@@ -26,6 +26,14 @@ a:hover {
   color: #fff;
 }
 
+.hide {
+  visibility: hidden;
+}
+
+.show {
+  
+}
+
 .icon {
   width: 20px;
   height: 20px;
