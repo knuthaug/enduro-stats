@@ -22,6 +22,14 @@ module.exports = function raceViewMapper (races) {
       row.races = sorted.filter((r) => {
         return r.year === year
       })
+      row.races = row.races.sort((a, b) => {
+        if (a.date < b.date) {
+          return -1
+        } else if (a.date > b.date) {
+          return 1
+        }
+        return 0
+      })
       out.push(row)
     }
   }
