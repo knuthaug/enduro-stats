@@ -98,6 +98,12 @@ app.get('/ritt', async (req, res) => {
   render(res, 'races', { races, active: 'ritt' }, DEFAULT_CACHE_TIME_PAGES)
 })
 
+app.get('/om', async (req, res) => {
+  log.debug(`request for ${req.path}`)
+  const races = raceViewMapper(await db.findRaces())
+  render(res, 'about', { active: 'om' }, DEFAULT_CACHE_TIME_PAGES)
+})
+
 app.get('/rytter/:uid', async (req, res) => {
   log.debug(`request for ${req.path}`)
   const rider = await db.findRider(req.params.uid)
