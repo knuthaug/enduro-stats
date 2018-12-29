@@ -1,4 +1,12 @@
+/**
+ * @fileOverview Super-class for converters with common methods shared between mylaps and eq converters
+ * @name converter.js
+ * @author  Knut Haugen
+ * @license ISC
+ */
+
 const md5 = require('md5')
+const { checkClub } = require('../spellcheck.js')
 
 class Converter {
   raceChecksum (obj) {
@@ -7,6 +15,10 @@ class Converter {
 
   checksum (string) {
     return md5(string)
+  }
+
+  clubName (name) {
+    return checkClub(name)
   }
 
   className (name) {

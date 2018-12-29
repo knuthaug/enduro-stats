@@ -1,7 +1,15 @@
+/**
+ * @fileOverview eq-timing race format parser. It can handle both multiple files per stage and
+ * newer style one file for the complete race. 
+ * @name mylaps.js
+ * @author Knut Haugen
+ * @license ISC
+ */
+
 const csv = require('neat-csv')
 const fs = require('await-fs')
 const logger = require('../logger.js')
-const { check, normalizeCase } = require('../spellcheck.js')
+const { check, normalizeCase, checkClub } = require('../spellcheck.js')
 const { convertMsToTime, convertTimeToMs } = require('../../lib/time.js')
 const Converter = require('./converter.js')
 
@@ -163,10 +171,6 @@ class EqConverter extends Converter {
     }
 
     return obj
-  }
-
-  clubName (name) {
-    return normalizeCase(name)
   }
 
   name (obj) {

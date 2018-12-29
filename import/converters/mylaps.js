@@ -1,7 +1,21 @@
+/**
+ * @fileOverview Mylaps race format parser. it requires the following fields/conventions
+ to work properly:
+ * stages are named FE$num and FE$num Pos, e.g. FE1, FE1 Pos, FE2, FE2 Pos etc
+ * Club field 'club'
+ * rider name in 'name'
+ * rider gender in 'gender'
+ * class in field 'Class'
+ * time in field 'time', format hh:mm:ss
+ * @name mylaps.js
+ * @author Knut Haugen
+ * @license ISC
+ */
+
 const csv = require('neat-csv')
 const fs = require('await-fs')
 const logger = require('../logger.js')
-const { check, normalizeCase } = require('../spellcheck.js')
+const { check, checkClub, normalizeCase } = require('../spellcheck.js')
 const { convertMsToTime, convertTimeToMs } = require('../../lib/time.js')
 const Converter = require('./converter.js')
 
@@ -54,7 +68,6 @@ class Mylaps extends Converter {
 
   async parseStages () {
     const raw = await csv(this.file, { separator: ';' })
-    // console.log(raw)
 
     const stages = this.findStages(raw)
 
@@ -68,7 +81,7 @@ class Mylaps extends Converter {
           rider_uid: this.checksum(raw[j].name),
           gender: raw[j].gender,
           class: this.className(raw[j].Class),
-          club: raw[j].club || '',
+          club: this.clubName(raw[j].club || ''),
           stage_time_ms: this.convertTimeMs(raw[j][stage.name], raw[j][`${stage.name} Pos`]),
           acc_time_ms: null,
           stage_rank: this.stageRank(parseInt(raw[j][`${stage.name} Pos`], 10)),
