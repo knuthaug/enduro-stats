@@ -52,3 +52,18 @@ tap.test('Object details for stages', async t => {
   t.equals(stage1.results[21].stage_time_ms, 0)
   t.equals(stage1.results[21].status, 'DNS')
 })
+
+tap.test('support for NOOP stages', async t => {
+  const ml = new Mylaps(path.join(__dirname, 'data/hemsedal-2018.csv'), {
+    datafile: path.join(__dirname, 'data/hemsedal-2018-racedata.json')
+  })
+
+  const loaded = await ml.load()
+  const data = await loaded.parse()
+  t.equals(data.race.name, 'Hardbarka enduro', 'race name matches')
+
+  const persons = data.stages[4].results.filter((r) => {
+    return r.name === 'Risto Holm'
+  })
+  t.equals(persons.length, 0, 'person should not have a stage 4, as class only has three stages')
+})

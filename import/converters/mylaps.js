@@ -89,18 +89,21 @@ class Mylaps extends Converter {
       const stage = stages[i]
       stage.results = []
       for (let j = 0; j < raw.length; j++) {
-        stage.results.push({
-          time: this.convertTime(raw[j][stage.name], raw[j][`${stage.name} Pos`]),
-          name: check(raw[j].name),
-          rider_uid: this.checksum(raw[j].name),
-          gender: raw[j].gender,
-          class: this.className(raw[j].Class),
-          club: this.clubName(raw[j].club || ''),
-          stage_time_ms: this.convertTimeMs(raw[j][stage.name], raw[j][`${stage.name} Pos`]),
-          acc_time_ms: null,
-          stage_rank: this.stageRank(parseInt(raw[j][`${stage.name} Pos`], 10)),
-          status: this.setStatus(raw[j][`${stage.name} Pos`], raw[j][stage.name])
-        })
+        const time = this.convertTimeMs(raw[j][stage.name], raw[j][`${stage.name} Pos`])
+        if(!isNaN(time)) {
+          stage.results.push({
+            time: this.convertTime(raw[j][stage.name], raw[j][`${stage.name} Pos`]),
+            name: check(raw[j].name),
+            rider_uid: this.checksum(raw[j].name),
+            gender: raw[j].gender,
+            class: this.className(raw[j].Class),
+            club: this.clubName(raw[j].club || ''),
+            stage_time_ms: time, 
+            acc_time_ms: null,
+            stage_rank: this.stageRank(parseInt(raw[j][`${stage.name} Pos`], 10)),
+            status: this.setStatus(raw[j][`${stage.name} Pos`], raw[j][stage.name])
+          })
+        }
       }
     }
 
