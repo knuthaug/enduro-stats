@@ -127,7 +127,7 @@ async function calculateComplete (dirName) {
 async function readCompleteRaceFile (filename, datafile, mylaps) {
   let data = {}
 
-  if(!mylaps) {
+  if (!mylaps) {
     const eq = new Eq(filename, { mode: 'complete', datafile, acc: options.accumulate })
     await eq.load()
     data = await eq.parse()

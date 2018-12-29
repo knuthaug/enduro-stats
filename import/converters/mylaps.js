@@ -15,12 +15,12 @@
 const csv = require('neat-csv')
 const fs = require('await-fs')
 const logger = require('../logger.js')
-const { check, checkClub, normalizeCase } = require('../spellcheck.js')
-const { convertMsToTime, convertTimeToMs } = require('../../lib/time.js')
+const { ERROR_RANK, DNS_STATUS, DNF_STATUS } = require('../constants.js')
+const { check } = require('../spellcheck.js')
+const { convertTimeToMs } = require('../../lib/time.js')
 const Converter = require('./converter.js')
 
 class Mylaps extends Converter {
-
   /**
    * A parser/converter for mylaps race results, with multiple stages on one line
    * @constructor
@@ -65,7 +65,7 @@ class Mylaps extends Converter {
   }
 
   /**
-   * parse stages and return array of results, flattened out ready for database storage. 
+   * parse stages and return array of results, flattened out ready for database storage.
    * @return { race, stages } - a race object and a list of stages, with results per stage
    */
   async parse () {
@@ -90,7 +90,7 @@ class Mylaps extends Converter {
       stage.results = []
       for (let j = 0; j < raw.length; j++) {
         const time = this.convertTimeMs(raw[j][stage.name], raw[j][`${stage.name} Pos`])
-        if(!isNaN(time)) {
+        if (!isNaN(time)) {
           stage.results.push({
             time: this.convertTime(raw[j][stage.name], raw[j][`${stage.name} Pos`]),
             name: check(raw[j].name),
@@ -98,7 +98,7 @@ class Mylaps extends Converter {
             gender: raw[j].gender,
             class: this.className(raw[j].Class),
             club: this.clubName(raw[j].club || ''),
-            stage_time_ms: time, 
+            stage_time_ms: time,
             acc_time_ms: null,
             stage_rank: this.stageRank(parseInt(raw[j][`${stage.name} Pos`], 10)),
             status: this.setStatus(raw[j][`${stage.name} Pos`], raw[j][stage.name])
@@ -123,16 +123,16 @@ class Mylaps extends Converter {
     return stages
   }
 
-  stageRank(rank) {
-    if(rank === 0 || rank === 'DNS' || rank === 'DNF') {
-      return 999
+  stageRank (rank) {
+    if (rank === 0 || rank === DNS_STATUS || rank === DNF_STATUS) {
+      return ERROR_RANK
     }
 
     return rank
   }
 
   convertTimeMs (time, pos) {
-    if (pos !== 'DNS' && pos !== 'DNF') {
+    if (this.finished(pos)) {
       return convertTimeToMs(time)
     } else if (pos === 0 || pos === '0') {
       return 0
@@ -142,22 +142,29 @@ class Mylaps extends Converter {
   }
 
   convertTime (time, pos) {
-    if (pos !== 'DNS' && pos !== 'DNF') {
+    if (this.finished(pos)) {
       return time
     }
 
     return '00:00:00'
   }
 
+  finished (pos) {
+    return pos !== DNS_STATUS && pos !== DNF_STATUS
+  }
+
+  notFinished (pos) {
+    return pos === DNS_STATUS || pos === DNF_STATUS
+  }
+
   setStatus (pos, time) {
-    if(pos === 0 || pos === '0') {
-      return 'DNS'
-    }  else if (time === '00:00:00') {
-      return 'DNS'
-    } else if (pos === 'DNS' || pos === 'DNF') {
+    if (pos === 0 || pos === '0') {
+      return DNS_STATUS
+    } else if (time === '00:00:00') {
+      return DNS_STATUS
+    } else if (this.notFinished(pos)) {
       return pos
-    }
-    else if (pos !== 'DNS' && pos !== 'DNF') {
+    } else if (this.finished(pos)) {
       return 'OK'
     }
     return pos
@@ -170,7 +177,6 @@ class Mylaps extends Converter {
     const keys = Object.keys(row)
 
     for (let i = 0; i < keys.length; i++) {
-      const k = keys[i]
       const key = 'FE' + stageNum++
       if (row.hasOwnProperty(key) && !stages.find((e) => { return e.name === key })) {
         stages.push({ name: key, number: stageNum - 1 })

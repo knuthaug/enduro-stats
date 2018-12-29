@@ -80,13 +80,12 @@ class NormalStageCalculations extends StageCalculations {
       if (i === 0) { // first stage
         rows[stageIndexes[i]].acc_time_ms = rows[stageIndexes[i]].stage_time_ms
       } else {
-        if(rows[stageIndexes[i]].stage_time_ms === 0 || rows[stageIndexes[i - 1]].acc_time_ms === 0) {
-          //DNS or DNF in previous stage
+        if (rows[stageIndexes[i]].stage_time_ms === 0 || rows[stageIndexes[i - 1]].acc_time_ms === 0) {
+          // DNS or DNF in previous stage
           rows[stageIndexes[i]].acc_time_ms = 0
         } else {
           rows[stageIndexes[i]].acc_time_ms = rows[stageIndexes[i]].stage_time_ms + rows[stageIndexes[i - 1]].acc_time_ms
         }
-
       }
 
       // fix erroneous times with ok status

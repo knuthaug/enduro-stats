@@ -24,7 +24,7 @@ const app = express()
 
 app.use(compression())
 app.disable('x-powered-by')
-app.use(express.urlencoded());
+app.use(express.urlencoded())
 
 if (config.get('env') !== 'test') {
   app.use(morgan('tiny'))
@@ -69,10 +69,10 @@ app.get('/ritt/:uid', async (req, res) => {
     active: 'ritt' }, DEFAULT_CACHE_TIME_PAGES)
 })
 
-app.post('/sok/', async(req, res) => {
+app.post('/sok/', async (req, res) => {
   let results = await db.search(req.body.search)
 
-  if(results.length === 0) {
+  if (results.length === 0) {
     results = await db.searchLike(req.body.search, 50)
   }
 
@@ -82,10 +82,9 @@ app.post('/sok/', async(req, res) => {
 })
 
 app.get('/api/search', async (req, res) => {
-
   let results = await db.search(req.query.q)
 
-  if(results.length === 0) {
+  if (results.length === 0) {
     results = await db.searchLike(req.query.q)
   }
 
@@ -100,7 +99,6 @@ app.get('/ritt', async (req, res) => {
 
 app.get('/om', async (req, res) => {
   log.debug(`request for ${req.path}`)
-  const races = raceViewMapper(await db.findRaces())
   render(res, 'about', { active: 'om' }, DEFAULT_CACHE_TIME_PAGES)
 })
 
@@ -145,28 +143,26 @@ app.get('/assets/js/:file', (req, res) => {
   const file = req.params.file
   const options = { root: './server/dist' }
 
-  if(/bundle/.test(file)) {
-    return res.set({'Cache-Control': 'public, max-age=100000'}).sendFile(`js/${file}`, options)
+  if (/bundle/.test(file)) {
+    return res.set({ 'Cache-Control': 'public, max-age=100000' }).sendFile(`js/${file}`, options)
   }
-  return res.set({'Cache-Control': 'public, max-age=1000'}).sendFile(`js/${file}`, options)
+  return res.set({ 'Cache-Control': 'public, max-age=1000' }).sendFile(`js/${file}`, options)
 })
 
 app.get('/assets/css/:file', (req, res) => {
   const file = req.params.file
   const options = { root: './server/dist' }
 
-  if(/bundle/.test(file) || /sort/.test(file)) {
-    return res.set({'Cache-Control': 'public, max-age=100000'}).sendFile(`css/${file}`, options)    
+  if (/bundle/.test(file) || /sort/.test(file)) {
+    return res.set({ 'Cache-Control': 'public, max-age=100000' }).sendFile(`css/${file}`, options)
   }
-  return res.set({'Cache-Control': 'public, max-age=1000'}).sendFile(`css/${file}`, options)
+  return res.set({ 'Cache-Control': 'public, max-age=1000' }).sendFile(`css/${file}`, options)
 })
 
-function render(res, template, context, maxAge) {
+function render (res, template, context, maxAge) {
   return res
-    .set({'Cache-Control': `public, max-age=${maxAge}`})
+    .set({ 'Cache-Control': `public, max-age=${maxAge}` })
     .render(template, context)
 }
-
-
 
 module.exports = app

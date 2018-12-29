@@ -1,6 +1,6 @@
 /**
  * @fileOverview eq-timing race format parser. It can handle both multiple files per stage and
- * newer style one file for the complete race. 
+ * newer style one file for the complete race.
  * @name mylaps.js
  * @author Knut Haugen
  * @license ISC
@@ -9,12 +9,11 @@
 const csv = require('neat-csv')
 const fs = require('await-fs')
 const logger = require('../logger.js')
-const { check, normalizeCase, checkClub } = require('../spellcheck.js')
+const { check } = require('../spellcheck.js')
 const { convertMsToTime, convertTimeToMs } = require('../../lib/time.js')
 const Converter = require('./converter.js')
 
 class EqConverter extends Converter {
-
   /**
    * A parser/converter for eq timing race results, with one result per line
    * @constructor
@@ -23,7 +22,7 @@ class EqConverter extends Converter {
    * keys:
    * 'mode': normal or complete. Normal means file containing one stage, complete has all stages in one file. Default normal
    * 'acc': true/false. True means stage times are accumulated through race, false means stage times are just stage times. default true
-   * 'datafile': optional full path to datafile containing race data. Needed for complete mode files as they don't have race name and date in them. 
+   * 'datafile': optional full path to datafile containing race data. Needed for complete mode files as they don't have race name and date in them.
    */
   constructor (filename, options) {
     super()
@@ -76,7 +75,7 @@ class EqConverter extends Converter {
   }
 
   /**
-   * parse stages and return array of results, flattened out ready for database storage. 
+   * parse stages and return array of results, flattened out ready for database storage.
    * @return { race, stages } - a race object and a list of stages, with results per stage
    */
   async parse () {

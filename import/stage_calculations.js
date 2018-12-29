@@ -52,12 +52,11 @@ class StageCalculations {
     for (let i = 0; i < stageIndexes.length; i++) {
       if (err) {
         rows[stageIndexes[i]].acc_time_ms = 0
-        //rows[stageIndexes[i]].behind_leader_ms = 0
+        // rows[stageIndexes[i]].behind_leader_ms = 0
         rows[stageIndexes[i]].acc_time_behind = 0
       }
     }
   }
-
 
   lastStages (rows, stages) {
     return rows.filter((r) => {

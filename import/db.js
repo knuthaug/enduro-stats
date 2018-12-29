@@ -42,7 +42,7 @@ class Db {
     }
   }
 
-  async updateClub(id, club) {
+  async updateClub (id, club) {
     const query = 'UPDATE riders set club = $1 where id = $2'
     return this.update(query, [club, id])
   }
@@ -69,7 +69,7 @@ class Db {
     const query = 'INSERT INTO race_links(type, url, description, race_id) VALUES($1, $2, $3, $4)'
 
     for (let i = 0; i < links.length; i++) {
-      const values = [links[i].type, links[i].url, links[i].desc, raceId]
+      const values = [links[i].type, links[i].url, links[i].desc, raceId]
       this.insert(query, values)
     }
   }
@@ -182,7 +182,7 @@ class Db {
         const { id, club, name, uid, gender } = await this.findRider(rider.name, rider.gender)
         logger.info(`Found existing rider rider ${id} (club=${club} | rider.club=${rider.club})`)
 
-        if((typeof club === 'undefined' && rider.club !== '') && club !== rider.club ) {
+        if ((typeof club === 'undefined' && rider.club !== '') && club !== rider.club) {
           logger.info(`updating club for rider ${id}, setting club=${rider.club}`)
           await this.updateClub(id, rider.club)
         }
@@ -196,7 +196,6 @@ class Db {
       await client.release()
     }
   }
-
 
   async find (query, values, msg) {
     const client = await this.pool.connect()
@@ -262,7 +261,7 @@ class Db {
     const query = 'SELECT id FROM riders where name = $1 AND gender = $2'
     const values = [name, gender]
     const val = await this.findAll(query, values, `Error: could not find rider for name='${name}' and and gender=${gender}`)
-    return { id:val.id, club: val.club, uid: val.uid, gender: val.gender, name: val.name }
+    return { id: val.id, club: val.club, uid: val.uid, gender: val.gender, name: val.name }
   }
 
   async findRace (name, year) {
