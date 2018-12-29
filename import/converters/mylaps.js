@@ -20,6 +20,13 @@ const { convertMsToTime, convertTimeToMs } = require('../../lib/time.js')
 const Converter = require('./converter.js')
 
 class Mylaps extends Converter {
+
+  /**
+   * A parser/converter for mylaps race results, with multiple stages on one line
+   * @constructor
+   * @param {string} filename - filename containing results
+   * @param {string} options - options object. Only key 'datafile' is supported, full path to json file with extra race data not in the results file
+   */
   constructor (filename, options) {
     super()
     this.filename = filename
@@ -30,6 +37,9 @@ class Mylaps extends Converter {
     }
   }
 
+  /**
+   * Load data files for this converter, stored in this
+   */
   async load () {
     const stats = await fs.stat(this.filename)
 
@@ -54,6 +64,10 @@ class Mylaps extends Converter {
     throw new Error(`file ${this.filename} does not exist`)
   }
 
+  /**
+   * parse stages and return array of results, flattened out ready for database storage. 
+   * @return { race, stages } - a race object and a list of stages, with results per stage
+   */
   async parse () {
     let race = {}
 
