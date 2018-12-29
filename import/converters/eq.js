@@ -14,6 +14,17 @@ const { convertMsToTime, convertTimeToMs } = require('../../lib/time.js')
 const Converter = require('./converter.js')
 
 class EqConverter extends Converter {
+
+  /**
+   * A parser/converter for eq timing race results, with one result per line
+   * @constructor
+   * @param {string} filename - filename containing results
+   * @param {string} options - options object.
+   * keys:
+   * 'mode': normal or complete. Normal means file containing one stage, complete has all stages in one file. Default normal
+   * 'acc': true/false. True means stage times are accumulated through race, false means stage times are just stage times. default true
+   * 'datafile': optional full path to datafile containing race data. Needed for complete mode files as they don't have race name and date in them. 
+   */
   constructor (filename, options) {
     super()
     this.filename = filename
@@ -37,6 +48,9 @@ class EqConverter extends Converter {
     }
   }
 
+  /**
+   * Load data files for this converter, stored in this
+   */
   async load () {
     const stats = await fs.stat(this.filename)
 
@@ -61,6 +75,10 @@ class EqConverter extends Converter {
     throw new Error(`file ${this.filename} does not exist`)
   }
 
+  /**
+   * parse stages and return array of results, flattened out ready for database storage. 
+   * @return { race, stages } - a race object and a list of stages, with results per stage
+   */
   async parse () {
     if (this.parsers.hasOwnProperty(this.options.mode)) {
       return this.parsers[this.options.mode].call(this)
