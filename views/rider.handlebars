@@ -15,6 +15,7 @@
     <table class="table table-hover table-dark table-striped table-sm">
       <thead>
         <tr>
+          <th scope="col">{{> icon type='info'}}</th>
           <th scope="col">Dato</th>
           <th scope="col">Ritt</th>
           <th scope="col">Klasse</th>
@@ -25,11 +26,48 @@
       <tbody>
         {{#each results}}
         <tr>
+          <td>{{> icon type='plus'}}</td>
           <td>{{date}}</a></td>
           <td><a href="/ritt/{{uid}}#{{class}}">{{raceName}}</a></td>
           <td>{{class}}</td>
           <td>{{rank}}/{{count}}</td>
-          <td>{{time}} (<span class="smaller" title="{{time_behind}}  etter vinner i klassen">{{time_behind}})</td>
+          <td>{{time}}/<span title="{{time_behind}} etter vinner i klassen">{{time_behind}}</td>
+        </tr>
+        <tr class="hide raceDetails">
+          <td colspan="6">
+            <div class="row">
+              <div class="col-1"></div>
+              <div class="col-1"><strong>Etappe</strong></div>
+              {{#each details}}
+              <div class="col-1">{{name}}</div>
+              {{/each}}
+              <div class="col-1"><strong>Snitt</strong></div>
+            </div>
+            <div class="row">
+              <div class="col-1"></div>
+              <div class="col-1"><strong>Plass</strong></div>
+              {{#each details}}
+              <div class="col-1">{{rank}}</div>
+              {{/each}}
+              <div class="col-1">{{avg_rank}}</div>
+            </div>
+            <div class="row">
+              <div class="col-1"></div>
+              <div class="col-1"><strong>Tid</strong></div>
+              {{#each details}}
+              <div class="col-1">{{time}}</div>
+              {{/each}}
+            </div>
+            <div class="row">
+              <div class="col-1"></div>
+              <div class="col-1"><strong>Tid bak (%)</strong></div>
+              {{#each details}}
+              <div class="col-1">{{time_behind}} ({{percent_behind}})</div>
+              {{/each}}
+              <div class="col-1">{{avg_time_behind}} ({{avg_percent_behind}})</div>
+            </div>
+
+          </td>
         </tr>
         {{/each}}
         <tr>

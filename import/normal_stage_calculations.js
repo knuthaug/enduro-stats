@@ -34,13 +34,16 @@ class NormalStageCalculations extends StageCalculations {
     for (let i = 0; i < stageResults.length; i++) {
       if (stageResults[i].stage_rank === 1) {
         stageResults[i].behind_leader_ms = 0
+        stageResults[i].behind_leader_percent = 0.0
       } else {
         if (this.notFinished(stageResults[i])) {
           stageResults[i].behind_leader_ms = 0
+          stageResults[i].behind_leader_percent = 0.0
           continue
         }
 
         stageResults[i].behind_leader_ms = this.timeBehindRider(stageResults[i], this.firstInStage(stageResults, stageResults[i].stage))
+        stageResults[i].behind_leader_percent = this.percentBehindRider(stageResults[i], this.firstInStage(stageResults, stageResults[i].stage))
       }
 
       // acc_time_behind, just for last stage

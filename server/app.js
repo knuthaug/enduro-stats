@@ -105,7 +105,8 @@ app.get('/om', async (req, res) => {
 app.get('/rytter/:uid', async (req, res) => {
   log.debug(`request for ${req.path}`)
   const rider = await db.findRider(req.params.uid)
-  const races = riderViewMapper(await db.raceResultsForRider(req.params.uid))
+  const rawRaces = await db.raceResultsForRider(req.params.uid)
+  const races = riderViewMapper(rawRaces)
   const numRaces = races.length
 
   const raceIds = races.map((r) => {
@@ -121,7 +122,6 @@ app.get('/rytter/:uid', async (req, res) => {
   })
 
   const { year, avg } = bestSeason(results)
-
   const startYear = results[results.length - 1].year
   render(res, 'rider', {
     rider,

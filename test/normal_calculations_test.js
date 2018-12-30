@@ -67,11 +67,12 @@ tap.test('change stage time of zero into status ERROR', async t => {
 tap.test('behind_leader_ms is calculated', async t => {
   t.equals(result[0].behind_leader_ms, 0, 'stage winner is 0 seconds behind leader')
   t.equals(result[0].stage_rank, 1, 'shared first in stage')
-  t.equals(result[1].behind_leader_ms, 0, 'stage second is 2 seconds behind leader')
+  t.equals(result[1].behind_leader_ms, 0, 'stage second is 0 seconds behind leader')
   t.equals(result[1].stage_rank, 1, 'shared first in stage')
 
   t.equals(result[2].behind_leader_ms, 2000, 'stage second is 2 seconds behind leader')
-  t.equals(result[2].stage_rank, 3, 'shared first in stage')
+  t.equals(result[2].behind_leader_percent, '1.4', 'stage second is 1.9% behind leader')
+  t.equals(result[2].stage_rank, 3, 'third is 3')
   t.end()
 })
 

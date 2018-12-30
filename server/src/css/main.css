@@ -26,10 +26,38 @@ a:hover {
   color: #fff;
 }
 
+.hide {
+  display:none;
+}
+
+.show {
+  display: block;
+}
+
+.raceDetails {
+  transform: all 0.8s ease;
+}
+
+.plus-rotate {
+  transform: rotate(45deg);
+}
+
 .icon {
   width: 20px;
   height: 20px;
 }
+
+.fat-icon {
+  stroke-width: 4;
+  width: 18px;
+  height: 18px;
+  transform: all 0.8s ease;
+}
+
+.shower {
+  cursor: pointer;
+}
+
 .navbar-bg {
   background-color: #333;
 }

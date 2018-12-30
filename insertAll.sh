@@ -55,7 +55,7 @@ node import/importer.js -a -f ~/Dropbox/privat/sykkel/enduro-resultater/2015/osl
 echo "  Traktor"
 node import/importer.js -a -f ~/Dropbox/privat/sykkel/enduro-resultater/2015/traktor/traktor-2015.csv
 echo "  Frei"
-node import/importer.js  -f ~/Dropbox/privat/sykkel/enduro-resultater/2015/frei/frei-2015.csv
+node import/importer.js -f ~/Dropbox/privat/sykkel/enduro-resultater/2015/frei/frei-2015.csv
 echo "  Molde"
 node import/importer.js -r ~/Dropbox/privat/sykkel/enduro-resultater/2015/molde/racedata.json
 echo "  Hillbilly"
