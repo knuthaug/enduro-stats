@@ -34,7 +34,8 @@ a:hover {
   display: block;
 }
 
-.animateShow {
+.raceDetails {
+  transform: all 0.8s ease;
 }
 
 .plus-rotate {
@@ -50,7 +51,7 @@ a:hover {
   stroke-width: 4;
   width: 18px;
   height: 18px;
-  transform: all 0.5s ease;
+  transform: all 0.8s ease;
 }
 
 .shower {

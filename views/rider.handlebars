@@ -33,11 +33,37 @@
           <td>{{rank}}/{{count}}</td>
           <td>{{time}}/<span title="{{time_behind}} etter vinner i klassen">{{time_behind}}</td>
         </tr>
-        <tr class="hide">
+        <tr class="hide raceDetails">
           <td colspan="6">
             <div class="row">
               <div class="col-1"></div>
+              <div class="col-1">Etappe</div>
+              {{#each details}}
+              <div class="col-1">{{name}}</div>
+              {{/each}}
             </div>
+            <div class="row">
+              <div class="col-1"></div>
+              <div class="col-1">Plass</div>
+              {{#each details}}
+              <div class="col-1">{{rank}}</div>
+              {{/each}}
+            </div>
+            <div class="row">
+              <div class="col-1"></div>
+              <div class="col-1">Tid</div>
+              {{#each details}}
+              <div class="col-1">{{time}}</div>
+              {{/each}}
+            </div>
+            <div class="row">
+              <div class="col-1"></div>
+              <div class="col-1">Tid bak (%)</div>
+              {{#each details}}
+              <div class="col-1">{{time_behind}} ({{percent_behind}})</div>
+              {{/each}}
+            </div>
+
           </td>
         </tr>
         {{/each}}

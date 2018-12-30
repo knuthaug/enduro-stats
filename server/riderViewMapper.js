@@ -8,6 +8,9 @@ module.exports = function resultViewMapper (results) {
     if (row.race !== results[i].race_id) {
       out.push(addFields(row, results[i - 1]))
       row = toRow(results[i])
+      addDetails(row, results[i])
+    } else {
+      addDetails(row, results[i])
     }
   }
 
@@ -16,12 +19,17 @@ module.exports = function resultViewMapper (results) {
   return out
 }
 
+function addDetails(row, res) {
+  return row.details.push(fields(res))
+}
+
 function addFields (row, res) {
-  return Object.assign(row, {
+  const newRow = Object.assign(row, {
     rank: res.final_rank,
     time: time(res.acc_time_ms, res.status),
     time_behind: accTime(res.acc_time_behind, res.status)
   })
+  return newRow
 }
 
 function toRow (r) {
@@ -31,7 +39,21 @@ function toRow (r) {
     date: r.date,
     raceName: r.name,
     class: r.class,
-    uid: r.uid
+    uid: r.uid,
+    details: [ ]
+  }
+}
+
+function timeBehind (time) {
+  return convertMsToTime(time)
+}
+
+function fields (row) {
+  return {
+    name: row.stagename,
+    time: time(row.stage_time_ms, row.status),
+    rank: row.stage_rank,
+    time_behind: timeBehind(row.behind_leader_ms),
   }
 }
 
