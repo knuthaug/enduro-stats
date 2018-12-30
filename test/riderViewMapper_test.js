@@ -26,6 +26,11 @@ tap.test('Data fields for race details', (t) => {
   t.equals(r[0].details[0].time, '05:37.0', 'stage time')
   t.equals(r[0].details[0].rank, 3, 'stage rank')
   t.equals(r[0].details[0].time_behind, '00:11.0', 'stage time behind')
-  //console.log(r[0].details)
+  t.end()
+})
+
+tap.test('calculate average rank for stages', (t) => {
+  t.equals(r[0].avg_rank, '1.60', 'stage rank averaged')
+  t.equals(r[0].avg_time_behind, '00:10.8', 'behind_leader_ms averaged')
   t.end()
 })

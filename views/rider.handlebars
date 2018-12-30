@@ -15,7 +15,7 @@
     <table class="table table-hover table-dark table-striped table-sm">
       <thead>
         <tr>
-          <th scope="col"></th>
+          <th scope="col">{{> icon type='info'}}</th>
           <th scope="col">Dato</th>
           <th scope="col">Ritt</th>
           <th scope="col">Klasse</th>
@@ -41,6 +41,7 @@
               {{#each details}}
               <div class="col-1">{{name}}</div>
               {{/each}}
+              <div class="col-1"><strong>Snitt</strong></div>
             </div>
             <div class="row">
               <div class="col-1"></div>
@@ -48,6 +49,7 @@
               {{#each details}}
               <div class="col-1">{{rank}}</div>
               {{/each}}
+              <div class="col-1">{{avg_rank}}</div>
             </div>
             <div class="row">
               <div class="col-1"></div>
@@ -62,6 +64,7 @@
               {{#each details}}
               <div class="col-1">{{time_behind}} ({{percent_behind}})</div>
               {{/each}}
+              <div class="col-1">{{avg_time_behind}} ({{avg_percent_behind}})</div>
             </div>
 
           </td>

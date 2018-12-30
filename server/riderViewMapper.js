@@ -16,7 +16,21 @@ module.exports = function resultViewMapper (results) {
 
   out.push(addFields(row, results[results.length - 1]))
 
+  for(let i = 0; i < out.length; i++) {
+    out[i].avg_rank = avg(out[i].details, 'rank').toFixed(2)
+    out[i].avg_time_behind = convertMsToTime(avg(out[i].details, 'behind_leader_ms').toFixed(0))
+    out[i].avg_percent_behind = avg(out[i].details, 'percent_behind').toFixed(2)
+  }
   return out
+}
+
+function avg(list, prop) {
+  let sum = 0
+  for(let i = 0; i < list.length; i++) {
+    sum += list[i][prop]
+  }
+
+  return (sum / list.length)
 }
 
 function addDetails(row, res) {
@@ -51,6 +65,7 @@ function timeBehind (time) {
 function fields (row) {
   return {
     name: row.stagename,
+    behind_leader_ms: row.behind_leader_ms,
     time: time(row.stage_time_ms, row.status),
     rank: row.stage_rank,
     time_behind: timeBehind(row.behind_leader_ms),
