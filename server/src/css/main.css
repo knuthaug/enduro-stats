@@ -107,3 +107,7 @@ a:hover {
 .btn {
   padding: 0.200rem 0.55rem;
 }
+
+.rider-chart {
+  height: 250px;
+}

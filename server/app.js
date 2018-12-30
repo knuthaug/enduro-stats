@@ -3,6 +3,8 @@ const http = require('http')
 const hbs = require('express-handlebars')
 const compression = require('compression')
 const morgan = require('morgan')
+const compareAsc = require('date-fns/compare_asc')
+const parse = require('date-fns/parse')
 const config = require('../config')
 const log = require('./log.js')
 const Db = require('./db.js')
@@ -118,8 +120,18 @@ app.get('/rytter/:uid', async (req, res) => {
   const results = races.map((r) => {
     return Object.assign(r, { count: ridersPerClass[r.race] })
   }).sort((a, b) => {
-    return b.year - a.year
+    return compareAsc(parse(b.date), parse(a.date))
   })
+
+  const chartObject = JSON.stringify(results.map((e) => {
+    if(e.time !=='DNS' && e.time !== 'DNF') {
+      return { x: e.date, y: e.rank, race: e.raceName, properDate: parse(e.date) }
+    }
+  }).filter((e) => {
+    return typeof e !== 'undefined'
+  }).sort((a, b) => {
+    return compareAsc(a.properDate, b.properDate)
+  }))
 
   const { year, avg } = bestSeason(results)
   const startYear = results[results.length - 1].year
@@ -128,6 +140,7 @@ app.get('/rytter/:uid', async (req, res) => {
     numRaces,
     startYear,
     year,
+    chartObject,
     avg,
     results,
     active: 'ryttere' }, DEFAULT_CACHE_TIME_PAGES)
@@ -140,6 +153,7 @@ app.get('/ryttere', async (req, res) => {
 })
 
 app.get('/assets/js/:file', (req, res) => {
+  log.debug(`request for ${req.path}`)
   const file = req.params.file
   const options = { root: './server/dist' }
 
