@@ -9,7 +9,6 @@ const Db = require('./db.js')
 const resultViewMapper = require('./resultViewMapper.js')
 const raceViewMapper = require('./raceViewMapper.js')
 const riderViewMapper = require('./riderViewMapper.js')
-const detailRiderViewMapper = require('./detailRiderViewMapper.js')
 const bestSeason = require('./bestSeason.js')
 
 const hashedAssets = require('../views/helpers/hashed-assets.js')
@@ -108,7 +107,6 @@ app.get('/rytter/:uid', async (req, res) => {
   const rider = await db.findRider(req.params.uid)
   const rawRaces = await db.raceResultsForRider(req.params.uid)
   const races = riderViewMapper(rawRaces)
-  const detailRaces = detailRiderViewMapper(rawRaces)
   const numRaces = races.length
 
   const raceIds = races.map((r) => {
@@ -130,7 +128,6 @@ app.get('/rytter/:uid', async (req, res) => {
     numRaces,
     startYear,
     year,
-    detailRaces,
     avg,
     results,
     active: 'ryttere' }, DEFAULT_CACHE_TIME_PAGES)
