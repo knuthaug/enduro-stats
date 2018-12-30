@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "precommit": "npm run test",
-    "watch": "npm-watch start",
+    "watch": "npm-watch foo",
+    "build-watch": "npm-watch build",
     "clean": "rimraf bundlemap-js.json server/dist/js server/dist/css",
-    "start:local": "npm run build && npm start",
+    "foo": "npm run clean && npm run build:css && npm run build:js && npm start",
     "start": "node index.js",
     "test": "NODE_ENV=test ./node_modules/tap/bin/run.js -R spec test/*_test.js",
     "test:integration": "NODE_ENV=test ./node_modules/tap/bin/run.js -R spec integration-test/*_test.js",
@@ -77,9 +78,13 @@
     "pino": "5.8.1"
   },
   "watch": {
-    "start": {
+    "build": {
       "patterns": [
-        "server",
+      ]
+    },
+    "foo": {
+      "patterns": [
+        "server/*.js",
         "server/src/js",
         "server/src/css",
         "config",

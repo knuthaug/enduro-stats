@@ -27,17 +27,36 @@ a:hover {
 }
 
 .hide {
-  visibility: hidden;
+  display:none;
 }
 
 .show {
-  
+  display: block;
+}
+
+.animateShow {
+}
+
+.plus-rotate {
+  transform: rotate(45deg);
 }
 
 .icon {
   width: 20px;
   height: 20px;
 }
+
+.fat-icon {
+  stroke-width: 4;
+  width: 18px;
+  height: 18px;
+  transform: all 0.5s ease;
+}
+
+.shower {
+  cursor: pointer;
+}
+
 .navbar-bg {
   background-color: #333;
 }
