@@ -67,7 +67,6 @@ app.get('/ritt/:uid', async (req, res) => {
     results,
     links,
     noResults,
-    tables: true,
     active: 'ritt' }, DEFAULT_CACHE_TIME_PAGES)
 })
 

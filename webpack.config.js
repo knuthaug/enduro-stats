@@ -8,7 +8,8 @@ module.exports = {
   mode: isProduction ? 'production' : 'development',
   entry: {
     bundle: './server/src/js/index.js',
-    rider: './server/src/js/rider.js'
+    rider: './server/src/js/rider.js',
+    race: './server/src/js/race.js'
   },
   output: {
     filename: '[name]-[chunkhash].js',
