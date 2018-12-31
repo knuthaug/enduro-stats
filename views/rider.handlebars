@@ -46,7 +46,7 @@
           <td colspan="6">
             <div class="row race-details">
               <div class="col-6">
-              <table>
+              <table width="100%">
               <thead>
                 <tr>
                   <th><strong>Etappe</strong></th>
@@ -71,11 +71,18 @@
                   {{/each}}
                 </tr>
                 <tr>
+                  <td><strong>Tid bak</strong></td>
+                  {{#each details}}
+                  <td>{{time_behind}}</td>
+                  {{/each}}
+                  <td>{{avg_time_behind}}</td>
+                </tr>
+                <tr>
                   <td><strong>Tid bak (%)</strong></td>
                   {{#each details}}
-                  <td>{{time_behind}} ({{percent_behind}})</td>
+                  <td>{{percent_behind}}</td>
                   {{/each}}
-                  <td>{{avg_time_behind}} ({{avg_percent_behind}})</td>
+                  <td>{{avg_percent_behind}}</td>
                 </tr>
               </tbody>
               </table>

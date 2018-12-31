@@ -18,7 +18,7 @@ function setupRaceGraph(element) {
   Highcharts.chart(element.getAttribute('id'), {
 
     title: {
-      text: 'Plasseringer',
+      text: 'Etappeplasseringer',
       style: {
         color: '#FFFFFF',
         'font-size': '90%',
