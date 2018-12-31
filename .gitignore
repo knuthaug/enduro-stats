@@ -9,5 +9,6 @@ server/dist
 config/production-config.json
 dump.sql
 scripts
+app.yaml
 bundlemap-css.json
 bundlemap-js.json
