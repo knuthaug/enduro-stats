@@ -52,9 +52,30 @@ module.exports = function resultViewMapper (classes, results) {
     }).sort(compareRank)
   }
 
+  //create graphData object
+  const graphs = {}
+  for (let i = 0; i < classes.length; i++) {
+    graphs[classes[i]] = toGraphData(out[classes[i]], 5, stages)
+
+  }
+
   return [stages.sort((a, b) => {
     return a - b
-  }), out]
+  }), out, graphs]
+}
+
+function toGraphData(rows, num, stages) {
+  const ret = []
+  for(let i = 0; i < num; i++) {
+    if(i >= rows.length) {
+      break;
+    }
+    const o = { name: rows[i].name, data: stages.map((s) => {
+      return [s, rows[i][`stage${s}_rank`] ]
+    }) }
+    ret.push(o)
+  }
+  return ret
 }
 
 function time (time, status) {

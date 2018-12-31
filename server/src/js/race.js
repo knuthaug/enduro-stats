@@ -4,8 +4,6 @@ const format = require('date-fns/format')
 const parse = require('date-fns/parse')
 
 document.addEventListener('DOMContentLoaded', function (event) {
-  setupGraph()
-
   const graphs = document.querySelectorAll('.race-prog-graph')
   graphs.forEach((element) => {
     setupRaceGraph(element)
@@ -23,7 +21,7 @@ function setupRaceGraph(element) {
 
    yAxis: {
      title: {
-       text: 'Ryyter'
+       text: 'Plass'
      }
    },
     xAxis: {
@@ -40,28 +38,21 @@ function setupRaceGraph(element) {
        }
      }
    },
-    series: [{
-      showInLegend: false,
-      data: data,
-      pointStart: 1,
-      name: 'Rytter'
-   }],
-
-   responsive: {
-     rules: [{
-       condition: {
-         maxWidth: 700
-       },
-       chartOptions: {
-         legend: {
-           layout: 'horizontal',
-           align: 'center',
-           verticalAlign: 'bottom'
-         }
-       }
-     }]
-   }
-
+    series: data,
+    responsive: {
+      rules: [{
+        condition: {
+          maxWidth: 700
+        },
+        chartOptions: {
+          legend: {
+            layout: 'horizontal',
+            align: 'center',
+            verticalAlign: 'bottom'
+          }
+        }
+      }]
+    }
   })
 }
 

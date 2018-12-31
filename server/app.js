@@ -58,14 +58,19 @@ app.get('/ritt/:uid', async (req, res) => {
   const links = await db.findRaceLinks(race.id)
   const raceClasses = await db.classesForRace(req.params.uid)
   const raceResults = await db.raceResults(req.params.uid)
-  const [stages, results] = resultViewMapper(raceClasses, raceResults)
+  const [stages, results, graphs] = resultViewMapper(raceClasses, raceResults)
   const noResults = Object.values(results).length > 0
+
+  Object.keys(graphs).forEach((cl) => {
+    graphs[cl] = JSON.stringify(graphs[cl])
+  })
 
   render(res, 'race', {
     race,
     stages,
     results,
     links,
+    graphs,
     noResults,
     active: 'ritt' }, DEFAULT_CACHE_TIME_PAGES)
 })
