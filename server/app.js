@@ -123,15 +123,7 @@ app.get('/rytter/:uid', async (req, res) => {
     return compareAsc(parse(b.date), parse(a.date))
   })
 
-  const chartObject = JSON.stringify(results.map((e) => {
-    if(e.time !=='DNS' && e.time !== 'DNF') {
-      return { x: e.date, y: e.rank, race: e.raceName, properDate: parse(e.date) }
-    }
-  }).filter((e) => {
-    return typeof e !== 'undefined'
-  }).sort((a, b) => {
-    return compareAsc(a.properDate, b.properDate)
-  }))
+  const chartObject = toChartData(results)
 
   const { year, avg } = bestSeason(results)
   const startYear = results[results.length - 1].year
@@ -172,6 +164,18 @@ app.get('/assets/css/:file', (req, res) => {
   }
   return res.set({ 'Cache-Control': 'public, max-age=1000' }).sendFile(`css/${file}`, options)
 })
+
+function toChartData(results) {
+  return JSON.stringify(results.map((e) => {
+    if(e.time !=='DNS' && e.time !== 'DNF') {
+      return { x: e.date, y: e.rank, race: e.raceName, properDate: parse(e.date) }
+    }
+  }).filter((e) => {
+    return typeof e !== 'undefined'
+  }).sort((a, b) => {
+    return compareAsc(a.properDate, b.properDate)
+  }))
+}
 
 function render (res, template, context, maxAge) {
   return res

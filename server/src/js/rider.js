@@ -2,9 +2,73 @@
 
 const format = require('date-fns/format')
 const parse = require('date-fns/parse')
+
 document.addEventListener('DOMContentLoaded', function (event) {
   setupGraph()
+
+  const graphs = document.querySelectorAll('.race-graph')
+  graphs.forEach((element) => {
+    setupRaceGraph(element)
+  })
 })
+
+function setupRaceGraph(element) {
+  const data = JSON.parse(element.getAttribute('data-object'))
+
+  Highcharts.chart(element.getAttribute('id'), {
+
+    title: {
+      text: 'Plasseringer',
+      style: {
+        color: '#FFFFFF',
+        'font-size': '90%',
+        fontWeight: 'normal'
+      }
+    },
+
+   yAxis: {
+     title: {
+       text: 'Plass'
+     }
+   },
+    xAxis: {
+      title: {
+        text: 'Etappe'
+      },
+      tickInterval: 1
+    },
+
+   plotOptions: {
+     series: {
+       label: {
+         connectorAllowed: false
+       }
+     }
+   },
+    series: [{
+      showInLegend: false,
+      data: data,
+      pointStart: 1,
+      name: 'Plass'
+   }],
+
+   responsive: {
+     rules: [{
+       condition: {
+         maxWidth: 400
+       },
+       chartOptions: {
+         legend: {
+           layout: 'horizontal',
+           align: 'center',
+           verticalAlign: 'bottom'
+         }
+       }
+     }]
+   }
+
+  })
+}
 
 function setupGraph() {
   const el = document.getElementById('rider-chart')

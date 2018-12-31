@@ -31,7 +31,7 @@ function extendTableSort () {
 
 document.addEventListener('DOMContentLoaded', function (event) {
   extendTableSort()
-  const tables = document.querySelectorAll('table')
+  const tables = document.querySelectorAll('.main-table')
 
   for (var i = 0; i < tables.length; i++) {
     tablesort(tables[i], { descending: true })
@@ -54,6 +54,9 @@ function setupShowHide() {
         while (el) {
           if(el.nodeName === 'TR') {
             el.classList.toggle('hide')
+            Highcharts.charts.forEach(function(chart) {
+              chart.reflow()
+            })
             break;
           }
           el = el.nextSibling;

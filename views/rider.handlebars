@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-3">
+  <div class="col-4">
     <h4>{{rider.name}}</h4>
     <p>Klubb: {{rider.club}}<br/>
       Ritt: {{numRaces}}<br/>
@@ -10,14 +10,18 @@
       {{/compare}}
     </p>
   </div>
-  <div class="col-9">
+  <div class="col-8">
     <div class="row">
       <div class="col-12">
         <div id="rider-chart" class="rider-chart" data-object="{{chartObject}}"></div>
       </div>
     </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
     <h3>Resultater</h3>
-    <table class="table table-hover table-dark table-striped table-sm">
+    <table class="table table-hover table-dark table-striped table-sm main-table">
       <thead>
         <tr>
           <th scope="col">{{> icon type='info'}}</th>
@@ -40,38 +44,45 @@
         </tr>
         <tr class="hide raceDetails">
           <td colspan="6">
-            <div class="row">
-              <div class="col-1"></div>
-              <div class="col-1"><strong>Etappe</strong></div>
-              {{#each details}}
-              <div class="col-1">{{name}}</div>
-              {{/each}}
-              <div class="col-1"><strong>Snitt</strong></div>
-            </div>
-            <div class="row">
-              <div class="col-1"></div>
-              <div class="col-1"><strong>Plass</strong></div>
-              {{#each details}}
-              <div class="col-1">{{rank}}</div>
-              {{/each}}
-              <div class="col-1">{{avg_rank}}</div>
-            </div>
-            <div class="row">
-              <div class="col-1"></div>
-              <div class="col-1"><strong>Tid</strong></div>
-              {{#each details}}
-              <div class="col-1">{{time}}</div>
-              {{/each}}
-            </div>
-            <div class="row">
-              <div class="col-1"></div>
-              <div class="col-1"><strong>Tid bak (%)</strong></div>
-              {{#each details}}
-              <div class="col-1">{{time_behind}} ({{percent_behind}})</div>
-              {{/each}}
-              <div class="col-1">{{avg_time_behind}} ({{avg_percent_behind}})</div>
-            </div>
-
+            <div class="row race-details">
+              <div class="col-6">
+              <table>
+              <thead>
+                <tr>
+                  <th><strong>Etappe</strong></th>
+                  {{#each details}}
+                  <th><strong>{{name}}</strong></th>
+                  {{/each}}
+                  <th>Snitt</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Plass</strong></td>
+                  {{#each details}}
+                  <td>{{rank}}</td>
+                  {{/each}}
+                  <td>{{avg_rank}}</td>
+                </tr>
+                <tr>
+                  <td><strong>Tid</strong></td>
+                  {{#each details}}
+                  <td>{{time}}</td>
+                  {{/each}}
+                </tr>
+                <tr>
+                  <td><strong>Tid bak (%)</strong></td>
+                  {{#each details}}
+                  <td>{{time_behind}} ({{percent_behind}})</td>
+                  {{/each}}
+                  <td>{{avg_time_behind}} ({{avg_percent_behind}})</td>
+                </tr>
+              </tbody>
+              </table>
+              </div>
+              <div class="col-6">
+                <div class="race-graph" id="{{uid}}" data-object="{{chartData}}"></div>
+              </div>
           </td>
         </tr>
         {{/each}}

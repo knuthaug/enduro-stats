@@ -75,6 +75,9 @@ a:hover {
   font-size: 85%;
 }
 
+.table .table {
+  background-color: #212529 !important;
+}
 .padded-link {
   margin-left: 1rem;
 }
@@ -108,6 +111,16 @@ a:hover {
   padding: 0.200rem 0.55rem;
 }
 
+.race-details {
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
 .rider-chart {
-  height: 250px;
+  height: 225px;
+}
+
+.race-graph {
+  height: 175px;
+  width: 100%;
 }
