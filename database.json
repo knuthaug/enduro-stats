@@ -20,7 +20,7 @@
   "prod": {
     "driver": "pg",
     "user": "postgres",
-    "password": "OYFsYz2Yhl8cC0f7TJX2ayhjEgn0fWYWjQlzZ3P9",
+    "password": ""
     "host": "35.233.118.177",
     "database": "postgres",
     "schema": "db-schema"
