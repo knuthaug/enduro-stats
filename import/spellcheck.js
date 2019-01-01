@@ -1,5 +1,6 @@
 const clubSubs = {
-  'Bmk': 'Bergen MTB klubb'
+  'Bmk': 'Bergen MTB klubb',
+  'Gresvikifstisyklister': 'Gresvik IF stisyklister'
 }
 
 const subs = {
