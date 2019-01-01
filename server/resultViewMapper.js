@@ -52,7 +52,7 @@ module.exports = function resultViewMapper (classes, results) {
     }).sort(compareRank)
   }
 
-  //create graphData object
+  // create graphData object
   const graphs = {}
   for (let i = 0; i < classes.length; i++) {
     graphs[`${classes[i]}-places`] = toPlacesGraphData(out[classes[i]], 5, stages)
@@ -64,33 +64,35 @@ module.exports = function resultViewMapper (classes, results) {
   }), out, graphs]
 }
 
-function toPlacesGraphData(rows, num, stages) {
+function toPlacesGraphData (rows, num, stages) {
   const ret = []
-  for(let i = 0; i < num; i++) {
-    if(i >= rows.length) {
-      break;
+  for (let i = 0; i < num; i++) {
+    if (i >= rows.length) {
+      break
     }
-    const o = { name: rows[i].name, data: stages.map((s) => {
-      return [s, rows[i][`stage${s}_rank`] ]
-    }).sort((a, b) => {
-      return a[0] - b[0]
-    }) }
+    const o = { name: rows[i].name,
+      data: stages.map((s) => {
+        return [s, rows[i][`stage${s}_rank`] ]
+      }).sort((a, b) => {
+        return a[0] - b[0]
+      }) }
     ret.push(o)
   }
   return ret
 }
 
-function toTimesGraphData(rows, num, stages) {
+function toTimesGraphData (rows, num, stages) {
   const ret = []
-  for(let i = 0; i < num; i++) {
-    if(i >= rows.length) {
-      break;
+  for (let i = 0; i < num; i++) {
+    if (i >= rows.length) {
+      break
     }
-    const o = { name: rows[i].name, data: stages.map((s) => {
-      return [s, convertTimeToMs(rows[i][`stage${s}_behind_leader`]) ] //in milliseconds
-    }).sort((a, b) => {
-      return a[0] - b[0]
-    }) }
+    const o = { name: rows[i].name,
+      data: stages.map((s) => {
+        return [s, convertTimeToMs(rows[i][`stage${s}_behind_leader`]) ] // in milliseconds
+      }).sort((a, b) => {
+        return a[0] - b[0]
+      }) }
     ret.push(o)
   }
   return ret

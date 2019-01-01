@@ -15,33 +15,32 @@ document.addEventListener('DOMContentLoaded', function (event) {
       const target = event.currentTarget
       let els = target.parentNode.childNodes
 
-      for(let i = 0; i < els.length; i++) {
-        if(els[i].nodeName === 'DIV') {
+      for (let i = 0; i < els.length; i++) {
+        if (els[i].nodeName === 'DIV') {
           setupRaceGraph(els[i], target.options[target.selectedIndex].value)
-          break;
+          break
         }
       }
     })
   })
 })
 
-function placeFormatter() {
+function placeFormatter () {
   return '<span>' + this.point.x + ' etappe: ' + this.point.y + '. plass</span>'
 }
 
-function timeFormatter() {
-  return '<span>' + this.point.x + ' etappe: ' + this.point.y/1000 + ' sekunder bak</span>'
+function timeFormatter () {
+  return '<span>' + this.point.x + ' etappe: ' + this.point.y / 1000 + ' sekunder bak</span>'
 }
 
-function setupRaceGraph(element, graph) {
-
+function setupRaceGraph (element, graph) {
   const index = element.getAttribute('data-highcharts-chart')
 
-  if(index) { //existing graph
-    const chart = Highcharts.charts[index];
+  if (index) { // existing graph
+    const chart = Highcharts.charts[index]
     const data = JSON.parse(element.getAttribute(`data-object-${graph}`))
 
-    for(let i = 0; i < data.length; i++) {
+    for (let i = 0; i < data.length; i++) {
       console.log(data[i])
     }
 
@@ -58,7 +57,6 @@ function setupRaceGraph(element, graph) {
       series: data
     })
   } else {
-
     const data = JSON.parse(element.getAttribute(`data-object-places`))
 
     Highcharts.chart(element.getAttribute('id'), {
@@ -68,7 +66,7 @@ function setupRaceGraph(element, graph) {
       },
 
       title: {
-        text: 'Rittforløp',
+        text: 'Rittforløp'
       },
 
       yAxis: {
@@ -109,4 +107,3 @@ function setupRaceGraph(element, graph) {
     })
   }
 }
-

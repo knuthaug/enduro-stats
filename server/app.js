@@ -170,9 +170,9 @@ app.get('/assets/css/:file', (req, res) => {
   return res.set({ 'Cache-Control': 'public, max-age=1000' }).sendFile(`css/${file}`, options)
 })
 
-function toChartData(results) {
+function toChartData (results) {
   return JSON.stringify(results.map((e) => {
-    if(e.time !=='DNS' && e.time !== 'DNF') {
+    if (e.time !== 'DNS' && e.time !== 'DNF') {
       return { x: e.date, y: e.rank, race: e.raceName, properDate: parse(e.date) }
     }
   }).filter((e) => {

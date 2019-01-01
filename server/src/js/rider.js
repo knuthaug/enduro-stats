@@ -10,10 +10,9 @@ document.addEventListener('DOMContentLoaded', function (event) {
   graphs.forEach((element) => {
     setupRaceGraph(element)
   })
-
 })
 
-function setupRaceGraph(element) {
+function setupRaceGraph (element) {
   const data = JSON.parse(element.getAttribute('data-object'))
 
   Highcharts.chart(element.getAttribute('id'), {
@@ -27,11 +26,11 @@ function setupRaceGraph(element) {
       }
     },
 
-   yAxis: {
-     title: {
-       text: 'Plass'
-     }
-   },
+    yAxis: {
+      title: {
+        text: 'Plass'
+      }
+    },
     xAxis: {
       title: {
         text: 'Etappe'
@@ -39,39 +38,39 @@ function setupRaceGraph(element) {
       tickInterval: 1
     },
 
-   plotOptions: {
-     series: {
-       label: {
-         connectorAllowed: false
-       }
-     }
-   },
+    plotOptions: {
+      series: {
+        label: {
+          connectorAllowed: false
+        }
+      }
+    },
     series: [{
       showInLegend: false,
       data: data,
       pointStart: 1,
       name: 'Plass'
-   }],
+    }],
 
-   responsive: {
-     rules: [{
-       condition: {
-         maxWidth: 400
-       },
-       chartOptions: {
-         legend: {
-           layout: 'horizontal',
-           align: 'center',
-           verticalAlign: 'bottom'
-         }
-       }
-     }]
-   }
+    responsive: {
+      rules: [{
+        condition: {
+          maxWidth: 400
+        },
+        chartOptions: {
+          legend: {
+            layout: 'horizontal',
+            align: 'center',
+            verticalAlign: 'bottom'
+          }
+        }
+      }]
+    }
 
   })
 }
 
-function setupGraph() {
+function setupGraph () {
   const el = document.getElementById('rider-chart')
   const data = JSON.parse(el.getAttribute('data-object'))
 
@@ -81,65 +80,65 @@ function setupGraph() {
       text: 'Rittplasseringer'
     },
 
-   yAxis: {
-     title: {
-       text: 'Plass i klasse'
-     }
-   },
+    yAxis: {
+      title: {
+        text: 'Plass i klasse'
+      }
+    },
     xAxis: {
       title: {
         text: 'År'
       },
       type: 'datetime',
       labels: {
-        formatter: function() {
+        formatter: function () {
           return format(parse(data[this.value].x), 'YYYY')
         },
         step: 1
       }
 
     },
-   legend: {
-     layout: 'vertical',
-     align: 'right',
-     verticalAlign: 'middle'
-   },
+    legend: {
+      layout: 'vertical',
+      align: 'right',
+      verticalAlign: 'middle'
+    },
 
-   plotOptions: {
-     series: {
-       label: {
-         connectorAllowed: false
-       }
-     }
-   },
+    plotOptions: {
+      series: {
+        label: {
+          connectorAllowed: false
+        }
+      }
+    },
     tooltip: {
-      formatter: function() {
+      formatter: function () {
         const pointData = data.find((row) => {
           return row.x === this.point.options.name
         })
-        return '<span>' + pointData.x + ' ' + pointData.race + ': ' +  pointData.y +' </span>'
+        return '<span>' + pointData.x + ' ' + pointData.race + ': ' + pointData.y + ' </span>'
       }
     },
 
-   series: [{
-     name: 'Plassering',
-     data: data.map((e) => { return [ e.x, e.y ]}),
-   }],
+    series: [{
+      name: 'Plassering',
+      data: data.map((e) => { return [ e.x, e.y ] })
+    }],
 
-   responsive: {
-     rules: [{
-       condition: {
-         maxWidth: 500
-       },
-       chartOptions: {
-         legend: {
-           layout: 'horizontal',
-           align: 'center',
-           verticalAlign: 'bottom'
-         }
-       }
-     }]
-   }
+    responsive: {
+      rules: [{
+        condition: {
+          maxWidth: 500
+        },
+        chartOptions: {
+          legend: {
+            layout: 'horizontal',
+            align: 'center',
+            verticalAlign: 'bottom'
+          }
+        }
+      }]
+    }
 
   })
 }

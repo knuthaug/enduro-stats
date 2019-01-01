@@ -16,39 +16,39 @@ module.exports = function resultViewMapper (results) {
 
   out.push(addFields(row, results[results.length - 1]))
 
-  for(let i = 0; i < out.length; i++) {
+  for (let i = 0; i < out.length; i++) {
     out[i].avg_rank = avg(out[i].details, 'rank').toFixed(2)
     out[i].avg_time_behind = convertMsToTime(avg(out[i].details, 'behind_leader_ms').toFixed(0))
     out[i].avg_percent_behind = avg(out[i].details, 'percent_behind').toFixed(2)
 
     out[i].chartData = toJson(out[i].details)
   }
-  
+
   return out
 }
 
-function toJson(list) {
+function toJson (list) {
   return JSON.stringify(list.map((e) => {
     return [ toNumber(e.name), e.rank]
   }))
 }
 
-function toNumber(str) {
+function toNumber (str) {
   const reg = /.+(\d)/
   const match = reg.exec(str)
   return parseInt(match[1], 10) || str
 }
 
-function avg(list, prop) {
+function avg (list, prop) {
   let sum = 0
-  for(let i = 0; i < list.length; i++) {
+  for (let i = 0; i < list.length; i++) {
     sum += list[i][prop]
   }
 
   return (sum / list.length)
 }
 
-function addDetails(row, res) {
+function addDetails (row, res) {
   return row.details.push(fields(res))
 }
 

@@ -120,7 +120,7 @@ class StageCalculations {
   }
 
   percentBehindRider (currentRider, otherRider) {
-    const diff = currentRider.stage_time_ms  - otherRider.stage_time_ms
+    const diff = currentRider.stage_time_ms - otherRider.stage_time_ms
     return ((diff / currentRider.stage_time_ms) * 100).toFixed(1)
   }
 

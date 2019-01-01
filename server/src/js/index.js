@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
   setupShowHide()
 })
 
-function setupShowHide() {
+function setupShowHide () {
   [...document.querySelectorAll('.shower')]
     .forEach(element => {
       element.addEventListener('click', e => {
@@ -55,24 +55,21 @@ function setupShowHide() {
         cur.classList.toggle('plus-rotate')
         let el = cur.parentNode.parentNode.nextSibling
 
-        let i = 0;
+        let i = 0
         while (el) {
-          if(el.nodeName === 'TR') {
+          if (el.nodeName === 'TR') {
             el.classList.toggle('hide')
-            Highcharts.charts.forEach(function(chart) {
+            Highcharts.charts.forEach(function (chart) {
               chart.reflow()
             })
-            break;
+            break
           }
-          el = el.nextSibling;
-          i++;
+          el = el.nextSibling
+          i++
         }
       })
     })
-
 }
-
-
 
 function setupSearch () {
   var form = document.getElementById('searchForm')
