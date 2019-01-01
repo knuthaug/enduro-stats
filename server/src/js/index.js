@@ -44,7 +44,35 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
   feather.replace()
   setupSearch()
+  setupShowHide()
 })
+
+function setupShowHide() {
+  [...document.querySelectorAll('.shower')]
+    .forEach(element => {
+      element.addEventListener('click', e => {
+        const cur = e.currentTarget
+        cur.classList.toggle('plus-rotate')
+        let el = cur.parentNode.parentNode.nextSibling
+
+        let i = 0;
+        while (el) {
+          if(el.nodeName === 'TR') {
+            el.classList.toggle('hide')
+            Highcharts.charts.forEach(function(chart) {
+              chart.reflow()
+            })
+            break;
+          }
+          el = el.nextSibling;
+          i++;
+        }
+      })
+    })
+
+}
+
+
 
 function setupSearch () {
   var form = document.getElementById('searchForm')
