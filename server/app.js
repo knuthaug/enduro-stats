@@ -3,6 +3,8 @@ const http = require('http')
 const hbs = require('express-handlebars')
 const compression = require('compression')
 const morgan = require('morgan')
+const compareAsc = require('date-fns/compare_asc')
+const parse = require('date-fns/parse')
 const config = require('../config')
 const log = require('./log.js')
 const Db = require('./db.js')
@@ -56,16 +58,20 @@ app.get('/ritt/:uid', async (req, res) => {
   const links = await db.findRaceLinks(race.id)
   const raceClasses = await db.classesForRace(req.params.uid)
   const raceResults = await db.raceResults(req.params.uid)
-  const [stages, results] = resultViewMapper(raceClasses, raceResults)
+  const [stages, results, graphs] = resultViewMapper(raceClasses, raceResults)
   const noResults = Object.values(results).length > 0
+
+  Object.keys(graphs).forEach((cl) => {
+    graphs[cl] = JSON.stringify(graphs[cl])
+  })
 
   render(res, 'race', {
     race,
     stages,
     results,
     links,
+    graphs,
     noResults,
-    tables: true,
     active: 'ritt' }, DEFAULT_CACHE_TIME_PAGES)
 })
 
@@ -118,8 +124,10 @@ app.get('/rytter/:uid', async (req, res) => {
   const results = races.map((r) => {
     return Object.assign(r, { count: ridersPerClass[r.race] })
   }).sort((a, b) => {
-    return b.year - a.year
+    return compareAsc(parse(b.date), parse(a.date))
   })
+
+  const chartObject = toChartData(results)
 
   const { year, avg } = bestSeason(results)
   const startYear = results[results.length - 1].year
@@ -128,6 +136,7 @@ app.get('/rytter/:uid', async (req, res) => {
     numRaces,
     startYear,
     year,
+    chartObject,
     avg,
     results,
     active: 'ryttere' }, DEFAULT_CACHE_TIME_PAGES)
@@ -140,6 +149,7 @@ app.get('/ryttere', async (req, res) => {
 })
 
 app.get('/assets/js/:file', (req, res) => {
+  log.debug(`request for ${req.path}`)
   const file = req.params.file
   const options = { root: './server/dist' }
 
@@ -158,6 +168,18 @@ app.get('/assets/css/:file', (req, res) => {
   }
   return res.set({ 'Cache-Control': 'public, max-age=1000' }).sendFile(`css/${file}`, options)
 })
+
+function toChartData(results) {
+  return JSON.stringify(results.map((e) => {
+    if(e.time !=='DNS' && e.time !== 'DNF') {
+      return { x: e.date, y: e.rank, race: e.raceName, properDate: parse(e.date) }
+    }
+  }).filter((e) => {
+    return typeof e !== 'undefined'
+  }).sort((a, b) => {
+    return compareAsc(a.properDate, b.properDate)
+  }))
+}
 
 function render (res, template, context, maxAge) {
   return res

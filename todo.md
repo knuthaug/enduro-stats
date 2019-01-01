@@ -1,2 +1,4 @@
-* legge inn percent_behind for alle etapper i calc
- 
+* søk etter klubbnavn
+* graf per klasse på race
+* ekstra data i race-tabell?
+* 

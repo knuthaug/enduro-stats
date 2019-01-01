@@ -6,7 +6,7 @@ const mapper = require('../server/resultViewMapper.js')
 const data = JSON.parse(fs.readFileSync(path.join(__dirname, './data/race-results-complete.json')).toString())
 const data2 = JSON.parse(fs.readFileSync(path.join(__dirname, './data/race-results-complete2.json')).toString())
 const data3 = JSON.parse(fs.readFileSync(path.join(__dirname, './data/race-results-complete-class-diff.json')).toString())
-const [stages, r] = mapper(['Menn', 'Kvinner'], data)
+const [stages, r, graphs] = mapper(['Menn', 'Kvinner'], data)
 const [stages2, r2] = mapper(['Menn', 'Kvinner'], data2)
 const [stages3, r3] = mapper(['Menn senior', 'Sport'], data3)
 
@@ -48,5 +48,14 @@ tap.test('For classes with fewer stages, total is calculated for last', (t) => {
   t.equals(sport[0].acc_time_behind, '00:00.0', 'total time is included for fewer stages')
   t.equals(sport[1].acc_time, '30:27.0', 'total time is included for fewer stages')
   t.equals(sport[1].acc_time_behind, '02:43.0', 'total time is included for fewer stages')
+  t.end()
+})
+
+tap.test('has data object for grap, per class', (t) => {
+  t.equals(graphs['Menn'].length, 8, '8 first riders compared')
+  t.equals(graphs['Menn'][0].name, 'Aslak Mørstad', 'Name is rider name')
+  t.equals(graphs['Menn'][0].data.length, 6, 'on per stage in data')
+  t.equals(graphs['Menn'][0].data[0][0], 1, 'on per stage in data')
+  t.equals(graphs['Menn'][0].data[0][1], 1, 'on per stage in data')
   t.end()
 })

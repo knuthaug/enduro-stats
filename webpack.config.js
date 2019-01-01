@@ -2,11 +2,14 @@ const path = require('path')
 const AssetsPlugin = require('assets-webpack-plugin')
 const isProduction = process.env['NODE_ENV'] === 'production'
 const sourceMapEnabled = isProduction
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
   mode: isProduction ? 'production' : 'development',
   entry: {
-    bundle: './server/src/js/index.js'
+    bundle: './server/src/js/index.js',
+    rider: './server/src/js/rider.js',
+    race: './server/src/js/race.js'
   },
   output: {
     filename: '[name]-[chunkhash].js',
@@ -31,6 +34,9 @@ module.exports = {
     ]
   },
   plugins: [
+    new CopyWebpackPlugin([
+      { from: 'server/src/js' }
+    ]),
     new AssetsPlugin({ filename: 'bundlemap-js.json' })
   ]
 }

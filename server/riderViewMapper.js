@@ -20,8 +20,23 @@ module.exports = function resultViewMapper (results) {
     out[i].avg_rank = avg(out[i].details, 'rank').toFixed(2)
     out[i].avg_time_behind = convertMsToTime(avg(out[i].details, 'behind_leader_ms').toFixed(0))
     out[i].avg_percent_behind = avg(out[i].details, 'percent_behind').toFixed(2)
+
+    out[i].chartData = toJson(out[i].details)
   }
+  
   return out
+}
+
+function toJson(list) {
+  return JSON.stringify(list.map((e) => {
+    return [ toNumber(e.name), e.rank]
+  }))
+}
+
+function toNumber(str) {
+  const reg = /.+(\d)/
+  const match = reg.exec(str)
+  return parseInt(match[1], 10) || str
 }
 
 function avg(list, prop) {
