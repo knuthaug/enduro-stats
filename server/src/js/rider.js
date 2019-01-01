@@ -16,7 +16,11 @@ function setupRaceGraph (element) {
   const data = JSON.parse(element.getAttribute('data-object'))
 
   Highcharts.chart(element.getAttribute('id'), {
-
+    chart: {
+      borderColor: '#000000',
+      borderWidth: 1,
+      borderRadius: 2
+    },
     title: {
       text: 'Etappeplasseringer',
       style: {
@@ -25,7 +29,9 @@ function setupRaceGraph (element) {
         fontWeight: 'normal'
       }
     },
-
+    borderColor: '#222222',
+    borderWidth: 1,
+    borderRadius: 2,
     yAxis: {
       title: {
         text: 'Plass'
@@ -84,6 +90,11 @@ function setupGraph () {
       title: {
         text: 'Plass i klasse'
       }
+    },
+    chart: {
+      borderColor: '#000000',
+      borderWidth: 1,
+      borderRadius: 2
     },
     xAxis: {
       title: {

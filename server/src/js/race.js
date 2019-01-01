@@ -60,7 +60,11 @@ function setupRaceGraph (element, graph) {
     const data = JSON.parse(element.getAttribute(`data-object-places`))
 
     Highcharts.chart(element.getAttribute('id'), {
-
+      chart: {
+        borderColor: '#000000',
+        borderWidth: 1,
+        borderRadius: 2
+      },
       tooltip: {
         formatter: placeFormatter
       },
