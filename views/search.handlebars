@@ -4,7 +4,10 @@
   <div class="col-8">
     <h3>Søketreff</h3>
     {{#each results}}
-    <a href="/rytter/{{uid}}">{{name}}</a><br/>
+    <div class="row pb-0">
+    <div class=" mt-0 mb-0 pt-0 col-4"><a href="/rytter/{{uid}}">{{name}}</a></div>
+    <div class="mt-0 mb-0 pt-0 col-4">{{club}}</div>
+    </div>
     {{/each}}
 
   </div>
