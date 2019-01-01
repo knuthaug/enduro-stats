@@ -1,0 +1,10 @@
+{
+  "name": "Nesbyen",
+  "year": 2015,
+  "date": "2015-05-23",
+  "series": "80/20 enduro series",
+  "links": [
+    { "type": "film", "desc": "Rittfilm (vimeo)", "url": "https://vimeo.com/129686318" },
+    { "type": "results", "desc": "Originale resultater", "url": "http://www.8020es.no/s/ResultatListeNesbyEnduro_2015.pdf"}
+  ]
+}

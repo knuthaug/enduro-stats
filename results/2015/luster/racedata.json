@@ -1,0 +1,18 @@
+{
+  "name": "Luster enduro",
+  "year": 2015,
+  "date": "2015-06-28",
+  "series": "80/20 enduro series",
+  "links": [
+    {
+      "type": "results",
+      "url": "https://live.eqtiming.com/18281",
+      "desc": "Original resultater"
+    },
+    {
+      "url": "https://vimeo.com/135547342",
+      "type": "film",
+      "desc": "Ritt-film (vimeo)"
+    }
+  ]
+}

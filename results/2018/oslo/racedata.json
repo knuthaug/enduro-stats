@@ -1,0 +1,10 @@
+{
+  "name": "Oslo enduro",
+  "year": 2018,
+  "date": "2018-08-18",
+  "series": "80/20 enduro series",
+  "links": [
+    { "type": "film", "desc": "Rittfilm (vimeo)", "url": "https://vimeo.com/287111263" },
+    { "type": "results", "desc": "Originale resultater", "url": "http://www.8020es.no/s/Resultater-Oslo-Enduro-2018-v2.pdf"}
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "Nesfjella",
+  "year": 2018,
+  "date": "2018-09-01",
+  "series": "80/20 enduro series",
+  "links": [
+    { "type": "film", "desc": "Rittfilm (vimeo)", "url": "https://vimeo.com/289325715" },
+    { "type": "results", "desc": "Originale resultater", "url": "http://www.8020es.no/s/Nesfjella-Enduro-Resultater.pdf"}
+  ]
+}

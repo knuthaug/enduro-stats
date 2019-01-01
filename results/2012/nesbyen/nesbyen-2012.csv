@@ -1,0 +1,81 @@
+Rank;Startnumber;Firstname;Surname;Gender;Nat;Club;Race;Class;Total Time;Diff Winner;TimeOfDay;City;Status
+1;;Zakarias;Blom Johansen;M;NOR;;SS1;Menn;00:06:38;00:00:00;;;OK
+2;;Tom Ole;Haukom;M;NOR;;SS1;Menn;00:06:43;00:00:00;;;OK
+3;;Ove;Grøndal;M;NOR;;SS1;Menn;00:07:06;00:00:00;;;OK
+4;;Knut;Lønnqvist;M;NOR;;SS1;Menn;00:07:35;00:00:00;;;OK
+5;5;Jan Helge;Aalbu;M;NOR;;SS1;Menn;00:07:40;00:00:00;;;OK
+6;;Audun;Resser;M;NOR;;SS1;Menn;00:07:41;00:00:00;;;OK
+7;;Morgan;Bakken;M;NOR;;SS1;Menn;00:07:41;00:00:00;;;OK
+8;;Kristian;Eckhoff;M;NOR;;SS1;Menn;00:08:20;00:00:00;;;OK
+9;;Helge;;M;NOR;;SS1;Menn;00:08:23;00:00:00;;;OK
+10;;Ole Andre;Tveit;M;NOR;;SS1;Menn;00:08:23;00:00:00;;;OK
+11;;Gunnar;;M;NOR;;SS1;Menn;00:08:20;00:00:00;;;OK
+12;;Henrik;Mühlbradt;M;NOR;;SS1;Menn;00:08:50;00:00:00;;;OK
+13;;Tony;Gjessvåg;M;NOR;;SS1;Menn;00:08:50;00:00:00;;;OK
+14;;Erlend;;M;NOR;;SS1;Menn;00:09:14;00:00:00;;;OK
+15;;Rufus;Preiss;M;NOR;;SS1;Menn;00:10:20;00:00:00;;;OK
+16;;Jens Andre;;M;NOR;;SS1;Menn;00:11:53;00:00:00;;;OK
+1;;Tom Ole;Haukom;M;NOR;;SS2;Menn;00:02:19;00:00:00;;;OK
+2;;Zakarias;Blom Johansen;M;NOR;;SS2;Menn;00:02:21;00:00:00;;;OK
+3;;Jan Helge;Aalbu;M;NOR;;SS2;Menn;00:02:36;00:00:00;;;OK
+4;;Morgan;Bakken;M;NOR;;SS2;Menn;00:02:40;00:00:00;;;OK
+5;;Audun;Resser;M;NOR;;SS2;Menn;00:02:42;00:00:00;;;OK
+6;;Knut;Lønnqvist;M;NOR;;SS2;Menn;00:02:47;00:00:00;;;OK
+7;;Ove;Grøndal;M;NOR;;SS2;Menn;00:02:48;00:00:00;;;OK
+8;;Ole Andre;Tveit;M;NOR;;SS2;Menn;00:03:06;00:00:00;;;OK
+9;;Helge;;M;NOR;;SS2;Menn;00:03:07;00:00:00;;;OK
+10;;Henrik;Mühlbradt;M;NOR;;SS2;Menn;00:03:17;00:00:00;;;OK
+11;;Tony;Gjessvåg;M;NOR;;SS2;Menn;00:03:18;00:00:00;;;OK
+12;;Kristian;Eckhoff;M;NOR;;SS2;Menn;00:03:23;00:00:00;;;OK
+13;;Gunnar;;M;NOR;;SS2;Menn;00:03:27;00:00:00;;;OK
+14;;Erlend;;M;NOR;;SS2;Menn;00:04:03;00:00:00;;;OK
+15;;Rufus;Preiss;M;NOR;;SS2;Menn;00:04:08;00:00:00;;;OK
+16;;Jens Andre;;M;NOR;;SS2;Menn;00:05:07;00:00:00;;;OK
+1;;Ove;Grøndal;M;NOR;;SS3;Menn;00:08:07;00:00:00;;;OK
+2;;Tom Ole;Haukom;M;NOR;;SS3;Menn;00:08:10;00:00:00;;;OK
+3;;Audun;Resser;M;NOR;;SS3;Menn;00:08:14;00:00:00;;;OK
+4;;Jan Helge;Aalbu;M;NOR;;SS3;Menn;00:08:54;00:00:00;;;OK
+5;;Erlend;;M;NOR;;SS3;Menn;00:09:03;00:00:00;;;OK
+6;;Knut;Lønnqvist;M;NOR;;SS3;Menn;00:09:05;00:00:00;;;OK
+7;;Ole Andre;Tveit;M;NOR;;SS3;Menn;00:09:34;00:00:00;;;OK
+8;;Kristian;Eckhoff;M;NOR;;SS3;Menn;00:09:54;00:00:00;;;OK
+9;;Tony;Gjessvåg;M;NOR;;SS3;Menn;00:10:06;00:00:00;;;OK
+10;;Henrik;Mühlbradt;M;NOR;;SS3;Menn;00:10:04;00:00:00;;;OK
+11;;Gunnar;;M;NOR;;SS3;Menn;00:10:18;00:00:00;;;OK
+12;;Helge;;M;NOR;;SS3;Menn;00:10:38;00:00:00;;;OK
+13;;Rufus;Preiss;M;NOR;;SS3;Menn;00:11:26;00:00:00;;;OK
+14;;Jens Andre;;M;NOR;;SS3;Menn;00:12:33;00:00:00;;;OK
+15;;Morgan;Bakken;M;NOR;;SS3;Menn;00:24:29;00:00:00;;;OK
+16;;Zakarias;Blom Johansen;M;NOR;;SS3;Menn;00:00:00;00:00:00;;;DNF
+1;;Tom Ole;Haukom;M;NOR;;SS4;Menn;00:04:52;00:00:00;;;OK
+2;;Ove;Grøndal;M;NOR;;SS4;Menn;00:05:20;00:00:00;;;OK
+3;;Jan Helge;Aalbu;M;NOR;;SS4;Menn;00:05:24;00:00:00;;;OK
+4;;Audun;Resser;M;NOR;;SS4;Menn;00:05:28;00:00:00;;;OK
+5;;Ole Andre;Tveit;M;NOR;;SS4;Menn;00:05:42;00:00:00;;;OK
+6;;Knut;Lønnqvist;M;NOR;;SS4;Menn;00:05:45;00:00:00;;;OK
+7;;Helge;;M;NOR;;SS4;Menn;00:05:49;00:00:00;;;OK
+8;;Tony;Gjessvåg;M;NOR;;SS4;Menn;00:06:03;00:00:00;;;OK
+9;;Morgan;Bakken;M;NOR;;SS4;Menn;00:06:06;00:00:00;;;OK
+10;;Henrik;Mühlbradt;M;NOR;;SS4;Menn;00:06:43;00:00:00;;;OK
+11;;Gunnar;;M;NOR;;SS4;Menn;00:06:50;00:00:00;;;OK
+12;;Kristian;Eckhoff;M;NOR;;SS4;Menn;00:06:51;00:00:00;;;OK
+13;;Rufus;Preiss;M;NOR;;SS4;Menn;00:07:49;00:00:00;;;OK
+14;;Erlend;;M;NOR;;SS4;Menn;00:08:14;00:00:00;;;OK
+15;;Jens Andre;;M;NOR;;SS4;Menn;00:08:50;00:00:00;;;OK
+16;;Zakarias;Blom Johansen;M;NOR;;SS4;Menn;00:00:00;00:00:00;;;DNF
+1;;Ove;Grøndal;M;NOR;;SS5;Menn;00:03:54;00:00:00;;;OK
+2;;Tom Ole;Haukom;M;NOR;;SS5;Menn;00:04:00;00:00:00;;;OK
+3;;Knut;Lønnqvist;M;NOR;;SS5;Menn;00:04:23;00:00:00;;;OK
+4;;Audun;Resser;M;NOR;;SS5;Menn;00:04:24;00:00:00;;;OK
+5;;Jan Helge;Aalbu;M;NOR;;SS5;Menn;00:04:26;00:00:00;;;OK
+6;;Ole Andre;Tveit;M;NOR;;SS5;Menn;00:04:28;00:00:00;;;OK
+7;;Helge;;M;NOR;;SS5;Menn;00:04:36;00:00:00;;;OK
+8;;Kristian;Eckhoff;M;NOR;;SS5;Menn;00:04:44;00:00:00;;;OK
+9;;Tony;Gjessvåg;M;NOR;;SS5;Menn;00:05:00;00:00:00;;;OK
+10;;Henrik;Mühlbradt;M;NOR;;SS5;Menn;00:05:03;00:00:00;;;OK
+11;;Gunnar;;M;NOR;;SS5;Menn;00:05:05;00:00:00;;;OK
+12;;Morgan;Bakken;M;NOR;;SS5;Menn;00:05:05;00:00:00;;;OK
+13;;Erlend;;M;NOR;;SS5;Menn;00:05:08;00:00:00;;;OK
+14;;Jens Andre;;M;NOR;;SS5;Menn;00:05:57;00:00:00;;;OK
+15;;Rufus;Preiss;M;NOR;;SS5;Menn;00:06:07;00:00:00;;;OK
+16;;Zakarias;Blom Johansen;M;NOR;;SS5;Menn;00:00:00;00:00:00;;;DNF

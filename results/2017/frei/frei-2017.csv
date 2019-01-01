@@ -1,0 +1,74 @@
+Rank;Startnumber;Firstname;Surname;Gender;Nat;Club;Race;Class;Total Time;Diff Winner;TimeOfDay;City;Status
+1;;ANDREAS;ØHRN;M;;;SS1;Menn senior;00:02:42;;;;OK
+2;;NILS EINAR;BERGET;M;;;SS1;Menn senior;00:02:43;;;;OK
+3;;JOHN OLA;BUØY;M;;;SS1;Menn senior;00:03:03;;;;OK
+4;;KJETIL;ØYGARD;M;;;SS1;Menn senior;00:03:08;;;;OK
+5;;MARIUS;HOPEN;M;;;SS1;Menn senior;00:03:11;;;;OK
+7;;BÅRD;SMESTAD;M;;;SS1;Menn senior;00:03:17;;;;OK
+8;;MARTIN;RØDAHL;M;;;SS1;Menn senior;00:03:20;;;;OK
+10;;BARTEK;WICHROWSKI;M;;;SS1;Menn senior;00:03:25;;;;OK
+11;;TROND ERIK;WOLLAN;M;;;SS1;Menn senior;00:03:26;;;;OK
+12;;FRODE;SØRØY;M;;;SS1;Menn senior;00:03:30;;;;OK
+13;;KARL;KARLSEN;M;;;SS1;Menn senior;00:03:36;;;;OK
+16;;SINDRE;VÅGE;M;;;SS1;Menn senior;00:04:02;;;;OK
+17;;GUNNAR;BAKKEN;M;;;SS1;Menn senior;00:04:11;;;;OK
+18;;CHRIS;WALLEY;M;;;SS1;Menn senior;00:04:11;;;;OK
+19;;TORE;VÅGE;M;;;SS1;Menn senior;00:04:13;;;;OK
+21;;TOV;LERHEIM;M;;;SS1;Menn senior;00:16:30;;;;OK
+1;;VERA;LEIVSDOTTIR;F;;;SS1;Kvinner senior;00:03:14;;;;OK
+2;;ELIN;BERG;F;;;SS1;Kvinner senior;00:03:22;;;;OK
+3;;JULIE H.;APPELKVIST;F;;;SS1;Kvinner senior;00:03:42;;;;OK
+4;;SIV;KRISTOFFERSEN;F;;;SS1;Kvinner senior;00:03:54;;;;OK
+5;;SOLVEIG;ENGELGJERD;F;;;SS1;Kvinner senior;00:06:09;;;;OK
+1;;MARTIN;RØDAHL;M;;;SS2;Menn senior;00:02:47;;;;OK
+2;;ANDREAS;ØHRN;M;;;SS2;Menn senior;00:02:50;;;;OK
+3;;NILS EINAR;BERGET;M;;;SS2;Menn senior;00:02:55;;;;OK
+4;;JOHN OLA;BUØY;M;;;SS2;Menn senior;00:03:08;;;;OK
+5;;MARIUS;HOPEN;M;;;SS2;Menn senior;00:03:14;;;;OK
+7;;FRODE;SØRØY;M;;;SS2;Menn senior;00:03:32;;;;OK
+9;;BARTEK;WICHROWSKI;M;;;SS2;Menn senior;00:03:38;;;;OK
+10;;TROND ERIK;WOLLAN;M;;;SS2;Menn senior;00:03:38;;;;OK
+12;;Bård;SMESTAD;M;;;SS2;Menn senior;00:03:52;;;;OK
+13;;KJETIL;ØYGARD;M;;;SS2;Menn senior;00:04:05;;;;OK
+14;;SINDRE;VÅGE;M;;;SS2;Menn senior;00:04:13;;;;OK
+15;;TORE;VÅGE;M;;;SS2;Menn senior;00:04:29;;;;OK
+17;;GUNNAR;BAKKEN;M;;;SS2;Menn senior;00:05:06;;;;OK
+18;;CHRIS;WALLEY;M;;;SS2;Menn senior;00:05:55;;;;OK
+20;;TOV;LERHEIM;M;;;SS2;Menn senior;00:13:47;;;;OK
+1;;VERA;LEIVSDOTTIR;F;;;SS2;Kvinner senior;00:03:31;;;;OK
+2;;ELIN;BERG;F;;;SS2;Kvinner senior;00:03:33;;;;OK
+3;;JULIE H.;APPELKVIST;F;;;SS2;Kvinner senior;00:03:41;;;;OK
+4;;SIV;KRISTOFFERSEN;F;;;SS2;Kvinner senior;00:04:51;;;;OK
+5;;SOLVEIG;ENGELGJERD;F;;;SS2;Kvinner senior;00:08:07;;;;OK
+1;;ANDREAS;ØHRN;M;;;SS3;Menn senior;00:05:37;;;;OK
+2;;NILS EINAR;BERGET;M;;;SS3;Menn senior;00:05:55;;;;OK
+3;;MARTIN;RØDAHL;M;;;SS3;Menn senior;00:05:58;;;;OK
+4;;TROND ERIK;WOLLAN;M;;;SS3;Menn senior;00:06:20;;;;OK
+5;;JOHN OLA;BUØY;M;;;SS3;Menn senior;00:06:20;;;;OK
+7;;BÅRD;SMESTAD;M;;;SS3;Menn senior;00:06:56;;;;OK
+8;;MARIUS;HOPEN;M;;;SS3;Menn senior;00:06:58;;;;OK
+10;;FRODE;SØRØY;M;;;SS3;Menn senior;00:07:33;;;;OK
+12;;KJETIL;ØYGARD;M;;;SS3;Menn senior;00:07:49;;;;OK
+13;;TOV;LERHEIM;M;;;SS3;Menn senior;00:08:15;;;;OK
+14;;BARTEK;WICHROWSKI;M;;;SS3;Menn senior;00:08:40;;;;OK
+15;;TORE;VÅGE;M;;;SS3;Menn senior;00:09:11;;;;OK
+16;;GUNNAR;BAKKEN;M;;;SS3;Menn senior;00:09:16;;;;OK
+1;;VERA;LEIVSDOTTIR;F;;;SS3;Kvinner senior;00:06:54;;;;OK
+2;;ELIN;BERG;F;;;SS3;Kvinner senior;00:07:21;;;;OK
+3;;JULIE H.;APPELKVIST;F;;;SS3;Kvinner senior;00:07:39;;;;OK
+4;;SOLVEIG;ENGELGJERD;F;;;SS3;Kvinner senior;00:13:20;;;;OK
+1;;NILS EINAR;BERGET;M;;;SS4;Menn senior;00:05:33;;;;OK
+2;;JOHN OLA;BUØY;M;;;SS4;Menn senior;00:06:01;;;;OK
+3;;MARTIN;RØDAHL;M;;;SS4;Menn senior;00:06:03;;;;OK
+4;;ANDREAS;ØHRN;M;;;SS4;Menn senior;00:06:12;;;;OK
+5;;TROND ERIK;WOLLAN;M;;;SS4;Menn senior;00:06:37;;;;OK
+7;;BÅRD;SMESTAD;M;;;SS4;Menn senior;00:06:53;;;;OK
+8;;MARIUS;HOPEN;M;;;SS4;Menn senior;00:06:57;;;;OK
+9;;FRODE;SØRØY;M;;;SS4;Menn senior;00:06:58;;;;OK
+12;;TOV;LERHEIM;M;;;SS4;Menn senior;00:09:30;;;;OK
+13;;GUNNAR;BAKKEN;M;;;SS4;Menn senior;00:10:23;;;;OK
+14;;BARTEK;WICHROWSKI;M;;;SS4;Menn senior;00:10:40;;;;OK
+15;;TORE;VÅGE;M;;;SS4;Menn senior;00:16:19;;;;OK
+1;;VERA;LEIVSDOTTIR;F;;;SS4;Kvinner senior;00:06:38;;;;OK
+2;;ELIN;BERG;F;;;SS4;Kvinner senior;00:07:21;;;;OK
+3;;JULIE H.;APPELKVIST;F;;;SS4;Kvinner senior;00:07:45;;;;OK

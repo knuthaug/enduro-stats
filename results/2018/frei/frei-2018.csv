@@ -1,0 +1,76 @@
+Startnumber;Firstname;Surname;Club;Class;Rank;Total Time;Gender;Nat;Race;Diff Winner;TimeOfDay;City;Status
+402;Hallvar;Barlaup;Molde CK;"M40-49";1;0:03:43;M;;SS1;;;;OK
+401;Kenneth;Bjørseth;Molde CK;"M40-49";2;0:03:56;M;;SS1;;;;OK
+406;Erik;Birkeland;Stiftsstaden;"M17-19";1;0:04:02;M;;SS1;;;;OK
+411;Øyvind;Høgset;Molde CK;"M40-49";3;0:04:03;M;;SS1;;;;OK
+410;Trond Erik;Wollan;IL Norodd;"M40-49";4;0:04:05;M;;SS1;;;;OK
+404;Kjetil;Søvik;Rauma SK;"M40-49";5;0:04:07;M;;SS1;;;;OK
+403;Håkon;Visnes;Kristiansund;"M30-39";1;0:04:10;M;;SS1;;;;OK
+409;Steinar;Haugros;Trondhein;"M30-39";2;0:04:59;M;;SS1;;;;OK
+408;Espen;Wollan;Kristiansund;"M20-29";1;0:05:10;M;;SS1;;;;OK
+407;Gunnar;Wilkes Bakken;Team Sk畦a-Gunnar;"M30-39";3;0:05:32;M;;SS1;;;;OK
+412;Robin;Sæther;Frei;"M20-29";2;0:10:15;M;;SS1;;;;OK
+413;Kristian;Ingebrigtsen;Frei;"M20-29";3;0:10:23;M;;SS1;;;;OK
+415;Anne;Melboe;Molde CK;K30-39;1;0:04:40;F;;SS1;;;;OK
+414;Elin;Berg;Molde CK;K30-39;2;0:04:56;F;;SS1;;;;OK
+416;Siv;Kristoffersen;IL Norodd;K30-39;3;0:05:22;F;;SS1;;;;OK
+403;Håkon;Visnes;Kristiansund;"M30-39";1;0:01:52;M;;SS2;;;;OK
+401;Kenneth;Bjørseth;Molde CK;"M40-49";1;0:01:52;M;;SS2;;;;OK
+402;Hallvar;Barlaup;Molde CK;"M40-49";2;0:01:52;M;;SS2;;;;OK
+410;Trond Erik;Wollan;IL Norodd;"M40-49";3;0:01:55;M;;SS2;;;;OK
+406;Erik;Birkeland;Stiftsstaden;"M17-19";1;0:01:57;M;;SS2;;;;OK
+411;Øyvind;Høgset;Molde CK;"M40-49";4;0:01:59;M;;SS2;;;;OK
+404;Kjetil;Søvik;Rauma SK;"M40-49";5;0:01:59;M;;SS2;;;;OK
+408;Espen;Wollan;Kristiansund;"M20-29";1;0:02:01;M;;SS2;;;;OK
+409;Steinar;Haugros;Trondhein;"M30-39";2;0:02:13;M;;SS2;;;;OK
+407;Gunnar;Wilkes Bakken;Team Sk畦a-Gunnar;"M30-39";3;0:02:18;M;;SS2;;;;OK
+413;Kristian;Ingebrigtsen;Frei;"M20-29";2;0:03:32;M;;SS2;;;;OK
+412;Robin;Sæther;Frei;"M20-29";3;0:03:59;M;;SS2;;;;OK
+414;Elin;Berg;Molde CK;K30-39;1;0:02:05;F;;SS2;;;;OK
+415;Anne;Melboe;Molde CK;K30-39;2;0:02:07;F;;SS2;;;;OK
+416;Siv;Kristoffersen;IL Norodd;K30-39;3;0:02:15;F;;SS2;;;;OK
+402;Hallvar;Barlaup;Molde CK;"M40-49";1;0:03:47;M;;SS3;;;;OK
+410;Trond Erik;Wollan;IL Norodd;"M40-49";2;0:03:53;M;;SS3;;;;OK
+406;Erik;Birkeland;Stiftsstaden;"M17-19";1;0:04:11;M;;SS3;;;;OK
+401;Kenneth;Bjørseth;Molde CK;"M40-49";3;0:04:12;M;;SS3;;;;OK
+411;Øyvind;Høgset;Molde CK;"M40-49";4;0:04:13;M;;SS3;;;;OK
+404;Kjetil;Søvik;Rauma SK;"M40-49";5;0:04:19;M;;SS3;;;;OK
+403;Håkon;Visnes;Kristiansund;"M30-39";1;0:04:34;M;;SS3;;;;OK
+409;Steinar;Haugros;Trondhein;"M30-39";2;0:04:56;M;;SS3;;;;OK
+407;Gunnar;Wilkes Bakken;Team Sk畦a-Gunnar;"M30-39";3;0:04:59;M;;SS3;;;;OK
+408;Espen;Wollan;Kristiansund;"M20-29";1;0:05:41;M;;SS3;;;;OK
+413;Kristian;Ingebrigtsen;Frei;"M20-29";2;0:07:14;M;;SS3;;;;OK
+412;Robin;Sæther;Frei;"M20-29";3;0:07:36;M;;SS3;;;;OK
+415;Anne;Melboe;Molde CK;K30-39;1;0:04:23;F;;SS3;;;;OK
+414;Elin;Berg;Molde CK;K30-39;2;0:04:41;F;;SS3;;;;OK
+416;Siv;Kristoffersen;IL Norodd;K30-39;3;0:05:07;F;;SS3;;;;OK
+410;Trond Erik;Wollan;IL Norodd;"M40-49";1;0:03:10;M;;SS4;;;;OK
+401;Kenneth;Bjørseth;Molde CK;"M40-49";2;0:03:12;M;;SS4;;;;OK
+402;Hallvar;Barlaup;Molde CK;"M40-49";3;0:03:14;M;;SS4;;;;OK
+404;Kjetil;Søvik;Rauma SK;"M40-49";4;0:03:15;M;;SS4;;;;OK
+406;Erik;Birkeland;Stiftsstaden;"M17-19";1;0:03:19;M;;SS4;;;;OK
+403;Håkon;Visnes;Kristiansund;"M30-39";1;0:03:24;M;;SS4;;;;OK
+411;Øyvind;Høgset;Molde CK;"M40-49";5;0:03:26;M;;SS4;;;;OK
+409;Steinar;Haugros;Trondhein;"M30-39";2;0:03:42;M;;SS4;;;;OK
+408;Espen;Wollan;Kristiansund;"M20-29";1;0:03:50;M;;SS4;;;;OK
+407;Gunnar;Wilkes Bakken;Team Sk畦a-Gunnar;"M30-39";3;0:03:50;M;;SS4;;;;OK
+413;Kristian;Ingebrigtsen;Frei;"M20-29";2;0:05:08;M;;SS4;;;;OK
+412;Robin;Sæther;Frei;"M20-29";3;0:06:01;M;;SS4;;;;OK
+415;Anne;Melboe;Molde CK;K30-39;1;0:03:38;F;;SS4;;;;OK
+414;Elin;Berg;Molde CK;K30-39;2;0:03:56;F;;SS4;;;;OK
+416;Siv;Kristoffersen;IL Norodd;K30-39;3;0:04:07;F;;SS4;;;;OK
+401;Kenneth;Bjørseth;Molde CK;"M40-49";1;0:02:46;M;;SS5;;;;OK
+402;Hallvar;Barlaup;Molde CK;"M40-49";2;0:02:51;M;;SS5;;;;OK
+410;Trond Erik;Wollan;IL Norodd;"M40-49";3;0:03:05;M;;SS5;;;;OK
+409;Steinar;Haugros;Trondhein;"M30-39";1;0:03:22;M;;SS5;;;;OK
+408;Espen;Wollan;Kristiansund;"M20-29";1;0:03:29;M;;SS5;;;;OK
+407;Gunnar;Wilkes Bakken;Team Sk畦a-Gunnar;"M30-39";2;0:03:53;M;;SS5;;;;OK
+403;Håkon;Visnes;Kristiansund;"M30-39";3;00:00:00;M;;SS5;;;;DNF
+404;Kjetil;Søvik;Rauma SK;"M40-49";4;00:00:00;M;;SS5;;;;DNF
+406;Erik;Birkeland;Stiftsstaden;"M17-19";1;00:00:00;M;;SS5;;;;DNF
+411;Øyvind;Høgset;Molde CK;"M40-49";5;00:00:00;M;;SS5;;;;DNF
+412;Robin;Sæther;Frei;"M20-29";2;00:00:00;M;;SS5;;;;DNF
+413;Kristian;Ingebrigtsen;Frei;"M20-29";3;00:00:00;M;;SS5;;;;DNF
+415;Anne;Melboe;Molde CK;K30-39;1;0:03:12;F;;SS5;;;;OK
+414;Elin;Berg;Molde CK;K30-39;2;0:03:33;F;;SS5;;;;OK
+416;Siv;Kristoffersen;IL Norodd;K30-39;3;0:03:42;F;;SS5;;;;OK

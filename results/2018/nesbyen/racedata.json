@@ -1,0 +1,10 @@
+{
+  "name": "NesbyEnduro",
+  "year": 2018,
+  "date": "2018-05-26",
+  "series": "80/20 enduro series",
+  "links": [
+    { "type": "film", "desc": "Rittfilm (vimeo)", "url": "https://vimeo.com/273960966" },
+    { "type": "results", "desc": "Originale resultater", "url": "http://www.8020es.no/s/Resultater-NE18-med-team-42b7.pdf"}
+  ]
+}

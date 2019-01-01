@@ -26,102 +26,102 @@ node import/importer.js -r ~/Dropbox/privat/sykkel/enduro-resultater/2013/trakto
 #2014
 echo "2014:"
 echo "  Drammen"
-node import/importer.js -f ~/Dropbox/privat/sykkel/enduro-resultater/2014/drammen/drammen-2014.csv
+node import/importer.js -f results/2014/drammen/drammen-2014.csv
 echo "  Oslo"
-node import/importer.js -f ~/Dropbox/privat/sykkel/enduro-resultater/2014/oslo/oslo-2014.csv
+node import/importer.js -f results/2014/oslo/oslo-2014.csv
 echo "  Traktor"
-node import/importer.js -f ~/Dropbox/privat/sykkel/enduro-resultater/2014/traktor/traktor-2014.csv
+node import/importer.js -f results/2014/traktor/traktor-2014.csv
 echo "  Nesbyen"
-node import/importer.js -f ~/Dropbox/privat/sykkel/enduro-resultater/2014/nesbyen/nesbyen-2014.csv
+node import/importer.js -f results/2014/nesbyen/nesbyen-2014.csv
 echo "  Sogndal"
-node import/importer.js -f ~/Dropbox/privat/sykkel/enduro-resultater/2014/sogndal/sogndal-2014.csv
+node import/importer.js -f results/2014/sogndal/sogndal-2014.csv
 echo "  Molde"
-node import/importer.js -f ~/Dropbox/privat/sykkel/enduro-resultater/2014/molde/molde-2014.csv
+node import/importer.js -f results/2014/molde/molde-2014.csv
 echo "  Frei"
-node import/importer.js -r ~/Dropbox/privat/sykkel/enduro-resultater/2014/frei/racedata.json
+node import/importer.js -r results/2014/frei/racedata.json
 echo "  Hillbilly"
-node import/importer.js -f ~/Dropbox/privat/sykkel/enduro-resultater/2014/hillbilly/hillbilly-2014.csv
+node import/importer.js -f results/2014/hillbilly/hillbilly-2014.csv
 
 #2015
 echo "2015:"
 echo "  Nesbyen"
-node import/importer.js -a -f ~/Dropbox/privat/sykkel/enduro-resultater/2015/nesbyen/nesbyen-2015.csv
+node import/importer.js -a -f results/2015/nesbyen/nesbyen-2015.csv
 echo "  Luster"
-node import/importer.js -a -f ~/Dropbox/privat/sykkel/enduro-resultater/2015/luster/luster-2015.csv
+node import/importer.js -a -f results/2015/luster/luster-2015.csv
 echo "  Oppdal"
-node import/importer.js -a -f ~/Dropbox/privat/sykkel/enduro-resultater/2015/oppdal/oppdal-2015.csv
+node import/importer.js -a -f results/2015/oppdal/oppdal-2015.csv
 echo "  Oslo"
-node import/importer.js -a -f ~/Dropbox/privat/sykkel/enduro-resultater/2015/oslo/oslo-2015.csv
+node import/importer.js -a -f results/2015/oslo/oslo-2015.csv
 echo "  Traktor"
-node import/importer.js -a -f ~/Dropbox/privat/sykkel/enduro-resultater/2015/traktor/traktor-2015.csv
+node import/importer.js -a -f results/2015/traktor/traktor-2015.csv
 echo "  Frei"
-node import/importer.js -f ~/Dropbox/privat/sykkel/enduro-resultater/2015/frei/frei-2015.csv
+node import/importer.js -f results/2015/frei/frei-2015.csv
 echo "  Molde"
-node import/importer.js -r ~/Dropbox/privat/sykkel/enduro-resultater/2015/molde/racedata.json
+node import/importer.js -r results/2015/molde/racedata.json
 echo "  Hillbilly"
-node import/importer.js -f ~/Dropbox/privat/sykkel/enduro-resultater/2015/hillbilly/hillbilly-2015.csv
+node import/importer.js -f results/2015/hillbilly/hillbilly-2015.csv
 
 #2016
 echo "2016:"
 echo "  Hafjell"
-node import/importer.js -a -f ~/Dropbox/privat/sykkel/enduro-resultater/2016/hafjell/hafjell-2016.csv
+node import/importer.js -a -f results/2016/hafjell/hafjell-2016.csv
 echo "  Oppdal"
-node import/importer.js -a -f ~/Dropbox/privat/sykkel/enduro-resultater/2016/oppdal/oppdal-2016.csv
+node import/importer.js -a -f results/2016/oppdal/oppdal-2016.csv
 echo "  Traktor"
-node import/importer.js -a -f ~/Dropbox/privat/sykkel/enduro-resultater/2016/traktor/traktor-2016.csv
+node import/importer.js -a -f results/2016/traktor/traktor-2016.csv
 echo "  Voss"
-node import/importer.js -a -f ~/Dropbox/privat/sykkel/enduro-resultater/2016/voss/voss-2016.csv
+node import/importer.js -a -f results/2016/voss/voss-2016.csv
 echo "  Hemsedal"
-node import/importer.js -f ~/Dropbox/privat/sykkel/enduro-resultater/2016/hemsedal/hemsedal-2016.csv
+node import/importer.js -f results/2016/hemsedal/hemsedal-2016.csv
 echo "  Frei"
-node import/importer.js -r ~/Dropbox/privat/sykkel/enduro-resultater/2016/frei/racedata.json
+node import/importer.js -r results/2016/frei/racedata.json
 echo "  Nesbyen"
-node import/importer.js -m -f ~/Dropbox/privat/sykkel/enduro-resultater/2016/nesbyen/nesbyen-2016.csv
+node import/importer.js -m -f results/2016/nesbyen/nesbyen-2016.csv
 
 echo "2017:"
 echo "  Hemsedal"
-node import/importer.js -f ~/Dropbox/privat/sykkel/enduro-resultater/2017/hemsedal/hemsedal-2017.csv
+node import/importer.js -f results/2017/hemsedal/hemsedal-2017.csv
 echo "  Frei"
-node import/importer.js -f ~/Dropbox/privat/sykkel/enduro-resultater/2017/frei/frei-2017.csv
+node import/importer.js -f results/2017/frei/frei-2017.csv
 echo "  Drammen"
-node import/importer.js -m -f ~/Dropbox/privat/sykkel/enduro-resultater/2017/drammen/drammen-2017.csv
+node import/importer.js -m -f results/2017/drammen/drammen-2017.csv
 echo "  Nesbyen"
-node import/importer.js -f ~/Dropbox/privat/sykkel/enduro-resultater/2017/nesbyen/nesbyen-2017.csv
+node import/importer.js -f results/2017/nesbyen/nesbyen-2017.csv
 echo "  Bodø"
-node import/importer.js -m -f ~/Dropbox/privat/sykkel/enduro-resultater/2017/bodø/bodø-2017.csv
+node import/importer.js -m -f results/2017/bodø/bodø-2017.csv
 echo "  Telemark"
-node import/importer.js -r ~/Dropbox/privat/sykkel/enduro-resultater/2017/skien/racedata.json
+node import/importer.js -r results/2017/skien/racedata.json
 echo "  Traktor"
-node import/importer.js -m -f ~/Dropbox/privat/sykkel/enduro-resultater/2017/traktor/traktor-2017.csv
+node import/importer.js -m -f results/2017/traktor/traktor-2017.csv
 echo "  Hafjell"
-node import/importer.js -m -f ~/Dropbox/privat/sykkel/enduro-resultater/2017/hafjell/hafjell-2017.csv
+node import/importer.js -m -f results/2017/hafjell/hafjell-2017.csv
 echo "  Ringerike"
-node import/importer.js -m -f ~/Dropbox/privat/sykkel/enduro-resultater/2017/ringerike/ringerike-2017.csv
+node import/importer.js -m -f results/2017/ringerike/ringerike-2017.csv
 
 echo "2018:"
 echo "  Telemark"
-node import/importer.js -m -f ~/Dropbox/privat/sykkel/enduro-resultater/2018/skien/telemark-2018.csv
+node import/importer.js -m -f results/2018/skien/telemark-2018.csv
 echo "  Nesbyen"
-node import/importer.js -m -f ~/Dropbox/privat/sykkel/enduro-resultater/2018/nesbyen/nesbyen-2018.csv
+node import/importer.js -m -f results/2018/nesbyen/nesbyen-2018.csv
 echo "  Bodø"
-node import/importer.js -m -f ~/Dropbox/privat/sykkel/enduro-resultater/2018/bodø/bodø-2018.csv
+node import/importer.js -m -f results/2018/bodø/bodø-2018.csv
 echo "  Drammen"
-node import/importer.js -m -f ~/Dropbox/privat/sykkel/enduro-resultater/2018/drammen/drammen-2018.csv
+node import/importer.js -m -f results/2018/drammen/drammen-2018.csv
 echo "  Oslo"
-node import/importer.js -m -f ~/Dropbox/privat/sykkel/enduro-resultater/2018/oslo/oslo-2018.csv
+node import/importer.js -m -f results/2018/oslo/oslo-2018.csv
 echo "  Nesfjella"
-node import/importer.js -m -f ~/Dropbox/privat/sykkel/enduro-resultater/2018/nesfjella/nesfjella-2018.csv
+node import/importer.js -m -f results/2018/nesfjella/nesfjella-2018.csv
 echo "  Hafjell"
-node import/importer.js -m -f ~/Dropbox/privat/sykkel/enduro-resultater/2018/hafjell/hafjell-2018.csv
+node import/importer.js -m -f results/2018/hafjell/hafjell-2018.csv
 echo "  Hakadal"
-node import/importer.js -m -f ~/Dropbox/privat/sykkel/enduro-resultater/2018/hakadal/hakadal-2018.csv
+node import/importer.js -m -f results/2018/hakadal/hakadal-2018.csv
 echo "  Ringerike"
-node import/importer.js -m -f ~/Dropbox/privat/sykkel/enduro-resultater/2018/ringerike/ringerike-2018.csv
+node import/importer.js -m -f results/2018/ringerike/ringerike-2018.csv
 echo "  Frei"
-node import/importer.js -f ~/Dropbox/privat/sykkel/enduro-resultater/2018/frei/frei-2018.csv
+node import/importer.js -f results/2018/frei/frei-2018.csv
 echo "  Harstad"
-node import/importer.js -f ~/Dropbox/privat/sykkel/enduro-resultater/2018/harstad/harstad-2018.csv
+node import/importer.js -f results/2018/harstad/harstad-2018.csv
 echo "  Hemsedal"
-node import/importer.js -m -f ~/Dropbox/privat/sykkel/enduro-resultater/2018/hemsedal/hemsedal-2018.csv
+node import/importer.js -m -f results/2018/hemsedal/hemsedal-2018.csv
 
 
