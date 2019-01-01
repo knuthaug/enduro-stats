@@ -1,4 +1,5 @@
 const path = require('path')
+const webpack = require('webpack')
 const AssetsPlugin = require('assets-webpack-plugin')
 const isProduction = process.env['NODE_ENV'] === 'production'
 const sourceMapEnabled = isProduction
@@ -37,6 +38,10 @@ module.exports = {
     new CopyWebpackPlugin([
       { from: 'server/src/js' }
     ]),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery'
+    }),
     new AssetsPlugin({ filename: 'bundlemap-js.json' })
   ]
 }

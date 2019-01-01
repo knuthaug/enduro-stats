@@ -1,6 +1,11 @@
-const bootstrap = require('bootstrap')
+const $ = require('jquery')
+const buttons = require('bootstrap/js/dist/button.js')
+const index = require('bootstrap/js/dist/index.js')
 const tablesort = require('tablesort')
 const feather = require('feather-icons')
+
+window.jQuery = $
+window.$ = $
 
 function extendTableSort () {
   var cleanNumber = function (i) {
