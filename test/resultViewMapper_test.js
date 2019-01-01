@@ -51,11 +51,11 @@ tap.test('For classes with fewer stages, total is calculated for last', (t) => {
   t.end()
 })
 
-tap.test('has data object for grap, per class', (t) => {
-  t.equals(graphs['Menn'].length, 8, '8 first riders compared')
-  t.equals(graphs['Menn'][0].name, 'Aslak Mørstad', 'Name is rider name')
-  t.equals(graphs['Menn'][0].data.length, 6, 'on per stage in data')
-  t.equals(graphs['Menn'][0].data[0][0], 1, 'on per stage in data')
-  t.equals(graphs['Menn'][0].data[0][1], 1, 'on per stage in data')
+tap.test('has data object for graph, per class', (t) => {
+  t.equals(graphs['Menn-places'].length, 5, '8 first riders compared')
+  t.equals(graphs['Menn-places'][0].name, 'Aslak Mørstad', 'Name is rider name')
+  t.equals(graphs['Menn-places'][0].data.length, 6, 'on per stage in data')
+  t.equals(graphs['Menn-places'][0].data[0][0], 1, 'on per stage in data')
+  t.equals(graphs['Menn-places'][0].data[0][1], 1, 'on per stage in data')
   t.end()
 })

@@ -20,6 +20,7 @@ const toJson = require('../views/helpers/toJson.js')
 const isDNF = require('../views/helpers/isDNF.js')
 const isDNS = require('../views/helpers/isDNS.js')
 const isError = require('../views/helpers/isError.js')
+const cat = require('../views/helpers/cat.js')
 const isOK = require('../views/helpers/isOK.js')
 const DEFAULT_CACHE_TIME_PAGES = 5000
 const app = express()
@@ -38,7 +39,7 @@ const db = new Db()
 app.engine('handlebars', hbs({
   defaultLayout: 'main',
   extname: '.hbs',
-  helpers: { hashedAssets, compare, propFor, toJson, isDNF, isDNS, isError, isOK },
+  helpers: { hashedAssets, compare, propFor, toJson, isDNF, isDNS, isError, isOK, cat },
   partialsDir: 'views/partials'
 }))
 
