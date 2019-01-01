@@ -18,3 +18,5 @@ node_modules/
 dump.sql
 import
 test
+logs
+results
