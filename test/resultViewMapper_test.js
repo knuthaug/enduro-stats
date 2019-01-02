@@ -54,8 +54,17 @@ tap.test('For classes with fewer stages, total is calculated for last', (t) => {
 tap.test('has data object for graph, per class', (t) => {
   t.equals(graphs['Menn-places'].length, 5, '8 first riders compared')
   t.equals(graphs['Menn-places'][0].name, 'Aslak Mørstad', 'Name is rider name')
-  t.equals(graphs['Menn-places'][0].data.length, 6, 'on per stage in data')
-  t.equals(graphs['Menn-places'][0].data[0][0], 1, 'on per stage in data')
-  t.equals(graphs['Menn-places'][0].data[0][1], 1, 'on per stage in data')
+  t.equals(graphs['Menn-places'][0].data.length, 6, 'one per stage in data')
+  t.equals(graphs['Menn-places'][0].data[0][0], 1, 'one per stage in data')
+  t.equals(graphs['Menn-places'][0].data[0][1], 1, 'one per stage in data')
+  t.end()
+})
+
+tap.test('has data object for graph, per class', (t) => {
+  t.equals(graphs['Menn-acc-times'].length, 5, '5 first riders compared')
+  console.log(graphs['Menn-acc-times'][2])
+  t.equals(graphs['Menn-acc-times'][1].data.length, 6, 'one per stage')
+  t.equals(graphs['Menn-acc-times'][1].data[0][1], 35400, 'acc time behind in first is equal to behind in first')
+  t.equals(graphs['Menn-acc-times'][1].data[1][1], 40500, 'acc time behind in second is equal to behind in first + second')
   t.end()
 })
