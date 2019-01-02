@@ -40,10 +40,6 @@ function setupRaceGraph (element, graph) {
     const chart = Highcharts.charts[index]
     const data = JSON.parse(element.getAttribute(`data-object-${graph}`))
 
-    for (let i = 0; i < data.length; i++) {
-      console.log(data[i])
-    }
-
     chart.update({
       tooltip: {
         formatter: graph === 'places' ? placeFormatter : timeFormatter
@@ -52,7 +48,7 @@ function setupRaceGraph (element, graph) {
         title: {
           text: graph === 'places' ? 'Plass' : 'Tid'
         },
-        type: graph === 'places' ? 'linear' : 'datetime'
+        type: graph !== 'places' ? 'datetime' : 'linear'
       },
       series: data
     })

@@ -32,9 +32,6 @@ function setupRaceGraph (element) {
         fontWeight: 'normal'
       }
     },
-    borderColor: '#222222',
-    borderWidth: 1,
-    borderRadius: 2,
     yAxis: {
       title: {
         text: 'Plass'

@@ -40,9 +40,10 @@
   <div class="col-12">
     <select id="graph-selector-{{@key}}" class="mb-2 graph-selector">
       <option value="places" selected>Plasseringer</option>
-      <option value="times">Tid</option>
+      <option value="times">Tid bak</option>
+      <option value="acc-times">Total tid bak</option>
     </select>
-    <div class="race-prog-graph" id="{{@key}}-graph" data-object-places="{{lookup ../graphs (cat @key '-places')}}" data-object-times="{{lookup ../graphs (cat @key '-times')}}"></div>
+    <div class="race-prog-graph" id="{{@key}}-graph" data-object-places="{{lookup ../graphs (cat @key '-places')}}" data-object-times="{{lookup ../graphs (cat @key '-times')}}" data-object-acc-times="{{lookup ../graphs (cat @key '-acc-times')}}"></div>
   </div>
 </div>
 <div class="row">
