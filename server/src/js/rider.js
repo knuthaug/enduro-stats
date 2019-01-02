@@ -2,15 +2,35 @@
 
 const format = require('date-fns/format')
 const parse = require('date-fns/parse')
+const feather = require('feather-icons')
 
 document.addEventListener('DOMContentLoaded', function (event) {
+  feather.replace()
   setupGraph()
-
-  const graphs = document.querySelectorAll('.race-graph')
-  graphs.forEach((element) => {
-    setupRaceGraph(element)
-  })
+  setupShowHideRider()
 })
+
+function setupShowHideRider () {
+  [...document.querySelectorAll('.shower')]
+    .forEach(element => {
+      element.addEventListener('click', e => {
+        const cur = e.currentTarget
+        cur.classList.toggle('plus-rotate')
+        let el = cur.parentNode.parentNode.nextSibling
+
+        let i = 0
+        while (el) {
+          if (el.nodeName === 'TR') {
+            el.classList.toggle('hide')
+            setupRaceGraph(el.querySelectorAll('.race-graph')[0])
+            break
+          }
+          el = el.nextSibling
+          i++
+        }
+      })
+    })
+}
 
 function setupRaceGraph (element) {
   const data = JSON.parse(element.getAttribute('data-object'))

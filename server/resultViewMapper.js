@@ -60,9 +60,69 @@ module.exports = function resultViewMapper (classes, results) {
     graphs[`${classes[i]}-acc-times`] = toAccTimesGraphData(out[classes[i]], 5, stages)
   }
 
+  for (let i = 0; i < classes.length; i++) {
+    for (let j = 0; j < out[classes[i]].length; j++) {
+      out[classes[i]][j].chartData = raceChart(out[classes[i]], j, stages)
+    }
+  }
+
   return [stages.sort((a, b) => {
     return a - b
   }), out, graphs]
+}
+
+function raceChart(rows, startIndex, stages) {
+  let start = startIndex
+  let stop
+
+  const diff = (rows.length-1) - startIndex
+
+  if(startIndex === 0) {
+    stop = 4
+  } else if (startIndex === 1) {
+    start = 0
+    stop = 4
+  } else if (startIndex === rows.length - 1) {
+    start = startIndex - 4
+    stop = rows.length - 1
+  } else if ( startIndex === rows.length - 2 ) {
+    start = startIndex - 3
+    stop = rows.length - 1
+  } else if ( startIndex === rows.length - 3 ) {
+    start = startIndex - 2
+    stop = rows.length - 1
+  } else {
+    start = startIndex - 2
+    stop = startIndex + 2
+  }
+
+  const arr = []
+  for (let i = start; i <= stop; i++) {
+    if(typeof rows[i] === 'undefined') {
+      break
+    }
+
+    if(i === startIndex) {
+      arr.push({ name: rows[i].name, data: stages.map((s) => {
+        return [s, 0]
+      }).sort((a, b) => {
+        return a[0] - b[0]
+      })})
+    } else {
+    //    console.log(rows[i])
+      arr.push({ name: rows[i].name, data: stages.map((s) => {
+        return [s, diffTime(rows[startIndex][`stage${s}_time`], rows[i][`stage${s}_time`])]
+      }).sort((a, b) => {
+        return a[0] - b[0]
+      })})
+    }
+
+  }
+  return JSON.stringify(arr)
+}
+
+function diffTime (time, otherTime) {
+  return (convertTimeToMs(otherTime) - convertTimeToMs(time)) / 1000
 }
 
 function toPlacesGraphData (rows, num, stages) {
@@ -161,3 +221,4 @@ function compareRank (a, b) {
   }
   return 0
 }
+

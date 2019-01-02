@@ -34,7 +34,7 @@ a:hover {
   display: block;
 }
 
-.raceDetails {
+.race-details {
   transition: all 0.3s ease;
 }
 
@@ -55,6 +55,10 @@ a:hover {
 }
 
 .shower {
+  cursor: pointer;
+}
+
+.race-shower {
   cursor: pointer;
 }
 
@@ -128,4 +132,9 @@ a:hover {
 .race-prog-graph {
   height: 300px;
   width: 100%;
+}
+
+.race-detail-graph {
+  height: 250px;
+  width: 60%;
 }

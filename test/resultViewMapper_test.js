@@ -62,9 +62,15 @@ tap.test('has data object for graph, per class', (t) => {
 
 tap.test('has data object for graph, per class', (t) => {
   t.equals(graphs['Menn-acc-times'].length, 5, '5 first riders compared')
-  console.log(graphs['Menn-acc-times'][2])
   t.equals(graphs['Menn-acc-times'][1].data.length, 6, 'one per stage')
-  t.equals(graphs['Menn-acc-times'][1].data[0][1], 35400, 'acc time behind in first is equal to behind in first')
-  t.equals(graphs['Menn-acc-times'][1].data[1][1], 40500, 'acc time behind in second is equal to behind in first + second')
+  t.equals(graphs['Menn-acc-times'][1].data[0][1].toFixed(1), '35.4', 'acc time behind in first is equal to behind in first')
+  t.equals(graphs['Menn-acc-times'][1].data[1][1], 40.5, 'acc time behind in second is equal to behind in first + second')
+  t.end()
+})
+
+
+tap.test('each row has graph object', (t) => {
+  const men = r.Menn
+  //t.equals(men[0].chartData.length, 5, '5 series in chartData')
   t.end()
 })
