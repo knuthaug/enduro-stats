@@ -105,19 +105,18 @@ function toAccTimesGraphData (rows, num, stages) {
   const ret = []
 
   const totals = { }
-  for(let i = 0; i < num; i++) {
+  for (let i = 0; i < num; i++) {
     if (i >= rows.length) {
       break
     }
 
     totals[i] = { }
     for (let j = 0; j < stages.length; j++) {
-      //console.log(`accing for stage ${stages[j]}`)
+      // console.log(`accing for stage ${stages[j]}`)
       totals[i][stages[j]] = stages.slice(0, stages[j]).reduce((acc, cur) => {
-        //console.log(`stage ${cur}: acc=${acc}, time=${convertTimeToMs(rows[i][`stage${cur}_time`])}`)
+        // console.log(`stage ${cur}: acc=${acc}, time=${convertTimeToMs(rows[i][`stage${cur}_time`])}`)
         return acc + convertTimeToMs(rows[i][`stage${cur}_time`])
       }, 0)
-
     }
   }
 
@@ -127,16 +126,16 @@ function toAccTimesGraphData (rows, num, stages) {
     }
 
     const data = { }
-    //find diffs between totals, for each stage
+    // find diffs between totals, for each stage
     const keys = Object.keys(totals)
-    for(let i = 0; i < keys.length; i++) {
-      if(i === 0) { //race winner
+    for (let i = 0; i < keys.length; i++) {
+      if (i === 0) { // race winner
         data[i] = Object.keys(totals[i]).map((stageNum) => {
           return [parseInt(stageNum, 10), 0]
         })
       } else {
         data[i] = Object.keys(totals[i]).map((stageNum) => {
-          return [parseInt(stageNum, 10), totals[i][stageNum] - totals[0][stageNum]] //diff between total for this and total for first in race
+          return [parseInt(stageNum, 10), totals[i][stageNum] - totals[0][stageNum]] // diff between total for this and total for first in race
         })
       }
     }
