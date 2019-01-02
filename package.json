@@ -103,7 +103,8 @@
   },
   "standard": {
     "ignore": [
-      "migrations/"
+      "migrations/",
+      "server/src/js"
     ]
   }
 }
