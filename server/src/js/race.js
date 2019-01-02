@@ -63,7 +63,10 @@ function setupRaceGraph (element, graph) {
       chart: {
         borderColor: '#000000',
         borderWidth: 1,
-        borderRadius: 2
+        borderRadius: 2,
+        style: {
+          fontFamily: "'Helvetica Neue', Arial, sans-serif"
+        }
       },
       tooltip: {
         formatter: placeFormatter

@@ -19,7 +19,10 @@ function setupRaceGraph (element) {
     chart: {
       borderColor: '#000000',
       borderWidth: 1,
-      borderRadius: 2
+      borderRadius: 2,
+      style: {
+        fontFamily: "'Helvetica Neue', Arial, sans-serif"
+      }
     },
     title: {
       text: 'Etappeplasseringer',
@@ -94,7 +97,10 @@ function setupGraph () {
     chart: {
       borderColor: '#000000',
       borderWidth: 1,
-      borderRadius: 2
+      borderRadius: 2,
+      style: {
+        fontFamily: "'Helvetica Neue', Arial, sans-serif"
+      }
     },
     xAxis: {
       title: {
