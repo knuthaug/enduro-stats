@@ -30,7 +30,7 @@ function placeFormatter () {
 }
 
 function timeFormatter () {
-  return '<span>' + this.point.x + ' etappe: ' + this.point.y / 1000 + ' sekunder bak</span>'
+  return '<span>' + this.point.x + ' etappe: ' + this.point.y  + ' sekunder bak</span>'
 }
 
 function setupRaceGraph (element, graph) {
@@ -46,9 +46,9 @@ function setupRaceGraph (element, graph) {
       },
       yAxis: {
         title: {
-          text: graph === 'places' ? 'Plass' : 'Tid'
+          text: graph === 'places' ? 'Plass' : 'Sekunder'
         },
-        type: graph !== 'places' ? 'datetime' : 'linear'
+        type: 'linear'
       },
       series: data
     })

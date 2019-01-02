@@ -92,7 +92,7 @@ function toTimesGraphData (rows, num, stages) {
     const o = {
       name: rows[i].name,
       data: stages.map((s) => {
-        return [s, convertTimeToMs(rows[i][`stage${s}_behind_leader`]) ] // in milliseconds
+        return [s, convertTimeToMs(rows[i][`stage${s}_behind_leader`])/1000 ] // in seconds
       }).sort((a, b) => {
         return a[0] - b[0]
       }) }
@@ -112,10 +112,8 @@ function toAccTimesGraphData (rows, num, stages) {
 
     totals[i] = { }
     for (let j = 0; j < stages.length; j++) {
-      // console.log(`accing for stage ${stages[j]}`)
       totals[i][stages[j]] = stages.slice(0, stages[j]).reduce((acc, cur) => {
-        // console.log(`stage ${cur}: acc=${acc}, time=${convertTimeToMs(rows[i][`stage${cur}_time`])}`)
-        return acc + convertTimeToMs(rows[i][`stage${cur}_time`])
+        return acc + convertTimeToMs(rows[i][`stage${cur}_time`])/1000
       }, 0)
     }
   }
