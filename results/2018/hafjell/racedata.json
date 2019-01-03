@@ -1,10 +1,10 @@
 {
   "name": "Hafjell enduro",
   "year": 2018,
-  "date": "2018-09-15", 
+  "date": "2018-09-15",
   "series": "80/20 enduro series",
   "links": [
-    { "type": "film", "url": "https://vimeo.com/293215838", "description": "Rittfilm (vimeo)"},
-    { "type": "results", "url": "http://www.8020es.no/s/Resultatliste-sammenlagt-Hafjell-hmxz.pdf", "description": "Originale resultater"}
+    { "type": "film", "url": "https://vimeo.com/293215838", "desc": "Rittfilm (vimeo)"},
+    { "type": "results", "url": "http://www.8020es.no/s/Resultatliste-sammenlagt-Hafjell-hmxz.pdf", "desc": "Originale resultater"}
   ]
 }
