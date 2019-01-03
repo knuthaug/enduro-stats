@@ -23,7 +23,7 @@ tap.test('acc_time_ms is calculated', async t => {
   t.equals(result[0].acc_time_ms, 143000, 'acc_time_ms is stage time for first stage')
   t.equals(result[0].rider_id, 3, 'rider_id 3 is first')
   // console.log(result[63])
-  t.equals(result[64].rider_id, 3, 'rider_id 3 is found')
+  t.equals(result[64].rider_id, 4, 'rider_id 4 is found')
   t.equals(result[64].stage_time_ms, 105000, 'stage time for second stage')
   t.equals(result[64].acc_time_ms, 248000, 'acc_time_ms for second stage is first plus second')
   t.end()

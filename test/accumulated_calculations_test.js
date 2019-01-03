@@ -77,7 +77,7 @@ tap.test('final rank should reflect bad records', async t => {
   })
 
   t.equals(badRecord.status, 'ERROR', 'status error for bad records')
-  t.equals(badRecord.final_rank, 35, 'error gets rank last rank in race')
+  t.equals(badRecord.final_rank, 32, 'error gets ranked with dns/dnf last rank in race')
   t.end()
 })
 
@@ -89,7 +89,7 @@ tap.test('DNS/DNF records must have final_rank set', async t => {
     return r.rider_id === 697 && r.stage === 5
   })
 
-  t.equals(dns.final_rank, 34, 'DNS gets rank last rank in race')
+  t.equals(dns.final_rank, 33, 'DNS gets rank last rank in race')
   t.end()
 })
 
@@ -169,7 +169,7 @@ tap.test('Handle stages where there are times and dnf/error status', async t => 
     return r.rider_id === 141 && r.stage === 5
   })
 
-  t.equals(problem.final_rank, 110)
+  t.equals(problem.final_rank, 108)
   t.end()
 })
 
@@ -180,7 +180,7 @@ tap.test('Misc. tests', async t => {
     return r.rider_id === 3182
   })
 
-  t.equals(problem[problem.length - 1].final_rank, 155, 'DNS in first stage only means no finishing time')
+  t.equals(problem[problem.length - 1].final_rank, 135, 'DNS in first stage only means no finishing time')
   t.equals(problem[problem.length - 1].acc_time_ms, 0, 'DNS in first stage only means no finishing time')
   t.end()
 })
