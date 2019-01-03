@@ -52,7 +52,7 @@ tap.test('For classes with fewer stages, total is calculated for last', (t) => {
 })
 
 tap.test('has data object for graph, per class', (t) => {
-  t.equals(graphs['Menn-places'].length, 5, '8 first riders compared')
+  t.equals(graphs['Menn-places'].length, 5, '5 first riders compared')
   t.equals(graphs['Menn-places'][0].name, 'Aslak Mørstad', 'Name is rider name')
   t.equals(graphs['Menn-places'][0].data.length, 6, 'one per stage in data')
   t.equals(graphs['Menn-places'][0].data[0][0], 1, 'one per stage in data')
@@ -71,6 +71,11 @@ tap.test('has data object for graph, per class', (t) => {
 
 tap.test('each row has graph object', (t) => {
   const men = r.Menn
-  //t.equals(men[0].chartData.length, 5, '5 series in chartData')
+  const parsed = JSON.parse(men[0].chartData)
+  const parsed2 = JSON.parse(men[14].chartData)
+  const parsed3 = JSON.parse(men[men.length-1].chartData)
+  t.equals(parsed.length, 5, '5 series in chartData')
+  t.equals(parsed2.length, 5, '5 series in chartData')
+  t.equals(parsed3.length, 5, '5 series in chartData')
   t.end()
 })
