@@ -79,12 +79,11 @@ tap.test('each row has details attached', (t) => {
   t.end()
 })
 
-
 tap.test('each row has graph object', (t) => {
   const men = r.Menn
   const parsed = JSON.parse(men[0].chartData)
   const parsed2 = JSON.parse(men[14].chartData)
-  const parsed3 = JSON.parse(men[men.length-1].chartData)
+  const parsed3 = JSON.parse(men[men.length - 1].chartData)
   t.equals(parsed.length, 5, '5 series in chartData')
   t.equals(parsed2.length, 5, '5 series in chartData')
   t.equals(parsed3.length, 5, '5 series in chartData')

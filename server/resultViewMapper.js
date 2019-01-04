@@ -48,13 +48,12 @@ module.exports = function resultViewMapper (classes, results) {
     }
   }
 
-  //averages
+  // averages
   for (let i = 0; i < results.length; i++) {
     const rider = results[i].rider_id
     riders[rider].avg_percent_behind_leader = avg(riders[rider], stages, 'percent_behind_leader')
     riders[rider].avg_behind_leader = convertMsToTime(avg(riders[rider], stages, 'behind_leader_ms'))
   }
-
 
   for (let i = 0; i < classes.length; i++) {
     out[classes[i]] = Object.values(riders).filter((r) => {
@@ -73,10 +72,8 @@ module.exports = function resultViewMapper (classes, results) {
   for (let i = 0; i < classes.length; i++) {
     for (let j = 0; j < out[classes[i]].length; j++) {
       out[classes[i]][j].chartData = raceChart(out[classes[i]], j, stages)
-      //acc behimd
+      // acc behimd
       out[classes[i]][j].acc_behind_leader = toAccTimes(out[classes[i]], j, stages)
-
-
     }
   }
 
@@ -85,8 +82,8 @@ module.exports = function resultViewMapper (classes, results) {
   }), out, graphs]
 }
 
-function calculatePercentBehind(rider) {
-  if(rider.behind_leader_ms === 0) { // stage winner
+function calculatePercentBehind (rider) {
+  if (rider.behind_leader_ms === 0) { // stage winner
     return '0'
   }
   const winnerTime = rider.stage_time_ms - rider.behind_leader_ms
@@ -101,13 +98,12 @@ function toAccTimes (rows, index, stages) {
   totals.winner = { }
 
   for (let j = 0; j < stages.length; j++) {
-
     totals[index][stages[j]] = stages.slice(0, stages[j]).reduce((acc, cur) => {
-      return acc + convertTimeToMs(rows[index][`stage${cur}_time`])/1000
+      return acc + convertTimeToMs(rows[index][`stage${cur}_time`]) / 1000
     }, 0)
 
     totals.winner[stages[j]] = stages.slice(0, stages[j]).reduce((acc, cur) => {
-      return acc + convertTimeToMs(rows[0][`stage${cur}_time`])/1000
+      return acc + convertTimeToMs(rows[0][`stage${cur}_time`]) / 1000
     }, 0)
   }
 
@@ -126,13 +122,13 @@ function avg (o, stages, prop) {
   return (sum / stages.length).toFixed(1)
 }
 
-function raceChart(rows, startIndex, stages) {
+function raceChart (rows, startIndex, stages) {
   let start = startIndex
   let stop
 
-  const diff = (rows.length-1) - startIndex
+  const diff = (rows.length - 1) - startIndex
 
-  if(startIndex === 0) {
+  if (startIndex === 0) {
     stop = 4
   } else if (startIndex === 1) {
     start = 0
@@ -140,10 +136,10 @@ function raceChart(rows, startIndex, stages) {
   } else if (startIndex === rows.length - 1) {
     start = startIndex - 4
     stop = rows.length - 1
-  } else if ( startIndex === rows.length - 2 ) {
+  } else if (startIndex === rows.length - 2) {
     start = startIndex - 3
     stop = rows.length - 1
-  } else if ( startIndex === rows.length - 3 ) {
+  } else if (startIndex === rows.length - 3) {
     start = startIndex - 2
     stop = rows.length - 1
   } else {
@@ -153,25 +149,26 @@ function raceChart(rows, startIndex, stages) {
 
   const arr = []
   for (let i = start; i <= stop; i++) {
-    if(typeof rows[i] === 'undefined') {
+    if (typeof rows[i] === 'undefined') {
       break
     }
 
-    if(i === startIndex) {
-      arr.push({ name: rows[i].name, data: stages.map((s) => {
-        return [s, 0]
-      }).sort((a, b) => {
-        return a[0] - b[0]
-      })})
+    if (i === startIndex) {
+      arr.push({ name: rows[i].name,
+        data: stages.map((s) => {
+          return [s, 0]
+        }).sort((a, b) => {
+          return a[0] - b[0]
+        }) })
     } else {
     //    console.log(rows[i])
-      arr.push({ name: rows[i].name, data: stages.map((s) => {
-        return [s, diffTime(rows[startIndex][`stage${s}_time`], rows[i][`stage${s}_time`])]
-      }).sort((a, b) => {
-        return a[0] - b[0]
-      })})
+      arr.push({ name: rows[i].name,
+        data: stages.map((s) => {
+          return [s, diffTime(rows[startIndex][`stage${s}_time`], rows[i][`stage${s}_time`])]
+        }).sort((a, b) => {
+          return a[0] - b[0]
+        }) })
     }
-
   }
   return JSON.stringify(arr)
 }
@@ -207,7 +204,7 @@ function toTimesGraphData (rows, num, stages) {
     const o = {
       name: rows[i].name,
       data: stages.map((s) => {
-        return [s, convertTimeToMs(rows[i][`stage${s}_behind_leader`])/1000 ] // in seconds
+        return [s, convertTimeToMs(rows[i][`stage${s}_behind_leader`]) / 1000 ] // in seconds
       }).sort((a, b) => {
         return a[0] - b[0]
       }) }
@@ -228,7 +225,7 @@ function toAccTimesGraphData (rows, num, stages) {
     totals[i] = { }
     for (let j = 0; j < stages.length; j++) {
       totals[i][stages[j]] = stages.slice(0, stages[j]).reduce((acc, cur) => {
-        return acc + convertTimeToMs(rows[i][`stage${cur}_time`])/1000
+        return acc + convertTimeToMs(rows[i][`stage${cur}_time`]) / 1000
       }, 0)
     }
   }
@@ -276,4 +273,3 @@ function compareRank (a, b) {
   }
   return 0
 }
-
