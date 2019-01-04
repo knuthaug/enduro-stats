@@ -102,12 +102,22 @@
                       {{/each}}
                       <td>{{avg_percent_behind_leader}}%</td>
                     </tr>
+                    {{#compare final_rank '!==' 1}}
                     <tr>
                       <td><strong>Total tid bak vinner</strong></td>
-                      {{#each acc_behind_leader}}
+                      {{#each ../acc_behind_leader}}
                       <td>{{this}}s</td>
                       {{/each}}
                     </tr>
+                    {{#compare ../final_rank '!==' 2}}
+                    <tr>
+                      <td><strong>Total tid bak rytter foran</strong></td>
+                      {{#each ../acc_behind_infront}}
+                      <td>{{this}}s</td>
+                      {{/each}}
+                    </tr>
+                    {{/compare}}
+                    {{/compare}}
                   </tbody>
                 </table>
               </div>

@@ -73,7 +73,8 @@ module.exports = function resultViewMapper (classes, results) {
     for (let j = 0; j < out[classes[i]].length; j++) {
       out[classes[i]][j].chartData = raceChart(out[classes[i]], j, stages)
       // acc behimd
-      out[classes[i]][j].acc_behind_leader = toAccTimes(out[classes[i]], j, stages)
+      out[classes[i]][j].acc_behind_leader = toAccTimes(out[classes[i]], j, 0, stages)
+      out[classes[i]][j].acc_behind_infront = toAccTimes(out[classes[i]], j, (j > 0 ? (j - 1) : 0), stages)
     }
   }
 
@@ -90,26 +91,25 @@ function calculatePercentBehind (rider) {
   return ((rider.behind_leader_ms / winnerTime) * 100).toFixed(1)
 }
 
-function toAccTimes (rows, index, stages) {
-  const ret = []
+function toAccTimes (rows, index, winner, stages) {
 
   const totals = { }
   totals[index] = { }
-  totals.winner = { }
+  totals[winner] = { }
 
   for (let j = 0; j < stages.length; j++) {
     totals[index][stages[j]] = stages.slice(0, stages[j]).reduce((acc, cur) => {
       return acc + convertTimeToMs(rows[index][`stage${cur}_time`]) / 1000
     }, 0)
 
-    totals.winner[stages[j]] = stages.slice(0, stages[j]).reduce((acc, cur) => {
-      return acc + convertTimeToMs(rows[0][`stage${cur}_time`]) / 1000
+    totals[winner][stages[j]] = stages.slice(0, stages[j]).reduce((acc, cur) => {
+      return acc + convertTimeToMs(rows[winner][`stage${cur}_time`]) / 1000
     }, 0)
   }
 
   const keys = Object.keys(totals)
   return Object.keys(totals[index]).map((stageNum) => {
-    return totals[index][stageNum] - totals.winner[stageNum] // diff between total for this and total for first in race
+    return totals[index][stageNum] - totals[winner][stageNum] // diff between total for this and total for first in race
   })
 }
 

@@ -54,11 +54,11 @@ function setupShowHideRace () {
 }
 
 function placeFormatter () {
-  return `<span>${this.point.x} etappe: ${this.point.y} . plass</span>`
+  return `<span>${this.series.name}<br/>${this.point.x} etappe: ${this.point.y} . plass</span>`
 }
 
 function timeFormatter () {
-  return `<span>${this.point.x} etappe: ${this.point.y} sekunder bak</span>`
+  return `<span>${this.series.name}<br/>${this.point.x} etappe: ${this.point.y} sekunder bak</span>`
 }
 
 function setupRaceDetailGraph (element) {
