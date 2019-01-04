@@ -51,6 +51,13 @@ tap.test('For classes with fewer stages, total is calculated for last', (t) => {
   t.end()
 })
 
+tap.test('Calculate percent_behind_leader in stage', (t) => {
+  const sport = r3.Sport
+  t.equals(sport[0].stage1_percent_behind_leader, '0', 'percent behind for winner is 0')
+  t.equals(sport[1].stage1_percent_behind_leader, '7.5', 'percent behind for winner is 2.4')
+  t.end()
+})
+
 tap.test('has data object for graph, per class', (t) => {
   t.equals(graphs['Menn-places'].length, 5, '5 first riders compared')
   t.equals(graphs['Menn-places'][0].name, 'Aslak Mørstad', 'Name is rider name')
@@ -65,6 +72,10 @@ tap.test('has data object for graph, per class', (t) => {
   t.equals(graphs['Menn-acc-times'][1].data.length, 6, 'one per stage')
   t.equals(graphs['Menn-acc-times'][1].data[0][1].toFixed(1), '35.4', 'acc time behind in first is equal to behind in first')
   t.equals(graphs['Menn-acc-times'][1].data[1][1], 40.5, 'acc time behind in second is equal to behind in first + second')
+  t.end()
+})
+
+tap.test('each row has details attached', (t) => {
   t.end()
 })
 

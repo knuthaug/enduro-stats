@@ -36,6 +36,8 @@ module.exports = function resultViewMapper (classes, results) {
     riders[rider][`stage${results[i].stage}_time`] = time(results[i].stage_time_ms, results[i].status)
     riders[rider][`stage${results[i].stage}_rank`] = results[i].stage_rank
     riders[rider][`stage${results[i].stage}_behind_leader`] = convertMsToTime(results[i].behind_leader_ms)
+    riders[rider][`stage${results[i].stage}_behind_leader_ms`] = results[i].behind_leader_ms
+    riders[rider][`stage${results[i].stage}_percent_behind_leader`] = calculatePercentBehind(results[i])
 
     if (results[i].stage === lastStages[results[i].class]) {
       // last stage, add in acc_time_behind
@@ -45,6 +47,14 @@ module.exports = function resultViewMapper (classes, results) {
       riders[rider]['acc_time_ms'] = results[i].acc_time_ms
     }
   }
+
+  //averages
+  for (let i = 0; i < results.length; i++) {
+    const rider = results[i].rider_id
+    riders[rider].avg_percent_behind_leader = avg(riders[rider], stages, 'percent_behind_leader')
+    riders[rider].avg_behind_leader = convertMsToTime(avg(riders[rider], stages, 'behind_leader_ms'))
+  }
+
 
   for (let i = 0; i < classes.length; i++) {
     out[classes[i]] = Object.values(riders).filter((r) => {
@@ -63,12 +73,57 @@ module.exports = function resultViewMapper (classes, results) {
   for (let i = 0; i < classes.length; i++) {
     for (let j = 0; j < out[classes[i]].length; j++) {
       out[classes[i]][j].chartData = raceChart(out[classes[i]], j, stages)
+      //acc behimd
+      out[classes[i]][j].acc_behind_leader = toAccTimes(out[classes[i]], j, stages)
+
+
     }
   }
 
   return [stages.sort((a, b) => {
     return a - b
   }), out, graphs]
+}
+
+function calculatePercentBehind(rider) {
+  if(rider.behind_leader_ms === 0) { // stage winner
+    return '0'
+  }
+  const winnerTime = rider.stage_time_ms - rider.behind_leader_ms
+  return ((rider.behind_leader_ms / winnerTime) * 100).toFixed(1)
+}
+
+function toAccTimes (rows, index, stages) {
+  const ret = []
+
+  const totals = { }
+  totals[index] = { }
+  totals.winner = { }
+
+  for (let j = 0; j < stages.length; j++) {
+
+    totals[index][stages[j]] = stages.slice(0, stages[j]).reduce((acc, cur) => {
+      return acc + convertTimeToMs(rows[index][`stage${cur}_time`])/1000
+    }, 0)
+
+    totals.winner[stages[j]] = stages.slice(0, stages[j]).reduce((acc, cur) => {
+      return acc + convertTimeToMs(rows[0][`stage${cur}_time`])/1000
+    }, 0)
+  }
+
+  const keys = Object.keys(totals)
+  return Object.keys(totals[index]).map((stageNum) => {
+    return totals[index][stageNum] - totals.winner[stageNum] // diff between total for this and total for first in race
+  })
+}
+
+function avg (o, stages, prop) {
+  let sum = 0
+  for (let i = 0; i < stages.length; i++) {
+    sum += parseFloat(o[`stage${stages[i]}_${prop}`])
+  }
+
+  return (sum / stages.length).toFixed(1)
 }
 
 function raceChart(rows, startIndex, stages) {

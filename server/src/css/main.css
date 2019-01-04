@@ -25,6 +25,10 @@ a {
   text-decoration: underline;
 }
 
+header a {
+  text-decoration: none;
+}
+
 a:focus,
 a:hover {
   color: #ccc;
@@ -140,5 +144,5 @@ a:hover {
 
 .race-detail-graph {
   height: 250px;
-  width: 60%;
+  width: 100%;
 }

@@ -51,7 +51,7 @@
     <table class="table table-dark table-striped table-sm main-table">
       <thead>
         <tr>
-          <th scope="col" title="trykk for mer informasjon om rittet">{{> icon type='info'}}</th>
+          <th scope="col" title="trykk for mer informasjon om rytterens prestasjon i rittet">{{> icon type='info'}}</th>
           <th scope="col" data-sort-method="number">Plass</th>
           <th scope="col">Navn</th>
           {{#each ../stages}}
@@ -75,7 +75,46 @@
         </tr>
         <tr class="hide race-details">
           <td colspan="12">
-            <div id="{{uid}}-chart" class="race-detail-graph" data-object="{{chartData}}"></div>
+            <div class="row race-details">
+              <div class="col-6">
+                <table>
+                  <thead>
+                    <tr>
+                      <th scope="col">Etappe</th>
+                      {{#each ../../stages}}
+                      <th scope="col">FE{{this}}</th>
+                      {{/each}}
+                      <th scope="col">Snitt</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Tid bak etappevinner</strong></td>
+                    {{#each ../../stages}}
+                      <td>{{lookup ../this (propFor this 'behind_leader')}}</td>
+                      {{/each}}
+                      <td>{{avg_behind_leader}}</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Prosent bak</strong></td>
+                      {{#each ../../stages}}
+                      <td>{{lookup ../this (propFor this 'percent_behind_leader')}}%</td>
+                      {{/each}}
+                      <td>{{avg_percent_behind_leader}}%</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Total tid bak vinner</strong></td>
+                      {{#each acc_behind_leader}}
+                      <td>{{this}}s</td>
+                      {{/each}}
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="col-6">
+                <div id="{{uid}}-chart" class="race-detail-graph" data-object="{{chartData}}"></div>
+              </div>
+            </div>
           </td>
         </tr>
         {{/each}}

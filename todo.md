@@ -1,7 +1,7 @@
 * ekstra data i race-tabell?
- * Hvor tiden ble tapt i forhold til vinner (tid bak per etappe, plus prosent)
- * Hvor tiden ble tapt i forhold til rytter foran
-
+ * Hvor tiden ble tapt i forhold til rytter foran?
+ * plass totalt per etappe
+ 
 * rytter-rank, sum av alle brøker for rittene
 * Sammenligne to eller flere random ryttere (deg og kompisen)
  * etappe-tider i samme ritt

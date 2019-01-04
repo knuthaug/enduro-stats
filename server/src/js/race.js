@@ -42,7 +42,8 @@ function setupShowHideRace () {
         while (el) {
           if (el.nodeName === 'TR') {
             el.classList.toggle('hide')
-            setupRaceDetailGraph(el.childNodes[1].childNodes[1])
+            const graphEl = el.querySelectorAll('.race-detail-graph')
+            setupRaceDetailGraph(graphEl[0])
             break
           }
           el = el.nextSibling
