@@ -12,3 +12,8 @@ scripts
 app.yaml
 bundlemap-css.json
 bundlemap-js.json
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
