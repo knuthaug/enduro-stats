@@ -4,12 +4,9 @@ coverage
 */.DS_Store
 .DS_Store
 logs
-server/dist
 dump.sql
 scripts
 app.yaml
-bundlemap-css.json
-bundlemap-js.json
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
