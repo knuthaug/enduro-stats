@@ -109,6 +109,11 @@ app.get('/om', async (req, res) => {
   render(res, 'about', { active: 'om' }, DEFAULT_CACHE_TIME_PAGES)
 })
 
+app.get('/kalender', async (req, res) => {
+  log.debug(`request for ${req.path}`)
+  render(res, 'cal', { active: 'cal' }, DEFAULT_CACHE_TIME_PAGES)
+})
+
 app.get('/rytter/:uid', async (req, res) => {
   log.debug(`request for ${req.path}`)
   const rider = await db.findRider(req.params.uid)

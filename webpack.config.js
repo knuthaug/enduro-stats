@@ -10,7 +10,8 @@ module.exports = {
   entry: {
     bundle: './server/src/js/index.js',
     rider: './server/src/js/rider.js',
-    race: './server/src/js/race.js'
+    race: './server/src/js/race.js',
+    cal: './server/src/js/cal.js'
   },
   output: {
     filename: '[name]-[chunkhash].js',

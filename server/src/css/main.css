@@ -123,6 +123,10 @@ a:hover {
   padding: 0.200rem 0.55rem;
 }
 
+a.btn {
+  text-decoration: none;
+}
+
 .race-details {
   padding-top: 10px;
   padding-left: 10px;
