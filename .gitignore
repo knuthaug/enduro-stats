@@ -6,7 +6,6 @@ coverage
 .DS_Store
 logs
 server/dist
-config/production-config.json
 dump.sql
 scripts
 app.yaml
