@@ -1,7 +1,6 @@
-* ekstra data i race-tabell?
- * plass totalt per etappe
+* ekstra data i race-tabell
+ * plass totalt per etappe?
  
-* rytter-rank, sum av alle brøker for rittene
 * Sammenligne to eller flere random ryttere (deg og kompisen)
  * etappe-tider i samme ritt
  * etapper-plasser i samme ritt
