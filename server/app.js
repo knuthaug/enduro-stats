@@ -135,8 +135,9 @@ app.get('/rytter/:uid', async (req, res) => {
 
   const chartObject = toChartData(results)
 
-  const { year, avg } = bestSeason(results)
+  const { year, avg, score } = bestSeason(results)
   const startYear = results[results.length - 1].year
+
   render(res, 'rider', {
     rider,
     numRaces,
@@ -144,6 +145,7 @@ app.get('/rytter/:uid', async (req, res) => {
     year,
     chartObject,
     avg,
+    score, 
     results,
     active: 'ryttere' }, DEFAULT_CACHE_TIME_PAGES)
 })

@@ -1,8 +1,5 @@
 * ekstra data i race-tabell?
- * Hvor tiden ble tapt i forhold til rytter foran?
  * plass totalt per etappe
- 
- Navn på rytter i mouseover for ritt-grafer
  
 * rytter-rank, sum av alle brøker for rittene
 * Sammenligne to eller flere random ryttere (deg og kompisen)

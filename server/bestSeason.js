@@ -1,5 +1,7 @@
 module.exports = (rows) => {
   const years = { }
+  const scores = []
+
   for (let i = 0; i < rows.length; i++) {
     if (!years.hasOwnProperty(rows[i].year)) {
       years[rows[i].year] = []
@@ -7,7 +9,9 @@ module.exports = (rows) => {
 
     if (rows[i].time_behind !== 'DNS' && rows[i].time_behind !== 'DNF') {
       years[rows[i].year].push(rows[i].rank)
+      scores.push(rows[i].rank / rows[i].count)
     }
+
   }
 
   const avgs = {}
@@ -33,5 +37,10 @@ module.exports = (rows) => {
   if (year === 2000) {
     return { year: 0, avg: 0 }
   }
-  return { year, avg: parseFloat(avgs[year].avg, 10).toFixed(1) }
+
+  const score = (scores.reduce((acc, cur) => {
+    return acc + cur
+  }, 0) * 10).toFixed(2)
+
+  return { year, avg: parseFloat(avgs[year].avg, 10).toFixed(1), score }
 }
