@@ -154,7 +154,7 @@ app.get('/assets/js/:file', (req, res) => {
   const file = req.params.file
   const options = { root: './server/dist' }
 
-  if (/bundle/.test(file)) {
+  if (/bundle/.test(file) || /race/.test(file) || /rider/.test(file)) {
     return res.set({ 'Cache-Control': 'public, max-age=100000' }).sendFile(`js/${file}`, options)
   }
   return res.set({ 'Cache-Control': 'public, max-age=1000' }).sendFile(`js/${file}`, options)
