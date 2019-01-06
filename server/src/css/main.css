@@ -105,6 +105,11 @@ a:hover {
   position: relative;
   top: -7px;
 }
+
+#searchField {
+  width: 17rem;
+}
+
 .dnf {
   text-transform: uppercase;
   background-color: white;

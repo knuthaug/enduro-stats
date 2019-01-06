@@ -63,7 +63,11 @@ function setupRaceGraph (element) {
       },
       tickInterval: 1
     },
-
+    tooltip: {
+      formatter: function () {
+        return `<span>${this.point.x} etappe:${Math.abs(this.point.y)}. plass</span>`
+      }
+    },
     plotOptions: {
       series: {
         label: {
@@ -150,7 +154,7 @@ function setupGraph () {
         const pointData = data.find((row) => {
           return row.x === this.point.options.name
         })
-        return '<span>' + pointData.x + ' ' + pointData.race + ': ' + pointData.y + ' </span>'
+        return `<span>${pointData.x} ${pointData.race} <br/> ${pointData.class}: ${pointData.y}. plass </span>`
       }
     },
 

@@ -180,7 +180,7 @@ app.get('/assets/css/:file', (req, res) => {
 function toChartData (results) {
   return JSON.stringify(results.map((e) => {
     if (e.time !== 'DNS' && e.time !== 'DNF') {
-      return { x: e.date, y: e.rank, race: e.raceName, properDate: parse(e.date) }
+      return { x: e.date, y: e.rank, class: e.class, race: e.raceName, properDate: parse(e.date) }
     }
   }).filter((e) => {
     return typeof e !== 'undefined'

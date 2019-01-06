@@ -32,3 +32,9 @@ tap.test('multiple spaces are truncated', (t) => {
   t.equals(sp.check('  öivind  äsen '), 'Öivind Äsen', 'multiple spaces to one, leading and trailing is trimmed')
   t.end()
 })
+
+
+tap.test('Club names are substituted', (t) => {
+  t.equals(sp.checkClub('BMK'), 'Bergen MTB klubb', 'case-insensitive replace')
+  t.end()
+})
