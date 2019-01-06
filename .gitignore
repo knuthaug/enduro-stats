@@ -4,6 +4,7 @@ coverage
 */.DS_Store
 .DS_Store
 logs
+database.json
 server/dist
 dump.sql
 scripts
