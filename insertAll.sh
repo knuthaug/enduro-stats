@@ -4,24 +4,24 @@
 #2012
 echo "2012:"
 echo "  Kongsberg"
-node import/importer.js -a -f ~/Dropbox/privat/sykkel/enduro-resultater/2012/kongsberg/kongsberg-2012.csv
+node import/importer.js -a -f results/2012/kongsberg/kongsberg-2012.csv
 echo "  Nesbyen"
-node import/importer.js  -f ~/Dropbox/privat/sykkel/enduro-resultater/2012/nesbyen/nesbyen-2012.csv
+node import/importer.js  -f results/2012/nesbyen/nesbyen-2012.csv
 echo "  Oslo"
-node import/importer.js  -f ~/Dropbox/privat/sykkel/enduro-resultater/2012/oslo/oslo-2012.csv
+node import/importer.js  -f results/2012/oslo/oslo-2012.csv
 
 #2013
 echo "2013:"
 echo "  Nesbyen"
-node import/importer.js -a -f ~/Dropbox/privat/sykkel/enduro-resultater/2013/nesbyen/nesbyen-2013.csv
+node import/importer.js -a -f results/2013/nesbyen/nesbyen-2013.csv
 echo "  Oslo"
-node import/importer.js -f ~/Dropbox/privat/sykkel/enduro-resultater/2013/oslo/oslo-2013.csv
+node import/importer.js -f results/2013/oslo/oslo-2013.csv
 echo "  Sogndal"
-node import/importer.js -f ~/Dropbox/privat/sykkel/enduro-resultater/2013/sogndal/sogndal-2013.csv
+node import/importer.js -f results/2013/sogndal/sogndal-2013.csv
 echo "  Kongsberg"
-node import/importer.js -r ~/Dropbox/privat/sykkel/enduro-resultater/2013/kongsberg/racedata.json
+node import/importer.js -r results/2013/kongsberg/racedata.json
 echo "  Traktor"
-node import/importer.js -r ~/Dropbox/privat/sykkel/enduro-resultater/2013/traktor/racedata.json
+node import/importer.js -r results/2013/traktor/racedata.json
 
 #2014
 echo "2014:"
