@@ -72,7 +72,7 @@ module.exports = function resultViewMapper (classes, results) {
   for (let i = 0; i < classes.length; i++) {
     for (let j = 0; j < out[classes[i]].length; j++) {
       out[classes[i]][j].chartData = raceChart(out[classes[i]], j, stages)
-      // acc behimd
+      // acc behind
       out[classes[i]][j].acc_behind_leader = toAccTimes(out[classes[i]], j, 0, stages)
       out[classes[i]][j].acc_behind_infront = toAccTimes(out[classes[i]], j, (j > 0 ? (j - 1) : 0), stages)
     }
@@ -109,7 +109,7 @@ function toAccTimes (rows, index, winner, stages) {
 
   const keys = Object.keys(totals)
   return Object.keys(totals[index]).map((stageNum) => {
-    return totals[index][stageNum] - totals[winner][stageNum] // diff between total for this and total for first in race
+    return (totals[index][stageNum] - totals[winner][stageNum]).toFixed(1) // diff between total for this and total for first in race
   })
 }
 

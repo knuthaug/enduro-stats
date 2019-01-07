@@ -54,11 +54,11 @@ function setupShowHideRace () {
 }
 
 function placeFormatter () {
-  return `<span>${this.series.name}<br/>${this.point.x} etappe: ${this.point.y} . plass</span>`
+  return `<span>${this.series.name}<br/>${this.point.x} etappe: ${this.point.y}. plass</span>`
 }
 
 function timeFormatter () {
-  return `<span>${this.series.name}<br/>${this.point.x} etappe: ${this.point.y} sekunder bak</span>`
+  return `<span>${this.series.name}<br/>${this.point.x} etappe: ${Math.abs(this.point.y).toFixed(1)} sekunder bak</span>`
 }
 
 function setupRaceDetailGraph (element) {
@@ -84,9 +84,9 @@ function setupRaceDetailGraph (element) {
     tooltip: {
       formatter: function () {
         if(this.point.y < 0 ) {
-          return `<span>${this.series.name}<br/>${this.point.x} etappe:${Math.abs(this.point.y)} sekunder foran</span>`
+          return `<span>${this.series.name}<br/>${this.point.x} etappe:${Math.abs(this.point.y).toFixed(1)} sekunder foran</span>`
         }
-        return `<span>${this.series.name}<br/>${this.point.x} etappe:${Math.abs(this.point.y)} sekunder bak</span>`
+        return `<span>${this.series.name}<br/>${this.point.x} etappe:${Math.abs(this.point.y).toFixed(1)} sekunder bak</span>`
       }
     },
     yAxis: {

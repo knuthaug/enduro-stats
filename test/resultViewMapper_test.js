@@ -81,11 +81,39 @@ tap.test('each row has details attached', (t) => {
 
 tap.test('each row has graph object', (t) => {
   const men = r.Menn
-  const parsed = JSON.parse(men[0].chartData)
-  const parsed2 = JSON.parse(men[14].chartData)
+  const winner = JSON.parse(men[0].chartData)
+  const second = JSON.parse(men[1].chartData)
   const parsed3 = JSON.parse(men[men.length - 1].chartData)
-  t.equals(parsed.length, 5, '5 series in chartData')
-  t.equals(parsed2.length, 5, '5 series in chartData')
+  t.equals(winner.length, 5, '5 series in chartData')
+
+  t.equals(winner[0].data[0][1], 0, 'winner is first')
+  t.equals(winner[0].data[1][1], 0, 'winner is first')
+
+  t.equals(second.length, 5, '5 series in chartData')
+  t.equals(second[0].data[0][1], -35.4)
+  t.equals(second[0].data[1][1], -5.1)
   t.equals(parsed3.length, 5, '5 series in chartData')
+  t.end()
+})
+
+tap.test('each row has acc_times_behind array', (t) => {
+  const men = r.Menn
+  t.equals(men[0].acc_behind_leader.length, 6,'on value per stage, all 0 for winner')
+  t.equals(men[0].acc_behind_leader[0], '0.0', 'on value per stage, all 0 for winner')
+
+  t.equals(men[1].acc_behind_leader[0], '35.4', 'acc behind for first stage is same as behind in stage')
+  t.equals(men[3].acc_behind_leader[0], '33.2', 'acc behind for first stage is same as behind in stage')
+  t.equals(men[3].acc_behind_leader[1], '95.5', 'acc behind for first stage is same as behind in stage')
+  t.end()
+})
+
+tap.test('each row has time_behind_infront array', (t) => {
+  const men = r.Menn
+  t.equals(men[0].acc_behind_infront.length, 6,'one value per stage, all 0 for winner')
+  t.equals(men[0].acc_behind_infront[0], '0.0', 'one value per stage, all 0 for winner')
+
+  t.equals(men[4].acc_behind_infront[0], '8.6', 'acc behind for first stage is same as behind in stage')
+  t.equals(men[4].acc_behind_infront[1], '-13.6', 'acc behind for first stage is same as behind in stage')
+  t.equals(men[4].acc_behind_infront[2], '32.8', 'acc behind for first stage is same as behind in stage')
   t.end()
 })
