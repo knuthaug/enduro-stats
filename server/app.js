@@ -49,7 +49,7 @@ app.get('/', async (req, res) => {
   log.debug('request for /')
   const races = await db.findRaces(10)
   const { raceCount, riderCount, stageCount } = await db.statCounts()
-  render(res, 'index', { races, raceCount, riderCount, stageCount }, 60)
+  render(res, 'index', { races, raceCount, riderCount, stageCount }, 2000)
 //  res.render('index', { })
 })
 

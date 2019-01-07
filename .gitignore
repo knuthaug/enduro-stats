@@ -7,7 +7,6 @@ logs
 database.json
 server/dist
 dump.sql
-scripts
 app.yaml
 bundlemap-css.json
 bundlemap-js.json
