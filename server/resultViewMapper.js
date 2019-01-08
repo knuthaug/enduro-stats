@@ -3,7 +3,7 @@ const { convertMsToTime, convertTimeToMs } = require('../lib/time.js')
 module.exports = function resultViewMapper (classes, results) {
   const out = {}
   const riders = {}
-  const stages = []
+  let stages = []
   const lastStages = {}
 
   classes.forEach((cls) => {
@@ -48,6 +48,10 @@ module.exports = function resultViewMapper (classes, results) {
     }
   }
 
+  stages = stages.sort((a, b) => {
+    return a - b
+  })
+
   // averages
   for (let i = 0; i < results.length; i++) {
     const rider = results[i].rider_id
@@ -78,9 +82,7 @@ module.exports = function resultViewMapper (classes, results) {
     }
   }
 
-  return [stages.sort((a, b) => {
-    return a - b
-  }), out, graphs]
+  return [stages, out, graphs]
 }
 
 function calculatePercentBehind (rider) {
