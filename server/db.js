@@ -107,6 +107,7 @@ class Db {
     if (search.indexOf(' ') !== -1) {
       search = search.replace(/ /, ' & ')
     }
+    
     const query = "select id, name, club, uid from riders where search @@ to_tsquery('norwegian', $1) limit $2"
     return this.find(query, [search, l])
   }

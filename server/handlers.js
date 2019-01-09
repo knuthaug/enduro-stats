@@ -22,6 +22,11 @@ async function racesHandler(req) {
 async function raceHandler (req) {
   log.debug(`request for ${req.path}`)
   const race = await db.findRace(req.params.uid)
+
+  if (!race.id) {
+    return { status: 404}
+  }
+
   const links = await db.findRaceLinks(race.id)
   const raceClasses = await db.classesForRace(req.params.uid)
   const raceResults = await db.raceResults(req.params.uid)

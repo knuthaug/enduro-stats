@@ -35,9 +35,18 @@ tap.test('rider index page responds with 200', async t => {
 
 tap.test('race page responds with 200 for one race', async t => {
   await supertest(app)
-    .get('/ritt/b5abd441f9b8afd93fc95a897d33d2a4')
+    .get('/ritt/acff26f96c230cfbafe3294fe5f5da06')
     .expect(200)
     .expect('Content-type', 'text/html; charset=utf-8')
+  t.end()
+})
+
+tap.test('race page responds with 404 for race not found', async t => {
+  await supertest(app)
+    .get('/ritt/d6786b567668')
+    .expect(404)
+    .expect('Content-type', 'text/html; charset=utf-8')
+    .expect('Cache-Control', 'public, max-age=60')
   t.end()
 })
 
@@ -71,6 +80,16 @@ tap.test('kalender page responds with 200', async t => {
     .get('/kalender')
     .expect(200)
     .expect('Content-type', 'text/html; charset=utf-8')
+  t.end()
+})
+
+tap.test('search page responds with 200', async t => {
+  supertest(app)
+    .post('/sok')
+    .send('search=espen')
+    .end((f) => {
+      console.log(f)
+    })
   t.end()
 })
 
