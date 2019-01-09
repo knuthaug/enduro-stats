@@ -106,6 +106,12 @@ a:hover {
   top: -7px;
 }
 
+.text-image {
+  float:left;
+  padding-right: 1rem;
+  vertical-align: top;
+}
+
 #searchField {
   width: 17rem;
 }

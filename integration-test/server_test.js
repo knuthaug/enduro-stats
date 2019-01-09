@@ -6,7 +6,7 @@ const supertest = require('supertest')
 const tap = require('tap')
 const sinon = require('sinon')
 const rewire = require('rewire')
-const app = require('../server/app.js')
+const { app, stop } = require('../server/app.js')
 
 
 tap.test('index page responds with 200', async t => {
@@ -58,7 +58,7 @@ tap.test('rider page responds with 404 for rider not found', async t => {
   t.end()
 })
 
-tap.test('rider page responds with 200 for about', async t => {
+tap.test('about page responds with 200', async t => {
   await supertest(app)
     .get('/om')
     .expect(200)
@@ -66,10 +66,12 @@ tap.test('rider page responds with 200 for about', async t => {
   t.end()
 })
 
-tap.test('rider page responds with 200 for about', async t => {
+tap.test('kalender page responds with 200', async t => {
   await supertest(app)
     .get('/kalender')
     .expect(200)
     .expect('Content-type', 'text/html; charset=utf-8')
   t.end()
 })
+
+stop()

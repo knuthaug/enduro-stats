@@ -156,7 +156,7 @@ class Db {
     }
   }
 
-  destroy () {
+  async destroy () {
     this.pool.end()
   }
 }
