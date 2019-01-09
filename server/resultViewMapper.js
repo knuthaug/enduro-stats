@@ -33,6 +33,7 @@ module.exports = function resultViewMapper (classes, results) {
     riders[rider].name = results[i].name
     riders[rider].class = results[i].class
     riders[rider].rider_id = results[i].rider_id
+    riders[rider].stage = results[i].stage
     riders[rider][`stage${results[i].stage}_time`] = time(results[i].stage_time_ms, results[i].status)
     riders[rider][`stage${results[i].stage}_rank`] = results[i].stage_rank
     riders[rider][`stage${results[i].stage}_behind_leader`] = convertMsToTime(results[i].behind_leader_ms)
@@ -65,13 +66,18 @@ module.exports = function resultViewMapper (classes, results) {
     }).sort(compareRank)
   }
 
+  const stageTotals = {}
+
   // create graphData object
   const graphs = {}
   for (let i = 0; i < classes.length; i++) {
     graphs[`${classes[i]}-places`] = toPlacesGraphData(out[classes[i]], 5, stages)
     graphs[`${classes[i]}-times`] = toTimesGraphData(out[classes[i]], 5, stages)
     graphs[`${classes[i]}-acc-times`] = toAccTimesGraphData(out[classes[i]], 5, stages)
+
+    stageTotals[classes[i]] = findStageTotals(results, stages, classes[i])
   }
+
 
   for (let i = 0; i < classes.length; i++) {
     for (let j = 0; j < out[classes[i]].length; j++) {
@@ -79,10 +85,39 @@ module.exports = function resultViewMapper (classes, results) {
       // acc behind
       out[classes[i]][j].acc_behind_leader = toAccTimes(out[classes[i]], j, 0, stages)
       out[classes[i]][j].acc_behind_infront = toAccTimes(out[classes[i]], j, (j > 0 ? (j - 1) : 0), stages)
+      out[classes[i]][j].place_by_stage = toPlacesByStage(classes[i], out[classes[i]][j].rider_id, stageTotals, stages)
     }
   }
 
   return [stages, out, graphs]
+}
+
+function findStageTotals(rows, stages, className) {
+  const out = {}
+  for (let i = 0; i < stages.length; i++) {
+    out[stages[i]] = rows.filter((r) => {
+      return r.stage === stages[i] && r.class === className
+    }).map((r) => {
+      return { rider: r.rider_id, time: r.acc_time_ms }
+    }).filter((r) => {
+      return r.time !== 0
+    }).sort((a, b) => {
+      return a.time - b.time
+    })
+  }
+  return out
+}
+
+function toPlacesByStage(className, riderId, totals, stages) {
+  const out = []
+  for (let i = 0; i < stages.length; i++) {
+    const riders = totals[className][`${stages[i]}`]
+    const index = riders.findIndex((r) => {
+      return r.rider === riderId
+    })
+    out.push(index !== -1 ? index + 1 : index)
+  }
+  return out
 }
 
 function calculatePercentBehind (rider) {

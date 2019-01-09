@@ -13,7 +13,9 @@ async function racesHandler(req) {
   const races = raceViewMapper(await db.findRaces())
   return {
     status: 200,
-    races, active: 'ritt'
+    races,
+    active: 'ritt',
+    title: 'Alle ritt : Norsk enduro'
   }
 }
 
@@ -38,7 +40,9 @@ async function raceHandler (req) {
     links,
     graphs,
     noResults,
-    active: 'ritt' }
+    active: 'ritt',
+    title: `${race.name} ${race.year} : Norsk enduro`
+  }
 }
 
 async function indexHandler () {
@@ -50,7 +54,8 @@ async function indexHandler () {
     races,
     raceCount,
     riderCount,
-    stageCount
+    stageCount,
+    title: 'Norsk enduro'
   }
 }
 
@@ -60,7 +65,8 @@ async function ridersHandler (req) {
   return {
     status: 200,
     riders,
-    active: 'ryttere'
+    active: 'ryttere',
+    title: 'Alle ryttere : Norsk enduro'
   }
 }
 
@@ -73,7 +79,8 @@ async function searchHandler(req, res) {
 
   return {
     status: 200,
-    results
+    results,
+    title: 'Søketreff : Norsk enduro'
   }
 }
 
@@ -126,7 +133,9 @@ async function riderHandler (req) {
     avg,
     score,
     results,
-    active: 'ryttere' }
+    active: 'ryttere',
+    title: `${rider.name} : Norsk enduro`
+  }
 }
 
 function toChartData (results) {

@@ -117,3 +117,14 @@ tap.test('each row has time_behind_infront array', (t) => {
   t.equals(men[4].acc_behind_infront[2], '32.8', 'acc behind for first stage is same as behind in stage')
   t.end()
 })
+
+tap.test('each row has place_by_stage array', (t) => {
+  const men = r.Menn
+  const places = men[2].place_by_stage
+  t.equals(places.length, 6, 'one value per stage')
+  t.equals(places[0], 4, 'fourth after first stage')
+  t.equals(places[1], 2, 'second after second stage')
+  t.equals(places[2], 4, '4th after third stage')
+  //console.log(men[2])
+  t.end()
+})

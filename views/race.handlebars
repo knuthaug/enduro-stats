@@ -66,7 +66,7 @@
         <tr>
           <td>{{> icon type='plus-race'}}</td>
           <td scope="row">{{final_rank}}</td>
-          <td><a href="/rytter/{{uid}}">{{name}}</a></td>
+          <td><a data-id="{{rider_id}}" href="/rytter/{{uid}}">{{name}}</a></td>
           {{#each ../../stages}}
           <td title="nr. {{lookup ../this (propFor this 'rank')}} på etappen, {{lookup ../this (propFor this 'behind_leader')}} bak etappevinner">{{> stagetime result=../this stage=this }}</span></td>
           {{/each}}
@@ -118,6 +118,12 @@
                     </tr>
                     {{/compare}}
                     {{/compare}}
+                    <tr>
+                      <td><strong>Total plass per etappe</strong></td>
+                      {{#each place_by_stage}}
+                      <td>{{this}}</td>
+                      {{/each}}
+                    </tr>
                   </tbody>
                 </table>
               </div>
