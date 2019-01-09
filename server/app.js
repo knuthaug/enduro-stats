@@ -126,8 +126,6 @@ app.get('/rytter/:uid', async (req, res) => {
   const races = riderViewMapper(rawRaces)
   const numRaces = races.length
 
-  console.log(rawRaces)
-
   const raceIds = races.map((r) => {
     return { race: r.race, class: r.class }
   })
