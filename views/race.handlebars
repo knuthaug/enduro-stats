@@ -34,11 +34,11 @@
 {{#each results}}
 <div class="row">
   <div class="col-11"> <h3><a class="none" name="{{@key}}">{{@key}}</a> </h3></div>
-  <div class="col-1"><a class="toplink" title="Tilbake til toppen" href="#top">&#8679</a></div>
+  <div class="col-1"><a class="toplink" data-toggle="tooltip" data-original-title="Tilbake til toppen" href="#top">{{>icon type='pil'}}</a></div>
 </div>
 <div class="row">
   <div class="col-12">
-    <select id="graph-selector-{{@key}}" class="mb-2 graph-selector">
+    Velg graf <select id="graph-selector-{{@key}}" class="mb-2 graph-selector">
       <option value="places" selected>Plasseringer</option>
       <option value="times">Tid bak</option>
       <option value="acc-times">Total tid bak</option>
@@ -51,7 +51,7 @@
     <table class="table table-dark table-striped table-sm main-table">
       <thead>
         <tr>
-          <th scope="col" data-toggle="tooltip" data.original-title="trykk for mer informasjon om rytterens prestasjon i rittet">{{> icon type='info'}}</th>
+          <th scope="col" data-toggle="tooltip" data-original-title="trykk for mer informasjon om rytterens prestasjon i rittet">{{> icon type='info'}}</th>
           <th scope="col" data-sort-method="number">Plass</th>
           <th scope="col">Navn</th>
           {{#each ../stages}}

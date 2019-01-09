@@ -39,7 +39,6 @@ function extendTableSort () {
 }
 
 document.addEventListener('DOMContentLoaded', function (event) {
-  feather.replace()
   extendTableSort()
   const tables = document.querySelectorAll('.main-table')
 
@@ -47,6 +46,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     tablesort(tables[i], { descending: true })
   }
 
+  feather.replace()
   setupSearch()
   $('[data-toggle="tooltip"]').tooltip()
 })
