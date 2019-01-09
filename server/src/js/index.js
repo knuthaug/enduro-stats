@@ -1,6 +1,7 @@
 const $ = require('jquery')
 const buttons = require('bootstrap/js/dist/button.js')
 const index = require('bootstrap/js/dist/index.js')
+const collapse = require('bootstrap/js/dist/collapse.js')
 const tablesort = require('tablesort')
 const feather = require('feather-icons')
 
@@ -36,6 +37,7 @@ function extendTableSort () {
 
 document.addEventListener('DOMContentLoaded', function (event) {
   extendTableSort()
+  window.$('.collapse').collapse()
   const tables = document.querySelectorAll('.main-table')
 
   for (var i = 0; i < tables.length; i++) {
