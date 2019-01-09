@@ -84,7 +84,8 @@ const subs = {
   'Pål Gimmestad': 'Pål Kristian Gimmestad',
   'Steinar Holoes': 'Steinar Holøs',
   'Trygve Loyd': 'Trygve Loyd Sannesmoen',
-  'Rickard Sundell': 'Tage Rickard Sundell'
+  'Rickard Sundell': 'Tage Rickard Sundell',
+  'Anette Bastnes': 'Anette Røssum Bastnes'
 }
 
 function check (name) {
