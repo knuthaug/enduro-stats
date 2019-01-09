@@ -6,34 +6,8 @@ const supertest = require('supertest')
 const tap = require('tap')
 const sinon = require('sinon')
 const rewire = require('rewire')
-const app = rewire('../server/app.js')
-const Db = require('../server/db.js')
+const app = require('../server/app.js')
 
-const races = [
-  {
-    id: 1,
-    name: 'test',
-    year: 2012
-  },
-  {
-    id: 2,
-    name: 'test2',
-    year: 2013
-  }
-]
-
-const race = {
-  id: 1,
-  name: 'test',
-  year: 2012
-}
-
-const db = new Db()
-sinon.stub(db, 'findRaces').returns({ rows: races })
-sinon.stub(db, 'findRace').returns({ rows: race })
-sinon.stub(db, 'classesForRace').returns({ rows: [ 'Menn', 'Kvinner' ] })
-
-app.__set__('db', db)
 
 tap.test('index page responds with 200', async t => {
   await supertest(app)
@@ -48,5 +22,23 @@ tap.test('race page responds with 200 for one race', async t => {
     .get('/ritt/b5abd441f9b8afd93fc95a897d33d2a4')
     .expect(200)
     .expect('Content-type', 'text/html; charset=utf-8')
+  t.end()
+})
+
+tap.test('rider page responds with 200 for one rider', async t => {
+  await supertest(app)
+    .get('/rytter/d6786b567668d7d9f4e61c69e04d5c3c')
+    .expect(200)
+    .expect('Content-type', 'text/html; charset=utf-8')
+  t.end()
+})
+
+tap.test('rider page responds with 404 for rider not found', async t => {
+  await supertest(app)
+    .get('/rytter/d6786b567668d7d9f4e61c69e04d5')
+    .expect(404)
+    .expect('Content-type', 'text/html; charset=utf-8')
+    .expect('Cache-Control', 'public, max-age=60')
+
   t.end()
 })

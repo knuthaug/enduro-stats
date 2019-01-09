@@ -117,9 +117,16 @@ app.get('/kalender', async (req, res) => {
 app.get('/rytter/:uid', async (req, res) => {
   log.debug(`request for ${req.path}`)
   const rider = await db.findRider(req.params.uid)
+
+  if(!rider.id) {
+    return render(res, '404', {}, 60, 404)
+  }
+
   const rawRaces = await db.raceResultsForRider(req.params.uid)
   const races = riderViewMapper(rawRaces)
   const numRaces = races.length
+
+  console.log(rawRaces)
 
   const raceIds = races.map((r) => {
     return { race: r.race, class: r.class }
@@ -189,8 +196,10 @@ function toChartData (results) {
   }))
 }
 
-function render (res, template, context, maxAge) {
+function render (res, template, context, maxAge, status) {
+  const s = status ? status : 200
   return res
+    .status(s)
     .set({ 'Cache-Control': `public, max-age=${maxAge}` })
     .render(template, context)
 }
