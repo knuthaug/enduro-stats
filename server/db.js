@@ -67,7 +67,7 @@ class Db {
   }
 
   async raceResultsForRider (uid) {
-    const query = 'SELECT results.*, (select name from stages where id = results.stage_id) as stageName, race_id, ra.name, ra.uid, ra.date, ra.year FROM results LEFT OUTER JOIN (SELECT id, name, uid, date, year from races) AS ra ON ra.id = results.race_id WHERE results.rider_id = (SELECT id from riders where uid = $1)'
+    const query = 'SELECT results.*, (select name from stages where id = results.stage_id) as stageName, race_id, ra.name, ra.uid, ra.date, ra.year FROM results LEFT OUTER JOIN (SELECT id, name, uid, date, year from races) AS ra ON ra.id = results.race_id WHERE results.rider_id = (SELECT id from riders where uid = $1) order by stage_id ASC'
 
     const values = [uid]
     return this.find(query, values)
