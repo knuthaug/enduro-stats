@@ -66,7 +66,13 @@ async function indexHandler () {
 
 async function ridersHandler (req) {
   log.debug(`request for ${req.path}`)
-  const riders = await db.findAllRiders()
+  const riders = await db.findAllRiders().then((data) => {
+    return  data.filter((r) => {
+      return r.count !== '0'
+    })
+  })
+
+
   return {
     status: 200,
     riders,

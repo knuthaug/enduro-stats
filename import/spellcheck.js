@@ -85,7 +85,15 @@ const subs = {
   'Steinar Holoes': 'Steinar Holøs',
   'Trygve Loyd': 'Trygve Loyd Sannesmoen',
   'Rickard Sundell': 'Tage Rickard Sundell',
-  'Anette Bastnes': 'Anette Røssum Bastnes'
+  'Anette Bastnes': 'Anette Røssum Bastnes',
+  'Stian Eilfsen': 'Stian Eilifsen',
+  'Hilde Strædet': 'Hilde Sangesland Strædet',
+  'Hilde Sangesland': 'Hilde Sangesland Strædet',
+  'Ida Hakonsson': 'Ida Håkonsson',
+  'Jørgen Strømquist': 'Jørgen Beyer Strømquist',
+  'Jonas Strømquist': 'Jonas Beyer Strømquist',
+  'Anette Bastnes': 'Anette Røssum Bastnes',
+  'Lars Sandviken': 'Lars Vatnebryn Sandviken'
 }
 
 function check (name) {

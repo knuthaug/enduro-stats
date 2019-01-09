@@ -16,8 +16,17 @@ body {
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 60px;
-  line-height: 60px; /* Vertically center the text there */
+  line-height: 1.5rem;
+  letter-spacing: 0.07rem;
   background-color: #333;
+}
+
+h2 {
+  letter-spacing: 0.1rem;
+}
+
+th {
+  letter-spacing: 0.08rem;
 }
 
 .navbar .nav-link.active {
@@ -36,19 +45,26 @@ body {
   border-bottom-color: rgba(255, 255, 255, .25);
 }
 
+a.none, a.none:focus, a.none:hover {
+  border-bottom: 0;
+}
 
 a {
   color: #fff;
-  text-decoration: underline;
+  text-decoration: none;
+  padding-bottom: 0.4px;
+
 }
 
 header a {
-  text-decoration: none;
+  border-bottom: 0;
 }
 
 a:focus,
 a:hover {
-  color: #ccc;
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid white;
 }
 
 .hide {

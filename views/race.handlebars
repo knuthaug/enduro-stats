@@ -14,7 +14,7 @@
       {{/if}}
     </div>
     <div class="row">
-      <div class="col-3 middle-align">{{race.date}}, {{race.stages}} {{#compare race.stages '===' 1}}etappe{{else}}etapper{{/compare}}</div>
+      <div class="col-3 middle-align">{{race.date}} {{race.stages}} {{#compare race.stages '===' 1}}etappe{{else}}etapper{{/compare}}</div>
       <div class="col-3 middle-align">{{> series race}}</div>
     </div>
     {{#if race.text}}
@@ -33,7 +33,7 @@
 </div>
 {{#each results}}
 <div class="row">
-  <div class="col-11"> <h3><a name="{{@key}}">{{@key}}</a> </h3></div>
+  <div class="col-11"> <h3><a class="none" name="{{@key}}">{{@key}}</a> </h3></div>
   <div class="col-1"><a class="toplink" title="Tilbake til toppen" href="#top">&#8679</a></div>
 </div>
 <div class="row">
@@ -51,7 +51,7 @@
     <table class="table table-dark table-striped table-sm main-table">
       <thead>
         <tr>
-          <th scope="col" title="trykk for mer informasjon om rytterens prestasjon i rittet">{{> icon type='info'}}</th>
+          <th scope="col" data-toggle="tooltip" data.original-title="trykk for mer informasjon om rytterens prestasjon i rittet">{{> icon type='info'}}</th>
           <th scope="col" data-sort-method="number">Plass</th>
           <th scope="col">Navn</th>
           {{#each ../stages}}
@@ -68,7 +68,7 @@
           <td scope="row">{{final_rank}}</td>
           <td><a data-id="{{rider_id}}" href="/rytter/{{uid}}">{{name}}</a></td>
           {{#each ../../stages}}
-          <td title="nr. {{lookup ../this (propFor this 'rank')}} på etappen, {{lookup ../this (propFor this 'behind_leader')}} bak etappevinner">{{> stagetime result=../this stage=this }}</span></td>
+          <td><span data-toggle="tooltip" data-original-title="nr. {{lookup ../this (propFor this 'rank')}} på etappen, {{lookup ../this (propFor this 'behind_leader')}} bak etappevinner">{{> stagetime result=../this stage=this }}</span></td>
           {{/each}}
           <td data-sort="{{acc_time_ms}}">{{acc_time}}</td>
           <td data-sort="{{acc_time_behind_ms}}">{{#compare acc_time_behind '!==' '00:00.0'}}{{../acc_time_behind}}{{/compare}}</td>

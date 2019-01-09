@@ -7,7 +7,7 @@
       {{#compare year '!==' 0}}
       Beste sesong: {{../year}}<br/>
       Snittplassering beste år: {{../avg}}<br/>
-      <span title="Et forsøk på å regne ut hvem som er best, over tid. Lavest er best. ">Rytter-score <span class="beta">beta</span> : {{../score}}</span><br/>
+      <span data-toggle="tooltip" data-original-title="Et forsøk på å regne ut hvem som er best, over tid. Lavest er best. ">Rytter-score <span class="beta">beta</span> : {{../score}}</span><br/>
       {{/compare}}
     </p>
   </div>
@@ -40,8 +40,8 @@
           <td>{{date}}</a></td>
           <td><a href="/ritt/{{uid}}#{{class}}">{{raceName}}</a></td>
           <td>{{class}}</td>
-          <td title="Plass {{rank}} av {{count}} ryttere i klassen">{{rank}}/{{count}}</td>
-          <td>{{time}}/<span title="{{time_behind}} etter vinner i klassen">{{time_behind}}</td>
+          <td data-toggle="tooltip" data-original-title="Plass {{rank}} av {{count}} ryttere i klassen">{{rank}}/{{count}}</td>
+          <td>{{time}}/<span data-toogle="tooltip" data-original-title="{{time_behind}} etter vinner i klassen">{{time_behind}}</td>
         </tr>
         <tr class="hide race-details">
           <td colspan="6">

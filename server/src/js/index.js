@@ -2,8 +2,11 @@ const $ = require('jquery')
 const buttons = require('bootstrap/js/dist/button.js')
 const index = require('bootstrap/js/dist/index.js')
 const collapse = require('bootstrap/js/dist/collapse.js')
+const util = require('bootstrap/js/dist/util.js')
+const tooltip = require('bootstrap/js/dist/tooltip.js')
 const tablesort = require('tablesort')
 const feather = require('feather-icons')
+const popper = require('popper.js')
 
 window.jQuery = $
 window.$ = $
@@ -36,16 +39,16 @@ function extendTableSort () {
 }
 
 document.addEventListener('DOMContentLoaded', function (event) {
+  feather.replace()
   extendTableSort()
-  window.$('.collapse').collapse()
   const tables = document.querySelectorAll('.main-table')
 
   for (var i = 0; i < tables.length; i++) {
     tablesort(tables[i], { descending: true })
   }
 
-  feather.replace()
   setupSearch()
+  $('[data-toggle="tooltip"]').tooltip()
 })
 
 function setupSearch () {
