@@ -120,6 +120,21 @@ a:hover {
   font-size: 85%;
 }
 
+.table-dark.table-striped tbody tr.odd {
+  background-color: #212529;
+}
+
+.table-dark {
+  border: 1px solid #000;
+  border-radius: 2px;
+}
+
+.table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #212529;
+}
+
+
 .table .table {
   background-color: #212529 !important;
 }

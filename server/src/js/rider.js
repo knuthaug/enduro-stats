@@ -16,18 +16,9 @@ function setupShowHideRider () {
       element.addEventListener('click', e => {
         const cur = e.currentTarget
         cur.classList.toggle('plus-rotate')
-        let el = cur.parentNode.parentNode.nextSibling
-
-        let i = 0
-        while (el) {
-          if (el.nodeName === 'TR') {
-            el.classList.toggle('hide')
-            setupRaceGraph(el.querySelectorAll('.race-graph')[0])
-            break
-          }
-          el = el.nextSibling
-          i++
-        }
+        let el = cur.parentNode.parentNode.nextSibling.nextSibling
+        el.classList.toggle('hide')
+        setupRaceGraph(el.querySelectorAll('.race-graph')[0])
       })
     })
 }
