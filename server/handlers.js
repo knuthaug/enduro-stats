@@ -19,6 +19,12 @@ async function racesHandler(req) {
   }
 }
 
+async function compareHandler(req) {
+  return {
+    status: 200
+  }
+}
+
 async function raceHandler (req) {
   log.debug(`request for ${req.path}`)
   const race = await db.findRace(req.params.uid)
@@ -169,5 +175,6 @@ module.exports = {
   riderHandler,
   ridersHandler,
   searchHandler,
-  jsonSearchHandler
+  jsonSearchHandler,
+  compareHandler
 }

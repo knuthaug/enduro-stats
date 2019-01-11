@@ -164,6 +164,11 @@ a:hover {
   width: 17rem;
 }
 
+#compare-search-field {
+  width: 25rem;
+  margin-left: 1rem;
+}
+
 .dnf {
   text-transform: uppercase;
   background-color: white;

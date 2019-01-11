@@ -65,6 +65,7 @@ app.get('/om', handler('about', () => { return { status: 200, active: 'om', titl
 app.get('/kalender', handler('cal', () => { return { status: 200, active: 'cal', title: 'Rittkalender 2019'}}))
 app.get('/rytter/:uid', handler('rider', handlers.riderHandler))
 app.get('/ryttere', handler('riders', handlers.ridersHandler))
+app.get('/sammenlign', handler('compare', handlers.compareHandler))
 app.get('/api/search', jsonHandler(handlers.jsonSearchHandler))
 
 app.post('/sok/', handler('search', handlers.searchHandler, 100))
