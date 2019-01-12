@@ -6,6 +6,7 @@ coverage
 logs
 database.json
 server/dist
+scripts/restore_to_aws.sh
 dump.sql
 app.yaml
 bundlemap-css.json
