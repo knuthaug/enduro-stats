@@ -33,8 +33,12 @@ tap.test('multiple spaces are truncated', (t) => {
   t.end()
 })
 
-
 tap.test('Club names are substituted', (t) => {
   t.equals(sp.checkClub('BMK'), 'Bergen MTB klubb', 'case-insensitive replace')
+  t.end()
+})
+
+tap.test('Add point after single letter intials', async t => {
+  t.equals(sp.check('Anders S Bråten'), 'Anders S. Bråten')
   t.end()
 })

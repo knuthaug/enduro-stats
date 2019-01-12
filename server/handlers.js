@@ -114,6 +114,11 @@ async function riderHandler (req) {
   }
 
   const rawRaces = await db.raceResultsForRider(req.params.uid)
+
+  if (!rawRaces.length) {
+    return { status: 404, message: 'Rytteren finnes i databasen, men det fantes ingen ritt for denne rytteren (noe som tyder på en feil et sted hos oss)'}
+  }
+
   const races = riderViewMapper(rawRaces)
   const numRaces = races.length
 
