@@ -44,20 +44,26 @@ class StageCalculations {
 
     let err = false
     let abortedRace = false
+    let notStartedRace = false
 
     for (let i = 0; i < stageIndexes.length; i++) {
-      if (this.abortedRace(rows, stageIndexes, i)) {
+      if (!abortedRace && this.abortedRace(rows, stageIndexes, i)) {
         abortedRace = true
         rows[stageIndexes[i]].status = DNF_STATUS
+      }
+
+      if (this.notRiddenStage(rows, stageIndexes, i)) {
+        rows[stageIndexes[i]].status = DNS_STATUS
       }
 
       if (this.notFinished(rows[stageIndexes[i]]) || rows[stageIndexes[i]].stage_time_ms === 0) {
         err = true
       }
 
-      if(i === stageIndexes.length - 1) {
-        rows[stageIndexes[i]].final_status = DNF_STATUS
+      if(i === stageIndexes.length - 1) { // last stage, check if all stages are DNS
+        notStartedRace = this.notStartedRace(rows, stageIndexes, rows[stageIndexes[i]].rider_id)
       }
+
     }
 
     for (let i = 0; i < stageIndexes.length; i++) {
@@ -66,7 +72,31 @@ class StageCalculations {
         // rows[stageIndexes[i]].behind_leader_ms = 0
         rows[stageIndexes[i]].acc_time_behind = 0
       }
+
+
+      if(i === stageIndexes.length - 1) {
+        if(abortedRace) {
+          rows[stageIndexes[i]].final_status = DNF_STATUS
+        } else if (notStartedRace){
+          rows[stageIndexes[i]].final_status = DNS_STATUS
+        } else if(!abortedRace && !notStartedRace){
+          rows[stageIndexes[i]].final_status = OK_STATUS
+        }
+      }
     }
+  }
+
+  notStartedRace(rows, indexes, id) {
+    const statuses = []
+    for (let i = 0; i < indexes.length; i++) {
+      statuses.push(rows[indexes[i]].status === DNS_STATUS)
+    }
+    return statuses.every(s => s)
+  }
+
+  notRiddenStage (rows, indexes, index) {
+    const obj = rows[indexes[index]]
+    return obj.status === DNS_STATUS
   }
 
   abortedRace (rows, indexes, index) {
@@ -75,7 +105,7 @@ class StageCalculations {
     }
 
     const obj = rows[indexes[index]]
-    return obj.status === DNS_STATUS && rows[indexes[index - 1]].status === OK_STATUS
+    return (obj.status === DNS_STATUS || obj.status === DNF_STATUS) && rows[indexes[index - 1]].status === OK_STATUS
   }
 
   lastStages (rows, stages) {
@@ -166,7 +196,6 @@ class StageCalculations {
       if (ro.length < stages.length) { // missing stages
         for (let j = 0; j < stages.length; j++) {
           if (!find(ro, 'stage', stages[j])) {
-            
             rows.push(this.defaultResult(stages[j],
                                          stageIds[j],
                                          ro[0].race_id,
