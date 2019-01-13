@@ -82,7 +82,6 @@ function fields (row) {
     behind_leader_ms: row.behind_leader_ms,
     time: time(row.stage_time_ms, row.status),
     rank: row.stage_rank,
-    percent_rank: 0,
     time_behind: timeBehind(row.behind_leader_ms),
     percent_behind: row.behind_leader_percent
   }

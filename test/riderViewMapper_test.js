@@ -30,7 +30,8 @@ tap.test('Data fields for race details', (t) => {
 })
 
 tap.test('calculate average rank for stages', (t) => {
-  t.equals(r[0].avg_rank, '1.60', 'stage rank averaged')
+  t.equals(r[0].avg_rank, '1.6', 'stage rank averaged, one decimal place')
   t.equals(r[0].avg_time_behind, '00:10.8', 'behind_leader_ms averaged')
+  t.equals(r[0].avg_percent_behind, '7.9', 'avg percent behind, one decimal')
   t.end()
 })
