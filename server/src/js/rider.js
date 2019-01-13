@@ -6,7 +6,23 @@ const feather = require('feather-icons')
 
 document.addEventListener('DOMContentLoaded', function (event) {
   feather.replace()
-  setupGraph()
+
+  //graph selector click handler
+  const selectors = document.querySelectorAll('.rider-graph-selector')
+  selectors.forEach((element) => {
+    element.addEventListener('change', (event) => {
+      const target = event.currentTarget
+      let els = target.parentNode.childNodes
+
+      for (let i = 0; i < els.length; i++) {
+        if (els[i].nodeName === 'DIV') {
+          setupGraph(els[i], target.options[target.selectedIndex].value)
+          break
+        }
+      }
+    })
+  })
+  setupGraph(document.getElementById('rider-chart'), 'percent')
   setupShowHideRider()
 })
 
@@ -91,83 +107,120 @@ function setupRaceGraph (element) {
   })
 }
 
-function setupGraph () {
-  const el = document.getElementById('rider-chart')
-  const data = JSON.parse(el.getAttribute('data-object'))
+function chooseTooltip(data, graph) {
+  if(graph === 'places') {
+    return function () {
+      const pointData = data.find((row) => {
+        return row.x === this.point.options.name
+      })
+      return `<span>${pointData.x} ${pointData.race} <br/> ${pointData.class}: ${pointData.y}. plass </span>`
+    }
+  }
+  return function () {
+    const pointData = data.find((row) => {
+      return row.x === this.point.options.name
+    })
+    return `<span>${pointData.x} ${pointData.race} <br/> ${pointData.class}: ${pointData.y.toFixed(1)} % av antall i klasse </span>`
+  }
+}
 
-  Highcharts.chart('rider-chart', {
 
-    title: {
-      text: 'Rittplasseringer'
-    },
+function setupGraph (el, graph) {
+  const index = el.getAttribute('data-highcharts-chart')
 
-    yAxis: {
-      title: {
-        text: 'Plass i klasse'
-      }
-    },
-    chart: {
-      borderColor: '#000000',
-      borderWidth: 1,
-      borderRadius: 2,
-      style: {
-        fontFamily: "'Helvetica Neue', Arial, sans-serif"
-      }
-    },
-    xAxis: {
-      title: {
-        text: 'År'
+  if (index) { // existing graph
+    const chart = Highcharts.charts[index]
+    const data = JSON.parse(el.getAttribute(`data-object-${graph}`))
+
+    chart.update({
+      yAxis: {
+        title: {
+          text: graph === 'places' ? 'Plass i klasse' : 'Plass % i klasse'
+        },
+        type: 'linear'
       },
-      type: 'datetime',
-      labels: {
-        formatter: function () {
-          return format(parse(data[this.value].x), 'YYYY')
-        },
-        step: 1
-      }
+      title: {
+        text: graph === 'places' ? 'Rittplasseringer' : 'Rittplasseringer %'
+      },
+      tooltip: {
+        formatter: chooseTooltip(data, graph)
+      },
+      series: [{
+        name: graph === 'places' ? 'Plassering' : 'Plassering %',
+        data: data.map((e) => { return [ e.x, e.y ] })
+      }]
+    })
+  } else {
+    const data = JSON.parse(el.getAttribute(`data-object-${graph}`))
+    Highcharts.chart(el.getAttribute('id'), {
 
-    },
-    legend: {
-      layout: 'vertical',
-      align: 'right',
-      verticalAlign: 'middle'
-    },
+      title: {
+        text: graph === 'places' ? 'Rittplasseringer' : 'Rittplasseringer %'
+      },
 
-    plotOptions: {
-      series: {
-        label: {
-          connectorAllowed: false
+      yAxis: {
+        title: {
+          text: graph === 'places' ? 'Plass i klasse' : 'Plass % i klasse'
         }
-      }
-    },
-    tooltip: {
-      formatter: function () {
-        const pointData = data.find((row) => {
-          return row.x === this.point.options.name
-        })
-        return `<span>${pointData.x} ${pointData.race} <br/> ${pointData.class}: ${pointData.y}. plass </span>`
-      }
-    },
-
-    series: [{
-      name: 'Plassering',
-      data: data.map((e) => { return [ e.x, e.y ] })
-    }],
-
-    responsive: {
-      rules: [{
-        condition: {
-          maxWidth: 500
+      },
+      chart: {
+        borderColor: '#000000',
+        borderWidth: 1,
+        borderRadius: 2,
+        style: {
+          fontFamily: "'Helvetica Neue', Arial, sans-serif"
+        }
+      },
+      xAxis: {
+        title: {
+          text: 'År'
         },
-        chartOptions: {
-          legend: {
-            layout: 'horizontal',
-            align: 'center',
-            verticalAlign: 'bottom'
+        type: 'datetime',
+        labels: {
+          formatter: function () {
+            return format(parse(data[this.value].x), 'YYYY')
+          },
+          step: 1
+        }
+
+      },
+      legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle'
+      },
+
+      plotOptions: {
+        series: {
+          label: {
+            connectorAllowed: false
           }
         }
-      }]
-    }
+      },
+      tooltip: {
+        formatter: chooseTooltip(data, graph)
+      },
 
-  })
+      series: [{
+        name: graph === 'places' ? 'Plassering' : 'Plassering %',
+        data: data.map((e) => { return [ e.x, e.y ] })
+      }],
+
+      responsive: {
+        rules: [{
+          condition: {
+            maxWidth: 500
+          },
+          chartOptions: {
+            legend: {
+              layout: 'horizontal',
+              align: 'center',
+              verticalAlign: 'bottom'
+            }
+          }
+        }]
+      }
+
+    })
+  }
 }

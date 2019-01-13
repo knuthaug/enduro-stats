@@ -134,7 +134,7 @@ async function riderHandler (req) {
     return compareAsc(parse(b.date), parse(a.date))
   })
 
-  const chartObject = toChartData(results)
+  const { placesChart, percentChart } = toChartData(results)
 
   const { year, avg, score } = bestSeason(results)
   const startYear = results[results.length - 1].year
@@ -145,7 +145,8 @@ async function riderHandler (req) {
     numRaces,
     startYear,
     year,
-    chartObject,
+    placesChart,
+    percentChart,
     avg,
     score,
     results,
@@ -155,7 +156,7 @@ async function riderHandler (req) {
 }
 
 function toChartData (results) {
-  return JSON.stringify(results.map((e) => {
+  const placesChart = JSON.stringify(results.map((e) => {
     if (e.time !== 'DNS' && e.time !== 'DNF') {
       return { x: e.date, y: e.rank, class: e.class, race: e.raceName, properDate: parse(e.date) }
     }
@@ -164,6 +165,18 @@ function toChartData (results) {
   }).sort((a, b) => {
     return compareAsc(a.properDate, b.properDate)
   }))
+
+  const percentChart = JSON.stringify(results.map((e) => {
+    if (e.time !== 'DNS' && e.time !== 'DNF') {
+      return { x: e.date, y: ((e.rank/e.count) * 100), class: e.class, race: e.raceName, properDate: parse(e.date) }
+    }
+  }).filter((e) => {
+    return typeof e !== 'undefined'
+  }).sort((a, b) => {
+    return compareAsc(a.properDate, b.properDate)
+  }))
+
+  return { placesChart, percentChart }
 }
 
 
