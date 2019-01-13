@@ -1,4 +1,4 @@
-const { ERROR_STATUS } = require('./constants.js')
+const { ERROR_STATUS, DNS_STATUS, DNF_STATUS, OK_STATUS } = require('./constants.js')
 const { findAllRiders, stagesForRider, stageIndexesForStage } = require('./listUtil.js')
 const StageCalculations = require('./stage_calculations.js')
 
@@ -24,25 +24,6 @@ class AccumulatedStageCalculations extends StageCalculations {
   sanityCheck (rows, riders) {
     for (let i = 0; i < riders.length; i++) {
       this.checkRiderResults(rows, riders[i])
-    }
-  }
-
-  checkRiderResults (rows, riderId) {
-    const stageIndexes = stagesForRider(rows, riderId)
-
-    let err = false
-    for (let i = 0; i < stageIndexes.length; i++) {
-      if (this.notFinished(rows[stageIndexes[i]]) || rows[stageIndexes[i]].stage_time_ms === 0) {
-        err = true
-      }
-    }
-
-    for (let i = 0; i < stageIndexes.length; i++) {
-      if (err) {
-        rows[stageIndexes[i]].acc_time_ms = 0
-        // rows[stageIndexes[i]].behind_leader_ms = 0
-        rows[stageIndexes[i]].acc_time_behind = 0
-      }
     }
   }
 

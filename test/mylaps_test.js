@@ -53,6 +53,22 @@ tap.test('Object details for stages', async t => {
   t.equals(stage1.results[21].status, 'DNS')
 })
 
+tap.test('final status field is correct', async t => {
+  const ml = new Mylaps(path.join(__dirname, 'data/drammen-2017.csv'), {
+    datafile: path.join(__dirname, 'data/racedata-drammen2017.json')
+  })
+
+  const loaded = await ml.load()
+  const data = await loaded.parse()
+
+  const lastStage = data.stages[4]
+  t.equals(lastStage.results[0].final_status, 'OK', 'winner has OK final_status')
+//  console.log(lastStage.results[lastStage.results.length - 17])
+  t.equals(lastStage.results[lastStage.results.length - 1].final_status, 'DNS', 'DNS rider has final_status DNS')
+  t.equals(lastStage.results[lastStage.results.length - 17].final_status, 'DNF', 'DNF rider has final_status DNF')
+  t.end()
+})
+
 tap.test('support for NOOP stages', async t => {
   const ml = new Mylaps(path.join(__dirname, 'data/hemsedal-2018.csv'), {
     datafile: path.join(__dirname, 'data/hemsedal-2018-racedata.json')
