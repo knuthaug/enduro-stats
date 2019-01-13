@@ -2,10 +2,10 @@ const tap = require('tap')
 const fs = require('fs')
 const path = require('path')
 
-const mapper = require('../server/riderViewMapper.js')
+const { riderViewMapper } = require('../server/riderViewMapper.js')
 const data = JSON.parse(fs.readFileSync(path.join(__dirname, './data/race-results-for-rider.json')).toString())
 
-const r = mapper(data)
+const r = riderViewMapper(data)
 
 tap.test('results are mapped to flat array', (t) => {
   t.equals(r.length, 23, 'Has one entry per race')

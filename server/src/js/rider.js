@@ -52,7 +52,7 @@ function setupRaceGraph (element) {
       }
     },
     title: {
-      text: 'Etappeplasseringer',
+      text: 'Etappeplasseringer %',
       style: {
         color: '#FFFFFF',
         'font-size': '90%',
@@ -61,7 +61,7 @@ function setupRaceGraph (element) {
     },
     yAxis: {
       title: {
-        text: 'Plass'
+        text: 'Plass %'
       }
     },
     xAxis: {
@@ -72,7 +72,7 @@ function setupRaceGraph (element) {
     },
     tooltip: {
       formatter: function () {
-        return `<span>${this.point.x} etappe:${Math.abs(this.point.y)}. plass</span>`
+        return `<span>${this.point.x} etappe: ${Math.abs(this.point.y).toFixed(1)} plass % av antall i klasse</span>`
       }
     },
     plotOptions: {
@@ -86,7 +86,7 @@ function setupRaceGraph (element) {
       showInLegend: false,
       data: data,
       pointStart: 1,
-      name: 'Plass'
+      name: 'Plass %'
     }],
 
     responsive: {

@@ -1,6 +1,6 @@
 const { convertMsToTime } = require('../lib/time.js')
 
-module.exports = function resultViewMapper (results) {
+function riderViewMapper (results) {
   const out = []
 
   let row = toRow(results[0])
@@ -17,10 +17,9 @@ module.exports = function resultViewMapper (results) {
   out.push(addFields(row, results[results.length - 1]))
 
   for (let i = 0; i < out.length; i++) {
-    out[i].avg_rank = avg(out[i].details, 'rank').toFixed(2)
+    out[i].avg_rank = avg(out[i].details, 'rank').toFixed(1)
     out[i].avg_time_behind = convertMsToTime(avg(out[i].details, 'behind_leader_ms').toFixed(0))
-    out[i].avg_percent_behind = avg(out[i].details, 'percent_behind').toFixed(2)
-
+    out[i].avg_percent_behind = avg(out[i].details, 'percent_behind').toFixed(1)
     out[i].chartData = toJson(out[i].details)
   }
 
@@ -83,6 +82,7 @@ function fields (row) {
     behind_leader_ms: row.behind_leader_ms,
     time: time(row.stage_time_ms, row.status),
     rank: row.stage_rank,
+    percent_rank: 0,
     time_behind: timeBehind(row.behind_leader_ms),
     percent_behind: row.behind_leader_percent
   }
@@ -101,3 +101,6 @@ function accTime (time, status) {
   }
   return convertMsToTime(time)
 }
+
+module.exports.toNumber = toNumber
+module.exports.riderViewMapper = riderViewMapper

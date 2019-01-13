@@ -72,6 +72,13 @@
                       <td>{{avg_rank}}</td>
                     </tr>
                     <tr>
+                      <td><strong>Plass % av antall</strong></td>
+                      {{#each details}}
+                      <td>{{formatPercent percent_rank}}%</td>
+                      {{/each}}
+                      <td>{{formatPercent avg_percent_rank}}%</td>
+                    </tr>
+                    <tr>
                       <td><strong>Tid</strong></td>
                       {{#each details}}
                       <td>{{time}}</td>
