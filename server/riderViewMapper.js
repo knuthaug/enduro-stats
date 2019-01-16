@@ -54,8 +54,8 @@ function addDetails (row, res) {
 function addFields (row, res) {
   const newRow = Object.assign(row, {
     rank: res.final_rank,
-    time: time(res.acc_time_ms, res.status),
-    time_behind: accTime(res.acc_time_behind, res.status)
+    time: time(res.acc_time_ms, res.final_status),
+    time_behind: accTime(res.acc_time_behind, res.final_status)
   })
   return newRow
 }
