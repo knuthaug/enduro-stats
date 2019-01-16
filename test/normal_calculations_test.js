@@ -172,4 +172,17 @@ tap.test('fine tune dns/dnf contiued', async t => {
   t.end()
 })
 
+tap.test('fine tune dns/dnf contiued', async t => {
+  const c = new StageCalculations()
+  const rows = JSON.parse(fs.readFileSync(path.join(__dirname, './data/race-results-explorer-kvinner-nesfjella.json')))
+  const result = c.differentials(rows)
+
+  const okRider = result.filter((r) => {
+    return r.rider_id === 17717
+  })
+
+  t.equals(okRider[5].final_status, 'DNF', 'DNF as two stages are DNS')
+  t.end()
+})
+
 

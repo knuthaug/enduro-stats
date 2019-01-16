@@ -62,6 +62,7 @@ class StageCalculations {
 
       if(i === stageIndexes.length - 1) { // last stage, check if all stages are DNS
         notStartedRace = this.notStartedRace(rows, stageIndexes, rows[stageIndexes[i]].rider_id)
+        abortedRace = this.fullAbortedRace(rows, stageIndexes, rows[stageIndexes[i]].ride_id)
       }
 
     }
@@ -75,7 +76,7 @@ class StageCalculations {
 
 
       if(i === stageIndexes.length - 1) {
-        if(abortedRace) {
+        if(abortedRace && !notStartedRace) {
           rows[stageIndexes[i]].final_status = DNF_STATUS
         } else if (notStartedRace){
           rows[stageIndexes[i]].final_status = DNS_STATUS
@@ -86,12 +87,22 @@ class StageCalculations {
     }
   }
 
+  // are all stages DNS?
   notStartedRace(rows, indexes, id) {
     const statuses = []
     for (let i = 0; i < indexes.length; i++) {
       statuses.push(rows[indexes[i]].status === DNS_STATUS)
     }
     return statuses.every(s => s)
+  }
+
+  // arer some stages either DNS or DNF?
+  fullAbortedRace(rows, indexes, id) {
+    const statuses = []
+    for (let i = 0; i < indexes.length; i++) {
+      statuses.push(rows[indexes[i]].status === DNS_STATUS || rows[indexes[i]].status === DNF_STATUS )
+    }
+    return statuses.some(s => s)
   }
 
   notRiddenStage (rows, indexes, index) {
