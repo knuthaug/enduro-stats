@@ -88,9 +88,8 @@ tap.test('search page responds with 200', async t => {
     .post('/sok')
     .send('search=espen')
     .end((f) => {
-      console.log(f)
+      t.end()
     })
-  t.end()
 })
 
 stop()

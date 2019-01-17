@@ -95,7 +95,7 @@ a:hover {
   transition: all 0.3s ease;
 }
 
-.shower {
+.shower, .icon {
   cursor: pointer;
 }
 
@@ -144,6 +144,19 @@ a:hover {
 
 .m-m-t {
   margin-top: 1.5rem;
+}
+
+.list-group, .list-group-item, .list-group-item-dark {
+  background-color: #333;
+  color: #fff;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+#compare-list i {
+  margin-right: 1rem;
 }
 
 .beta {

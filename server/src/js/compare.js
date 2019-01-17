@@ -1,3 +1,4 @@
+const feather = require('feather-icons')
 
 document.addEventListener('DOMContentLoaded', function (event) {
   setupCompareSearch()
@@ -21,7 +22,8 @@ function setupCompareSearch () {
   })
 
   search.addEventListener('change', function (e) {
-    let _value = null
+    let uid
+    let name
 
     let inputValue = search.value
     let options = document.getElementById('compare-search-list').children
@@ -30,23 +32,67 @@ function setupCompareSearch () {
     while (i--) {
       let option = options[i]
 
-      if (option.value == inputValue) {
-        _value = option.getAttribute('data-uid')
+      if (option.value === inputValue) {
+        uid = option.getAttribute('data-uid')
+        name = option.value
         break
       }
     }
 
-    if (_value == null) {
+    if (uid === null) {
       return false
     }
 
-    //search.setAttribute('data-uid', _value)
-    console.log(`add user ${_value}`)
+    addUser(search.parentNode, uid, name)
     search.value = ''
+    const list = document.getElementById('compare-search-list')
+
+    while (list.firstChild) {
+      list.removeChild(list.firstChild);
+    }
     e.preventDefault()
   })
 
   window.compareSearchHintXHR = new XMLHttpRequest()
+}
+
+function addUser(form, uid, name) {
+  const hidden = document.createElement('input')
+  hidden.setAttribute('type', 'hidden')
+  hidden.value = uid
+  hidden.setAttribute('id', uid)
+  form.appendChild(hidden)
+
+  const list = document.getElementById('compare-list')
+  const listElement = document.createElement('li')
+
+  const cross = document.createElement('i')
+  cross.classList.add('icon')
+  cross.innerHTML = feather.icons['x-circle'].toSvg()
+
+  cross.addEventListener('click', (event) => {
+    const item = event.target.closest('.list-group-item')
+    console.log(item)
+    list.removeChild(item)
+    //find form item
+    const formItem = document.getElementById(`${uid}`)
+    form.removeChild(formItem)
+
+    if(list.childNodes.length < 2) {
+      document.getElementById('compare').classList.add('hidden')
+    }
+  })
+
+  listElement.appendChild(cross)
+  listElement.setAttribute('data-uid', uid)
+  listElement.appendChild(document.createTextNode(name))
+  listElement.classList.add('list-group-item-dark', 'list-group-item')
+  list.appendChild(listElement)
+
+  if(list.childNodes.length > 1) {
+    document.getElementById('compare').classList.remove('hidden')
+  } 
+
 }
 
 function compareSearchHint (event) {

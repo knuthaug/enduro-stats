@@ -9,10 +9,17 @@
 <div class="row">
   <div class="col-2"></div>
   <div class="col-8">
-    <form id="compare-search-form" class="form-inline mt-2 mt-md-0" method="" action="">
+    <form id="compare-search-form" class="form-inline mt-2 mt-md-0" method="post" action="/sammenlign">
       Søk fram ryttere: <input class="form-control mr-sm-2 autoComplete" id="compare-search-field" type="text" name="search" placeholder="søk" aria-label="Search" list="compare-search-list" autocomplete="off">
       <datalist id="compare-search-list"></datalist>
+      <button type="submit" class="btn form-control mr-sm-2 hidden" id="compare" name="compare" aria-label="Sammenlign" autocomlete="off">Sammenlign</button>
     </form>
+  </div>
+</div>
+<div class="row">
+  <div class="col-2"></div>
+  <div class="col-6">
+    <ul id="compare-list" class="list-group"></ul>
   </div>
 </div>
 
