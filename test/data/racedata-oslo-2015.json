@@ -1,0 +1,23 @@
+{
+  "name": "Oslo enduro",
+  "year": 2015,
+  "date": "2015-08-16",
+  "series": "80/20 enduro series",
+  "links": [
+    {
+      "type": "images",
+      "url": "http://www.mtbfoto.no/gallery/80twenty-enduro-oslo-2015/",
+      "desc": "Bilder mtbfoto.no"
+    },
+    {
+      "type": "results",
+      "url": "http://www.8020es.no/s/OsloEnduro2015Final.pdf",
+      "desc": "Originale resultater"
+    },
+    {
+      "url": "https://vimeo.com/137309890",
+      "type": "film",
+      "desc": "Ritt-film (vimeo)"
+    }
+  ]
+}

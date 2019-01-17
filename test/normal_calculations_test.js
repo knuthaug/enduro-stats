@@ -117,3 +117,72 @@ tap.test('calculate final rank based on acc_time_ms for last stage', async t => 
   t.equals(third.final_rank, 3, 'third lowest time gets stage_rank 3')
   t.end()
 })
+
+tap.test('fine tune dns/dnf', async t => {
+  const c = new StageCalculations()
+  const rows = JSON.parse(fs.readFileSync(path.join(__dirname, './data/race-results-menn-oslo-2013.json')))
+  const result = c.differentials(rows)
+  const partialRider = result.filter((r) => {
+    return r.rider_id === 1013
+  })
+
+  t.equals(partialRider[0].status, 'OK', 'OK for first stage')
+  t.equals(partialRider[1].status, 'OK', 'OK for second stage')
+  t.equals(partialRider[2].status, 'DNF', 'DNF for third stage')
+  t.equals(partialRider[3].status, 'DNS', 'DNF for fourth stage')
+  t.equals(partialRider[4].status, 'DNS', 'DNF for fourth stage')
+  t.equals(partialRider[4].final_status, 'DNF', 'DNF as final_status for partial race')
+  t.end()
+})
+
+tap.test('fine tune dns/dnf contiued', async t => {
+  const c = new StageCalculations()
+  const rows = JSON.parse(fs.readFileSync(path.join(__dirname, './data/race-results-menn-drammen-2014.json')))
+  const result = c.differentials(rows)
+
+  const okRider = result.filter((r) => {
+    return r.rider_id === 1697
+  })
+
+  t.equals(okRider[0].status, 'OK', 'OK for first stage')
+  t.equals(okRider[1].status, 'OK', 'OK for second stage')
+  t.equals(okRider[2].status, 'OK', 'OK for third stage')
+  t.equals(okRider[3].status, 'OK', 'OK for fourth stage')
+  t.equals(okRider[3].final_status, 'OK', 'OK as final_status for all stages completed')
+
+  const partialRider = result.filter((r) => {
+    return r.rider_id === 803
+  })
+
+  t.equals(partialRider[0].status, 'OK', 'OK for first stage')
+  t.equals(partialRider[1].status, 'OK', 'OK for second stage')
+  t.equals(partialRider[2].status, 'DNF', 'DNF for third stage')
+  t.equals(partialRider[3].status, 'DNS', 'DNF for fourth stage')
+  t.equals(partialRider[3].final_status, 'DNF', 'DNF as final_status for aborted race')
+
+  const dnsRider = result.filter((r) => {
+    return r.rider_id === 1715
+  })
+
+  t.equals(dnsRider[0].status, 'DNS', 'DNS for first stage')
+  t.equals(dnsRider[1].status, 'DNS', 'DNS for second stage')
+  t.equals(dnsRider[2].status, 'DNS', 'DNS for third stage')
+  t.equals(dnsRider[3].status, 'DNS', 'DNS for fourth stage')
+  t.equals(dnsRider[3].final_status, 'DNS', 'DNS as final_status for no stages ridden')
+  t.end()
+})
+
+tap.test('fine tune dns/dnf contiued', async t => {
+  const c = new StageCalculations()
+  const rows = JSON.parse(fs.readFileSync(path.join(__dirname, './data/race-results-explorer-kvinner-nesfjella.json')))
+  const result = c.differentials(rows)
+
+  const okRider = result.filter((r) => {
+    return r.rider_id === 17717
+  })
+
+  t.equals(okRider[5].final_status, 'DNF', 'DNF as two stages are DNS')
+  t.end()
+})
+
+

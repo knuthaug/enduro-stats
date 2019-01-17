@@ -2,7 +2,7 @@ const log = require('./log.js')
 const Db = require('./db.js')
 const resultViewMapper = require('./resultViewMapper.js')
 const raceViewMapper = require('./raceViewMapper.js')
-const riderViewMapper = require('./riderViewMapper.js')
+const { riderViewMapper, toNumber } = require('./riderViewMapper.js')
 const bestSeason = require('./bestSeason.js')
 const compareAsc = require('date-fns/compare_asc')
 const parse = require('date-fns/parse')
@@ -120,6 +120,11 @@ async function riderHandler (req) {
   }
 
   const rawRaces = await db.raceResultsForRider(req.params.uid)
+
+  if (!rawRaces.length) {
+    return { status: 404, message: 'Rytteren finnes i databasen, men det fantes ingen ritt for denne rytteren (noe som tyder på en feil et sted hos oss)'}
+  }
+
   const races = riderViewMapper(rawRaces)
   const numRaces = races.length
 
@@ -129,13 +134,9 @@ async function riderHandler (req) {
 
   const ridersPerClass = await db.ridersForClassAndRace(raceIds)
 
-  const results = races.map((r) => {
-    return Object.assign(r, { count: ridersPerClass[r.race] })
-  }).sort((a, b) => {
-    return compareAsc(parse(b.date), parse(a.date))
-  })
+  const results = percentRanks(races, ridersPerClass)
 
-  const chartObject = toChartData(results)
+  const { placesChart, percentChart } = toChartData(results)
 
   const { year, avg, score } = bestSeason(results)
   const startYear = results[results.length - 1].year
@@ -146,7 +147,8 @@ async function riderHandler (req) {
     numRaces,
     startYear,
     year,
-    chartObject,
+    placesChart,
+    percentChart,
     avg,
     score,
     results,
@@ -155,8 +157,32 @@ async function riderHandler (req) {
   }
 }
 
+function percentRanks(races, ridersPerClass) {
+  return races.map((r) => {
+    return Object.assign(r, { count: ridersPerClass[r.race] })
+  }).map((r) => {
+    r.details = r.details.map((d) => {
+      d.percent_rank = (d.rank/r.count) * 100
+      return d
+    })
+
+    r.chartData = JSON.stringify(r.details.map((e) => {
+      return [ toNumber(e.name), e.percent_rank]
+    }))
+
+    //avg for percent_rank
+    r.avg_percent_rank = r.details.reduce((acc, cur) => {
+      return acc + cur.percent_rank
+    }, 0) / r.details.length
+
+    return r
+  }).sort((a, b) => {
+    return compareAsc(parse(b.date), parse(a.date))
+  })
+}
+
 function toChartData (results) {
-  return JSON.stringify(results.map((e) => {
+  const placesChart = JSON.stringify(results.map((e) => {
     if (e.time !== 'DNS' && e.time !== 'DNF') {
       return { x: e.date, y: e.rank, class: e.class, race: e.raceName, properDate: parse(e.date) }
     }
@@ -165,6 +191,18 @@ function toChartData (results) {
   }).sort((a, b) => {
     return compareAsc(a.properDate, b.properDate)
   }))
+
+  const percentChart = JSON.stringify(results.map((e) => {
+    if (e.time !== 'DNS' && e.time !== 'DNF') {
+      return { x: e.date, y: ((e.rank/e.count) * 100), class: e.class, race: e.raceName, properDate: parse(e.date) }
+    }
+  }).filter((e) => {
+    return typeof e !== 'undefined'
+  }).sort((a, b) => {
+    return compareAsc(a.properDate, b.properDate)
+  }))
+
+  return { placesChart, percentChart }
 }
 
 

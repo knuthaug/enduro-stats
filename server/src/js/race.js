@@ -58,7 +58,12 @@ function placeFormatter () {
 }
 
 function timeFormatter () {
-  return `<span>${this.series.name}<br/>${this.point.x} etappe: ${Math.abs(this.point.y).toFixed(1)} sekunder bak</span>`
+  const value = Math.abs(this.point.y).toFixed(1)
+  return `<span>${this.series.name}<br/>${this.point.x} etappe: ${value} ${secondLabel(value)} bak</span>`
+}
+
+function secondLabel(value) {
+  return value  === '1.0' ? 'sekund' : 'sekunder'
 }
 
 function setupRaceDetailGraph (element) {
@@ -83,10 +88,11 @@ function setupRaceDetailGraph (element) {
     },
     tooltip: {
       formatter: function () {
+        const value = Math.abs(this.point.y).toFixed(1)
         if(this.point.y < 0 ) {
-          return `<span>${this.series.name}<br/>${this.point.x} etappe:${Math.abs(this.point.y).toFixed(1)} sekunder foran</span>`
+          return `<span>${this.series.name}<br/>${this.point.x} etappe: ${value} ${secondLabel(value)} foran</span>`
         }
-        return `<span>${this.series.name}<br/>${this.point.x} etappe:${Math.abs(this.point.y).toFixed(1)} sekunder bak</span>`
+        return `<span>${this.series.name}<br/>${this.point.x} etappe: ${value} ${secondLabel(value)} bak</span>`
       }
     },
     yAxis: {

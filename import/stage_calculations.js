@@ -1,4 +1,4 @@
-const { ERROR_STATUS, ERROR_RANK, DNS_STATUS, DNF_STATUS } = require('./constants.js')
+const { ERROR_STATUS, ERROR_RANK, DNS_STATUS, DNF_STATUS, OK_STATUS } = require('./constants.js')
 
 const { indexOf, maxValue, stagesForRider, rowsForRider, find } = require('./listUtil.js')
 
@@ -43,10 +43,28 @@ class StageCalculations {
     const stageIndexes = stagesForRider(rows, riderId)
 
     let err = false
+    let abortedRace = false
+    let notStartedRace = false
+
     for (let i = 0; i < stageIndexes.length; i++) {
+      if (!abortedRace && this.abortedRace(rows, stageIndexes, i)) {
+        abortedRace = true
+        rows[stageIndexes[i]].status = DNF_STATUS
+      }
+
+      if (this.notRiddenStage(rows, stageIndexes, i)) {
+        rows[stageIndexes[i]].status = DNS_STATUS
+      }
+
       if (this.notFinished(rows[stageIndexes[i]]) || rows[stageIndexes[i]].stage_time_ms === 0) {
         err = true
       }
+
+      if(i === stageIndexes.length - 1) { // last stage, check if all stages are DNS
+        notStartedRace = this.notStartedRace(rows, stageIndexes, rows[stageIndexes[i]].rider_id)
+        abortedRace = this.fullAbortedRace(rows, stageIndexes, rows[stageIndexes[i]].ride_id)
+      }
+
     }
 
     for (let i = 0; i < stageIndexes.length; i++) {
@@ -55,7 +73,50 @@ class StageCalculations {
         // rows[stageIndexes[i]].behind_leader_ms = 0
         rows[stageIndexes[i]].acc_time_behind = 0
       }
+
+
+      if(i === stageIndexes.length - 1) {
+        if(abortedRace && !notStartedRace) {
+          rows[stageIndexes[i]].final_status = DNF_STATUS
+        } else if (notStartedRace){
+          rows[stageIndexes[i]].final_status = DNS_STATUS
+        } else if(!abortedRace && !notStartedRace){
+          rows[stageIndexes[i]].final_status = OK_STATUS
+        }
+      }
     }
+  }
+
+  // are all stages DNS?
+  notStartedRace(rows, indexes, id) {
+    const statuses = []
+    for (let i = 0; i < indexes.length; i++) {
+      statuses.push(rows[indexes[i]].status === DNS_STATUS)
+    }
+    return statuses.every(s => s)
+  }
+
+  // arer some stages either DNS or DNF?
+  fullAbortedRace(rows, indexes, id) {
+    const statuses = []
+    for (let i = 0; i < indexes.length; i++) {
+      statuses.push(rows[indexes[i]].status === DNS_STATUS || rows[indexes[i]].status === DNF_STATUS )
+    }
+    return statuses.some(s => s)
+  }
+
+  notRiddenStage (rows, indexes, index) {
+    const obj = rows[indexes[index]]
+    return obj.status === DNS_STATUS
+  }
+
+  abortedRace (rows, indexes, index) {
+    if(index === 0) {
+      return false
+    }
+
+    const obj = rows[indexes[index]]
+    return (obj.status === DNS_STATUS || obj.status === DNF_STATUS) && rows[indexes[index - 1]].status === OK_STATUS
   }
 
   lastStages (rows, stages) {
@@ -147,18 +208,19 @@ class StageCalculations {
         for (let j = 0; j < stages.length; j++) {
           if (!find(ro, 'stage', stages[j])) {
             rows.push(this.defaultResult(stages[j],
-              stageIds[j],
-              ro[0].race_id,
-              ro[0].rider_id,
-              ro[0].class,
-              maxValue(rows, 'id')))
+                                         stageIds[j],
+                                         ro[0].race_id,
+                                         ro[0].rider_id,
+                                         ro[0].class,
+                                         maxValue(rows, 'id'),
+                                         find(ro, 'stage', stages[j - 1])))
           }
         }
       }
     }
   }
 
-  defaultResult (stage, stageId, raceId, riderId, clazz, id) {
+  defaultResult (stage, stageId, raceId, riderId, clazz, id, previous) {
     return {
       id: id + 1,
       rank: ERROR_RANK,
@@ -171,7 +233,7 @@ class StageCalculations {
       race_id: raceId,
       stage_rank: ERROR_RANK,
       stage_time_ms: 0,
-      status: DNS_STATUS
+      status: previous ? DNF_STATUS : DNS_STATUS
     }
   }
 }

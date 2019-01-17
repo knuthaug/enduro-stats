@@ -93,8 +93,27 @@ const subs = {
   'Jørgen Strømquist': 'Jørgen Beyer Strømquist',
   'Jonas Strømquist': 'Jonas Beyer Strømquist',
   'Anette Bastnes': 'Anette Røssum Bastnes',
-  'Lars Sandviken': 'Lars Vatnebryn Sandviken'
-}
+  'Lars Sandviken': 'Lars Vatnebryn Sandviken',
+  'Jarstø Karl Håkon': 'Karl Håkon Jarstø',
+  'Aleksander Dystetud': 'Aleksander Dysterud',
+  'Andre Jaksland Aamodt': 'Andre Aamodt',
+  'Andreas Hegrum': 'Andreas Hegrum Askjer',
+  'Eirik Haanes': 'Eirik Lind Hånes',
+  'Eirik Hånes' : 'Eirik Lind Hånes',
+  'Elin K Morgan' : 'Elin Katrine Morgan',
+  'Elise Bugge': 'Elise Marie Bugge',
+  'Joar Sorvik Solem' : 'Joar Sørvik Solem',
+  'Joar Solem': 'Joar Sørvik Solem',
+  'Jørgen Dolvik Husbyn': 'Jørgen Dølvik Husbyn',
+  'Paal Nyman': 'Paal Nymann',
+  'Petter Fryksen Lund': 'Petter Fyksen Lund',
+  'Philip Bjørkesett': 'Philip Johannessen Bjørkesett',
+  'Sebastian M. Andreassen' : 'Sebastian Andreassen',
+  'Thomas Asbjørnhus': 'Thomas Gajda Asbjørnhus',
+  'Tormod Brg Olsen': 'Tormod Berg Olsen',
+  'Srian Lunn': 'Stian Lunn',
+  'Siv Nygaard': 'Siv Elisabeth Nygaard'
+ }
 
 function check (name) {
   const n = normalizeCase(name)
@@ -117,12 +136,11 @@ function checkClub (name) {
 function normalizeCase (name) {
   return name.toLowerCase()
     .replace(/[|]/g, '') // cleanup
-    .replace(/\s+/g, ' ') // cleanup
+    .replace(/\s+/g, ' ') // trunk multiple spaces
     .replace(/^\w|\s\w/g, upperCase)
     .replace(/-[a-z]/g, upperCase) // convert first char after hyphen to UPPERCASE
-    .replace(/^[æøå]|\s[æøå]/g, upperCase) // norwegian chars
-    .replace(/^[äö]|\s[äö]/g, upperCase) // swedish chars
-    .replace(/^[ó]|\s[ó]/g, upperCase) // icelandic chars
+    .replace(/^[æøåóäöź]|\s[æøåóäö]/g, upperCase) // swedish chars
+    .replace(/\s(\w)\s/, ' $1. ')
     .trim()
 }
 

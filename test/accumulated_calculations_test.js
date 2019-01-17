@@ -173,6 +173,23 @@ tap.test('Handle stages where there are times and dnf/error status', async t => 
   t.end()
 })
 
+tap.test('fine tune dns/dnf continued', async t => {
+  const c = new StageCalculations()
+  const rows = JSON.parse(fs.readFileSync(path.join(__dirname, './data/race-results-menn-oslo-2015.json')))
+  const result = c.differentials(rows)
+  const partialRider = result.filter((r) => {
+    return r.rider_id === 5730
+  })
+
+  t.equals(partialRider[0].status, 'OK', 'OK for first stage')
+  t.equals(partialRider[1].status, 'OK', 'OK for second stage')
+  t.equals(partialRider[2].status, 'OK', 'DNF for third stage')
+  t.equals(partialRider[3].status, 'DNF', 'DNF for fourth stage')
+  t.equals(partialRider[4].status, 'DNS', 'DNF for fourth stage')
+  t.equals(partialRider[4].final_status, 'DNF', 'DNF as final_status')
+  t.end()
+})
+
 tap.test('Misc. tests', async t => {
   const rows = JSON.parse(fs.readFileSync(path.join(__dirname, './data/nesbyen-2015-complete.json')))
   const result = c.differentials(rows)

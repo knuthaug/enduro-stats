@@ -7,6 +7,7 @@
  * rider gender in 'gender'
  * class in field 'Class'
  * time in field 'time', format hh:mm:ss
+ * final position/status in 'Pos Klasse' field
  * @name mylaps.js
  * @author Knut Haugen
  * @license ISC
@@ -15,7 +16,7 @@
 const csv = require('neat-csv')
 const fs = require('await-fs')
 const logger = require('../logger.js')
-const { ERROR_RANK, DNS_STATUS, DNF_STATUS } = require('../constants.js')
+const { ERROR_RANK, DNS_STATUS, DNF_STATUS, OK_STATUS } = require('../constants.js')
 const { check } = require('../spellcheck.js')
 const { convertTimeToMs } = require('../../lib/time.js')
 const Converter = require('./converter.js')
@@ -99,6 +100,7 @@ class Mylaps extends Converter {
             class: this.className(raw[j].Class),
             club: this.clubName(raw[j].club || ''),
             stage_time_ms: time,
+            final_status: this.finalStatus(raw[j]['Pos Klasse']),
             acc_time_ms: null,
             stage_rank: this.stageRank(parseInt(raw[j][`${stage.name} Pos`], 10)),
             status: this.setStatus(raw[j][`${stage.name} Pos`], raw[j][stage.name])
@@ -121,6 +123,14 @@ class Mylaps extends Converter {
     }
 
     return stages
+  }
+
+  finalStatus(value) {
+    if (value === DNS_STATUS || value === DNF_STATUS) {
+      return value
+    }
+
+    return OK_STATUS
   }
 
   stageRank (rank) {

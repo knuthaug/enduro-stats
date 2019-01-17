@@ -46,6 +46,7 @@ module.exports = function resultViewMapper (classes, results) {
       riders[rider]['acc_time'] = convertMsToTime(results[i].acc_time_ms)
       riders[rider]['acc_time_behind_ms'] = results[i].acc_time_behind
       riders[rider]['acc_time_ms'] = results[i].acc_time_ms
+      riders[rider]['final_status'] = results[i].final_status
     }
   }
 

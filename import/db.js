@@ -110,13 +110,13 @@ class Db {
   }
 
   async insertRawResult (raceId, riderId, stageNumber, result) {
-    const query = 'INSERT INTO raw_results(rank, time, status, class, stage_id, rider_id, race_id, acc_time_ms, stage_time_ms, stage_rank) VALUES($1, $2, $3, $4, (SELECT id from stages where race_id = $6 and number = $7), $5, $6, $8, $9, $10)'
-    const values = [result.rank, result.time, result.status, result.class, riderId, raceId, stageNumber, result.acc_time_ms, result.stage_time_ms, result.stage_rank]
+    const query = 'INSERT INTO raw_results(rank, time, status, class, stage_id, rider_id, race_id, acc_time_ms, stage_time_ms, stage_rank, final_status) VALUES($1, $2, $3, $4, (SELECT id from stages where race_id = $6 and number = $7), $5, $6, $8, $9, $10, $11)'
+    const values = [result.rank, result.time, result.status, result.class, riderId, raceId, stageNumber, result.acc_time_ms, result.stage_time_ms, result.stage_rank, result.final_status]
     return this.insert(query, values)
   }
 
   async insertCalculatedResults (raceId, result) {
-    const query = 'INSERT INTO results(rank, time, acc_time_ms, status, class, stage_id, rider_id, race_id, stage_time_ms, stage_rank, behind_leader_ms, acc_time_behind, final_rank, behind_leader_percent) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14)'
+    const query = 'INSERT INTO results(rank, time, acc_time_ms, status, class, stage_id, rider_id, race_id, stage_time_ms, stage_rank, behind_leader_ms, acc_time_behind, final_rank, behind_leader_percent, final_status) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15)'
     for (let i = 0; i < result.length; i++) {
       // console.log(result[i])
       const stageId = await this.findStageByRace(raceId, result[i].stage)
@@ -134,7 +134,8 @@ class Db {
         result[i].behind_leader_ms,
         result[i].acc_time_behind,
         result[i].final_rank,
-        result[i].behind_leader_percent
+        result[i].behind_leader_percent,
+        result[i].final_status
       ]
       // console.log(values)
       await this.insert(query, values)

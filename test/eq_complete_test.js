@@ -61,6 +61,34 @@ tap.test('Object details for stages, non-accumulative mode', async t => {
   t.equals(stage1.results[1].behind_leader_ms, 1000, 'time behind leader in stage is correct')
 })
 
+tap.test('dnf/dns tuning', async t => {
+  const eq = new EqConverter(path.join(__dirname, 'data/oslo-2015.csv'), {
+    acc: false,
+    mode: 'complete',
+    datafile: path.join(__dirname, 'data/racedata-oslo-2015.json')
+  })
+
+  const loaded = await eq.load()
+  const data = await loaded.parse()
+
+  const thirdStage = data.stages[2].results.find((s) => {
+    return s.class === 'Menn senior' && s.name === 'Knut Haugen'
+  })
+
+  const fourthStage = data.stages[3].results.find((s) => {
+    return s.class === 'Menn senior' && s.name === 'Knut Haugen'
+  })
+
+  const lastStage = data.stages[4].results.find((s) => {
+    return s.class === 'Menn senior' && s.name === 'Knut Haugen'
+  })
+
+  t.equals(thirdStage.status, 'OK', 'OK in third stage')
+  t.equals(fourthStage.status, 'DNS', 'DNF in fourth stage')
+  t.equals(lastStage.status, 'DNS', 'DNS in fifth stage')
+  t.end()
+})
+
 tap.test('Object details for stages, accumulative mode', async t => {
   const eq = new EqConverter(path.join(__dirname, 'data/complete-acc-race.csv'), {
     acc: true,

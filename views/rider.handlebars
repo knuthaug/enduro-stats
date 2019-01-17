@@ -14,7 +14,11 @@
   <div class="col-8">
     <div class="row">
       <div class="col-12">
-        <div id="rider-chart" class="rider-chart" data-object="{{chartObject}}"></div>
+        Velg graf <select id="rider-graph-selector" class="mb-2 rider-graph-selector">
+        <option value="percent" selected>Prosentvis plassering</option>
+        <option value="places">Plassering i klasse</option>
+        </select>
+        <div id="rider-chart" class="rider-chart" data-object-places="{{placesChart}}" data-object-percent="{{percentChart}}"></div>
       </div>
     </div>
   </div>
@@ -66,6 +70,13 @@
                       <td>{{rank}}</td>
                       {{/each}}
                       <td>{{avg_rank}}</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Plass % av antall</strong></td>
+                      {{#each details}}
+                      <td>{{formatPercent percent_rank}}%</td>
+                      {{/each}}
+                      <td>{{formatPercent avg_percent_rank}}%</td>
                     </tr>
                     <tr>
                       <td><strong>Tid</strong></td>
