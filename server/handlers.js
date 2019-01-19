@@ -6,10 +6,10 @@ const { riderViewMapper, toNumber } = require('./riderViewMapper.js')
 const bestSeason = require('./bestSeason.js')
 const compareAsc = require('date-fns/compare_asc')
 const parse = require('date-fns/parse')
-
+const comparisonMapper = require('./comparisonMapper.js')
 const db = new Db()
 
-async function racesHandler(req) {
+async function racesHandler (req) {
   const races = raceViewMapper(await db.findRaces())
   return {
     status: 200,
@@ -19,9 +19,20 @@ async function racesHandler(req) {
   }
 }
 
-async function compareHandler(req) {
+async function compareHandler (req) {
+  const ridersParam = req.query.riders
+  let ridersData = []
+  let riders = []
+
+  if (ridersParam) {
+    ridersData = comparisonMapper(await db.raceResultsForRiders(ridersParam))
+    riders = await db.findRiders(ridersParam)
+  }
+
   return {
-    status: 200
+    status: 200,
+    ridersData,
+    riders
   }
 }
 
@@ -30,7 +41,7 @@ async function raceHandler (req) {
   const race = await db.findRace(req.params.uid)
 
   if (!race.id) {
-    return { status: 404}
+    return { status: 404 }
   }
 
   const links = await db.findRaceLinks(race.id)
@@ -73,11 +84,10 @@ async function indexHandler () {
 async function ridersHandler (req) {
   log.debug(`request for ${req.path}`)
   const riders = await db.findAllRiders().then((data) => {
-    return  data.filter((r) => {
+    return data.filter((r) => {
       return r.count !== '0'
     })
   })
-
 
   return {
     status: 200,
@@ -87,7 +97,7 @@ async function ridersHandler (req) {
   }
 }
 
-async function searchHandler(req, res) {
+async function searchHandler (req, res) {
   let results = await db.search(req.body.search)
 
   if (results.length === 0) {
@@ -101,7 +111,7 @@ async function searchHandler(req, res) {
   }
 }
 
-async function jsonSearchHandler(req) {
+async function jsonSearchHandler (req) {
   let results = await db.search(req.query.q)
 
   if (results.length === 0) {
@@ -116,13 +126,13 @@ async function riderHandler (req) {
   const rider = await db.findRider(req.params.uid)
 
   if (!rider.id) {
-    return { status: 404}
+    return { status: 404 }
   }
 
   const rawRaces = await db.raceResultsForRider(req.params.uid)
 
   if (!rawRaces.length) {
-    return { status: 404, message: 'Rytteren finnes i databasen, men det fantes ingen ritt for denne rytteren (noe som tyder på en feil et sted hos oss)'}
+    return { status: 404, message: 'Rytteren finnes i databasen, men det fantes ingen ritt for denne rytteren (noe som tyder på en feil et sted hos oss)' }
   }
 
   const races = riderViewMapper(rawRaces)
@@ -157,20 +167,20 @@ async function riderHandler (req) {
   }
 }
 
-function percentRanks(races, ridersPerClass) {
+function percentRanks (races, ridersPerClass) {
   return races.map((r) => {
     return Object.assign(r, { count: ridersPerClass[r.race] })
   }).map((r) => {
     r.details = r.details.map((d) => {
-      d.percent_rank = (d.rank/r.count) * 100
+      d.percent_rank = (d.rank / r.count) * 100
       return d
     })
 
     r.chartData = JSON.stringify(r.details.map((e) => {
-      return [ toNumber(e.name), e.percent_rank]
+      return [ toNumber(e.name), e.percent_rank ]
     }))
 
-    //avg for percent_rank
+    // avg for percent_rank
     r.avg_percent_rank = r.details.reduce((acc, cur) => {
       return acc + cur.percent_rank
     }, 0) / r.details.length
@@ -194,7 +204,7 @@ function toChartData (results) {
 
   const percentChart = JSON.stringify(results.map((e) => {
     if (e.time !== 'DNS' && e.time !== 'DNF') {
-      return { x: e.date, y: ((e.rank/e.count) * 100), class: e.class, race: e.raceName, properDate: parse(e.date) }
+      return { x: e.date, y: ((e.rank / e.count) * 100), class: e.class, race: e.raceName, properDate: parse(e.date) }
     }
   }).filter((e) => {
     return typeof e !== 'undefined'
@@ -204,7 +214,6 @@ function toChartData (results) {
 
   return { placesChart, percentChart }
 }
-
 
 module.exports = {
   raceHandler,

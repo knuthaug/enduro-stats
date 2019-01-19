@@ -1,18 +1,51 @@
+{{#if ridersData}}
+
 <div class="row">
   <div class="col-2">
   </div>
   <div class="col-8">
     <h2>Sammenligne ryttere</h2>
-    <p>Velg en eller flere ryttere for sammenligning. Grunnlaget er ritt alle eller noen av ryttere man velger har deltatt i, basert på etappetider, plasseringer osv. 
+    <h4>Ryttere</h4>
+    <ul id="compare-list" class="list-group">
+      {{#each riders}}
+      <li class="list-group-item list-group-item-dark py-1">{{this.name}}</li>
+      {{/each}}
+    </ul>
   </div>
 </div>
 <div class="row">
   <div class="col-2"></div>
   <div class="col-8">
-    <form id="compare-search-form" class="form-inline mt-2 mt-md-0" method="post" action="/sammenlign">
-      Søk fram ryttere: <input class="form-control mr-sm-2 autoComplete" id="compare-search-field" type="text" name="search" placeholder="søk" aria-label="Search" list="compare-search-list" autocomplete="off">
+    <h4>Felles ritt</h4>
+    <ul class="list-group">
+      {{#each ridersData}}
+      <li class="list-group-item list-group-item-dark">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">{{name}}</h5>
+          <small class="text-muted">{{date}}</small>
+        </div>
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+</div>
+{{else}}
+<div class="row">
+  <div class="col-2">
+  </div>
+  <div class="col-8">
+    <h2>Sammenligne ryttere</h2>
+
+    <p>Velg en eller flere ryttere for sammenligning. Grunnlaget er ritt alle eller noen av ryttere man velger har deltatt i, basert på etappetider, plasseringer osv.</p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-2"></div>
+  <div class="col-8">
+    <form id="compare-search-form" class="form-inline mt-2 mt-md-0" method="get" action="/sammenlign">
+      Søk fram ryttere: <input class="form-control mr-sm-2 autoComplete" id="compare-search-field" type="text"placeholder="søk" aria-label="Search" list="compare-search-list" autocomplete="off">
       <datalist id="compare-search-list"></datalist>
-      <button type="submit" class="btn form-control mr-sm-2 hidden" id="compare" name="compare" aria-label="Sammenlign" autocomlete="off">Sammenlign</button>
+      <button type="submit" class="btn form-control mr-sm-2 hidden" id="compare" aria-label="Sammenlign" autocomlete="off">Sammenlign</button>
     </form>
   </div>
 </div>
@@ -22,5 +55,6 @@
     <ul id="compare-list" class="list-group"></ul>
   </div>
 </div>
+{{/if}}
 
 <script src="/assets/js/{{hashedAssets 'compare.js'}}" crossorigin="anonymous"></script>

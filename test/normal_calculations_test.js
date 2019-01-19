@@ -184,5 +184,3 @@ tap.test('fine tune dns/dnf contiued', async t => {
   t.equals(okRider[5].final_status, 'DNF', 'DNF as two stages are DNS')
   t.end()
 })
-
-

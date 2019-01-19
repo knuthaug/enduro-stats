@@ -59,6 +59,7 @@ function setupCompareSearch () {
 function addUser(form, uid, name) {
   const hidden = document.createElement('input')
   hidden.setAttribute('type', 'hidden')
+  hidden.setAttribute('name', 'riders')
   hidden.value = uid
   hidden.setAttribute('id', uid)
   form.appendChild(hidden)

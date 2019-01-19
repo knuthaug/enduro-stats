@@ -125,7 +125,7 @@ class Mylaps extends Converter {
     return stages
   }
 
-  finalStatus(value) {
+  finalStatus (value) {
     if (value === DNS_STATUS || value === DNF_STATUS) {
       return value
     }

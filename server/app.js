@@ -27,7 +27,7 @@ const handler = function (template, dataHandler, cacheTime) {
   return async function (req, res) {
     const context = await dataHandler(req)
 
-    if(context.status !== 200) {
+    if (context.status !== 200) {
       return render(res, '404', context, NOT_FOUND_CACHE_TIME, 404)
     }
     return render(res, template, context, cacheTime || DEFAULT_CACHE_TIME_PAGES)
@@ -62,8 +62,8 @@ app.set('view engine', 'handlebars')
 app.get('/', handler('index', handlers.indexHandler, 2000))
 app.get('/ritt', handler('races', handlers.racesHandler))
 app.get('/ritt/:uid', handler('race', handlers.raceHandler, DEFAULT_CACHE_TIME_PAGES))
-app.get('/om', handler('about', () => { return { status: 200, active: 'om', title: 'Om norsk enduro'}}))
-app.get('/kalender', handler('cal', () => { return { status: 200, active: 'cal', title: 'Rittkalender 2019'}}))
+app.get('/om', handler('about', () => { return { status: 200, active: 'om', title: 'Om norsk enduro' } }))
+app.get('/kalender', handler('cal', () => { return { status: 200, active: 'cal', title: 'Rittkalender 2019' } }))
 app.get('/rytter/:uid', handler('rider', handlers.riderHandler))
 app.get('/ryttere', handler('riders', handlers.ridersHandler))
 app.get('/sammenlign', handler('compare', handlers.compareHandler))
@@ -108,7 +108,7 @@ function render (res, template, context, maxAge, status) {
     .render(template, context)
 }
 
-function stop() {
+function stop () {
   db.destroy()
 }
 
