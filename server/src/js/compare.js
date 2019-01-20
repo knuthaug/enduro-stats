@@ -5,55 +5,76 @@ document.addEventListener('DOMContentLoaded', function (event) {
 })
 
 function setupCompareSearch () {
-  var form = document.getElementById('compare-search-form')
-  var search = document.getElementById('compare-search-field')
+  const form = document.getElementById('compare-search-form')
+  const search = document.getElementById('compare-search-field')
 
-  form.addEventListener('submit', function (event) {
-    const search = document.getElementById('compare-search-field')
-    if (search.getAttribute('data-uid')) {
-      search.setAttribute('value', search.getAttribute('data-uid'))
-    }
-  })
-
-  search.addEventListener('keyup', function (event) {
-    if (event.code) {
-      compareSearchHint(event)
-    }
-  })
-
-  search.addEventListener('change', function (e) {
-    let uid
-    let name
-
-    let inputValue = search.value
-    let options = document.getElementById('compare-search-list').children
-    let i = options.length
-
-    while (i--) {
-      let option = options[i]
-
-      if (option.value === inputValue) {
-        uid = option.getAttribute('data-uid')
-        name = option.value
-        break
-      }
-    }
-
-    if (uid === null) {
-      return false
-    }
-
-    addUser(search.parentNode, uid, name)
-    search.value = ''
-    const list = document.getElementById('compare-search-list')
-
-    while (list.firstChild) {
-      list.removeChild(list.firstChild);
-    }
-    e.preventDefault()
-  })
-
+  form.addEventListener('submit', formOnSubmit)
+  search.addEventListener('keyup', searchOnKeyup)
+  search.addEventListener('change', searchFieldOnChange)
   window.compareSearchHintXHR = new XMLHttpRequest()
+
+  const icons = document.querySelectorAll('.icon')
+  icons.forEach((s) => {
+    s.innerHTML = feather.icons['x-circle'].toSvg()
+    s.addEventListener('click', removeUser)
+  })
+}
+
+function searchOnKeyup(event) {
+  if (event.code) {
+    compareSearchHint(event)
+  }
+}
+
+function formOnSubmit(event) {
+  const search = document.getElementById('compare-search-field')
+  if (search.getAttribute('data-uid')) {
+    search.setAttribute('value', search.getAttribute('data-uid'))
+  }
+}
+
+function searchFieldOnChange(e) {
+  const search = document.getElementById('compare-search-field')
+  let uid
+  let name
+
+  let inputValue = search.value
+  let options = document.getElementById('compare-search-list').children
+  let i = options.length
+
+  while (i--) {
+    let option = options[i]
+
+    if (option.value === inputValue) {
+      uid = option.getAttribute('data-uid')
+      name = option.value
+      break
+    }
+  }
+
+  if (uid === null) {
+    return false
+  }
+
+  addUser(search.parentNode, uid, name)
+  search.value = ''
+  const list = document.getElementById('compare-search-list')
+
+  while (list.firstChild) {
+    list.removeChild(list.firstChild);
+  }
+  e.preventDefault()
+}
+
+function removeUser(event) {
+  const form = document.getElementById('compare-search-form')
+  const list = document.getElementById('compare-list')
+  const item = event.target.closest('.list-group-item')
+
+  list.removeChild(item)
+  //find form item
+  const formItem = document.getElementById(`${item.getAttribute('data-uid')}`)
+  form.removeChild(formItem)
 }
 
 function addUser(form, uid, name) {
@@ -71,29 +92,13 @@ function addUser(form, uid, name) {
   cross.classList.add('icon')
   cross.innerHTML = feather.icons['x-circle'].toSvg()
 
-  cross.addEventListener('click', (event) => {
-    const item = event.target.closest('.list-group-item')
-    console.log(item)
-    list.removeChild(item)
-    //find form item
-    const formItem = document.getElementById(`${uid}`)
-    form.removeChild(formItem)
-
-    if(list.childNodes.length < 2) {
-      document.getElementById('compare').classList.add('hidden')
-    }
-  })
+  cross.addEventListener('click', removeUser)
 
   listElement.appendChild(cross)
   listElement.setAttribute('data-uid', uid)
   listElement.appendChild(document.createTextNode(name))
   listElement.classList.add('list-group-item-dark', 'list-group-item')
   list.appendChild(listElement)
-
-  if(list.childNodes.length > 1) {
-    document.getElementById('compare').classList.remove('hidden')
-  } 
-
 }
 
 function compareSearchHint (event) {

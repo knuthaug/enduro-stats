@@ -1,41 +1,8 @@
-{{#if ridersData}}
-
 <div class="row">
   <div class="col-2">
   </div>
   <div class="col-8">
     <h2>Sammenligne ryttere</h2>
-    <h4>Ryttere</h4>
-    <ul id="compare-list" class="list-group">
-      {{#each riders}}
-      <li class="list-group-item list-group-item-dark py-1">{{this.name}}</li>
-      {{/each}}
-    </ul>
-  </div>
-</div>
-<div class="row">
-  <div class="col-2"></div>
-  <div class="col-8">
-    <h4>Felles ritt</h4>
-    <ul class="list-group">
-      {{#each ridersData}}
-      <li class="list-group-item list-group-item-dark">
-        <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1">{{name}}</h5>
-          <small class="text-muted">{{date}}</small>
-        </div>
-      </li>
-      {{/each}}
-    </ul>
-  </div>
-</div>
-{{else}}
-<div class="row">
-  <div class="col-2">
-  </div>
-  <div class="col-8">
-    <h2>Sammenligne ryttere</h2>
-
     <p>Velg en eller flere ryttere for sammenligning. Grunnlaget er ritt alle eller noen av ryttere man velger har deltatt i, basert på etappetider, plasseringer osv.</p>
   </div>
 </div>
@@ -45,16 +12,67 @@
     <form id="compare-search-form" class="form-inline mt-2 mt-md-0" method="get" action="/sammenlign">
       Søk fram ryttere: <input class="form-control mr-sm-2 autoComplete" id="compare-search-field" type="text"placeholder="søk" aria-label="Search" list="compare-search-list" autocomplete="off">
       <datalist id="compare-search-list"></datalist>
-      <button type="submit" class="btn form-control mr-sm-2 hidden" id="compare" aria-label="Sammenlign" autocomlete="off">Sammenlign</button>
+      {{#each riders}}
+       <input type="hidden" name="riders" value="{{uid}}" id="{{uid}}">
+      {{/each}}
+      <button type="submit" class="btn form-control mr-sm-2" id="compare" aria-label="Sammenlign" autocomlete="off">Sammenlign</button>
     </form>
   </div>
 </div>
 <div class="row">
   <div class="col-2"></div>
-  <div class="col-6">
-    <ul id="compare-list" class="list-group"></ul>
+  <div class="col-8">
+    <ul id="compare-list" class="list-group">
+      {{#each riders}}
+      <li data-uid="{{this.uid}}" class="list-group-item list-group-item-dark"><i class="icon"></i>{{this.name}}</li>
+      {{/each}}
+    </ul>
   </div>
 </div>
-{{/if}}
+<div class="row">
+  <div class="col-12">
+    {{#compare ridersData.length '!==' 0}}
+    <h4>Felles ritt</h4>
+    <ul class="list-group">
+      {{#each ../ridersData}}
+      <li class="list-group-item list-group-item-dark">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">{{name}}</h5>
+          <small class="text-muted">{{date}}</small>
+        </div>
+        <table class="table table-dark table-borderless table-striped table-sm">
+          <thead>
+            <tr>
+              <th>Navn</th>
+              {{#each stages}}
+              <th>FE{{this}}</th>
+              {{/each}}
+              <th>Totaltid</th>
+              <th>Plass</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each riders}}
+            <tr>
+              <td>{{name}}</td>
+              {{#each stages}}
+              <td>{{#compare time 'matches' '0:00'}}<span class="dnf">{{../stage_status}}</span>{{else}}{{../time}}{{/compare}} <span class="stagerank">({{rank}})</span></td>
+              {{/each}}
+              <td>{{#compare total_time 'matches' '0:00'}}<span class="dnf">{{../final_status}}</span>{{else}}{{../total_time}}{{/compare}}</td>
+              <td>{{final_rank}}</td>
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </li>
+      {{/each}}
+    </ul>
+    {{else}}
+    {{#compare ../riders.length '!==' 0}}
+    <span> Ingen felles ritt ble funnet for disse rytterne.</span>
+    {{/compare}}
+    {{/compare}}
+  </div>
+</div>
 
 <script src="/assets/js/{{hashedAssets 'compare.js'}}" crossorigin="anonymous"></script>

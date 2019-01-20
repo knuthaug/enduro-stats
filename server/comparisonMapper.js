@@ -1,3 +1,5 @@
+const { convertMsToTime } = require('../lib/time.js')
+
 module.exports = function comparisonMapper (data) {
   // races for each rider
 
@@ -53,6 +55,7 @@ module.exports = function comparisonMapper (data) {
         rider_uid: rider.rider_uid,
         final_rank: finalStage.final_rank,
         final_status: finalStage.final_status,
+        total_time: convertMsToTime(finalStage.acc_time_ms),
         stages: raceResults.filter((r) => {
           return r.rider_uid === rider.rider_uid
         }).map((d) => {
@@ -73,6 +76,9 @@ module.exports = function comparisonMapper (data) {
       uid: r,
       name: race.name,
       date: race.date,
+      stages: raceResultsForRiders[0].stages.map((r) => {
+        return r.stage
+      }),
       riders: raceResultsForRiders
     }
   })

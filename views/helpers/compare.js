@@ -22,7 +22,9 @@ module.exports = (left, operator, right, options) => {
     '<=':     (l, r) => {return l <= r; },
     '>=':     (l, r) => {return l >= r; },
     '&&':     (l, r) => {return l && r; },
-    typeof: (l, r) => {return typeof l == r; }
+    typeof: (l, r) => {return typeof l == r; },
+    startsWith: (l, r) => {return l.startsWith(r) },
+    matches: (l, r) => {return new RegExp(r).test(l) }
   };
   /* eslint-enable */
 

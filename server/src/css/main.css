@@ -88,6 +88,11 @@ a:hover {
   height: 20px;
 }
 
+.icon-large {
+  width: 25px;
+  height: 25px;
+}
+
 .fat-icon {
   stroke-width: 4;
   width: 18px;
@@ -155,8 +160,10 @@ a:hover {
   visibility: hidden;
 }
 
-#compare-list i {
+#compare-list svg {
   margin-right: 1rem;
+  width: 20px;
+  height: 20px;
 }
 
 .beta {
