@@ -1,4 +1,6 @@
 const { convertMsToTime } = require('../lib/time.js')
+const compareDesc = require('date-fns/compare_desc')
+const parse = require('date-fns/parse')
 
 module.exports = function comparisonMapper (data) {
   // races for each rider
@@ -39,7 +41,9 @@ module.exports = function comparisonMapper (data) {
     race = {
       uid: race.uid,
       date: race.date,
-      name: `${race.name} ${race.year}` }
+      year: race.year,
+      name: `${race.name} ${race.year}`
+    }
 
     const raceResults = data.filter((d) => {
       return d.uid === race.uid
@@ -81,6 +85,8 @@ module.exports = function comparisonMapper (data) {
       }),
       riders: raceResultsForRiders
     }
+  }).sort((a, b) => {
+    return compareDesc(parse(a.date), parse(b.date))
   })
 }
 
