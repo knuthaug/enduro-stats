@@ -1,4 +1,5 @@
 const feather = require('feather-icons')
+const { convertMsToTime } = require('../../../lib/time.js')
 
 document.addEventListener('DOMContentLoaded', function (event) {
   setupCompareSearch()
@@ -18,6 +19,8 @@ function setupCompareSearch () {
     s.innerHTML = feather.icons['x-circle'].toSvg()
     s.addEventListener('click', removeUser)
   })
+
+  setupRaceGraph(document.getElementById('races-graph'))
 }
 
 function searchOnKeyup(event) {
@@ -132,3 +135,76 @@ function compareSearchHint (event) {
     window.compareSearchHintXHR.send()
   }
 }
+
+function timeFormatter () {
+  return `<span>${this.point.category}<br/>${this.series.name}<br/>totaltid: ${this.point.y === 0 ? 'DNF' : convertMsToTime(this.point.y)}</span>`
+}
+
+function setupRaceGraph (element) {
+  if(!element) {
+    return
+  }
+
+  const data = JSON.parse(element.getAttribute(`data-object`))
+
+  Highcharts.chart(element.getAttribute('id'), {
+    chart: {
+      borderColor: '#000000',
+      borderWidth: 1,
+      borderRadius: 2,
+      style: {
+        fontFamily: "'Helvetica Neue', Arial, sans-serif"
+      }
+    },
+    tooltip: {
+      formatter: timeFormatter
+    },
+    title: {
+      text: 'Totaltider i alle felles ritt'
+    },
+    yAxis: {
+      title: {
+        text: 'tid'
+      },
+      type: 'datetime',
+      labels: {
+        formatter: function() {
+          return convertMsToTime(this.value)
+        }
+      }
+    },
+    xAxis: {
+      title: {
+        text: 'Ritt'
+      },
+      categories: data[0].data.map((d) => {
+        return d[0]
+      }),
+      tickInterval: 1
+    },
+
+    plotOptions: {
+      series: {
+        label: {
+          connectorAllowed: false
+        }
+      }
+    },
+    series: data,
+    responsive: {
+      rules: [{
+        condition: {
+          maxWidth: 700
+        },
+        chartOptions: {
+          legend: {
+            layout: 'horizontal',
+            align: 'center',
+            verticalAlign: 'bottom'
+          }
+        }
+      }]
+    }
+  })
+}
+

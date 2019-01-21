@@ -33,6 +33,7 @@
   <div class="col-12">
     {{#compare ridersData.length '!==' 0}}
     <h4>Felles ritt</h4>
+    <div class="races-graph" id="races-graph" data-object="{{../graphObject}}"></div>
     <ul class="list-group">
       {{#each ../ridersData}}
       <li class="list-group-item list-group-item-dark">
@@ -67,12 +68,17 @@
       </li>
       {{/each}}
     </ul>
-    {{else}}
+{{else}}
     {{#compare ../riders.length '!==' 0}}
-    <span> Ingen felles ritt ble funnet for disse rytterne.</span>
-    {{/compare}}
-    {{/compare}}
   </div>
+</div>
+<div class="row">
+  <div class="col-2"></div>
+  <div class="col-8 pt-l">
+     <p> Ingen felles ritt ble funnet for disse rytterne.</p>
+    {{/compare}}
+  {{/compare}}
+   </div>
 </div>
 
 <script src="/assets/js/{{hashedAssets 'compare.js'}}" crossorigin="anonymous"></script>

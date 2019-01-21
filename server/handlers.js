@@ -29,10 +29,13 @@ async function compareHandler (req) {
     riders = await db.findRiders(ridersParam)
   }
 
+  const graphObject = toComparisonChartData(ridersData)
+
   return {
     status: 200,
     ridersData,
-    riders
+    riders,
+    graphObject: JSON.stringify(graphObject)
   }
 }
 
@@ -188,6 +191,30 @@ function percentRanks (races, ridersPerClass) {
     return r
   }).sort((a, b) => {
     return compareAsc(parse(b.date), parse(a.date))
+  })
+}
+
+function toComparisonChartData(races) {
+  const ridersSeries = {}
+
+  for(let i = 0; i < races.length; i++) {
+    for(let j = 0; j < races[i].riders.length; j++) {
+      const rider = races[i].riders[j]
+      if(!ridersSeries.hasOwnProperty(rider.name)) {
+        ridersSeries[rider.name] = []
+      }
+      ridersSeries[rider.name].push([
+        races[i].name,
+        races[i].riders[j].acc_time_ms
+      ])
+    }
+  }
+
+  return Object.keys(ridersSeries).map((key) => {
+    return {
+      name: key,
+      data: ridersSeries[key]
+    }
   })
 }
 

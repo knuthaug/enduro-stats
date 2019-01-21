@@ -60,6 +60,7 @@ module.exports = function comparisonMapper (data) {
         final_rank: finalStage.final_rank,
         final_status: finalStage.final_status,
         total_time: convertMsToTime(finalStage.acc_time_ms),
+        acc_time_ms: finalStage.acc_time_ms,
         stages: raceResults.filter((r) => {
           return r.rider_uid === rider.rider_uid
         }).map((d) => {
