@@ -1,6 +1,7 @@
 const log = require('./log.js')
 const Db = require('./db.js')
 const resultViewMapper = require('./resultViewMapper.js')
+const fullResultViewMapper = require('./fullResultViewMapper.js')
 const raceViewMapper = require('./raceViewMapper.js')
 const { riderViewMapper, toNumber } = require('./riderViewMapper.js')
 const bestSeason = require('./bestSeason.js')
@@ -64,6 +65,30 @@ async function raceHandler (req) {
     results,
     links,
     graphs,
+    noResults,
+    active: 'ritt',
+    title: `${race.name} ${race.year} : Norsk enduro`
+  }
+}
+
+async function fullRaceHandler (req) {
+  log.debug(`request for ${req.path}`)
+  const race = await db.findRace(req.params.uid)
+
+  if (!race.id) {
+    return { status: 404 }
+  }
+
+  const raceClasses = await db.classesForRace(req.params.uid)
+  const raceResults = await db.raceResults(req.params.uid)
+  const [stages, results] = fullResultViewMapper(raceClasses, raceResults)
+  const noResults = Object.values(results).length > 0
+
+  return {
+    status: 200,
+    race,
+    stages,
+    results,
     noResults,
     active: 'ritt',
     title: `${race.name} ${race.year} : Norsk enduro`
@@ -244,6 +269,7 @@ function toChartData (results) {
 
 module.exports = {
   raceHandler,
+  fullRaceHandler,
   indexHandler,
   racesHandler,
   riderHandler,
