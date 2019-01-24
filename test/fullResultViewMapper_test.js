@@ -17,7 +17,17 @@ tap.test('new stages placements calculated', (t) => {
   const firstWoman = r[24]
 
   t.equals(firstWoman.stage1_rank, 29, 'fastest woman is 25 in first stage')
-  t.equals(firstWoman.stage1_time_behind, '02:00', 'fastest woman is 02:00 behind in first stage')
+  t.equals(firstWoman.stage1_behind_leader, '02:11.0', 'fastest woman is 02:11 behind in first stage')
+  t.end()
+})
+
+tap.test('race acc behind is calcultaed', (t) => {
+  t.equals(r[0].acc_time_behind_ms, 0, 'acc time behind for overall winner is zero')
+  t.equals(r[0].acc_time_behind, '00:00.0', 'acc time behind for overall winner is zero')
+
+  t.equals(r[1].acc_time_behind_ms, 44075, 'acc time behind for overall second i 44 s')
+  t.equals(r[1].acc_time_behind, '00:44.0', 'acc time behind for overall second is 44s')
+
   t.end()
 })
 

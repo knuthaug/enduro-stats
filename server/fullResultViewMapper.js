@@ -67,6 +67,7 @@ module.exports = function fullResultViewMapper (classes, results) {
         sortedByStage[j][`stage${i}_behind_leader`] = convertMsToTime(0)
       } else {
         sortedByStage[j][`stage${i}_behind_leader`] = convertMsToTime(sortedByStage[j][`stage${i}_time_ms`] - sortedByStage[0][`stage${i}_time_ms`])
+
       }
       sortedByStage[j][`stage${i}_rank`] = rank++
     }
@@ -78,9 +79,18 @@ module.exports = function fullResultViewMapper (classes, results) {
   riders = Object.values(riders)
     .sort(compareTimes)
     .map((r) => {
-      return Object.assign({ fullrank: i++}, r)
+      return Object.assign({ fullrank: i++ }, r)
     })
 
+  for(let i = 0; i < riders.length; i++) {
+    if(i === 0 || riders[i].acc_time_ms === 0) {
+      riders[i].acc_time_behind_ms = 0
+      riders[i].acc_time_behind = convertMsToTime(0)
+    } else {
+      riders[i].acc_time_behind_ms = riders[i].acc_time_ms - riders[0].acc_time_ms
+      riders[i].acc_time_behind = convertMsToTime(riders[i].acc_time_behind_ms)
+    }
+  }
   return [stages, riders]
 }
 
