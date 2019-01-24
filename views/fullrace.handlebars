@@ -18,8 +18,15 @@
       <div class="col-10">{{race.text}}</div>
     </div>
     {{/if}}
+    {{#if links}}
+    <div class="row">
+      {{#each links}}
+      <div class="col-3"><a href="{{url}}">{{description}}{{> icon}}</a></div>
+      {{/each}}
+    </div>
   </div>
 </div>
+{{/if}}
 <div class="row">
   <div class="col-11"> <h3>Alle klasser</h3></div>
 </div>

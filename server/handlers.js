@@ -79,6 +79,7 @@ async function fullRaceHandler (req) {
     return { status: 404 }
   }
 
+  const links = await db.findRaceLinks(race.id)
   const raceClasses = await db.classesForRace(req.params.uid)
   const raceResults = await db.raceResults(req.params.uid)
   const [stages, results] = fullResultViewMapper(raceClasses, raceResults)
@@ -90,6 +91,7 @@ async function fullRaceHandler (req) {
     stages,
     results,
     noResults,
+    links,
     active: 'ritt',
     title: `${race.name} ${race.year} : Norsk enduro`
   }
