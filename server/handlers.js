@@ -84,12 +84,25 @@ async function fullRaceHandler (req) {
   const raceResults = await db.raceResults(req.params.uid)
   const [stages, results] = fullResultViewMapper(raceClasses, raceResults)
   const noResults = Object.values(results).length > 0
+  let message
+
+  const riders = Array.from(new Set(raceResults.map((r) => {
+    return r.uid
+  })))
+
+  console.log(`riders=${riders.length}`)
+  console.log(`res=${results.length}`)
+
+  if(riders.length > results.length) {
+    message = 'Ryttere i klasser med færre etapper enn maksimalt antall, er filtrert ut av total-listen da de automatisk får kortest totaltid. Bruk vanlig resultatvisning for å se resultater for disse klassene.'
+  }
 
   return {
     status: 200,
     race,
     stages,
     results,
+    message,
     noResults,
     links,
     active: 'ritt',

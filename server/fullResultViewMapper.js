@@ -77,7 +77,9 @@ module.exports = function fullResultViewMapper (classes, results) {
   let i = 1
   //sort by total time and assign new total rank
   riders = Object.values(riders)
-    .sort(compareTimes)
+    .filter((r) => {
+      return r.hasOwnProperty(`stage${lastStage}_time_ms`) // filter out all racers missing stages (some classes)
+    }).sort(compareTimes)
     .map((r) => {
       return Object.assign({ fullrank: i++ }, r)
     })
