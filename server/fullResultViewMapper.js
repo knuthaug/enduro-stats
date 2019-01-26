@@ -18,7 +18,7 @@ module.exports = function fullResultViewMapper (classes, results) {
     }
 
     if (!riders.hasOwnProperty(rider)) {
-      riders[rider] = {}
+      riders[rider] = { num_stages: 0 }
     }
 
     // fill rider object with values
@@ -28,6 +28,7 @@ module.exports = function fullResultViewMapper (classes, results) {
     riders[rider].rider_id = results[i].rider_id
     riders[rider][`stage${results[i].stage}_time`] = time(results[i].stage_time_ms, results[i].status)
     riders[rider][`stage${results[i].stage}_time_ms`] = results[i].stage_time_ms
+    riders[rider].num_stages++
 
     if (results[i].stage === lastStage) {
       riders[rider]['acc_time'] = convertMsToTime(results[i].acc_time_ms)
@@ -78,7 +79,7 @@ module.exports = function fullResultViewMapper (classes, results) {
   //sort by total time and assign new total rank
   riders = Object.values(riders)
     .filter((r) => {
-      return r.hasOwnProperty(`stage${lastStage}_time_ms`) // filter out all racers missing stages (some classes)
+      return r.num_stages === lastStage // filter out all racers missing stages (some classes)
     }).sort(compareTimes)
     .map((r) => {
       return Object.assign({ fullrank: i++ }, r)

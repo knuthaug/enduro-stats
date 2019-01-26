@@ -90,9 +90,6 @@ async function fullRaceHandler (req) {
     return r.uid
   })))
 
-  console.log(`riders=${riders.length}`)
-  console.log(`res=${results.length}`)
-
   if(riders.length > results.length) {
     message = 'Ryttere i klasser med færre etapper enn maksimalt antall, er filtrert ut av total-listen da de automatisk får kortest totaltid. Bruk vanlig resultatvisning for å se resultater for disse klassene.'
   }
