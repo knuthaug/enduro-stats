@@ -63,7 +63,7 @@ tap.test('final status field is correct', async t => {
 
   const lastStage = data.stages[4]
   t.equals(lastStage.results[0].final_status, 'OK', 'winner has OK final_status')
-//  console.log(lastStage.results[lastStage.results.length - 17])
+  //  console.log(lastStage.results[lastStage.results.length - 17])
   t.equals(lastStage.results[lastStage.results.length - 1].final_status, 'DNS', 'DNS rider has final_status DNS')
   t.equals(lastStage.results[lastStage.results.length - 17].final_status, 'DNF', 'DNF rider has final_status DNF')
   t.end()

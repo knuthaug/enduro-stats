@@ -1,4 +1,4 @@
-const { app, stop }= require('./server/app')
+const { app, stop } = require('./server/app')
 const log = require('./server/log.js')
 
 const port = process.env.PORT || 8080

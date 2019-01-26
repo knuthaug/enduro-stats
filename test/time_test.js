@@ -20,6 +20,12 @@ tap.test('handles number in addition to strings', (t) => {
   t.end()
 })
 
+// tap.test('handles number in addition to strings', (t) => {
+//   t.equals(convertMsToTime(44075), '00:44.1', 'rounds up fractional seconds')
+//   t.end()
+// })
+
+
 tap.test('handles hours', (t) => {
   t.equals(convertMsToTime(4345456), '01:12:25.4', 'hours is handled')
   t.end()

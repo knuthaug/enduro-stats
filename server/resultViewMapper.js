@@ -79,7 +79,6 @@ module.exports = function resultViewMapper (classes, results) {
     stageTotals[classes[i]] = findStageTotals(results, stages, classes[i])
   }
 
-
   for (let i = 0; i < classes.length; i++) {
     for (let j = 0; j < out[classes[i]].length; j++) {
       out[classes[i]][j].chartData = raceChart(out[classes[i]], j, stages)
@@ -93,7 +92,7 @@ module.exports = function resultViewMapper (classes, results) {
   return [stages, out, graphs]
 }
 
-function findStageTotals(rows, stages, className) {
+function findStageTotals (rows, stages, className) {
   const out = {}
   for (let i = 0; i < stages.length; i++) {
     out[stages[i]] = rows.filter((r) => {
@@ -109,7 +108,7 @@ function findStageTotals(rows, stages, className) {
   return out
 }
 
-function toPlacesByStage(className, riderId, totals, stages) {
+function toPlacesByStage (className, riderId, totals, stages) {
   const out = []
   for (let i = 0; i < stages.length; i++) {
     const riders = totals[className][`${stages[i]}`]
@@ -130,7 +129,6 @@ function calculatePercentBehind (rider) {
 }
 
 function toAccTimes (rows, index, winner, stages) {
-
   const totals = { }
   totals[index] = { }
   totals[winner] = { }

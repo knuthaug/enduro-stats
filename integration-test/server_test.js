@@ -8,7 +8,6 @@ const sinon = require('sinon')
 const rewire = require('rewire')
 const { app, stop } = require('../server/app.js')
 
-
 tap.test('index page responds with 200', async t => {
   await supertest(app)
     .get('/')
@@ -88,9 +87,8 @@ tap.test('search page responds with 200', async t => {
     .post('/sok')
     .send('search=espen')
     .end((f) => {
-      console.log(f)
+      t.end()
     })
-  t.end()
 })
 
 stop()

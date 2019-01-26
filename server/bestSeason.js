@@ -11,7 +11,6 @@ module.exports = (rows) => {
       years[rows[i].year].push(rows[i].rank)
       scores.push(rows[i].rank / rows[i].count)
     }
-
   }
 
   const avgs = {}

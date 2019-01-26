@@ -45,13 +45,13 @@ function setupSearch () {
     while (i--) {
       let option = options[i]
 
-      if (option.value == inputValue) {
+      if (option.value === inputValue) {
         _value = option.getAttribute('data-uid')
         break
       }
     }
 
-    if (_value == null) {
+    if (_value === null) {
       return false
     }
 

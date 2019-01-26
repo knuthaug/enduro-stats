@@ -11,7 +11,8 @@ module.exports = {
     bundle: './server/src/js/index.js',
     rider: './server/src/js/rider.js',
     race: './server/src/js/race.js',
-    cal: './server/src/js/cal.js'
+    cal: './server/src/js/cal.js',
+    compare: './server/src/js/compare.js'
   },
   output: {
     filename: '[name]-[chunkhash].js',

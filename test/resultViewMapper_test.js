@@ -98,7 +98,7 @@ tap.test('each row has graph object', (t) => {
 
 tap.test('each row has acc_times_behind array', (t) => {
   const men = r.Menn
-  t.equals(men[0].acc_behind_leader.length, 6,'on value per stage, all 0 for winner')
+  t.equals(men[0].acc_behind_leader.length, 6, 'on value per stage, all 0 for winner')
   t.equals(men[0].acc_behind_leader[0], '0.0', 'on value per stage, all 0 for winner')
 
   t.equals(men[1].acc_behind_leader[0], '35.4', 'acc behind for first stage is same as behind in stage')
@@ -109,7 +109,7 @@ tap.test('each row has acc_times_behind array', (t) => {
 
 tap.test('each row has time_behind_infront array', (t) => {
   const men = r.Menn
-  t.equals(men[0].acc_behind_infront.length, 6,'one value per stage, all 0 for winner')
+  t.equals(men[0].acc_behind_infront.length, 6, 'one value per stage, all 0 for winner')
   t.equals(men[0].acc_behind_infront[0], '0.0', 'one value per stage, all 0 for winner')
 
   t.equals(men[4].acc_behind_infront[0], '8.6', 'acc behind for first stage is same as behind in stage')
@@ -125,6 +125,6 @@ tap.test('each row has place_by_stage array', (t) => {
   t.equals(places[0], 4, 'fourth after first stage')
   t.equals(places[1], 2, 'second after second stage')
   t.equals(places[2], 4, '4th after third stage')
-  //console.log(men[2])
+  // console.log(men[2])
   t.end()
 })

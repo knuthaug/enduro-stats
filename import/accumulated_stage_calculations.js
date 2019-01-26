@@ -1,4 +1,4 @@
-const { ERROR_STATUS, DNS_STATUS, DNF_STATUS, OK_STATUS } = require('./constants.js')
+const { ERROR_STATUS } = require('./constants.js')
 const { findAllRiders, stagesForRider, stageIndexesForStage } = require('./listUtil.js')
 const StageCalculations = require('./stage_calculations.js')
 
