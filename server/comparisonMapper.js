@@ -14,7 +14,7 @@ module.exports = function comparisonMapper (data) {
       return d.rider_uid === uid
     })
 
-    return { rider_name: rider.rider_name, rider_uid: rider.rider_uid }
+    return { rider_name: rider.rider_name, rider_uid: rider.rider_uid, class: rider.class }
   })
 
   const racesPerRider = riders.map((rider) => {
@@ -56,6 +56,7 @@ module.exports = function comparisonMapper (data) {
 
       return {
         name: rider.rider_name,
+        class: rider.class, 
         rider_uid: rider.rider_uid,
         final_rank: finalStage.final_rank,
         final_status: finalStage.final_status,
@@ -68,7 +69,7 @@ module.exports = function comparisonMapper (data) {
             stage: d.stage,
             rank: d.stage_rank,
             stage_time_ms: d.stage_time_ms,
-            time: d.time,
+            time: convertMsToTime(d.stage_time_ms),
             stage_status: d.status,
             final_rank: d.final_rank,
             acc_time_ms: d.acc_time_ms
