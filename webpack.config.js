@@ -12,6 +12,7 @@ module.exports = {
     rider: './server/src/js/rider.js',
     race: './server/src/js/race.js',
     cal: './server/src/js/cal.js',
+    fullrace: './server/src/js/fullrace.js',
     compare: './server/src/js/compare.js'
   },
   output: {
