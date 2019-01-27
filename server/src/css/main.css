@@ -30,6 +30,11 @@ th {
   letter-spacing: 0.08rem;
 }
 
+.navbar-brand:hover, .navbar-brand:focus {
+  text-decoration: none;
+  border-bottom: 0;
+}
+
 .navbar .nav-link.active {
   color: #fff;
   border-bottom-color: #fff;
