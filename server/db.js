@@ -6,7 +6,7 @@ const options = {
   database: config.get('database.database'),
   user: config.get('database.username'),
   password: config.get('database.password'),
-  max: 20
+  max: 5
 }
 
 class Db {
