@@ -62,6 +62,7 @@ const subs = {
   'Anne Melnø': 'Anne Melbø',
   'Astri Knudsen': 'Astrid Knudsen',
   'Bård S Pettersen': 'Bård Stærkebye Pettersen',
+  'Bård S. Pettersen': 'Bård Stærkebye Pettersen',
   'Bård Pettersen': 'Bård Stærkebye Pettersen',
   'Emil Carlson': 'Emil Aamli Carlson',
   'Ida Nærum': 'Ida Rydland Nærum',
@@ -96,6 +97,7 @@ const subs = {
   'Jarstø Karl Håkon': 'Karl Håkon Jarstø',
   'Andre Jaksland Aamodt': 'Andre Aamodt',
   'Andreas Hegrum': 'Andreas Hegrum Askjer',
+  'Andreas Askjer': 'Andreas Hegrum Askjer',
   'Eirik Haanes': 'Eirik Lind Hånes',
   'Eirik Hånes': 'Eirik Lind Hånes',
   'Elin K Morgan': 'Elin Katrine Morgan',
@@ -111,7 +113,25 @@ const subs = {
   'Tormod Brg Olsen': 'Tormod Berg Olsen',
   'Srian Lunn': 'Stian Lunn',
   'Siv Nygaard': 'Siv Elisabeth Nygaard',
-  'Oyvind Sætra': 'Øyvind Sætra'
+  'Oyvind Sætra': 'Øyvind Sætra',
+  'Anna Littorin Sandbu': 'Anna Littorin-Sandbu',
+  'Albin Littorin Sandbu': 'Albin Littorin-Sandbu',
+  'Christoffer E. Bakke': 'Christoffer Engebretsen Bakke',
+  'Eirik Lind Hanes': 'Eirik Lind Hånes',
+  'Elin K. Morgan': 'Elin Katrine Morgan',
+  'Emily Benham Kvåle': 'Emily Benham-Kvåle',
+  'Gunnar Vestholm': 'Gunnar Westholm',
+  'Hans Jørgen Kvale': 'Hans Jørgen Kvåle',
+  'June Janson': 'June Jansson',
+  'Magnus Brandtzeg': 'Magnus Brandtzæg',
+  'Martin I. Dalen': 'Martin Innerdal Dalen',
+  'Martin Solheim Sigleye': 'Martin Solheim Sigley',
+  'Ole Andre Tveit': 'Ole André Tveit',
+  'Ole Christian Fagerii': 'Ole Christian Fagerli',
+  'Simon Børjars': 'Simon Börjars',
+  'Thomas Stenedohansen': 'Thomas Stene-Johansen',
+  'Per Morten Mølsted': 'Morten Mølsted',
+  'Vidar Folden': 'Vidar Berentsen Folden'
 }
 
 function check (name) {
