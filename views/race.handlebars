@@ -51,14 +51,14 @@
     <table class="table table-dark table-borderless table-striped table-sm main-table">
       <thead>
         <tr>
-          <th scope="col" data-toggle="tooltip" data-original-title="trykk for mer informasjon om rytterens prestasjon i rittet">{{> icon type='info'}}</th>
-          <th scope="col" data-sort-method="number">Plass</th>
+          <th scope="col" data-sortable="false" data-toggle="tooltip" data-original-title="trykk for mer informasjon om rytterens prestasjon i rittet">{{> icon type='info'}}</th>
+          <th scope="col" data-sortable-type="numeric">Plass</th>
           <th scope="col">Navn</th>
           {{#each ../stages}}
           <th scope="col">Etappe {{this}}</th>
           {{/each}}
-          <th scope="col" data-sort-method="number">Totaltid</th>
-          <th scope="col" data-sort-method="number">Etter vinner</th>
+          <th scope="col" data-sortable-type="numeric">Totaltid</th>
+          <th scope="col" data-sortable-type="numeric">Etter vinner</th>
         </tr>
       </thead>
       <tbody>
@@ -70,8 +70,8 @@
           {{#each ../../stages}}
           <td><span data-toggle="tooltip" data-original-title="nr. {{lookup ../this (propFor this 'rank')}} på etappen, {{lookup ../this (propFor this 'behind_leader')}} bak etappevinner">{{> stagetime result=../this stage=this }}</span></td>
           {{/each}}
-          <td data-sort="{{acc_time_ms}}">{{#compare acc_time '===' '00:00.0'}}<span class=dnf>{{../final_status}}</span>{{else}}{{../acc_time}}{{/compare}}</td>
-          <td data-sort="{{acc_time_behind_ms}}">{{#compare acc_time_behind '!==' '00:00.0'}}{{../acc_time_behind}}{{/compare}}</td>
+          <td data-value="{{acc_time_ms}}">{{#compare acc_time '===' '00:00.0'}}<span class=dnf>{{../final_status}}</span>{{else}}{{../acc_time}}{{/compare}}</td>
+          <td data-value="{{acc_time_behind_ms}}">{{#compare acc_time_behind '!==' '00:00.0'}}{{../acc_time_behind}}{{/compare}}</td>
         </tr>
         <tr class="hide race-details">
           <td colspan="12">
