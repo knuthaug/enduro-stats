@@ -126,11 +126,9 @@ class StageCalculations {
   }
 
   lastStages (rows, stages) {
-
-    const r = rows.filter((r) => {
+    return rows.filter((r) => {
       return r.stage === stages[stages.length - 1]
     }).sort(this.sortByAccTime)
-    return r
   }
 
   sortByAccTime (a, b) {
@@ -138,8 +136,6 @@ class StageCalculations {
       return 1
     } else if (b.skipped_stages > a.skipped_stages) {
       return -1
-    } else if (a.skipped_stages === b.skipped_stages && a.skipped_stages !== 0) {
-      return 0
     }
 
     if (a.acc_time_ms === 0) {
