@@ -89,7 +89,7 @@ tap.test('DNS/DNF records must have final_rank set', async t => {
     return r.rider_id === 697 && r.stage === 5
   })
 
-  t.equals(dns.final_rank, 33, 'DNS gets rank last rank in race')
+  t.equals(dns.final_rank, 35, 'DNS gets rank last rank in race')
   t.end()
 })
 
