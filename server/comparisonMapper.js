@@ -13,7 +13,6 @@ module.exports = function comparisonMapper (data) {
     const rider = data.find((d) => {
       return d.rider_uid === uid
     })
-
     return { rider_name: rider.rider_name, rider_uid: rider.rider_uid, class: rider.class }
   })
 
@@ -56,7 +55,7 @@ module.exports = function comparisonMapper (data) {
 
       return {
         name: rider.rider_name,
-        class: rider.class, 
+        class: finalStage.class,
         rider_uid: rider.rider_uid,
         final_rank: finalStage.final_rank,
         final_status: finalStage.final_status,
