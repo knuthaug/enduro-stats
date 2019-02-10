@@ -27,9 +27,21 @@ class StageCalculations {
     const lastStages = this.lastStages(rows, stages)
 
     let rank = 1
+    let consRank = 1
     for (let i = 0; i < lastStages.length; i++) {
       const rowIndex = indexes[lastStages[i].id]
-      rows[rowIndex].final_rank = rank++
+      if(i > 0) { // handle riders with same time
+        const prevRowIndex = indexes[lastStages[i - 1].id]
+        if (rows[rowIndex].acc_time_ms === rows[prevRowIndex].acc_time_ms
+            && rows[rowIndex].acc_time_ms !== 0) { // same time, same rank
+          rows[rowIndex].final_rank = rows[prevRowIndex].final_rank
+          rank++
+        } else {
+          rows[rowIndex].final_rank = rank++
+        }
+      } else { // first rider
+        rows[rowIndex].final_rank = rank++
+      }
     }
   }
 
@@ -86,8 +98,10 @@ class StageCalculations {
           rows[stageIndexes[i]].skipped_stages = skipped
         } else if (notStartedRace) {
           rows[stageIndexes[i]].final_status = DNS_STATUS
+          rows[stageIndexes[i]].skipped_stages = skipped
         } else if (!abortedRace && !notStartedRace) {
           rows[stageIndexes[i]].final_status = OK_STATUS
+          rows[stageIndexes[i]].skipped_stages = 0
         }
       }
     }
