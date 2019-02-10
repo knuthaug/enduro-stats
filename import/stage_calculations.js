@@ -98,8 +98,10 @@ class StageCalculations {
           rows[stageIndexes[i]].skipped_stages = skipped
         } else if (notStartedRace) {
           rows[stageIndexes[i]].final_status = DNS_STATUS
+          rows[stageIndexes[i]].skipped_stages = skipped
         } else if (!abortedRace && !notStartedRace) {
           rows[stageIndexes[i]].final_status = OK_STATUS
+          rows[stageIndexes[i]].skipped_stages = 0
         }
       }
     }
