@@ -42,6 +42,7 @@ class StageCalculations {
   checkRiderResults (rows, riderId) {
     const stageIndexes = stagesForRider(rows, riderId)
 
+    let skipped = 0
     let err = false
     let abortedRace = false
     let notStartedRace = false
@@ -50,10 +51,12 @@ class StageCalculations {
       if (!abortedRace && this.abortedRace(rows, stageIndexes, i)) {
         abortedRace = true
         rows[stageIndexes[i]].status = DNF_STATUS
+        skipped++
       }
 
       if (this.notRiddenStage(rows, stageIndexes, i)) {
         rows[stageIndexes[i]].status = DNS_STATUS
+        skipped++
       }
 
       if (this.notFinished(rows[stageIndexes[i]]) || rows[stageIndexes[i]].stage_time_ms === 0) {
@@ -63,6 +66,10 @@ class StageCalculations {
       if (i === stageIndexes.length - 1) { // last stage, check if all stages are DNS
         notStartedRace = this.notStartedRace(rows, stageIndexes, rows[stageIndexes[i]].rider_id)
         abortedRace = this.fullAbortedRace(rows, stageIndexes, rows[stageIndexes[i]].ride_id)
+
+        if(notStartedRace) {
+          skipped = stageIndexes.length
+        }
       }
     }
 
@@ -76,6 +83,7 @@ class StageCalculations {
       if (i === stageIndexes.length - 1) {
         if (abortedRace && !notStartedRace) {
           rows[stageIndexes[i]].final_status = DNF_STATUS
+          rows[stageIndexes[i]].skipped_stages = skipped
         } else if (notStartedRace) {
           rows[stageIndexes[i]].final_status = DNS_STATUS
         } else if (!abortedRace && !notStartedRace) {
@@ -94,7 +102,7 @@ class StageCalculations {
     return statuses.every(s => s)
   }
 
-  // arer some stages either DNS or DNF?
+  // are some stages either DNS or DNF?
   fullAbortedRace (rows, indexes, id) {
     const statuses = []
     for (let i = 0; i < indexes.length; i++) {
@@ -118,12 +126,22 @@ class StageCalculations {
   }
 
   lastStages (rows, stages) {
-    return rows.filter((r) => {
+
+    const r = rows.filter((r) => {
       return r.stage === stages[stages.length - 1]
     }).sort(this.sortByAccTime)
+    return r
   }
 
   sortByAccTime (a, b) {
+    if (a.skipped_stages > b.skipped_stages) {
+      return 1
+    } else if (b.skipped_stages > a.skipped_stages) {
+      return -1
+    } else if (a.skipped_stages === b.skipped_stages && a.skipped_stages !== 0) {
+      return 0
+    }
+
     if (a.acc_time_ms === 0) {
       return 1
     }
@@ -137,6 +155,7 @@ class StageCalculations {
     } else if (b.acc_time_ms > a.acc_time_ms) {
       return -1
     }
+
     return 0
   }
 
