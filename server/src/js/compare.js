@@ -2,8 +2,93 @@ const feather = require('feather-icons')
 const { convertMsToTime } = require('../../../lib/time.js')
 
 document.addEventListener('DOMContentLoaded', function (event) {
+  feather.replace()
   setupCompareSearch()
+  setupShowHiders()
 })
+
+function setupShowHiders () {
+  [...document.querySelectorAll('.shower')]
+    .forEach(element => {
+      element.addEventListener('click', e => {
+        const cur = e.currentTarget
+        cur.classList.toggle('plus-rotate')
+        let el = cur.parentNode.nextSibling.nextSibling
+        el.classList.toggle('hide')
+        console.log(el)
+        setupRaceDetailGraph(el.querySelectorAll('.race-graph')[0].getAttribute('id'))
+      })
+    })
+}
+
+function fetchData(){
+  
+}
+
+function setupRaceDetailGraph(id) {
+  Highcharts.chart(id, {
+    chart: {
+      events: {
+        load: fetchData
+      },
+      borderColor: '#000000',
+      borderWidth: 1,
+      borderRadius: 2,
+      style: {
+        fontFamily: "'Helvetica Neue', Arial, sans-serif"
+      }
+    },
+    tooltip: {
+      formatter: timeFormatter
+    },
+    title: {
+      text: 'Totaltider i alle felles ritt'
+    },
+    yAxis: {
+      title: {
+        text: 'tid'
+      },
+      type: 'datetime',
+      labels: {
+        formatter: function() {
+          return convertMsToTime(this.value)
+        }
+      }
+    },
+    xAxis: {
+      title: {
+        text: 'Ritt'
+      },
+      categories: data[0].data.map((d) => {
+        return d[0]
+      }),
+      tickInterval: 1
+    },
+
+    plotOptions: {
+      series: {
+        label: {
+          connectorAllowed: false
+        }
+      }
+    },
+    series: [{}],
+    responsive: {
+      rules: [{
+        condition: {
+          maxWidth: 700
+        },
+        chartOptions: {
+          legend: {
+            layout: 'horizontal',
+            align: 'center',
+            verticalAlign: 'bottom'
+          }
+        }
+      }]
+    }
+  })
+}
 
 function setupCompareSearch () {
   const form = document.getElementById('compare-search-form')

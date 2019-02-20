@@ -131,6 +131,10 @@ a:hover {
   font-size: 85%;
 }
 
+li .table {
+  margin-bottom: 0;
+}
+
 .table-dark.table-striped tbody tr.odd {
   background-color: #212529;
 }
