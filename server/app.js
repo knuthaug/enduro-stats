@@ -3,20 +3,11 @@ const hbs = require('express-handlebars')
 const compression = require('compression')
 const morgan = require('morgan')
 const config = require('../config')
-const log = require('./log.js')
-const Db = require('./db.js')
-const handlers = require('./handlers.js')
+const log = require('./log')
+const Db = require('./db')
+const handlers = require('./handlers')
+const helpers = require('./helpers')
 
-const hashedAssets = require('../views/helpers/hashed-assets.js')
-const compare = require('../views/helpers/compare.js')
-const propFor = require('../views/helpers/propFor.js')
-const toJson = require('../views/helpers/toJson.js')
-const formatPercent = require('../views/helpers/formatPercent.js')
-const isDNF = require('../views/helpers/isDNF.js')
-const isDNS = require('../views/helpers/isDNS.js')
-const isError = require('../views/helpers/isError.js')
-const cat = require('../views/helpers/cat.js')
-const isOK = require('../views/helpers/isOK.js')
 const DEFAULT_CACHE_TIME_PAGES = 5000
 const ASSET_LONG_CACHE_TIME = 100000
 const ASSET_SHORT_CACHE_TIME = 1000
@@ -53,7 +44,7 @@ const db = new Db()
 app.engine('handlebars', hbs({
   defaultLayout: 'main',
   extname: '.hbs',
-  helpers: { hashedAssets, compare, propFor, toJson, isDNF, isDNS, isError, isOK, cat, formatPercent },
+  helpers,
   partialsDir: 'views/partials'
 }))
 
@@ -78,7 +69,7 @@ app.get('/assets/js/:file', (req, res) => {
   const file = req.params.file
   const options = { root: './server/dist' }
 
-  if (/bundle/.test(file) || /race/.test(file) || /rider/.test(file)) {
+  if (/bundle/.test(file) || /race/.test(file) || /rider/.test(file) || /compare/.test(file)) {
     return res.set({ 'Cache-Control': `public, max-age=${ASSET_LONG_CACHE_TIME}` }).sendFile(`js/${file}`, options)
   }
   return res.set({ 'Cache-Control': `public, max-age=${ASSET_SHORT_CACHE_TIME}` }).sendFile(`js/${file}`, options)

@@ -163,6 +163,15 @@ async function jsonSearchHandler (req) {
 
 
 async function compareGraphHandler (req) {
+  const ridersParam = req.query.riders
+  let ridersData = []
+  let riders = []
+
+  if (ridersParam) {
+    ridersData = comparisonMapper(await db.raceResultsForRiders(ridersParam))
+    riders = await db.findRiders(ridersParam)
+  }
+
   return {}
 }
 
