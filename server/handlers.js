@@ -161,6 +161,12 @@ async function jsonSearchHandler (req) {
   return results
 }
 
+
+async function compareGraphHandler (req) {
+  return {}
+}
+
+
 async function riderHandler (req) {
   log.debug(`request for ${req.path}`)
   const rider = await db.findRider(req.params.uid)
@@ -288,5 +294,6 @@ module.exports = {
   ridersHandler,
   searchHandler,
   jsonSearchHandler,
-  compareHandler
+  compareHandler,
+  compareGraphHandler
 }

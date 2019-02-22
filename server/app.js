@@ -69,6 +69,7 @@ app.get('/rytter/:uid', handler('rider', handlers.riderHandler))
 app.get('/ryttere', handler('riders', handlers.ridersHandler))
 app.get('/sammenlign', handler('compare', handlers.compareHandler))
 app.get('/api/search', jsonHandler(handlers.jsonSearchHandler))
+app.get('/api/graph/compare', jsonHandler(handlers.compareGraphHandler))
 
 app.post('/sok/', handler('search', handlers.searchHandler, 100))
 

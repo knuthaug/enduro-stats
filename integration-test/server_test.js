@@ -91,4 +91,11 @@ tap.test('search page responds with 200', async t => {
     })
 })
 
+tap.test('graph api for comparison responds with 200', async t => {
+  await supertest(app)
+    .get('/api/graph/compare?uid=1234')
+    .expect(200)
+    .expect('Content-type', 'application/json; charset=utf-8')
+})
+
 stop()
