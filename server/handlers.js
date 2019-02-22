@@ -8,6 +8,7 @@ const bestSeason = require('./bestSeason.js')
 const compareAsc = require('date-fns/compare_asc')
 const parse = require('date-fns/parse')
 const comparisonMapper = require('./comparisonMapper.js')
+const comparisonGraphMapper = require('./comparisonGraphMapper.js')
 const db = new Db()
 
 async function racesHandler (req) {
@@ -38,6 +39,19 @@ async function compareHandler (req) {
     riders,
     graphObject: JSON.stringify(graphObject)
   }
+}
+
+async function compareGraphHandler (req) {
+  const riders = req.query.riders
+  const race = req.query.race
+  let ridersData = []
+
+  if (riders) {
+    ridersData = await db.raceResultsForRaceAndRiders(race, riders)
+    console.log(ridersData)
+  }
+
+  return comparisonGraphMapper(ridersData)
 }
 
 async function raceHandler (req) {
@@ -160,21 +174,6 @@ async function jsonSearchHandler (req) {
 
   return results
 }
-
-
-async function compareGraphHandler (req) {
-  const ridersParam = req.query.riders
-  let ridersData = []
-  let riders = []
-
-  if (ridersParam) {
-    ridersData = comparisonMapper(await db.raceResultsForRiders(ridersParam))
-    riders = await db.findRiders(ridersParam)
-  }
-
-  return {}
-}
-
 
 async function riderHandler (req) {
   log.debug(`request for ${req.path}`)

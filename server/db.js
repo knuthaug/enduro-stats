@@ -95,6 +95,18 @@ class Db {
     return this.find(query, uids)
   }
 
+  async raceResultsForRaceAndRiders (race, uids) {
+    let i = 1
+    const placeholders = uids.map((u) => {
+      return `$${i++}`
+    })
+
+    const query = `SELECT results.*, (select name from stages where id = results.stage_id) as stageName, (select number from stages where id = results.stage_id) as stage, rid.uid as rider_uid, rid.name as rider_name, race_id, ra.name, ra.uid, ra.date, ra.year FROM results LEFT OUTER JOIN (SELECT id, name, uid, date, year from races) AS ra ON ra.id = results.race_id LEFT OUTER JOIN (SELECT id, uid, name from riders) AS rid ON results.rider_id = rid.id WHERE ra.uid = $${i} AND results.rider_id in (SELECT id from riders where uid in (${placeholders})) order by stage_id ASC`
+    uids.push(race)
+    const params = uids
+    return this.find(query, params)
+  }
+
   async classesForRace (uid) {
     const query = 'SELECT DISTINCT class from results where race_id = (SELECT id FROM races WHERE uid = $1)'
     const values = [uid]
