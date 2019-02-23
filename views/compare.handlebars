@@ -56,7 +56,7 @@
           <tbody>
             {{#each riders}}
             <tr>
-              <td><a href="/rytter/{{rider_uid}}"> {{name}}</a></td>
+              <td><a href="/rytter/{{uid}}"> {{name}}</a></td>
               <td>{{class}}</td>
               {{#each stages}}
               <td>{{#compare time '===' '0:00.0'}}<span class="dnf">{{../stage_status}}</span>{{else}}{{../time}}{{/compare}} <span class="stagerank">({{rank}})</span></td>
@@ -69,7 +69,7 @@
         </table>
         <span data-toggle="tooltip" data-original-title="Se grafer for dette rittet">{{> icon type='plus'}}</span>
         <div class="hide race-detail">
-          <div class="race-graph" id="graph-{{uid}}"></div>
+          <div class="race-graph" id="graph-{{race-uid}}"></div>
         </div>
       </li>
       {{/each}}

@@ -20,7 +20,7 @@ tap.test('each race has all comparison riders', async t => {
   const rider1 = r[0].riders[0]
   const rider2 = r[0].riders[1]
   t.equals(rider1.name, 'Svenn Fjeldheim', 'name matches record')
-  t.equals(rider1.rider_uid, '16aa245876cc35048a730591c11d7f65', 'uid matches record')
+  t.equals(rider1.uid, '16aa245876cc35048a730591c11d7f65', 'uid matches record')
   t.equals(rider1.stages.length, 6, 'correct number of stages in race')
 
   t.equals(rider2.name, 'Espen Bergli-Johnsen', 'name matches record')

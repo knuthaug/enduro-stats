@@ -48,7 +48,6 @@ async function compareGraphHandler (req) {
 
   if (riders) {
     ridersData = await db.raceResultsForRaceAndRiders(race, riders)
-    console.log(ridersData)
   }
 
   return comparisonGraphMapper(ridersData)

@@ -6,23 +6,23 @@ module.exports = function comparisonMapper (data) {
   // races for each rider
 
   const riderSet = Array.from(new Set(data.map((d) => {
-    return d.rider_uid
+    return d.uid
   })))
 
   const riders = riderSet.map((uid) => {
     const rider = data.find((d) => {
-      return d.rider_uid === uid
+      return d.uid === uid
     })
-    return { rider_name: rider.rider_name, rider_uid: rider.rider_uid, class: rider.class }
+    return { name: rider.name, uid: rider.uid, class: rider.class }
   })
 
   const racesPerRider = riders.map((rider) => {
     return {
-      uid: rider.rider_uid,
+      uid: rider.uid,
       races: data.filter((d) => {
-        return d.rider_uid === rider.rider_uid && d.final_rank !== null
+        return d.uid === rider.uid && d.final_rank !== null
       }).map((r) => {
-        return r.uid
+        return r.race_uid
       })
     }
   })
@@ -35,34 +35,34 @@ module.exports = function comparisonMapper (data) {
 
   return intersection.map((r) => {
     let race = data.find((d) => {
-      return d.uid === r
+      return d.race_uid === r
     })
     race = {
-      uid: race.uid,
+      uid: race.race_uid,
       date: race.date,
       year: race.year,
-      name: `${race.name} ${race.year}`
+      name: `${race.race_name} ${race.year}`
     }
 
     const raceResults = data.filter((d) => {
-      return d.uid === race.uid
+      return d.race_uid === race.uid
     })
 
     const raceResultsForRiders = riders.map((rider) => {
       const finalStage = raceResults.find((r) => {
-        return r.rider_uid === rider.rider_uid && r.final_rank !== null
+        return r.uid === rider.uid && r.final_rank !== null
       })
 
       return {
-        name: rider.rider_name,
+        name: rider.name,
         class: finalStage.class,
-        rider_uid: rider.rider_uid,
+        uid: rider.uid,
         final_rank: finalStage.final_rank,
         final_status: finalStage.final_status,
         total_time: convertMsToTime(finalStage.acc_time_ms),
         acc_time_ms: finalStage.acc_time_ms,
         stages: raceResults.filter((r) => {
-          return r.rider_uid === rider.rider_uid
+          return r.uid === rider.uid
         }).map((d) => {
           return {
             stage: d.stage,
