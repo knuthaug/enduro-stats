@@ -23,7 +23,7 @@ module.exports = (raceData) => {
 
     riders[rider].stage = raceData[i].stage
     riders[rider][`stage${raceData[i].stage}_time`] = time(raceData[i].stage_time_ms, raceData[i].status)
-    riders[rider][`stage${raceData[i].stage}_rank`] = raceData[i].stage_rank
+    riders[rider][`stage${raceData[i].stage}_rank`] = rank(raceData[i].stage_rank)
     //riders[rider][`stage${raceData[i].stage}_behind_leader`] = convertMsToTime(raceData[i].behind_leader_ms)
     riders[rider][`stage${raceData[i].stage}_behind_leader_ms`] = raceData[i].behind_leader_ms
     riders[rider][`stage${raceData[i].stage}_percent_behind_leader`] = calculatePercentBehind(raceData[i])
@@ -39,6 +39,14 @@ module.exports = (raceData) => {
   }
 
   return toPlacesGraphData(Object.values(riders), Object.keys(riders).length, stages)
+}
+
+function rank(rank) {
+  if(rank === 999) {
+    return 0
+  }
+
+  return rank
 }
 
 function toBaseObject(o) {

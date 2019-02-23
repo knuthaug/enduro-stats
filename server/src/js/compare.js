@@ -15,22 +15,34 @@ function setupShowHiders () {
         cur.classList.toggle('plus-rotate')
         let el = cur.parentNode.nextSibling.nextSibling
         el.classList.toggle('hide')
-        console.log(el)
-        setupRaceDetailGraph(el.querySelectorAll('.race-graph')[0].getAttribute('id'))
+        //console.log(el)
+        if(!el.classList.contains('hide')) {
+          setupRaceDetailGraph(el.querySelectorAll('.race-graph')[0].getAttribute('id'))
+        }
       })
     })
 }
 
-function fetchData(){
-  
+async function fetchData(id) {
+  const el = document.getElementById(id)
+  const race = el.getAttribute('data-race')
+  const ridersParam = el.getAttribute('data-riders').split(';').map((r) => {
+    return `riders=${r}`
+  }).join('&')
+
+  return fetch(`/api/graph/compare?race=${race}&${ridersParam}`)
+    .then( (response) => {
+      return response.json()
+    })
+    .then((json) => {
+      //console.log(JSON.stringify(json))
+      return json
+    })
 }
 
-function setupRaceDetailGraph(id) {
+async function setupRaceDetailGraph(id) {
   Highcharts.chart(id, {
     chart: {
-      events: {
-        load: fetchData
-      },
       borderColor: '#000000',
       borderWidth: 1,
       borderRadius: 2,
@@ -39,29 +51,23 @@ function setupRaceDetailGraph(id) {
       }
     },
     tooltip: {
-      formatter: timeFormatter
+      formatter: function() {
+        return `<span>${this.series.name}<br/>${this.point.x} etappe: ${this.point.y === 0 ? 'DNF' : this.point.y + '. plass'}</span>`
+      }
     },
     title: {
-      text: 'Totaltider i alle felles ritt'
+      text: 'Etappeplasseringer'
     },
     yAxis: {
       title: {
-        text: 'tid'
+        text: 'Plass'
       },
-      type: 'datetime',
-      labels: {
-        formatter: function() {
-          return convertMsToTime(this.value)
-        }
-      }
+      tickInterval: 1
     },
     xAxis: {
       title: {
-        text: 'Ritt'
+        text: 'Etappe'
       },
-      categories: data[0].data.map((d) => {
-        return d[0]
-      }),
       tickInterval: 1
     },
 
@@ -72,11 +78,11 @@ function setupRaceDetailGraph(id) {
         }
       }
     },
-    series: [{}],
+    series: await fetchData(id),
     responsive: {
       rules: [{
         condition: {
-          maxWidth: 700
+          minHeight: 400
         },
         chartOptions: {
           legend: {

@@ -69,7 +69,7 @@
         </table>
         <span data-toggle="tooltip" data-original-title="Se grafer for dette rittet">{{> icon type='plus'}}</span>
         <div class="hide race-detail">
-          <div class="race-graph" id="graph-{{race-uid}}"></div>
+          <div class="race-graph" id="graph-{{uid}}" data-race="{{uid}}" data-riders="{{#each riders}}{{uid}};{{/each}}"></div>
         </div>
       </li>
       {{/each}}

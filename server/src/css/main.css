@@ -135,6 +135,14 @@ li .table {
   margin-bottom: 0;
 }
 
+li .race-detail {
+  min-height: 300px;
+}
+
+li .race-detail .race-graph {
+  min-height: 300px;
+}
+
 .table-dark.table-striped tbody tr.odd {
   background-color: #212529;
 }
