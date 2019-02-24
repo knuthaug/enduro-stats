@@ -1,7 +1,7 @@
 const { toPlacesGraphData } = require('./graphFactory')
 const { convertMsToTime, convertTimeToMs } = require('../lib/time')
 
-module.exports = (raceData) => {
+function places(raceData) {
   const stages = []
   const riders = {}
   const lastStage = raceData.reduce((acc, current) => {
@@ -24,7 +24,7 @@ module.exports = (raceData) => {
     riders[rider].stage = raceData[i].stage
     riders[rider][`stage${raceData[i].stage}_time`] = time(raceData[i].stage_time_ms, raceData[i].status)
     riders[rider][`stage${raceData[i].stage}_rank`] = rank(raceData[i].stage_rank)
-    //riders[rider][`stage${raceData[i].stage}_behind_leader`] = convertMsToTime(raceData[i].behind_leader_ms)
+    riders[rider][`stage${raceData[i].stage}_behind_leader`] = convertMsToTime(raceData[i].behind_leader_ms)
     riders[rider][`stage${raceData[i].stage}_behind_leader_ms`] = raceData[i].behind_leader_ms
     riders[rider][`stage${raceData[i].stage}_percent_behind_leader`] = calculatePercentBehind(raceData[i])
 
@@ -72,4 +72,8 @@ function time (time, status) {
     return status
   }
   return convertMsToTime(time)
+}
+
+module.exports = {
+  places
 }
