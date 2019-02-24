@@ -69,6 +69,11 @@
         </table>
         <span data-toggle="tooltip" data-original-title="Se grafer for dette rittet">{{> icon type='plus'}}</span>
         <div class="hide race-detail">
+          Velg graf <select id="selector-graph-{{uid}}" class="mb-2 graph-selector">
+          <option value="places" selected>Plasseringer</option>
+          <option value="times">Tid bak</option>
+          <option value="acc-times">Total tid bak</option>
+          </select>
           <div class="race-graph" id="graph-{{uid}}" data-race="{{uid}}" data-riders="{{#each riders}}{{uid}};{{/each}}"></div>
         </div>
       </li>

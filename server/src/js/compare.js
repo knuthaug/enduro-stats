@@ -5,7 +5,28 @@ document.addEventListener('DOMContentLoaded', function (event) {
   feather.replace()
   setupCompareSearch()
   setupShowHiders()
+  setupSelectors()
 })
+
+function setupSelectors() {
+  const selectors = document.querySelectorAll('.graph-selector')
+  selectors.forEach((element) => {
+    element.addEventListener('change', (event) => {
+      const target = event.currentTarget
+      let els = target.parentNode.childNodes
+
+      for (let i = 0; i < els.length; i++) {
+        if (els[i].nodeName === 'DIV') {
+          const id = els[i].getAttribute('id')
+          const selector = document.getElementById(`selector-${id}`)
+          const type = selector.options[selector.selectedIndex].value
+          setupRaceDetailGraph(id, type)
+          break
+        }
+      }
+    })
+  })
+}
 
 function setupShowHiders () {
   [...document.querySelectorAll('.shower')]
@@ -17,7 +38,10 @@ function setupShowHiders () {
         el.classList.toggle('hide')
         //console.log(el)
         if(!el.classList.contains('hide')) {
-          setupRaceDetailGraph(el.querySelectorAll('.race-graph')[0].getAttribute('id'))
+          const id = el.querySelectorAll('.race-graph')[0].getAttribute('id')
+          const selector = document.getElementById(`selector-${id}`)
+          const type = selector.options[selector.selectedIndex].value
+          setupRaceDetailGraph(id, type)
         }
       })
     })
@@ -26,11 +50,14 @@ function setupShowHiders () {
 async function fetchData(id) {
   const el = document.getElementById(id)
   const race = el.getAttribute('data-race')
+  const selector = document.getElementById(`selector-${id}`)
+  const type = selector.options[selector.selectedIndex].value
+
   const ridersParam = el.getAttribute('data-riders').split(';').map((r) => {
     return `riders=${r}`
   }).join('&')
 
-  return fetch(`/api/graph/compare?race=${race}&${ridersParam}`)
+  return fetch(`/api/graph/compare?type=${type}&race=${race}&${ridersParam}`)
     .then( (response) => {
       return response.json()
     })
@@ -40,7 +67,38 @@ async function fetchData(id) {
     })
 }
 
-async function setupRaceDetailGraph(id) {
+function yAxisTitle(type) {
+  if ( type === 'times' || type === 'acc-times') {
+    return 'Sekunder'
+  }
+
+  return 'Plass'
+}
+
+function title(type) {
+  if (type === 'times') {
+    return 'Tid bak'
+  }
+
+  if (type === 'acc-times') {
+    return 'Total tid bak'
+  }
+
+  return 'Etappeplasseringer'
+}
+
+function findFormatter(type) {
+  if (type === 'times' || type === 'acc-times') {
+      return function() {
+        return `<span>${this.series.name}<br/>${this.point.x} etappe: ${this.point.y} sekunder bak vinner</span>`
+      }
+  }
+  return function() {
+    return `<span>${this.series.name}<br/>${this.point.x} etappe: ${this.point.y === 0 ? 'DNF' : this.point.y + '. plass'}</span>`
+  }
+}
+
+async function setupRaceDetailGraph(id, type) {
   Highcharts.chart(id, {
     chart: {
       borderColor: '#000000',
@@ -51,16 +109,14 @@ async function setupRaceDetailGraph(id) {
       }
     },
     tooltip: {
-      formatter: function() {
-        return `<span>${this.series.name}<br/>${this.point.x} etappe: ${this.point.y === 0 ? 'DNF' : this.point.y + '. plass'}</span>`
-      }
+      formatter: findFormatter(type)
     },
     title: {
-      text: 'Etappeplasseringer'
+      text: title(type)
     },
     yAxis: {
       title: {
-        text: 'Plass'
+        text: yAxisTitle(type)
       },
       tickInterval: 1
     },

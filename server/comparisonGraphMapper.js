@@ -1,44 +1,59 @@
-const { toPlacesGraphData } = require('./graphFactory')
+const { toPlacesGraphData, toTimesGraphData, toAccTimesGraphData } = require('./graphFactory')
 const { convertMsToTime, convertTimeToMs } = require('../lib/time')
 
 function places(raceData) {
+  const { stages, riders } = commonTransformation(raceData)
+  return toPlacesGraphData(Object.values(riders), Object.keys(riders).length, stages)
+}
+
+function timeBehind(data) {
+  const { stages, riders } = commonTransformation(data)
+  return toTimesGraphData(Object.values(riders), Object.keys(riders).length, stages)
+}
+
+function accTimeBehind(data) {
+  const { stages, riders } = commonTransformation(data)
+  return toAccTimesGraphData(Object.values(riders), Object.keys(riders).length, stages)
+}
+
+function commonTransformation(data) {
   const stages = []
   const riders = {}
-  const lastStage = raceData.reduce((acc, current) => {
+
+  const lastStage = data.reduce((acc, current) => {
     return current.stage > acc ? current.stage : acc
   }, 0)
 
-  for (let i = 0; i < raceData.length; i++) {
-    const rider = raceData[i].uid
+  for (let i = 0; i < data.length; i++) {
+    const rider = data[i].uid
 
     if (!stages.find((s) => {
-      return s === raceData[i].stage
+      return s === data[i].stage
     })) {
-      stages.push(raceData[i].stage)
+      stages.push(data[i].stage)
     }
 
     if (!riders.hasOwnProperty(rider)) {
-      riders[rider] = toBaseObject(raceData[i])
+      riders[rider] = toBaseObject(data[i])
     }
 
-    riders[rider].stage = raceData[i].stage
-    riders[rider][`stage${raceData[i].stage}_time`] = time(raceData[i].stage_time_ms, raceData[i].status)
-    riders[rider][`stage${raceData[i].stage}_rank`] = rank(raceData[i].stage_rank)
-    riders[rider][`stage${raceData[i].stage}_behind_leader`] = convertMsToTime(raceData[i].behind_leader_ms)
-    riders[rider][`stage${raceData[i].stage}_behind_leader_ms`] = raceData[i].behind_leader_ms
-    riders[rider][`stage${raceData[i].stage}_percent_behind_leader`] = calculatePercentBehind(raceData[i])
+    riders[rider].stage = data[i].stage
+    riders[rider][`stage${data[i].stage}_time`] = time(data[i].stage_time_ms, data[i].status)
+    riders[rider][`stage${data[i].stage}_rank`] = rank(data[i].stage_rank)
+    riders[rider][`stage${data[i].stage}_behind_leader`] = convertMsToTime(data[i].behind_leader_ms)
+    riders[rider][`stage${data[i].stage}_behind_leader_ms`] = data[i].behind_leader_ms
+    riders[rider][`stage${data[i].stage}_percent_behind_leader`] = calculatePercentBehind(data[i])
 
-    if (raceData[i].stage === lastStage) {
+    if (data[i].stage === lastStage) {
       // last stage, add in acc_times and final status
-      riders[rider]['acc_time_behind'] = convertMsToTime(raceData[i].acc_time_behind)
-      riders[rider]['acc_time'] = convertMsToTime(raceData[i].acc_time_ms)
-      riders[rider]['acc_time_behind_ms'] = raceData[i].acc_time_behind
-      riders[rider]['acc_time_ms'] = raceData[i].acc_time_ms
-      riders[rider]['final_status'] = raceData[i].final_status
+      riders[rider]['acc_time_behind'] = convertMsToTime(data[i].acc_time_behind)
+      riders[rider]['acc_time'] = convertMsToTime(data[i].acc_time_ms)
+      riders[rider]['acc_time_behind_ms'] = data[i].acc_time_behind
+      riders[rider]['acc_time_ms'] = data[i].acc_time_ms
+      riders[rider]['final_status'] = data[i].final_status
     }
   }
-
-  return toPlacesGraphData(Object.values(riders), Object.keys(riders).length, stages)
+  return { stages, riders }
 }
 
 function rank(rank) {
@@ -75,5 +90,7 @@ function time (time, status) {
 }
 
 module.exports = {
-  places
+  places,
+  timeBehind,
+  accTimeBehind
 }

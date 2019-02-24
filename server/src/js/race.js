@@ -133,6 +133,19 @@ function setupRaceDetailGraph (element) {
   })
 }
 
+function title(type) {
+  if (type === 'places') {
+    return 'Etappeplasseringer'
+  }
+
+  if (type === 'times') {
+    return 'Tid bak'
+  }
+
+  return 'Total tid bak'
+
+
+}
 
 function setupRaceGraph (element, graph) {
   const index = element.getAttribute('data-highcharts-chart')
@@ -150,6 +163,9 @@ function setupRaceGraph (element, graph) {
           text: graph === 'places' ? 'Plass' : 'Sekunder'
         },
         type: 'linear'
+      },
+      title: {
+        text: title(graph)
       },
       series: data
     })
