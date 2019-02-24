@@ -90,7 +90,7 @@ function title(type) {
 function findFormatter(type) {
   if (type === 'times' || type === 'acc-times') {
       return function() {
-        return `<span>${this.series.name}<br/>${this.point.x} etappe: ${this.point.y} sekunder bak vinner</span>`
+        return `<span>${this.series.name}<br/>${this.point.x} etappe: ${Math.abs(this.point.y)} sekunder ${this.point.y < 0 ? 'foran' : 'bak'} innbyrdes vinner</span>`
       }
   }
   return function() {

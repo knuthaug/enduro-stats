@@ -12,8 +12,11 @@ function timeBehind(data) {
 }
 
 function accTimeBehind(data) {
-  const { stages, riders } = commonTransformation(data)
-  return toAccTimesGraphData(Object.values(riders), Object.keys(riders).length, stages)
+  let { stages, riders, lastStage } = commonTransformation(data)
+  riders = Object.values(riders).sort((a, b) => {
+    return a.acc_time_ms - b.acc_time_ms
+  })
+  return toAccTimesGraphData(riders, riders.length, stages)
 }
 
 function commonTransformation(data) {
@@ -53,7 +56,7 @@ function commonTransformation(data) {
       riders[rider]['final_status'] = data[i].final_status
     }
   }
-  return { stages, riders }
+  return { stages, riders, lastStage }
 }
 
 function rank(rank) {
