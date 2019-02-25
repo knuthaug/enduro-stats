@@ -83,7 +83,6 @@ class Mylaps extends Converter {
 
   async parseStages () {
     const raw = await csv(this.file, { separator: ';' })
-
     const stages = this.findStages(raw)
 
     for (let i = 0; i < stages.length; i++) {

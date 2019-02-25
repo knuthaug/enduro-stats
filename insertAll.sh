@@ -60,6 +60,8 @@ echo "  Molde"
 node import/importer.js -r results/2015/molde/racedata.json
 echo "  Hillbilly"
 node import/importer.js -f results/2015/hillbilly/hillbilly-2015.csv
+echo "  Voss"
+node import/importer.js -m -f results/2015/voss/voss-2015.csv
 
 #2016
 echo "2016:"
@@ -99,6 +101,8 @@ echo "  Hafjell"
 node import/importer.js -m -f results/2017/hafjell/hafjell-2017.csv
 echo "  Ringerike"
 node import/importer.js -m -f results/2017/ringerike/ringerike-2017.csv
+echo "  Voss"
+node import/importer.js -m -f results/2017/voss/voss-2017.csv
 
 echo "2018:"
 echo "  Telemark"
@@ -125,5 +129,7 @@ echo "  Harstad"
 node import/importer.js -f results/2018/harstad/harstad-2018.csv
 echo "  Hemsedal"
 node import/importer.js -m -f results/2018/hemsedal/hemsedal-2018.csv
+echo "  Voss"
+node import/importer.js -m -f results/2018/voss/voss-2018.csv
 
 
