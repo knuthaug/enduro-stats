@@ -1,6 +1,5 @@
 drop table insert_log;
 drop table migrations;
-drop table raw_results;
 drop table results;
 drop table race_links;
 drop table rider_races;
