@@ -132,4 +132,6 @@ node import/importer.js -m -f results/2018/hemsedal/hemsedal-2018.csv
 echo "  Voss"
 node import/importer.js -m -f results/2018/voss/voss-2018.csv
 
-
+echo "2019"
+echo "  Hakadal Snowhill"
+node import/importer.js -m -f results/2019/hakadal-snowhill/hakadal-snowhill-2019.csv
