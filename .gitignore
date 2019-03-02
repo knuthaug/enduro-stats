@@ -11,7 +11,7 @@ dump.sql
 app.yaml
 bundlemap-css.json
 bundlemap-js.json
-
+switchdb
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
