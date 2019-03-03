@@ -254,14 +254,7 @@ function percentRanks (races, ridersPerClass) {
 
     return r
   }).sort((a, b) => {
-    const aDate = a.date.replace('-', '')
-    const bDate = b.date.replace('-', '')
-    if (bDate > aDate) {
-      return 1
-    } else if (bDate < aDate) {
-      return -1
-    }
-    return 0
+    return compareAsc(parse(b.date), parse(a.date))
   })
 }
 
