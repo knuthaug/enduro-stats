@@ -120,7 +120,9 @@ class StageCalculations {
   fullAbortedRace (rows, indexes, id) {
     const statuses = []
     for (let i = 0; i < indexes.length; i++) {
-      statuses.push(rows[indexes[i]].status === DNS_STATUS || rows[indexes[i]].status === DNF_STATUS)
+      statuses.push(rows[indexes[i]].status === DNS_STATUS ||
+                    rows[indexes[i]].status === DNF_STATUS ||
+                    rows[indexes[i]].status === ERROR_STATUS )
     }
     return statuses.some(s => s)
   }
