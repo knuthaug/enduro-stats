@@ -39,7 +39,9 @@ function stageIndexesForStage (list, stageNum) {
 }
 
 function rowIndexByProp (list, prop, value) {
-  return list.map((r, index) => {
+  return list.sort((a, b) => {
+    return a.stage - b.stage
+  }).map((r, index) => {
     if (r[prop] === value) {
       return index
     }

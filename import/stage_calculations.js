@@ -102,7 +102,7 @@ class StageCalculations {
         } else if (!abortedRace && !notStartedRace) {
           rows[stageIndexes[i]].final_status = OK_STATUS
           rows[stageIndexes[i]].skipped_stages = 0
-        }
+        } 
       }
     }
   }
@@ -127,7 +127,7 @@ class StageCalculations {
 
   notRiddenStage (rows, indexes, index) {
     const obj = rows[indexes[index]]
-    return obj.status === DNS_STATUS
+    return obj.status === DNS_STATUS || obj.status === DNF_STATUS
   }
 
   abortedRace (rows, indexes, index) {
