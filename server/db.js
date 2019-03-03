@@ -67,7 +67,7 @@ class Db {
   }
 
   async findAllRiders () {
-    const query = 'select riders.uid, riders.name, riders.club, (SELECT count(race_id) from rider_races where rider_id = riders.id) from riders order by count DESC'
+    const query = 'select riders.id, riders.uid, riders.name, riders.club, (SELECT count(race_id) from rider_races where rider_id = riders.id) from riders order by count DESC'
     const values = []
     return this.find(query, values)
   }
@@ -82,6 +82,13 @@ class Db {
     const query = 'SELECT results.*, (select name from stages where id = results.stage_id) as stageName, race_id, ra.name, ra.uid, ra.date, ra.year FROM results LEFT OUTER JOIN (SELECT id, name, uid, date, year from races) AS ra ON ra.id = results.race_id WHERE results.rider_id = (SELECT id from riders where uid = $1) order by stage_id ASC'
 
     const values = [uid]
+    return this.find(query, values)
+  }
+
+  async riderRanks (gender) {
+    const query = 'SELECT rider_rankings.*, riders.uid as uid, riders.name as name, riders.club as club FROM riders, rider_rankings where rider_rankings.rider_id = riders.id and riders.gender = $1 and rider_rankings.score > 0 order by score ASC'
+
+    const values = [gender]
     return this.find(query, values)
   }
 

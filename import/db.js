@@ -171,6 +171,13 @@ class Db {
     }
   }
 
+  async addRankings(id, year, avgScore, rank) {
+    logger.info(`Inserting rankings for rider ${id}`)
+    const query = 'INSERT INTO rider_rankings(rider_id, best_year, average_best_year, score) VALUES($1, $2, $3, $4)'
+    const values = [id, year, avgScore, rank]
+    return this.insert(query, values)
+  }
+
   async insertRider (rider) {
     const client = await this.pool.connect()
     const query = 'WITH inserted as (INSERT INTO riders(name, gender, club, team, uid) VALUES($1, $2, $3, $4, $5) ON CONFLICT(name, gender) DO NOTHING RETURNING *) select id FROM inserted'
