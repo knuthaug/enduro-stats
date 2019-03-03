@@ -8,6 +8,7 @@ const isDNS = require('../views/helpers/isDNS.js')
 const isError = require('../views/helpers/isError.js')
 const cat = require('../views/helpers/cat.js')
 const isOK = require('../views/helpers/isOK.js')
+const inc = require('../views/helpers/inc.js')
 
 module.exports = {
   hashedAssets,
@@ -19,5 +20,6 @@ module.exports = {
   isDNF,
   isError,
   isOK,
-  cat
+  cat,
+  inc
 }

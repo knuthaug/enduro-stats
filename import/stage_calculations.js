@@ -64,9 +64,7 @@ class StageCalculations {
         abortedRace = true
         rows[stageIndexes[i]].status = DNF_STATUS
         skipped++
-      }
-
-      if (this.notRiddenStage(rows, stageIndexes, i)) {
+      } else if (this.notRiddenStage(rows, stageIndexes, i)) {
         rows[stageIndexes[i]].status = DNS_STATUS
         skipped++
       }
@@ -122,7 +120,7 @@ class StageCalculations {
     for (let i = 0; i < indexes.length; i++) {
       statuses.push(rows[indexes[i]].status === DNS_STATUS ||
                     rows[indexes[i]].status === DNF_STATUS ||
-                    rows[indexes[i]].status === ERROR_STATUS )
+                    rows[indexes[i]].status === ERROR_STATUS)
     }
     return statuses.some(s => s)
   }

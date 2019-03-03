@@ -17,6 +17,7 @@
   <table class="table table-hover table-borderless table-dark table-striped table-sm" id="riders-table">
     <thead>
       <tr>
+        <th scope="col">#</th>
         <th scope="col">Navn</th>
         <th scope="col">Klubb</th>
         <th scope="col">Beste år</th>
@@ -27,6 +28,7 @@
     <tbody>
       {{#each women}}
       <tr>
+        <td>{{inc @index}}</td>
         <td><a href="/rytter/{{uid}}">{{name}}</a></td>
         <td>{{club}}</td>
         <td>{{best_year}}</td>
@@ -51,6 +53,7 @@
       <table class="table table-hover table-borderless table-dark table-striped table-sm" id="riders-table">
         <thead>
           <tr>
+            <th scope="col">#</th>
             <th scope="col">Navn</th>
             <th scope="col">Klubb</th>
             <th scope="col">Beste år</th>
@@ -61,6 +64,7 @@
         <tbody>
           {{#each men}}
           <tr>
+            <td>{{inc @index}}</td>
             <td><a href="/rytter/{{uid}}">{{name}}</a></td>
             <td>{{club}}</td>
             <td>{{best_year}}</td>

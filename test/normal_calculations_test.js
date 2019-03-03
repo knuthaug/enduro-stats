@@ -172,7 +172,7 @@ tap.test('fine tune dns/dnf contiued', async t => {
   t.end()
 })
 
-tap.test('fine tune dns/dnf contiued', async t => {
+tap.test('fine tune dns/dnf continued', async t => {
   const c = new StageCalculations()
   const rows = JSON.parse(fs.readFileSync(path.join(__dirname, './data/race-results-explorer-kvinner-nesfjella.json')))
   const result = c.differentials(rows)
