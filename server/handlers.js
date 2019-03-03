@@ -4,7 +4,7 @@ const resultViewMapper = require('./resultViewMapper.js')
 const fullResultViewMapper = require('./fullResultViewMapper.js')
 const raceViewMapper = require('./raceViewMapper.js')
 const { riderViewMapper, toNumber } = require('./riderViewMapper.js')
-const bestSeason = require('./bestSeason.js')
+const ranking = require('./ranking')
 const compareAsc = require('date-fns/compare_asc')
 const parse = require('date-fns/parse')
 const comparisonMapper = require('./comparisonMapper.js')
@@ -215,7 +215,7 @@ async function riderHandler (req) {
 
   const { placesChart, percentChart } = toChartData(results)
 
-  const { year, avg, score } = bestSeason(results)
+  const { year, avg, score } = ranking(results)
   const startYear = results[results.length - 1].year
 
   return {
