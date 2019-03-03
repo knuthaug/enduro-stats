@@ -102,7 +102,7 @@ class StageCalculations {
         } else if (!abortedRace && !notStartedRace) {
           rows[stageIndexes[i]].final_status = OK_STATUS
           rows[stageIndexes[i]].skipped_stages = 0
-        }
+        } 
       }
     }
   }
@@ -120,14 +120,16 @@ class StageCalculations {
   fullAbortedRace (rows, indexes, id) {
     const statuses = []
     for (let i = 0; i < indexes.length; i++) {
-      statuses.push(rows[indexes[i]].status === DNS_STATUS || rows[indexes[i]].status === DNF_STATUS)
+      statuses.push(rows[indexes[i]].status === DNS_STATUS ||
+                    rows[indexes[i]].status === DNF_STATUS ||
+                    rows[indexes[i]].status === ERROR_STATUS )
     }
     return statuses.some(s => s)
   }
 
   notRiddenStage (rows, indexes, index) {
     const obj = rows[indexes[index]]
-    return obj.status === DNS_STATUS
+    return obj.status === DNS_STATUS || obj.status === DNF_STATUS
   }
 
   abortedRace (rows, indexes, index) {
