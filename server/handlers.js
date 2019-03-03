@@ -1,10 +1,10 @@
 const log = require('./log')
 const Db = require('./db')
-const resultViewMapper = require('./resultViewMapper.')
+const resultViewMapper = require('./resultViewMapper')
 const fullResultViewMapper = require('./fullResultViewMapper')
 const raceViewMapper = require('./raceViewMapper.js')
 const { riderViewMapper, toNumber } = require('./riderViewMapper')
-const ranking = require('../lib/ranking')
+const { userRanking } = require('../lib/ranking')
 const compareAsc = require('date-fns/compare_asc')
 const parse = require('date-fns/parse')
 const comparisonMapper = require('./comparisonMapper')
@@ -215,7 +215,7 @@ async function riderHandler (req) {
 
   const { placesChart, percentChart } = toChartData(results)
 
-  const { year, avg, score } = ranking(results)
+  const { year, avg, score } = userRanking(results)
   const startYear = results[results.length - 1].year
 
   return {
