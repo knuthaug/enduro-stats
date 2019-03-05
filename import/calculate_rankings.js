@@ -10,7 +10,7 @@ async function run() {
     })
   })
   allRidersRankings(allRiders)
-  //allRidersRankings([{id: 5730, uid: '00fde8e308a30a453c1f22e9bf8600a8'}])
+  //allRidersRankings([{id: 1684, uid: 'b3656cd8d7f6f243683f1c52d32cf4e1'}])
 }
 
 run()

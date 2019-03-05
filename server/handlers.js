@@ -228,7 +228,7 @@ async function riderHandler (req) {
 
   const { placesChart, percentChart } = toChartData(results)
 
-  const { year, avg, score } = userRanking(results)
+  const { year, avg, score } = await db.riderRanking(rider.id)
   const startYear = results[results.length - 1].year
 
   return {

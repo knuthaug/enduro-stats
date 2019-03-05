@@ -92,6 +92,14 @@ class Db {
     return this.find(query, values)
   }
 
+  async riderRanking (riderId) {
+    const query = 'SELECT best_year as year, average_best_year as avg, score FROM riders, rider_rankings where rider_rankings.rider_id = riders.id and riders.id = $1'
+
+    const values = [riderId]
+    const result = await this.find(query, values)
+    return result[0]
+  }
+
   async raceResultsForRiders (uids) {
     let i = 1
     const placeholders = uids.map((u) => {
