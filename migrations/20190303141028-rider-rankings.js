@@ -37,6 +37,10 @@ exports.up = function(db) {
       type: 'int',
       notNull: false
     },
+    date: {
+      type: 'string',
+      notNull: false
+    },
     rider_id: {
       type: 'int',
       notNull: true,
