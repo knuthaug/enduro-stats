@@ -86,7 +86,7 @@ class Db {
   }
 
   async riderRanks (gender) {
-    const query = 'SELECT rr.id, rr.rider_id, rr.score, max_sequence, r.name, r.club, rr.date FROM rider_rankings rr INNER JOIN (SELECT rider_id, MAX(sequence_number) max_sequence FROM rider_rankings GROUP BY rider_id) b ON rr.rider_id = b.rider_id AND b.max_sequence = rr.sequence_number JOIN Riders r on rr.rider_id = r.id where r.gender = $1 order by score'
+    const query = 'SELECT rr.id, rr.rider_id, rr.score, max_sequence, r.name, r.uid, r.club, rr.date FROM rider_rankings rr INNER JOIN (SELECT rider_id, MAX(sequence_number) max_sequence FROM rider_rankings GROUP BY rider_id) b ON rr.rider_id = b.rider_id AND b.max_sequence = rr.sequence_number JOIN Riders r on rr.rider_id = r.id where r.gender = $1 order by score'
     const values = [gender]
     return this.find(query, values)
   }
