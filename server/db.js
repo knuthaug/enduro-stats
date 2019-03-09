@@ -86,14 +86,14 @@ class Db {
   }
 
   async riderRanks (gender) {
-    const query = 'SELECT rider_rankings.*, riders.uid as uid, riders.name as name, riders.club as club FROM riders, rider_rankings where rider_rankings.rider_id = riders.id and riders.gender = $1 and rider_rankings.score > 0 order by score ASC'
-
+//    const query = 'SELECT rider_rankings.*, riders.uid as uid, riders.name as name, riders.club as club FROM riders, rider_rankings where rider_rankings.rider_id = riders.id and riders.gender = $1 and rider_rankings.score > 0 and sequence_number = (SELECT max(sequence_number) from rider_rankings) order by score ASC'
+    const query = 'SELECT rr.id, rr.score, rr.best_year, rr.average_best_year, r.uid as uid, r.name as name, r.club as club FROM riders r, rider_rankings rr INNER JOIN (SELECT id, MAX(sequence_number) sequence_number FROM rider_rankings GROUP BY id) b ON rr.id = b.id AND rr.sequence_number = b.sequence_number where riders.id = rider_rankings.rider_id and riders.gender = $1'
     const values = [gender]
     return this.find(query, values)
   }
 
   async riderRanking (riderId) {
-    const query = 'SELECT best_year as year, average_best_year as avg, score FROM riders, rider_rankings where rider_rankings.rider_id = riders.id and riders.id = $1'
+    const query = 'SELECT best_year as year, average_best_year as avg, score FROM riders, rider_rankings where rider_rankings.rider_id = riders.id and riders.id = $1 and sequence_number = (SELECT max(sequence_number) from rider_rankings where rider_id = $1)'
 
     const values = [riderId]
     const result = await this.find(query, values)

@@ -9,6 +9,7 @@ const AccumulatedStageCalculations = require('./accumulated_stage_calculations.j
 const NormalStageCalculations = require('./normal_stage_calculations.js')
 const logger = require('./logger.js')
 const cmd = require('command-line-args')
+const { allRidersRankings } = require('../lib/ranking')
 
 const db = new Db()
 const accCalc = new AccumulatedStageCalculations()
@@ -120,8 +121,14 @@ async function calculateComplete (dirName) {
 
     // console.log(calcs)
     await db.insertCalculatedResults(raceId, calcs)
+    const riders = await db.ridersForRace(raceId)
+    await calculateRankings(riders, raceYear)
   }
   db.destroy()
+}
+
+async function calculateRankings(riders, year) {
+  allRidersRankings(riders, year)
 }
 
 async function readCompleteRaceFile (filename, datafile, mylaps) {
