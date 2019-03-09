@@ -14,7 +14,8 @@ module.exports = {
     cal: './server/src/js/cal.js',
     fullrace: './server/src/js/fullrace.js',
     riders: './server/src/js/riders.js',
-    compare: './server/src/js/compare.js'
+    compare: './server/src/js/compare.js',
+    rank: './server/src/js/rank.js'
   },
   output: {
     filename: '[name]-[chunkhash].js',
