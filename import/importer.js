@@ -41,9 +41,9 @@ if (!options.hasOwnProperty('dir') && !options.hasOwnProperty('file') && !option
 const dir = options.dir
 if (dir) {
   fs.readdir(dir, async function (err, items) {
-    let raceName, raceYear, raceId
+    let raceName, raceYear, raceId, raceDate
     for (var i = 0; i < items.length; i++) {
-      let { raceName, raceYear, raceId } = await readSingleStageFile(items[i])
+      let { raceName, raceYear, raceId, raceDate } = await readSingleStageFile(items[i])
     }
 
     const classes = await db.classesForRace(raceId)
@@ -65,6 +65,14 @@ if (dir) {
 
       await db.insertCalculatedResults(raceId, calcs)
     }
+
+    const allRiders = await db.findAllRiders().then((data) => {
+      return data.filter((r) => {
+        return r.count !== '0'
+      })
+    })
+
+    await calculateRankings(allRiders, raceYear, raceId, raceDate)
 
     db.destroy()
   })
@@ -100,7 +108,7 @@ async function readRaceData (file) {
 }
 
 async function calculateComplete (dirName) {
-  const { raceName, raceYear, raceId } = await readCompleteRaceFile(options.file, path.join(dirName, 'racedata.json'), options.mylaps)
+  const { raceName, raceYear, raceId, raceDate } = await readCompleteRaceFile(options.file, path.join(dirName, 'racedata.json'), options.mylaps)
 
   const classes = await db.classesForRace(raceId)
   for (let i = 0; i < classes.length; i++) {
@@ -121,14 +129,20 @@ async function calculateComplete (dirName) {
 
     // console.log(calcs)
     await db.insertCalculatedResults(raceId, calcs)
-    const riders = await db.ridersForRace(raceId)
-    await calculateRankings(riders, raceYear)
   }
+
+  const allRiders = await db.findAllRiders().then((data) => {
+    return data.filter((r) => {
+      return r.count !== '0'
+    })
+  })
+  await calculateRankings(allRiders, raceYear, raceId, raceDate)
+
   db.destroy()
 }
 
-async function calculateRankings(riders, year) {
-  allRidersRankings(riders, year)
+async function calculateRankings(riders, year, raceId, raceDate) {
+  await allRidersRankings(riders, year, raceId, raceDate)
 }
 
 async function readCompleteRaceFile (filename, datafile, mylaps) {
@@ -156,7 +170,7 @@ async function readCompleteRaceFile (filename, datafile, mylaps) {
     db.insertRaceLinks(raceId, data.race.links)
   }
 
-  return { raceName: data.race.name, raceYear: data.race.year, raceId: raceId }
+  return { raceName: data.race.name, raceYear: data.race.year, raceId: raceId, raceDate: data.race.date }
 }
 
 async function readSingleStageFile (filename) {
@@ -167,5 +181,5 @@ async function readSingleStageFile (filename) {
   const raceId = await db.insertRace(data.race, data.stages[0].number)
   await db.insertStage(data.race.name, data.stages[0], raceId)
   await db.insertRawResults(data.race.name, data.race.year, data.stages[0], data.stages[0].results)
-  return { raceName: data.race.name, raceYear: data.race.year, raceId: raceId }
+  return { raceName: data.race.name, raceYear: data.race.year, raceId: raceId, raceDate: data.race.date }
 }

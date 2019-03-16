@@ -154,7 +154,7 @@ class Db {
   }
 
   async findAllRiders () {
-    const query = 'select riders.id, riders.uid, riders.name, riders.club, (SELECT count(race_id) from rider_races where rider_id = riders.id) from riders order by count DESC'
+    const query = 'select riders.id, riders.uid, riders.name, riders.gender, riders.club, (SELECT count(race_id) from rider_races where rider_id = riders.id) from riders order by count DESC'
     const values = []
     return this.findSet(query, values)
   }

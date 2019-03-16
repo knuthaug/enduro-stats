@@ -67,9 +67,16 @@ class Db {
   }
 
   async findAllRiders () {
-    const query = 'select riders.id, riders.uid, riders.name, riders.club, (SELECT count(race_id) from rider_races where rider_id = riders.id) from riders order by count DESC'
+    const query = 'select riders.id, riders.uid, riders.name, riders.gender, riders.club, (SELECT count(race_id) from rider_races where rider_id = riders.id) from riders order by count DESC'
     const values = []
     return this.find(query, values)
+  }
+
+  async winnerTimeOfRace(raceId, gender) {
+    const query = 'select results.id, acc_time_ms from results, riders where race_id = $1 and acc_time_ms = (select min(acc_time_ms) from results, riders where race_id = $1 and acc_time_ms != 0 and results.rider_id = riders.id and riders.gender = $2 and final_rank IS NOT null) and results.rider_id = riders.id'
+
+    const values = [raceId, gender]
+    return this.findOne(query, values, 'acc_time_ms')
   }
 
   async findRacesForRider (uid) {
