@@ -12,6 +12,8 @@ const options = {
 class Db {
   constructor () {
     this.pool = new Pool(options)
+    this.winnerTimeOfRace = this.memoize(this.winnerTimeOfRace)
+    //this.ridersForClassAndRace = this.memoize(this.ridersForClassAndRace)
   }
 
   async findRaces (limit) {
@@ -86,7 +88,7 @@ class Db {
   }
 
   async raceResultsForRider (uid) {
-    const query = 'SELECT results.*, (select name from stages where id = results.stage_id) as stageName, race_id, ra.name, ra.uid, ra.date, ra.year FROM results LEFT OUTER JOIN (SELECT id, name, uid, date, year from races) AS ra ON ra.id = results.race_id WHERE results.rider_id = (SELECT id from riders where uid = $1) order by stage_id ASC'
+    const query = 'SELECT results.*, riders.name, riders.gender, (select name from stages where id = results.stage_id) as stageName, race_id, ra.name, ra.uid, ra.date, ra.year FROM results LEFT OUTER JOIN (SELECT id, name, uid, date, year from races) AS ra ON ra.id = results.race_id LEFT OUTER JOIN (select id, name, gender from riders ) as riders on results.rider_id = riders.id WHERE results.rider_id = (SELECT id from riders where uid = $1) order by stage_id ASC';
 
     const values = [uid]
     return this.find(query, values)
@@ -212,9 +214,26 @@ class Db {
     }
   }
 
+  memoize(func) {
+    let cache = {}
+    return async function (...args){
+      const n = args.join('_')
+      if (cache.hasOwnProperty(n)) {
+        return cache[n]
+      }
+      else {
+        const fn = func.bind(this)
+        const result = await fn(...args)
+        cache[n] = result
+        return cache[n]
+      }
+    }.bind(this)
+  }
+
   async destroy () {
     this.pool.end()
   }
 }
+
 
 module.exports = Db
