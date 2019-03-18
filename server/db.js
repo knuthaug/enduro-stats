@@ -75,9 +75,9 @@ class Db {
   }
 
   async winnerTimeOfRace(raceId, gender) {
-    const query = 'select results.id, acc_time_ms from results, riders where race_id = $1 and acc_time_ms = (select min(acc_time_ms) from results, riders where race_id = $1 and acc_time_ms != 0 and results.rider_id = riders.id and riders.gender = $2 and final_rank IS NOT null) and results.rider_id = riders.id'
+    const query = 'select results.id, acc_time_ms from results, riders where race_id = $1 and acc_time_ms = (select min(acc_time_ms) from results, riders where race_id = $1 and acc_time_ms != 0 and results.rider_id = riders.id and riders.gender = $2 and results.class like $3 and final_rank IS NOT null) and results.rider_id = riders.id'
 
-    const values = [raceId, gender]
+    const values = [raceId, gender, gender === 'F' ? 'Kvinner%' : 'Menn%']
     return this.findOne(query, values, 'acc_time_ms')
   }
 
@@ -205,6 +205,9 @@ class Db {
     const client = await this.pool.connect()
     try {
       const res = await client.query(query, values)
+      if(!res.rows[0]) {
+        console.log(`Didn't find record ${field} for values≈${values}`)
+      }
       return res.rows[0][field]
     } catch (error) {
       console.log(error)
