@@ -144,7 +144,6 @@ function toAccTimes (rows, index, winner, stages) {
     }, 0)
   }
 
-  const keys = Object.keys(totals)
   return Object.keys(totals[index]).map((stageNum) => {
     return (totals[index][stageNum] - totals[winner][stageNum]).toFixed(1) // diff between total for this and total for first in race
   })
@@ -162,8 +161,6 @@ function avg (o, stages, prop) {
 function raceChart (rows, startIndex, stages) {
   let start = startIndex
   let stop
-
-  const diff = (rows.length - 1) - startIndex
 
   if (startIndex === 0) {
     stop = 4

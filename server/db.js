@@ -13,7 +13,7 @@ class Db {
   constructor () {
     this.pool = new Pool(options)
     this.winnerTimeOfRace = this.memoize(this.winnerTimeOfRace)
-    //this.ridersForClassAndRace = this.memoize(this.ridersForClassAndRace)
+    // this.ridersForClassAndRace = this.memoize(this.ridersForClassAndRace)
   }
 
   async findRaces (limit) {
@@ -74,7 +74,7 @@ class Db {
     return this.find(query, values)
   }
 
-  async winnerTimeOfRace(raceId, gender) {
+  async winnerTimeOfRace (raceId, gender) {
     const query = 'select results.id, acc_time_ms from results, riders where race_id = $1 and acc_time_ms = (select min(acc_time_ms) from results, riders where race_id = $1 and acc_time_ms != 0 and results.rider_id = riders.id and riders.gender = $2 and results.class like $3 and final_rank IS NOT null) and results.rider_id = riders.id'
 
     const values = [raceId, gender, gender === 'F' ? 'Kvinner%' : 'Menn%']
@@ -88,7 +88,7 @@ class Db {
   }
 
   async raceResultsForRider (uid) {
-    const query = 'SELECT results.*, riders.name, riders.gender, (select name from stages where id = results.stage_id) as stageName, race_id, ra.name, ra.uid, ra.date, ra.year FROM results LEFT OUTER JOIN (SELECT id, name, uid, date, year from races) AS ra ON ra.id = results.race_id LEFT OUTER JOIN (select id, name, gender from riders ) as riders on results.rider_id = riders.id WHERE results.rider_id = (SELECT id from riders where uid = $1) order by stage_id ASC';
+    const query = 'SELECT results.*, riders.name, riders.gender, (select name from stages where id = results.stage_id) as stageName, race_id, ra.name, ra.uid, ra.date, ra.year FROM results LEFT OUTER JOIN (SELECT id, name, uid, date, year from races) AS ra ON ra.id = results.race_id LEFT OUTER JOIN (select id, name, gender from riders ) as riders on results.rider_id = riders.id WHERE results.rider_id = (SELECT id from riders where uid = $1) order by stage_id ASC'
 
     const values = [uid]
     return this.find(query, values)
@@ -205,7 +205,7 @@ class Db {
     const client = await this.pool.connect()
     try {
       const res = await client.query(query, values)
-      if(!res.rows[0]) {
+      if (!res.rows[0]) {
         console.log(`Didn't find record ${field} for values≈${values}`)
       }
       return res.rows[0][field]
@@ -217,14 +217,13 @@ class Db {
     }
   }
 
-  memoize(func) {
+  memoize (func) {
     let cache = {}
-    return async function (...args){
+    return async function (...args) {
       const n = args.join('_')
       if (cache.hasOwnProperty(n)) {
         return cache[n]
-      }
-      else {
+      } else {
         const fn = func.bind(this)
         const result = await fn(...args)
         cache[n] = result
@@ -237,6 +236,5 @@ class Db {
     this.pool.end()
   }
 }
-
 
 module.exports = Db

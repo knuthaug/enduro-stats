@@ -1,7 +1,6 @@
-const { convertMsToTime, convertTimeToMs } = require('../lib/time.js')
+const { convertMsToTime } = require('../lib/time.js')
 
 module.exports = function fullResultViewMapper (classes, results) {
-  const out = {}
   let riders = {}
   let stages = []
   const lastStage = results.reduce((acc, current) => {
@@ -43,15 +42,15 @@ module.exports = function fullResultViewMapper (classes, results) {
 
   riders = Object.values(riders)
 
-  //go through stage by stage, and assign new stage ranks
-  for(let i = 1; i <= lastStage; i++) {
+  // go through stage by stage, and assign new stage ranks
+  for (let i = 1; i <= lastStage; i++) {
     let rank = 1
     const sortedByStage = riders.sort((a, b) => {
-      if(a[`stage${i}_time_ms`] === 0) {
+      if (a[`stage${i}_time_ms`] === 0) {
         return 1
       }
 
-      if(b[`stage${i}_time_ms`] === 0) {
+      if (b[`stage${i}_time_ms`] === 0) {
         return -1
       }
 
@@ -63,12 +62,11 @@ module.exports = function fullResultViewMapper (classes, results) {
       return 0
     })
 
-    for(let j = 0; j < sortedByStage.length; j++) {
-      if(j === 0) {
+    for (let j = 0; j < sortedByStage.length; j++) {
+      if (j === 0) {
         sortedByStage[j][`stage${i}_behind_leader`] = convertMsToTime(0)
       } else {
         sortedByStage[j][`stage${i}_behind_leader`] = convertMsToTime(sortedByStage[j][`stage${i}_time_ms`] - sortedByStage[0][`stage${i}_time_ms`])
-
       }
       sortedByStage[j][`stage${i}_rank`] = rank++
     }
@@ -76,7 +74,7 @@ module.exports = function fullResultViewMapper (classes, results) {
   }
 
   let i = 1
-  //sort by total time and assign new total rank
+  // sort by total time and assign new total rank
   riders = Object.values(riders)
     .filter((r) => {
       return r.num_stages === lastStage // filter out all racers missing stages (some classes)
@@ -85,8 +83,8 @@ module.exports = function fullResultViewMapper (classes, results) {
       return Object.assign({ fullrank: i++ }, r)
     })
 
-  for(let i = 0; i < riders.length; i++) {
-    if(i === 0 || riders[i].acc_time_ms === 0) {
+  for (let i = 0; i < riders.length; i++) {
+    if (i === 0 || riders[i].acc_time_ms === 0) {
       riders[i].acc_time_behind_ms = 0
       riders[i].acc_time_behind = convertMsToTime(0)
     } else {
@@ -103,13 +101,13 @@ function time (time, status) {
   }
   return convertMsToTime(time)
 }
- 
+
 function compareTimes (a, b) {
-  if(a.acc_time_ms === 0) {
+  if (a.acc_time_ms === 0) {
     return 1
   }
 
-  if(b.acc_time_ms === 0) {
+  if (b.acc_time_ms === 0) {
     return -1
   }
 

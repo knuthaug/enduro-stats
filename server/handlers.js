@@ -3,10 +3,11 @@ const Db = require('./db')
 const resultViewMapper = require('./resultViewMapper')
 const fullResultViewMapper = require('./fullResultViewMapper')
 const raceViewMapper = require('./raceViewMapper.js')
-const { riderViewMapper, toNumber } = require('./riderViewMapper')
-const { userRanking, percentRanks } = require('../lib/ranking')
+const { riderViewMapper } = require('./riderViewMapper')
 const compareAsc = require('date-fns/compare_asc')
 const parse = require('date-fns/parse')
+const { percentRanks } = require('../lib/percent_ranks')
+
 const comparisonMapper = require('./comparisonMapper')
 const comparisonGraphMapper = require('./comparisonGraphMapper')
 const db = new Db()
@@ -52,15 +53,15 @@ async function compareGraphHandler (req) {
     ridersData = await db.raceResultsForRaceAndRiders(race, riders)
   }
 
-  if(type === 'places') {
+  if (type === 'places') {
     return comparisonGraphMapper.places(ridersData)
   }
 
-  if(type === 'times') {
+  if (type === 'times') {
     return comparisonGraphMapper.timeBehind(ridersData)
   }
 
-  if(type === 'acc-times') {
+  if (type === 'acc-times') {
     return comparisonGraphMapper.accTimeBehind(ridersData)
   }
 
@@ -117,7 +118,7 @@ async function fullRaceHandler (req) {
     return r.uid
   })))
 
-  if(riders.length > results.length) {
+  if (riders.length > results.length) {
     message = 'Ryttere i klasser med færre etapper enn maksimalt antall, er filtrert ut av total-listen da de automatisk får kortest totaltid. Bruk vanlig resultatvisning for å se resultater for disse klassene.'
   }
 
@@ -148,7 +149,7 @@ async function indexHandler () {
   }
 }
 
-async function rankHandler(req) {
+async function rankHandler (req) {
   log.debug(`request for ${req.path}`)
   const men = await db.riderRanks('M')
   const women = await db.riderRanks('F')
@@ -247,14 +248,14 @@ async function riderHandler (req) {
   }
 }
 
-function toComparisonChartData(races) {
+function toComparisonChartData (races) {
   const ridersSeries = {}
 
-  for(let i = 0; i < races.length; i++) {
-    for(let j = 0; j < races[i].riders.length; j++) {
+  for (let i = 0; i < races.length; i++) {
+    for (let j = 0; j < races[i].riders.length; j++) {
       const rider = races[i].riders[j]
-      if(!ridersSeries.hasOwnProperty(rider.name)) {
-        ridersSeries[rider.name] = []
+      if (!ridersSeries.hasOwnProperty(rider.name)) {
+        ridersSeries[rider.name] = []
       }
       ridersSeries[rider.name].push([
         races[i].name,

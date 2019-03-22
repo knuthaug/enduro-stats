@@ -183,9 +183,8 @@ class Db {
     }
   }
 
-  async addRankings(riderId, year, avgScore, rank, date) {
-
-    const { seq }= await this.findAll('select max(sequence_number) as seq from rider_rankings where rider_id = $1', [riderId])
+  async addRankings (riderId, year, avgScore, rank, date) {
+    const { seq } = await this.findAll('select max(sequence_number) as seq from rider_rankings where rider_id = $1', [riderId])
 
     logger.info(`Inserting rankings for rider ${riderId}`)
     const query = 'INSERT INTO rider_rankings(rider_id, best_year, average_best_year, score, sequence_number, date) VALUES($1, $2, $3, $4, $5, $6)'
@@ -205,7 +204,7 @@ class Db {
         logger.info(`Inserted rider ${res.rows[0].id}`)
         return res.rows[0].id
       } else {
-        const { id, club, name, uid, gender } = await this.findRider(rider.name, rider.gender)
+        const { id, club } = await this.findRider(rider.name, rider.gender)
         logger.info(`Found existing rider rider ${id} (club=${club} | rider.club=${rider.club})`)
 
         if ((typeof club === 'undefined' && rider.club !== '') && club !== rider.club) {

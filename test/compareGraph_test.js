@@ -39,4 +39,3 @@ tap.test('Maps to acc time behind format, ', async (t) => {
   t.deepEquals(r[0].data[1], [2, 0], 'data array is number of stages')
   t.end()
 })
-

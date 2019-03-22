@@ -1,25 +1,25 @@
 const { toPlacesGraphData, toTimesGraphData, toAccTimesGraphData } = require('./graphFactory')
-const { convertMsToTime, convertTimeToMs } = require('../lib/time')
+const { convertMsToTime } = require('../lib/time')
 
-function places(raceData) {
+function places (raceData) {
   const { stages, riders } = commonTransformation(raceData)
   return toPlacesGraphData(Object.values(riders), Object.keys(riders).length, stages)
 }
 
-function timeBehind(data) {
+function timeBehind (data) {
   const { stages, riders } = commonTransformation(data)
   return toTimesGraphData(Object.values(riders), Object.keys(riders).length, stages)
 }
 
-function accTimeBehind(data) {
-  let { stages, riders, lastStage } = commonTransformation(data)
+function accTimeBehind (data) {
+  let { stages, riders } = commonTransformation(data)
   riders = Object.values(riders).sort((a, b) => {
     return a.acc_time_ms - b.acc_time_ms
   })
   return toAccTimesGraphData(riders, riders.length, stages)
 }
 
-function commonTransformation(data) {
+function commonTransformation (data) {
   const stages = []
   const riders = {}
 
@@ -59,15 +59,15 @@ function commonTransformation(data) {
   return { stages, riders, lastStage }
 }
 
-function rank(rank) {
-  if(rank === 999) {
+function rank (rank) {
+  if (rank === 999) {
     return 0
   }
 
   return rank
 }
 
-function toBaseObject(o) {
+function toBaseObject (o) {
   return {
     uid: o.uid,
     final_rank: o.final_rank,

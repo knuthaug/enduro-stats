@@ -141,7 +141,7 @@ async function calculateComplete (dirName) {
   db.destroy()
 }
 
-async function calculateRankings(riders, year, raceId, raceDate) {
+async function calculateRankings (riders, year, raceId, raceDate) {
   await allRidersRankings(riders, year, raceId, raceDate)
 }
 
