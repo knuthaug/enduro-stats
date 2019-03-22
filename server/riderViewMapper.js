@@ -68,6 +68,7 @@ function toRow (r) {
     raceName: r.name,
     class: r.class,
     uid: r.uid,
+    gender: r.gender,
     details: [ ]
   }
 }

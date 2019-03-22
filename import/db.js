@@ -153,6 +153,18 @@ class Db {
     }).final_rank
   }
 
+  async findAllRiders () {
+    const query = 'select riders.id, riders.uid, riders.name, riders.gender, riders.club, (SELECT count(race_id) from rider_races where rider_id = riders.id) from riders order by count DESC'
+    const values = []
+    return this.findSet(query, values)
+  }
+
+  async ridersForRace (raceId) {
+    const query = 'select distinct riders.id, riders.uid, riders.name from riders, rider_races where rider_races.rider_id = riders.id and rider_races.race_id = $1'
+    const values = [raceId]
+    return this.findSet(query, values)
+  }
+
   async insertRawResults (raceName, raceYear, stage, results) {
     for (let i = 0; i < results.length; i++) {
       const result = results[i]
@@ -169,6 +181,16 @@ class Db {
       await this.insertRawResult(raceId, parseInt(riderId, 10), parseInt(stage.number, 10), result)
       // logger.info(`inserting raw result for rider ${riderId}`)
     }
+  }
+
+  async addRankings(riderId, year, avgScore, rank, date) {
+
+    const { seq }= await this.findAll('select max(sequence_number) as seq from rider_rankings where rider_id = $1', [riderId])
+
+    logger.info(`Inserting rankings for rider ${riderId}`)
+    const query = 'INSERT INTO rider_rankings(rider_id, best_year, average_best_year, score, sequence_number, date) VALUES($1, $2, $3, $4, $5, $6)'
+    const values = [riderId, year, avgScore, rank, seq ? seq + 1 : 1, date]
+    return this.insert(query, values)
   }
 
   async insertRider (rider) {

@@ -1,0 +1,78 @@
+<div class="row">
+  <div class="col-2"></div>
+  <div class="col-7"> <h2><a name="top">Rytterranking</a></h2>
+    <div>Rytterranking er basert på en ganske løs algoritme. Den starter med grunnpoeng på 3.14 (ja, hvorfor ikke), legger til gjennomsnittlig tid bak raskeste av samme kjønn i rittet, i prosent, av rittene fra de siste 3 årene. Har man mindre enn fem ritt de tre siste årene, får man 5 poeng ekstra per ritt under fem. Har man bare ett tellende ritt siste 3 år, får man 100 poeng til, og har man ingen tellende ritt siste 3 år, får man score på 1000. Sist oppdatert {{women.[0].date}}</div>
+  </div>
+  <div class="col-3">
+    <a class="btn btn-outline-light mr-1 mt-2" title="Hopp til resultater for menn" href="#men">Menn</a>
+    <a class="btn btn-outline-light mr-1 mt-2" title="Hopp til resultater for Kvinner" href="#women">Kvinner</a>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-2"></div>
+  <div class="col-8"> <h3><a class="none" name="women">Kvinner</a></h3></div>
+  <div class="col-2"><a class="toplink" data-toggle="tooltip" data-original-title="Tilbake til toppen" href="#top">{{>icon type='pil'}}</a></div>
+</div>
+<div class="row">
+  <div class="col-2"></div>
+<div class="col-8">
+  <table class="table table-hover table-borderless table-dark table-striped table-sm" data-sortable id="riders-table-women">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Navn</th>
+        <th scope="col">Klubb</th>
+        <th scope="col">Score</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each women}}
+      <tr>
+        <td>{{inc @index}}</td>
+        <td><a href="/rytter/{{uid}}">{{name}}</a></td>
+        <td>{{club}}</td>
+        <td>{{score}}</td>
+      </tr>
+      {{/each}}
+      <tr>
+    </tbody>
+  </table>
+</div>
+<div class="col-2"></div>
+</div>
+
+<div class="row">
+  <div class="col-2"></div>
+  <div class="col-9"> <h3><a class="none" name="men">Menn</a></h3></div>
+  <div class="col-1"><a class="toplink" data-toggle="tooltip" data-original-title="Tilbake til toppen" href="#top">{{>icon type='pil'}}</a></div>
+</div>
+<div class="row">
+  <div class="col-2"></div>
+  <div class="col-8">
+      <table class="table table-hover table-borderless table-dark table-striped table-sm" data-sortable id="riders-table-men">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Navn</th>
+            <th scope="col">Klubb</th>
+            <th scope="col">Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each men}}
+          <tr>
+            <td>{{inc @index}}</td>
+            <td><a href="/rytter/{{uid}}">{{name}}</a></td>
+            <td>{{club}}</td>
+            <td>{{score}}</td>
+          </tr>
+          {{/each}}
+          <tr>
+        </tbody>
+      </table>
+  </div>
+  <div class="col-2"></div>
+</div>
+
+<script src="/assets/js/{{hashedAssets 'rank.js'}}" crossorigin="anonymous"></script>

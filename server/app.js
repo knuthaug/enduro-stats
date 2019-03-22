@@ -58,6 +58,7 @@ app.get('/om', handler('about', () => { return { status: 200, active: 'om', titl
 app.get('/kalender', handler('cal', () => { return { status: 200, active: 'cal', title: 'Rittkalender 2019' } }))
 app.get('/rytter/:uid', handler('rider', handlers.riderHandler))
 app.get('/ryttere', handler('riders', handlers.ridersHandler))
+app.get('/ranking', handler('rank', handlers.rankHandler))
 app.get('/sammenlign', handler('compare', handlers.compareHandler))
 app.get('/api/search', jsonHandler(handlers.jsonSearchHandler))
 app.get('/api/graph/compare', jsonHandler(handlers.compareGraphHandler))
