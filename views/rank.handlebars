@@ -1,6 +1,8 @@
 <div class="row">
   <div class="col-2"></div>
-  <div class="col-7"> <h2><a name="top">Rytterranking</a></h2></div>
+  <div class="col-7"> <h2><a name="top">Rytterranking</a></h2>
+    <div>Rytterranking er basert på en ganske løs algoritme. Den starter med grunnpoeng på 3.14 (ja, hvorfor ikke), legger til gjennomsnittlig tid bak raskeste av samme kjønn i rittet, i prosent, av rittene fra de siste 3 årene. Har man mindre enn fem ritt de tre siste årene, får man 5 poeng ekstra per ritt under fem. Har man bare ett tellende ritt siste 3 år, får man 100 poeng til, og har man ingen tellende ritt siste 3 år, får man score på 1000. Sist oppdatert {{women.[0].date}}</div>
+  </div>
   <div class="col-3">
     <a class="btn btn-outline-light mr-1 mt-2" title="Hopp til resultater for menn" href="#men">Menn</a>
     <a class="btn btn-outline-light mr-1 mt-2" title="Hopp til resultater for Kvinner" href="#women">Kvinner</a>
@@ -21,7 +23,6 @@
         <th scope="col">#</th>
         <th scope="col">Navn</th>
         <th scope="col">Klubb</th>
-        <th scope="col">Dato beregnet</th>
         <th scope="col">Score</th>
       </tr>
     </thead>
@@ -31,7 +32,6 @@
         <td>{{inc @index}}</td>
         <td><a href="/rytter/{{uid}}">{{name}}</a></td>
         <td>{{club}}</td>
-        <td>{{date}}</td>
         <td>{{score}}</td>
       </tr>
       {{/each}}
@@ -56,7 +56,6 @@
             <th scope="col">#</th>
             <th scope="col">Navn</th>
             <th scope="col">Klubb</th>
-            <th scope="col">Dato beregnet</th>
             <th scope="col">Score</th>
           </tr>
         </thead>
@@ -66,7 +65,6 @@
             <td>{{inc @index}}</td>
             <td><a href="/rytter/{{uid}}">{{name}}</a></td>
             <td>{{club}}</td>
-            <td>{{date}}</td>
             <td>{{score}}</td>
           </tr>
           {{/each}}
