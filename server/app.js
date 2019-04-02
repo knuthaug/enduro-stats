@@ -50,6 +50,8 @@ app.engine('handlebars', hbs({
 
 app.set('view engine', 'handlebars')
 
+
+
 app.get('/', handler('index', handlers.indexHandler, 2000))
 app.get('/ritt', handler('races', handlers.racesHandler))
 app.get('/ritt/:uid', handler('race', handlers.raceHandler, DEFAULT_CACHE_TIME_PAGES))
