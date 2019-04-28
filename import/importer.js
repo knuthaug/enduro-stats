@@ -19,6 +19,7 @@ const optionDefinitions = [
   { name: 'accumulate', alias: 'a', type: Boolean },
   { name: 'dir', alias: 'd', type: String },
   { name: 'mylaps', alias: 'm', type: Boolean },
+  { name: 'sportident', alias: 's', type: Boolean },
   { name: 'file', alias: 'f', type: String },
   { name: 'racedata', alias: 'r', type: String }
 ]
