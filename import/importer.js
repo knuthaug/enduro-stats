@@ -2,6 +2,7 @@ const md5 = require('md5')
 const Db = require('./db.js')
 const Eq = require('./converters/eq.js')
 const Mylaps = require('./converters/mylaps.js')
+const Sportident = require('./converters/sportident.js')
 const fs = require('fs')
 const afs = require('await-fs')
 const path = require('path')
@@ -26,12 +27,18 @@ const optionDefinitions = [
 
 const options = cmd(optionDefinitions)
 
+options.mode = 'eq'
+
 if (!options.hasOwnProperty('accumulate')) {
   options.accumulate = false
 }
 
-if (!options.hasOwnProperty('mylaps')) {
-  options.mylaps = false
+if (options.hasOwnProperty('mylaps')) {
+  options.mode = 'mylaps'
+}
+
+if (options.hasOwnProperty('sportident')) {
+  options.mode = 'sportident'
 }
 
 if (!options.hasOwnProperty('dir') && !options.hasOwnProperty('file') && !options.hasOwnProperty('racedata')) {
@@ -100,7 +107,7 @@ async function readRaceData (file) {
     data.uid = md5(data.name + data.year)
     const raceId = await db.insertRace(data, 0)
 
-    if (data.hasOwnProperty('links')) {
+    if (data.hasOwnProperty('links')){
       await db.insertRaceLinks(raceId, data.links)
     }
   } else {
@@ -109,7 +116,7 @@ async function readRaceData (file) {
 }
 
 async function calculateComplete (dirName) {
-  const { raceName, raceYear, raceId, raceDate } = await readCompleteRaceFile(options.file, path.join(dirName, 'racedata.json'), options.mylaps)
+  const { raceName, raceYear, raceId, raceDate } = await readCompleteRaceFile(options.file, path.join(dirName, 'racedata.json'), options.mode)
 
   const classes = await db.classesForRace(raceId)
   for (let i = 0; i < classes.length; i++) {
@@ -146,18 +153,19 @@ async function calculateRankings (riders, year, raceId, raceDate) {
   await allRidersRankings(riders, year, raceId, raceDate)
 }
 
-async function readCompleteRaceFile (filename, datafile, mylaps) {
+async function readCompleteRaceFile (filename, datafile, mode) {
   let data = {}
-
-  if (!mylaps) {
-    const eq = new Eq(filename, { mode: 'complete', datafile, acc: options.accumulate })
-    await eq.load()
-    data = await eq.parse()
-  } else {
-    const ml = new Mylaps(filename, { datafile })
-    await ml.load()
-    data = await ml.parse()
+  let parser
+  if (mode === 'eq') {
+    parser = new Eq(filename, { mode: 'complete', datafile, acc: options.accumulate })
+  } else if(mode === 'mylaps'){
+    const parser = new Mylaps(filename, { datafile })
+  } else if(mode === 'sportident'){
+    const parser = new Sportident(filename, { datafile })
   }
+
+  await parser.load()
+  data = await parser.parse()
 
   let raceId
 
