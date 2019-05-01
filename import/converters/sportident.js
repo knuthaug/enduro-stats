@@ -92,10 +92,10 @@ class Sportident extends Converter {
         const time = this.convertTimeMs(raw[j][`${stage.name} Time`], raw[j][`${stage.name} Pos`])
         if (!isNaN(time)) {
           stage.results.push({
-            time,
+            time: raw[j][`${stage.name} Time`],
             name: check(`${raw[j]['First Name']} ${raw[j].Surname}`),
             rider_uid: this.checksum(check(`raw[j]['First Name'] raw[j].Surname`)),
-            gender: raw[j].gender,
+            gender: this.findGender(this.className(raw[j].Category)),
             class: this.className(raw[j].Category),
             club: this.clubName(raw[j].Team || ''),
             stage_time_ms: time,
@@ -120,8 +120,15 @@ class Sportident extends Converter {
         }
       }
     }
-    console.log(JSON.stringify(stages, null, 2))
+    //console.log(JSON.stringify(stages, null, 2))
     return stages
+  }
+
+  findGender(clazz) {
+    if(/kvinner/i.test(clazz)) {
+      return 'F'
+    }
+    return 'M'
   }
 
   finalStatus (value) {
