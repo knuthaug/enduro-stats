@@ -2,5 +2,13 @@
   "name": "Telemark enduro",
   "year": 2019,
   "date": "2019-05-04",
-  "text": "Sesongåpneren i Skien, med Norges høyeste list for gjennomføring og god stemning. Kort, intenst og mye redbull."
+  "text": "Sesongåpneren i Skien, med Norges høyeste list for gjennomføring og god stemning. Kort, intenst og mye redbull.",
+  links: [
+    { "type": "results", "desc": "Originale resultater", "url": "https://l.facebook.com/l.php?u=https%3A%2F%2Fcdn.fbsbx.com%2Fv%2Ft59.2708-21%2F57488682_2311818055700943_311345911613620224_n.pdf%2FEndelige_Resultater_voksne_v2.pdf%3F_nc_cat%3D105%26_nc_ht%3Dcdn.fbsbx.com%26oh%3D4975bd0df0934629b1d152847a125345%26oe%3D5CD089AD%26dl%3D1%26fbclid%3DIwAR1yJCSqGvVuHguc1NwMBY7A2hyY-95k_NcOgrebX1ScviaCW_zmjZ7yACY&h=AT0cfFYKr0atTOgr75aYkcZnivnNCS_fMaHUF1EDpTZpePkDAZSWH9ifrQY62xIYuOFpbTTNAN3se7zZqjgAnWVFh5PdrF9rU0RE8i4PXLUXdq9IbY7ZfyT7BIoYiX70lO_HYh_V0zjb4h7eOmOB-exKKm5PxyrxDLo0pgjr_2OsfyIVN1Ap90LkWJRm4-O5Kud7RZ96wUhNXH28EzIjsSokBsifDm74_aA0YnG5SU2xizCcr90BM4GZGKzKI2Y4ST48TwECLDfiLLBY-p97CRHQP-WBu9qq0gVBGqIr002IqD0VpNZeOlFdu4qXblC0wBje8dTXu6SQky2zorm-RJhpP890xR64rlPgPVrZhU32vedifuu3SzKmd-SYoaLIuVXEbmF9t_CLRq-jaUPVN-wyz5nw5r3pPqOLC15F_mQom6FBKWQwWlm5SkJA43NvD9CEE0N5ps2PVPhNNvhZ5xeE5iq_-aaTPwQY1OX4e96ARgOmK-2HhsgRkHJQ85rKNdkpB1tRHE4c7llPpcVECEfc8eArFR3hLpO7TrUM5iYlHoqllJzLDpsY9KR1Z2apb8fsaUA7gKPZjK6L1wQxmSOc1-sn3g5vBFm2hrJGhbL7_CnfmDZVhXDgQYs25Cex56w8kb3HqTWWroUFTAScSCYqJHg"}
+    ,
+    {
+      "type": "images", "url": "https://www.facebook.com/pg/moldestadphotography/photos/?tab=album&album_id=1015117122027763&__xts__%5B0%5D=68.ARAJ1drvh6Umx24i9CqGTM4rxaArlLYXos4R0NJE5hs-OMQY4-BpmdjjUiP2excl6qerrGur_yuAXdhNdqPV1rAbpX71loYGEmakeyVVYRuwNvDLiooLUM8L6mn-mU9VBvriqQPh_vPK-GqY5916CJCdiixLCdr0NPUbQK-seXdhYBCie0aNxfp7aRKO5LcN7vcVAkvwcD1l_GmR-O401qIyWXdxlX37EvDZ5SCp4s_FsFs4pAufsYRCFMTzV9oX_BY63pleefiiuMo0lXT-jqhRVNyXDty1IXnAKeezpUZDAAD1vAqSlBkzAYCP-za_8kwdqrWvLdTe4cbxVPBd3KfrQYJ5FzzBFFiryK-QgbJOAAPPYafV5WawN3gmaPcM0j66YWTgb3FVuvj1Oy39nlorRmNY2hIhsrJ3x60uJF0NOkkblOKXM_IlWhWF5iu0f8KgpvokIbNkzPdbpNvf&__tn__=-UC-R",
+      "desc": "Bildealbum fra Moldestad photography"
+    }
+  ]
 }
