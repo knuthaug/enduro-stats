@@ -125,7 +125,7 @@ class Sportident extends Converter {
   }
 
   findGender(clazz) {
-    if(/kvinner/i.test(clazz)) {
+    if(/kvinner/i.test(clazz) || /^k/i.test(clazz)) {
       return 'F'
     }
     return 'M'
