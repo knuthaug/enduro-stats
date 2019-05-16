@@ -143,4 +143,7 @@ echo "  Hakadal Snowhill"
 node import/importer.js -m -f results/2019/hakadal-snowhill/hakadal-snowhill-2019.csv
 
 echo "  Telemark"
-node import/importer.js -m -f results/2019/telemark/telemark-2019.csv
+node import/importer.js -s -f results/2019/telemark/telemark-2019-original.csv
+
+#echo "  Molde"
+#node import/importer.js -m -f results/2019/molde/molde-2019.csv

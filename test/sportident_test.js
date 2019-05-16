@@ -35,7 +35,7 @@ tap.test('Object details for stages', async t => {
   const rider = stage1.results[0]
 
   t.equals(rider.name, 'Anna Littorin-Sandbu', 'name is correct')
-  t.equals(rider.rider_uid, 'bc93e529a1d54457d43ee4b74efa7023', 'uid is correct')
+  t.equals(rider.rider_uid, '4e568767810427927204e9f66da1171d', 'uid is correct')
   t.equals(rider.time, '00:01:14', 'time is correct')
   t.equals(rider.gender, 'F', 'Gender is correct')
   t.equals(rider.class, 'Kvinner senior', 'class is correct')
@@ -48,6 +48,7 @@ tap.test('Object details for stages', async t => {
   t.equals(stage1.results[1].stage_rank, 1)
 
   t.equals(stage1.results[2].time, '00:01:37')
+  t.equals(stage1.results[2].rider_uid, '0e6a47137d050ee9bd05f784853b4038', 'uid is correct')
   t.equals(stage1.results[2].stage_rank, 3)
   t.equals(stage1.results[2].stage_time_ms, 97000)
   t.equals(stage1.results[2].status, 'OK')
@@ -66,4 +67,3 @@ tap.test('final status field is correct', async t => {
   //  console.log(lastStage.results[lastStage.results.length - 17])
   t.end()
 })
-

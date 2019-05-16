@@ -22,9 +22,9 @@ class Converter {
   }
 
   className (name) {
-    if (/Master menn|menn master/i.test(name)) {
+    if (/Master menn|menn master|Master herrer/i.test(name)) {
       return 'Menn master'
-    } else if (/kvinner menn|kvinner master/i.test(name)) {
+    } else if (/master kvinner|kvinner master/i.test(name)) {
       return 'Kvinner master'
     } else if(/K\s?17+/.test(name)) {
       return 'Kvinner senior'
