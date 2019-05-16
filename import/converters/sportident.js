@@ -20,7 +20,7 @@ const { ERROR_RANK, DNS_STATUS, DNF_STATUS, OK_STATUS } = require('../constants.
 const { check } = require('../spellcheck.js')
 const { convertTimeToMs } = require('../../lib/time.js')
 const Converter = require('./converter.js')
-
+const lib = require('./lib.js')
 class Sportident extends Converter {
   /**
    * A parser/converter for mylaps race results, with multiple stages on one line
@@ -94,7 +94,7 @@ class Sportident extends Converter {
       const stage = stages[i]
       stage.results = []
       for (let j = 0; j < raw.length; j++) {
-        const time = this.convertTimeMs(raw[j][`${stage.name} Time`], raw[j][`${stage.name} Pos`])
+        const time = lib.convertTimeMs(raw[j][`${stage.name} Time`], raw[j][`${stage.name} Pos`])
         if (!isNaN(time)) {
           stage.results.push({
             time: raw[j][`${stage.name} Time`],
@@ -104,9 +104,9 @@ class Sportident extends Converter {
             class: this.className(raw[j].Category),
             club: this.clubName(raw[j].Team || ''),
             stage_time_ms: time,
-            final_status: this.finalStatus(raw[j]['Pos Klasse']),
+            final_status: lib.finalStatus(raw[j]['Pos Klasse']),
             acc_time_ms: null,
-            stage_rank: this.stageRank(parseInt(raw[j][`${stage.name} Pos`], 10)),
+            stage_rank: lib.stageRank(parseInt(raw[j][`${stage.name} Pos`], 10)),
             status: this.setStatus(raw[j][`${stage.name} Pos`], raw[j][stage.name])
           })
         }
@@ -136,46 +136,12 @@ class Sportident extends Converter {
     return 'M'
   }
 
-  finalStatus (value) {
-    if (value === DNS_STATUS || value === DNF_STATUS) {
-      return value
-    }
-
-    return OK_STATUS
-  }
-
-  stageRank (rank) {
-    if (rank === 0 || rank === DNS_STATUS || rank === DNF_STATUS) {
-      return ERROR_RANK
-    }
-
-    return rank
-  }
-
-  convertTimeMs (time, pos) {
-    if (this.finished(pos)) {
-      return convertTimeToMs(time)
-    } else if (pos === 0 || pos === '0') {
-      return 0
-    }
-
-    return 0
-  }
-
   convertTime (time, pos) {
-    if (this.finished(pos)) {
+    if (lib.finished(pos)) {
       return time
     }
 
     return '00:00:00'
-  }
-
-  finished (pos) {
-    return pos !== DNS_STATUS && pos !== DNF_STATUS
-  }
-
-  notFinished (pos) {
-    return pos === DNS_STATUS || pos === DNF_STATUS
   }
 
   setStatus (pos, time) {
@@ -183,9 +149,9 @@ class Sportident extends Converter {
       return DNS_STATUS
     } else if (time === '00:00:00') {
       return DNS_STATUS
-    } else if (this.notFinished(pos)) {
+    } else if (lib.notFinished(pos)) {
       return pos
-    } else if (this.finished(pos)) {
+    } else if (lib.finished(pos)) {
       return 'OK'
     }
     return pos

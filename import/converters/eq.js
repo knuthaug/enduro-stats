@@ -142,7 +142,7 @@ class EqConverter extends Converter {
     const raw = await csv(this.file)
     return {
       race: {
-        name: this.name(raw[0]),
+        name: this.raceName(raw[0]),
         uid: this.raceChecksum(raw[0]),
         date: raw[0].Starttime.split(/T/)[0],
         year: this.year(raw[0])
@@ -190,7 +190,7 @@ class EqConverter extends Converter {
     return obj
   }
 
-  name (obj) {
+  raceName (obj) {
     const year = this.year(obj)
     return obj.EventName.replace(year, '').trim()
   }

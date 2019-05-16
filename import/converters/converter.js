@@ -10,7 +10,7 @@ const { checkClub } = require('../spellcheck.js')
 
 class Converter {
   raceChecksum (obj) {
-    return this.checksum(this.name(obj) + this.year(obj))
+    return this.checksum(this.raceName(obj) + this.year(obj))
   }
 
   checksum (string) {
