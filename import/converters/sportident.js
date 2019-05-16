@@ -69,7 +69,12 @@ class Sportident extends Converter {
     let race = {}
 
     if (this.datafile) {
-      race = JSON.parse(this.datafile)
+      try {
+        race = JSON.parse(this.datafile)
+      } catch (err) {
+        console.log(err)
+        process.exit(1)
+      }
     }
 
     race.uid = this.checksum(race.name + race.year)
