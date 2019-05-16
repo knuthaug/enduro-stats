@@ -159,9 +159,9 @@ async function readCompleteRaceFile (filename, datafile, mode) {
   if (mode === 'eq') {
     parser = new Eq(filename, { mode: 'complete', datafile, acc: options.accumulate })
   } else if(mode === 'mylaps'){
-    const parser = new Mylaps(filename, { datafile })
+    parser = new Mylaps(filename, { datafile })
   } else if(mode === 'sportident'){
-    const parser = new Sportident(filename, { datafile })
+    parser = new Sportident(filename, { datafile })
   }
 
   await parser.load()
