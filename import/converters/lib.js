@@ -35,6 +35,14 @@ function convertTimeMs (time, pos) {
   return 0
 }
 
+function findGender(clazz) {
+  if(/kvinner/i.test(clazz) || /^k/i.test(clazz)) {
+    return 'F'
+  }
+  return 'M'
+}
+
+module.exports.findGender = findGender
 module.exports.finalStatus = finalStatus
 module.exports.stageRank = stageRank
 module.exports.finished = finished

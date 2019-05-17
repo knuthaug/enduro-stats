@@ -100,7 +100,7 @@ class Sportident extends Converter {
             time: raw[j][`${stage.name} Time`],
             name: check(`${raw[j]['First Name']} ${raw[j].Surname}`),
             rider_uid: this.checksum(check(`${raw[j]['First Name']} ${raw[j].Surname}`)),
-            gender: this.findGender(this.className(raw[j].Category)),
+            gender: lib.findGender(this.className(raw[j].Category)),
             class: this.className(raw[j].Category),
             club: this.clubName(raw[j].Team || ''),
             stage_time_ms: time,
@@ -127,13 +127,6 @@ class Sportident extends Converter {
     }
     //console.log(JSON.stringify(stages.slice(0, 1), null, 2))
     return stages
-  }
-
-  findGender(clazz) {
-    if(/kvinner/i.test(clazz) || /^k/i.test(clazz)) {
-      return 'F'
-    }
-    return 'M'
   }
 
   convertTime (time, pos) {

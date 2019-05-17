@@ -9,7 +9,7 @@
 const fs = require('await-fs')
 const logger = require('../logger.js')
 const { ERROR_RANK, DNS_STATUS, DNF_STATUS, OK_STATUS } = require('../constants.js')
-const { check } = require('../spellcheck.js')
+const { check, checkClub } = require('../spellcheck.js')
 const { convertTimeToMs } = require('../../lib/time.js')
 const Converter = require('./converter.js')
 const lib = require('./lib.js')
@@ -87,6 +87,32 @@ class SportidentJson extends Converter {
       process.exit(1)
     }
     const stages = this.findStages(raw)
+
+    for (let i = 0; i < stages.length; i++) {
+      const stage = stages[i]
+      stage.results = []
+      for (let j = 0; j < raw.results.length; j++) {
+        const rider = raw.results[j].athlete
+        const stageResults = raw.results[j].stages
+        if(stageResults !== null) {
+          const status = this.setStatus(stageResults[i].result.position.class,
+                                        this.parseTime(stageResults[i].result.time))
+          stage.results.push({
+            name: check(`${rider.firstname} ${rider.lastname}`),
+            rider_uid: this.checksum(check(`${rider.firstname} ${rider.lastname}`)),
+            class: this.className(rider.class),
+            club: checkClub(rider.club),
+            time: this.parseTime(stageResults[i].result.time),
+            stage_time_ms: lib.convertTimeMs(this.parseTime(stageResults[i].result.time)),
+            acc_time_ms: null,
+            stage_rank: stageResults[i].result.position.class,
+            status,
+            final_status: lib.finalStatus(status),
+            gender: lib.findGender(rider.class)
+          })
+        }
+      }
+    }
     return stages
   }
 
@@ -95,6 +121,10 @@ class SportidentJson extends Converter {
       return 'F'
     }
     return 'M'
+  }
+
+  parseTime(time) {
+    return time.split(':').slice(2).join(':')
   }
 
   convertTime (time, pos) {
@@ -108,14 +138,12 @@ class SportidentJson extends Converter {
   setStatus (pos, time) {
     if (pos === 0 || pos === '0') {
       return DNS_STATUS
-    } else if (time === '00:00:00') {
+    } else if (time === '00:00.000') {
       return DNS_STATUS
     } else if (lib.notFinished(pos)) {
       return pos
-    } else if (lib.finished(pos)) {
-      return 'OK'
     }
-    return pos
+    return OK_STATUS
   }
 
   findStages(raw) {
