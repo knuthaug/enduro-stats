@@ -3,6 +3,7 @@ const Db = require('./db.js')
 const Eq = require('./converters/eq.js')
 const Mylaps = require('./converters/mylaps.js')
 const Sportident = require('./converters/sportident.js')
+const SportidentJson = require('./converters/sportident_json.js')
 const fs = require('fs')
 const afs = require('await-fs')
 const path = require('path')
@@ -21,6 +22,7 @@ const optionDefinitions = [
   { name: 'dir', alias: 'd', type: String },
   { name: 'mylaps', alias: 'm', type: Boolean },
   { name: 'sportident', alias: 's', type: Boolean },
+  { name: 'json', alias: 'j', type: Boolean },
   { name: 'file', alias: 'f', type: String },
   { name: 'racedata', alias: 'r', type: String }
 ]
@@ -39,6 +41,10 @@ if (options.hasOwnProperty('mylaps')) {
 
 if (options.hasOwnProperty('sportident')) {
   options.mode = 'sportident'
+}
+
+if (options.hasOwnProperty('json')) {
+  options.mode = 'json'
 }
 
 if (!options.hasOwnProperty('dir') && !options.hasOwnProperty('file') && !options.hasOwnProperty('racedata')) {
@@ -112,6 +118,8 @@ async function readRaceData (file) {
     }
   } else {
     logger.error(`Data file ${file} was not found`)
+    console.log(`Data file ${file} was not found`)
+    process.exit(1)
   }
 }
 
@@ -162,7 +170,10 @@ async function readCompleteRaceFile (filename, datafile, mode) {
     parser = new Mylaps(filename, { datafile })
   } else if(mode === 'sportident'){
     parser = new Sportident(filename, { datafile })
+  } else if(mode === 'json'){
+    parser = new SportidentJson(filename, { datafile })
   }
+
 
   await parser.load()
   data = await parser.parse()
