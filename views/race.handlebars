@@ -4,12 +4,12 @@
   </div>
   <div class="col-10">
     <div class="row">
-      <div class="col-4">
+      <div class="col-5">
         <h2><a name="top">{{race.name}} {{race.year}}</a></h2>
       </div>
       {{#if noResults}}
-      <div class="col-8">
-        {{#each results}}<a class="btn btn-outline-light mr-1 mt-2" title="Hopp til resultater for {{@key}}" href="#{{@key}}">{{@key}}</a> {{/each}}<a class="btn btn-outline-light mr-1 mt-2" title="Alle klasser i en liste" href="/ritt/{{race.uid}}/full">Alle klasser</a> 
+      <div class="col-7">
+        {{#each results}}<a class="btn btn-outline-light mr-1 mt-2" title="Hopp til resultater for {{@key}}" href="#{{@key}}">{{@key}}</a> {{/each}}<a class="btn btn-outline-light mr-1 mt-2" title="Alle klasser i en liste" href="/ritt/{{race.uid}}/full">Alle klasser</a>
       </div>
       {{/if}}
     </div>
@@ -150,5 +150,3 @@
 </div>
 
 {{/if}}
-
-
