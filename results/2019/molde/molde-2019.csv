@@ -1,0 +1,103 @@
+Pos Klasse;bib;name;club;chiptime;FE1;FE1 Pos;FE2;FE2 Pos;FE3;FE3 Pos;FE4;FE4 Pos;Class;gender
+1;19;Jannik Eschler;BigFriends MTB Racing Team;00:17:51;00:07:49;1;00:05:43;1;;;00:04:19;1;Gutter 15-16 år;M
+2;25;Even Bævre;IL Norodd;00:21:59;00:09:22;2;00:07:04;3;;;00:05:33;2;Gutter 15-16 år;M
+3;21;Andreas Røbech;IL Norodd;00:23:02;00:09:49;4;00:07:34;6;;;00:05:39;3;Gutter 15-16 år;M
+4;18;Adrian Aarøe Holten;IL Norodd;00:23:40;00:10:30;6;00:07:28;5;;;00:05:42;4;Gutter 15-16 år;M
+5;20;Emil Skotheim Sylte;Molde CK;00:23:42;00:09:56;5;00:07:46;7;;;00:06:00;5;Gutter 15-16 år;M
+6;22;Emil Hoem;Fannefjord sykkelklubb;00:25:13;00:10:48;7;00:08:01;8;;;00:06:24;7;Gutter 15-16 år;M
+7;26;Henning Husevåg;Torvikbukt IL;00:26:47;00:11:41;8;00:08:15;9;;;00:06:51;8;Gutter 15-16 år;M
+8;27;Henrik Alstad;Il Aasguten;00:31:21;00:09:33;3;00:06:44;2;;;00:15:04;10;Gutter 15-16 år;M
+9;23;Erlend Gjelsvik;;00:32:00;00:12:52;9;00:08:30;10;;;00:10:38;9;Gutter 15-16 år;M
+10;28;Tobias Wollan;IL Norodd ;00:35:18;00:21:35;10;00:07:25;4;;;00:06:18;6;Gutter 15-16 år;M
+1;6;Anne Melbø;Molde ck;00:26:32;00:08:22;1;00:06:59;2;00:06:17;1;00:04:54;1;Kvinner;F
+2;4;Vera Leivsdottir;Bergen MTB klubb;00:27:14;00:08:24;2;00:07:08;4;00:06:32;2;00:05:10;3;Kvinner;F
+3;3;Hilde Strædet;Kristiansand cykleklubb;00:27:29;00:08:34;3;00:07:04;3;00:06:40;3;00:05:11;4;Kvinner;F
+4;1;Anette Røssum Bastnes;SK Rye og Team Ibis Norge;00:28:40;00:09:16;5;00:06:49;1;00:07:29;5;00:05:06;2;Kvinner;F
+5;2;Elin Berg;Molde CK ;00:28:58;00:08:57;4;00:07:11;5;00:07:19;4;00:05:31;5;Kvinner;F
+6;8;Oda Smestu Holm;Trill&grill;00:35:28;00:10:43;6;00:08:11;6;00:09:01;6;00:07:33;6;Kvinner;F
+7;5;Mari Moltu;;00:41:33;00:13:17;7;00:09:25;7;00:10:50;7;00:08:01;7;Kvinner;F
+1;9;Elinborg Olafsdottir;BMK;00:34:21;00:10:41;1;00:08:12;2;00:08:35;1;00:06:53;1;Master Kvinne;F
+2;10;Louise Engan;;00:37:57;00:11:05;2;00:07:49;1;00:10:55;2;00:08:08;2;Master Kvinne;F
+1;31;Fredrik Lysakerrud;Odal SK;00:23:40;00:07:39;1;00:05:53;1;00:05:35;1;00:04:33;1;Master Menn;M
+2;38;Øyvind Hem;Flytsti;00:24:57;00:07:59;2;00:06:09;3;00:05:51;2;00:04:58;2;Master Menn;M
+3;37;Hallvar Barlaup;Molde CK;00:25:44;00:08:07;3;00:06:09;2;00:06:23;3;00:05:05;5;Master Menn;M
+4;29;Arild Gravdal;Bergen MTB Klubb;00:26:41;00:08:35;4;00:06:39;6;00:06:24;4;00:05:03;4;Master Menn;M
+5;33;Leiv Tvenning;Bergen MTB klubb;00:27:12;00:08:36;5;00:06:27;4;00:07:10;7;00:04:59;3;Master Menn;M
+6;35;Bård Smestad;Trondheim Randoneeklubb;00:27:46;00:09:05;7;00:06:34;5;00:06:41;5;00:05:26;7;Master Menn;M
+7;34;Andreas Smithies;Ålesund cykelklub;00:28:02;00:08:46;6;00:07:09;8;00:06:42;6;00:05:25;6;Master Menn;M
+8;39;Øyvind Høgset;Molde CK;00:29:10;00:09:12;8;00:06:56;7;00:07:33;9;00:05:29;8;Master Menn;M
+9;32;Geir Hanssen;Bergen MTB klubb;00:31:39;00:10:48;10;00:07:32;9;00:07:26;8;00:05:53;9;Master Menn;M
+10;30;Christian Aronsen;BMK;00:33:07;00:10:35;9;00:07:33;10;00:08:50;10;00:06:09;10;Master Menn;M
+11;36;Chris Walley;;00:38:26;00:11:39;11;00:08:51;11;00:09:35;11;00:08:21;11;Master Menn;M
+1;101;Espen Bergli-johnsen;Bergenmountainbike klubb ;00:20:47;00:06:57;1;00:05:17;1;00:04:43;1;00:03:50;1;Menn;M
+2;71;Arne Varhaug;;00:22:02;00:07:10;2;00:05:22;2;00:05:18;4;00:04:12;3;Menn;M
+3;118;Pål Nakken;Molde CK ;00:22:08;00:07:19;3;00:05:29;4;00:05:07;2;00:04:13;4;Menn;M
+4;117;Nils Einar Berget;Giske sykkelmafia;00:22:56;00:07:31;4;00:05:44;8;00:05:24;6;00:04:17;6;Menn;M
+5;105;Andre Aamodt;Team Santa Cruz Sykler;00:23:16;00:07:51;7;00:05:49;10;00:05:20;5;00:04:16;5;Menn;M
+6;89;Simon Fischaa;;00:23:38;00:08:01;12;00:05:43;7;00:05:32;9;00:04:22;9;Menn;M
+6;104;Andreas Aalby;Asker CK;00:23:38;00:08:25;21;00:05:28;3;00:05:27;8;00:04:18;8;Menn;M
+8;66;Markus Sannebro;Sogn CK;00:23:43;00:07:56;10;00:06:00;14;00:05:16;3;00:04:31;12;Menn;M
+9;102;Anders Skarstein;Team Santacruzsykler.no / Hemsedal IL;00:23:55;00:08:19;18;00:06:00;13;00:05:26;7;00:04:10;2;Menn;M
+10;79;Johannes Raukola;Pole Bicycles;00:23:56;00:07:57;11;00:05:41;6;00:05:40;12;00:04:38;14;Menn;M
+11;106;Erlend Hegrum Askjer;Horten OCK ;00:23:59;00:07:51;8;00:06:05;15;00:05:38;11;00:04:25;10;Menn;M
+12;107;Harald Brekke;SK Rye/Team Ibis ;00:24:03;00:07:46;5;00:05:57;12;00:05:53;17;00:04:27;11;Menn;M
+13;110;Ola Ranes;BMK;00:24:25;00:07:52;9;00:06:18;20;00:05:35;10;00:04:40;15;Menn;M
+14;112;Magnus Grönberg;Hemsedal IL Sykkel;00:24:28;00:08:07;15;00:05:51;11;00:05:48;14;00:04:42;16;Menn;M
+15;65;Kjetil Øygard;Lillehammer CK;00:25:01;00:08:23;20;00:06:11;16;00:05:52;16;00:04:35;13;Menn;M
+16;109;John Ola Buøy;Team Ibis Norge;00:25:06;00:07:49;6;00:06:12;17;00:05:49;15;00:05:16;30;Menn;M
+17;113;Johannes Lund;Sogn CK;00:25:13;00:09:36;37;00:05:35;5;00:05:44;13;00:04:18;7;Menn;M
+18;116;Håvard Mageli;;00:25:26;00:08:21;19;00:06:14;18;00:05:55;18;00:04:56;20;Menn;M
+19;85;Per Alfred Nordaune Holte;Fannefjord SK;00:25:28;00:08:03;13;00:05:46;9;00:06:34;28;00:05:05;27;Menn;M
+20;93;Tommy Pham;Flow Enduro;00:25:35;00:08:15;17;00:06:21;21;00:06:17;22;00:04:42;17;Menn;M
+21;77;Jean-Christophe BARBIER;Dardilly;00:25:37;00:08:04;14;00:06:29;26;00:06:12;21;00:04:52;19;Menn;M
+22;73;Bjørn Thomas Melhus;;00:25:47;00:08:32;23;00:06:16;19;00:06:02;19;00:04:57;23;Menn;M
+23;69;Marius Bergdal Hopen;Team Sykleriet;00:25:50;00:08:15;16;00:06:24;23;00:06:12;20;00:04:59;24;Menn;M
+24;108;Mikael Vold;Bodø Terrengsykkelklubb;00:26:19;00:08:42;25;00:06:24;22;00:06:29;26;00:04:44;18;Menn;M
+25;95;Øystein Torp Christensen;;00:26:42;00:08:57;28;00:06:25;24;00:06:23;24;00:04:57;22;Menn;M
+26;64;Jon Vegar Aga Kjærgaard;Bergen MTB klubb;00:27:20;00:08:43;26;00:07:11;36;00:06:30;27;00:04:56;21;Menn;M
+27;67;Sindre Balstad;;00:27:23;00:09:06;30;00:06:32;27;00:06:40;31;00:05:05;26;Menn;M
+28;82;Lars Dahle Ravnaas;Trill&grill;00:27:42;00:08:57;27;00:06:45;28;00:06:19;23;00:05:41;36;Menn;M
+29;78;Joakim Ericsson;Klarälvdalens K&M;00:28:04;00:09:09;31;00:07:17;39;00:06:36;30;00:05:02;25;Menn;M
+30;88;Philipp Garbers;;00:28:14;00:08:39;24;00:07:39;45;00:06:24;25;00:05:32;32;Menn;M
+31;84;Pedro Matos;Stranda Sykkelklubb;00:28:20;00:09:14;32;00:06:50;30;00:06:42;33;00:05:34;33;Menn;M
+32;94;Tord irgens Kylling;;00:28:26;00:09:43;38;00:06:49;29;00:06:41;32;00:05:13;28;Menn;M
+33;90;Steinar Haugros;;00:28:26;00:09:18;33;00:07:01;34;00:06:52;34;00:05:15;29;Menn;M
+34;81;Krzysztof Górszczyk;Gravity Revolt;00:28:54;00:09:04;29;00:07:01;33;00:07:10;37;00:05:39;35;Menn;M
+35;68;Trond Erik Wollan;IL Norodd;00:28:59;00:09:18;34;00:06:26;25;00:07:28;39;00:05:47;38;Menn;M
+36;62;Christian Arne Skollevoll;IK Hero;00:29:27;00:09:32;36;00:06:54;31;00:06:35;29;00:06:26;42;Menn;M
+37;114;Helge Janbu;;00:29:39;00:09:44;39;00:07:22;42;00:06:59;36;00:05:34;34;Menn;M
+38;61;Andreas Sæter;Molde CK;00:30:01;00:10:30;44;00:07:05;35;00:06:55;35;00:05:31;31;Menn;M
+39;70;Anders Lundberg;Ytre Dalsfjord Terrengsykkelklubb;00:30:59;00:10:04;41;00:07:30;43;00:07:43;40;00:05:42;37;Menn;M
+40;76;Henning Tomren;PwC AS;00:31:24;00:10:04;42;00:07:57;46;00:07:23;38;00:06:00;40;Menn;M
+41;92;Sven Francke;;00:31:46;00:10:44;46;00:07:22;41;00:07:47;41;00:05:53;39;Menn;M
+42;111;Oskar Brodin;Hemsedal IL Sykkel;00:33:23;00:10:36;45;00:07:35;44;00:09:09;45;00:06:03;41;Menn;M
+43;80;Jonas Lillebø;Molde Cykleklubb;00:33:29;00:10:05;43;00:08:04;47;00:08:18;43;00:07:02;44;Menn;M
+44;86;Per Solberg;;00:33:47;00:10:44;47;00:07:14;37;00:09:17;46;00:06:32;43;Menn;M
+45;72;Arnstein Svanholm;Stifstaden SK;00:38:56;00:11:05;48;00:07:16;38;00:09:07;44;00:11:28;46;Menn;M
+46;75;Erlend Jacobsen;Norodd;00:40:38;00:12:50;50;00:08:21;48;00:12:11;48;00:07:16;45;Menn;M
+;63;Hans Christian Kåsen;IK Hero;DNF;00:11:39;49;00:08:26;49;00:10:21;47;;DNS;Menn;M
+;74;Christoffer Engebretsen Bakke;Vestby;DNF;00:08:27;22;00:11:20;50;;DNS;;DNS;Menn;M
+;83;Morten Eide;;DNF;00:09:56;40;00:07:18;40;;DNS;;DNS;Menn;M
+;91;Stian Gjelsvik;;DNF;00:09:21;35;00:06:59;32;00:07:53;42;;DNS;Menn;M
+1;41;Albin Littorin-Sandbu;SK Rye;00:22:02;00:07:23;1;00:05:26;2;00:05:00;1;00:04:13;3;U21 Menn 17-20 år;M
+2;53;Gard Brovold;Maridalen Skiklubb;00:22:11;00:07:49;4;00:05:18;1;00:05:02;2;00:04:02;1;U21 Menn 17-20 år;M
+3;51;Oskar Omdal;Sokndal Sti og Sykkel;00:22:35;00:07:24;2;00:05:50;5;00:05:15;3;00:04:06;2;U21 Menn 17-20 år;M
+4;43;Kristian Holiman;SK Rye/Team Santa Cruz Sykler;00:23:46;00:08:30;10;00:05:39;3;00:05:21;4;00:04:16;4;U21 Menn 17-20 år;M
+5;47;Sigve Ulleland;Molde CK;00:23:47;00:07:34;3;00:05:54;6;00:05:35;6;00:04:44;8;U21 Menn 17-20 år;M
+6;44;Kristoffer Klingenberg;SK Rye;00:24:03;00:07:51;5;00:06:09;8;00:05:32;5;00:04:31;7;U21 Menn 17-20 år;M
+7;42;Andreas Hegrum Askjer;Lillehammer CK;00:24:07;00:07:58;7;00:05:58;7;00:05:50;7;00:04:21;5;U21 Menn 17-20 år;M
+8;45;Mikal Dyngeland Vik;Ringerike SK;00:26:10;00:07:58;8;00:06:33;11;00:06:42;11;00:04:57;11;U21 Menn 17-20 år;M
+9;49;Erik Justus Grünert;BMK;00:26:23;00:08:40;11;00:06:39;12;00:06:08;9;00:04:56;10;U21 Menn 17-20 år;M
+10;46;Peder Kirkebøen;Hemsedal IL Sykkel;00:26:45;00:09:02;12;00:06:43;13;00:06:08;8;00:04:52;9;U21 Menn 17-20 år;M
+11;52;Viktor Kvisvik;IL Norodd ;00:26:59;00:09:12;13;00:06:23;10;00:06:25;10;00:04:59;12;U21 Menn 17-20 år;M
+12;48;Stein Bjørnland;Lillehammer ck;00:29:51;00:09:51;14;00:07:15;14;00:07:13;12;00:05:32;13;U21 Menn 17-20 år;M
+13;54;Per Einar Brovold;Maridalen Skiklubb;03:20:42;00:08:06;9;00:05:46;4;03:02:21;13;00:04:29;6;U21 Menn 17-20 år;M
+;40;Leo Solland;SK Rye Sykkel / Team Santa Cruz Sykler;DNF;00:07:56;6;00:06:15;9;;;;DNS;U21 Menn 17-20 år;M
+;50;Mathias Nuland;Sokndal Sti og sykkel;DNF;00:09:52;15;00:00:00;;;;;DNS;U21 Menn 17-20 år;M
+;15;Petter Harstad;;DNF;00:10:00;2;00:07:09;2;00:11:49;7;00:00:00;7;Explorer klasse;M
+;17;Trond Orheim;Kleive race;00:28:39;00:08:40;1;00:07:11;3;00:07:26;2;00:05:22;1;Explorer klasse;M
+;12;Mats Hustad;Ytre Dalsfjords terrengsykkelklubb;00:33:57;00:10:32;6;00:08:19;7;00:08:40;4;00:06:26;2;Explorer klasse;M
+;11;Endre Klokk Leite;Molde CK;00:33:25;00:10:24;5;00:07:42;5;00:08:53;5;00:06:26;3;Explorer klasse;M
+;13;Frank Myrbostad;;00:32:28;00:10:19;4;00:07:28;4;00:07:58;3;00:06:43;4;Explorer klasse;M
+;14;Daniel Røyland;;00:35:20;00:10:51;7;00:07:56;6;00:09:36;6;00:06:57;5;Explorer klasse;M
+;16;Vegard T. Blakstad;Stampen til Frank;00:45:17;00:10:01;3;00:07:07;1;00:07:19;1;00:20:50;6;Explorer klasse;M
