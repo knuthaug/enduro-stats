@@ -147,3 +147,6 @@ node import/importer.js -s -f results/2019/telemark/telemark-2019-original.csv
 
 echo "  Molde"
 node import/importer.js -m -f results/2019/molde/molde-2019.csv
+
+echo "  Bodø"
+node import/importer.js -m -f results/2019/bodø/bodø-2019.csv

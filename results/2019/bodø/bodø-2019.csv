@@ -1,0 +1,76 @@
+Pos Klasse;bib;name;club;chiptime;FE1;FE1 Pos;FE2;FE2 Pos;FE3;FE3 Pos;FE4;FE4 Pos;FE5;FE5 Pos;FE6;FE6 Pos;Class;gender
+1;1;Vera Leivsdottir;Bergen MTB klubb;00:25:08;00:06:57;1;00:02:40;1;00:04:53;1;00:03:43;1;00:02:00;1;00:04:55;1;Kvinner;F
+2;3;Anne Melbø;Molde ck;00:26:46;00:07:36;2;00:02:45;2;00:05:06;2;00:03:53;2;00:02:07;2;00:05:19;2;Kvinner;F
+3;5;Gry Svantesvold;Nesbyen IL;00:29:54;00:07:48;3;00:03:21;3;00:05:57;4;00:04:33;3;00:02:18;3;00:05:57;4;Kvinner;F
+4;4;Marte Østenfor Myre;;00:31:13;00:08:10;4;00:03:29;4;00:05:48;3;00:05:53;4;00:02:20;4;00:05:33;3;Kvinner;F
+5;2;Ann Kristin Eriksen;IK Hero;00:42:30;00:10:26;5;00:05:14;5;00:07:52;5;00:07:00;5;00:03:37;5;00:08:21;5;Kvinner;F
+1;6;Lene Pedersen;Bodø Terrengsykkelklubb;00:27:15;00:08:04;2;00:02:44;1;00:05:07;1;00:04:01;1;00:02:14;1;00:05:05;1;Master Kvinner;F
+2;7;Elinborg Olafsdottir;BMK;00:28:55;00:07:57;1;00:02:57;2;00:05:33;3;00:04:30;2;00:02:21;3;00:05:37;3;Master Kvinner;F
+3;8;Louise Engan;BodØ terrengsykkelklubb;00:28:58;00:08:10;3;00:03:08;3;00:05:15;2;00:04:41;3;00:02:15;2;00:05:29;2;Master Kvinner;F
+1;22;Vebjørn Vindvik;BFT;00:16:49;00:07:12;2;;;00:04:44;1;;;;;00:04:53;1;Gutter 15-16 år;M
+2;18;Martin Hallen Hakvåg;;00:16:54;00:07:11;1;;;00:04:46;2;;;;;00:04:57;2;Gutter 15-16 år;M
+3;21;Jonatan A.Nøstdahl;Bodø freeride team;00:18:16;00:07:41;4;;;00:05:25;4;;;;;00:05:10;5;Gutter 15-16 år;M
+4;19;Ole martin sandnes Iversen;Bodø freerideteam;00:18:16;00:07:24;3;;;00:05:53;5;;;;;00:04:59;3;Gutter 15-16 år;M
+5;20;Oscar Saksvik;Asker CK;00:19:58;00:09:43;5;;;00:05:10;3;;;;;00:05:05;4;Gutter 15-16 år;M
+1;23;Gard Brovold;Maridalen Skiklubb;00:20:25;00:05:50;1;00:02:04;1;00:03:58;1;00:03:01;1;00:01:31;1;00:04:01;1;U21 Menn (17-20 år);M
+2;26;Per Einar Brovold;Maridalen Skiklubb;00:23:35;00:07:09;3;00:02:28;2;00:04:22;2;00:03:17;2;00:01:51;3;00:04:28;2;U21 Menn (17-20 år);M
+3;24;Emil Hustoft;Bodø Freeride Team;00:33:35;00:06:17;2;00:02:29;3;00:04:44;3;00:03:28;3;00:01:43;2;00:14:54;3;U21 Menn (17-20 år);M
+1;108;Simon Carlsson;Trosabygdens OK /Team Hiq;00:19:25;00:05:32;1;00:01:53;1;00:03:45;1;00:02:49;1;00:01:32;2;00:03:54;1;Menn;M
+2;101;Espen Bergli-johnsen;Bergen Mountainbike klubb;00:19:30;00:05:37;2;00:01:54;2;00:03:47;2;00:02:49;2;00:01:28;1;00:03:55;2;Menn;M
+3;119;Anders Blom;BFT;00:21:03;00:05:53;5;00:02:06;5;00:04:01;3;00:03:07;4;00:01:42;8;00:04:14;5;Menn;M
+4;116;Knut Løkås;Bodø Freeride Team;00:21:04;00:05:52;4;00:02:00;3;00:04:02;4;00:03:12;10;00:01:41;6;00:04:17;6;Menn;M
+5;117;Johannes Lund;Sogn CK;00:21:33;00:06:13;9;00:02:03;4;00:04:05;6;00:03:08;6;00:01:41;5;00:04:23;9;Menn;M
+6;43;Arne Varhaug;;00:21:47;00:06:20;13;00:02:13;10;00:04:06;8;00:03:08;5;00:01:49;12;00:04:11;3;Menn;M
+7;102;Thomas Klingenberg;Sk Rye;00:21:49;00:05:47;3;00:02:09;7;00:04:42;24;00:03:06;3;00:01:37;3;00:04:28;12;Menn;M
+8;105;Niklas Halvorsen;KCK;00:21:50;00:06:05;7;00:02:11;9;00:04:05;7;00:03:26;15;00:01:40;4;00:04:23;8;Menn;M
+9;106;Martin Klette;;00:21:52;00:06:05;8;00:02:15;11;00:04:04;5;00:03:09;7;00:01:48;10;00:04:31;13;Menn;M
+10;48;Gaute Hangaas Brenna;Bodø Freeride Team;00:21:53;00:06:16;10;00:02:10;8;00:04:09;10;00:03:12;13;00:01:43;9;00:04:23;7;Menn;M
+11;51;Andreas Aalby;Asker CK;00:21:56;00:06:04;6;00:02:28;19;00:04:21;14;00:03:09;9;00:01:42;7;00:04:12;4;Menn;M
+12;118;James Windley;Team Mitchell Cycles;00:22:27;00:06:26;15;00:02:09;6;00:04:15;11;00:03:09;8;00:01:53;16;00:04:35;15;Menn;M
+13;109;Baard Hellebostad;Aron SK;00:22:41;00:06:20;12;00:02:20;13;00:04:33;20;00:03:12;12;00:01:51;13;00:04:25;10;Menn;M
+14;111;Jacob Gustafsson;Perbellum ss;00:22:57;00:06:20;11;00:02:21;15;00:04:07;9;00:03:37;22;00:01:54;18;00:04:38;16;Menn;M
+15;28;Mikael Vold;Bodø Terrengsykkelklubb;00:23:07;00:06:40;19;00:02:39;22;00:04:18;12;00:03:12;11;00:01:51;14;00:04:27;11;Menn;M
+16;39;John Ola Buøy;Team Ibis Norge;00:23:21;00:06:34;16;00:02:21;17;00:04:21;13;00:03:29;19;00:01:55;19;00:04:41;19;Menn;M
+17;103;Einar Frønum;Harstad Cykleklubb;00:23:21;00:06:45;21;00:02:16;12;00:04:23;15;00:03:32;20;00:01:52;15;00:04:33;14;Menn;M
+18;27;Gøran Jenssen;Bodø Freeride Team;00:23:42;00:06:38;17;00:02:40;24;00:04:23;16;00:03:29;18;00:01:53;17;00:04:39;17;Menn;M
+19;34;Stian Storeng;Harstad CK;00:24:10;00:07:03;23;00:02:21;16;00:04:29;17;00:03:28;17;00:02:01;21;00:04:48;23;Menn;M
+20;52;Ola Ranes;BMK;00:24:13;00:06:39;18;00:02:20;14;00:04:29;18;00:03:17;14;00:02:47;35;00:04:41;18;Menn;M
+21;75;Jon Vegar Aga Kjærgaard;Bergen MTB Klubb;00:24:39;00:07:23;27;00:02:26;18;00:04:39;22;00:03:39;25;00:01:49;11;00:04:43;20;Menn;M
+22;32;Ola Myklatun Krosness;;00:24:45;00:06:43;20;00:02:34;21;00:04:32;19;00:03:27;16;00:02:46;34;00:04:43;21;Menn;M
+23;33;Espen Karlsen;Bodø Freeride Team;00:25:20;00:07:35;31;00:02:34;20;00:04:38;21;00:03:37;21;00:02:03;22;00:04:53;24;Menn;M
+24;73;Lars Gabrielsen;;00:25:52;00:06:50;22;00:02:43;26;00:05:00;31;00:04:08;29;00:02:05;23;00:05:06;27;Menn;M
+25;110;Frode Bredesen;Harstad;00:25:54;00:07:25;29;00:02:39;23;00:04:47;25;00:04:11;31;00:02:05;24;00:04:47;22;Menn;M
+26;49;William Salminen;HCK;00:26:01;00:07:27;30;00:02:42;25;00:04:55;28;00:03:38;23;00:02:09;25;00:05:10;28;Menn;M
+27;50;André Olav Olsen;Ankenes Stisykkellaug;00:26:02;00:07:03;24;00:03:02;34;00:04:55;27;00:03:44;26;00:02:16;27;00:05:02;26;Menn;M
+28;46;Stian Gjelsvik;;00:26:13;00:07:39;33;00:02:59;31;00:04:55;29;00:03:39;24;00:02:01;20;00:05:00;25;Menn;M
+29;45;Jan-Ove Sandnes;Bodø Terrengsykkelklubb;00:26:57;00:07:24;28;00:02:51;29;00:04:51;26;00:04:12;32;00:02:17;28;00:05:22;29;Menn;M
+30;40;Anders Bergersen;Ankenes stisykkel laug;00:27:21;00:07:38;32;00:02:55;30;00:05:08;33;00:03:59;27;00:02:14;26;00:05:27;30;Menn;M
+31;113;Martin Berg Liane;HCK;00:27:29;00:07:57;36;00:02:45;27;00:04:56;30;00:03:59;28;00:02:18;29;00:05:34;31;Menn;M
+32;30;Trond Kleven;NoClue;00:29:00;00:07:56;35;00:03:06;35;00:05:27;36;00:04:30;35;00:02:24;30;00:05:37;32;Menn;M
+33;107;Joakim Skonseng;Team Andpusten;00:29:07;00:08:00;37;00:03:10;36;00:05:07;32;00:04:09;30;00:02:34;33;00:06:07;35;Menn;M
+34;47;Tor-Øyvind Sandnes;Bodø Terrengsykkelklubb;00:29:08;00:07:41;34;00:03:12;37;00:05:43;37;00:04:13;33;00:02:31;32;00:05:48;34;Menn;M
+35;42;Andreas Mikkelsen;tcyk;00:30:01;00:08:52;40;00:03:00;32;00:05:22;35;00:04:46;36;00:02:24;31;00:05:37;33;Menn;M
+DNF;36;Markus Sannebro;Sogn CK;DNF;00:06:22;14;DNS;;DNS;;DNS;;DNS;;DNS;;Menn;M
+DNF;37;Christian Arne Skollevoll;IK Hero;DNF;00:07:13;26;DNS;;DNS;;DNF;;DNS;;DNS;;Menn;M
+DNF;74;Knut-Geir Aga;;DNF;00:08:22;39;00:03:00;33;00:05:09;34;00:04:19;34;DNF;;DNS;;Menn;M
+DNF;104;Jonatan Mattsson;;DNF;00:07:08;25;00:02:47;28;00:04:39;23;DNF;;DNS;;DNS;;Menn;M
+DNF;115;Roger Berge;Harstad Cykleklubb;DNF;00:08:20;38;DNS;;DNS;;DNS;;DNS;;DNS;;Menn;M
+1;100;Ove Grøndal;Trailhead Nesbyen;00:23:01;00:06:29;1;00:02:21;1;00:04:21;1;00:03:22;2;00:01:55;2;00:04:33;1;Master Menn;M
+2;54;Arild Gravdal;Bergen MTB Klubb;00:23:35;00:06:44;3;00:02:23;2;00:04:38;3;00:03:20;1;00:01:51;1;00:04:39;2;Master Menn;M
+3;59;Anders Røkenes;Harstad Cykleklubb;00:23:37;00:06:41;2;00:02:23;3;00:04:23;2;00:03:30;3;00:02:00;4;00:04:40;3;Master Menn;M
+4;58;Leiv Tvenning;Bergen MTB klubb;00:25:14;00:07:09;5;00:02:34;4;00:04:41;4;00:03:51;4;00:02:05;5;00:04:54;4;Master Menn;M
+5;55;Torbjørn Bech;Bodø Freeride Team;00:27:17;00:07:34;6;00:02:46;5;00:05:01;7;00:04:06;5;00:02:31;7;00:05:19;6;Master Menn;M
+6;60;Andreas Klette;Bodø Freeride Team;00:28:05;00:07:41;7;00:02:48;6;00:04:57;6;00:04:32;7;00:02:22;6;00:05:45;7;Master Menn;M
+7;57;Lars-Petter Riedl;Tirsdagsklubben;00:29:13;00:07:04;4;00:06:13;8;00:04:43;5;00:04:11;6;00:01:59;3;00:05:03;5;Master Menn;M
+8;56;Jan-Arne Pettersen;Narvik Cykleklubb;00:35:32;00:08:43;9;00:03:55;7;00:06:27;8;00:06:17;8;00:03:23;8;00:06:47;8;Master Menn;M
+DNF;53;Geir Hanssen;Bergen MTB klubb;DNF;00:07:47;8;DNS;;DNS;;DNS;;DNS;;DNS;;Master Menn;M
+;64;Ingebrigt Mogaard;Tromsø Enduro;DNF;DNS;9;00:02:43;2;00:04:45;2;00:03:50;1;00:02:04;1;00:05:05;1;Explorer klasse;M
+;85;Rune Iversen;Tromsø Enduro;DNF;DNS;10;00:02:53;3;00:05:03;4;00:04:04;4;00:02:17;5;00:05:12;2;Explorer klasse;F
+;69;Per-Anders Myrull;Trailhead Nesbyen;00:27:20;00:07:35;1;00:03:09;4;00:04:59;3;00:04:01;3;00:02:12;3;00:05:24;3;Explorer klasse;M
+;67;Fredrik Rusk;Bodø Terrengsykkelklubb;00:28:24;00:07:39;3;00:03:23;7;00:05:14;5;00:04:29;6;00:02:15;4;00:05:24;4;Explorer klasse;M
+;61;Jamieson Pothecary;VOTLNC;00:29:00;00:08:19;4;00:03:19;6;00:05:15;6;00:04:23;5;00:02:18;6;00:05:26;5;Explorer klasse;M
+;66;Jørgen Tollefsrud;VOTLNC;00:26:30;00:07:37;2;00:02:36;1;00:04:44;1;00:03:51;2;00:02:10;2;00:05:32;6;Explorer klasse;M
+;68;Fred Olsen;HCK;00:32:11;00:08:51;7;00:03:18;5;00:06:01;8;00:04:58;7;00:02:44;7;00:06:19;7;Explorer klasse;M
+;70;Iselin Hangaas Brenna;Bodø Freeride Team;DNF;00:09:52;8;DNS;10;00:06:59;9;DNS;9;DNS;9;00:07:22;8;Explorer klasse;M
+;65;Magnus Hartz;BFT;DNF;00:08:28;6;00:03:36;8;00:05:54;7;DNS;8;00:09:04;8;DNS;9;Explorer klasse;M
+;63;Mads Hartz;;DNF;00:08:25;5;DNS;9;DNS;10;DNS;10;DNS;10;DNS;10;Explorer klasse;M
