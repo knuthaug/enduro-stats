@@ -33,6 +33,7 @@ module.exports = function resultViewMapper (classes, results) {
     riders[rider].final_rank = results[i].final_rank
     riders[rider].name = results[i].name
     riders[rider].class = results[i].class
+    riders[rider].notExplorer = !(/explorer/i.test(results[i].class)),
     riders[rider].rider_id = results[i].rider_id
     riders[rider].stage = results[i].stage
     riders[rider][`stage${results[i].stage}_time`] = time(results[i].stage_time_ms, results[i].status)

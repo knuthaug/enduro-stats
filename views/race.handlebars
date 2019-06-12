@@ -52,26 +52,34 @@
       <thead>
         <tr>
           <th scope="col" data-sortable="false" data-toggle="tooltip" data-original-title="trykk for mer informasjon om rytterens prestasjon i rittet">{{> icon type='info'}}</th>
+          {{#if this.0.notExplorer}}
           <th scope="col" data-sortable-type="numeric">Plass</th>
+          {{/if}}
           <th scope="col">Navn</th>
           {{#each ../stages}}
           <th scope="col">Etappe {{this}}</th>
           {{/each}}
           <th scope="col" data-sortable-type="numeric">Totaltid</th>
+          {{#if this.0.notExplorer}}
           <th scope="col" data-sortable-type="numeric">Etter vinner</th>
+          {{/if}}
         </tr>
       </thead>
       <tbody>
         {{#each this}}
         <tr class="{{#compare @index '%' 2}}even{{else}}odd{{/compare}}">
           <td>{{> icon type='plus-race'}}</td>
+          {{#if notExplorer}}
           <td scope="row">{{final_rank}}</td>
+          {{/if}}
           <td><a data-id="{{rider_id}}" href="/rytter/{{uid}}">{{name}}</a></td>
           {{#each ../../stages}}
           <td><span data-toggle="tooltip" data-original-title="nr. {{lookup ../this (propFor this 'rank')}} på etappen, {{lookup ../this (propFor this 'behind_leader')}} bak etappevinner">{{> stagetime result=../this stage=this }}</span></td>
           {{/each}}
           <td data-value="{{acc_time_ms}}">{{#compare acc_time '===' '00:00.0'}}<span class=dnf>{{../final_status}}</span>{{else}}{{../acc_time}}{{/compare}}</td>
+          {{#if notExplorer}}
           <td data-value="{{acc_time_behind_ms}}">{{#compare acc_time_behind '!==' '00:00.0'}}{{../acc_time_behind}}{{/compare}}</td>
+          {{/if}}
         </tr>
         <tr class="hide race-details">
           <td colspan="12">
