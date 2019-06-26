@@ -64,6 +64,7 @@ app.get('/ranking', handler('rank', handlers.rankHandler))
 app.get('/sammenlign', handler('compare', handlers.compareHandler))
 app.get('/api/search', jsonHandler(handlers.jsonSearchHandler))
 app.get('/api/graph/compare', jsonHandler(handlers.compareGraphHandler))
+app.get('/site.webmanifest', jsonHandler(handlers.manifestHandler))
 
 app.post('/sok/', handler('search', handlers.searchHandler, 100))
 

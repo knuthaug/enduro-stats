@@ -12,6 +12,10 @@ const comparisonMapper = require('./comparisonMapper')
 const comparisonGraphMapper = require('./comparisonGraphMapper')
 const db = new Db()
 
+async function manifestHandler(req) {
+  return {}
+}
+
 async function racesHandler (req) {
   const races = raceViewMapper(await db.findRaces())
   return {
@@ -307,5 +311,6 @@ module.exports = {
   jsonSearchHandler,
   compareHandler,
   compareGraphHandler,
-  rankHandler
+  rankHandler,
+  manifestHandler
 }
