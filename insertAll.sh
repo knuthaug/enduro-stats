@@ -93,7 +93,7 @@ node import/importer.js -f results/2017/nesbyen/nesbyen-2017.csv
 echo "  Bodø"
 node import/importer.js -m -f results/2017/bodø/bodø-2017.csv
 echo "  Voss"
-node import/importer.js -m -f results/2017/voss/voss-2017.csv
+node import/importer.js -m -f results/2017/voss/voss-2017-2.csv
 echo "  Drammen"
 node import/importer.js -m -f results/2017/drammen/drammen-2017.csv
 echo "  Traktor"
