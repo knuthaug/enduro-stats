@@ -1,43 +1,47 @@
-;bib;name;;FE1;FE1 Pos;gender;Class
-1;22;Preben Nøkleby;NOR;8:10.57;1;M;Menn senior
-2;21;Kristoffer Apeland;NOR;8:43.13;2;M;Menn senior
-3;20;Adrian Hilde;NOR;8:47.02;3;M;Menn senior
-4;25;William Gibson;NOR;8:55.34;4;M;Menn senior
-5;54;Andrew Jephcott;AUS;9:11.23;5;M;Menn senior
-6;24;Håkon Skålnes;NOR;9:12.59;6;M;Menn senior
-7;23;Tom Custers Nedrebø;NOR;9:17.57;7;M;Menn senior
-8;44;Vegard Voll Bøyum;NOR;9:20.03;8;M;Menn senior
-9;30;Vetle Dirdal;NOR;9:24.30;9;M;Menn senior
-10;32;Kristoffer Rakneberg;NOR;9:25.55;10;M;Menn senior
-11;27;Sindre Aarøy Holtet;NOR;9:26.65;11;M;Menn senior
-12;36;Lars-Georg S. Paulsen;NOR;9:27.46;12;M;Menn senior
-13;45;Mikal Dyngeland Vik;NOR;9:33.92;13;M;Menn senior
-14;33;Magne Hølland;NOR;9:40.42;14;M;Menn senior
-15;56;Mikel Latorre Gulias;ESP;9:46.81;15;M;Menn senior
-16;26;Oddbjørn Egge Ødegaard;NOR;9:47.03;16;M;Menn senior
-17;29;Fredrik Minde;NOR;9:48.32;17;M;Menn senior
-18;37;Anders Ekkje Slettebø;NOR;9:56.37;18;M;Menn senior
-19;55;Kristian Fauskanger;NOR;10:28.58;19;M;Menn senior
-20;48;Ove Tillung;NOR;10:34.45;20;M;Menn senior
-21;51;Magnus Aunan Jørgensen;NOR;10:35.86;21;M;Menn senior
-22;35;H�vard Gerner;NOR;10:38.97;22;M;Menn senior
-23;42;Jon Vabø;NOR;10:40.98;23;M;Menn senior
-24;34;Halvor Larsen;NOR;10:45.28;24;M;Menn senior
-25;31;Pål Tørud;NOR;10:52.89;25;M;Menn senior
-26;38;Asle Hansen;NOR;10:54.62;26;M;Menn senior
-27;39;Daniel Meling;NOR;11:06.83;27;M;Menn senior
-28;46;Dennis Myrland;NOR;11:32.37;28;M;Menn senior
-29;52;Edvard Boge;NOR;11:47.07;29;M;Menn senior
-30;49;Geir Storesund;NOR;11:51.18;30;M;Menn senior
-32;58;Espen Flage;NOR;13:41.06;32;M;Menn senior
-1;1;Hilde Strædet;NOR;9:33.01;1;F;Kvinner senior
-2;2;Vera Leivsdottir;NOR;9:53.26;2;F;Kvinner senior
-3;3;Eline Moen;NOR;10:54.68;3;F;Kvinner senior
-4;4;Emily Nerland;NOR;10:55.74;4;F;Kvinner senior
-5;8;Anne Bergesen;NOR;11:43.68;5;F;Kvinner senior
-6;7;Vilde Veum;NOR;12:38.86;6;F;Kvinner senior
-7;9;Nicole Portheim;NOR;13:25.18;7;F;Kvinner senior
-8;6;Vigdis Hove;NOR;13:48.18;8;F;Kvinner senior
-9;5;Klara Gunnarson;SWE;14:49.84;9;F;Kvinner senior
-1;43;Noah Holmefjord-Dalland;NOR;09:22.24;1;M;Menn junior
-2;40;Stian Fremmersvik;NOR;12:11.77;2;M;Menn junior
+place;bib;name;Country;FE1;FE1 Pos;FE2;FE2 Pos;FE3;FE3 Pos;total time;diff;Class;gender
+1;1;Hilde Strædet;NOR;4:51.65;1;1:15.86;1;3:25.50;1;9:33.01;;Kvinner senior;F
+2;2;Vera Leivsdottir;NOR;5:04.97;2;1:22.25;3;3:26.04;2;9:53.26;20.25;Kvinner senior;F
+4;4;Emily Nerland;NOR;5:38.45;4;1:22.13;2;3:55.16;3;10:55.74;1:22.73;Kvinner senior;F
+3;3;Eline Moen;NOR;5:33.19;3;1:23.99;4;3:57.50;4;10:54.68;1:21.67;Kvinner senior;F
+5;8;Anne Bergesen;NOR;5:50.04;5;1:26.09;5;4:27.55;5;11:43.68;2:10.67;Kvinner senior;F
+6;7;Vilde Veum;NOR;6:35.13;6;1:33.77;6;4:29.96;6;12:38.86;3:05.85;Kvinner senior;F
+7;9;Nicole Portheim;NOR;7:00.86;7;1:38.99;7;4:45.33;7;13:25.18;3:52.17;Kvinner senior;F
+9;5;Klara Gunnarson;SWE;7:05.26;8;1:51.34;9;5:53.24;9;14:49.84;5:16.83;Kvinner senior;F
+8;6;Vigdis Hove;NOR;7:06.03;9;1:50.17;8;4:51.98;8;13:48.18;4:15.17;Kvinner senior;F
+1;43;Noah Holmefjord-Dalland;NOR;4:51.95;1;1:11.87;1;3:18.42;1;9:22.24;;Menn junior;M
+1;22;Preben Nøkleby;NOR;4:15.19;1;1:05.16;1;2:50.22;1;8:10.57;;Menn senior;M
+2;21;Kristoffer Apeland;NOR;4:40.85;4;1:08.84;6;2:53.44;2;8:43.13;32.56;Menn senior;M
+3;20;Adrian Hilde;NOR;4:36.86;2;1:06.90;2;3:03.26;3;8:47.02;36.45;Menn senior;M
+4;25;William Gibson;GBR;4:39.57;3;1:11.41;7;3:04.36;4;8:55.34;44.77;Menn senior;M
+7;23;Tom Custers Nedrebø;NOR;5:05.20;17;1:06.94;3;3:05.43;5;9:17.57;1:07.00;Menn senior;M
+9;30;Vetle Dirdal;NOR;4:53.09;12;1:17.00;14;3:14.21;6;9:24.30;1:13.73;Menn senior;M
+12;36;Lars-Georg S. Paulsen;NOR;4:55.78;13;1:14.55;11;3:17.13;7;9:27.46;1:16.89;Menn senior;M
+10;32;Kristoffer Rakneberg;NOR;4:47.52;9;1:20.27;18;3:17.76;8;9:25.55;1:14.98;Menn senior;M
+6;24;Håkon Skålnes;NOR;4:44.95;7;1:07.93;4;3:19.71;9;9:12.59;1:02.02;Menn senior;M
+8;44;Vegard Voll Bøyum;NOR;4:45.44;8;1:14.14;10;3:20.45;10;9:20.03;1:09.46;Menn senior;M
+5;54;Andrew Jephcott;AUS;4:41.43;5;1:08.13;5;3:21.67;11;9:11.23;1:00.66;Menn senior;M
+15;56;Mikel Latorre;;4:57.46;15;1:25.10;27;3:24.25;12;9:46.81;1:36.24;Menn senior;M
+11;27;Sindre Aarøy Holtet;NOR;4:50.02;10;1:12.11;8;3:24.52;13;9:26.65;1:16.08;Menn senior;M
+14;33;Magne Hølland;NOR;4:56.77;14;1:18.92;16;3:24.73;14;9:40.42;1:29.85;Menn senior;M
+18;37;Anders Ekkje Slettebø;NOR;5:06.19;18;1:24.54;26;3:25.64;15;9:56.37;1:45.80;Menn senior;M
+17;29;Fredrik Minde;NOR;4:58.73;16;1:20.78;20;3:28.81;16;9:48.32;1:37.75;Menn senior;M
+13;45;Mikal Dyngeland Vik;NOR;4:42.35;6;1:15.00;12;3:36.57;17;9:33.92;1:23.35;Menn senior;M
+16;26;Oddbjørn Egge Ødegaard;NOR;4:52.67;11;1:13.65;9;3:40.71;18;9:47.03;1:36.46;Menn senior;M
+22;35;Håvard Gerner;NOR;5:37.44;26;1:20.81;21;3:40.72;19;10:38.97;2:28.40;Menn senior;M
+23;42;Jon Vabø;NOR;5:36.59;25;1:16.04;13;3:48.35;20;10:40.98;2:30.41;Menn senior;M
+19;55;Kristian Fauskanger;NOR;5:16.21;20;1:19.86;17;3:52.51;21;10:28.58;2:18.01;Menn senior;M
+24;34;Halvor Larsen;NOR;5:28.04;23;1:22.89;23;3:54.35;22;10:45.28;2:34.71;Menn senior;M
+20;48;Ove Tillung;NOR;5:12.66;19;1:27.02;28;3:54.77;23;10:34.45;2:23.88;Menn senior;M
+21;51;Magnus Jørgensen;NOR;5:22.73;22;1:17.99;15;3:55.14;24;10:35.86;2:25.29;Menn senior;M
+27;39;Daniel Meling;NOR;5:46.07;27;1:21.00;22;3:59.76;25;11:06.83;2:56.26;Menn senior;M
+25;31;Pål Tørud;NOR;5:31.94;24;1:20.61;19;4:00.34;26;10:52.89;2:42.32;Menn senior;M
+26;38;Asle Hansen;NOR;5:21.06;21;1:31.23;31;4:02.33;27;10:54.62;2:44.05;Menn senior;M
+29;52;Edvard Boge;NOR;6:05.85;29;1:27.38;29;4:13.84;28;11:47.07;3:36.50;Menn senior;M
+30;49;Geir Storesund;NOR;6:13.76;30;1:23.52;25;4:13.90;29;11:51.18;3:40.61;Menn senior;M
+28;46;Dennis Myrland;NOR;5:48.50;28;1:27.63;30;4:16.24;30;11:32.37;3:21.80;Menn senior;M
+31;40;Stian Fremmersvik;NOR;6:20.95;31;1:23.48;24;4:27.34;31;12:11.77;4:01.20;Menn senior;M
+32;58;Espen Flage;NOR;6:43.48;33;1:35.13;32;5:22.45;32;13:41.06;5:30.49;Menn senior;M
+36;59;Ole Henrik Østreng Nes;NOR;6:22.88;32;DNS;33;DNS;33;;;Menn senior;M
+33;47;John Torvald Indrebø;NOR;DNS;34;DNS;34;DNS;34;;;Menn senior;M
+34;50;Frode Bredesen;NOR;DNS;35;DNS;35;DNS;35;;;Menn senior;M
+35;57;Even Hægland;NOR;DNS;36;DNS;36;DNS;36;;;Menn senior;M
