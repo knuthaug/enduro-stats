@@ -151,8 +151,11 @@ node import/importer.js -m -f results/2019/molde/molde-2019.csv
 echo "  Bodø"
 node import/importer.js -m -f results/2019/bodø/bodø-2019.csv
 
-# echo "  Traktorland"
-# node import/importer.js -m -f results/2019/traktorland/traktorland-2019.csv
+echo "  Traktorland"
+node import/importer.js -m -f results/2019/traktorland/traktorland-2019.csv
 
 echo "  Voss"
 node import/importer.js -m -f results/2019/voss/voss-2019.csv
+
+echo "  Drammen"
+node import/importer.js -m -f results/2019/drammen/drammen-2019.csv
