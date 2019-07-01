@@ -9,5 +9,10 @@
     "type": "results",
     "desc": "Originale resultater",
     "url": "https://drammenduro.com/resultater/"
+  },
+  {
+    "type": "images",
+    "desc": "Bildealbum fra Jon Borgersen",
+    "url": "http://www.jonborgersen.com/drammenduro-2019/"
   }
 }
