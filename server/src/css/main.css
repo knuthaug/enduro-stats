@@ -265,7 +265,7 @@ table[data-sortable] th[data-sorted-direction="ascending"]:after {
   text-transform: uppercase;
   background-color: white;
   color: #333;
-  font-size: 75%;
+  font-size: 85%;
   padding: 2px;
 }
 

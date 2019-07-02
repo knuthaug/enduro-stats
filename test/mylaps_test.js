@@ -31,7 +31,7 @@ tap.test('Object details for stages', async t => {
   t.equals(stage1.number, 1, 'stage number matches')
   t.equals(stage2.name, 'FE2', 'stage name matches')
   t.equals(stage2.number, 2, 'stage number matches')
-  t.equals(stage1.results.length, 151, 'stage result length matches')
+  t.equals(stage1.results.length, 152, 'stage result length matches')
   const rider = stage1.results[0]
 
   t.equals(rider.name, 'Alice Grindheim', 'name is correct')
@@ -47,10 +47,10 @@ tap.test('Object details for stages', async t => {
 
   t.equals(stage1.results[1].stage_rank, 4)
 
-  t.equals(stage1.results[21].time, '00:00:00')
-  t.equals(stage1.results[21].stage_rank, 22)
-  t.equals(stage1.results[21].stage_time_ms, 0)
-  t.equals(stage1.results[21].status, 'DNS')
+  t.equals(stage1.results[20].time, '00:00:00')
+  t.equals(stage1.results[20].stage_rank, 21)
+  t.equals(stage1.results[20].stage_time_ms, 0)
+  t.equals(stage1.results[20].status, 'DNS')
 })
 
 tap.test('final status field is correct', async t => {
@@ -63,9 +63,10 @@ tap.test('final status field is correct', async t => {
 
   const lastStage = data.stages[4]
   t.equals(lastStage.results[0].final_status, 'OK', 'winner has OK final_status')
-  //  console.log(lastStage.results[lastStage.results.length - 17])
   t.equals(lastStage.results[lastStage.results.length - 1].final_status, 'DNS', 'DNS rider has final_status DNS')
-  t.equals(lastStage.results[lastStage.results.length - 17].final_status, 'DNF', 'DNF rider has final_status DNF')
+  t.equals(lastStage.results[lastStage.results.length - 17].final_status, 'DNF', 'DSQ rider has final_status DSQ')
+  t.equals(lastStage.results[21].final_status, 'DSQ', 'DSQ rider has final_status DSQ')
+  t.equals(lastStage.results[21].status, 'DSQ', 'DSQ rider has final_status DSQ')
   t.end()
 })
 

@@ -16,7 +16,7 @@
 const csv = require('neat-csv')
 const fs = require('await-fs')
 const logger = require('../logger.js')
-const { ERROR_RANK, DNS_STATUS, DNF_STATUS, OK_STATUS } = require('../constants.js')
+const { ERROR_RANK, DNS_STATUS, DSQ_STATUS, DNF_STATUS, OK_STATUS } = require('../constants.js')
 const { check } = require('../spellcheck.js')
 const { convertTimeToMs } = require('../../lib/time.js')
 const Converter = require('./converter.js')
@@ -103,7 +103,7 @@ class Mylaps extends Converter {
             final_status: lib.finalStatus(raw[j]['Pos Klasse']),
             acc_time_ms: null,
             stage_rank: lib.stageRank(parseInt(raw[j][`${stage.name} Pos`], 10)),
-            status: this.setStatus(raw[j][`${stage.name} Pos`], raw[j][stage.name])
+            status: this.setStatus(raw[j][`${stage.name} Pos`], raw[j][stage.name], raw[j]['Pos Klasse'])
           })
         }
       }
@@ -133,8 +133,10 @@ class Mylaps extends Converter {
     return '00:00:00'
   }
 
-  setStatus (pos, time) {
-    if (pos === 0 || pos === '0') {
+  setStatus (pos, time, classPos) {
+    if (classPos === DSQ_STATUS) {
+      return DSQ_STATUS
+    } else if (pos === 0 || pos === '0') {
       return DNS_STATUS
     } else if (time === '00:00:00') {
       return DNS_STATUS

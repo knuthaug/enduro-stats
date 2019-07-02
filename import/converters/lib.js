@@ -1,8 +1,8 @@
-const { ERROR_RANK, DNS_STATUS, DNF_STATUS, OK_STATUS } = require('../constants.js')
+const { ERROR_RANK, DNS_STATUS, DSQ_STATUS, DNF_STATUS, OK_STATUS } = require('../constants.js')
 const { convertTimeToMs } = require('../../lib/time.js')
 
 function finalStatus (value) {
-  if (value === DNS_STATUS || value === DNF_STATUS) {
+  if (value === DNS_STATUS || value === DNF_STATUS || value === DSQ_STATUS) {
     return value
   }
 

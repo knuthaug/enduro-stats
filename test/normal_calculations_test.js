@@ -135,6 +135,25 @@ tap.test('fine tune dns/dnf', async t => {
   t.end()
 })
 
+tap.test('fine tune dns/dnf', async t => {
+  const c = new StageCalculations()
+  const rows = JSON.parse(fs.readFileSync(path.join(__dirname, './data/race-results-junior-drammen-2019.json')))
+  const result = c.differentials(rows)
+  const partialRider = result.filter((r) => {
+    return r.rider_id === 13233
+  })
+
+  console.log(partialRider)
+
+  t.equals(partialRider[0].status, 'DSQ', 'DSQ for first stage')
+  t.equals(partialRider[1].status, 'DSQ', 'DSQfor second stage')
+  t.equals(partialRider[2].status, 'DSQ', 'DSQ for third stage')
+  t.equals(partialRider[3].status, 'DSQ', 'DSQ for fourth stage')
+  t.equals(partialRider[4].status, 'DSQ', 'DSQ for fourth stage')
+  t.equals(partialRider[4].final_status, 'DSQ', 'DSQ as final_status for DQ race')
+  t.end()
+})
+
 tap.test('fine tune dns/dnf contiued', async t => {
   const c = new StageCalculations()
   const rows = JSON.parse(fs.readFileSync(path.join(__dirname, './data/race-results-menn-drammen-2014.json')))
