@@ -59,7 +59,7 @@
           {{#each ../stages}}
           <td><span data-toggle="tooltip" data-original-title="nr. {{lookup ../this (propFor this 'rank')}} på etappen, {{lookup ../this (propFor this 'behind_leader')}} bak etappevinner">{{> stagetime result=../this stage=this }}</span></td>
           {{/each}}
-          <td data-value="{{#compare acc_time_ms '===' 0}}999999999{{else}}{{../acc_time_ms}}{{/compare}}">{{#compare acc_time '===' '00:00.0'}}<span class=dnf>{{../final_status}}</span>{{else}}{{../acc_time}}{{/compare}}</td>
+          <td data-value="{{#compare acc_time_ms '===' 0}}999999999{{else}}{{../acc_time_ms}}{{/compare}}">{{#compare acc_time '===' '00:00.0'}}<span class=dnf data-toggle="tooltip" data-original-title="{{title ../final_status}}">{{../final_status}}</span>{{else}}{{../acc_time}}{{/compare}}</td>
           <td data-value="{{#compare acc_time_ms '===' 0}}999999999{{else}}{{../acc_time_behind}}{{/compare}}">{{#compare acc_time_behind '!==' '00:00.0'}}{{../acc_time_behind}}{{/compare}}</td>
         </tr>
         {{/each}}
