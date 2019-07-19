@@ -1,4 +1,4 @@
-rank;bib;name;FE1;FE1 Pos;FE2;FE2 Pos;FE3;FE3 Pos;FE4;FE4 Pos;FE5;FE5 Pos;FE6;FE6 Pos;Totaltime;Diff;Club;Class;gender;Pos Klasse
+rank;bib;name;FE1;FE1 Pos;FE2;FE2 Pos;FE3;FE3 Pos;FE4;FE4 Pos;FE5;FE5 Pos;FE6;FE6 Pos;chiptime;Diff;Club;Class;gender;Pos Klasse
 1st;303;Brage Lidsheim;;;00:06:30;1;;;00:03:55;1;;;00:01:30;1;00:11:55;;CK Nittedal;Gutter 13-14;M;
 2nd;301;Sebastian Halvorsen;;;00:06:45;2;;;00:04:06;2;;;00:01:51;2;00:12:42;+00:00:47;Team la Pierre Norge;Gutter 13-14;M;
 3rd;305;Marcus Arnesen;;;00:07:28;4;;;00:04:12;3;;;00:01:53;3;00:13:33;+00:01:38;;Gutter 13-14;M;
@@ -47,13 +47,6 @@ rank;bib;name;FE1;FE1 Pos;FE2;FE2 Pos;FE3;FE3 Pos;FE4;FE4 Pos;FE5;FE5 Pos;FE6;FE
 30th;116;Christopher Omtvedt;00:08:13;32;00:07:25;31;00:01:59;30;00:04:21;31;00:07:25;32;00:01:58;33;00:31:21;+00:08:22; Bremsespor;Menn master;M;
 31st;114;Ole Johan Johnsen;00:08:06;31;00:07:44;32;00:02:00;32;00:04:32;33;00:07:18;30;00:01:56;32;00:31:36;+00:08:37;;Menn master;M;
 32nd;92;Bjørn Asplund;00:06:30;7;00:05:57;5;00:01:30;7;00:03:40;9;00:14:10;33;00:01:28;8;00:33:15;+00:10:16; Kongens berg sti og landeveis røvere;Menn master;M;
-33rd;122;Espen Sandengen;DNS;;DNS;;00:01:36;15;00:03:48;15;00:05:50;13;00:01:36;14;;; Bremsespor;Menn master;M;
-34th;117;Terje B. Olsen;00:08:57;33;00:08:17;33;00:02:13;33;00:05:04;34;DNS;;DNS;;;; Aron SK;Menn master;M;
-35th;98;Glenn Østerud;00:09:23;34;DNS;;DNS;;DNS;;DNS;;DNS;;;; VOTLNC;Menn master;M;
-36th;90;Jamieson Pothecary;DNS;;DNS;;DNS;;DNS;;DNS;;DNS;;;;;Menn master;M;
-37th;99;Christian Erga;DNS;;DNS;;DNS;;DNS;;DNS;;DNS;;;;Høvik Verks Rullende Gutter;Menn master;M;
-38th;128;Tor Erik Drangsland;DNS;;DNS;;DNS;;DNS;;DNS;;DNS;;;;Team Letth;Menn master;M;
-39th;105;Aslak Mørstad;DNS;;DNS;;DNS;;DNS;;DNS;;DNS;;;;;;;
 1st;147;Linda Lønmo;00:07:39;1;00:07:08;1;00:01:44;1;00:04:21;1;00:06:43;1;00:01:52;1;00:29:27;;Aron SK;Kvinner master;F;
 2nd;145;Kine Lidsheim;00:09:35;2;00:09:01;2;00:02:30;2;00:05:28;2;00:09:09;2;00:02:37;2;00:38:20; +00:08:53;CK Nittedal;Kvinner master;F;
 3rd;146;Kristine Skeie;00:10:27;3;;;;;;;;;;;;DNF;CK Nittedal;Kvinner master;F;
@@ -165,18 +158,15 @@ rank;bib;name;FE1;FE1 Pos;FE2;FE2 Pos;FE3;FE3 Pos;FE4;FE4 Pos;FE5;FE5 Pos;FE6;FE
 12th;315;Even Western;;;00:10:12;13;;;00:04:32;12;00:06:30;10;00:01:37;7;00:22:51;+00:07:02;;Fundoro Gutter 15-16;M;
 13th;316;Emil Bjertnes Aabye;;;00:07:11;11;;;00:03:45;4;00:05:41;2;DNS;;DNF;; Team Sykleriet;Fundoro Gutter 15-16;M;
 14th;306;Sigurd Bjørndalen Mathisen;;;;;;;;;;;;;DNF;; Aron SK;Fundoro Gutter 15-16;M;
-1st;53;Sivert Uhre Solo;;;00:06:27;1;;;00:03:55;1;00:06:15;3;00:01:37;1;00:18:14;;;Funduro herrer;M;
-2nd;204;Stian Lie Hansen;;;00:06:47;2;;;00:04:14;3;00:05:50;1;00:01:39;2;00:18:30;+00:00:16; Aron SK;Funduro herrer;M;
-3rd;205;Jørn Inge Woldmo;;;00:07:14;3;;;00:04:07;2;00:06:13;2;00:01:53;3;00:19:27;+00:01:13;;Funduro herrer;M;
-4th;203;Lars Christian Arvidson;;;00:08:19;7;;;00:04:42;7;00:07:07;4;00:02:01;6;00:22:09;+00:03:55;;Funduro herrer;M;
-5th;207;Scott Hall;;;00:08:27;8;;;00:04:39;5;00:07:19;5;00:01:59;5;00:22:24;+00:04:10; Aron SK;Funduro herrer;M;
-6th;201;Roy Arne Syversrud;;;00:08:01;6;;;00:04:39;5;00:07:43;6;00:02:02;7;00:22:25;+00:04:11; Statkraft/stabil;Funduro herrer;M;
-7th;202;Jens Andre Jensen;;;00:09:08;9;;;00:05:21;9;00:08:16;7;00:02:13;8;00:24:58;+00:06:44; Eiker CK;Funduro herrer;M;
-8th;209;Aleksander Haukøya;;;00:09:10;10;;;00:05:00;8;00:09:30;9;00:02:22;9;00:26:02;+00:07:48;;Funduro herrer;M;
-9th;208;Sigurd Rolland Pettersen;;;00:12:40;11;;;00:05:43;10;00:08:34;8;00:02:36;10;00:29:33;+00:11:19; Jotun BIL;Funduro herrer;M;
-10th;200;Rune Vidar Vestre;;;00:07:21;5;;;00:04:38;4;DNS;;00:01:53;3;DNF;; Ck Haugaland;Funduro herrer;M;
-11th;206;Henrik Bergman Nørbech Johansen;;;00:07:17;4;;;DNS;;DNS;;DNS;;DNF;; Team Lapierre Norge;Funduro herrer;M;
-12th;210;Are Paulsrud;;;;;;;;;;;;;DNF;; Storebrand Sport;Funduro herrer;M;
-1st;138;Anne Trahaug;;;00:08:47;2;;;00:05:15;1;00:08:04;2;00:02:11;2;00:24:17;;;Funduro kvinner;F;
-2nd;212;Lise Pettersen;;;00:07:34;1;;;00:08:15;3;00:07:42;1;00:02:05;1;00:25:36;+00:01:19; Eidanger IL;Funduro kvinner;F;
-3rd;211;Marianne Hage;;;00:09:08;3;;;00:05:51;2;00:08:34;3;00:02:22;3;00:25:55;+00:01:38;;Funduro kvinner;F;
+1st;53;Sivert Uhre Solo;;;00:06:27;1;;;00:03:55;1;00:06:15;3;00:01:37;1;00:18:14;;;Menn funduro;M;
+2nd;204;Stian Lie Hansen;;;00:06:47;2;;;00:04:14;3;00:05:50;1;00:01:39;2;00:18:30;+00:00:16; Aron SK;Menn funduro;M;
+3rd;205;Jørn Inge Woldmo;;;00:07:14;3;;;00:04:07;2;00:06:13;2;00:01:53;3;00:19:27;+00:01:13;;Menn funduro;M;
+4th;203;Lars Christian Arvidson;;;00:08:19;7;;;00:04:42;7;00:07:07;4;00:02:01;6;00:22:09;+00:03:55;;Menn funduro;M;
+5th;207;Scott Hall;;;00:08:27;8;;;00:04:39;5;00:07:19;5;00:01:59;5;00:22:24;+00:04:10; Aron SK;Menn funduro;M;
+6th;201;Roy Arne Syversrud;;;00:08:01;6;;;00:04:39;5;00:07:43;6;00:02:02;7;00:22:25;+00:04:11; Statkraft/stabil;Menn funduro;M;
+7th;202;Jens Andre Jensen;;;00:09:08;9;;;00:05:21;9;00:08:16;7;00:02:13;8;00:24:58;+00:06:44; Eiker CK;Menn funduro;M;
+8th;209;Aleksander Haukøya;;;00:09:10;10;;;00:05:00;8;00:09:30;9;00:02:22;9;00:26:02;+00:07:48;;Menn funduro;M;
+9th;208;Sigurd Rolland Pettersen;;;00:12:40;11;;;00:05:43;10;00:08:34;8;00:02:36;10;00:29:33;+00:11:19; Jotun BIL;Menn funduro;M;
+1st;138;Anne Trahaug;;;00:08:47;2;;;00:05:15;1;00:08:04;2;00:02:11;2;00:24:17;;;Kvinner funduro;F;
+2nd;212;Lise Pettersen;;;00:07:34;1;;;00:08:15;3;00:07:42;1;00:02:05;1;00:25:36;+00:01:19; Eidanger IL;Kvinner funduro;F;
+3rd;211;Marianne Hage;;;00:09:08;3;;;00:05:51;2;00:08:34;3;00:02:22;3;00:25:55;+00:01:38;;Kvinner funduro;F;
