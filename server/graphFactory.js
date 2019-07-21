@@ -9,7 +9,7 @@ function toPlacesGraphData (rows, num, stages) {
     const o = {
       name: rows[i].name,
       data: stages.map((s) => {
-        return [ s, rows[i][`stage${s}_rank`] ]
+        return [s, rows[i][`stage${s}_rank`]]
       }).sort((a, b) => {
         return a[0] - b[0]
       }) }
@@ -27,7 +27,7 @@ function toTimesGraphData (rows, num, stages) {
     const o = {
       name: rows[i].name,
       data: stages.map((s) => {
-        return [ s, convertTimeToMs(rows[i][`stage${s}_behind_leader`]) / 1000 ] // in seconds
+        return [s, convertTimeToMs(rows[i][`stage${s}_behind_leader`]) / 1000] // in seconds
       }).sort((a, b) => {
         return a[0] - b[0]
       }) }

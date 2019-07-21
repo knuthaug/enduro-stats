@@ -24,7 +24,7 @@ module.exports = function resultViewMapper (classes, results) {
       stages.push(results[i].stage)
     }
 
-    if (!riders.hasOwnProperty(rider)) {
+    if (!riders[rider]) {
       riders[rider] = {}
     }
 

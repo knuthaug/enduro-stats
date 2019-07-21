@@ -258,7 +258,7 @@ function toComparisonChartData (races) {
   for (let i = 0; i < races.length; i++) {
     for (let j = 0; j < races[i].riders.length; j++) {
       const rider = races[i].riders[j]
-      if (!ridersSeries.hasOwnProperty(rider.name)) {
+      if (!ridersSeries[rider.name]) {
         ridersSeries[rider.name] = []
       }
       ridersSeries[rider.name].push([

@@ -57,7 +57,7 @@ if (dir) {
   fs.readdir(dir, async function (err, items) {
     let raceName, raceYear, raceId, raceDate
     for (var i = 0; i < items.length; i++) {
-      let { raceName, raceYear, raceId, raceDate } = await readSingleStageFile(items[i])
+      const { raceName, raceYear, raceId, raceDate } = await readSingleStageFile(items[i])
     }
 
     const classes = await db.classesForRace(raceId)

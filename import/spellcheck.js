@@ -1,9 +1,9 @@
 const clubSubs = {
-  'Bmk': 'Bergen MTB klubb',
-  'Gresvikifstisyklister': 'Gresvik IF stisyklister',
+  Bmk: 'Bergen MTB klubb',
+  Gresvikifstisyklister: 'Gresvik IF stisyklister',
   'Arin Sk': 'Aron SK',
   'Arok Sk': 'Aron SK',
-  'Nbnl': 'NBNL'
+  Nbnl: 'NBNL'
 }
 
 const subs = {
@@ -137,7 +137,7 @@ const subs = {
 
 function check (name) {
   const n = normalizeCase(name)
-  if (subs.hasOwnProperty(n)) {
+  if (subs[n]) {
     return subs[n]
   }
 

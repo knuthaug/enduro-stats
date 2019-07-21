@@ -218,7 +218,7 @@ class Db {
   }
 
   memoize (func) {
-    let cache = {}
+    const cache = {}
     return async function (...args) {
       const n = args.join('_')
       if (cache.hasOwnProperty(n)) {

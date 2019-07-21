@@ -28,7 +28,7 @@ function riderViewMapper (results) {
 
 function toJson (list) {
   return JSON.stringify(list.map((e) => {
-    return [ toNumber(e.name), e.rank ]
+    return [toNumber(e.name), e.rank]
   }))
 }
 
@@ -69,7 +69,7 @@ function toRow (r) {
     class: r.class,
     uid: r.uid,
     gender: r.gender,
-    details: [ ]
+    details: []
   }
 }
 

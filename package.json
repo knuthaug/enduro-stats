@@ -17,7 +17,7 @@
     "build:js": "webpack && cp server/src/js/sortable.min.js server/dist/js/",
     "build:css": "postcss server/src/css/main.css -o server/dist/css/bundle.css && postcss server/dist/css/bundle.css -o server/dist/css/bundle.css && cp server/src/css/bootstrap* server/dist/css/ && cp server/src/css/sort-table.css server/dist/css/ && postcss server/dist/css/sort-table.css -o server/dist/css/sort-table.css",
     "build": "npm run clean && npm run build:js && npm run build:css",
-    "lint": "standard"
+    "lint": "standard --fix"
   },
   "repository": {
     "type": "git",
