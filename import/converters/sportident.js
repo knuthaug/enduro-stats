@@ -16,9 +16,8 @@
 const csv = require('neat-csv')
 const fs = require('await-fs')
 const logger = require('../logger.js')
-const { ERROR_RANK, DNS_STATUS, DNF_STATUS, OK_STATUS } = require('../constants.js')
+const { DNS_STATUS } = require('../constants.js')
 const { check } = require('../spellcheck.js')
-const { convertTimeToMs } = require('../../lib/time.js')
 const Converter = require('./converter.js')
 const lib = require('./lib.js')
 class Sportident extends Converter {
@@ -125,7 +124,7 @@ class Sportident extends Converter {
         }
       }
     }
-    //console.log(JSON.stringify(stages.slice(0, 1), null, 2))
+    // console.log(JSON.stringify(stages.slice(0, 1), null, 2))
     return stages
   }
 
@@ -160,7 +159,7 @@ class Sportident extends Converter {
       const key = `FE ${stageNum} Time`
 
       if (row.hasOwnProperty(key) && !stages.find((e) => { return e.name === key })) {
-        stages.push({ name: `FE ${stageNum}`, number: stageNum})
+        stages.push({ name: `FE ${stageNum}`, number: stageNum })
         stageNum++
       }
     }

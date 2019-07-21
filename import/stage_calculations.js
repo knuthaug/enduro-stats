@@ -95,7 +95,6 @@ class StageCalculations {
       }
 
       if (i === stageIndexes.length - 1) {
-
         if (abortedRace && !notStartedRace) {
           rows[stageIndexes[i]].final_status = DNF_STATUS
           rows[stageIndexes[i]].skipped_stages = skipped

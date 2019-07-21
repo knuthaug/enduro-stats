@@ -26,9 +26,9 @@ class Converter {
       return 'Menn master'
     } else if (/master kvinner|kvinner master/i.test(name)) {
       return 'Kvinner master'
-    } else if(/K\s?17+/.test(name)) {
+    } else if (/K\s?17+/.test(name)) {
       return 'Kvinner senior'
-    } else if(/M\s?17+/.test(name)) {
+    } else if (/M\s?17+/.test(name)) {
       return 'Menn senior'
     } else if (/Funduro/i.test(name) || /Explorer/i.test(name) ||
                /M\s?\d\d|K\s?\d\d/i.test(name) || /Menn \d\d|Kvinner \d\d/i.test(name)) {
@@ -39,7 +39,7 @@ class Converter {
       return 'Kvinner junior'
     } else if (/^M|Menn/i.test(name)) {
       return 'Menn senior'
-    } else if (/^K|Kvinner/i.test(name) || /Women/i.test(name) ) {
+    } else if (/^K|Kvinner/i.test(name) || /Women/i.test(name)) {
       return 'Kvinner senior'
     } else if (/^\d/.test(name)) {
       return name.replace(/^\d\s?/, '')

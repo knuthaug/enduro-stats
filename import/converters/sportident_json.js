@@ -8,9 +8,8 @@
 
 const fs = require('await-fs')
 const logger = require('../logger.js')
-const { ERROR_RANK, DNS_STATUS, DNF_STATUS, OK_STATUS } = require('../constants.js')
+const { DNS_STATUS, OK_STATUS } = require('../constants.js')
 const { check, checkClub } = require('../spellcheck.js')
-const { convertTimeToMs } = require('../../lib/time.js')
 const Converter = require('./converter.js')
 const lib = require('./lib.js')
 class SportidentJson extends Converter {
@@ -94,9 +93,9 @@ class SportidentJson extends Converter {
       for (let j = 0; j < raw.results.length; j++) {
         const rider = raw.results[j].athlete
         const stageResults = raw.results[j].stages
-        if(stageResults !== null) {
+        if (stageResults !== null) {
           const status = this.setStatus(stageResults[i].result.position.class,
-                                        this.parseTime(stageResults[i].result.time))
+            this.parseTime(stageResults[i].result.time))
           stage.results.push({
             name: check(`${rider.firstname} ${rider.lastname}`),
             rider_uid: this.checksum(check(`${rider.firstname} ${rider.lastname}`)),
@@ -116,14 +115,14 @@ class SportidentJson extends Converter {
     return stages
   }
 
-  findGender(clazz) {
-    if(/kvinner/i.test(clazz) || /^k/i.test(clazz)) {
+  findGender (clazz) {
+    if (/kvinner/i.test(clazz) || /^k/i.test(clazz)) {
       return 'F'
     }
     return 'M'
   }
 
-  parseTime(time) {
+  parseTime (time) {
     return time.split(':').slice(2).join(':')
   }
 
@@ -146,7 +145,7 @@ class SportidentJson extends Converter {
     return OK_STATUS
   }
 
-  findStages(raw) {
+  findStages (raw) {
     let number = 1
     const entry = raw.results[0]
     return entry.stages.map((e) => {

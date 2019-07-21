@@ -113,7 +113,7 @@ async function readRaceData (file) {
     data.uid = md5(data.name + data.year)
     const raceId = await db.insertRace(data, 0)
 
-    if (data.hasOwnProperty('links')){
+    if (data.hasOwnProperty('links')) {
       await db.insertRaceLinks(raceId, data.links)
     }
   } else {
@@ -166,14 +166,13 @@ async function readCompleteRaceFile (filename, datafile, mode) {
   let parser
   if (mode === 'eq') {
     parser = new Eq(filename, { mode: 'complete', datafile, acc: options.accumulate })
-  } else if(mode === 'mylaps'){
+  } else if (mode === 'mylaps') {
     parser = new Mylaps(filename, { datafile })
-  } else if(mode === 'sportident'){
+  } else if (mode === 'sportident') {
     parser = new Sportident(filename, { datafile })
-  } else if(mode === 'json'){
+  } else if (mode === 'json') {
     parser = new SportidentJson(filename, { datafile })
   }
-
 
   await parser.load()
   data = await parser.parse()

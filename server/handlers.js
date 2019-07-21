@@ -12,7 +12,7 @@ const comparisonMapper = require('./comparisonMapper')
 const comparisonGraphMapper = require('./comparisonGraphMapper')
 const db = new Db()
 
-async function manifestHandler(req) {
+async function manifestHandler (req) {
   return {}
 }
 

@@ -152,6 +152,26 @@ tap.test('fine tune dns/dnf', async t => {
   t.end()
 })
 
+tap.test('handle weird dns/dnf in drammen 2019', async t => {
+  const c = new StageCalculations()
+  const rows = JSON.parse(fs.readFileSync(path.join(__dirname, './data/race-results-menn-master-drammen-2019.json')))
+  const result = c.differentials(rows)
+
+  const firstRider = result.filter((r) => {
+    return r.rider_id === 11
+  })
+
+  t.equals(firstRider[firstRider.length - 1 ].final_rank, 1, '1st rider')
+  t.equals(firstRider[firstRider.length - 1 ].acc_time_behind, 0, '1st rider is not behind')
+
+  const secondRider = result.filter((r) => {
+    return r.rider_id === 12
+  })
+
+  t.equals(secondRider[secondRider.length - 1 ].final_rank, 2, '2nd rider')
+  t.equals(secondRider[secondRider.length - 1 ].acc_time_behind, 27000, '2nd rider is behind')
+})
+
 tap.test('fine tune dns/dnf contiued', async t => {
   const c = new StageCalculations()
   const rows = JSON.parse(fs.readFileSync(path.join(__dirname, './data/race-results-menn-drammen-2014.json')))

@@ -16,9 +16,8 @@
 const csv = require('neat-csv')
 const fs = require('await-fs')
 const logger = require('../logger.js')
-const { ERROR_RANK, DNS_STATUS, DSQ_STATUS, DNF_STATUS, OK_STATUS } = require('../constants.js')
+const { DNS_STATUS, DSQ_STATUS } = require('../constants.js')
 const { check } = require('../spellcheck.js')
-const { convertTimeToMs } = require('../../lib/time.js')
 const Converter = require('./converter.js')
 const lib = require('./lib.js')
 

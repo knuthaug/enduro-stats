@@ -35,8 +35,8 @@ function convertTimeMs (time, pos) {
   return 0
 }
 
-function findGender(clazz) {
-  if(/kvinner/i.test(clazz) || /^k/i.test(clazz)) {
+function findGender (clazz) {
+  if (/kvinner/i.test(clazz) || /^k/i.test(clazz)) {
     return 'F'
   }
   return 'M'
