@@ -143,8 +143,6 @@ tap.test('fine tune dns/dnf', async t => {
     return r.rider_id === 13233
   })
 
-  console.log(partialRider)
-
   t.equals(partialRider[0].status, 'DSQ', 'DSQ for first stage')
   t.equals(partialRider[1].status, 'DSQ', 'DSQfor second stage')
   t.equals(partialRider[2].status, 'DSQ', 'DSQ for third stage')
