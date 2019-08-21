@@ -161,4 +161,7 @@ echo "  Drammen"
 node import/importer.js -m -f results/2019/drammen/drammen-2019.csv
 
 echo "  Beitostølen"
-#node import/importer.js -m -f results/2019/beito/beito-2019.csv
+node import/importer.js -m -f results/2019/beito/beito-2019.csv
+
+echo "  Oslo"
+node import/importer.js -m -f results/2019/oslo/oslo-2019.csv
