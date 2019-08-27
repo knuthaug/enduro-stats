@@ -4,9 +4,9 @@
 #2012
 echo "2012:"
 echo "  Oslo"
-node import/importer.js  -f results/2012/oslo/oslo-2012.csv
+node import/importer.js -f results/2012/oslo/oslo-2012.csv
 echo "  Nesbyen"
-node import/importer.js  -f results/2012/nesbyen/nesbyen-2012.csv
+node import/importer.js -f results/2012/nesbyen/nesbyen-2012.csv
 echo "  Kongsberg"
 node import/importer.js -a -f results/2012/kongsberg/kongsberg-2012.csv
 
@@ -165,3 +165,6 @@ node import/importer.js -m -f results/2019/beito/beito-2019.csv
 
 echo "  Oslo"
 node import/importer.js -m -f results/2019/oslo/oslo-2019.csv
+
+echo "  Harstad"
+node import/importer.js -f results/2019/harstad/harstad-2019.csv
