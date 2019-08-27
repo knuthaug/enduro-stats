@@ -1,0 +1,376 @@
+Rank;Startnumber;Firstname;Surname;Gender;Nat;Club;Race;Class;Total Time;Diff Winner
+1;5;May Kristin;Vespestad;F;NO;Harstad CK;FE1;Kvinner master;4:25.1;0:00.0
+2;21;Gurid Ivarhus;Næss;F;NO;HARSTAD;FE1;Kvinner master;0:00.0;4:25.1
+1;13;Ida Kristine;Sletta;F;NO;NARVIK;FE1;Kvinner senior;4:04.8;0:00.0
+2;57;Line;Tjetland;F;NO;HARSTAD;FE1;Kvinner senior;4:17.5;0:12.7
+1;57;Line;Tjetland;F;NO;HARSTAD;FE2;Kvinner senior;5:37.5;0:00.0
+2;13;Ida Kristine;Sletta;F;NO;NARVIK;FE2;Kvinner senior;6:24.3;0:46.8
+1;5;May Kristin;Vespestad;F;NO;Harstad CK;FE2;Kvinner master;8:00.0;0:00.0
+2;21;Gurid Ivarhus;Næss;F;NO;HARSTAD;FE2;Kvinner master;0:00.0;8:00.0
+1;5;May Kristin;Vespestad;F;NO;Harstad CK;FE3;Kvinner master;5:39.3;0:00.0
+2;21;Gurid Ivarhus;Næss;F;NO;HARSTAD;FE3;Kvinner master;0:00.0;5:39.3
+1;13;Ida Kristine;Sletta;F;NO;NARVIK;FE3;Kvinner senior;5:07.8;0:00.0
+2;57;Line;Tjetland;F;NO;HARSTAD;FE3;Kvinner senior;6:31.0;1:23.2
+1;5;May Kristin;Vespestad;F;NO;Harstad CK;FE4;Kvinner master;5:09.8;0:00.0
+2;21;Gurid Ivarhus;Næss;F;NO;HARSTAD;FE4;Kvinner master;0:00.0;5:09.8
+1;13;Ida Kristine;Sletta;F;NO;NARVIK;FE4;Kvinner senior;5:10.2;0:00.0
+2;57;Line;Tjetland;F;NO;HARSTAD;FE4;Kvinner senior;5:33.1;0:22.9
+1;5;May Kristin;Vespestad;F;NO;Harstad CK;FE5;Kvinner master;3:13.1;0:00.0
+2;21;Gurid Ivarhus;Næss;F;NO;HARSTAD;FE5;Kvinner master;0:00.0;3:13.1
+1;57;Line;Tjetland;F;NO;HARSTAD;FE5;Kvinner senior;2:59.2;0:00.0
+2;13;Ida Kristine;Sletta;F;NO;NARVIK;FE5;Kvinner senior;3:09.4;0:10.2
+1;28;Anders;Røkenes;M;NO;Harstad CK;FE1;Menn master;2:54.1;0:00.0
+2;39;Stian;Storeng;M;NO;Harstad CK;FE1;Menn master;3:12.5;0:18.4
+3;25;William;Salminen;M;NO;Harstad CK;FE1;Menn master;3:25.2;0:31.1
+4;42;Sindre;Lillehaug;M;NO;HARSTAD;FE1;Menn master;3:27.6;0:33.5
+5;33;Bjørn-Ståle;Larsen;M;NO;Lofoten Ekstremsportklubb;FE1;Menn master;3:35.0;0:40.9
+6;24;Lars-Erik M.;Solheim;M;NO;Chickenrun;FE1;Menn master;3:49.3;0:55.2
+7;2;Frode;Bredesen;M;NO;Harstad CK;FE1;Menn master;3:56.6;1:02.5
+8;31;Fred;Olsen;M;NO;Harstad CK;FE1;Menn master;4:01.5;1:07.4
+9;14;Reidar;Melå Sæterhaug;M;NO;Chickenrun;FE1;Menn master;4:04.6;1:10.5
+10;46;Tommy;Sørensen;M;NO;Harstad CK;FE1;Menn master;4:09.3;1:15.2
+11;27;Peter;Nilsson;M;SE;Vesterålen SK;FE1;Menn master;4:13.2;1:19.1
+12;37;Arnulf O.;Prestbakmo;M;NO;Harstad CK / HCK;FE1;Menn master;4:25.5;1:31.4
+13;56;Gisle;Enge;M;NO;Hpil;FE1;Menn master;4:43.0;1:48.9
+14;41;Jimmy;Johansen;M;NO;Lofoten Ekstremsportklubb;FE1;Menn master;4:52.5;1:58.4
+15;19;Jan-Arne;Pettersen;M;NO;Narvik CK;FE1;Menn master;5:08.7;2:14.6
+16;9;Lars A.;Uttakleiv;M;NO;Harstad CK;FE1;Menn master;5:19.0;2:24.9
+17;59;Paul;Silester;M;NO;HARSTAD;FE1;Menn master;6:17.5;3:23.4
+18;52;Enzo;Bustos;M;NO;HARSTAD;FE1;Menn master;7:32.6;4:38.5
+19;62;Joar;Nilsen;M;NO;Narvik Cykleklubb;FE1;Menn master;0:00.0;2:54.1
+19;64;Finn;Kuntze;M;NO;Harstad ck;FE1;Menn master;0:00.0;2:54.1
+1;28;Anders;Røkenes;M;NO;Harstad CK;FE2;Menn master;4:21.5;0:00.0
+2;39;Stian;Storeng;M;NO;Harstad CK;FE2;Menn master;4:32.5;0:11.0
+3;25;William;Salminen;M;NO;Harstad CK;FE2;Menn master;4:45.5;0:24.0
+4;42;Sindre;Lillehaug;M;NO;HARSTAD;FE2;Menn master;4:58.9;0:37.4
+5;24;Lars-Erik M.;Solheim;M;NO;Chickenrun;FE2;Menn master;5:00.0;0:38.5
+6;33;Bjørn-Ståle;Larsen;M;NO;Lofoten Ekstremsportklubb;FE2;Menn master;5:02.3;0:40.8
+7;2;Frode;Bredesen;M;NO;Harstad CK;FE2;Menn master;5:02.9;0:41.4
+8;14;Reidar;Melå Sæterhaug;M;NO;Chickenrun;FE2;Menn master;5:10.7;0:49.2
+9;31;Fred;Olsen;M;NO;Harstad CK;FE2;Menn master;5:11.1;0:49.6
+10;56;Gisle;Enge;M;NO;Hpil;FE2;Menn master;5:17.7;0:56.2
+11;9;Lars A.;Uttakleiv;M;NO;Harstad CK;FE2;Menn master;5:23.6;1:02.1
+12;27;Peter;Nilsson;M;SE;Vesterålen SK;FE2;Menn master;5:30.6;1:09.1
+13;46;Tommy;Sørensen;M;NO;Harstad CK;FE2;Menn master;5:30.8;1:09.3
+14;37;Arnulf O.;Prestbakmo;M;NO;Harstad CK / HCK;FE2;Menn master;5:47.2;1:25.7
+15;19;Jan-Arne;Pettersen;M;NO;Narvik CK;FE2;Menn master;6:16.3;1:54.8
+16;41;Jimmy;Johansen;M;NO;Lofoten Ekstremsportklubb;FE2;Menn master;6:22.7;2:01.2
+17;59;Paul;Silester;M;NO;HARSTAD;FE2;Menn master;6:37.2;2:15.7
+18;52;Enzo;Bustos;M;NO;HARSTAD;FE2;Menn master;9:08.0;4:46.5
+19;64;Finn;Kuntze;M;NO;Harstad ck;FE2;Menn master;0:00.0;4:21.5
+19;62;Joar;Nilsen;M;NO;Narvik Cykleklubb;FE2;Menn master;0:00.0;4:21.5
+1;28;Anders;Røkenes;M;NO;Harstad CK;FE3;Menn master;3:52.5;0:00.0
+2;39;Stian;Storeng;M;NO;Harstad CK;FE3;Menn master;4:00.8;0:08.3
+3;25;William;Salminen;M;NO;Harstad CK;FE3;Menn master;4:14.0;0:21.5
+4;24;Lars-Erik M.;Solheim;M;NO;Chickenrun;FE3;Menn master;4:34.5;0:42.0
+5;31;Fred;Olsen;M;NO;Harstad CK;FE3;Menn master;4:36.8;0:44.3
+6;56;Gisle;Enge;M;NO;Hpil;FE3;Menn master;4:38.0;0:45.5
+7;9;Lars A.;Uttakleiv;M;NO;Harstad CK;FE3;Menn master;4:40.8;0:48.3
+8;14;Reidar;Melå Sæterhaug;M;NO;Chickenrun;FE3;Menn master;4:46.0;0:53.5
+9;46;Tommy;Sørensen;M;NO;Harstad CK;FE3;Menn master;4:52.4;0:59.9
+10;33;Bjørn-Ståle;Larsen;M;NO;Lofoten Ekstremsportklubb;FE3;Menn master;4:52.5;1:00.0
+11;37;Arnulf O.;Prestbakmo;M;NO;Harstad CK / HCK;FE3;Menn master;4:59.8;1:07.3
+12;41;Jimmy;Johansen;M;NO;Lofoten Ekstremsportklubb;FE3;Menn master;5:04.7;1:12.2
+13;2;Frode;Bredesen;M;NO;Harstad CK;FE3;Menn master;5:22.9;1:30.4
+14;27;Peter;Nilsson;M;SE;Vesterålen SK;FE3;Menn master;5:49.0;1:56.5
+15;19;Jan-Arne;Pettersen;M;NO;Narvik CK;FE3;Menn master;5:53.6;2:01.1
+16;59;Paul;Silester;M;NO;HARSTAD;FE3;Menn master;5:59.0;2:06.5
+17;52;Enzo;Bustos;M;NO;HARSTAD;FE3;Menn master;29:07.3;25:14.8
+18;64;Finn;Kuntze;M;NO;Harstad ck;FE3;Menn master;0:00.0;3:52.5
+18;62;Joar;Nilsen;M;NO;Narvik Cykleklubb;FE3;Menn master;0:00.0;3:52.5
+1;28;Anders;Røkenes;M;NO;Harstad CK;FE5;Menn master;2:18.4;0:00.0
+2;39;Stian;Storeng;M;NO;Harstad CK;FE5;Menn master;2:19.7;0:01.3
+3;25;William;Salminen;M;NO;Harstad CK;FE5;Menn master;2:24.7;0:06.3
+4;24;Lars-Erik M.;Solheim;M;NO;Chickenrun;FE5;Menn master;2:34.5;0:16.1
+5;2;Frode;Bredesen;M;NO;Harstad CK;FE5;Menn master;2:36.6;0:18.2
+6;33;Bjørn-Ståle;Larsen;M;NO;Lofoten Ekstremsportklubb;FE5;Menn master;2:37.2;0:18.8
+7;9;Lars A.;Uttakleiv;M;NO;Harstad CK;FE5;Menn master;2:38.1;0:19.7
+8;14;Reidar;Melå Sæterhaug;M;NO;Chickenrun;FE5;Menn master;2:39.6;0:21.2
+9;37;Arnulf O.;Prestbakmo;M;NO;Harstad CK / HCK;FE5;Menn master;2:42.2;0:23.8
+10;46;Tommy;Sørensen;M;NO;Harstad CK;FE5;Menn master;2:46.1;0:27.7
+11;31;Fred;Olsen;M;NO;Harstad CK;FE5;Menn master;2:47.0;0:28.6
+12;27;Peter;Nilsson;M;SE;Vesterålen SK;FE5;Menn master;2:55.7;0:37.3
+13;56;Gisle;Enge;M;NO;Hpil;FE5;Menn master;3:01.9;0:43.5
+14;19;Jan-Arne;Pettersen;M;NO;Narvik CK;FE5;Menn master;3:02.2;0:43.8
+15;59;Paul;Silester;M;NO;HARSTAD;FE5;Menn master;3:19.1;1:00.7
+16;41;Jimmy;Johansen;M;NO;Lofoten Ekstremsportklubb;FE5;Menn master;3:22.2;1:03.8
+17;52;Enzo;Bustos;M;NO;HARSTAD;FE5;Menn master;4:01.2;1:42.8
+18;64;Finn;Kuntze;M;NO;Harstad ck;FE5;Menn master;0:00.0;2:18.4
+18;62;Joar;Nilsen;M;NO;Narvik Cykleklubb;FE5;Menn master;0:00.0;2:18.4
+1;28;Anders;Røkenes;M;NO;Harstad CK;FE4;Menn master;3:49.0;0:00.0
+2;39;Stian;Storeng;M;NO;Harstad CK;FE4;Menn master;3:55.4;0:06.4
+3;25;William;Salminen;M;NO;Harstad CK;FE4;Menn master;4:14.8;0:25.8
+4;14;Reidar;Melå Sæterhaug;M;NO;Chickenrun;FE4;Menn master;4:28.5;0:39.5
+5;37;Arnulf O.;Prestbakmo;M;NO;Harstad CK / HCK;FE4;Menn master;4:36.7;0:47.7
+6;33;Bjørn-Ståle;Larsen;M;NO;Lofoten Ekstremsportklubb;FE4;Menn master;4:41.7;0:52.7
+7;2;Frode;Bredesen;M;NO;Harstad CK;FE4;Menn master;4:46.0;0:57.0
+8;46;Tommy;Sørensen;M;NO;Harstad CK;FE4;Menn master;4:48.1;0:59.1
+9;24;Lars-Erik M.;Solheim;M;NO;Chickenrun;FE4;Menn master;4:48.6;0:59.6
+10;9;Lars A.;Uttakleiv;M;NO;Harstad CK;FE4;Menn master;4:58.5;1:09.5
+11;31;Fred;Olsen;M;NO;Harstad CK;FE4;Menn master;5:02.3;1:13.3
+12;56;Gisle;Enge;M;NO;Hpil;FE4;Menn master;5:11.7;1:22.7
+13;27;Peter;Nilsson;M;SE;Vesterålen SK;FE4;Menn master;5:12.7;1:23.7
+14;41;Jimmy;Johansen;M;NO;Lofoten Ekstremsportklubb;FE4;Menn master;5:15.2;1:26.2
+15;19;Jan-Arne;Pettersen;M;NO;Narvik CK;FE4;Menn master;5:21.4;1:32.4
+16;59;Paul;Silester;M;NO;HARSTAD;FE4;Menn master;5:48.5;1:59.5
+17;52;Enzo;Bustos;M;NO;HARSTAD;FE4;Menn master;7:25.0;3:36.0
+18;64;Finn;Kuntze;M;NO;Harstad ck;FE4;Menn master;0:00.0;3:49.0
+18;62;Joar;Nilsen;M;NO;Narvik Cykleklubb;FE4;Menn master;0:00.0;3:49.0
+1;7;Edvard;Vea Iversen;M;NO;TERRÅK;FE2;Menn senior;4:20.5;0:00.0
+2;16;Christoffer Borge;Olsen;M;NO;Aron Skiklubb;FE2;Menn senior;4:27.9;0:07.4
+3;34;Tord;Nese;M;NO;Tromsø Enduro/Bjørn Bygg;FE2;Menn senior;4:31.0;0:10.5
+4;61;Martin;Klette;M;NO;BODØ;FE2;Menn senior;4:36.7;0:16.2
+4;10;Vidar;Wensel;M;NO;Senja CK / Enduro;FE2;Menn senior;4:36.7;0:16.2
+6;66;Håvard;Torvanger;M;NO;Harstad CK;FE2;Menn senior;4:37.4;0:16.9
+7;43;Einar;Frønum;M;NO;Harstad CK;FE2;Menn senior;4:38.3;0:17.8
+8;26;Lasse;Gammel;M;NO;KVALØYA;FE2;Menn senior;4:45.4;0:24.9
+9;12;Martin;Liane;M;NO;Harstad CK;FE2;Menn senior;4:48.2;0:27.7
+10;40;Ole-Martin;Kjellmo;M;NO;BARDUFOSS;FE2;Menn senior;4:49.5;0:29.0
+11;58;Rickard;Wessberg;M;SE;Consto Nord;FE2;Menn senior;4:49.7;0:29.2
+12;81;Armands;Zarins;M;LV;Velosolutions we Build Parks;FE2;Menn senior;4:49.9;0:29.4
+13;35;Amund;Korvald;M;NO;SOGNDAL;FE2;Menn senior;4:50.4;0:29.9
+14;3;Carles;Debart;M;ES;TROMSØ;FE2;Menn senior;4:55.9;0:35.4
+15;32;Joakim;Sletten;M;NO;Multiconsult Bil Nord;FE2;Menn senior;4:56.7;0:36.2
+16;63;Stian;Nesslund Pedersen;M;NO;HARSTAD;FE2;Menn senior;4:56.8;0:36.3
+17;54;Stian;Gjelsvik;M;NO;KONGSBERG;FE2;Menn senior;5:04.3;0:43.8
+18;1;Stian;Hallén;M;NO;HARSTAD;FE2;Menn senior;5:05.1;0:44.6
+19;18;Trond;Kleven;M;NO;Harstad CK / Noclue;FE2;Menn senior;5:06.5;0:46.0
+20;29;Eirik;Djønne;M;NO;HARSTAD;FE2;Menn senior;5:10.8;0:50.3
+21;17;Knut;Joramo;M;NO;Bardufoss;FE2;Menn senior;5:13.4;0:52.9
+22;15;Bjørn-Tore;Wik;M;NO;Harstad CK;FE2;Menn senior;5:14.3;0:53.8
+22;30;Tore;Joramo;M;NO;KARLSTAD;FE2;Menn senior;5:14.3;0:53.8
+24;36;Per Helge;Sæter;M;NO;HARSTAD;FE2;Menn senior;5:16.0;0:55.5
+25;22;Aleksander;Dysterud;M;NO;Harstad Cyckleklubb;FE2;Menn senior;5:22.2;1:01.7
+26;20;Roger;Berge;M;NO;Harstad Cykleklubb;FE2;Menn senior;5:22.8;1:02.3
+27;4;Martin;Venås;M;NO;TROMSØ;FE2;Menn senior;5:23.9;1:03.4
+28;45;Håvar;Marsteen;M;NO;TROMSØ;FE2;Menn senior;5:29.0;1:08.5
+29;44;Trym;Slyngstad;M;NO;HARSTAD;FE2;Menn senior;5:30.7;1:10.2
+30;47;Knut-Geir;Aga;M;NO;Team MDK;FE2;Menn senior;5:49.3;1:28.8
+30;49;Gaute;Sandnes;M;NO;TROMSDALEN;FE2;Menn senior;5:49.3;1:28.8
+32;55;Andreas;Mikkelsen;M;NO;Tromsø CK / Andreas Mikkelsen;FE2;Menn senior;5:49.8;1:29.3
+33;38;Marius;Markussen;M;NO;#Pappakroppen;FE2;Menn senior;5:51.5;1:31.0
+34;65;Fredrik;Leonhardsen;M;NO;HARSTAD;FE2;Menn senior;5:52.0;1:31.5
+35;6;René Christian;Schultz;M;NO;Tromsø CK / René Christian Schultz;FE2;Menn senior;6:00.4;1:39.9
+36;11;Stian Kristoffer;Evensen;M;NO;Harstad CK;FE2;Menn senior;6:02.5;1:42.0
+37;53;Thomas;Backer-Grøndahl;M;NO;HARSTAD;FE2;Menn senior;6:09.2;1:48.7
+38;60;Jahn-Erik;Solheim;M;NO;HARSTAD;FE2;Menn senior;6:45.7;2:25.2
+39;23;Jim-André;Andreassen;M;NO;HARSTAD;FE2;Menn senior;6:49.7;2:29.2
+40;8;Jonas;Aksmo;M;NO;Lofoten Ekstremsportklubb;FE2;Menn senior;0:00.0;4:20.5
+40;51;Peder;Sagmo;M;NO;Tromsø;FE2;Menn senior;0:00.0;4:20.5
+40;82;Janis;Martinsons;M;LV;Velosolutions we Build Parks;FE2;Menn senior;0:00.0;4:20.5
+40;50;Sondre;Exposito Holmen;M;NO;Tromsø Enduro;FE2;Menn senior;0:00.0;4:20.5
+1;7;Edvard;Vea Iversen;M;NO;TERRÅK;FE3;Menn senior;3:55.5;0:00.0
+2;61;Martin;Klette;M;NO;BODØ;FE3;Menn senior;4:04.7;0:09.2
+3;43;Einar;Frønum;M;NO;Harstad CK;FE3;Menn senior;4:05.6;0:10.1
+4;16;Christoffer Borge;Olsen;M;NO;Aron Skiklubb;FE3;Menn senior;4:09.5;0:14.0
+5;66;Håvard;Torvanger;M;NO;Harstad CK;FE3;Menn senior;4:11.2;0:15.7
+6;10;Vidar;Wensel;M;NO;Senja CK / Enduro;FE3;Menn senior;4:11.8;0:16.3
+7;34;Tord;Nese;M;NO;Tromsø Enduro/Bjørn Bygg;FE3;Menn senior;4:14.1;0:18.6
+8;58;Rickard;Wessberg;M;SE;Consto Nord;FE3;Menn senior;4:18.0;0:22.5
+9;40;Ole-Martin;Kjellmo;M;NO;BARDUFOSS;FE3;Menn senior;4:21.5;0:26.0
+10;26;Lasse;Gammel;M;NO;KVALØYA;FE3;Menn senior;4:22.0;0:26.5
+11;35;Amund;Korvald;M;NO;SOGNDAL;FE3;Menn senior;4:26.1;0:30.6
+12;81;Armands;Zarins;M;LV;Velosolutions we Build Parks;FE3;Menn senior;4:28.4;0:32.9
+13;17;Knut;Joramo;M;NO;Bardufoss;FE3;Menn senior;4:28.7;0:33.2
+14;12;Martin;Liane;M;NO;Harstad CK;FE3;Menn senior;4:29.9;0:34.4
+15;3;Carles;Debart;M;ES;TROMSØ;FE3;Menn senior;4:30.6;0:35.1
+16;32;Joakim;Sletten;M;NO;Multiconsult Bil Nord;FE3;Menn senior;4:34.8;0:39.3
+17;1;Stian;Hallén;M;NO;HARSTAD;FE3;Menn senior;4:36.4;0:40.9
+18;18;Trond;Kleven;M;NO;Harstad CK / Noclue;FE3;Menn senior;4:37.0;0:41.5
+19;4;Martin;Venås;M;NO;TROMSØ;FE3;Menn senior;4:40.6;0:45.1
+20;54;Stian;Gjelsvik;M;NO;KONGSBERG;FE3;Menn senior;4:43.1;0:47.6
+21;20;Roger;Berge;M;NO;Harstad Cykleklubb;FE3;Menn senior;4:43.6;0:48.1
+22;30;Tore;Joramo;M;NO;KARLSTAD;FE3;Menn senior;4:48.8;0:53.3
+23;36;Per Helge;Sæter;M;NO;HARSTAD;FE3;Menn senior;4:49.6;0:54.1
+24;22;Aleksander;Dysterud;M;NO;Harstad Cyckleklubb;FE3;Menn senior;4:54.8;0:59.3
+25;63;Stian;Nesslund Pedersen;M;NO;HARSTAD;FE3;Menn senior;4:56.2;1:00.7
+26;15;Bjørn-Tore;Wik;M;NO;Harstad CK;FE3;Menn senior;4:59.4;1:03.9
+27;29;Eirik;Djønne;M;NO;HARSTAD;FE3;Menn senior;5:06.5;1:11.0
+28;65;Fredrik;Leonhardsen;M;NO;HARSTAD;FE3;Menn senior;5:09.2;1:13.7
+29;47;Knut-Geir;Aga;M;NO;Team MDK;FE3;Menn senior;5:09.6;1:14.1
+30;44;Trym;Slyngstad;M;NO;HARSTAD;FE3;Menn senior;5:14.5;1:19.0
+31;55;Andreas;Mikkelsen;M;NO;Tromsø CK / Andreas Mikkelsen;FE3;Menn senior;5:16.7;1:21.2
+32;49;Gaute;Sandnes;M;NO;TROMSDALEN;FE3;Menn senior;5:26.4;1:30.9
+33;11;Stian Kristoffer;Evensen;M;NO;Harstad CK;FE3;Menn senior;5:37.4;1:41.9
+34;45;Håvar;Marsteen;M;NO;TROMSØ;FE3;Menn senior;5:40.9;1:45.4
+35;53;Thomas;Backer-Grøndahl;M;NO;HARSTAD;FE3;Menn senior;5:47.9;1:52.4
+36;38;Marius;Markussen;M;NO;#Pappakroppen;FE3;Menn senior;6:01.8;2:06.3
+37;60;Jahn-Erik;Solheim;M;NO;HARSTAD;FE3;Menn senior;6:25.0;2:29.5
+38;6;René Christian;Schultz;M;NO;Tromsø CK / René Christian Schultz;FE3;Menn senior;17:22.8;13:27.3
+39;23;Jim-André;Andreassen;M;NO;HARSTAD;FE3;Menn senior;18:05.9;14:10.4
+40;8;Jonas;Aksmo;M;NO;Lofoten Ekstremsportklubb;FE3;Menn senior;0:00.0;3:55.5
+40;51;Peder;Sagmo;M;NO;Tromsø;FE3;Menn senior;0:00.0;3:55.5
+40;82;Janis;Martinsons;M;LV;Velosolutions we Build Parks;FE3;Menn senior;0:00.0;3:55.5
+40;50;Sondre;Exposito Holmen;M;NO;Tromsø Enduro;FE3;Menn senior;0:00.0;3:55.5
+1;7;Edvard;Vea Iversen;M;NO;TERRÅK;FE5;Menn senior;2:15.5;0:00.0
+2;43;Einar;Frønum;M;NO;Harstad CK;FE5;Menn senior;2:19.9;0:04.4
+3;16;Christoffer Borge;Olsen;M;NO;Aron Skiklubb;FE5;Menn senior;2:24.9;0:09.4
+4;66;Håvard;Torvanger;M;NO;Harstad CK;FE5;Menn senior;2:25.4;0:09.9
+5;34;Tord;Nese;M;NO;Tromsø Enduro/Bjørn Bygg;FE5;Menn senior;2:26.5;0:11.0
+6;10;Vidar;Wensel;M;NO;Senja CK / Enduro;FE5;Menn senior;2:27.3;0:11.8
+7;40;Ole-Martin;Kjellmo;M;NO;BARDUFOSS;FE5;Menn senior;2:28.0;0:12.5
+8;81;Armands;Zarins;M;LV;Velosolutions we Build Parks;FE5;Menn senior;2:28.8;0:13.3
+9;12;Martin;Liane;M;NO;Harstad CK;FE5;Menn senior;2:32.0;0:16.5
+10;17;Knut;Joramo;M;NO;Bardufoss;FE5;Menn senior;2:32.2;0:16.7
+11;26;Lasse;Gammel;M;NO;KVALØYA;FE5;Menn senior;2:34.4;0:18.9
+12;35;Amund;Korvald;M;NO;SOGNDAL;FE5;Menn senior;2:35.9;0:20.4
+13;32;Joakim;Sletten;M;NO;Multiconsult Bil Nord;FE5;Menn senior;2:36.7;0:21.2
+14;54;Stian;Gjelsvik;M;NO;KONGSBERG;FE5;Menn senior;2:37.4;0:21.9
+15;1;Stian;Hallén;M;NO;HARSTAD;FE5;Menn senior;2:39.6;0:24.1
+16;58;Rickard;Wessberg;M;SE;Consto Nord;FE5;Menn senior;2:40.3;0:24.8
+17;63;Stian;Nesslund Pedersen;M;NO;HARSTAD;FE5;Menn senior;2:40.4;0:24.9
+18;49;Gaute;Sandnes;M;NO;TROMSDALEN;FE5;Menn senior;2:41.1;0:25.6
+19;3;Carles;Debart;M;ES;TROMSØ;FE5;Menn senior;2:42.0;0:26.5
+20;18;Trond;Kleven;M;NO;Harstad CK / Noclue;FE5;Menn senior;2:42.7;0:27.2
+21;4;Martin;Venås;M;NO;TROMSØ;FE5;Menn senior;2:42.9;0:27.4
+22;15;Bjørn-Tore;Wik;M;NO;Harstad CK;FE5;Menn senior;2:44.5;0:29.0
+23;22;Aleksander;Dysterud;M;NO;Harstad Cyckleklubb;FE5;Menn senior;2:45.8;0:30.3
+24;36;Per Helge;Sæter;M;NO;HARSTAD;FE5;Menn senior;2:48.0;0:32.5
+25;20;Roger;Berge;M;NO;Harstad Cykleklubb;FE5;Menn senior;2:49.3;0:33.8
+26;45;Håvar;Marsteen;M;NO;TROMSØ;FE5;Menn senior;2:49.9;0:34.4
+27;47;Knut-Geir;Aga;M;NO;Team MDK;FE5;Menn senior;2:50.1;0:34.6
+28;30;Tore;Joramo;M;NO;KARLSTAD;FE5;Menn senior;2:51.2;0:35.7
+29;55;Andreas;Mikkelsen;M;NO;Tromsø CK / Andreas Mikkelsen;FE5;Menn senior;2:52.7;0:37.2
+30;44;Trym;Slyngstad;M;NO;HARSTAD;FE5;Menn senior;2:54.0;0:38.5
+31;38;Marius;Markussen;M;NO;#Pappakroppen;FE5;Menn senior;2:54.4;0:38.9
+32;29;Eirik;Djønne;M;NO;HARSTAD;FE5;Menn senior;2:55.1;0:39.6
+33;53;Thomas;Backer-Grøndahl;M;NO;HARSTAD;FE5;Menn senior;3:00.0;0:44.5
+34;11;Stian Kristoffer;Evensen;M;NO;Harstad CK;FE5;Menn senior;3:04.4;0:48.9
+35;6;René Christian;Schultz;M;NO;Tromsø CK / René Christian Schultz;FE5;Menn senior;3:05.8;0:50.3
+36;60;Jahn-Erik;Solheim;M;NO;HARSTAD;FE5;Menn senior;3:09.6;0:54.1
+37;65;Fredrik;Leonhardsen;M;NO;HARSTAD;FE5;Menn senior;3:12.0;0:56.5
+38;23;Jim-André;Andreassen;M;NO;HARSTAD;FE5;Menn senior;4:03.2;1:47.7
+39;8;Jonas;Aksmo;M;NO;Lofoten Ekstremsportklubb;FE5;Menn senior;0:00.0;2:15.5
+39;48;Stian Aarstad;Johnsen;M;NO;HARSTAD;FE5;Menn senior;0:00.0;2:15.5
+39;51;Peder;Sagmo;M;NO;Tromsø;FE5;Menn senior;0:00.0;2:15.5
+39;82;Janis;Martinsons;M;LV;Velosolutions we Build Parks;FE5;Menn senior;0:00.0;2:15.5
+39;61;Martin;Klette;M;NO;BODØ;FE5;Menn senior;0:00.0;2:15.5
+39;50;Sondre;Exposito Holmen;M;NO;Tromsø Enduro;FE5;Menn senior;0:00.0;2:15.5
+1;7;Edvard;Vea Iversen;M;NO;TERRÅK;FE4;Menn senior;3:59.3;0:00.0
+2;16;Christoffer Borge;Olsen;M;NO;Aron Skiklubb;FE4;Menn senior;4:01.2;0:01.9
+3;66;Håvard;Torvanger;M;NO;Harstad CK;FE4;Menn senior;4:03.0;0:03.7
+4;34;Tord;Nese;M;NO;Tromsø Enduro/Bjørn Bygg;FE4;Menn senior;4:03.8;0:04.5
+5;10;Vidar;Wensel;M;NO;Senja CK / Enduro;FE4;Menn senior;4:07.8;0:08.5
+6;12;Martin;Liane;M;NO;Harstad CK;FE4;Menn senior;4:15.0;0:15.7
+7;61;Martin;Klette;M;NO;BODØ;FE4;Menn senior;4:15.2;0:15.9
+8;4;Martin;Venås;M;NO;TROMSØ;FE4;Menn senior;4:15.6;0:16.3
+9;35;Amund;Korvald;M;NO;SOGNDAL;FE4;Menn senior;4:15.8;0:16.5
+10;58;Rickard;Wessberg;M;SE;Consto Nord;FE4;Menn senior;4:19.9;0:20.6
+11;40;Ole-Martin;Kjellmo;M;NO;BARDUFOSS;FE4;Menn senior;4:20.3;0:21.0
+12;43;Einar;Frønum;M;NO;Harstad CK;FE4;Menn senior;4:25.2;0:25.9
+13;17;Knut;Joramo;M;NO;Bardufoss;FE4;Menn senior;4:26.9;0:27.6
+14;36;Per Helge;Sæter;M;NO;HARSTAD;FE4;Menn senior;4:30.3;0:31.0
+15;32;Joakim;Sletten;M;NO;Multiconsult Bil Nord;FE4;Menn senior;4:33.8;0:34.5
+16;81;Armands;Zarins;M;LV;Velosolutions we Build Parks;FE4;Menn senior;4:35.5;0:36.2
+17;3;Carles;Debart;M;ES;TROMSØ;FE4;Menn senior;4:36.6;0:37.3
+18;54;Stian;Gjelsvik;M;NO;KONGSBERG;FE4;Menn senior;4:39.2;0:39.9
+19;63;Stian;Nesslund Pedersen;M;NO;HARSTAD;FE4;Menn senior;4:42.6;0:43.3
+20;1;Stian;Hallén;M;NO;HARSTAD;FE4;Menn senior;4:43.5;0:44.2
+21;29;Eirik;Djønne;M;NO;HARSTAD;FE4;Menn senior;4:45.1;0:45.8
+22;22;Aleksander;Dysterud;M;NO;Harstad Cyckleklubb;FE4;Menn senior;4:48.9;0:49.6
+23;49;Gaute;Sandnes;M;NO;TROMSDALEN;FE4;Menn senior;4:50.4;0:51.1
+24;44;Trym;Slyngstad;M;NO;HARSTAD;FE4;Menn senior;4:51.5;0:52.2
+25;6;René Christian;Schultz;M;NO;Tromsø CK / René Christian Schultz;FE4;Menn senior;4:57.2;0:57.9
+26;15;Bjørn-Tore;Wik;M;NO;Harstad CK;FE4;Menn senior;4:59.7;1:00.4
+27;30;Tore;Joramo;M;NO;KARLSTAD;FE4;Menn senior;5:00.8;1:01.5
+28;18;Trond;Kleven;M;NO;Harstad CK / Noclue;FE4;Menn senior;5:01.8;1:02.5
+29;55;Andreas;Mikkelsen;M;NO;Tromsø CK / Andreas Mikkelsen;FE4;Menn senior;5:02.6;1:03.3
+30;38;Marius;Markussen;M;NO;#Pappakroppen;FE4;Menn senior;5:05.1;1:05.8
+31;65;Fredrik;Leonhardsen;M;NO;HARSTAD;FE4;Menn senior;5:10.7;1:11.4
+32;47;Knut-Geir;Aga;M;NO;Team MDK;FE4;Menn senior;5:19.5;1:20.2
+33;53;Thomas;Backer-Grøndahl;M;NO;HARSTAD;FE4;Menn senior;5:31.7;1:32.4
+34;60;Jahn-Erik;Solheim;M;NO;HARSTAD;FE4;Menn senior;5:45.8;1:46.5
+35;11;Stian Kristoffer;Evensen;M;NO;Harstad CK;FE4;Menn senior;6:08.5;2:09.2
+36;23;Jim-André;Andreassen;M;NO;HARSTAD;FE4;Menn senior;6:17.8;2:18.5
+37;26;Lasse;Gammel;M;NO;KVALØYA;FE4;Menn senior;7:57.0;3:57.7
+38;20;Roger;Berge;M;NO;Harstad Cykleklubb;FE4;Menn senior;17:30.3;13:31.0
+39;8;Jonas;Aksmo;M;NO;Lofoten Ekstremsportklubb;FE4;Menn senior;0:00.0;3:59.3
+39;51;Peder;Sagmo;M;NO;Tromsø;FE4;Menn senior;0:00.0;3:59.3
+39;82;Janis;Martinsons;M;LV;Velosolutions we Build Parks;FE4;Menn senior;0:00.0;3:59.3
+39;50;Sondre;Exposito Holmen;M;NO;Tromsø Enduro;FE4;Menn senior;0:00.0;3:59.3
+1;7;Edvard;Vea Iversen;M;NO;TERRÅK;FE1;Menn senior;2:49.0;0:00.0
+2;43;Einar;Frønum;M;NO;Harstad CK;FE1;Menn senior;2:56.4;0:07.4
+3;34;Tord;Nese;M;NO;Tromsø Enduro/Bjørn Bygg;FE1;Menn senior;3:03.2;0:14.2
+4;58;Rickard;Wessberg;M;SE;Consto Nord;FE1;Menn senior;3:08.8;0:19.8
+5;61;Martin;Klette;M;NO;BODØ;FE1;Menn senior;3:09.0;0:20.0
+6;26;Lasse;Gammel;M;NO;KVALØYA;FE1;Menn senior;3:09.3;0:20.3
+7;40;Ole-Martin;Kjellmo;M;NO;BARDUFOSS;FE1;Menn senior;3:15.4;0:26.4
+8;10;Vidar;Wensel;M;NO;Senja CK / Enduro;FE1;Menn senior;3:17.6;0:28.6
+9;12;Martin;Liane;M;NO;Harstad CK;FE1;Menn senior;3:18.7;0:29.7
+10;3;Carles;Debart;M;ES;TROMSØ;FE1;Menn senior;3:19.9;0:30.9
+11;66;Håvard;Torvanger;M;NO;Harstad CK;FE1;Menn senior;3:21.7;0:32.7
+12;16;Christoffer Borge;Olsen;M;NO;Aron Skiklubb;FE1;Menn senior;3:26.8;0:37.8
+13;35;Amund;Korvald;M;NO;SOGNDAL;FE1;Menn senior;3:27.9;0:38.9
+14;17;Knut;Joramo;M;NO;Bardufoss;FE1;Menn senior;3:29.0;0:40.0
+15;54;Stian;Gjelsvik;M;NO;KONGSBERG;FE1;Menn senior;3:31.4;0:42.4
+16;4;Martin;Venås;M;NO;TROMSØ;FE1;Menn senior;3:32.0;0:43.0
+17;36;Per Helge;Sæter;M;NO;HARSTAD;FE1;Menn senior;3:36.0;0:47.0
+18;32;Joakim;Sletten;M;NO;Multiconsult Bil Nord;FE1;Menn senior;3:39.7;0:50.7
+19;1;Stian;Hallén;M;NO;HARSTAD;FE1;Menn senior;3:41.7;0:52.7
+20;63;Stian;Nesslund Pedersen;M;NO;HARSTAD;FE1;Menn senior;3:44.5;0:55.5
+21;18;Trond;Kleven;M;NO;Harstad CK / Noclue;FE1;Menn senior;3:54.3;1:05.3
+22;49;Gaute;Sandnes;M;NO;TROMSDALEN;FE1;Menn senior;3:58.7;1:09.7
+23;30;Tore;Joramo;M;NO;KARLSTAD;FE1;Menn senior;3:59.7;1:10.7
+24;29;Eirik;Djønne;M;NO;HARSTAD;FE1;Menn senior;4:05.2;1:16.2
+25;81;Armands;Zarins;M;LV;Velosolutions we Build Parks;FE1;Menn senior;4:08.5;1:19.5
+26;20;Roger;Berge;M;NO;Harstad Cykleklubb;FE1;Menn senior;4:16.4;1:27.4
+27;45;Håvar;Marsteen;M;NO;TROMSØ;FE1;Menn senior;4:17.8;1:28.8
+28;47;Knut-Geir;Aga;M;NO;Team MDK;FE1;Menn senior;4:26.5;1:37.5
+29;44;Trym;Slyngstad;M;NO;HARSTAD;FE1;Menn senior;4:27.0;1:38.0
+30;22;Aleksander;Dysterud;M;NO;Harstad Cyckleklubb;FE1;Menn senior;4:27.4;1:38.4
+31;55;Andreas;Mikkelsen;M;NO;Tromsø CK / Andreas Mikkelsen;FE1;Menn senior;4:34.3;1:45.3
+32;65;Fredrik;Leonhardsen;M;NO;HARSTAD;FE1;Menn senior;4:54.1;2:05.1
+33;38;Marius;Markussen;M;NO;#Pappakroppen;FE1;Menn senior;5:04.5;2:15.5
+34;6;René Christian;Schultz;M;NO;Tromsø CK / René Christian Schultz;FE1;Menn senior;5:05.3;2:16.3
+35;15;Bjørn-Tore;Wik;M;NO;Harstad CK;FE1;Menn senior;5:08.5;2:19.5
+36;53;Thomas;Backer-Grøndahl;M;NO;HARSTAD;FE1;Menn senior;5:31.2;2:42.2
+37;11;Stian Kristoffer;Evensen;M;NO;Harstad CK;FE1;Menn senior;6:34.2;3:45.2
+38;23;Jim-André;Andreassen;M;NO;HARSTAD;FE1;Menn senior;6:56.7;4:07.7
+39;60;Jahn-Erik;Solheim;M;NO;HARSTAD;FE1;Menn senior;7:03.8;4:14.8
+40;48;Stian Aarstad;Johnsen;M;NO;HARSTAD;FE1;Menn senior;30:14.5;27:25.5
+41;51;Peder;Sagmo;M;NO;Tromsø;FE1;Menn senior;0:00.0;2:49.0
+41;50;Sondre;Exposito Holmen;M;NO;Tromsø Enduro;FE1;Menn senior;0:00.0;2:49.0
+41;8;Jonas;Aksmo;M;NO;Lofoten Ekstremsportklubb;FE1;Menn senior;0:00.0;2:49.0
+41;82;Janis;Martinsons;M;LV;Velosolutions we Build Parks;FE1;Menn senior;0:00.0;2:49.0
+1;74;Odd Brage;Skog;M;NO;Mosjøen og Omegn CK;FE4;Junior 15-16;4:29.2;0:00.0
+2;75;Thomas;Hansen;M;NO;Harstad CK / Hatstad Cykelklubb;FE4;Junior 15-16;5:05.2;0:36.0
+;76;Sebastian Molund;Enoksen;M;NO;Harstad CK / Leon Sport;FE4;Junior 13-14;4:53.7;0:00.0
+;70;Ida;Haugsmark;F;NO;Harstad CK;FE4;Junior 11-12;6:51.3;0:00.0
+;78;Jakob Dreyer;Holen;M;NO;Narvik Slalåmklubb;FE4;Junior 11-12;4:55.9;1:55.4
+;73;Einar S;Instanes;M;NO;Harstad CK;FE4;Junior 11-12;5:48.3;1:03.0
+;77;Roel-Johan;Johansen;M;NO;Lofoten Ekstremsportklubb;FE4;Junior 13-14;7:21.3;2:27.6
+;69;Sigurd Tevik;Klefstad;M;NO;Harstad CK;FE4;Junior 13-14;5:23.3;0:29.6
+;71;Vebjørn;Lunde;M;NO;Narvik CK;FE4;Junior 13-14;5:03.7;0:10.0
+;67;Amund;Røkenes;M;NO;Harstad CK;FE4;Junior 11-12;4:48.5;2:02.8
+;68;Kajsa;Uttakleiv;F;NO;Harstad CK;FE4;Junior 13-14;6:07.0;1:13.3
+;80;Sivert;Uttakleiv;M;NO;Harstad CK;FE4;Junior 11-12;5:48.8;1:02.5
+;79;Daniel Aspaker;Hansen;M;NO;Harstad CK;FE4;Junior 11-12;0:00.0;6:51.3
+;72;Ask;Jørgensen;M;NO;Harstad CK;FE4;Junior 13-14;0:00.0;4:53.7
+1;74;Odd Brage;Skog;M;NO;Mosjøen og Omegn CK;FE3;Junior 15-16;4:27.1;0:00.0
+2;75;Thomas;Hansen;M;NO;Harstad CK / Hatstad Cykelklubb;FE3;Junior 15-16;6:55.5;2:28.4
+;76;Sebastian Molund;Enoksen;M;NO;Harstad CK / Leon Sport;FE3;Junior 13-14;5:14.8;0:00.0
+;70;Ida;Haugsmark;F;NO;Harstad CK;FE3;Junior 11-12;7:27.2;0:00.0
+;78;Jakob Dreyer;Holen;M;NO;Narvik Slalåmklubb;FE3;Junior 11-12;5:32.0;1:55.2
+;73;Einar S;Instanes;M;NO;Harstad CK;FE3;Junior 11-12;6:41.5;0:45.7
+;77;Roel-Johan;Johansen;M;NO;Lofoten Ekstremsportklubb;FE3;Junior 13-14;7:13.1;1:58.3
+;69;Sigurd Tevik;Klefstad;M;NO;Harstad CK;FE3;Junior 13-14;6:23.6;1:08.8
+;71;Vebjørn;Lunde;M;NO;Narvik CK;FE3;Junior 13-14;5:05.8;0:09.0
+;67;Amund;Røkenes;M;NO;Harstad CK;FE3;Junior 11-12;5:22.6;2:04.6
+;68;Kajsa;Uttakleiv;F;NO;Harstad CK;FE3;Junior 13-14;5:28.5;0:13.7
+;80;Sivert;Uttakleiv;M;NO;Harstad CK;FE3;Junior 11-12;6:23.3;1:03.9
+;79;Daniel Aspaker;Hansen;M;NO;Harstad CK;FE3;Junior 11-12;0:00.0;7:27.2
+;72;Ask;Jørgensen;M;NO;Harstad CK;FE3;Junior 13-14;0:00.0;5:14.8
+1;74;Odd Brage;Skog;M;NO;Mosjøen og Omegn CK;FE5;Junior 15-16;2:32.9;0:00.0
+2;75;Thomas;Hansen;M;NO;Harstad CK / Hatstad Cykelklubb;FE5;Junior 15-16;3:09.5;0:36.6
+;76;Sebastian Molund;Enoksen;M;NO;Harstad CK / Leon Sport;FE5;Junior 13-14;3:00.0;0:00.0
+;70;Ida;Haugsmark;F;NO;Harstad CK;FE5;Junior 11-12;4:51.3;0:00.0
+;78;Jakob Dreyer;Holen;M;NO;Narvik Slalåmklubb;FE5;Junior 11-12;2:56.2;1:55.1
+;73;Einar S;Instanes;M;NO;Harstad CK;FE5;Junior 11-12;3:34.8;1:16.5
+;77;Roel-Johan;Johansen;M;NO;Lofoten Ekstremsportklubb;FE5;Junior 13-14;3:41.4;0:41.4
+;69;Sigurd Tevik;Klefstad;M;NO;Harstad CK;FE5;Junior 13-14;3:19.7;0:19.7
+;71;Vebjørn;Lunde;M;NO;Narvik CK;FE5;Junior 13-14;2:55.2;0:04.8
+;67;Amund;Røkenes;M;NO;Harstad CK;FE5;Junior 11-12;3:00.7;1:50.6
+;68;Kajsa;Uttakleiv;F;NO;Harstad CK;FE5;Junior 13-14;3:37.2;0:37.2
+;80;Sivert;Uttakleiv;M;NO;Harstad CK;FE5;Junior 11-12;3:53.2;0:58.1
+;79;Daniel Aspaker;Hansen;M;NO;Harstad CK;FE5;Junior 11-12;0:00.0;4:51.3
+;72;Ask;Jørgensen;M;NO;Harstad CK;FE5;Junior 13-14;0:00.0;3:00.0
