@@ -30,9 +30,9 @@ module.exports = function fullResultViewMapper (classes, results) {
     riders[rider].num_stages++
 
     if (results[i].stage === lastStage) {
-      riders[rider]['acc_time'] = convertMsToTime(results[i].acc_time_ms)
-      riders[rider]['acc_time_ms'] = results[i].acc_time_ms
-      riders[rider]['final_status'] = results[i].final_status
+      riders[rider].acc_time = convertMsToTime(results[i].acc_time_ms)
+      riders[rider].acc_time_ms = results[i].acc_time_ms
+      riders[rider].final_status = results[i].final_status
     }
   }
 

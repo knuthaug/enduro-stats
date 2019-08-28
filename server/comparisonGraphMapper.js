@@ -49,11 +49,11 @@ function commonTransformation (data) {
 
     if (data[i].stage === lastStage) {
       // last stage, add in acc_times and final status
-      riders[rider]['acc_time_behind'] = convertMsToTime(data[i].acc_time_behind)
-      riders[rider]['acc_time'] = convertMsToTime(data[i].acc_time_ms)
-      riders[rider]['acc_time_behind_ms'] = data[i].acc_time_behind
-      riders[rider]['acc_time_ms'] = data[i].acc_time_ms
-      riders[rider]['final_status'] = data[i].final_status
+      riders[rider].acc_time_behind = convertMsToTime(data[i].acc_time_behind)
+      riders[rider].acc_time = convertMsToTime(data[i].acc_time_ms)
+      riders[rider].acc_time_behind_ms = data[i].acc_time_behind
+      riders[rider].acc_time_ms = data[i].acc_time_ms
+      riders[rider].final_status = data[i].final_status
     }
   }
   return { stages, riders, lastStage }

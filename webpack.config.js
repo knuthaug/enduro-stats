@@ -1,7 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
 const AssetsPlugin = require('assets-webpack-plugin')
-const isProduction = process.env['NODE_ENV'] === 'production'
+const isProduction = process.env.NODE_ENV === 'production'
 const sourceMapEnabled = isProduction
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 

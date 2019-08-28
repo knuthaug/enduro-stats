@@ -143,7 +143,7 @@ class Db {
 
   async ridersForClassAndRace (races) {
     const out = {}
-    const query = `select race_id, stage_id, count(id) from results where race_id = $1 and class = $2 group by race_id, stage_id order by race_id limit 1`
+    const query = 'select race_id, stage_id, count(id) from results where race_id = $1 and class = $2 group by race_id, stage_id order by race_id limit 1'
 
     for (let i = 0; i < races.length; i++) {
       const row = await this.find(query, [races[i].race, races[i].class])

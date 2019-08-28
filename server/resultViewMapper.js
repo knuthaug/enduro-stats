@@ -44,11 +44,11 @@ module.exports = function resultViewMapper (classes, results) {
 
     if (results[i].stage === lastStages[results[i].class]) {
       // last stage, add in acc_time_behind
-      riders[rider]['acc_time_behind'] = convertMsToTime(results[i].acc_time_behind)
-      riders[rider]['acc_time'] = convertMsToTime(results[i].acc_time_ms)
-      riders[rider]['acc_time_behind_ms'] = results[i].acc_time_behind
-      riders[rider]['acc_time_ms'] = results[i].acc_time_ms
-      riders[rider]['final_status'] = results[i].final_status
+      riders[rider].acc_time_behind = convertMsToTime(results[i].acc_time_behind)
+      riders[rider].acc_time = convertMsToTime(results[i].acc_time_ms)
+      riders[rider].acc_time_behind_ms = results[i].acc_time_behind
+      riders[rider].acc_time_ms = results[i].acc_time_ms
+      riders[rider].final_status = results[i].final_status
     }
   }
 
@@ -189,20 +189,24 @@ function raceChart (rows, startIndex, stages) {
     }
 
     if (i === startIndex) {
-      arr.push({ name: rows[i].name,
+      arr.push({
+        name: rows[i].name,
         data: stages.map((s) => {
           return [s, 0]
         }).sort((a, b) => {
           return a[0] - b[0]
-        }) })
+        })
+      })
     } else {
     //    console.log(rows[i])
-      arr.push({ name: rows[i].name,
+      arr.push({
+        name: rows[i].name,
         data: stages.map((s) => {
           return [s, diffTime(rows[startIndex][`stage${s}_time`], rows[i][`stage${s}_time`])]
         }).sort((a, b) => {
           return a[0] - b[0]
-        }) })
+        })
+      })
     }
   }
   return JSON.stringify(arr)

@@ -12,7 +12,8 @@ function toPlacesGraphData (rows, num, stages) {
         return [s, rows[i][`stage${s}_rank`]]
       }).sort((a, b) => {
         return a[0] - b[0]
-      }) }
+      })
+    }
     ret.push(o)
   }
   return ret
@@ -30,7 +31,8 @@ function toTimesGraphData (rows, num, stages) {
         return [s, convertTimeToMs(rows[i][`stage${s}_behind_leader`]) / 1000] // in seconds
       }).sort((a, b) => {
         return a[0] - b[0]
-      }) }
+      })
+    }
     ret.push(o)
   }
   return ret
