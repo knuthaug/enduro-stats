@@ -3,5 +3,12 @@
   "year": 2019,
   "date": "2019-09-08",
   "text": "Også et ritt med mye nedbør i uka før og under lørdagens gjennomkjøring, som lagde mye gjørme og tunge løyper. Med rundt 2 kilometer per etappe ble det en slitsom dag på jobben for mange. 4 etappe ble avlyst pga. forholdene.",
-  "series": "Østafjells enduroserie"
+  "series": "Østafjells enduroserie",
+  "links": [
+    {
+      "type": "images",
+      "desc": "Bildealbum fra Pål Westgaard",
+      "url": "https://www.facebook.com/pal.westgaard/media_set?set=a.2345660705648840&type=3"
+    }
+  ]
 }
