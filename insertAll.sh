@@ -168,3 +168,6 @@ node import/importer.js -m -f results/2019/oslo/oslo-2019.csv
 
 echo "  Harstad"
 node import/importer.js -f results/2019/harstad/harstad-2019.csv
+
+echo "  Hakadal"
+node import/importer.js -s -f results/2019/hakadal/hakadal-2019.csv

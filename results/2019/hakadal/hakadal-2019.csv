@@ -1,0 +1,104 @@
+﻿Pos klasse;bib;Category;First Name;Surname;Team;Time;Gap;Penalties;FE 1 Time;FE 1 Pos;FE 2 Time;FE 2 Pos;FE 3 Time;FE 3 Pos;gender
+1;144;G15-16;Falk;Håkenstad-Bråten;Lillehammer CK;00:20:58;;;00:06:09;1;00:05:48;1;00:09:01;1;M
+2;150;G15-16;William;Scheele;SK Rye;00:21:58;+00:01:00;;00:06:24;3;00:06:18;2;00:09:16;2;M
+3;148;G15-16;Mikkel;Pedersen;IF Frøy;00:22:24;+00:01:26;;00:06:17;2;00:06:31;3;00:09:36;3;M
+4;151;G15-16;Erik;Tønnessen;Mck;00:22:52;+00:01:54;;00:06:34;4;00:06:32;5;00:09:46;4;M
+5;140;G15-16;Kevin;Scott Johnsen ;;00:23:50;+00:02:52;;00:06:46;6;00:06:42;6;00:10:22;6;M
+6;145;G15-16;Theodor;Bakken;Aron SK;00:23:58;+00:03:00;;00:07:02;7;00:06:51;7;00:10:05;5;M
+7;146;G15-16;Emil;Aabye;Team Sykleriet;00:24:01;+00:03:03;;00:06:39;5;00:06:31;3;00:10:51;9;M
+8;149;G15-16;Alexander;Sandengen;Kongen's berg sti og landeveis røvere;00:24:50;+00:03:52;;00:07:08;9;00:06:58;8;00:10:44;8;M
+9;147;G15-16;William;Rø;;00:25:21;+00:04:23;;00:07:02;7;00:07:39;11;00:10:40;7;M
+10;143;G15-16;Oscar;Saksvik;Asker CK;00:25:36;+00:04:38;;00:07:21;10;00:07:06;9;00:11:09;10;M
+11;153;G15-16;Petter;Brochmann;CK Nittedal;00:26:35;+00:05:37;;00:07:22;11;00:07:18;10;00:11:55;11;M
+12;154;G15-16;Sebastien;Amat Finstad;Nittedal CK;00:27:23;+00:06:25;;00:07:36;12;00:07:50;12;00:11:57;12;M
+13;142;G15-16;Jonas ;Ã˜ien Skare;Gauldal Sk;00:28:27;+00:07:29;;00:07:48;13;00:08:41;13;00:11:58;13;M
+14;152;G15-16;Even;Sandberg;Ck Nittedal;00:33:25;+00:12:27;;00:08:47;14;00:11:30;14;00:13:08;14;M
+1;118;Junior Herrer;Kristian;Holiman;rye;00:20:36;;;00:05:47;1;00:05:53;1;00:08:56;1;M
+2;117;Junior Herrer;Henrik;Langeland Nielsen;Kristiansand CK;00:22:09;+00:01:33;;00:06:10;2;00:06:14;4;00:09:45;4;M
+3;113;Junior Herrer;Jonas;Olsson;Sk Rye;00:22:14;+00:01:38;;00:06:22;3;00:06:10;3;00:09:42;3;M
+4;119;Junior Herrer;Tobias;Sandengen;Horten OCK;00:22:16;+00:01:40;;00:06:32;4;00:06:03;2;00:09:41;2;M
+5;116;Junior Herrer;Aslak;Lindsetmo;Asker CK;00:22:49;+00:02:13;;00:06:39;5;00:06:15;5;00:09:55;5;M
+6;111;Junior Herrer;Lukas;Ellingsen;Rye;00:25:13;+00:04:37;;00:06:48;6;00:07:01;6;00:11:24;6;M
+7;114;Junior Herrer;Sverre;Storli Bjørnland;Lillehammer ck;00:26:54;+00:06:18;;00:06:58;7;00:07:29;7;00:12:27;7;M
+1;40;Master Herrer;Fredrik;Lysakerrud;Odal Sk;00:20:40;;;00:06:01;1;00:05:55;1;00:08:44;1;M
+2;33;Master Herrer;Pål;Grotnes;Gresvik IF Stisyklister;00:21:06;+00:00:26;;00:06:07;2;00:06:13;2;00:08:46;2;M
+3;31;Master Herrer;Arild;Heimli Johnsen;Team Letth;00:23:18;+00:02:38;;00:06:29;3;00:06:54;4;00:09:55;3;M
+4;41;Master Herrer;Sindre;Lidsheim;CK Nittedal;00:24:13;+00:03:33;;00:07:06;9;00:06:51;3;00:10:16;5;M
+5;38;Master Herrer;Simen;Kalnæs Danielsen;DFI sykkel;00:24:15;+00:03:35;;00:06:52;6;00:07:09;5;00:10:14;4;M
+6;44;Master Herrer;Knut;Haugen;Lørenskog CK;00:25:17;+00:04:37;;00:06:55;7;00:07:45;7;00:10:37;7;M
+7;45;Master Herrer;Kim;Andersen;;00:25:41;+00:05:01;;00:06:51;5;00:07:10;6;00:11:40;10;M
+8;46;Master Herrer;Kristian;Eckhoff;SK Rye Sykkel;00:25:46;+00:05:06;;00:07:00;8;00:07:50;9;00:10:56;9;M
+9;39;Master Herrer;Jan Henrik;Høilund;Njård;00:25:49;+00:05:09;;00:07:20;10;00:07:47;8;00:10:42;8;M
+10;32;Master Herrer;Espen;Kebely;;00:26:26;+00:05:46;;00:06:40;4;00:09:11;15;00:10:35;6;M
+11;34;Master Herrer;Torkel;Røisli;;00:27:47;+00:07:07;;00:07:26;11;00:08:13;11;00:12:08;12;M
+12;42;Master Herrer;Fredrik;Lingvall;Sk Rye;00:28:16;+00:07:36;;00:07:43;13;00:08:03;10;00:12:30;13;M
+13;49;Master Herrer;Kent;Scott Johnsen;Eidsvoll Sykkelklubb;00:30:13;+00:09:33;;00:09:07;15;00:09:03;14;00:12:03;11;M
+14;35;Master Herrer;Lars;Thomte;NOTS;00:30:15;+00:09:35;;00:08:12;14;00:09:01;13;00:13:02;14;M
+DNF;36;Master Herrer;Marius;Wilberg;Blaker IL Sykkel;;;;00:07:40;12;00:08:14;12;;;M
+1;4;Master Kvinner;Marte;Lund;CK Nittedal;00:27:30;;;00:08:09;2;00:07:43;1;00:11:38;1;F
+2;1;Master Kvinner;Linda;Lønmo;Aron SK Sykkel;00:28:33;+00:01:03;;00:07:59;1;00:08:23;2;00:12:11;2;F
+3;2;Master Kvinner;Kari;Olstad;Hadeland CK;00:36:09;+00:08:39;;00:09:35;3;00:10:56;3;00:15:38;3;F
+4;3;Master Kvinner;Kine;Lidsheim;CK Nittedal;00:37:35;+00:10:05;;00:10:24;4;00:11:31;4;00:15:40;4;F
+1;88;Senior Herrer;Ola;Jåvold Landmark;Bærum OCK;00:18:40;;;00:05:24;2;00:05:28;3;00:07:48;1;M
+2;78;Senior Herrer;Knut;Røhme;Romeriksåsen SK / Team Sørensen Racing;00:18:48;+00:00:08;;00:05:19;1;00:05:30;4;00:07:59;2;M
+3;54;Senior Herrer;Sebastian;Dietrich;;00:19:08;+00:00:28;;00:05:27;3;00:05:39;6;00:08:02;3;M
+4;62;Senior Herrer;Jan Erik;Kørra;Lillehammer CK;00:19:26;+00:00:46;;00:05:34;6;00:05:25;2;00:08:27;6;M
+5;76;Senior Herrer;Jens;Bergmann;Sk Rye;00:19:33;+00:00:53;;00:05:30;4;00:05:52;11;00:08:11;4;M
+6;101;Senior Herrer;Bård;Pettersen;Drammen ck;00:19:33;+00:00:53;;00:05:35;7;00:05:21;1;00:08:37;8;M
+7;85;Senior Herrer;Daniel;Bagge;CK Master;00:20:03;+00:01:23;;00:05:38;9;00:05:45;10;00:08:40;9;M
+8;109;Senior Herrer;Gard;Brovold;IL Heming;00:20:05;+00:01:25;;00:05:53;10;00:05:43;8;00:08:29;7;M
+9;56;Senior Herrer;Tormod;Weydahl;Ottadalen SK;00:20:08;+00:01:28;;00:05:37;8;00:06:07;14;00:08:24;5;M
+10;68;Senior Herrer;Anders;Skarstein;Hemsedal IL sykkel;00:20:23;+00:01:43;;00:06:02;12;00:05:37;5;00:08:44;10;M
+11;61;Senior Herrer;Oskar;Omdal;Sokndal sti og sykkel;00:20:41;+00:02:01;;00:06:02;12;00:05:44;9;00:08:55;12;M
+12;75;Senior Herrer;Andreas;Aalby;Asker CK Enduro;00:20:59;+00:02:19;;00:05:58;11;00:06:14;16;00:08:47;11;M
+13;60;Senior Herrer;Erlend ;Hegrum Askjer;Horten OCK;00:21:13;+00:02:33;;00:06:12;16;00:05:52;11;00:09:09;13;M
+14;53;Senior Herrer;Kristoffer;Engen;Hemsedal il;00:21:37;+00:02:57;;00:06:03;14;00:05:42;7;00:09:52;20;M
+15;91;Senior Herrer;Robin;Dolgos;Vtt fun club nancy;00:21:38;+00:02:58;;00:06:08;15;00:05:56;13;00:09:34;15;M
+16;105;Senior Herrer;Kristoffer;Rakneberg;Bergen MTB;00:22:22;+00:03:42;;00:06:33;22;00:06:24;17;00:09:25;14;M
+17;79;Senior Herrer;André;Aamodt;;00:22:25;+00:03:45;;00:06:35;25;00:06:10;15;00:09:40;18;M
+18;52;Senior Herrer;Christian;Rief;Hadeland CK;00:22:42;+00:04:02;;00:06:34;23;00:06:29;20;00:09:39;16;M
+19;57;Senior Herrer;Ola;Myklatun Krosness;;00:22:46;+00:04:06;;00:06:16;17;00:06:51;28;00:09:39;16;M
+20;66;Senior Herrer;Anders;Samnøy;Aron SK;00:22:57;+00:04:17;;00:06:21;18;00:06:47;24;00:09:49;19;M
+21;96;Senior Herrer;Per Jørgen;Sletto;Flow Enduro;00:22:58;+00:04:18;;00:06:24;20;00:06:27;19;00:10:07;25;M
+22;74;Senior Herrer;Tommy;Pham;Flow Enduro;00:23:20;+00:04:40;;00:06:50;32;00:06:34;22;00:09:56;21;M
+23;69;Senior Herrer;Knut Harald;Smette;Stovnerkam./Fri Flyt;00:23:23;+00:04:43;;00:06:22;19;00:06:54;30;00:10:07;25;M
+24;48;Senior Herrer;Ola;Gulbrandsen;;00:23:42;+00:05:02;;00:06:38;26;00:06:59;32;00:10:05;23;M
+25;72;Senior Herrer;Stian;Bjørnli;Flow Enduro;00:23:56;+00:05:16;;00:06:56;38;00:06:52;29;00:10:08;27;M
+26;65;Senior Herrer;Kristoffer;Apeland;Ck Haugaland;00:23:57;+00:05:17;;00:07:03;41;00:06:24;17;00:10:30;31;M
+27;83;Senior Herrer;Håkon;Trydal;Arendal Singletrack;00:23:59;+00:05:19;;00:06:41;27;00:07:13;35;00:10:05;23;M
+28;86;Senior Herrer;Kristoffer Ylven;Westgaard;Asker CK;00:24:04;+00:05:24;;00:06:44;29;00:07:19;38;00:10:01;22;M
+29;47;Senior Herrer;Henrik;Olsen;Flow;00:24:09;+00:05:29;;00:06:55;36;00:06:57;31;00:10:17;28;M
+30;81;Senior Herrer;Karl Andreas;Sagadalen;Hadeland ck;00:24:11;+00:05:31;;00:06:43;28;00:06:50;27;00:10:38;36;M
+31;71;Senior Herrer;Sander;Blomgren;Sykkelsport Arendal;00:24:14;+00:05:34;;00:07:04;42;00:06:49;25;00:10:21;29;M
+32;73;Senior Herrer;Joakim;Melby;;00:24:15;+00:05:35;;00:06:52;34;00:06:32;21;00:10:51;40;M
+33;51;Senior Herrer;Andreas;Rief;Hadeland CK;00:24:17;+00:05:37;;00:06:29;21;00:07:16;36;00:10:32;32;M
+34;77;Senior Herrer;Joakim;Karlsson;;00:24:18;+00:05:38;;00:06:55;36;00:06:46;23;00:10:37;34;M
+35;89;Senior Herrer;Stanley;Geyersbach;;00:24:37;+00:05:57;;00:06:46;30;00:07:05;34;00:10:46;38;M
+36;80;Senior Herrer;Joachim;Bøhler;;00:24:39;+00:05:59;;00:07:00;40;00:07:02;33;00:10:37;34;M
+37;59;Senior Herrer;Magnus;Innerdal;;00:24:52;+00:06:12;;00:06:50;32;00:07:29;40;00:10:33;33;M
+38;108;Senior Herrer;Jostein;Authen;;00:24:55;+00:06:15;;00:06:53;35;00:06:49;25;00:11:13;42;M
+39;67;Senior Herrer;Tobias;Bjerknes;CK Nittedal;00:25:37;+00:06:57;;00:07:18;46;00:07:26;39;00:10:53;41;M
+40;103;Senior Herrer;Przemyslaw;Glowinkowski;Bike Bums;00:25:37;+00:06:57;;00:06:48;31;00:07:33;41;00:11:16;43;M
+41;84;Senior Herrer;Kristoffer;Andresen;Aron SK;00:25:39;+00:06:59;;00:06:58;39;00:08:15;48;00:10:26;30;M
+42;107;Senior Herrer;Fredrik;Nygaard;;00:25:55;+00:07:15;;00:07:15;45;00:07:51;46;00:10:49;39;M
+43;87;Senior Herrer;Peter;Hjertson;;00:25:55;+00:07:15;;00:06:34;23;00:07:17;37;00:12:04;47;M
+44;55;Senior Herrer;Ivar;Haug;Holmsbu IF;00:26:02;+00:07:22;;00:07:31;48;00:07:48;45;00:10:43;37;M
+45;102;Senior Herrer;Marcus Emil;Sletten;;00:26:39;+00:07:59;;00:07:26;47;00:07:46;43;00:11:27;45;M
+46;70;Senior Herrer;Christopher;Fredriksen;KCK;00:27:01;+00:08:21;;00:07:56;51;00:07:38;42;00:11:27;45;M
+47;93;Senior Herrer;Levi;Vøllestad Aakre;Top-Tubes Orange Team;00:27:03;+00:08:23;;00:07:46;50;00:07:51;46;00:11:26;44;M
+48;95;Senior Herrer;Marius ;Rønningen Diseth;ck nittedal;00:28:29;+00:09:49;;00:07:31;48;00:08:30;49;00:12:28;50;M
+49;99;Senior Herrer;Frode Kristian;Ditlefsen;SK Rye;00:30:03;+00:11:23;;00:07:07;43;00:10:33;53;00:12:23;49;M
+50;106;Senior Herrer;Andreas;Birkeland;-;00:30:56;+00:12:16;;00:08:06;53;00:09:11;50;00:13:39;51;M
+51;50;Senior Herrer;Erik;Haugstulen;Gruvelia SK;00:31:14;+00:12:34;;00:08:01;52;00:11:03;54;00:12:10;48;M
+52;90;Senior Herrer;Petter;Strømme;;00:36:54;+00:18:14;;00:09:26;55;00:12:27;55;00:15:01;52;M
+DNF;63;Senior Herrer;Ole-Herman;Bergby;SK Rye;;;;00:05:33;5;00:07:47;44;;;M
+DNF;92;Senior Herrer;Karl-Oskar;Sæther;;;;;00:07:14;44;00:09:53;51;;;M
+DNF;97;Senior Herrer;Rufus;Preiss;Kragerø;;;;00:09:22;54;00:10:26;52;;;M
+DNF;64;Senior Herrer;Lars;Strømme;;;;;00:14:42;56;;;;;M
+1;9;Senior Kvinner;Hedda;Brenningen Bjørklund;Lillehammer CK;00:22:53;;;00:06:25;1;00:06:55;2;00:09:33;1;F
+2;6;Senior Kvinner;Hilde;Strædet;Kristiansand cykleklubb;00:23:29;+00:00:36;;00:06:40;2;00:06:32;1;00:10:17;2;F
+3;11;Senior Kvinner;Anna;Littorin-Sandbu;Lillehammer CK;00:26:15;+00:03:22;;00:07:16;3;00:07:17;3;00:11:42;4;F
+4;8;Senior Kvinner;Lene ;Snerk Pettersen;Eidanger GROMS;00:26:51;+00:03:58;;00:07:26;4;00:07:58;4;00:11:27;3;F
+5;7;Senior Kvinner;Ida;Nærum;CK Nittedal;00:28:37;+00:05:44;;00:07:49;5;00:08:05;5;00:12:43;6;F
+6;14;Senior Kvinner;Stine;Torgersbråten;Team Letth;00:30:48;+00:07:55;;00:08:51;7;00:09:16;6;00:12:41;5;F
+7;13;Senior Kvinner;Tonje;Sameien;Team BIFF;00:33:04;+00:10:11;;00:08:36;6;00:09:52;7;00:14:36;7;F
