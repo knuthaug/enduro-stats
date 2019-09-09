@@ -8,6 +8,16 @@
       "type": "video",
       "desc": "Film fra rittet (vimeo)",
       "url": "https://vimeo.com/292672460"
+    },
+    {
+      "type": "images",
+      "desc": "Bildealbum av Svenn Fjeldheim",
+      "url": "https://www.hardbarka.com/apps/photos/album?albumid=16128338"
+    },
+        {
+      "type": "images",
+      "desc": "Bildealbum av Brendan Mulholland",
+      "url": "https://www.hardbarka.com/apps/photos/album?albumid=16128149"
     }
   ]
 }

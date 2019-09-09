@@ -1,6 +1,13 @@
 {
   "name": "Hardbarka enduro",
   "year": 2017,
-  "date": "2017-09-30"
+  "date": "2017-09-30",
+  "links": [
+    {
+      "type": "images",
+      "desc": "Bildealbum",
+      "url": "https://www.hardbarka.com/apps/photos/album?albumid=16095227"
+    }
+  ]
 
 }
