@@ -1,5 +1,13 @@
 {
   "name": "Hardbarka enduro",
   "year": 2018,
-  "date": "2018-09-29"
+  "date": "2018-09-29",
+  "text": "Høyfjellsenduro i Hemsedal med egen «nattetappe» med lykt. Snø og glatt og lange etapper.", 
+  "links": [
+    {
+      "type": "video",
+      "desc": "Film fra rittet (vimeo)",
+      "url": "https://vimeo.com/292672460"
+    }
+  ]
 }
