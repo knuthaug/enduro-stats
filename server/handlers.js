@@ -86,6 +86,8 @@ async function raceHandler (req) {
   const [stages, results, graphs] = resultViewMapper(raceClasses, raceResults)
   const noResults = Object.values(results).length > 0
 
+  const sortedClasses = Object.keys(results).sort()
+
   Object.keys(graphs).forEach((cl) => {
     graphs[cl] = JSON.stringify(graphs[cl])
   })
@@ -97,6 +99,7 @@ async function raceHandler (req) {
     results,
     links,
     graphs,
+    sortedClasses,
     noResults,
     active: 'ritt',
     title: `${race.name} ${race.year} : Norsk enduro`
