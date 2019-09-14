@@ -16,6 +16,28 @@ async function manifestHandler (req) {
   return {}
 }
 
+async function mapHandler(req) {
+  const race = await db.findRace(req.params.uid)
+  const data = {
+    center: [60.0996, 10.8381],
+    files: [
+      'hakadal-2019-fe1.gpx',
+      'hakadal-2019-fe2.gpx',
+      'hakadal-2019-fe3.gpx'
+    ]
+  }
+
+  if (!race.id) {
+    return { status: 404 }
+  }
+  return {
+    status: 200,
+    race,
+    gpxData: JSON.stringify(data),
+    title: `Kart ${race.name}: Norsk enduro`
+  }
+}
+
 async function racesHandler (req) {
   const races = raceViewMapper(await db.findRaces())
   return {
@@ -315,5 +337,6 @@ module.exports = {
   compareHandler,
   compareGraphHandler,
   rankHandler,
-  manifestHandler
+  manifestHandler,
+  mapHandler
 }

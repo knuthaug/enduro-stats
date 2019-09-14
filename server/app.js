@@ -60,11 +60,20 @@ app.get('/rytter/:uid', handler('rider', handlers.riderHandler))
 app.get('/ryttere', handler('riders', handlers.ridersHandler))
 app.get('/ranking', handler('rank', handlers.rankHandler))
 app.get('/sammenlign', handler('compare', handlers.compareHandler))
+app.get('/kart/:uid', handler('map', handlers.mapHandler))
 app.get('/api/search', jsonHandler(handlers.jsonSearchHandler))
 app.get('/api/graph/compare', jsonHandler(handlers.compareGraphHandler))
 app.get('/site.webmanifest', jsonHandler(handlers.manifestHandler))
 
 app.post('/sok/', handler('search', handlers.searchHandler, 100))
+
+app.get('/gpx/:file', (req, res) => {
+  log.debug(`request for ${req.path}`)
+  const file = req.params.file
+  const options = { root: './server/gpx' }
+
+  return res.set({ 'Cache-Control': `public, max-age=${ASSET_LONG_CACHE_TIME}` }).sendFile(`${file}`, options)
+})
 
 app.get('/assets/js/:file', (req, res) => {
   log.debug(`request for ${req.path}`)
