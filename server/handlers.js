@@ -13,18 +13,26 @@ const comparisonGraphMapper = require('./comparisonGraphMapper')
 const db = new Db()
 
 async function manifestHandler (req) {
-  return {}
+  return {
+    name: 'Norsk enduro'
+  }
 }
 
 async function mapHandler(req) {
+
+  if(!req.params.uid ) {
+    return { status: 404 }
+  }
+
   const race = await db.findRace(req.params.uid)
+
+  if(!race.lat) {
+    return { status: 404 }
+  }
+
   const data = {
-    center: [60.0996, 10.8381],
-    files: [
-      'hakadal-2019-fe1.gpx',
-      'hakadal-2019-fe2.gpx',
-      'hakadal-2019-fe3.gpx'
-    ]
+    center: [race.lat, race.long],
+    files: race.files.split(',')
   }
 
   if (!race.id) {

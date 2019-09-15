@@ -51,6 +51,7 @@ app.engine('handlebars', hbs({
 app.set('view engine', 'handlebars')
 
 app.get('/', handler('index', handlers.indexHandler, 2000))
+app.get('/site.webmanifest', jsonHandler(handlers.manifestHandler))
 app.get('/ritt', handler('races', handlers.racesHandler))
 app.get('/ritt/:uid', handler('race', handlers.raceHandler, DEFAULT_CACHE_TIME_PAGES))
 app.get('/ritt/:uid/full', handler('fullrace', handlers.fullRaceHandler, DEFAULT_CACHE_TIME_PAGES))
@@ -63,7 +64,7 @@ app.get('/sammenlign', handler('compare', handlers.compareHandler))
 app.get('/kart/:uid', handler('map', handlers.mapHandler))
 app.get('/api/search', jsonHandler(handlers.jsonSearchHandler))
 app.get('/api/graph/compare', jsonHandler(handlers.compareGraphHandler))
-app.get('/site.webmanifest', jsonHandler(handlers.manifestHandler))
+
 
 app.post('/sok/', handler('search', handlers.searchHandler, 100))
 

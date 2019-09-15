@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<gpx version="1.1" creator="Trailguide" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd http://www.cluetrust.com/XML/GPXDATA/1/0 http://www.cluetrust.com/Schemas/gpxdata10.xsd http://www.garmin.com/xmlschemas/TrackPointExtension/v1 http://www.garmin.com/xmlschemas/TrackPointExtensionv1.xsd" xmlns:gpxdata="http://www.cluetrust.com/XML/GPXDATA/1/0">
+<metadata>
+<name>FE3 NesbyEnduro 2019</name>
+<author><name>Knut Lønnqvist/Trailguide</name></author>
+<copyright author="Trailguide/ObjectPlanet"><year>2019</year></copyright>
+</metadata>
+<trk>
+<name>FE3 NesbyEnduro 2019</name>
+<trkseg><trkpt lat="60.59058" lon="9.11249"><ele>529</ele></trkpt>
+<trkpt lat="60.59062" lon="9.11243"><ele>529</ele></trkpt>
+<trkpt lat="60.59051" lon="9.11244"><ele>526</ele></trkpt>
+<trkpt lat="60.59043" lon="9.11234"><ele>523</ele></trkpt>
+<trkpt lat="60.5904" lon="9.11214"><ele>520</ele></trkpt>
+<trkpt lat="60.59034" lon="9.11206"><ele>519</ele></trkpt>
+<trkpt lat="60.59022" lon="9.1120699"><ele>517</ele></trkpt>
+<trkpt lat="60.59013" lon="9.11215"><ele>516</ele></trkpt>
+<trkpt lat="60.58999" lon="9.11233"><ele>516</ele></trkpt>
+<trkpt lat="60.58985" lon="9.11242"><ele>514</ele></trkpt>
+<trkpt lat="60.58966" lon="9.11247"><ele>512</ele></trkpt>
+<trkpt lat="60.58927" lon="9.11288"><ele>508</ele></trkpt>
+<trkpt lat="60.58846" lon="9.11403"><ele>508</ele></trkpt>
+<trkpt lat="60.58824" lon="9.11424"><ele>501</ele></trkpt>
+<trkpt lat="60.58804" lon="9.1143699"><ele>494</ele></trkpt>
+<trkpt lat="60.58798" lon="9.11438"><ele>491</ele></trkpt>
+<trkpt lat="60.58792" lon="9.1143"><ele>487</ele></trkpt>
+<trkpt lat="60.58788" lon="9.11394"><ele>479</ele></trkpt>
+<trkpt lat="60.58782" lon="9.11377"><ele>473</ele></trkpt>
+<trkpt lat="60.58775" lon="9.11364"><ele>466</ele></trkpt>
+<trkpt lat="60.5875" lon="9.11392"><ele>457</ele></trkpt>
+<trkpt lat="60.58733" lon="9.11406"><ele>451</ele></trkpt>
+<trkpt lat="60.58714" lon="9.11416"><ele>442</ele></trkpt>
+<trkpt lat="60.58683" lon="9.11426"><ele>424</ele></trkpt>
+<trkpt lat="60.58677" lon="9.11433"><ele>422</ele></trkpt>
+<trkpt lat="60.58669" lon="9.11462"><ele>424</ele></trkpt>
+<trkpt lat="60.58663" lon="9.1146999"><ele>420</ele></trkpt>
+<trkpt lat="60.58631" lon="9.11468"><ele>393</ele></trkpt>
+<trkpt lat="60.58622" lon="9.11475"><ele>389</ele></trkpt>
+<trkpt lat="60.5861" lon="9.11494"><ele>388</ele></trkpt>
+<trkpt lat="60.58593" lon="9.11516"><ele>386</ele></trkpt>
+<trkpt lat="60.5857" lon="9.11532"><ele>382</ele></trkpt>
+<trkpt lat="60.58541" lon="9.11541"><ele>377</ele></trkpt>
+<trkpt lat="60.58524" lon="9.11542"><ele>373</ele></trkpt>
+<trkpt lat="60.58488" lon="9.11556"><ele>363</ele></trkpt>
+<trkpt lat="60.58461" lon="9.1155899"><ele>353</ele></trkpt>
+<trkpt lat="60.58448" lon="9.11572"><ele>350</ele></trkpt>
+<trkpt lat="60.58441" lon="9.11576"><ele>348</ele></trkpt>
+<trkpt lat="60.58401" lon="9.11589"><ele>336</ele></trkpt>
+<trkpt lat="60.58394" lon="9.11588"><ele>333</ele></trkpt>
+<trkpt lat="60.58381" lon="9.11576"><ele>327</ele></trkpt>
+<trkpt lat="60.58377" lon="9.11566"><ele>323</ele></trkpt>
+<trkpt lat="60.58375" lon="9.11552"><ele>319</ele></trkpt>
+<trkpt lat="60.58376" lon="9.1151199"><ele>309</ele></trkpt>
+<trkpt lat="60.58379" lon="9.11491"><ele>305</ele></trkpt>
+<trkpt lat="60.58395" lon="9.1145"><ele>306</ele></trkpt>
+<trkpt lat="60.58408" lon="9.11433"><ele>308</ele></trkpt>
+<trkpt lat="60.58411" lon="9.11421"><ele>309</ele></trkpt>
+<trkpt lat="60.58411" lon="9.11398"><ele>310</ele></trkpt>
+<trkpt lat="60.58407" lon="9.11382"><ele>310</ele></trkpt>
+<trkpt lat="60.58397" lon="9.11353"><ele>304</ele></trkpt>
+<trkpt lat="60.58388" lon="9.1132"><ele>293</ele></trkpt>
+<trkpt lat="60.5838" lon="9.11302"><ele>286</ele></trkpt>
+<trkpt lat="60.58377" lon="9.11286"><ele>278</ele></trkpt>
+<trkpt lat="60.58378" lon="9.11272"><ele>273</ele></trkpt>
+<trkpt lat="60.58385" lon="9.11235"><ele>264</ele></trkpt>
+<trkpt lat="60.58385" lon="9.1122"><ele>262</ele></trkpt>
+<trkpt lat="60.58378" lon="9.11177"><ele>256</ele></trkpt>
+<trkpt lat="60.58352" lon="9.1119"><ele>261</ele></trkpt>
+<trkpt lat="60.58308" lon="9.11174"><ele>260</ele></trkpt>
+<trkpt lat="60.58309" lon="9.11171"><ele>259</ele></trkpt>
+</trkseg>
+</trk>
+</gpx>
