@@ -2,3 +2,5 @@
 
 currentDb=$(eb printenv | grep 'DATABASE =' | cut -f2 -d=)
 echo "Current db for active env:$currentDb"
+
+echo "alternatives: aotfnzrp lifhxukm"
