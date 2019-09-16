@@ -17,7 +17,7 @@ const app = express()
 const handler = function (template, dataHandler, cacheTime) {
   return async function (req, res) {
     const context = await dataHandler(req)
-
+    console.log(context)
     if (context.status !== 200) {
       return render(res, '404', context, NOT_FOUND_CACHE_TIME, 404)
     }

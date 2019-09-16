@@ -22,7 +22,7 @@ async function racesHandler (req) {
     status: 200,
     races,
     active: 'ritt',
-    title: 'Alle ritt : Norsk enduro'
+    docTitle: 'Alle ritt : Norsk enduro'
   }
 }
 
@@ -42,6 +42,7 @@ async function compareHandler (req) {
     status: 200,
     ridersData,
     riders,
+    docTitle: 'Sammenligne ryttere : Norsk enduro',
     graphObject: JSON.stringify(graphObject)
   }
 }
@@ -102,7 +103,7 @@ async function raceHandler (req) {
     sortedClasses,
     noResults,
     active: 'ritt',
-    title: `${race.name} ${race.year} : Norsk enduro`
+    docTitle: `${race.name} ${race.year} : Norsk enduro`
   }
 }
 
@@ -138,7 +139,7 @@ async function fullRaceHandler (req) {
     noResults,
     links,
     active: 'ritt',
-    title: `${race.name} ${race.year} : Norsk enduro`
+    docTitle: `${race.name} ${race.year} : Norsk enduro`
   }
 }
 
@@ -152,7 +153,7 @@ async function indexHandler () {
     raceCount,
     riderCount,
     stageCount,
-    title: 'Norsk enduro'
+    docTitle: 'Norsk enduro'
   }
 }
 
@@ -165,7 +166,7 @@ async function rankHandler (req) {
     men,
     women,
     active: 'rank',
-    title: 'Rytter-ranking : Norsk enduro'
+    docTitle: 'Rytter-ranking : Norsk enduro'
   }
 }
 
@@ -181,7 +182,7 @@ async function ridersHandler (req) {
     status: 200,
     riders,
     active: 'ryttere',
-    title: 'Alle ryttere : Norsk enduro'
+    docTitle: 'Alle ryttere : Norsk enduro'
   }
 }
 
@@ -195,7 +196,7 @@ async function searchHandler (req, res) {
   return {
     status: 200,
     results,
-    title: 'Søketreff : Norsk enduro'
+    docTitle: 'Søketreff : Norsk enduro'
   }
 }
 
@@ -251,7 +252,7 @@ async function riderHandler (req) {
     score,
     results,
     active: 'ryttere',
-    title: `${rider.name} : Norsk enduro`
+    docTitle: `${rider.name} : Norsk enduro`
   }
 }
 
