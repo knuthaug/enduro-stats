@@ -36,37 +36,119 @@ function addFiles(map, files, parent) {
       //add details
       parent.appendChild(addCell(g))
 
-      if((index + 1) % 3 === 0) { //third cell, start new row
-        console.log('new row')
-        const content = document.createElement('div')
-        content.classList.toggle("row")
-
-        const space = document.createElement('div')
-        space.classList.toggle("col-1")
-        content.appendChild(space)
-        parent.insertAdjacentElement('afterend', content)
-        parent = content
-      }
+      //graph
+      setupGraph(g.get_name(), g._info.elevation._points)
     }).addTo(map)
   })
 }
 
+function setupGraph(id, data) {
+
+  Highcharts.chart(id, {
+    chart: {
+      borderColor: '#000000',
+      borderWidth: 1,
+      borderRadius: 2,
+      style: {
+        fontFamily: "'Helvetica Neue', Arial, sans-serif"
+      }
+    },
+    title: {
+      text: `Høydeprofil ${id}`,
+      style: {
+        color: '#FFFFFF',
+        'font-size': '90%',
+        fontWeight: 'normal'
+      }
+    },
+    yAxis: {
+      title: {
+        text: 'Høyde'
+      }
+    },
+    xAxis: {
+      title: {
+        text: 'Lengde'
+      },
+      tickInterval: 100
+    },
+    tooltip: {
+      formatter: function () {
+        return `<span>${Math.abs(this.point.y).toFixed(1)} meter</span>`
+      }
+    },
+    plotOptions: {
+      series: {
+        label: {
+          connectorAllowed: false
+        }
+      }
+    },
+    series: [{
+      showInLegend: false,
+      data: data,
+      pointStart: 1,
+      name: 'Plass %'
+    }],
+
+    responsive: {
+      rules: [{
+        condition: {
+          maxWidth: 300
+        },
+        chartOptions: {
+          legend: {
+            layout: 'horizontal',
+            align: 'center',
+            verticalAlign: 'bottom'
+          }
+        }
+      }]
+    }
+
+  })
+}
+
 function addCell(g) {
+  const row = document.createElement('div')
+  row.classList.toggle("row")
+  row.appendChild(addSpace())
+
   const content = document.createElement('div')
   content.classList.toggle("col-3")
+
+  const mapHolder = document.createElement('div')
+  mapHolder.classList.toggle("col-7")
+
+  const map = document.createElement('div')
+  map.id = g.get_name()
+  map.classList.toggle('map-chart-container')
+  mapHolder.appendChild(map)
+
   const title = document.createElement('h3')
   const text = document.createTextNode(g.get_name())
   title.appendChild(text)
   content.appendChild(title)
   content.appendChild(addDetails(g))
-  return content
+  row.appendChild(content)
+  row.appendChild(mapHolder)
+  return row
 }
 
+function addSpace() {
+  const div = document.createElement('div')
+  div.classList.toggle('col-1')
+  return div
+}
+ 
 function addDetails(g) {
   const p = document.createElement('p')
   p.appendChild(row(g, 'Lengde: ', 'meter', g.get_distance()))
   p.appendChild(row(g, 'Høydemeter ned: ', 'meter', g.get_elevation_loss()))
   p.appendChild(row(g, 'Høydemeter opp: ', 'meter', g.get_elevation_gain()))
+  p.appendChild(row(g, 'Gjennomsnittlig fall: ', '%', (g.get_elevation_loss() / g.get_distance()) * 100))
+  p.appendChild(rowLink(g, 'Strava-segment: ', 'test', 'https://google.com'))
+  //p.appendChild(row(g, 'Bestetid strava: ', '', ''))
   return p
 }
 
@@ -76,6 +158,19 @@ function row(g, text, unit, value) {
   bold.appendChild(document.createTextNode(text))
   span.appendChild(bold)
   span.appendChild(document.createTextNode(`${Math.round(value)} ${unit}`))
+  span.appendChild(document.createElement('br'))
+  return span
+}
+
+function rowLink(g, text, urlText, url) {
+  const span = document.createElement('span')
+  const bold = document.createElement('strong')
+  bold.appendChild(document.createTextNode(text))
+  const a = document.createElement('a')
+  a.href = url
+  a.appendChild(document.createTextNode(urlText))
+  span.appendChild(bold)
+  span.appendChild(a)
   span.appendChild(document.createElement('br'))
   return span
 }

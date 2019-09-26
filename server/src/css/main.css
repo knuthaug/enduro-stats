@@ -318,3 +318,7 @@ a.btn {
   height: 100%;
   min-height: 500px;
 }
+
+.map-chart-container {
+  height: 350px;
+}
