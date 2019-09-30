@@ -1,32 +1,34 @@
-Pos;chiptime;name;Bib#;club;class;FE1;FE1 Pos;FE2;FE2 Pos;FE3;FE3 Pos;FE4;FE4 Pos;FE5;FE5 Pos;gender
-1;01:06:54;Vera Leivsdottir ;2;Bergen MTB Klubb       ;Damer 17-29 år;00:14:15;1;00:13:20;1;00:06:13;1;00:15:53;1;0:17:13;1;F
-2;02:45:16;Inga Helene Bovim;34;         ;Damer 17-29 år;00:31:02;2;00:40:23;2;00:12:37;2;00:36:18;2;0:44:56;2;F
-DNS;;Solveig Mostad ;3;         ;Damer 30-45 år;00:27:16;1;00:32:41;1;00:11:01;1;00:31:15;1;;DNS;F
-1;00:55:04;Anders Ruud Gundersen;6;Flytsti         ;Herrer 17-29 år;00:12:27;1;00:11:35;1;00:05:21;1;00:12:06;1;0:13:35;1;M
-2;01:02:48;Gjermund Dalland ;9;Bmk         ;Herrer 17-29 år;00:13:37;2;00:12:41;2;00:05:55;3;00:14:56;2;0:15:39;2;M
-3;01:05:12;Geir Berhovde ;10;         ;Herrer 17-29 år;00:14:27;4;00:13:29;3;00:05:53;2;00:15:33;3;0:15:50;3;M
-4;01:10:53;Jørgen Omre Larsen;12;Søfteland Sladdeforening        ;Herrer 17-29 år;00:14:25;3;00:13:56;4;00:06:16;4;00:15:43;4;0:20:33;4;M
-DNS;;Torbjørn Vedde ;5;         ;Herrer 17-29 år;00:19:01;6;00:18:35;6;00:07:21;6;00:20:22;6;;DNS;M
-DNS;;Erlend Ruud ;11;Team flytsti        ;Herrer 17-29 år;00:17:30;5;00:14:44;5;00:06:22;5;00:15:44;5;;DNS;M
-1;00:54:48;Magnus Grönberg ;28;Hemsedal IL Sykkel       ;Herrer 30-45 år;00:12:10;2;00:11:06;1;00:05:13;2;00:12:31;1;0:13:48;2;M
-2;01:00:40;Martin Gulsrud ;20;Barkbazar.no         ;Herrer 30-45 år;00:13:39;5;00:12:28;2;00:06:03;6;00:13:56;5;0:14:34;3;M
-3;01:01:56;Kaspar Strand Kvalø;26;         ;Herrer 30-45 år;00:13:10;4;00:12:39;4;00:05:35;3;00:13:46;3;0:16:46;6;M
-4;01:01:57;Gustav Norvik ;33;         ;Herrer 30-45 år;00:13:41;6;00:12:32;3;00:05:55;5;00:13:54;4;0:15:55;4;M
-5;01:04:27;Emil Carlson ;25;Sk Rye        ;Herrer 30-45 år;00:11:52;1;00:21:15;9;00:05:03;1;00:12:57;2;0:13:20;1;M
-6;01:05:49;Ola Paaske Gulbrandsen;16;         ;Herrer 30-45 år;00:14:58;9;00:13:15;6;00:06:17;7;00:14:41;6;0:16:38;5;M
-7;01:06:32;Björn Asplund ;22;         ;Herrer 30-45 år;00:14:24;8;00:13:08;5;00:06:25;8;00:15:41;8;0:16:54;7;M
-8;01:18:10;Sondre Knapstad ;23;Bergen MTB Klubb       ;Herrer 30-45 år;00:15:07;10;00:22:28;10;00:06:42;9;00:15:43;9;0:18:10;8;M
-9;01:26:56;Espen Ilstad ;18;         ;Herrer 30-45 år;00:18:36;11;00:19:16;8;00:07:28;11;00:19:25;10;0:22:11;9;M
-DNF;;Morten Sæther ;17;         ;Herrer 30-45 år;00:26:14;12;DNS;;DNS;;DNS;;;DNS;M
-DNF;;Karsten Hjelseth ;19;         ;Herrer 30-45 år;00:28:18;13;DNS;;00:07:00;10;DNS;;;DNS;M
-DNF;;Jostein Hole ;21;Team SYKLERIET / Aron Sk / Nedre Buskerud Nerroverla ;Herrer 30-45 år;00:12:52;3;DNS;;DNS;;DNS;;;DNS;M
-DNS;;Kristoffer Jakobsson ;29;Hemsedal il        ;Herrer 30-45 år;00:14:06;7;00:13:50;7;00:05:50;4;00:15:13;7;;DNS;M
-1;01:14:44;Magnus Jensen ;32;Ready         ;Herrer 46-60 år;00:25:13;2;00:13:41;1;00:05:59;1;00:14:28;1;0:15:23;1;M
-2;01:35:45;Rune Paulsen ;30;Tck         ;Herrer 46-60 år;00:21:23;1;00:21:26;2;00:08:52;2;00:19:53;2;0:24:11;2;M
-1;41:58:00;Peder Kirkebøen ;49;Hemsedal il sykkelgruppa       ;Herrer Junior 13-17 år;00:12:07;1;00:11:16;2;00:05:28;2;00:13:07;1;;;M
-2;43:04:00;Tobias Sandengen ;45;Horten OCK        ;Herrer Junior 13-17 år;00:12:29;2;00:11:35;3;00:05:18;1;00:13:42;3;;;M
-3;43:08:00;Falk Håkenstad-Bråten ;47;Lillehammer Ck        ;Herrer Junior 13-17 år;00:12:29;3;00:11:11;1;00:05:57;5;00:13:31;2;;;M
-4;46:06:00;Leo Solland ;44;SK Rye/ Team Santa Cruz Sykler    ;Herrer Junior 13-17 år;00:13:43;4;00:12:27;4;00:05:47;4;00:14:09;4;;;M
-5;50:02:00;Simen Brekke ;48;Heming IL        ;Herrer Junior 13-17 år;00:15:21;5;00:13:41;5;00:05:58;6;00:15:02;5;;;M
-6;53:00:00;Noah Holmefjord-Dalland ;42;BMK         ;Herrer Junior 13-17 år;00:18:00;6;00:13:46;6;00:05:35;3;00:15:39;6;;;M
-DNS;;Christian Ødegård ;46;Hemsedal IL sykkelklubb       ;Herrer Junior 13-17 år;DNF;;DNS;;DNS;;DNS;;;;M
+﻿Pos;chiptime;name;Bib#;club;Class;FE1;FE1 Pos;FE2;FE2 Pos;FE3;FE3 Pos;FE4;FE4 Pos;FE5;FE5 Pos;gender
+1;01:06:54;Vera Leivsdottir ;2;Bergen MTB Klubb       ;Kvinner 17-29 år;00:14:15;1;00:13:20;1;00:06:13;1;00:15:53;1;0:17:13;1;F
+2;02:45:16;Inga Helene Bovim;34;         ;Kvinner 17-29 år;00:31:02;2;00:40:23;2;00:12:37;2;00:36:18;2;0:44:56;2;F
+DNS;;Solveig Mostad ;3;         ;Kvinner 30-45 år;00:27:16;1;00:32:41;1;00:11:01;1;00:31:15;1;;DNS;F
+1;00:55:04;Anders Ruud Gundersen;6;Flytsti         ;Menn 17-29 år;00:12:27;1;00:11:35;1;00:05:21;1;00:12:06;1;0:13:35;1;M
+2;01:02:48;Gjermund Dalland ;9;Bmk         ;Menn 17-29 år;00:13:37;2;00:12:41;2;00:05:55;3;00:14:56;2;0:15:39;2;M
+3;01:05:12;Geir Berhovde ;10;         ;Menn 17-29 år;00:14:27;4;00:13:29;3;00:05:53;2;00:15:33;3;0:15:50;3;M
+4;01:10:53;Jørgen Omre Larsen;12;Søfteland Sladdeforening        ;Menn 17-29 år;00:14:25;3;00:13:56;4;00:06:16;4;00:15:43;4;0:20:33;4;M
+DNS;;Torbjørn Vedde ;5;         ;Menn 17-29 år;00:19:01;6;00:18:35;6;00:07:21;6;00:20:22;6;;DNS;M
+DNS;;Erlend Ruud ;11;Team flytsti        ;Menn 17-29 år;00:17:30;5;00:14:44;5;00:06:22;5;00:15:44;5;;DNS;M
+1;00:54:48;Magnus Grönberg ;28;Hemsedal IL Sykkel       ;Menn 30-45 år;00:12:10;2;00:11:06;1;00:05:13;2;00:12:31;1;0:13:48;2;M
+2;01:00:40;Martin Gulsrud ;20;Barkbazar.no         ;Menn 30-45 år;00:13:39;5;00:12:28;2;00:06:03;6;00:13:56;5;0:14:34;3;M
+3;01:01:56;Kaspar Strand Kvalø;26;         ;Menn 30-45 år;00:13:10;4;00:12:39;4;00:05:35;3;00:13:46;3;0:16:46;6;M
+4;01:01:57;Gustav Norvik ;33;         ;Menn 30-45 år;00:13:41;6;00:12:32;3;00:05:55;5;00:13:54;4;0:15:55;4;M
+5;01:04:27;Emil Carlson ;25;Sk Rye        ;Menn 30-45 år;00:11:52;1;00:21:15;9;00:05:03;1;00:12:57;2;0:13:20;1;M
+6;01:05:49;Ola Paaske Gulbrandsen;16;         ;Menn 30-45 år;00:14:58;9;00:13:15;6;00:06:17;7;00:14:41;6;0:16:38;5;M
+7;01:06:32;Björn Asplund ;22;         ;Menn 30-45 år;00:14:24;8;00:13:08;5;00:06:25;8;00:15:41;8;0:16:54;7;M
+8;01:18:10;Sondre Knapstad ;23;Bergen MTB Klubb       ;Menn 30-45 år;00:15:07;10;00:22:28;10;00:06:42;9;00:15:43;9;0:18:10;8;M
+9;01:26:56;Espen Ilstad ;18;         ;Menn 30-45 år;00:18:36;11;00:19:16;8;00:07:28;11;00:19:25;10;0:22:11;9;M
+DNF;;Morten Sæther ;17;         ;Menn 30-45 år;00:26:14;12;DNS;;DNS;;DNS;;;DNS;M
+DNF;;Karsten Hjelseth ;19;         ;Menn 30-45 år;00:28:18;13;DNS;;00:07:00;10;DNS;;;DNS;M
+DNF;;Jostein Hole ;21;Team SYKLERIET / Aron Sk / Nedre Buskerud Nerroverla ;Menn 30-45 år;00:12:52;3;DNS;;DNS;;DNS;;;DNS;M
+DNS;;Kristoffer Jakobsson ;29;Hemsedal il        ;Menn 30-45 år;00:14:06;7;00:13:50;7;00:05:50;4;00:15:13;7;;DNS;M
+1;01:14:44;Magnus Jensen ;32;Ready         ;Menn 46-60 år;00:25:13;2;00:13:41;1;00:05:59;1;00:14:28;1;0:15:23;1;M
+2;01:35:45;Rune Paulsen ;30;Tck         ;Menn 46-60 år;00:21:23;1;00:21:26;2;00:08:52;2;00:19:53;2;0:24:11;2;M
+1;41:58:00;Peder Kirkebøen ;49;Hemsedal il sykkelgruppa       ;Menn Junior 13-17 år;00:12:07;1;00:11:16;2;00:05:28;2;00:13:07;1;;;M
+2;43:04:00;Tobias Sandengen ;45;Horten OCK        ;Menn Junior 13-17 år;00:12:29;2;00:11:35;3;00:05:18;1;00:13:42;3;;;M
+3;43:08:00;Falk Håkenstad-Bråten ;47;Lillehammer Ck        ;Menn Junior 13-17 år;00:12:29;3;00:11:11;1;00:05:57;5;00:13:31;2;;;M
+4;46:06:00;Leo Solland ;44;SK Rye/ Team Santa Cruz Sykler    ;Menn Junior 13-17 år;00:13:43;4;00:12:27;4;00:05:47;4;00:14:09;4;;;M
+5;50:02:00;Simen Brekke ;48;Heming IL        ;Menn Junior 13-17 år;00:15:21;5;00:13:41;5;00:05:58;6;00:15:02;5;;;M
+6;53:00:00;Noah Holmefjord-Dalland ;42;BMK         ;Menn Junior 13-17 år;00:18:00;6;00:13:46;6;00:05:35;3;00:15:39;6;;;M
+DNS;;Christian Ødegård ;46;Hemsedal IL sykkelklubb       ;Menn Junior 13-17 år;DNF;;DNS;;DNS;;DNS;;;;M
+;;  ;;         ;;;;;;;;;;;;M
+;;;;;;;;;;;;;;;;M

@@ -111,6 +111,11 @@ async function readRaceData (file) {
     const datafile = await afs.readFile(file, 'utf-8')
     const data = JSON.parse(datafile)
     data.uid = md5(data.name + data.year)
+
+    if(!data.files) {
+      data.files = []
+    }
+
     const raceId = await db.insertRace(data, 0)
 
     if (data.hasOwnProperty('links')) {
