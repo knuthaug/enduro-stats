@@ -13,7 +13,37 @@ const comparisonGraphMapper = require('./comparisonGraphMapper')
 const db = new Db()
 
 async function manifestHandler (req) {
-  return {}
+  return {
+    name: 'Norsk enduro'
+  }
+}
+
+async function mapHandler(req) {
+
+  if(!req.params.uid ) {
+    return { status: 404 }
+  }
+
+  const race = await db.findRace(req.params.uid)
+
+  if(!race.lat) {
+    return { status: 404 }
+  }
+
+  const data = {
+    center: [race.lat, race.long],
+    files: race.files.split(',')
+  }
+
+  if (!race.id) {
+    return { status: 404 }
+  }
+  return {
+    status: 200,
+    race,
+    gpxData: JSON.stringify(data),
+    title: `Kart ${race.name}: Norsk enduro`
+  }
 }
 
 async function racesHandler (req) {
@@ -316,5 +346,6 @@ module.exports = {
   compareHandler,
   compareGraphHandler,
   rankHandler,
-  manifestHandler
+  manifestHandler,
+  mapHandler
 }

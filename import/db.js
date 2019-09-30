@@ -58,8 +58,8 @@ class Db {
     }
 
     logger.info(`Inserting race ${race.name} year=${race.year} into races`)
-    const query = 'INSERT INTO races(name, stages, date, year, uid, text, series) VALUES($1, $2, $3, $4, $5, $6, $7)'
-    const values = [race.name, stages, race.date, race.year, race.uid, race.text, race.series]
+    const query = 'INSERT INTO races(name, stages, date, year, uid, text, series, lat, long, files) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)'
+    const values = [race.name, stages, race.date, race.year, race.uid, race.text, race.series, race.lat, race.long, race.files.join(',')]
     await this.insert(query, values)
     return this.findRace(race.name, race.year)
   }

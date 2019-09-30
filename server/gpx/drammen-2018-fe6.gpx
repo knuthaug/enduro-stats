@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<gpx version="1.1" creator="Trailguide" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd http://www.cluetrust.com/XML/GPXDATA/1/0 http://www.cluetrust.com/Schemas/gpxdata10.xsd http://www.garmin.com/xmlschemas/TrackPointExtension/v1 http://www.garmin.com/xmlschemas/TrackPointExtensionv1.xsd" xmlns:gpxdata="http://www.cluetrust.com/XML/GPXDATA/1/0">
+<metadata>
+<name>Stage 6 - Star Wars</name>
+<author><name>Peter Seidl/Trailguide</name></author>
+<copyright author="Trailguide/ObjectPlanet"><year>2018</year></copyright>
+</metadata>
+<trk>
+<name>Stage 6 - Star Wars</name>
+<trkseg><trkpt lat="59.766665026545525" lon="10.126275038346648"><ele>140</ele></trkpt>
+<trkpt lat="59.76659101434052" lon="10.126231033354998"><ele>139</ele></trkpt>
+<trkpt lat="59.76656997576356" lon="10.126192979514599"><ele>138</ele></trkpt>
+<trkpt lat="59.766518007963896" lon="10.12617303058505"><ele>136</ele></trkpt>
+<trkpt lat="59.766451036557555" lon="10.126104969531298"><ele>134</ele></trkpt>
+<trkpt lat="59.76629597134888" lon="10.126212006434798"><ele>132</ele></trkpt>
+<trkpt lat="59.76607804186642" lon="10.126245031133294"><ele>131</ele></trkpt>
+<trkpt lat="59.765978967770934" lon="10.12619599699974"><ele>129</ele></trkpt>
+<trkpt lat="59.765702029690146" lon="10.126154003664851"><ele>124</ele></trkpt>
+<trkpt lat="59.76553296670318" lon="10.12621602974832"><ele>122</ele></trkpt>
+<trkpt lat="59.76549197919667" lon="10.126250982284546"><ele>121</ele></trkpt>
+<trkpt lat="59.76534898392856" lon="10.126575026661158"><ele>118</ele></trkpt>
+<trkpt lat="59.76529802195728" lon="10.126749034970999"><ele>117</ele></trkpt>
+<trkpt lat="59.76517899893224" lon="10.127052962779999"><ele>113</ele></trkpt>
+<trkpt lat="59.76515200920403" lon="10.127065032720566"><ele>112</ele></trkpt>
+<trkpt lat="59.76508503779769" lon="10.126999989151955"><ele>111</ele></trkpt>
+<trkpt lat="59.764929972589016" lon="10.126746017485857"><ele>109</ele></trkpt>
+<trkpt lat="59.76480801589787" lon="10.126491039991379"><ele>105</ele></trkpt>
+<trkpt lat="59.76474498398602" lon="10.126246036961675"><ele>100</ele></trkpt>
+<trkpt lat="59.76469997316599" lon="10.126142017543316"><ele>99</ele></trkpt>
+<trkpt lat="59.76453099399805" lon="10.125968009233475"><ele>96</ele></trkpt>
+<trkpt lat="59.76444398984313" lon="10.12596096843481"><ele>95</ele></trkpt>
+<trkpt lat="59.76436100900173" lon="10.126014025881886"><ele>94</ele></trkpt>
+<trkpt lat="59.76427400484681" lon="10.126028023660183"><ele>92</ele></trkpt>
+<trkpt lat="59.76409597322345" lon="10.126102035865188"><ele>90</ele></trkpt>
+<trkpt lat="59.76397502236068" lon="10.126101030036807"><ele>86</ele></trkpt>
+<trkpt lat="59.76382196880877" lon="10.126185016706586"><ele>81</ele></trkpt>
+<trkpt lat="59.76371702738106" lon="10.126278977841139"><ele>76</ele></trkpt>
+<trkpt lat="59.763659024611115" lon="10.126378973945975"><ele>75</ele></trkpt>
+<trkpt lat="59.7635199688375" lon="10.12640998698771"><ele>72</ele></trkpt>
+<trkpt lat="59.76344000548124" lon="10.126500008627772"><ele>70</ele></trkpt>
+<trkpt lat="59.763249987736344" lon="10.126573015004396"><ele>68</ele></trkpt>
+<trkpt lat="59.76301001384854" lon="10.1264519803226"><ele>67</ele></trkpt>
+<trkpt lat="59.7628309763968" lon="10.126399006694555"><ele>65</ele></trkpt>
+<trkpt lat="59.76279401220381" lon="10.126275960355997"><ele>63</ele></trkpt>
+<trkpt lat="59.76280398666859" lon="10.126200020313263"><ele>62</ele></trkpt>
+<trkpt lat="59.76296198554337" lon="10.125833982601762"><ele>60</ele></trkpt>
+<trkpt lat="59.76310699246824" lon="10.12544296681881"><ele>62</ele></trkpt>
+<trkpt lat="59.76316097192466" lon="10.125254038721323"><ele>63</ele></trkpt>
+<trkpt lat="59.763101963326335" lon="10.125011969357729"><ele>63</ele></trkpt>
+</trkseg>
+</trk>
+</gpx>
