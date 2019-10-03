@@ -25,6 +25,7 @@ async function mapHandler(req) {
   }
 
   const race = await db.findRace(req.params.uid)
+  const stageDetails = await db.stageDetails(req.params.uid)
 
   if(!race.lat) {
     return { status: 404 }
@@ -32,8 +33,10 @@ async function mapHandler(req) {
 
   const data = {
     center: [race.lat, race.long],
-    files: race.files.split(',')
+    stageDetails,
   }
+
+  console.log(stageDetails)
 
   if (!race.id) {
     return { status: 404 }
@@ -111,7 +114,7 @@ async function raceHandler (req) {
     return { status: 404 }
   }
 
-  const links = await db.findRaceLinks(race.id)
+  const links = await db.raceLinks(race.id)
   const raceClasses = await db.classesForRace(req.params.uid)
   const raceResults = await db.raceResults(req.params.uid)
   const [stages, results, graphs] = resultViewMapper(raceClasses, raceResults)
@@ -145,7 +148,7 @@ async function fullRaceHandler (req) {
     return { status: 404 }
   }
 
-  const links = await db.findRaceLinks(race.id)
+  const links = await db.raceLinks(race.id)
   const raceClasses = await db.classesForRace(req.params.uid)
   const raceResults = await db.raceResults(req.params.uid)
   const [stages, results] = fullResultViewMapper(raceClasses, raceResults)

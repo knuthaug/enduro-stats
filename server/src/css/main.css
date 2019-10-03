@@ -317,8 +317,18 @@ a.btn {
 #map {
   height: 100%;
   min-height: 500px;
+  padding-bottom: 5px;
 }
 
 .map-chart-container {
-  height: 350px;
+  height: 300px;
+}
+
+#details {
+  padding-top: 10px;
+}
+
+.details-row {
+  padding-bottom: 5px;
+  border-bottom: 1px solid white;
 }

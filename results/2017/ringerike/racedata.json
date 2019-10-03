@@ -2,5 +2,25 @@
   "name": "Ringerike enduro",
   "year": 2017,
   "date": "2017-10-01", 
-  "series": "Østafjells enduroserie"
+  "series": "Østafjells enduroserie",
+  "details": {
+     {
+      name: "FE 1",
+      strava_name: "",
+      file: "ringerike-2017-fe1.gpx",
+      strava_url: ""
+     },
+    {
+      name: "FE 2",
+      strava_name: "",
+      file: "ringerike-2017-fe2.gpx",
+      strava_url: ""
+    },
+    {
+      name: "FE 3",
+      strava_name: "",
+      file: "ringerike-2017-fe3.gpx",
+      strava_url: ""
+    }
+  }
 }

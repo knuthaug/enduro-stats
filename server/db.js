@@ -13,7 +13,6 @@ class Db {
   constructor () {
     this.pool = new Pool(options)
     this.winnerTimeOfRace = this.memoize(this.winnerTimeOfRace)
-    // this.ridersForClassAndRace = this.memoize(this.ridersForClassAndRace)
   }
 
   async findRaces (limit) {
@@ -39,9 +38,15 @@ class Db {
     return {}
   }
 
-  async findRaceLinks (id) {
+  async raceLinks (raceId) {
     const query = 'SELECT * from race_links WHERE race_id = $1'
-    const values = [id]
+    const values = [raceId]
+    return this.find(query, values)
+  }
+
+  async stageDetails (raceUid) {
+    const query = 'SELECT * from stages_details WHERE race_id = (select id from races where uid = $1) order by name'
+    const values = [raceUid]
     return this.find(query, values)
   }
 

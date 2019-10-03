@@ -58,8 +58,8 @@ class Db {
     }
 
     logger.info(`Inserting race ${race.name} year=${race.year} into races`)
-    const query = 'INSERT INTO races(name, stages, date, year, uid, text, series, lat, long, files) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)'
-    const values = [race.name, stages, race.date, race.year, race.uid, race.text, race.series, race.lat, race.long, race.files.join(',')]
+    const query = 'INSERT INTO races(name, stages, date, year, uid, text, series, lat, long) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9)'
+    const values = [race.name, stages, race.date, race.year, race.uid, race.text, race.series, race.lat, race.long]
     await this.insert(query, values)
     return this.findRace(race.name, race.year)
   }
@@ -70,6 +70,16 @@ class Db {
 
     for (let i = 0; i < links.length; i++) {
       const values = [links[i].type, links[i].url, links[i].desc, raceId]
+      this.insert(query, values)
+    }
+  }
+
+  async insertStageDetails (raceId, details) {
+    logger.info(`Inserting stage details for race id ${raceId}`)
+    const query = 'INSERT INTO stages_details(name, strava_name, strava_url, filename, race_id) VALUES($1, $2, $3, $4, $5)'
+
+    for (let i = 0; i < details.length; i++) {
+      const values = [details[i].name, details[i].strava_name, details[i].strava_url, details[i].file, raceId]
       this.insert(query, values)
     }
   }

@@ -112,15 +112,17 @@ async function readRaceData (file) {
     const data = JSON.parse(datafile)
     data.uid = md5(data.name + data.year)
 
-    if(!data.files) {
-      data.files = []
-    }
 
     const raceId = await db.insertRace(data, 0)
 
     if (data.hasOwnProperty('links')) {
       await db.insertRaceLinks(raceId, data.links)
     }
+
+    if (data.hasOwnProperty('details')) {
+      await db.insertStageDetails(raceId, data.details)
+    }
+
   } else {
     logger.error(`Data file ${file} was not found`)
     console.log(`Data file ${file} was not found`)
@@ -192,6 +194,10 @@ async function readCompleteRaceFile (filename, datafile, mode) {
 
   if (data.race.hasOwnProperty('links')) {
     db.insertRaceLinks(raceId, data.race.links)
+  }
+
+  if (data.race.hasOwnProperty('details')) {
+    db.insertStageDetails(raceId, data.race.details)
   }
 
   return { raceName: data.race.name, raceYear: data.race.year, raceId: raceId, raceDate: data.race.date }

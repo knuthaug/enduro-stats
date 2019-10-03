@@ -19,20 +19,15 @@ exports.up = function(db) {
     type: 'real',
     notNull: false
   });
-  db.addColumn('races', 'long', {
+  return db.addColumn('races', 'long', {
     type: 'real',
-    notNull: false
-  });
-  return db.addColumn('races', 'files', {
-    type: 'string',
     notNull: false
   });
 };
 
 exports.down = function(db) {
   db.removeColumn('races', 'lat');
-  db.removeColumn('races', 'long');
-  return db.removeColumn('races', 'files');
+  return db.removeColumn('races', 'long');
 };
 
 exports._meta = {

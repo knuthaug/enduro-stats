@@ -8,12 +8,12 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
   const parent = document.getElementById('details')
   var map = createMap(data)
-  addFiles(map, data.files, parent)
+  addFiles(map, data.stageDetails, parent)
 })
 
-function addFiles(map, files, parent) {
-  files.forEach((f, index) => {
-    new L.GPX(`/gpx/${f}`, {
+function addFiles(map, stages, parent) {
+  stages.forEach((s, index) => {
+    new L.GPX(`/gpx/${s.filename}`, {
       async: true,
       polyline_options: {
         color: '#458fd9',
@@ -34,7 +34,13 @@ function addFiles(map, files, parent) {
       e.target.bindTooltip(`<h4>${g.get_name()}</h4><p>Lengde: ${Math.round(g.get_distance())} meter, høydemeter: ${Math.round(g.get_elevation_loss())}</p>`, { direction: 'top'})
 
       //add details
-      parent.appendChild(addCell(g))
+      parent.appendChild(addCell(g, s))
+
+      const row = document.createElement('div')
+      row.classList.toggle("row")
+      row.appendChild(addSpace('col-3'))
+      row.appendChild(addSpace('col-6', 'details-row'))
+      parent.appendChild(row)
 
       //graph
       setupGraph(g.get_name(), g._info.elevation._points)
@@ -109,7 +115,7 @@ function setupGraph(id, data) {
   })
 }
 
-function addCell(g) {
+function addCell(g, stage) {
   const row = document.createElement('div')
   row.classList.toggle("row")
   row.appendChild(addSpace())
@@ -129,25 +135,28 @@ function addCell(g) {
   const text = document.createTextNode(g.get_name())
   title.appendChild(text)
   content.appendChild(title)
-  content.appendChild(addDetails(g))
+  content.appendChild(addDetails(g, stage))
   row.appendChild(content)
   row.appendChild(mapHolder)
   return row
 }
 
-function addSpace() {
+function addSpace(clazz = 'col-1', clazz2 = null) {
   const div = document.createElement('div')
-  div.classList.toggle('col-1')
+  div.classList.toggle(clazz)
+  if(clazz2) {
+    div.classList.toggle(clazz2)
+  }
   return div
 }
  
-function addDetails(g) {
+function addDetails(g, stage) {
   const p = document.createElement('p')
   p.appendChild(row(g, 'Lengde: ', 'meter', g.get_distance()))
   p.appendChild(row(g, 'Høydemeter ned: ', 'meter', g.get_elevation_loss()))
   p.appendChild(row(g, 'Høydemeter opp: ', 'meter', g.get_elevation_gain()))
   p.appendChild(row(g, 'Gjennomsnittlig fall: ', '%', (g.get_elevation_loss() / g.get_distance()) * 100))
-  p.appendChild(rowLink(g, 'Strava-segment: ', 'test', 'https://google.com'))
+  p.appendChild(rowLink(g, 'Strava-segment: ', stage.strava_name, stage.strava_url))
   //p.appendChild(row(g, 'Bestetid strava: ', '', ''))
   return p
 }

@@ -76,10 +76,6 @@ class Mylaps extends Converter {
       race = JSON.parse(this.datafile)
     }
 
-    if(!race.files) {
-      race.files = []
-    }
-
     race.uid = this.checksum(race.name + race.year)
     const stages = await this.parseStages()
     return { race, stages }

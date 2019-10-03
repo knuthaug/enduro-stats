@@ -6,12 +6,37 @@
   "text": "Uoffisielt NM i enduro for 2019, alltid med freshe stier og lange etapper. ",
   "lat": 60.5740,
   "long": 9.1057,
-  "files": [
-    "nesbyen-2019-fe1.gpx",
-    "nesbyen-2019-fe2.gpx",
-    "nesbyen-2019-fe3.gpx",
-    "nesbyen-2019-fe4.gpx",
-    "nesbyen-2019-fe5.gpx"
+  "details": [
+    {
+      name: "FE 1",
+      strava_name: "",
+      file: "nesbyen-2019-fe1.gpx",
+      strava_url: ""
+    },
+    {
+      name: "FE 2",
+      strava_name: "",
+      file: "nesbyen-2019-fe2.gpx",
+      strava_url: ""
+    },
+    {
+      name: "FE 3",
+      strava_name: "",
+      file: "nesbyen-2019-fe3.gpx",
+      strava_url: ""
+    },
+    {
+      name: "FE 4",
+      strava_name: "",
+      file: "nesbyen-2019-fe4.gpx",
+      strava_url: ""
+    },
+    {
+      name: "FE 5",
+      strava_name: "",
+      file: "nesbyen-2019-fe5.gpx",
+      strava_url: ""
+    }
   ],
   "links": [
     {

@@ -2,14 +2,29 @@
   "name": "Hakadal enduro",
   "year": 2019,
   "date": "2019-09-08",
-  "text": "Også et ritt med mye nedbør i uka før og under lørdagens gjennomkjøring, som lagde mye gjørme og tunge løyper. Med rundt 2 kilometer per etappe ble det en slitsom dag på jobben for mange. 4 etappe ble avlyst pga. forholdene.",
+  "text": "Også et ritt med mye nedbør i uka før og under lørdagens gjennomkjøring, som lagde mye gjørme og tunge løyper. Med rundt 2 kilometer per etappe ble det en slitsom dag på jobben for mange. 4. etappe ble avlyst pga. forholdene.",
   "series": "Østafjells enduroserie",
   "lat": 60.0996,
   "long": 10.8381,
-  "files": [
-    "hakadal-2019-fe1.gpx",
-    "hakadal-2019-fe2.gpx",
-    "hakadal-2019-fe3.gpx"
+  "details": [
+    {
+      "name": "FE 1",
+      "strava_name": "FE1,AFE2,FE4 Hakadal Enduro 2019",
+      "file": "hakadal-2019-fe1.gpx",
+      "strava_url": "https://www.strava.com/segments/21273217"
+    },
+    {
+      "name": "FE 2",
+      "strava_name": "FE2 Hakadal Enduro 2019",
+      "file": "hakadal-2019-fe2.gpx",
+      "strava_url": "https://www.strava.com/segments/21373418"
+    },
+    {
+      "name": "FE 3",
+      "strava_name": "FE3 Hakadal Enduro 2019",
+      "file": "hakadal-2019-fe3.gpx",
+      "strava_url": "https://www.strava.com/segments/21273234"
+    }
   ],
   "links": [
     {
