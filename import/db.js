@@ -19,7 +19,7 @@ class Db {
     try {
       const res = await client.query(query, values)
       return res
-    } catch (error) {
+    } catch (error) { 
       logger.error(`error for insert! Query: ${query}, values:${values}`)
       logger.error(error)
       return { error }
@@ -40,6 +40,20 @@ class Db {
     } finally {
       await client.release()
     }
+  }
+
+  async deleteRace(uid) {
+    const id = await this.find('SELECT id from races where uid = $1', [uid], '')
+
+    await this.update('DELETE FROM raw_results where race_id = $1', [id])
+    await this.update('DELETE FROM results where race_id = $1', [id])
+    await this.update('DELETE FROM stages where race_id = $1', [id])
+    await this.update('DELETE FROM stages_details where race_id = $1', [id])
+    await this.update('DELETE FROM stages_details where race_id = $1', [id])
+    await this.update('DELETE FROM race_links where race_id = $1', [id])
+    await this.update('DELETE FROM rider_races where race_id = $1', [id])
+    await this.update('DELETE FROM races where id = $1', [id])
+    return
   }
 
   async updateClub (id, club) {
