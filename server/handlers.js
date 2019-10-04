@@ -33,10 +33,10 @@ async function mapHandler(req) {
 
   const data = {
     center: [race.lat, race.long],
+    zoom: race.zoom || 14,
     stageDetails,
   }
 
-  console.log(stageDetails)
 
   if (!race.id) {
     return { status: 404 }

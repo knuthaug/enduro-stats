@@ -185,7 +185,7 @@ function rowLink(g, text, urlText, url) {
 }
 
 function createMap(data) {
-  const map = L.map('map').setView(data.center, 14)
+  const map = L.map('map').setView(data.center, data.zoom)
   const mtbmapTiles = 'https://mtbmap.no/tiles/osm/mtbmap/{z}/{x}/{y}.jpg'
   const osmTiles = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
   L.tileLayer(mtbmapTiles, {
