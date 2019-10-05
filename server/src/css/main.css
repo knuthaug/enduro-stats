@@ -62,6 +62,14 @@ a {
 
 }
 
+main a[href] {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid white;
+  padding-bottom: 0.4px;
+
+}
+
 header a {
   border-bottom: 0;
 }
@@ -71,6 +79,10 @@ a:hover {
   color: #fff;
   text-decoration: none;
   border-bottom: 1px solid white;
+}
+
+a.toplink {
+  border-bottom: 0 !important;
 }
 
 .hide {
@@ -287,7 +299,7 @@ table[data-sortable] th[data-sorted-direction="ascending"]:after {
 }
 
 a.btn {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 .race-details {

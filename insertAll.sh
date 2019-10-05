@@ -179,4 +179,4 @@ echo "  Hemsedal"
 node import/importer.js -m -f results/2019/hemsedal/hemsedal-2019.csv
 
 echo "  Trysil"
-node import/importer.js -m -f results/2019/trysl/trysil-2019.csv
+node import/importer.js -m -f results/2019/trysil/trysil-2019.csv
