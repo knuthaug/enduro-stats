@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<gpx version="1.1" creator="Trailguide" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd http://www.cluetrust.com/XML/GPXDATA/1/0 http://www.cluetrust.com/Schemas/gpxdata10.xsd http://www.garmin.com/xmlschemas/TrackPointExtension/v1 http://www.garmin.com/xmlschemas/TrackPointExtensionv1.xsd" xmlns:gpxdata="http://www.cluetrust.com/XML/GPXDATA/1/0">
+<metadata>
+<name>FE 2 - 8020 Trysil Enduro 2019</name>
+<author><name>Olve Norderhaug/Trailguide</name></author>
+<copyright author="Trailguide/ObjectPlanet"><year>2019</year></copyright>
+</metadata>
+<trk>
+<name>FE 2 - 8020 Trysil Enduro 2019</name>
+<trkseg><trkpt lat="61.331842" lon="12.260336"><ele>547</ele></trkpt>
+<trkpt lat="61.331793" lon="12.260584"><ele>547</ele></trkpt>
+<trkpt lat="61.331761" lon="12.260658"><ele>547</ele></trkpt>
+<trkpt lat="61.331641" lon="12.260828"><ele>545</ele></trkpt>
+<trkpt lat="61.331496" lon="12.26099"><ele>543</ele></trkpt>
+<trkpt lat="61.331427" lon="12.261036"><ele>542</ele></trkpt>
+<trkpt lat="61.331266" lon="12.261081"><ele>539</ele></trkpt>
+<trkpt lat="61.331181" lon="12.261048"><ele>537</ele></trkpt>
+<trkpt lat="61.331098" lon="12.260993"><ele>535</ele></trkpt>
+<trkpt lat="61.330958" lon="12.260866"><ele>533</ele></trkpt>
+<trkpt lat="61.330888" lon="12.260842"><ele>532</ele></trkpt>
+<trkpt lat="61.330826" lon="12.26085"><ele>531</ele></trkpt>
+<trkpt lat="61.330783" lon="12.260887"><ele>530</ele></trkpt>
+<trkpt lat="61.330701" lon="12.261006"><ele>529</ele></trkpt>
+<trkpt lat="61.33056" lon="12.261282"><ele>527</ele></trkpt>
+<trkpt lat="61.330448" lon="12.261707"><ele>526</ele></trkpt>
+<trkpt lat="61.330396" lon="12.262197"><ele>527</ele></trkpt>
+<trkpt lat="61.330329" lon="12.262495"><ele>525</ele></trkpt>
+<trkpt lat="61.330285" lon="12.262579"><ele>524</ele></trkpt>
+<trkpt lat="61.330165" lon="12.262706"><ele>522</ele></trkpt>
+<trkpt lat="61.330043" lon="12.262767"><ele>520</ele></trkpt>
+<trkpt lat="61.329887" lon="12.2628"><ele>517</ele></trkpt>
+<trkpt lat="61.329738" lon="12.262901"><ele>515</ele></trkpt>
+<trkpt lat="61.329621" lon="12.262885"><ele>513</ele></trkpt>
+<trkpt lat="61.329229" lon="12.262919"><ele>506</ele></trkpt>
+<trkpt lat="61.329046" lon="12.263028"><ele>503</ele></trkpt>
+<trkpt lat="61.3288" lon="12.263306"><ele>500</ele></trkpt>
+<trkpt lat="61.32864" lon="12.26331"><ele>499</ele></trkpt>
+<trkpt lat="61.3286" lon="12.263342"><ele>498</ele></trkpt>
+<trkpt lat="61.328555" lon="12.26342"><ele>498</ele></trkpt>
+<trkpt lat="61.328521" lon="12.263526"><ele>497</ele></trkpt>
+<trkpt lat="61.328484" lon="12.263896"><ele>494</ele></trkpt>
+<trkpt lat="61.328452" lon="12.263991"><ele>493</ele></trkpt>
+<trkpt lat="61.328345" lon="12.264195"><ele>490</ele></trkpt>
+<trkpt lat="61.328257" lon="12.264521"><ele>484</ele></trkpt>
+<trkpt lat="61.32822" lon="12.26479"><ele>479</ele></trkpt>
+<trkpt lat="61.328158" lon="12.265085"><ele>472</ele></trkpt>
+<trkpt lat="61.328178" lon="12.265328"><ele>468</ele></trkpt>
+<trkpt lat="61.32821" lon="12.265407"><ele>466</ele></trkpt>
+<trkpt lat="61.328259" lon="12.265473"><ele>465</ele></trkpt>
+<trkpt lat="61.328311" lon="12.265502"><ele>465</ele></trkpt>
+<trkpt lat="61.328361" lon="12.26557"><ele>464</ele></trkpt>
+<trkpt lat="61.328409" lon="12.265679"><ele>462</ele></trkpt>
+<trkpt lat="61.328449" lon="12.265796"><ele>460</ele></trkpt>
+<trkpt lat="61.328481" lon="12.266067"><ele>455</ele></trkpt>
+<trkpt lat="61.328472" lon="12.266343"><ele>452</ele></trkpt>
+<trkpt lat="61.328441" lon="12.266642"><ele>449</ele></trkpt>
+<trkpt lat="61.328332" lon="12.267224"><ele>443</ele></trkpt>
+<trkpt lat="61.328352" lon="12.267663"><ele>440</ele></trkpt>
+<trkpt lat="61.328325" lon="12.268198"><ele>434</ele></trkpt>
+</trkseg>
+</trk>
+</gpx>

@@ -2,7 +2,7 @@
   "name": "DrammEnduro",
   "year": 2018,
   "date": "2018-07-01",
-    "text": "DrammEnduro 2018 stilte med rekordtørt føre og 30+ varmegrader. Med lange etapper og enda lenger transport ble det en lang dag på sykkelen, men stiene på etappene veide mer enn opp for det. Drammen har noen av de feteste naturlige stiene i østlandsområdet, med mye svaberg og til tider høy fart. ",
+  "text": "DrammEnduro 2018 stilte med rekordtørt føre og 30+ varmegrader. Med lange etapper og enda lenger transport ble det en lang dag på sykkelen, men stiene på etappene veide mer enn opp for det. Drammen har noen av de feteste naturlige stiene i østlandsområdet, med mye svaberg og til tider høy fart. ",
   "series": "Østafjells enduroserie",
   "lat": 59.7811,
   "long": 10.0489,
@@ -25,7 +25,7 @@
       "strava_name": "",
       "file": "drammen-2018-fe3.gpx",
       "strava_url": ""
-    },''
+    },
     {
       "name": "FE 4",
       "strava_name": "",
@@ -43,12 +43,13 @@
       "strava_name": "",
       "file": "drammen-2018-fe6.gpx",
       "strava_url": ""
-    },
+    }
   ],
-  "links":
-  {
-    "type": "results",
-    "desc": "Originale resultater",
-    "url": "https://drammenduro.com/resultater/"
-  }
+  "links": [
+    {
+      "type": "results",
+      "desc": "Originale resultater",
+      "url": "https://drammenduro.com/resultater/"
+    }
+  ]
 }

@@ -1,11 +1,11 @@
 {
   "name": "Ringerike enduro",
   "year": 2017,
-  "date": "2017-10-01", 
+  "date": "2017-10-01",
   "series": "Østafjells enduroserie",
   "lat": 60.2393,
   "long": 10.2995,
-  "details": {
+  "details": [
      {
       "name": "FE 1",
       "strava_name": "",
@@ -24,5 +24,5 @@
       "file": "ringerike-2017-fe3.gpx",
       "strava_url": ""
     }
-  }
+  ]
 }
