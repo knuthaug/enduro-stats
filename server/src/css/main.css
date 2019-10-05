@@ -332,6 +332,9 @@ a.btn {
   padding-bottom: 5px;
 }
 
+#map a {
+  color: #000 !important;
+}
 .map-chart-container {
   height: 300px;
 }
