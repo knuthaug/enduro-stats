@@ -156,7 +156,7 @@ function addDetails(g, stage) {
   p.appendChild(row(g, 'Høydemeter ned: ', 'meter', g.get_elevation_loss()))
   p.appendChild(row(g, 'Høydemeter opp: ', 'meter', g.get_elevation_gain()))
   p.appendChild(row(g, 'Gjennomsnittlig fall: ', '%', (g.get_elevation_loss() / g.get_distance()) * 100))
-  p.appendChild(rowLink(g, 'Strava-segment: ', stage.strava_name, stage.strava_url))
+  //p.appendChild(rowLink(g, 'Strava-segment: ', stage.strava_name, stage.strava_url))
   //p.appendChild(row(g, 'Bestetid strava: ', '', ''))
   return p
 }

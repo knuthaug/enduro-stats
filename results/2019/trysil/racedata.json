@@ -1,0 +1,48 @@
+{
+  "name": "80/20 Trysil Enduro",
+  "year": 2019,
+  "date": "2019-10-05",
+  "series": "80/20 enduro series",
+  "text": "Norges stisykkelmekka med på rittkalenderen for første gang i 2019, som avslutningsritt for 80/20-serien. Kalde forhold med litt snø, men Trysil stiller alltid med fete stier.",
+  "lat": 61.3136,
+  "long": 12.2441,
+  "details": [
+    {
+      "name": "FE 1",
+      "strava_name": "",
+      "file": "trysil-2019-fe1.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 2",
+      "strava_name": "",
+      "file": "trysil-2019-fe2.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 3",
+      "strava_name": "",
+      "file": "trysil-2019-fe3.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 4",
+      "strava_name": "",
+      "file": "trysil-2019-fe4.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 5",
+      "strava_name": "",
+      "file": "trysil-2019-fe5.gpx",
+      "strava_url": ""
+    }
+  ],
+  "links": [
+    {
+      "type": "results",
+      "desc": "Originale resultater",
+      "url": "http://www.8020es.no/s/8020-Trysil-Enduro-Resultater.pdf"
+    }
+  ]
+}
