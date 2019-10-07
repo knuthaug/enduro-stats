@@ -35,6 +35,21 @@ th {
   border-bottom: 0;
 }
 
+.backdrop-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.backdrop-overlay img {
+  margin: 0;
+  width: 100%;
+  opacity: 0.25;
+}
+
 .navbar .nav-link.active {
   color: #fff;
   border-bottom-color: #fff;
@@ -127,7 +142,7 @@ a.toplink {
 }
 
 .navbar-bg {
-  background-color: #333;
+  background-color: transparent;
 }
 
 .navbar-brand {
