@@ -42,12 +42,13 @@ th {
   left: 0;
   right: 0;
   z-index: -1;
+  background: linear-gradient(rgba(33,33,33,0) 15%, rgba(0,0,0,1) 100%)
 }
 
 .backdrop-overlay img {
   margin: 0;
   width: 100%;
-  opacity: 0.25;
+  opacity: 0.30;
 }
 
 .navbar .nav-link.active {
