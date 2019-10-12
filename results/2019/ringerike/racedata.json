@@ -1,0 +1,41 @@
+{
+  "name": "Ringerike enduro",
+  "year": 2019,
+  "date": "2019-10-12",
+  "text": "Vått, gjørmete og utfordrende etapper. Men også superfin flyt til tider og gratis boller, kaffe og lapskaus.",
+  "series": "Østafjells enduroserie",
+  "lat": 60.2383,
+  "long": 10.2975,
+  "details": [
+    {
+      "name": "FE 1",
+      "strava_name": "",
+      "file": "rinegrike-2019-fe1.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 2",
+      "strava_name": "",
+      "file": "ringerike-2019-fe2.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 3",
+      "strava_name": "",
+      "file": "ringerike-2019-fe3.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 4",
+      "strava_name": "",
+      "file": "ringerike-2019-fe4.gpx",
+      "strava_url": ""
+    }
+  ],
+  "links": [
+      "type": "results",
+      "desc": "Originale resultater",
+      "url": ""
+    }
+  ]
+}
