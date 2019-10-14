@@ -38,7 +38,9 @@
       "url": "https://www.facebook.com/photo.php?fbid=2371667109714866&set=a.2371666419714935&type=3&theater"
     },
     {
-      
+      "type": "images",
+      "desc": "Bilder fra Jon Borgersen",
+      "url": "http://www.jonborgersen.com/ringerike-enduro-2019"
     }
   ]
 }
