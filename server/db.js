@@ -39,7 +39,7 @@ class Db {
   }
 
   async raceLinks (raceId) {
-    const query = 'SELECT * from race_links WHERE race_id = $1'
+    const query = 'SELECT * from race_links WHERE race_id = $1 order by id'
     const values = [raceId]
     return this.find(query, values)
   }
