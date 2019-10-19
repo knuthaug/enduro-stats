@@ -129,6 +129,7 @@ async function raceHandler (req) {
   return {
     status: 200,
     race,
+    backdrop: true,
     stages,
     results,
     links,

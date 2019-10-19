@@ -43,7 +43,7 @@
       <option value="places" selected>Plasseringer</option>
       <option value="times">Tid bak</option>
       <option value="acc-times">Total tid bak</option>
-    </select>
+    </select>{{#compare @index '===' 0}}{{#if ../../backdrop}}<div class="byline float-right">Foto: <a href="http://terrengsykkel.no/">Kristoffer Kippernes</a></div>{{/if}}{{/compare}}
     <div class="race-prog-graph" id="{{@key}}-graph" data-object-places="{{lookup ../graphs (cat @key '-places')}}" data-object-times="{{lookup ../graphs (cat @key '-times')}}" data-object-acc-times="{{lookup ../graphs (cat @key '-acc-times')}}"></div>
   </div>
 </div>

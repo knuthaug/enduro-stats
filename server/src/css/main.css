@@ -42,13 +42,30 @@ th {
   left: 0;
   right: 0;
   z-index: -1;
-  background: linear-gradient(rgba(33,33,33,0) 15%, rgba(0,0,0,1) 100%)
 }
 
 .backdrop-overlay img {
   margin: 0;
   width: 100%;
   opacity: 0.30;
+}
+
+.rider-img {
+  width: 100%;
+  border-radius: 5px;
+  border: 2px solid #000;
+}
+
+.rider-info {
+  font-size: 120%;
+}
+
+.byline {
+  text-align: right;
+}
+
+.float {
+  float: right;
 }
 
 .navbar .nav-link.active {

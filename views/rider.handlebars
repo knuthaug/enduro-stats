@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-4">
-    <h4>{{rider.name}}</h4>
-    <p>Klubb: {{rider.club}}<br/>
+    <h3>{{rider.name}}</h3>
+    <p class="rider-info">Klubb: {{rider.club}}<br/>
       Ritt: {{numRaces}}<br/>
       Første ritt: {{startYear}}<br/>
       {{#compare year '!==' 0}}
@@ -11,6 +11,23 @@
       {{/compare}}
     </p>
   </div>
+  {{#compare rider.uid '===' '00fde8e308a30a453c1f22e9bf8600a8'}}
+  <div class="col-8">
+    <img class="rider-img" src="/img/ringerike-2019-4.jpg">
+    <p class="byline">Foto: <a href="https://vg.no/">Pål Westgaard</a></a>
+  </div>
+  </div>
+</div>
+  <div class="row">
+    <div class="col-12">
+      Velg graf <select id="rider-graph-selector" class="mb-2 rider-graph-selector">
+      <option value="percent" selected>Prosentvis plassering</option>
+      <option value="places">Plassering i klasse</option>
+      </select>
+      <div id="rider-chart" class="rider-chart" data-object-places="{{../placesChart}}" data-object-percent="{{../percentChart}}"></div>
+    </div>
+  </div>
+  {{else}}
   <div class="col-8">
     <div class="row">
       <div class="col-12">
@@ -18,10 +35,11 @@
         <option value="percent" selected>Prosentvis plassering</option>
         <option value="places">Plassering i klasse</option>
         </select>
-        <div id="rider-chart" class="rider-chart" data-object-places="{{placesChart}}" data-object-percent="{{percentChart}}"></div>
+        <div id="rider-chart" class="rider-chart" data-object-places="{{../placesChart}}" data-object-percent="{{../percentChart}}"></div>
       </div>
     </div>
   </div>
+  {{/compare}}
 </div>
 <div class="row">
   <div class="col-12">

@@ -54,9 +54,9 @@
       </header>
 
       <main role="main container">
-        {{#compare active '===' 'ritt'}}
+        {{#if backdrop}}
           <div class="backdrop-overlay"><img src="/img/trysil-2019.jpg"/></div>
-          {{/compare}}
+        {{/if}}
         <div class="position-relative p-3 p-md-3 m-md-3">
           {{{ body }}}
         </div>
