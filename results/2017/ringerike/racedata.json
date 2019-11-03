@@ -24,5 +24,12 @@
       "file": "ringerike-2017-fe3.gpx",
       "strava_url": ""
     }
+  ],
+  "links": [
+        {
+      "type": "results",
+      "desc": "Originale resultater",
+      "url": "http://krokskogenck.no/resultater-ringerike-enduro-2017/"
+    }
   ]
 }

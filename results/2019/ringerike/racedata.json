@@ -1,0 +1,46 @@
+{
+  "name": "Ringerike enduro",
+  "year": 2019,
+  "date": "2019-10-12",
+  "text": "Vått, gjørmete og utfordrende etapper. Men også superfin flyt til tider og gratis boller, kaffe og lapskaus.",
+  "series": "Østafjells enduroserie",
+  "lat": 60.2383,
+  "long": 10.2975,
+  "details": [
+    {
+      "name": "FE 1",
+      "strava_name": "",
+      "file": "ringerike-2019-fe1.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 2/FE 4",
+      "strava_name": "",
+      "file": "ringerike-2019-fe2.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 3",
+      "strava_name": "",
+      "file": "ringerike-2019-fe3.gpx",
+      "strava_url": ""
+    }
+  ],
+  "links": [
+    {
+      "type": "results",
+      "desc": "Originale resultater",
+      "url": "http://krokskogenck.no/wp-content/uploads/2019/10/Resultater-Ringerike-enduro-2019.pdf"
+    },
+    {
+      "type": "images",
+      "desc": "Bilder fra Pål Westgaard",
+      "url": "https://www.facebook.com/photo.php?fbid=2371667109714866&set=a.2371666419714935&type=3&theater"
+    },
+    {
+      "type": "images",
+      "desc": "Bilder fra Jon Borgersen",
+      "url": "http://www.jonborgersen.com/ringerike-enduro-2019"
+    }
+  ]
+}
