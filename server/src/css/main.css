@@ -75,6 +75,10 @@ img {
   font-size: 120%;
 }
 
+.space {
+  height: 80px;
+}
+
 .byline {
   text-align: right;
 }
