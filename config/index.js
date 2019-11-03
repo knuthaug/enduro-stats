@@ -18,6 +18,13 @@ const config = convict({
       default: 'info'
     }
   },
+  images: {
+    url: {
+      default: 'https://d1hoqbrdo21qk8.cloudfront.net',
+      // assets.norskenduro.no
+      env: 'CLOUDFRONT_URL'
+    }
+  },
   database: {
     host: {
       default: 'localhost',

@@ -44,10 +44,25 @@ th {
   z-index: -1;
 }
 
+img {
+  border: 1px solid #000;
+  border-radius: 2px;
+}
+
 .backdrop-overlay img {
   margin: 0;
   width: 100%;
   opacity: 0.30;
+}
+
+.front-text {
+  min-width: 20rem;
+}
+
+.front-image {
+  max-width: 100%;
+  height: auto;
+  vertical-align: top;
 }
 
 .rider-img {
@@ -66,6 +81,10 @@ th {
 
 .float {
   float: right;
+}
+
+.float-left {
+  float: left;
 }
 
 .navbar .nav-link.active {

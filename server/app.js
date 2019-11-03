@@ -115,7 +115,7 @@ function render (res, template, context, maxAge, status) {
   return res
     .status(s)
     .set({ 'Cache-Control': `public, max-age=${maxAge}` })
-    .render(template, context)
+    .render(template, Object.assign({imageUrl: config.get('images.url')}, context))
 }
 
 function stop () {
