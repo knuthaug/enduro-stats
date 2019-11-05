@@ -3,9 +3,12 @@
   "year": 2018,
   "date": "2018-08-18",
   "series": "80/20 enduro series",
-    "text": "Oslo enduro kjøres på stier i gamle Oslo sykkelpark i tryvann skisenter. Etappene er relativt korte og intense, og har en del stein. Tekniske egenskaper settes solid på prøve i Oslo, spesielt på litt vått underlag som det var i 2018. Transporten er kort men bratt, og man er innom depot mellom hver etappe. ",
+  "text": "Oslo enduro kjøres på stier i gamle Oslo sykkelpark i tryvann skisenter. Etappene er relativt korte og intense, og har en del stein. Tekniske egenskaper settes solid på prøve i Oslo, spesielt på litt vått underlag som det var i 2018. Transporten er kort men bratt, og man er innom depot mellom hver etappe. ",
+  "byline_text": "Eirik Grønevik/mtbfoto.no",
+  "byline_url": "http://mtbfoto.no",
   "links": [
     { "type": "film", "desc": "Rittfilm (vimeo)", "url": "https://vimeo.com/287111263" },
-    { "type": "results", "desc": "Originale resultater", "url": "http://www.8020es.no/s/Resultater-Oslo-Enduro-2018-v2.pdf"}
+    { "type": "results", "desc": "Originale resultater", "url": "http://www.8020es.no/s/Resultater-Oslo-Enduro-2018-v2.pdf"},
+    { "type": "images", "desc": "Bilder fra mtbfoto.no", "url": "http://www.mtbfoto.no/gallery/8020-oslo-enduro-2018/"}
   ]
 }
