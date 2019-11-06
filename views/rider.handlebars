@@ -11,10 +11,10 @@
       {{/compare}}
     </p>
   </div>
-  {{#compare rider.uid '===' '00fde8e308a30a453c1f22e9bf8600a8'}}
+  {{#if rider.byline_text}}
   <div class="col-8">
-    <img class="rider-img" src="/img/ringerike-2019-4.jpg">
-    <p class="byline">Foto: <a href="https://vg.no/">Pål Westgaard</a></a>
+    <img class="rider-img" src="{{imageUrl}}/{{rider.uid}}.jpg">
+    <p class="byline">Foto: <a href="{{rider.byline_url}}">{{rider.byline_text}}</a></a>
   </div>
   </div>
 </div>
@@ -24,7 +24,7 @@
       <option value="percent" selected>Prosentvis plassering</option>
       <option value="places">Plassering i klasse</option>
       </select>
-      <div id="rider-chart" class="rider-chart" data-object-places="{{../placesChart}}" data-object-percent="{{../percentChart}}"></div>
+      <div id="rider-chart" class="rider-chart" data-object-places="{{placesChart}}" data-object-percent="{{percentChart}}"></div>
     </div>
   </div>
   {{else}}
@@ -35,11 +35,11 @@
         <option value="percent" selected>Prosentvis plassering</option>
         <option value="places">Plassering i klasse</option>
         </select>
-        <div id="rider-chart" class="rider-chart" data-object-places="{{../placesChart}}" data-object-percent="{{../percentChart}}"></div>
+        <div id="rider-chart" class="rider-chart" data-object-places="{{placesChart}}" data-object-percent="{{percentChart}}"></div>
       </div>
     </div>
   </div>
-  {{/compare}}
+  {{/if}}
 </div>
 <div class="row">
   <div class="col-12">
