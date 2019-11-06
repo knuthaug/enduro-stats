@@ -96,6 +96,7 @@ class Sportident extends Converter {
         const time = lib.convertTimeMs(raw[j][`${stage.name} Time`], raw[j][`${stage.name} Pos`])
         if (!isNaN(time)) {
           stage.results.push({
+            bib: raw[j].bib,
             time: raw[j][`${stage.name} Time`],
             name: check(`${raw[j]['First Name']} ${raw[j].Surname}`),
             rider_uid: this.checksum(check(`${raw[j]['First Name']} ${raw[j].Surname}`)),

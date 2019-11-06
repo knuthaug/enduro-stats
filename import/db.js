@@ -134,8 +134,8 @@ class Db {
   }
 
   async insertRawResult (raceId, riderId, stageNumber, result) {
-    const query = 'INSERT INTO raw_results(rank, time, status, class, stage_id, rider_id, race_id, acc_time_ms, stage_time_ms, stage_rank, final_status) VALUES($1, $2, $3, $4, (SELECT id from stages where race_id = $6 and number = $7), $5, $6, $8, $9, $10, $11)'
-    const values = [result.rank, result.time, result.status, result.class, riderId, raceId, stageNumber, result.acc_time_ms, result.stage_time_ms, result.stage_rank, result.final_status]
+    const query = 'INSERT INTO raw_results(rank, time, status, class, stage_id, rider_id, race_id, acc_time_ms, stage_time_ms, stage_rank, final_status, bib) VALUES($1, $2, $3, $4, (SELECT id from stages where race_id = $6 and number = $7), $5, $6, $8, $9, $10, $11, $12)'
+    const values = [result.rank, result.time, result.status, result.class, riderId, raceId, stageNumber, result.acc_time_ms, result.stage_time_ms, result.stage_rank, result.final_status, result.bib]
     return this.insert(query, values)
   }
 

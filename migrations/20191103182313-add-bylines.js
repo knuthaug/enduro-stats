@@ -37,9 +37,9 @@ exports.up = function(db) {
 
 exports.down = function(db) {
   db.removeColumn('riders', 'byline_text');
-  db.removeColumn('riders', 'byline_text');
+  db.removeColumn('riders', 'byline_url');
   db.removeColumn('races', 'byline_text');
-  return db.removeColumn('races', 'byline_text');
+  return db.removeColumn('races', 'byline_url');
 };
 
 exports._meta = {

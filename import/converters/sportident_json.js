@@ -97,6 +97,7 @@ class SportidentJson extends Converter {
           const status = this.setStatus(stageResults[i].result.position.class,
             this.parseTime(stageResults[i].result.time))
           stage.results.push({
+            bib: rider.bib,
             name: check(`${rider.firstname} ${rider.lastname}`),
             rider_uid: this.checksum(check(`${rider.firstname} ${rider.lastname}`)),
             class: this.className(rider.class),

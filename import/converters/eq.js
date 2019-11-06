@@ -118,6 +118,7 @@ class EqConverter extends Converter {
         number: stageNum++,
         results: stageResults.map((r) => {
           return {
+            bib: r.Startnumber,
             rider_uid: this.checksum(check(`${r.Firstname} ${r.Surname}`)),
             name: check(`${r.Firstname} ${r.Surname}`),
             gender: r.Gender,
