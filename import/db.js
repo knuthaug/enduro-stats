@@ -299,6 +299,16 @@ class Db {
     return this.findSet(query, values, `Error finding all classes for race name=${raceId}`)
   }
 
+  async ridersWithoutImage (raceId) {
+    const query = 'SELECT DISTINCT riders.id, name, raw_results.bib, riders.uid from riders, raw_results where riders.id = raw_results.rider_id AND raw_results.race_id = $1 and (riders.byline_text IS null or riders.byline_text = \'\')'
+    const values = [raceId]
+    return this.findSet(query, values, `Error finding riders without images for race id=${raceId}`)
+  }
+
+  async addByline(riderId, bylineText, bylineUrl) {
+    return this.update('update riders set byline_text = $1, byline_url = $2 where id = $3', [bylineText, bylineUrl, riderId])
+  }
+
   async rawRaceResults (raceName, raceYear, className) {
     logger.info(`raceResults:${raceName}, ${raceYear}, ${className}`)
     const query = 'SELECT *,(SELECT number FROM stages where id = raw_results.stage_id) as stage FROM raw_results where race_id = (SELECT id FROM races WHERE name = $1 and year = $2) AND class = $3'
