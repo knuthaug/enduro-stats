@@ -44,8 +44,13 @@ async function startWithList(raceId, options) {
         console.log(`renamed image images/${bib}.jpg to images/${uid}.jpg`)
       });
       //update riders table with byline
-      await db.addByline(riderId, options.byline, options.url)
+      //await db.addByline(riderId, options.byline, options.url)
       console.log(`added byline info to rider ${riderId}`)
+      //add to file
+      fs.appendFile('scripts/byline.sql', `UPDATE riders set byline_text='${options.byline}', byline_url='${options.url}' where id=${riderId};\n`, function (err) {
+        if (err) throw err;
+        console.log('Saved!');
+      });
       //restart
       startWithList(raceId)
     });
