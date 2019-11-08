@@ -132,7 +132,8 @@ const subs = {
   'Simon Børjars': 'Simon Börjars',
   'Thomas Stenedohansen': 'Thomas Stene-Johansen',
   'Per Morten Mølsted': 'Morten Mølsted',
-  'Vidar Folden': 'Vidar Berentsen Folden'
+  'Vidar Folden': 'Vidar Berentsen Folden',
+  'Kristel Linnea Mulelid': 'Kristel Karlsen-Mulelid'
 }
 
 function check (name) {
