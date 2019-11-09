@@ -183,7 +183,6 @@ async function readCompleteRaceFile (filename, datafile, mode) {
 
   await parser.load()
   data = await parser.parse()
-
   let raceId
 
   for (let i = 0; i < data.stages.length; i++) {
