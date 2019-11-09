@@ -8,6 +8,7 @@ logs
 scripts
 app.yaml
 images
+raw_images
 server/img
 dump*
 # Elastic Beanstalk Files
