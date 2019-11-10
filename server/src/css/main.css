@@ -44,10 +44,6 @@ th {
   z-index: -1;
 }
 
-img {
-  border: 1px solid #000;
-  border-radius: 2px;
-}
 
 .backdrop-overlay img {
   margin: 0;
@@ -60,12 +56,16 @@ img {
 }
 
 .front-image {
+  border: 1px solid #000;
+  border-radius: 2px;
   max-width: 100%;
   height: auto;
   vertical-align: top;
 }
 
 .rider-img {
+  border: 1px solid #000;
+  border-radius: 2px;
   width: 100%;
   border-radius: 5px;
   border: 2px solid #000;
