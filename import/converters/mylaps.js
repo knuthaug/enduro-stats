@@ -92,7 +92,7 @@ class Mylaps extends Converter {
         const time = lib.convertTimeMs(raw[j][stage.name], raw[j][`${stage.name} Pos`])
         if (!isNaN(time)) {
           stage.results.push({
-            bib: raw[j].bib,
+            bib: raw[j]['bib'],
             time: this.convertTime(raw[j][stage.name], raw[j][`${stage.name} Pos`]),
             name: check(raw[j].name),
             rider_uid: this.checksum(raw[j].name),

@@ -35,6 +35,7 @@ tap.test('Object details for stages', async t => {
   const rider = stage1.results[0]
 
   t.equals(rider.name, 'Alice Grindheim', 'name is correct')
+  t.equals(rider.bib, '5', 'bib is correct')
   t.equals(rider.rider_uid, '3a4e5a2c99e22aaf931e06ac5d9320e7', 'uid is correct')
   t.equals(rider.time, '0:06:14', 'time is correct')
   t.equals(rider.gender, 'F', 'Gender is correct')
