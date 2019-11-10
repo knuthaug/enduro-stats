@@ -184,3 +184,15 @@ UPDATE riders set byline_text='Pål Westgaard/westgaardfoto', byline_url='http:/
 UPDATE riders set byline_text='Pål Westgaard/westgaardfoto', byline_url='http://westgaardfoto.no/' where id=27303;
 UPDATE riders set byline_text='Pål Westgaard/westgaardfoto', byline_url='http://westgaardfoto.no/' where id=14332;
 UPDATE riders set byline_text='Pål Westgaard/westgaardfoto', byline_url='http://westgaardfoto.no/' where id=1633;
+UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=27870;
+UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=2007;
+UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=10459;
+UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=3812;
+UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=5947;
+UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=17673;
+UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=19836;
+UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=13683;
+UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=11;
+UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=22692;
+UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=7406;
+UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=27988;
