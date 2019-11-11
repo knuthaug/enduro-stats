@@ -11,7 +11,7 @@ const bylineMap = {
     url: 'http://jonborgersen.com/'
   },
   'Pål Westgaard': {
-    text: 'Pål Westgaard/westgaardfoto',
+    text: 'Pål Westgaard',
     url: 'http://westgaardfoto.no/'
   },
   'Moldestad Photography': {
