@@ -50,6 +50,16 @@
       "type": "results",
       "desc": "Originale resultater",
       "url": "https://drammenduro.com/resultater/"
+    },
+    {
+      "type": "images",
+      "desc": "Bilder av Svenn Fjeldheim",
+      "url": "https://www.facebook.com/pg/drammenduro/photos/?tab=album&album_id=1706571812772590&__tn__=-UCH-R"
+    },
+        {
+      "type": "images",
+      "desc": "Bilder av Pål Westgaard",
+      "url": "https://www.facebook.com/pal.westgaard/media_set?set=a.2066536320227948&type=3"
     }
   ]
 }
