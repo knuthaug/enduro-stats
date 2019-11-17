@@ -75,7 +75,7 @@ bib;name;gender;FE1;FE1 Pos;FE2;FE2 Pos;FE3;FE3 Pos;chiptime;Pos Klasse;Class
 99;Kjetil Mikaelsen;M;00:07:37;36;00:11:06;47;00:07:22;44;00-26.05;42;Menn senior
 38;Even Gulbrandsen;M;00:07:53;43;00:10:23;37;00:08:00;55;00.26.16;43;Menn senior
 95;Björn Asplund;M;00:07:55;46;00:11:20;52;00:07:11;40;00.26.26;44;Menn senior
-101;Joachim Karisen;M;00:08:23;52;00:10:51;44;00:07:23;45;00.26.37;45;Menn senior
+101;Joachim Karlsen;M;00:08:23;52;00:10:51;44;00:07:23;45;00.26.37;45;Menn senior
 113;Simen Aannerud Gulbrandsen;M;00:08:14;49;00:10:50;42;00:07:36;49;00.26.40;46;Menn senior
 75;Sander Blomgren;M;00:07:53;44;00:10:51;43;00:08:14;58;00.26.58;47;Menn senior
 102;Magnus Brandtzeg;M;00:08:15;50;00:10:55;45;00:07:56;53;00.27.06;48;Menn senior
@@ -96,7 +96,7 @@ bib;name;gender;FE1;FE1 Pos;FE2;FE2 Pos;FE3;FE3 Pos;chiptime;Pos Klasse;Class
 48;Kristian Akselsen;M;00:09:01;70;00:11:47;64;00:08:17;61;00.29.05;63;Menn senior
 36;Jakob Klavenes Berg;M;00:08:57;67;00:11:43;61;00:08:26;64;00.29.06;64;Menn senior
 119;Håkon Trydal;M;00:08:52;63;00:11:58;66;00:08:25;63;00.29.15;65;Menn senior
-84;Sindre Steer;M;00:08:59;68;00:12:19;71;00:08:02;56;00.29.20;66;Menn senior
+84;Sindre Støer;M;00:08:59;68;00:12:19;71;00:08:02;56;00.29.20;66;Menn senior
 67;Fredrik Nygaard;M;00:08:43;60;00:11:46;62;00:09:04;76;00.29.33;67;Menn senior
 42;Jan Henrik Hoilund;M;00:08:47;61;00:12:01;67;00:09:01;75;00.29.49;68;Menn senior
 41;Geir Bjørndalen;M;00:09:43;82;00:12:08;70;00:08:12;57;00.30.03;69;Menn senior
@@ -110,7 +110,7 @@ bib;name;gender;FE1;FE1 Pos;FE2;FE2 Pos;FE3;FE3 Pos;chiptime;Pos Klasse;Class
 63;David Gabrielsen;M;00:09:37;80;00:12:47;77;00:08:44;71;00.31.08;77;Menn senior
 81;Terje Rasmussen;M;00:09:13;72;00:12:37;75;00:09:29;79;00.31.19;78;Menn senior
 23;Håvar Beyrer;M;00:09:14;73;00:12:56;79;00:09:20;78;00.31.30;79;Menn senior
-68;Marius Ilebekk Helium;M;00:09:31;78;00:13:09;80;00:09:34;80;00.32.14;80;Menn senior
+68;Marius Ilebekk Hallum;M;00:09:31;78;00:13:09;80;00:09:34;80;00.32.14;80;Menn senior
 103;Øyvind Waitz;M;00:09:28;76;00:14:15;83;00:09:00;74;00.32.43;81;Menn senior
 56;Stig Wagner;M;00:10:38;85;00:12:27;73;00:09:59;83;00.33.04;82;Menn senior
 140;Magnus Slinger Sørli;M;00:06:01;1;00:22:28;88;00:05:10;1;00.33.39;83;Menn senior
