@@ -190,173 +190,29 @@ UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.c
 UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=5947;
 UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=17673;
 UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=19836;
-UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=13683;
 UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=11;
 UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=22692;
 UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=7406;
 UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=27988;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=15997;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=11325;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=786;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=13211;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=17600;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=7396;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=1308;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=10449;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=17720;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=17711;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=17705;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=1013;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=10135;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=1314;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=9513;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=3811;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=17724;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=17714;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=17725;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=17713;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=17723;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=9459;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=17722;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=276;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=145;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=1702;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=17686;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=17658;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=13266;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=17676;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=17666;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=1009;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=16944;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=17670;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=17684;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=16907;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=9528;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=999;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=10727;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=16888;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=13758;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=17693;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=16924;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=17681;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=276;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=145;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=1702;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=17686;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=17658;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=13266;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=17676;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=17666;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=1009;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=16944;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=17670;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=17684;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=16907;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=9528;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=999;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=10727;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=16888;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=13758;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=17693;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=16924;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=17681;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=11125;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=2889;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=17682;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=17679;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=1292;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=14360;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=277;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=13286;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=16902;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=11368;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=17688;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=17646;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=17668;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=17640;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=17656;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=17667;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=3827;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=17694;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=8215;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=11403;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=14424;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=17696;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=15442;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=7350;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=789;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=15464;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=1636;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=15474;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=11349;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=3135;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=1663;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=15481;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=2064;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=14444;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=6042;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=16;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=17728;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=17739;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=17735;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=9521;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=17733;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=17732;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=17730;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=17734;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=17299;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=17737;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=10478;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=45;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=10479;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=13207;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=11326;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=13293;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=220;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=13270;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=32;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=1673;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=13313;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=11445;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=11459;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=13268;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=13298;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=3747;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=13274;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=9067;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=13297;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=3862;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=13242;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=13316;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=13285;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=13319;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=7438;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=29039;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=13291;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=11396;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=12107;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=13321;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=5952;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=13235;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=5287;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=9497;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=13287;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=10456;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=13276;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=6009;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=13315;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=13295;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=13269;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=11136;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=13240;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=13280;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=13294;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=307;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=5988;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=10120;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=1025;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=5953;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=13262;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=793;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=9422;
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where id=10377;
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where uid='c83a2e5df66e1fb735b8455b74d2fc33';/*Ida Rydland Nærum */
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where uid='105fe7e9a0446b152bef347939aeba57';/*Stina Bondehagen*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where uid='68d45c425da0980ebef63c793f1fb710';/*Elise Marie Bugge*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where uid='22f62bfd25a3d4028213d6a04932f846';/*Kirstin Leiren*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where uid='6b8892cda7a2c1219b7fa8c7cef392b7';/*Øyvind Hem*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where uid='e7a68bd669755d3b0ae171e8251fa9bd';/*Arild Gravdal*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where uid='d14f43ad31b48549572b58945d2f2ab1';/*Anders Disen*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where uid='5d997a27d16be00da40372a334c9708f';/*Hans Mattsson*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where uid='5edcf02f85119c80833b925bc85c7e99';/*Fredrik Andersson*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where uid='cfd282c0b9dbe6ac56e08c9c81397875';/*Pierre Magnusson*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where uid='4b5f91deeaf74ad37fb6c10cda603ace';/*Tor Ivan Rudi*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where uid='123afb6e97307ed08c5551584cccb417';/*Tor Erik Drangsland*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where uid='814dc1e1404355c131615c4508029f03';/*Geir Vidar Bjørndalen*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where uid='23c009f26a76a09e05e5bdfe1e5054a8';/*Morten Iversen Stordahl*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where uid='bdc1f5e60eae7be9dc15109e64548f66';/*Håvard Arnstad*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where uid='06129874336148d8e89fb031092fab85';/*Carlos Canales*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where uid='e9cc4d776b810444a442cff4625343ec';/*Marius Wilberg*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where uid='63833d2b8f9dc96f7047d0a2f7385a23';/*Tom Sandboe*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where uid='1a80dc33c684d9a732f42281ae7fa4e9';/*Cato Johnsen*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where uid='c7bb83e37a3b266f7b65d5522b96d924';/*Frode Kaafjeld*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where uid='51d0ff96292c4cc1a60c8b0230f842b2';/*Stian Østen*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where uid='92947c2482abcfc78b69005bfc68acb9';/*Alexander Bjerke*/

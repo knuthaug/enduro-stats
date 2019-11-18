@@ -82,6 +82,7 @@ async function matchImage(answers, byline) {
   const parts = answers.rider.split(';')
   const uid = parts[3]
   const bib = parts[0]
+  const name = parts[1]
   const riderId = parts[2]
   //mv image to images/uid.jpg
 
@@ -96,7 +97,7 @@ async function matchImage(answers, byline) {
   await db.addByline(riderId, byline.text, byline.url)
   console.log(`added byline info to rider ${riderId}`)
   //add to file
-  fs.appendFile('scripts/byline.sql', `UPDATE riders set byline_text='${byline.text}', byline_url='${byline.url}' where id=${riderId};\n`, function (err) {
+  fs.appendFile('scripts/byline.sql', `UPDATE riders set byline_text='${byline.text}', byline_url='${byline.url}' where uid='${uid}';/*${name}*/\n`, function (err) {
     if (err) throw err;
     console.log('Saved!');
   });
