@@ -66,6 +66,11 @@
       "type": "images",
       "desc": "Bilder fra jon Borgersen",
       "url": "http://www.jonborgersen.com/nesbyen-enduro-2019/#1"
+    },
+    {
+      "type": "film",
+      "desc": "Rittfilm",
+      "url": "https://vimeo.com/362991773"
     }
   ]
 }
