@@ -44,7 +44,6 @@ th {
   z-index: -1;
 }
 
-
 .backdrop-overlay img {
   margin: 0;
   width: 100%;
@@ -102,9 +101,16 @@ th {
   border-bottom: 0.20rem solid transparent;
 }
 
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.navbar-dark .nav-link:hover,
+.navbar-dark .nav-link:focus,
 .navbar .nav-link:hover,
 .navbar .nav-link:focus {
-  border-bottom-color: rgba(255, 255, 255, .25);
+  border-bottom-color: #fff;
+  color: #fff;
 }
 
 a.none, a.none:focus, a.none:hover {
