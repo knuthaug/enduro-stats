@@ -7,7 +7,7 @@
       <title>{{docTitle}}</title>
       <meta name="description" content="">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+      <meta name="Description" content="Alle norske enduroresultater på ett sted, med statistikk, bilder og rytterinformasjon.">
       <link rel="manifest" href="/site.webmanifest">
       <link rel="apple-touch-icon" href="icon.png">
       <link rel="stylesheet" href="/assets/css/{{hashedAssets 'bundle.css'}}">
@@ -53,7 +53,7 @@
         </nav>
       </header>
 
-      <main role="main container">
+      <main role="main">
         {{#if race.byline_text}}
           {{#compare active '===' 'ritt'}}
             <div class="backdrop-overlay"><img src="{{../imageUrl}}/races/{{../race.uid}}.jpg"/></div>
