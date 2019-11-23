@@ -141,43 +141,30 @@ node import/importer.js -m -f results/2018/ringerike/ringerike-2018.csv
 echo "2019"
 echo "  Hakadal Snowhill"
 node import/importer.js -m -f results/2019/hakadal-snowhill/hakadal-snowhill-2019.csv
-
 echo "  Telemark"
 node import/importer.js -s -f results/2019/telemark/telemark-2019-original.csv
-
 echo "  Molde"
 node import/importer.js -m -f results/2019/molde/molde-2019.csv
-
 echo "  Bodø"
 node import/importer.js -m -f results/2019/bodø/bodø-2019.csv
-
 echo "  Traktorland"
 node import/importer.js -m -f results/2019/traktorland/traktorland-2019.csv
-
 echo "  Voss"
 node import/importer.js -m -f results/2019/voss/voss-2019.csv
-
 echo "  Drammen"
 node import/importer.js -m -f results/2019/drammen/drammen-2019.csv
-
 echo "  Beitostølen"
 node import/importer.js -m -f results/2019/beito/beito-2019.csv
-
 echo "  Oslo"
 node import/importer.js -m -f results/2019/oslo/oslo-2019.csv
-
 echo "  Harstad"
 node import/importer.js -f results/2019/harstad/harstad-2019.csv
-
 echo "  Hakadal"
 node import/importer.js -s -f results/2019/hakadal/hakadal-2019.csv
-
 echo "  Nesbyen"
 node import/importer.js -m -f results/2019/nesbyen/nesbyen-2019.csv
-
 echo "  Hemsedal"
 node import/importer.js -m -f results/2019/hemsedal/hemsedal-2019.csv
-
 echo "  Trysil"
 node import/importer.js -m -f results/2019/trysil/trysil-2019.csv
 

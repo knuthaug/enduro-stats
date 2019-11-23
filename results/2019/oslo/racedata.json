@@ -5,6 +5,47 @@
   "text": "Syndeflod på lørdagens gjennomkjøring lagde krevende forhold på årets oslo enduro også, men som bonus var det ekstra mange fotografer ute som tok bilder av alle de møkkete fjesene. Tekniske løyper med melkesyre til alle.",
   "series": "Østafjells enduroserie",
   "byline_text": "Jon Borgersen",
+  "lat": 59.9931,
+  "long": 10.6692,
+  "zoom": 15,
+  "details": [
+    {
+      "name": "FE 1",
+      "strava_name": "",
+      "file": "oslo-2019-fe1.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 2",
+      "strava_name": "FE 2 Oslo Enduro 18",
+      "file": "oslo-2019-fe2.gpx",
+      "strava_url": "https://www.strava.com/segments/18576658"
+    },
+    {
+      "name": "FE 3",
+      "strava_name": "",
+      "file": "oslo-2019-fe3.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 4",
+      "strava_name": "",
+      "file": "oslo-2019-fe4.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 5",
+      "strava_name": "",
+      "file": "oslo-2019-fe5.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 6",
+      "strava_name": "",
+      "file": "oslo-2019-fe6.gpx",
+      "strava_url": ""
+    }
+  ],
   "byline_url": "http://jonborgersen.com",
   "links": [
     {
