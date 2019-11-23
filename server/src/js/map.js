@@ -12,8 +12,16 @@ document.addEventListener('DOMContentLoaded', function (event) {
 })
 
 function addFiles(map, stages, parent) {
-  stages.forEach((s, index) => {
-    new L.GPX(`/gpx/${s.filename}`, {
+  const sortedStages = stages.sort((a, b) => {
+    return a.filename.localeCompare(b.filename)
+  })
+
+  let current = sortedStages[0]
+  handleFile(current, parent, map, sortedStages, 0)
+}
+
+function handleFile(o, parent, map, stages, index) {
+  new L.GPX(`/gpx/${o.filename}`, {
       async: true,
       polyline_options: {
         color: '#458fd9',
@@ -34,7 +42,7 @@ function addFiles(map, stages, parent) {
       e.target.bindTooltip(`<h4>${g.get_name()}</h4><p>Lengde: ${Math.round(g.get_distance())} meter, høydemeter: ${Math.round(g.get_elevation_loss())}</p>`, { direction: 'top'})
 
       //add details
-      parent.appendChild(addCell(g, s))
+      parent.appendChild(addCell(g, o))
 
       const row = document.createElement('div')
       row.classList.toggle("row")
@@ -44,8 +52,10 @@ function addFiles(map, stages, parent) {
 
       //graph
       setupGraph(g.get_name(), g._info.elevation._points)
+      if(stages.length > index + 1) {
+        handleFile(stages[index + 1], parent, map, stages, index + 1)
+      }
     }).addTo(map)
-  })
 }
 
 function setupGraph(id, data) {
