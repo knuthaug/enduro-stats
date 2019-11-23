@@ -4,8 +4,9 @@
   "date": "2019-06-29",
     "text": "DrammEnduro 2019 var ikke like tørt som 2018, men nesten like varmt. Stort sett tørre stier med noen nye varianter på et par klassikere. Drammen har noen av de feteste naturlige stiene i østlandsområdet, med mye svaberg og til tider høy fart. Fett, som alltid.",
   "series": "Østafjells enduroserie",
-  "lat": 59.7772m
+  "lat": 59.7772,
   "long": 10.1089,
+  "zoom": 13,
   "byline_text": "Jon Borgersen",
   "byline_url": "http://jonborgersen.com",
   "details": [
