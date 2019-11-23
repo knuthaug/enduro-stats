@@ -441,3 +441,32 @@ UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto
 UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where uid='8ccf9aeffed0ca65aa3d42ee5063c6d7';/*Jasem F. R. Downing*/
 UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where uid='f28fe47f3e922a49a380a3a7b021011a';/*Vetle Gikling Borthne*/
 UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where uid='72a0631ed6964e0c3ceb5c45c82b190c';/*Mikael Vold*/
+UPDATE riders set byline_text='80/20 Enduro series', byline_url='' where uid='11efd2d28e75f826c928acc9e5f3cd78';/*Anne Melbø*/
+UPDATE riders set byline_text='80/20 Enduro series', byline_url='' where uid='3afc0ae1f9f8d0ce0af8b2f3fab92fff';/*Lene Pedersen*/
+UPDATE riders set byline_text='80/20 Enduro series', byline_url='' where uid='afca6fa8702ab4db0b68fc779c0f0539';/*Magnus Hartz*/
+UPDATE riders set byline_text='80/20 Enduro series', byline_url='' where uid='4dbeb4bdd00f09312045035d6f3aa337';/*Frode Bredesen*/
+UPDATE riders set byline_text='80/20 Enduro series', byline_url='' where uid='9629e9c974f9db6b85ab129e61d1f466';/*Torbjørn Bech*/
+UPDATE riders set byline_text='80/20 Enduro series', byline_url='' where uid='d1c097c42ac449927f7dd001e7368b46';/*Einar Frønum*/
+UPDATE riders set byline_text='80/20 Enduro series', byline_url='' where uid='586c654b62e8115868cbe0622fe07e71';/*Andreas Klette*/
+UPDATE riders set byline_text='80/20 Enduro series', byline_url='' where uid='5948e00d415233346279a6fc63fa1e09';/*Espen Karlsen*/
+UPDATE riders set byline_text='80/20 Enduro series', byline_url='' where uid='1b43af8d5cfa5d8c331bdb160a82e92d';/*Stian Storeng*/
+UPDATE riders set byline_text='80/20 Enduro series', byline_url='' where uid='fb2bc14e8a0f62976944633d1418c33f';/*Leiv Tvenning*/
+UPDATE riders set byline_text='80/20 Enduro series', byline_url='' where uid='0f3393f86e2f71f82abee23059e85948';/*André Olav Olsen*/
+UPDATE riders set byline_text='80/20 Enduro series', byline_url='' where uid='ac952c202ab0c2993eb4e55f1bab66eb';/*Knut Løkås*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where uid='5156deb511bce7f6c759dc6bf3c0c712';/*Lasse Christoffersen*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where uid='1ad7fd96e217e948148cd764e5cc03c1';/*Marius Langum*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where uid='7ac022d91be5f315d92c2639a7a6b6e5';/*Magnus Finnes Jahnsen*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where uid='8e4b21876dae6acbba6be90e722a5fdd';/*Birger Patrick*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where uid='776d9cf004813fc1ff64a926886f38f3';/*Andreas Hegrum Askjer*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where uid='b70ee371896ed7cfdd0257db12b6b8b5';/*William Rø*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where uid='c2393e897533967b01734e3032e2c2ce';/*Alexander Sandengen*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where uid='ab2076b75934e478aa8f6da1f5254a4d';/*Oscar Saksvik*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where uid='5d6e6667494c13535ab6ba83369fe3a7';/*Thomas Kjær Olsen*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where uid='a17221a295bc3d9268c2e1ad84c28db2';/*Vegar Johannessen*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where uid='35f27161b20bdd6049d5fda53ec492cd';/*Henrik Haugum*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where uid='bab37df462fb133181f93e3965ee6c79';/*Julie Skåtun*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where uid='36790928caa8a902ad43c96b2bed818d';/*Else Bratteland*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where uid='be164f06d1d322a6ef26971be4af7e54';/*Jon Anders Iversen*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where uid='e4044f5949a83df3cac0ffd3d845ceda';/*Joachim Ski Torp*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where uid='508a14415f65aa57ea51b2c6dcb223d4';/*Vegard Brække*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where uid='57aa0740f25f87897bddca0099be42b5';/*Kristoffer Løken*/

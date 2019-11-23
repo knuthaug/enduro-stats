@@ -29,6 +29,10 @@ const bylineMap = {
   'Ola Morken': {
     text: 'Ola Morken',
     url: ''
+  },
+  '80/20 Enduro series': {
+    text: '80/20 Enduro series',
+    url: ''
   }
 
 }
