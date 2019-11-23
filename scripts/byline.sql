@@ -432,3 +432,12 @@ UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://m
 UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where uid='a8efb4fb268fa1bb26eb8478e902a496';/*Lars Markus Sannebro*/
 UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where uid='bcabf947d74d8f2f60f972676442910f';/*Klaus Jørgen Kjærnet*/
 UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where uid='6734f17d622deb59b2206f3283266e65';/*Stian Lunn*/
+UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where uid='542e6036568d92319e1128ec4d73aa9c';/*Warisa Larsen*/
+UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where uid='44d1aef10ad9230f6270bde0a9c93abf';/*Marie Sundheim*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where uid='65822ca1783a1a7da9ef1eae4413d993';/*Annikken Grieg Sæthre*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where uid='84fc4fda7a10b295d71a486035fc4b47';/*Gry Svantesvold*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where uid='12bd54c0d549e9727c1acc22d1db14d6';/*Maria Leganger*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where uid='6ad2c1431ad1320d08f45588d67304eb';/*Eline Moen*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where uid='8ccf9aeffed0ca65aa3d42ee5063c6d7';/*Jasem F. R. Downing*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where uid='f28fe47f3e922a49a380a3a7b021011a';/*Vetle Gikling Borthne*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where uid='72a0631ed6964e0c3ceb5c45c82b190c';/*Mikael Vold*/
