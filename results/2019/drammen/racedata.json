@@ -4,8 +4,48 @@
   "date": "2019-06-29",
     "text": "DrammEnduro 2019 var ikke like tørt som 2018, men nesten like varmt. Stort sett tørre stier med noen nye varianter på et par klassikere. Drammen har noen av de feteste naturlige stiene i østlandsområdet, med mye svaberg og til tider høy fart. Fett, som alltid.",
   "series": "Østafjells enduroserie",
+  "lat": 59.7772m
+  "long": 10.1089,
   "byline_text": "Jon Borgersen",
   "byline_url": "http://jonborgersen.com",
+  "details": [
+    {
+      "name": "FE 1",
+      "strava_name": "",
+      "file": "drammen-2019-fe1.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 2",
+      "strava_name": "FE4 DREND18: Burnout",
+      "file": "drammen-2019-fe2.gpx",
+      "strava_url": "https://www.strava.com/segments/18061165"
+    },
+    {
+      "name": "FE 3",
+      "strava_name": "3050",
+      "file": "drammen-2019-fe3.gpx",
+      "strava_url": "https://www.strava.com/segments/20807924"
+    },
+    {
+      "name": "FE 4",
+      "strava_name": "",
+      "file": "drammen-2019-fe4.gpx",
+      "strava_url": "https://www.strava.com/segments/21273234"
+    },
+    {
+      "name": "FE 5",
+      "strava_name": "",
+      "file": "drammen-2019-fe5.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 6",
+      "strava_name": "FE3 Hakadal Enduro 2019",
+      "file": "drammen-2019-fe6.gpx",
+      "strava_url": ""
+    }
+  ],
   "links": [
     {
       "type": "results",
