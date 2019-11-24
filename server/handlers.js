@@ -280,6 +280,7 @@ async function riderHandler (req) {
     numRaces,
     startYear,
     year,
+    portrait: rider.uid === '00fde8e308a30a453c1f22e9bf8600a8' ? true : false,
     placesChart,
     percentChart,
     avg,

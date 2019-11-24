@@ -76,20 +76,39 @@ async function startWithList(raceId, options, byline) {
       }
     ])
     .then(async answers => {
-      await matchImage(answers, byline)
-      startWithList(raceId, options, byline)
+      inquirer
+        .prompt([
+          {
+            type: 'list',
+            name: 'mode',
+            message: 'Bildemodus',
+            choices: [
+              {
+                name: 'landscape',
+                checked: true
+              },
+              {
+                name: 'portrait'
+              }
+            ]
+          }
+        ])
+        .then(async answers2 => {
+          await matchImage(answers, byline, answers2.mode)
+          startWithList(raceId, options, byline)
+        })
     });
 }
 
-async function matchImage(answers, byline) {
+async function matchImage(answers, byline, imageMode) {
   //console.log(JSON.stringify(answers, null, '  '));
   const parts = answers.rider.split(';')
   const uid = parts[3]
   const bib = parts[0]
   const name = parts[1]
   const riderId = parts[2]
-  //mv image to images/uid.jpg
 
+  //mv image to images/uid.jpg
   fs.rename(`raw_images/${bib}.jpg`, `images/${uid}.jpg`, function(err) {
     if ( err ) {
       console.log('ERROR: ' + err);
@@ -98,10 +117,10 @@ async function matchImage(answers, byline) {
     console.log(`renamed image images/${bib}.jpg to images/${uid}.jpg`)
   });
   //update riders table with byline
-  await db.addByline(riderId, byline.text, byline.url)
+  await db.addByline(riderId, byline.text, byline.url, imageMode)
   console.log(`added byline info to rider ${riderId}`)
   //add to file
-  fs.appendFile('scripts/byline.sql', `UPDATE riders set byline_text='${byline.text}', byline_url='${byline.url}' where uid='${uid}';/*${name}*/\n`, function (err) {
+  fs.appendFile('scripts/byline.sql', `UPDATE riders set byline_text='${byline.text}', byline_url='${byline.url}', image_mode='${imageMode}' where uid='${uid}';/*${name}*/\n`, function (err) {
     if (err) throw err;
     console.log('Saved!');
   });

@@ -1,26 +1,11 @@
 <div class="row">
-  <div class="col-1"></div>
-  <div class="col-4">
-    <h3>{{rider.name}}</h3>
-    <p class="rider-info">Klubb: {{rider.club}}<br/>
-      Ritt: {{numRaces}}<br/>
-      Første ritt: {{startYear}}<br/>
-      {{#compare year '!==' 0}}
-      Beste sesong: {{../year}}<br/>
-      Snittplassering beste år: {{../avg}}<br/>
-      <span data-toggle="tooltip" data-original-title="Et forsøk på å regne ut hvem som er best, over tid. Lavest er best. ">Rytter-score <span class="beta">beta</span> : {{../score}}</span><br/>
-      {{/compare}}
-    </p>
-  </div>
   {{#if rider.byline_text}}
-  <div class="col-6">
-    <img alt="Bilde av {{rider.name}}" class="rider-img" src="{{imageUrl}}/{{rider.uid}}.jpg">
-    <p class="byline">Foto: <a href="{{rider.byline_url}}">{{rider.byline_text}}</a></a>
-  </div>
+
+  {{#if portrait }}
   <div class="col-1"></div>
-</div>
-  <div class="row">
-    <div class="col-12">
+  <div class="col-6">
+    {{> rider-bio }}
+    <div class="graph-container">
       Velg graf <select id="rider-graph-selector" class="mb-2 rider-graph-selector">
       <option value="percent" selected>Prosentvis plassering</option>
       <option value="places">Plassering i klasse</option>
@@ -28,7 +13,38 @@
       <div id="rider-chart" class="rider-chart" data-object-places="{{placesChart}}" data-object-percent="{{percentChart}}"></div>
     </div>
   </div>
-  {{else}}
+  <div class="col-4">
+    <img alt="Bilde av {{rider.name}}" class="rider-img" src="http://www.jonborgersen.com/oslo-enduro-2019/images/ND3_0627.jpg">
+    <p class="byline">Foto: <a href="{{rider.byline_url}}">{{rider.byline_text}}</a></a>
+  </div>
+  <div class="col-1"></div>
+</div>
+  {{ else }}
+  <div class="col-1"></div>
+  <div class="col-4">
+    {{> rider-bio }}
+  </div>
+  <div class="col-6">
+    <img alt="Bilde av {{rider.name}}" class="rider-img" src="{{imageUrl}}/{{rider.uid}}.jpg">
+    <p class="byline">Foto: <a href="{{rider.byline_url}}">{{rider.byline_text}}</a></a>
+  </div>
+  <div class="col-1"></div>
+</div>
+<div class="row">
+  <div class="col-12">
+    Velg graf <select id="rider-graph-selector" class="mb-2 rider-graph-selector">
+    <option value="percent" selected>Prosentvis plassering</option>
+    <option value="places">Plassering i klasse</option>
+    </select>
+    <div id="rider-chart" class="rider-chart" data-object-places="{{placesChart}}" data-object-percent="{{percentChart}}"></div>
+  </div>
+</div>
+{{/if}}
+{{else}}
+<div class="col-1"></div>
+<div class="col-4">
+  {{> rider-bio }}
+</div>
   <div class="col-7">
     <div class="row">
       <div class="col-12">

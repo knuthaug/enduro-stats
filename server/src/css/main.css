@@ -113,6 +113,10 @@ th {
   color: #fff;
 }
 
+.graph-container {
+  padding-top: 25px;
+}
+
 a.none, a.none:focus, a.none:hover {
   border-bottom: 0;
 }

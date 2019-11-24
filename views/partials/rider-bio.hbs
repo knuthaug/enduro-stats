@@ -1,0 +1,10 @@
+<h3>{{rider.name}}</h3>
+<p class="rider-info">Klubb: {{rider.club}}<br/>
+  Ritt: {{numRaces}}<br/>
+  Første ritt: {{startYear}}<br/>
+  {{#compare year '!==' 0}}
+    Beste sesong: {{../year}}<br/>
+    Snittplassering beste år: {{../avg}}<br/>
+    <span data-toggle="tooltip" data-original-title="Et forsøk på å regne ut hvem som er best, over tid. Lavest er best. ">Rytter-score <span class="beta">beta</span> : {{../score}}</span><br/>
+  {{/compare}}
+</p>
