@@ -470,3 +470,7 @@ UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto
 UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where uid='e4044f5949a83df3cac0ffd3d845ceda';/*Joachim Ski Torp*/
 UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where uid='508a14415f65aa57ea51b2c6dcb223d4';/*Vegard Brække*/
 UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where uid='57aa0740f25f87897bddca0099be42b5';/*Kristoffer Løken*/
+UPDATE riders set byline_text='80/20 Enduro series', byline_url='' where uid='a038e0937b43921f5067e2c1e3f0b064';/*Ingrid Mork Nygård*/
+UPDATE riders set byline_text='80/20 Enduro series', byline_url='' where uid='53329054ee33d66d9c005cad95eec5bd';/*Emil Aamli Carlson*/
+UPDATE riders set byline_text='80/20 Enduro series', byline_url='' where uid='f591fcff64fdbf47f442d6a87d098bec';/*Lukas Szollos*/
+UPDATE riders set byline_text='80/20 Enduro series', byline_url='' where uid='26e9928ad484a8c282f52cd4203b82c4';/*Christian Aronsen*/
