@@ -474,3 +474,20 @@ UPDATE riders set byline_text='80/20 Enduro series', byline_url='' where uid='a0
 UPDATE riders set byline_text='80/20 Enduro series', byline_url='' where uid='53329054ee33d66d9c005cad95eec5bd';/*Emil Aamli Carlson*/
 UPDATE riders set byline_text='80/20 Enduro series', byline_url='' where uid='f591fcff64fdbf47f442d6a87d098bec';/*Lukas Szollos*/
 UPDATE riders set byline_text='80/20 Enduro series', byline_url='' where uid='26e9928ad484a8c282f52cd4203b82c4';/*Christian Aronsen*/
+UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where uid='22d004536b5937caa9b41fcbd7c999a9';/*Tonje Sameien*/
+/* trysil, Jonas Sjøgren */
+UPDATE riders set byline_text='80/20 Enduro series', byline_url='' where uid='78cfbdc9857b58f6fb29ad952df626cd';/*Ingeborg Øvreeide*/
+UPDATE riders set byline_text='80/20 Enduro series', byline_url='' where uid='83a481743c17becd1cb23ed6072ef2ba';/*Hanne Emilie Tannun*/
+UPDATE riders set byline_text='80/20 Enduro series', byline_url='' where uid='bca780730de6aef187ef9fb86e33634d';/*Elinborg Ólafsdóttir*/
+UPDATE riders set byline_text='80/20 Enduro series', byline_url='' where uid='db36a3da3e2b9c27ffe58061758ca017';/*Eline Eide Bye*/
+UPDATE riders set byline_text='80/20 Enduro series', byline_url='' where uid='12ab366fbb15394220f677989d4b85af';/*Jonas Pablo Sletten Gomez*/
+UPDATE riders set byline_text='80/20 Enduro series', byline_url='' where uid='f2e88e9080c6a7e59137240a74c753fe';/*Mikael Hamran*/
+UPDATE riders set byline_text='80/20 Enduro series', byline_url='' where uid='6d1737bb31b8875fb2b8ee48cb814118';/*Lars Hesby Hurum*/
+UPDATE riders set byline_text='80/20 Enduro series', byline_url='' where uid='a0d1e8f0a08b2a1f5ed59d2a1a38310c';/*Magnus Kalstad Forseth*/
+UPDATE riders set byline_text='80/20 Enduro series', byline_url='' where uid='bb4f0b8d6ccde8e9c3c6b55468323ea5';/*Kenneth Lømo*/
+UPDATE riders set byline_text='80/20 Enduro series', byline_url='' where uid='b55ad47820a56694fd5c6d89840f9740';/*Are Tallaksrud*/
+UPDATE riders set byline_text='80/20 Enduro series', byline_url='' where uid='08b415ed53406857de665baf6f8f8d93';/*Christoffer Engebretsen Bakke*/
+UPDATE riders set byline_text='80/20 Enduro series', byline_url='' where uid='f7c7f8049fdfee0a7180faa415c735e4';/*Anders Lundberg*/
+UPDATE riders set byline_text='80/20 Enduro series', byline_url='' where uid='0c6ac678253a35ae584a53be58a37691';/*Alexander Wellington*/
+UPDATE riders set byline_text='80/20 Enduro series', byline_url='' where uid='1b08d8384e221ac688b6597f8da99509';/*Hans Johansson*/
+UPDATE riders set byline_text='80/20 Enduro series', byline_url='' where uid='25582fd4da09ed9afc0f8b1155a5153e';/*Kevin Scott Johnsen*/
