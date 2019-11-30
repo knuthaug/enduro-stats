@@ -5,6 +5,53 @@
   "text": "Sesongåpneren i Skien, med Norges høyeste list for gjennomføring og god stemning. Kort, intenst og mye redbull.",
   "byline_url": "https://www.facebook.com/moldestadphotography/",
   "byline_text": "Moldestad photography",
+  "lat": 59.1765,
+  "long": 9.5925,
+  "zoom": 13,
+  "details": [
+    {
+      "name": "FE 1",
+      "strava_name": "Brekkslædd",
+      "file": "telemark-2019-fe1.gpx",
+      "strava_url": "https://www.strava.com/segments/15086151"
+    },
+    {
+      "name": "FE 2",
+      "strava_name": "Hurrahølet",
+      "file": "telemark-2019-fe2.gpx",
+      "strava_url": "https://www.strava.com/segments/17611304"
+    },
+    {
+      "name": "FE 3",
+      "strava_name": "FE3 TE 2019",
+      "file": "telemark-2019-fe3.gpx",
+      "strava_url": "https://www.strava.com/segments/20489752"
+    },
+    {
+      "name": "FE 4",
+      "strava_name": "",
+      "file": "telemark-2019-fe4.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 5",
+      "strava_name": "FE5 TE 2019",
+      "file": "telemark-2019-fe5.gpx",
+      "strava_url": "https://www.strava.com/segments/20489853"
+    },
+    {
+      "name": "FE 6",
+      "strava_name": "FE6 TE 2019",
+      "file": "telemark-2019-fe6.gpx",
+      "strava_url": "https://www.strava.com/segments/20489648"
+    },
+    {
+      "name": "FE 7",
+      "strava_name": "Dynga FE6 2017",
+      "file": "telemark-2019-fe7.gpx",
+      "strava_url": "https://www.strava.com/segments/14859298"
+    }
+  ],
   "links": [
     {
       "type": "results",

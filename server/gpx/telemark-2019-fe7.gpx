@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" version="1.1" creator="StravaGPX">
+	<metadata>
+	</metadata>
+	<trk>
+		<name>FE 7</name>
+		<trkseg>
+			<trkpt lat="59.1804180" lon="9.5947960">
+				<ele>104.0</ele>
+			</trkpt>
+			<trkpt lat="59.1804470" lon="9.5945730">
+				<ele>99.0</ele>
+			</trkpt>
+			<trkpt lat="59.1804800" lon="9.5943310">
+				<ele>91.0</ele>
+			</trkpt>
+			<trkpt lat="59.1804950" lon="9.5940960">
+				<ele>89.0</ele>
+			</trkpt>
+			<trkpt lat="59.1804990" lon="9.5938640">
+				<ele>91.0</ele>
+			</trkpt>
+			<trkpt lat="59.1804980" lon="9.5936730">
+				<ele>91.0</ele>
+			</trkpt>
+			<trkpt lat="59.1805160" lon="9.5934990">
+				<ele>91.0</ele>
+			</trkpt>
+			<trkpt lat="59.1805210" lon="9.5933220">
+				<ele>91.0</ele>
+			</trkpt>
+			<trkpt lat="59.1804980" lon="9.5931600">
+				<ele>90.0</ele>
+			</trkpt>
+			<trkpt lat="59.1804550" lon="9.5929830">
+				<ele>90.0</ele>
+			</trkpt>
+			<trkpt lat="59.1804470" lon="9.5929320">
+				<ele>89.0</ele>
+			</trkpt>
+			<trkpt lat="59.1804560" lon="9.5927970">
+				<ele>86.0</ele>
+			</trkpt>
+			<trkpt lat="59.1804790" lon="9.5927620">
+				<ele>86.0</ele>
+			</trkpt>
+			<trkpt lat="59.1805250" lon="9.5926920">
+				<ele>86.0</ele>
+			</trkpt>
+			<trkpt lat="59.1806460" lon="9.5926670">
+				<ele>86.0</ele>
+			</trkpt>
+			<trkpt lat="59.1806790" lon="9.5926590">
+				<ele>84.0</ele>
+			</trkpt>
+			<trkpt lat="59.1807450" lon="9.5926440">
+				<ele>83.0</ele>
+			</trkpt>
+			<trkpt lat="59.1808270" lon="9.5926500">
+				<ele>81.0</ele>
+			</trkpt>
+			<trkpt lat="59.1809070" lon="9.5926480">
+				<ele>80.0</ele>
+			</trkpt>
+			<trkpt lat="59.1809860" lon="9.5926250">
+				<ele>78.0</ele>
+			</trkpt>
+			<trkpt lat="59.1810680" lon="9.5926020">
+				<ele>76.0</ele>
+			</trkpt>
+			<trkpt lat="59.1811490" lon="9.5925970">
+				<ele>74.0</ele>
+			</trkpt>
+			<trkpt lat="59.1812310" lon="9.5926030">
+				<ele>69.0</ele>
+			</trkpt>
+			<trkpt lat="59.1813240" lon="9.5926120">
+				<ele>65.0</ele>
+			</trkpt>
+			<trkpt lat="59.1814240" lon="9.5926330">
+				<ele>63.0</ele>
+			</trkpt>
+			<trkpt lat="59.1815090" lon="9.5927050">
+				<ele>61.0</ele>
+			</trkpt>
+			<trkpt lat="59.1815780" lon="9.5928480">
+				<ele>59.0</ele>
+			</trkpt>
+			<trkpt lat="59.1816500" lon="9.5930190">
+				<ele>59.0</ele>
+			</trkpt>
+			<trkpt lat="59.1817190" lon="9.5931800">
+				<ele>56.0</ele>
+			</trkpt>
+			<trkpt lat="59.1817830" lon="9.5933230">
+				<ele>55.0</ele>
+			</trkpt>
+			<trkpt lat="59.1818510" lon="9.5934560">
+				<ele>52.0</ele>
+			</trkpt>
+			<trkpt lat="59.1819300" lon="9.5936020">
+				<ele>49.0</ele>
+			</trkpt>
+			<trkpt lat="59.1820180" lon="9.5937540">
+				<ele>47.0</ele>
+			</trkpt>
+			<trkpt lat="59.1821160" lon="9.5938990">
+				<ele>47.0</ele>
+			</trkpt>
+			<trkpt lat="59.1822050" lon="9.5940130">
+				<ele>45.0</ele>
+			</trkpt>
+			<trkpt lat="59.1822670" lon="9.5940780">
+				<ele>44.0</ele>
+			</trkpt>
+		</trkseg>
+	</trk>
+</gpx>
