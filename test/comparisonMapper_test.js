@@ -1,9 +1,10 @@
 const tap = require('tap')
 const fs = require('fs')
 const path = require('path')
+const deepFreeze = require('deep-freeze')
 
 const mapper = require('../server/comparisonMapper.js')
-const data = JSON.parse(fs.readFileSync(path.join(__dirname, './data/comparisonData.json')).toString())
+const data = deepFreeze(JSON.parse(fs.readFileSync(path.join(__dirname, './data/comparisonData.json')).toString()))
 const r = mapper(data)
 
 tap.test('one row per race, ', async (t) => {

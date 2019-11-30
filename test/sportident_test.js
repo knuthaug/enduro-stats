@@ -49,7 +49,7 @@ tap.test('Object details for stages', async t => {
   t.equals(stage1.results[1].stage_rank, 1)
 
   t.equals(stage1.results[2].time, '00:01:37')
-  t.equals(stage1.results[2].rider_uid, '0e6a47137d050ee9bd05f784853b4038', 'uid is correct')
+  t.equals(stage1.results[2].rider_uid, '9b790c8a348ca445ef11f1828f9fe125', 'uid is correct')
   t.equals(stage1.results[2].stage_rank, 3)
   t.equals(stage1.results[2].stage_time_ms, 97000)
   t.equals(stage1.results[2].status, 'OK')

@@ -2,7 +2,7 @@
 module.exports = function raceViewMapper (races) {
   const out = []
 
-  const sorted = races.sort((a, b) => {
+  const sorted = [...races].sort((a, b) => {
     if (a.year > b.year) {
       return -1
     } else if (a.year < b.year) {
