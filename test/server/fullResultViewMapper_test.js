@@ -3,8 +3,8 @@ const fs = require('fs')
 const path = require('path')
 const deepFreeze = require('deep-freeze')
 
-const mapper = require('../server/fullResultViewMapper.js')
-const data = deepFreeze(JSON.parse(fs.readFileSync(path.join(__dirname, './data/race-results-complete2.json')).toString()))
+const mapper = require('../../server/fullResultViewMapper.js')
+const data = deepFreeze(JSON.parse(fs.readFileSync(path.join(__dirname, '../data/race-results-complete2.json')).toString()))
 const [stages, r] = mapper(['Menn', 'Kvinner'], data)
 
 tap.test('All results in one list', (t) => {

@@ -1,6 +1,5 @@
 const tap = require('tap')
-
-const sp = require('../import/spellcheck.js')
+const sp = require('../../import/spellcheck.js')
 
 tap.test('names are replaced', (t) => {
   t.equals(sp.check('Edgars C?rulis'), 'Edgars Cirulis', 'special name is replaced')
