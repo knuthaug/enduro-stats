@@ -1,6 +1,6 @@
 const tap = require('tap')
 
-const { convertMsToTime, convertTimeToMs } = require('../lib/time.js')
+const { convertMsToTime, convertTimeToMs } = require('../../lib/time.js')
 
 tap.test('converts ms to human readable time format', (t) => {
   t.equals(convertMsToTime('345456'), '05:45.4', 'handles normal minutes/second/ms format')
