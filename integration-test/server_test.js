@@ -34,7 +34,7 @@ tap.test('rider index page responds with 200', async t => {
 
 tap.test('race page responds with 200 for one race', async t => {
   await supertest(app)
-    .get('/ritt/acff26f96c230cfbafe3294fe5f5da06')
+    .get('/ritt/31cc5663f5067534cb4427ab9bc4cd91')
     .expect(200)
     .expect('Content-type', 'text/html; charset=utf-8')
   t.end()
