@@ -1,10 +1,10 @@
 const tap = require('tap')
-const Mylaps = require('../import/converters/mylaps.js')
+const Mylaps = require('../../import/converters/mylaps.js')
 const path = require('path')
 
 tap.test('parse complete result file', async t => {
-  const ml = new Mylaps(path.join(__dirname, 'data/drammen-2017.csv'), {
-    datafile: path.join(__dirname, 'data/racedata-drammen2017.json')
+  const ml = new Mylaps(path.join(__dirname, '../data/drammen-2017.csv'), {
+    datafile: path.join(__dirname, '../data/racedata-drammen2017.json')
   })
 
   const loaded = await ml.load()
@@ -16,8 +16,8 @@ tap.test('parse complete result file', async t => {
 })
 
 tap.test('Object details for stages', async t => {
-  const ml = new Mylaps(path.join(__dirname, 'data/drammen-2017.csv'), {
-    datafile: path.join(__dirname, 'data/racedata-drammen2017.json')
+  const ml = new Mylaps(path.join(__dirname, '../data/drammen-2017.csv'), {
+    datafile: path.join(__dirname, '../data/racedata-drammen2017.json')
   })
 
   const loaded = await ml.load()
@@ -55,8 +55,8 @@ tap.test('Object details for stages', async t => {
 })
 
 tap.test('final status field is correct', async t => {
-  const ml = new Mylaps(path.join(__dirname, 'data/drammen-2017.csv'), {
-    datafile: path.join(__dirname, 'data/racedata-drammen2017.json')
+  const ml = new Mylaps(path.join(__dirname, '../data/drammen-2017.csv'), {
+    datafile: path.join(__dirname, '../data/racedata-drammen2017.json')
   })
 
   const loaded = await ml.load()
@@ -72,8 +72,8 @@ tap.test('final status field is correct', async t => {
 })
 
 tap.test('support for NOOP stages', async t => {
-  const ml = new Mylaps(path.join(__dirname, 'data/hemsedal-2018.csv'), {
-    datafile: path.join(__dirname, 'data/hemsedal-2018-racedata.json')
+  const ml = new Mylaps(path.join(__dirname, '../data/hemsedal-2018.csv'), {
+    datafile: path.join(__dirname, '../data/hemsedal-2018-racedata.json')
   })
 
   const loaded = await ml.load()
