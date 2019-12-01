@@ -1,9 +1,10 @@
 const tap = require('tap')
 const fs = require('fs')
 const path = require('path')
+const deepFreeze = require('deep-freeze')
 
-const { riderViewMapper } = require('../server/riderViewMapper.js')
-const data = JSON.parse(fs.readFileSync(path.join(__dirname, './data/race-results-for-rider.json')).toString())
+const { riderViewMapper } = require('../../server/riderViewMapper.js')
+const data = deepFreeze(JSON.parse(fs.readFileSync(path.join(__dirname, '../data/race-results-for-rider.json')).toString()))
 
 const r = riderViewMapper(data)
 

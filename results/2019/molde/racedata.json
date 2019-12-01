@@ -3,16 +3,46 @@
   "year": 2019,
   "date": "2019-05-26",
   "series": "80/20 enduro series",
+  "byline_text": "Stian Drogseth",
+  "byline_url": "https://www.facebook.com/StianDrogseth-foto-163521570752814/",
+  "lat": 62.7469,
+  "long": 7.1502,
+  "details": [
+    {
+      "name": "FE 1",
+      "strava_name": "FE1",
+      "file": "molde-2019-fe1.gpx",
+      "strava_url": "https://www.strava.com/segments/20706485"
+    },
+    {
+      "name": "FE 2",
+      "strava_name": "FE2",
+      "file": "molde-2019-fe2.gpx",
+      "strava_url": "https://www.strava.com/segments/20706507"
+    },
+    {
+      "name": "FE 3",
+      "strava_name": "FE3",
+      "file": "molde-2019-fe3.gpx",
+      "strava_url": "https://www.strava.com/segments/20706517"
+    },
+    {
+      "name": "FE 4",
+      "strava_name": "FE4",
+      "file": "molde-2019-fe4.gpx",
+      "strava_url": "https://www.strava.com/segments/20706534"
+    }
+  ],
   "links": [
     {
       "type": "results",
       "desc": "Originale resultater",
       "url": "http://www.8020es.no/s/Molde-Enduro-2019-Resultater.pdf"
-    }, 
-{
-  "type": "film", 
-  "desc": "Film fra rittet",
-  "url": "https://vimeo.com/341408955"
-}
+    },
+    {
+      "type": "film", 
+      "desc": "Film fra rittet",
+      "url": "https://vimeo.com/341408955"
+    }
   ]
 }
