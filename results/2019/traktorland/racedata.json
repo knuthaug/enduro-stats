@@ -5,6 +5,65 @@
   "text": "Noe så sjeldent som en todagers enduro i Norge. 5 etapper i Traktor Bike park på første dag, 4 etapper på naturlige stier på Hadeland på dag 2, et samarbeid mellom storbonden på Traktor Bike Park og Hadeland CK. Resultater er konvertert fra jpeg-bilder, så feil kan forekomme. ",
   "byline_text": "Jon Borgersen",
   "byline_url": "http://jonborgersen.com",
+  "lat": 60.4843,
+  "long": 10.5043,
+  "zoom": 10,
+  "details": [
+    {
+      "name": "FE 1",
+      "strava_name": "Stikkvei til vedstabbel",
+      "file": "traktorland-2019-fe1.gpx",
+      "strava_url": "https://www.strava.com/segments/10221216"
+    },
+    {
+      "name": "FE 2",
+      "strava_name": "FE 3 Traktor Enduro 2015",
+      "file": "traktorland-2019-fe2.gpx",
+      "strava_url": "https://www.strava.com/segments/9675637"
+    },
+    {
+      "name": "FE 3",
+      "strava_name": "",
+      "file": "traktorland-2019-fe3.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 4",
+      "strava_name": "",
+      "file": "traktorland-2019-fe4.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 5",
+      "strava_name": "Sjarmøretappen",
+      "file": "traktorland-2019-fe5.gpx",
+      "strava_url": "https://www.strava.com/segments/18887005"
+    },
+    {
+      "name": "FE 6",
+      "strava_name": "",
+      "file": "traktorland-2019-fe6.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 7",
+      "strava_name": "",
+      "file": "traktorland-2019-fe7.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 8",
+      "strava_name": "",
+      "file": "traktorland-2019-fe8.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 9",
+      "strava_name": "",
+      "file": "traktorland-2019-fe9.gpx",
+      "strava_url": ""
+    }
+  ],
   "links": [
     {
       "type": "images",
