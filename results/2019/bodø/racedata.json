@@ -5,6 +5,47 @@
   "series": "80/20 enduro series",
   "byline_text": "Drone Nord",
   "byline_url": "https://www.facebook.com/DroneNordANS/",
+  "lat": 67.3207,
+  "long": 14.5277,
+  "zoom": 12,
+  "details": [
+    {
+      "name": "FE 1",
+      "strava_name": "Fe0 Bodø Enduro 2018",
+      "file": "bodø-2019-fe1.gpx",
+      "strava_url": "https://www.strava.com/segments/17971149"
+    },
+    {
+      "name": "FE 2",
+      "strava_name": "80/20 17 FE3",
+      "file": "bodø-2019-fe2.gpx",
+      "strava_url": "https://www.strava.com/segments/15167520"
+    },
+    {
+      "name": "FE 3",
+      "strava_name": "",
+      "file": "bodø-2019-fe3.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 4",
+      "strava_name": "Frostfree",
+      "file": "bodø-2019-fe4.gpx",
+      "strava_url": "https://www.strava.com/segments/20670159"
+    },
+    {
+      "name": "FE 5",
+      "strava_name": "Hold nu Brillan og Skumleskogen",
+      "file": "bodø-2019-fe5.gpx",
+      "strava_url": "https://www.strava.com/segments/15055789"
+    },
+    {
+      "name": "FE 6",
+      "strava_name": "80/20 17 FE 5",
+      "file": "bodø-2019-fe6.gpx",
+      "strava_url": "https://www.strava.com/segments/15167566"
+    }
+  ],
   "links": [
     {
       "type": "results",

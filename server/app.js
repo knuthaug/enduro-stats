@@ -72,7 +72,7 @@ app.get('/gpx/:file', (req, res) => {
   const file = req.params.file
   const options = { root: './server/gpx' }
 
-  return res.set({ 'Cache-Control': `public, max-age=${ASSET_LONG_CACHE_TIME}` }).sendFile(`${file}`, options)
+  return res.set({ 'Cache-Control': `public, max-age=10` }).sendFile(`${file}`, options)
 })
 
 app.get('/img/:file', (req, res) => {

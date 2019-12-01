@@ -21,7 +21,7 @@ function addFiles(map, stages, parent) {
 }
 
 function handleFile(o, parent, map, stages, index) {
-  new L.GPX(`/gpx/${o.filename}`, {
+    new L.GPX(`https://d1hoqbrdo21qk8.cloudfront.net/gpx/${o.filename}`, {
       async: true,
       polyline_options: {
         color: '#458fd9',
