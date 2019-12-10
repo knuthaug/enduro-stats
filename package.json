@@ -38,7 +38,7 @@
     "babel-loader": "8.0.4",
     "bootstrap": "4.3.1",
     "command-line-args": "5.0.2",
-    "copy-webpack-plugin": "4.6.0",
+    "copy-webpack-plugin": "5.1.0",
     "css-loader": "1.0.1",
     "cssnano": "4.1.10",
     "db-migrate": "0.11.4",
@@ -70,8 +70,9 @@
     "supertest": "3.3.0",
     "supervisor": "latest",
     "tap": "14.4.2",
-    "webpack": "4.25.1",
-    "webpack-cli": "3.1.2"
+    "webpack": "4.41.2",
+    "webpack-cli": "3.1.2",
+    "caniuse-lite": "1.0.30001015"
   },
   "dependencies": {
     "compression": "1.7.3",
