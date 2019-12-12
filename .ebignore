@@ -4,7 +4,10 @@ coverage
 */.DS_Store
 .DS_Store
 logs
-
+results
+test
+integration-test
+migrations
 scripts
 app.yaml
 cdn
