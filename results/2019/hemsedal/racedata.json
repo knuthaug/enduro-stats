@@ -9,5 +9,40 @@
       "desc": "Originale resultater",
       "url": "https://www.hardbarka.com/Hardbarka%202019%20resultater.pdf"
     }
+  ],
+  "lat": 60.8734,
+  "long": 8.5158,
+  "zoom": 12,
+  "details": [
+    {
+      "name": "FE 1",
+      "strava_name": "",
+      "file": "hemsedal-2019-fe1.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 2",
+      "strava_name": "",
+      "file": "hemsedal-2019-fe2.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 3",
+      "strava_name": "",
+      "file": "hemsedal-2019-fe3.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 4",
+      "strava_name": "Hardbarka nattetappe Totten ned",
+      "file": "hemsedal-2019-fe4.gpx",
+      "strava_url": "https://www.strava.com/segments/22013397"
+    },
+    {
+      "name": "FE 5",
+      "strava_name": "Hardbarka nattetappe Totten ned",
+      "file": "hemsedal-2019-fe5.gpx",
+      "strava_url": "https://www.strava.com/segments/22013397"
+    }
   ]
 }
