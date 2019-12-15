@@ -17,5 +17,40 @@
       "desc": "Rittvideo (vimeo)",
       "url": "https://vimeo.com/356241572"
     }
+  ],
+  "lat": 61.2683,
+  "long": 8.9187,
+  "zoom": 13,
+  "details": [
+    {
+      "name": "FE 1",
+      "strava_name": "",
+      "file": "beito-2019-fe1.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 2",
+      "strava_name": "",
+      "file": "beito-2019-fe2.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 3",
+      "strava_name": "",
+      "file": "beito-2019-fe3.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 4",
+      "strava_name": "",
+      "file": "beito-2019-fe4.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 5",
+      "strava_name": "",
+      "file": "beito-2019-fe5.gpx",
+      "strava_url": ""
+    }
   ]
 }

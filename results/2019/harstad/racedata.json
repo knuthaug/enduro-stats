@@ -9,5 +9,40 @@
       "desc": "Originale resultater",
       "url": ""
     }
+  ],
+  "lat": 68.7873,
+  "long": 16.5150,
+  "zoom": 12,
+  "details": [
+    {
+      "name": "FE 1",
+      "strava_name": "HER 2019 FE1",
+      "file": "harstad-2019-fe1.gpx",
+      "strava_url": "https://www.strava.com/segments/21592399"
+    },
+    {
+      "name": "FE 2",
+      "strava_name": "HER 2019 FE2",
+      "file": "harstad-2019-fe2.gpx",
+      "strava_url": "https://www.strava.com/segments/21592422"
+    },
+    {
+      "name": "FE 3",
+      "strava_name": "HER 2019 FE3",
+      "file": "harstad-2019-fe3.gpx",
+      "strava_url": "https://www.strava.com/segments/21592458"
+    },
+    {
+      "name": "FE 4",
+      "strava_name": "HER 2019 FE4",
+      "file": "harstad-2019-fe4.gpx",
+      "strava_url": "https://www.strava.com/segments/21592491"
+    },
+    {
+      "name": "FE 5",
+      "strava_name": "HER 2019 FE5",
+      "file": "harstad-2019-fe5.gpx",
+      "strava_url": "https://www.strava.com/segments/21467475"
+    }
   ]
 }

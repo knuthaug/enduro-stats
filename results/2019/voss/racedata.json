@@ -2,5 +2,28 @@
   "name": "Ekstremsportveko enduro",
   "year": 2019,
   "date": "2019-06-24",
-  "text": "3 etappers mini-enduro under ekstremsportveko på Voss. Noen må snart ta fra Preben Nøkleby seiersrekka. "
+  "text": "3 etappers mini-enduro under ekstremsportveko på Voss. Noen må snart ta fra Preben Nøkleby seiersrekka. ",
+  "lat": 60.6405,
+  "long": 6.4176,
+  "zoom": 13,
+  "details": [
+    {
+      "name": "FE 1",
+      "strava_name": "SS1 - 2018",
+      "file": "voss-2019-fe1.gpx",
+      "strava_url": "https://www.strava.com/segments/18054480"
+    },
+    {
+      "name": "FE 2",
+      "strava_name": "",
+      "file": "voss-2019-fe2.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 3",
+      "strava_name": "SS3 - 2018",
+      "file": "voss-2019-fe3.gpx",
+      "strava_url": "https://www.strava.com/segments/18054512"
+    }
+  ]
 }
