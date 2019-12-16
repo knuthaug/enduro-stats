@@ -4,7 +4,21 @@
   "date": "2018-06-08",
   "series": "80/20 enduro series",
   "links": [
-    { "type": "film", "desc": "Rittfilm (vimeo)", "url": "https://vimeo.com/277452789" },
-    { "type": "results", "desc": "Originale resultater", "url": "http://www.8020es.no/s/8020-Bod-Enduro-Resultatliste-at2j.pdf"}
-  ]
+    {
+      "type": "film",
+      "desc": "Rittfilm (vimeo)",
+      "url": "https://vimeo.com/277452789"
+    },
+    {
+      "type": "results",
+      "desc": "Originale resultater",
+      "url": "http://www.8020es.no/s/8020-Bod-Enduro-Resultatliste-at2j.pdf"
+    },
+    {
+      "type": "images",
+      "desc": "Bilder fra Jøran Johansen",
+      "url": "https://joranjohnsen.smugmug.com/Bod%C3%B8-Enduro/"
+    }
+  ],
+  "byline_text": "Frode Koppang"
 }

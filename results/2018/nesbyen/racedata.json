@@ -5,7 +5,17 @@
   "series": "80/20 enduro series",
   "text": "Nesbyen sies å ha Norges feteste stier og de er mange og lange. Rittet byr på høy fart og plenty med transportetapper, og pleier å dra det største deltagerantallet hvert år. Stiene i Nesbyen er verdt et besøk utenom ritt også.",
   "links": [
-    { "type": "film", "desc": "Rittfilm (vimeo)", "url": "https://vimeo.com/273960966" },
-    { "type": "results", "desc": "Originale resultater", "url": "http://www.8020es.no/s/Resultater-NE18-med-team-42b7.pdf"}
-  ]
+    {
+      "type": "film",
+      "desc": "Rittfilm (vimeo)",
+      "url": "https://vimeo.com/273960966"
+    },
+    {
+      "type": "results",
+      "desc": "Originale resultater",
+      "url": "http://www.8020es.no/s/Resultater-NE18-med-team-42b7.pdf"
+    }
+  ],
+  "byline_text": "trailguide.net",
+  "byline_url": "https://trailguide.net"
 }
