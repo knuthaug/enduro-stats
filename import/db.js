@@ -305,8 +305,8 @@ class Db {
     return this.findSet(query, values, `Error finding riders without images for race id=${raceId}`)
   }
 
-  async addByline(riderId, bylineText, bylineUrl) {
-    return this.update('update riders set byline_text = $1, byline_url = $2 where id = $3', [bylineText, bylineUrl, riderId])
+  async addByline(riderId, bylineText, bylineUrl, imageMode) {
+    return this.update('update riders set byline_text = $1, byline_url = $2, image_mode = $3  where id = $4', [bylineText, bylineUrl, imageMode, riderId])
   }
 
   async rawRaceResults (raceName, raceYear, className) {

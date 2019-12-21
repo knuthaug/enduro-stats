@@ -280,6 +280,7 @@ async function riderHandler (req) {
     numRaces,
     startYear,
     year,
+    portrait: rider.image_mode === 'portrait',
     placesChart,
     percentChart,
     avg,
@@ -317,7 +318,12 @@ function toComparisonChartData (races) {
 function toChartData (results) {
   const placesChart = JSON.stringify(results.map((e) => {
     if (e.time !== 'DNS' && e.time !== 'DNF') {
-      return { x: e.date, y: e.rank, class: e.class, race: e.raceName, properDate: parse(e.date) }
+      return {
+        x: e.date,
+        y: e.rank,
+        class: e.class,
+        race: e.raceName,
+        properDate: parse(e.date) }
     }
   }).filter((e) => {
     return typeof e !== 'undefined'
@@ -327,7 +333,12 @@ function toChartData (results) {
 
   const percentChart = JSON.stringify(results.map((e) => {
     if (e.time !== 'DNS' && e.time !== 'DNF') {
-      return { x: e.date, y: ((e.rank / e.count) * 100), class: e.class, race: e.raceName, properDate: parse(e.date) }
+      return {
+        x: e.date,
+        y: ((e.rank / e.count) * 100),
+        class: e.class,
+        race: e.raceName,
+        properDate: parse(e.date) }
     }
   }).filter((e) => {
     return typeof e !== 'undefined'

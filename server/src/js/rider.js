@@ -62,13 +62,16 @@ function setupRaceGraph (element) {
     yAxis: {
       title: {
         text: 'Plass %'
-      }
+      },
     },
     xAxis: {
       title: {
         text: 'Etappe'
       },
       tickInterval: 1
+    },
+    legend: {
+      labelFormat: "{point.y:.2f}"
     },
     tooltip: {
       formatter: function () {
@@ -137,7 +140,10 @@ function setupGraph (el, graph) {
         title: {
           text: graph === 'places' ? 'Plass i klasse' : 'Plass % i klasse'
         },
-        type: 'linear'
+        type: 'linear',
+        labels: {
+          format: graph === 'places' ? '{value}' : "{value:.2f} %"
+        }
       },
       title: {
         text: graph === 'places' ? 'Rittplasseringer' : 'Rittplasseringer %'
@@ -161,6 +167,9 @@ function setupGraph (el, graph) {
       yAxis: {
         title: {
           text: graph === 'places' ? 'Plass i klasse' : 'Plass % i klasse'
+        },
+        labels: {
+          format: graph === 'places' ? '{value}' : "{value:.2f} %"
         }
       },
       chart: {

@@ -113,6 +113,14 @@ th {
   color: #fff;
 }
 
+margin-bottom-large {
+  margin-bottom: 15px;
+}
+
+.graph-container {
+  padding-top: 25px;
+}
+
 a.none, a.none:focus, a.none:hover {
   border-bottom: 0;
 }
