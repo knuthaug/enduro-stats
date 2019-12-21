@@ -109,7 +109,7 @@ async function matchImage(answers, byline, imageMode) {
   const riderId = parts[2]
 
   //mv image to images/uid.jpg
-  fs.rename(`raw_images/${bib}.jpg`, `images/${uid}.jpg`, function(err) {
+  fs.rename(`raw_images/${bib}.jpg`, `cdn/${uid}.jpg`, function(err) {
     if ( err ) {
       console.log('ERROR: ' + err);
       return

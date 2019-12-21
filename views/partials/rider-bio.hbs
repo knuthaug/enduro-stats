@@ -1,5 +1,5 @@
 <h3>{{rider.name}}</h3>
-<p class="rider-info">Klubb: {{rider.club}}<br/>
+<p class="rider-info {{#if portrait}}margin-bottom-large{{/if}}">Klubb: {{rider.club}}<br/>
   Ritt: {{numRaces}}<br/>
   Første ritt: {{startYear}}<br/>
   {{#compare year '!==' 0}}

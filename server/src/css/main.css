@@ -113,6 +113,10 @@ th {
   color: #fff;
 }
 
+margin-bottom-large {
+  margin-bottom: 15px;
+}
+
 .graph-container {
   padding-top: 25px;
 }
