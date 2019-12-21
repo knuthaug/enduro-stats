@@ -239,7 +239,7 @@ class Db {
         return id
       }
     } catch (error) {
-      logger.error(`Error for inserting rider: query:${query}: values${values}`)
+      logger.error(`Error for inserting rider: query:${query}: values: ${values}`)
       logger.error(error)
     } finally {
       await client.release()

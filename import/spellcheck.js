@@ -54,7 +54,7 @@ const subs = {
   'Preben Nøkleby': 'Preben Alexander Nøkleby',
   'Severin Poppe': 'Severin Poppe Midteide',
   'Thomas Asbjornhus': 'Thomas Gajda Asbjørnhus',
-  'Tobias Sandengren': 'Tobias Sandengen',
+  'Tobias Sandengren': 'Tobias Hoel Sandengen',
   'Trygve Veslum': 'Trygve Stansberg Veslum',
   'Zakarias Johansen': 'Zakarias Blom Johansen',
   'Ove Tigergutt Grøndal': 'Ove Grøndal',
