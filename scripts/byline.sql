@@ -499,3 +499,19 @@ UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.c
 UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/', image_mode='portrait' where uid='188548a66660bf218f3c15f2f28c5ab9';/*Sebastian Habenicht*/
 UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/', image_mode='portrait' where uid='c0f2a4e54f71ebee57498f992555461d';/*Håkon Uthus*/
 UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/', image_mode='portrait' where uid='44f7aa534ae08646f35fc8338e960831';/*Jørn Inge Woldmo*/
+UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/', image_mode='portrait' where uid='4791a6e10861d614d46e3c62144616dd';/*Charlotte Rapp*/
+UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/', image_mode='portrait' where uid='4c52bccac3a06cfd36fd0cb0768825b8';/*Espen Helgesen*/
+UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/', image_mode='portrait' where uid='9b3b7861fc2a69ef50f1bd960659426a';/*Jonas Molin*/
+UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/', image_mode='portrait' where uid='a272338a8243e1355c6cc0b4c725c446';/*Torbjørn Presthus*/
+UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/', image_mode='portrait' where uid='2ee69f2ced8295665fd3a8ba655fc8d0';/*Stian Gjelsvik*/
+UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/', image_mode='portrait' where uid='00557a76c025ae3f9a6d792bc263fbce';/*Even Bekkevold*/
+UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/', image_mode='portrait' where uid='1454dd701af22b669fcd6731931523c8';/*Andreas Horten*/
+UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/', image_mode='portrait' where uid='9a0eee258070c9460dc25732a04cfa37';/*Bjørn-Tore Wik*/
+UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/', image_mode='portrait' where uid='496de20d5dd433f3d47c5c1d104258d1';/*Ole Johan Johnsen*/
+UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/', image_mode='portrait' where uid='e6a540a99bd4ead15f0bea6f1b47e0ec';/*Glenn Østerud*/
+UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/', image_mode='portrait' where uid='82ef888e92c99d5c183f5b0bfcf95008';/*Thomas Rambekk Henriksen*/
+UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/', image_mode='portrait' where uid='40c47390e7cf74382168e8ebab3ada0b';/*Berit Nordsæter Resell*/
+UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/', image_mode='portrait' where uid='fac5773d524101874f45f63446b9da08';/*Anne Trahaug*/
+UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/', image_mode='portrait' where uid='0b86d9bd3e8f37c2eeeae01d783153fe';/*Janniche Ødegård*/
+UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/', image_mode='portrait' where uid='fc71e724ae697b6792a2a81d26787232';/*Solveig Mostad*/
+UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/', image_mode='portrait' where uid='c3cd644247973dee8c87c38930b39c6d';/*Morten Pedersen*/
