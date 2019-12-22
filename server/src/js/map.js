@@ -1,6 +1,34 @@
 const L = require('leaflet')
 const gpx = require('leaflet-gpx')
 
+const colors = [
+  {
+    range: [20, 0],
+    color: '#0d89d6'
+  },
+  {
+    range: [0, -5],
+    color: '#f55c53'
+  },
+  {
+    range: [-5, -10],
+    color: '#f53a2f'
+  },
+  {
+    range: [-10, -15],
+    color: '#b5140b'
+  },
+  {
+    range: [-15, -20],
+    color: '#961109'
+  },
+  {
+    range: [-20, -25],
+    color: '#700d07'
+  }
+
+]
+
 document.addEventListener('DOMContentLoaded', function (event) {
   //load gpx files
   const json = document.querySelectorAll('[data-gpx]')[0].dataset.gpx.split(',')
@@ -58,7 +86,74 @@ function handleFile(o, parent, map, stages, index) {
     }).addTo(map)
 }
 
+function startPoint(data) {
+  return data.map(e => e[1]).reduce((acc, current) => {
+    return Math.min(acc, current)
+  }, 10000) - 25
+}
+
+function gradients(data) {
+  const gradients = []
+
+  for(let i = 0; i < data.length; i += 10) {
+    const set = data.slice(i, i + 10)
+    const gradient = (diff(set[set.length - 1][1], set[0][1]) /
+                      diff(set[set.length - 1][0], set[0][0])) * 100
+    gradients.push({
+      showInLegend: false,
+      type: 'column',
+      name: 'gradient',
+      data: interpolate(set),
+      color: colorFromGradient(gradient)
+    })
+  }
+
+  return gradients
+}
+
+function interpolate(set) {
+  const newSet = [set[0]]
+  
+  for(let i = 0; i < set.length - 1; i++) {
+    const current = set[i]
+    const next = set[i + 1]
+
+    if(next[0] > current[0] + 1) {
+      for(let j = current[0]; j < Math.floor(next[0] + 1); j++) {
+        newSet.push([j, current[1]])
+      }
+    }
+  }
+  //console.log(newSet)
+  return newSet
+}
+
+function colorFromGradient(gradient) {
+  if(isNaN(gradient)) {
+    gradient = 0
+  }
+  for(let color of colors) {
+    if(gradient <= color.range[0] && gradient >= color.range[1] ) {
+      return color.color
+    }
+  }
+  return '#0d89d6' //positive gradient
+}
+
+function diff(point1, point2) {
+  return point1 - point2
+}
+
 function setupGraph(id, data) {
+ 
+  let series = gradients(data)
+  series.push(
+    {
+      showInLegend: false,
+      data: data,
+      type: 'spline',
+      pointStart: 1
+    });
 
   Highcharts.chart(id, {
     chart: {
@@ -80,7 +175,8 @@ function setupGraph(id, data) {
     yAxis: {
       title: {
         text: 'Høyde'
-      }
+      },
+      min: startPoint(data)
     },
     xAxis: {
       title: {
@@ -94,19 +190,18 @@ function setupGraph(id, data) {
       }
     },
     plotOptions: {
+      column: {
+        pointPadding: 0,
+        borderWidth: 0
+      },
       series: {
         label: {
           connectorAllowed: false
-        }
+        },
+        lineWidth: 3
       }
     },
-    series: [{
-      showInLegend: false,
-      data: data,
-      pointStart: 1,
-      name: 'Plass %'
-    }],
-
+    series,
     responsive: {
       rules: [{
         condition: {
