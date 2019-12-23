@@ -137,7 +137,9 @@ function interpolate(set) {
     }
   }
   //console.log(newSet)
-  return newSet
+  return newSet.sort((a, b) => {
+    return a[0] - b[0]
+  })
 }
 
 function colorFromGradient(gradient) {
