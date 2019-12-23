@@ -3,8 +3,12 @@ const gpx = require('leaflet-gpx')
 
 const colors = [
   {
-    range: [20, 0],
-    color: '#0d89d6'
+    range: [15, 5],
+    color: '#29f23d'
+  },
+  {
+    range: [5, 0],
+    color: '#1ec946'
   },
   {
     range: [0, -5],
@@ -25,6 +29,14 @@ const colors = [
   {
     range: [-20, -25],
     color: '#700d07'
+  },
+  {
+    range: [-25, -35],
+    color: '#750606'
+  },
+  {
+    range: [-35, -45],
+    color: '#4f0202'
   }
 
 ]
@@ -137,7 +149,8 @@ function colorFromGradient(gradient) {
       return color.color
     }
   }
-  return '#0d89d6' //positive gradient
+  console.log(`gradient=${gradient}`)
+  return 'black' //positive gradient
 }
 
 function diff(point1, point2) {
