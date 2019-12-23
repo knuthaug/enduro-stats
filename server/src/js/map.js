@@ -149,7 +149,7 @@ function colorFromGradient(gradient) {
       return color.color
     }
   }
-  console.log(`gradient=${gradient}`)
+  //console.log(`gradient=${gradient}`)
   return 'black' //positive gradient
 }
 
