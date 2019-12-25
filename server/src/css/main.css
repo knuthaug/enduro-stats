@@ -416,3 +416,58 @@ a.btn {
 .details-row {
   padding-bottom: 5px;
 }
+
+#legend {
+  margin-top: 15px;
+}
+
+table.legend tr {
+  border: 1px solid #333;
+}
+
+table.legend td {
+  text-align: center;
+  padding: 5px;
+  font-size: 85%;
+}
+
+.color {
+  width: 70px;
+  height: 20px;
+}
+
+.green1 {
+  background-color: #29f23d;
+}
+
+.green2 {
+  background-color: #1ec946;
+}
+
+.red1 {
+  background-color: #f55c53;
+}
+
+.red2 {
+  background-color: #f33a2f;
+}
+
+.red3 {
+  background-color: #b5140b;
+}
+
+.red4 {
+  background-color: #961109;
+}
+.red5 {
+  background-color: #700d07;
+}
+
+.red6 {
+  background-color: #570101;
+}
+
+.red7 {
+  background-color: #440202;
+
+}

@@ -16,7 +16,7 @@ const colors = [
   },
   {
     range: [-5, -10],
-    color: '#f53a2f'
+    color: '#f33a2f'
   },
   {
     range: [-10, -15],
@@ -114,7 +114,7 @@ function gradients(data) {
     gradients.push({
       showInLegend: false,
       type: 'column',
-      name: 'gradient',
+      name: `${gradient.toFixed(0)} %`,
       data: interpolate(set),
       color: colorFromGradient(gradient)
     })
@@ -136,7 +136,7 @@ function interpolate(set) {
       }
     }
   }
-  //console.log(newSet)
+
   return newSet.sort((a, b) => {
     return a[0] - b[0]
   })
@@ -151,7 +151,6 @@ function colorFromGradient(gradient) {
       return color.color
     }
   }
-  //console.log(`gradient=${gradient}`)
   return 'black' //positive gradient
 }
 
@@ -201,7 +200,11 @@ function setupGraph(id, data) {
     },
     tooltip: {
       formatter: function () {
-        return `<span>${Math.abs(this.point.y).toFixed(1)} meter</span>`
+        if(this.series.userOptions.type === 'spline') {
+          return `<span>${Math.abs(this.point.y).toFixed(1)} meter</span>`
+        } else {
+          return `<span>${this.series.userOptions.name}</span>`
+        }
       }
     },
     plotOptions: {
