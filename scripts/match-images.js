@@ -22,6 +22,10 @@ const bylineMap = {
     text: 'Eirik Grønevik/mtbfoto.no',
     url: 'http://mtbfoto.no/'
   },
+  'Svenn Fjeldheim': {
+    text: 'Svenn Fjeldheim',
+    url: ''
+  },
   'Kristoffer H. Kippernes': {
     text: 'Kristoffer H. Kippernes/Terrengsykkel',
     url: 'http://terrengsykkel.no/'

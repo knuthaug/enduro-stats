@@ -515,3 +515,11 @@ UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.c
 UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/', image_mode='portrait' where uid='0b86d9bd3e8f37c2eeeae01d783153fe';/*Janniche Ødegård*/
 UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/', image_mode='portrait' where uid='fc71e724ae697b6792a2a81d26787232';/*Solveig Mostad*/
 UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/', image_mode='portrait' where uid='c3cd644247973dee8c87c38930b39c6d';/*Morten Pedersen*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='portrait' where uid='ed1d2fc03d49609e9579a94d21dbfdfc';/*Audun Wichmann*/
+UPDATE riders set byline_text='Svenn Fjeldheim', byline_url='', image_mode='landscape' where uid='dc9ebf611ca41c1502b202a2d6da5070';/*Marius Bakken*/
+UPDATE riders set byline_text='Svenn Fjeldheim', byline_url='', image_mode='landscape' where uid='b3656cd8d7f6f243683f1c52d32cf4e1';/*Øyvind Horgen*/
+UPDATE riders set byline_text='Svenn Fjeldheim', byline_url='', image_mode='landscape' where uid='e9a67d8a8aa952a7064fa19e9439feee';/*Frode Kristian Møller Ditlefsen*/
+UPDATE riders set byline_text='Svenn Fjeldheim', byline_url='', image_mode='landscape' where uid='073920a6154c2cb8405ca3c75d846fe0';/*Rolf Mauritz Pedersen*/
+UPDATE riders set byline_text='Svenn Fjeldheim', byline_url='', image_mode='landscape' where uid='102f255ec80f46172a1c9a861baf6cbd';/*Theodor Bakken*/
+UPDATE riders set byline_text='Svenn Fjeldheim', byline_url='', image_mode='landscape' where uid='bf961dfa53ad6895e243fba27a90696f';/*Tobias Hoel Sandengen*/
+UPDATE riders set byline_text='Svenn Fjeldheim', byline_url='', image_mode='landscape' where uid='e3adee14d9a31afedf9266c6e3318501';/*Pål Neverdal*/
