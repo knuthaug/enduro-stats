@@ -61,10 +61,7 @@ async function fetchData(id) {
     .then( (response) => {
       return response.json()
     })
-    .then((json) => {
-      //console.log(JSON.stringify(json))
-      return json
-    })
+    .then(json => json)
 }
 
 function yAxisTitle(type) {

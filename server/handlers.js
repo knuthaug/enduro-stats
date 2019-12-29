@@ -88,11 +88,11 @@ async function compareGraphHandler (req) {
   const race = req.query.race
   const type = req.query.type
 
-  let ridersData = []
-
-  if (riders) {
-    ridersData = await db.raceResultsForRaceAndRiders(race, riders)
+  if(!riders) {
+    return []
   }
+
+  const ridersData = await db.raceResultsForRaceAndRiders(race, riders)
 
   if (type === 'places') {
     return comparisonGraphMapper.places(ridersData)
