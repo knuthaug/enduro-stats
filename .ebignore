@@ -6,6 +6,7 @@ coverage
 logs
 results
 test
+sync-images.sh
 integration-test
 migrations
 scripts
