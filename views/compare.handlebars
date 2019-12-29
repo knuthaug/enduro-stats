@@ -10,7 +10,7 @@
   <div class="col-2"></div>
   <div class="col-8">
     <form id="compare-search-form" class="form-inline mt-2 mt-md-0" method="get" action="/sammenlign">
-      Søk fram ryttere: <input class="form-control mr-sm-2 autoComplete" id="compare-search-field" type="text"placeholder="søk" aria-label="Search" list="compare-search-list" autocomplete="off">
+      <label for="compare-search-field">Søk fram ryttere:</label> <input class="form-control mr-sm-2 autoComplete" id="compare-search-field" type="text"placeholder="søk" aria-label="Search" list="compare-search-list" autocomplete="off">
       <datalist id="compare-search-list"></datalist>
       {{#each riders}}
        <input type="hidden" name="riders" value="{{uid}}" id="{{uid}}">

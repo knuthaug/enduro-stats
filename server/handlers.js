@@ -45,7 +45,10 @@ async function mapHandler(req) {
     status: 200,
     race,
     gpxData: JSON.stringify(data),
-    title: `Kart ${race.name}: Norsk enduro`
+    title: `Kart ${race.name}: Norsk enduro`,
+    docTitle: `Etappedetaljer for ${race.name}`,
+    description: 'Resultater, statistikk og informasjon om ritt og ryttere i norske enduroritt.',
+    map: true
   }
 }
 

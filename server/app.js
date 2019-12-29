@@ -9,15 +9,14 @@ const handlers = require('./handlers')
 const helpers = require('./helpers')
 
 const DEFAULT_CACHE_TIME_PAGES = 5000
-const ASSET_LONG_CACHE_TIME = 100000
-const ASSET_SHORT_CACHE_TIME = 1000
+const ASSET_LONG_CACHE_TIME = 400000
+const ASSET_SHORT_CACHE_TIME = 7000
 const NOT_FOUND_CACHE_TIME = 60
 const app = express()
 
 const handler = function (template, dataHandler, cacheTime) {
   return async function (req, res) {
     const context = await dataHandler(req)
-    //console.log(context)
     if (context.status !== 200) {
       return render(res, '404', context, NOT_FOUND_CACHE_TIME, 404)
     }
@@ -56,7 +55,15 @@ app.get('/ritt', handler('races', handlers.racesHandler))
 app.get('/ritt/:uid', handler('race', handlers.raceHandler, DEFAULT_CACHE_TIME_PAGES))
 app.get('/ritt/:uid/full', handler('fullrace', handlers.fullRaceHandler, DEFAULT_CACHE_TIME_PAGES))
 app.get('/om', handler('about', () => { return { status: 200, active: 'om', title: 'Om norsk enduro' } }))
-app.get('/kalender', handler('cal', () => { return { status: 200, active: 'cal', title: 'Rittkalender 2019' } }))
+app.get('/kalender', handler('cal', () => {
+  return {
+    status: 200,
+    active: 'cal',
+    title: 'Rittkalender 2020',
+    docTitle: 'Norsk enduro: Rittkalender for sesongen 2020',
+    description: 'Rittkalender for sesongen 2020'
+  }
+}))
 app.get('/rytter/:uid', handler('rider', handlers.riderHandler))
 app.get('/ryttere', handler('riders', handlers.ridersHandler))
 app.get('/ranking', handler('rank', handlers.rankHandler))
