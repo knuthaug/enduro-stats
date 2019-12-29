@@ -136,8 +136,6 @@ main a[href] {
   color: #fff;
   text-decoration: none;
   border-bottom: 1px solid #aaa;
-  padding-bottom: 0.4px;
-
 }
 
 header a {
@@ -365,7 +363,7 @@ table[data-sortable] th[data-sorted-direction="ascending"]:after {
 }
 
 .btn {
-  padding: 0.200rem 0.55rem;
+  padding: 0.200rem 0.5rem;
 }
 
 a.btn {
