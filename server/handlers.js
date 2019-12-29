@@ -137,7 +137,8 @@ async function raceHandler (req) {
     sortedClasses,
     noResults,
     active: 'ritt',
-    docTitle: `${race.name} ${race.year} : Norsk enduro`
+    docTitle: `${race.name} ${race.year} : Norsk enduro`,
+    description: `Resultater og statistikk for ${race.name} ${race.year}`
   }
 }
 
@@ -187,7 +188,8 @@ async function indexHandler () {
     raceCount,
     riderCount,
     stageCount,
-    docTitle: 'Norsk enduro'
+    docTitle: 'Norsk enduro',
+    description: 'Resultater, statistikk og informasjon om ritt og ryttere i norske enduroritt.'
   }
 }
 
@@ -205,7 +207,6 @@ async function rankHandler (req) {
 }
 
 async function ridersHandler (req) {
-  log.debug(`request for ${req.path}`)
   const riders = await db.findAllRiders().then((data) => {
     return data.filter((r) => {
       return r.count !== '0'
@@ -245,7 +246,6 @@ async function jsonSearchHandler (req) {
 }
 
 async function riderHandler (req) {
-  log.debug(`request for ${req.path}`)
   const rider = await db.findRider(req.params.uid)
 
   if (!rider.id) {
@@ -287,7 +287,8 @@ async function riderHandler (req) {
     score,
     results,
     active: 'ryttere',
-    docTitle: `${rider.name} : Norsk enduro`
+    docTitle: `${rider.name} : Norsk enduro`,
+    description: `Ritt-historikk for ${rider.name}, ${rider.club}`
   }
 }
 
