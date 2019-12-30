@@ -15,13 +15,10 @@ module.exports = function raceViewMapper (races) {
     const row = {}
     const year = sorted[i].year
 
-    if (!out.find((r) => {
-      return r.year === year
-    })) {
+    if (!out.find(r => r.year === year)) {
       row.year = year
-      row.races = sorted.filter((r) => {
-        return r.year === year
-      })
+      row.races = sorted.filter(r => r.year === year)
+
       row.races = row.races.sort((a, b) => {
         if (a.date < b.date) {
           return -1

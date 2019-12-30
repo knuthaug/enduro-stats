@@ -8,11 +8,8 @@ module.exports = function resultViewMapper (classes, results) {
   const lastStages = {}
 
   classes.forEach((cls) => {
-    lastStages[cls] = results.filter((r) => {
-      return r.class === cls
-    }).reduce((acc, current) => {
-      return current.stage > acc ? current.stage : acc
-    }, 0)
+    lastStages[cls] = results.filter(r => r.class === cls)
+      .reduce((acc, current) => current.stage > acc ? current.stage : acc, 0)
   })
 
   for (let i = 0; i < results.length; i++) {
@@ -64,9 +61,9 @@ module.exports = function resultViewMapper (classes, results) {
   }
 
   for (let i = 0; i < classes.length; i++) {
-    out[classes[i]] = Object.values(riders).filter((r) => {
-      return r.class === classes[i]
-    }).sort(compareRank)
+    out[classes[i]] = Object.values(riders)
+      .filter(r => r.class === classes[i])
+      .sort(compareRank)
   }
 
   const stageTotals = {}
@@ -97,15 +94,15 @@ module.exports = function resultViewMapper (classes, results) {
 function findStageTotals (rows, stages, className) {
   const out = {}
   for (let i = 0; i < stages.length; i++) {
-    out[stages[i]] = rows.filter((r) => {
-      return r.stage === stages[i] && r.class === className
-    }).map((r) => {
-      return { rider: r.rider_id, time: r.acc_time_ms }
-    }).filter((r) => {
-      return r.time !== 0
-    }).sort((a, b) => {
-      return a.time - b.time
-    })
+    out[stages[i]] = rows
+      .filter(r => r.stage === stages[i] && r.class === className)
+      .map(r => {
+        return {
+          rider: r.rider_id,
+          time: r.acc_time_ms
+        }})
+      .filter(r => r.time !== 0)
+      .sort((a, b) => a.time - b.time)
   }
   return out
 }
@@ -191,21 +188,17 @@ function raceChart (rows, startIndex, stages) {
     if (i === startIndex) {
       arr.push({
         name: rows[i].name,
-        data: stages.map((s) => {
-          return [s, 0]
-        }).sort((a, b) => {
-          return a[0] - b[0]
-        })
+        data: stages
+          .map(s => [s, 0])
+          .sort((a, b) => a[0] - b[0])
       })
     } else {
     //    console.log(rows[i])
       arr.push({
         name: rows[i].name,
-        data: stages.map((s) => {
-          return [s, diffTime(rows[startIndex][`stage${s}_time`], rows[i][`stage${s}_time`])]
-        }).sort((a, b) => {
-          return a[0] - b[0]
-        })
+        data: stages
+          .map(s => [s, diffTime(rows[startIndex][`stage${s}_time`], rows[i][`stage${s}_time`])])
+          .sort((a, b) => a[0] - b[0])
       })
     }
   }

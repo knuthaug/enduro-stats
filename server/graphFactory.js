@@ -8,11 +8,9 @@ function toPlacesGraphData (rows, num, stages) {
     }
     const o = {
       name: rows[i].name,
-      data: stages.map((s) => {
-        return [s, rows[i][`stage${s}_rank`]]
-      }).sort((a, b) => {
-        return a[0] - b[0]
-      })
+      data: stages
+        .map(s => [s, rows[i][`stage${s}_rank`]])
+        .sort((a, b) => a[0] - b[0])
     }
     ret.push(o)
   }
@@ -27,11 +25,9 @@ function toTimesGraphData (rows, num, stages) {
     }
     const o = {
       name: rows[i].name,
-      data: stages.map((s) => {
-        return [s, convertTimeToMs(rows[i][`stage${s}_behind_leader`]) / 1000] // in seconds
-      }).sort((a, b) => {
-        return a[0] - b[0]
-      })
+      data: stages
+        .map(s => [s, convertTimeToMs(rows[i][`stage${s}_behind_leader`]) / 1000])
+        .sort((a, b) => a[0] - b[0])
     }
     ret.push(o)
   }
@@ -65,13 +61,9 @@ function toAccTimesGraphData (rows, num, stages) {
     const keys = Object.keys(totals)
     for (let i = 0; i < keys.length; i++) {
       if (i === 0) { // race winner
-        data[i] = Object.keys(totals[i]).map((stageNum) => {
-          return [parseInt(stageNum, 10), 0]
-        })
+        data[i] = Object.keys(totals[i]).map(stageNum => [parseInt(stageNum, 10), 0])
       } else {
-        data[i] = Object.keys(totals[i]).map((stageNum) => {
-          return [parseInt(stageNum, 10), totals[i][stageNum] - totals[0][stageNum]] // diff between total for this and total for first in race
-        })
+        data[i] = Object.keys(totals[i]).map(stageNum => [parseInt(stageNum, 10), totals[i][stageNum] - totals[0][stageNum]]) // diff between total for this and total for first in race
       }
     }
 

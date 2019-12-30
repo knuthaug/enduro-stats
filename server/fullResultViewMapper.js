@@ -3,9 +3,7 @@ const { convertMsToTime } = require('../lib/time.js')
 module.exports = function fullResultViewMapper (classes, results) {
   let riders = {}
   let stages = []
-  const lastStage = results.reduce((acc, current) => {
-    return current.stage > acc ? current.stage : acc
-  }, 0)
+  const lastStage = results.reduce((acc, current) => current.stage > acc ? current.stage : acc, 0)
 
   for (let i = 0; i < results.length; i++) {
     const rider = results[i].rider_id
@@ -36,9 +34,7 @@ module.exports = function fullResultViewMapper (classes, results) {
     }
   }
 
-  stages = stages.sort((a, b) => {
-    return a - b
-  })
+  stages = stages.sort((a, b) => a - b)
 
   riders = Object.values(riders)
 
@@ -76,12 +72,9 @@ module.exports = function fullResultViewMapper (classes, results) {
   let i = 1
   // sort by total time and assign new total rank
   riders = Object.values(riders)
-    .filter((r) => {
-      return r.num_stages === lastStage // filter out all racers missing stages (some classes)
-    }).sort(compareTimes)
-    .map((r) => {
-      return Object.assign({ fullrank: i++ }, r)
-    })
+    .filter(r => r.num_stages === lastStage)
+    .sort(compareTimes)
+    .map(r => Object.assign({ fullrank: i++ }, r))
 
   for (let i = 0; i < riders.length; i++) {
     if (i === 0 || riders[i].acc_time_ms === 0) {

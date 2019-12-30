@@ -58,9 +58,7 @@ async function fetchData(id) {
   }).join('&')
 
   return fetch(`/api/graph/compare?type=${type}&race=${race}&${ridersParam}`)
-    .then( (response) => {
-      return response.json()
-    })
+    .then(response => response.json())
     .then(json => json)
 }
 

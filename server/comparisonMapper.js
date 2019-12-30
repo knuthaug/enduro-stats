@@ -5,9 +5,7 @@ const parse = require('date-fns/parse')
 module.exports = function comparisonMapper (data) {
   // races for each rider
 
-  const riderSet = Array.from(new Set(data.map((d) => {
-    return d.uid
-  })))
+  const riderSet = Array.from(new Set(data.map(d => d.uid)))
 
   const riders = riderSet.map((uid) => {
     const rider = data.find((d) => {
@@ -19,11 +17,9 @@ module.exports = function comparisonMapper (data) {
   const racesPerRider = riders.map((rider) => {
     return {
       uid: rider.uid,
-      races: data.filter((d) => {
+      races: data.filter(d => {
         return d.uid === rider.uid && d.final_rank !== null
-      }).map((r) => {
-        return r.race_uid
-      })
+      }).map(r => r.race_uid)
     }
   })
 
@@ -33,10 +29,8 @@ module.exports = function comparisonMapper (data) {
 
   var intersection = sets.reduce(intersect)
 
-  return intersection.map((r) => {
-    let race = data.find((d) => {
-      return d.race_uid === r
-    })
+  return intersection.map(r => {
+    let race = data.find(d => d.race_uid === r)
     race = {
       uid: race.race_uid,
       date: race.date,
@@ -44,14 +38,10 @@ module.exports = function comparisonMapper (data) {
       name: `${race.race_name} ${race.year}`
     }
 
-    const raceResults = data.filter((d) => {
-      return d.race_uid === race.uid
-    })
+    const raceResults = data.filter(d => d.race_uid === race.uid)
 
-    const raceResultsForRiders = riders.map((rider) => {
-      const finalStage = raceResults.find((r) => {
-        return r.uid === rider.uid && r.final_rank !== null
-      })
+    const raceResultsForRiders = riders.map(rider => {
+      const finalStage = raceResults.find(r => r.uid === rider.uid && r.final_rank !== null)
 
       return {
         name: rider.name,
@@ -63,7 +53,7 @@ module.exports = function comparisonMapper (data) {
         acc_time_ms: finalStage.acc_time_ms,
         stages: raceResults.filter((r) => {
           return r.uid === rider.uid
-        }).map((d) => {
+        }).map(d => {
           return {
             stage: d.stage,
             rank: d.stage_rank,
@@ -81,14 +71,10 @@ module.exports = function comparisonMapper (data) {
       uid: r,
       name: race.name,
       date: race.date,
-      stages: raceResultsForRiders[0].stages.map((r) => {
-        return r.stage
-      }),
+      stages: raceResultsForRiders[0].stages.map(r => r.stage),
       riders: raceResultsForRiders
     }
-  }).sort((a, b) => {
-    return compareDesc(parse(a.date), parse(b.date))
-  })
+  }).sort((a, b) => compareDesc(parse(a.date), parse(b.date)))
 }
 
 function intersect (a, b) {
@@ -99,9 +85,7 @@ function intersect (a, b) {
     a = t
   }
 
-  return a.filter(function (e) {
-    return b.indexOf(e) > -1
-  }).filter(function (e, i, c) {
-    return c.indexOf(e) === i
-  })
+  return a
+    .filter(e => b.indexOf(e) > -1)
+    .filter((e, i, c) => c.indexOf(e) === i)
 }
