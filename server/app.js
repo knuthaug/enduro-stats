@@ -22,6 +22,14 @@ const app = Fastify({
 
 handlebars.registerHelper('hashedAssets', require('../views/helpers/hashed-assets.js'))
 handlebars.registerHelper('compare', require('../views/helpers/compare.js'))
+handlebars.registerHelper('cat', require('../views/helpers/cat.js'))
+handlebars.registerHelper('propFor', require('../views/helpers/propFor.js'))
+handlebars.registerHelper('isDNF', require('../views/helpers/isDNF.js'))
+handlebars.registerHelper('isDNS', require('../views/helpers/isDNS.js'))
+handlebars.registerHelper('isDSQ', require('../views/helpers/isDSQ.js'))
+handlebars.registerHelper('isError', require('../views/helpers/isError.js'))
+handlebars.registerHelper('isOK', require('../views/helpers/isOK.js'))
+handlebars.registerHelper('title', require('../views/helpers/title.js'))
 
 app.register(fastifyStatic, {
   root: path.join(__dirname, 'dist')
@@ -47,17 +55,17 @@ app.register(pointOfView, {
 
 const db = new Db()
 
-const handler = function (template, dataHandler, cacheTime) {
+function handler(template, dataHandler, cacheTime) {
   return async function (req, res) {
     const context = await dataHandler(req)
     if (context.status !== 200) {
-      return render(res, '404', context, NOT_FOUND_CACHE_TIME, 404)
+      return await render(res, '404', context, NOT_FOUND_CACHE_TIME, 404)
     }
-    return render(res, template, context, cacheTime || DEFAULT_CACHE_TIME_PAGES)
+    return await render(res, template, context, cacheTime || DEFAULT_CACHE_TIME_PAGES)
   }
 }
 
-const jsonHandler = function (dataHandler) {
+function jsonHandler (dataHandler) {
   return async function (req, res) {
     return res.send(await dataHandler(req))
   }
@@ -66,7 +74,7 @@ const jsonHandler = function (dataHandler) {
 app.get('/', handler('index.hbs', handlers.indexHandler, 2000))
 app.get('/site.webmanifest', jsonHandler(handlers.manifestHandler))
 app.get('/ritt', handler('races', handlers.racesHandler))
-app.get('/ritt/:uid', handler('race', handlers.raceHandler, DEFAULT_CACHE_TIME_PAGES))
+app.get('/ritt/:uid', handler('race.hbs', handlers.raceHandler, DEFAULT_CACHE_TIME_PAGES))
 app.get('/ritt/:uid/full', handler('fullrace', handlers.fullRaceHandler, DEFAULT_CACHE_TIME_PAGES))
 app.get('/om', handler('about', () => { return { status: 200, active: 'om', title: 'Om norsk enduro' } }))
 app.get('/rytter/:uid', handler('rider', handlers.riderHandler))
@@ -125,11 +133,11 @@ async function render (res, template, context, maxAge, status) {
   //      .view(template, context)
   //      .then(body => app.view('layouts/main.hbs', { body }))
 
-  return res
+  res
     .type('text/html')
     .code(s)
     .header('Cache-Control',`public, max-age=${maxAge}`)
-    .view(template, context)
+    .view(template, Object.assign({imageUrl: config.get('images.url')}, context))
 }
 
 function stop () {
