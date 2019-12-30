@@ -59,9 +59,9 @@ function handler(template, dataHandler, cacheTime) {
   return async function (req, res) {
     const context = await dataHandler(req)
     if (context.status !== 200) {
-      return await render(res, '404', context, NOT_FOUND_CACHE_TIME, 404)
+      render(res, '404', context, NOT_FOUND_CACHE_TIME, 404)
     }
-    return await render(res, template, context, cacheTime || DEFAULT_CACHE_TIME_PAGES)
+    render(res, template, context, cacheTime || DEFAULT_CACHE_TIME_PAGES)
   }
 }
 
@@ -129,10 +129,6 @@ app.get('/assets/css/:file', (req, res) => {
 
 async function render (res, template, context, maxAge, status) {
   const s = status || 200
-  //const html = await app
-  //      .view(template, context)
-  //      .then(body => app.view('layouts/main.hbs', { body }))
-
   res
     .type('text/html')
     .code(s)
