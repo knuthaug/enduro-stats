@@ -2,6 +2,7 @@ const Fastify = require('fastify')
 const fastifyStatic = require('fastify-static')
 const compression = require('fastify-compress')
 const pointOfView = require('point-of-view')
+const formbody = require('fastify-formbody')
 const handlebars = require('handlebars')
 const morgan = require('morgan')
 const config = require('../config')
@@ -16,8 +17,10 @@ const ASSET_LONG_CACHE_TIME = 400000
 const ASSET_SHORT_CACHE_TIME = 7000
 const NOT_FOUND_CACHE_TIME = 60
 
+const isProduction = config.get('env') !== 'production'
+
 const app = Fastify({
-  logger: true
+  logger: isProduction
 })
 
 handlebars.registerHelper('hashedAssets', require('../views/helpers/hashed-assets.js'))
@@ -30,11 +33,15 @@ handlebars.registerHelper('isDSQ', require('../views/helpers/isDSQ.js'))
 handlebars.registerHelper('isError', require('../views/helpers/isError.js'))
 handlebars.registerHelper('isOK', require('../views/helpers/isOK.js'))
 handlebars.registerHelper('title', require('../views/helpers/title.js'))
+handlebars.registerHelper('formatPercent', require('../views/helpers/formatPercent.js'))
+handlebars.registerHelper('inc', require('../views/helpers/inc.js'))
 
 app.register(fastifyStatic, {
   root: path.join(__dirname, 'dist')
 })
+
 app.register(compression)
+app.register(formbody)
 
 app.register(pointOfView, {
   engine: {
@@ -59,9 +66,9 @@ function handler(template, dataHandler, cacheTime) {
   return async function (req, res) {
     const context = await dataHandler(req)
     if (context.status !== 200) {
-      render(res, '404', context, NOT_FOUND_CACHE_TIME, 404)
+      return render(res, '404', context, NOT_FOUND_CACHE_TIME, 404)
     }
-    render(res, template, context, cacheTime || DEFAULT_CACHE_TIME_PAGES)
+    return render(res, template, context, cacheTime || DEFAULT_CACHE_TIME_PAGES)
   }
 }
 
@@ -73,18 +80,18 @@ function jsonHandler (dataHandler) {
 
 app.get('/', handler('index.hbs', handlers.indexHandler, 2000))
 app.get('/site.webmanifest', jsonHandler(handlers.manifestHandler))
-app.get('/ritt', handler('races', handlers.racesHandler))
+app.get('/ritt', handler('races.hbs', handlers.racesHandler))
 app.get('/ritt/:uid', handler('race.hbs', handlers.raceHandler, DEFAULT_CACHE_TIME_PAGES))
-app.get('/ritt/:uid/full', handler('fullrace', handlers.fullRaceHandler, DEFAULT_CACHE_TIME_PAGES))
-app.get('/om', handler('about', () => { return { status: 200, active: 'om', title: 'Om norsk enduro' } }))
-app.get('/rytter/:uid', handler('rider', handlers.riderHandler))
-app.get('/ryttere', handler('riders', handlers.ridersHandler))
-app.get('/ranking', handler('rank', handlers.rankHandler))
-app.get('/sammenlign', handler('compare', handlers.compareHandler))
-app.get('/kart/:uid', handler('map', handlers.mapHandler))
+app.get('/ritt/:uid/full', handler('fullrace.hbs', handlers.fullRaceHandler, DEFAULT_CACHE_TIME_PAGES))
+app.get('/om', handler('about.hbs', () => { return { status: 200, active: 'om', title: 'Om norsk enduro' } }))
+app.get('/rytter/:uid', handler('rider.hbs', handlers.riderHandler))
+app.get('/ryttere', handler('riders.hbs', handlers.ridersHandler))
+app.get('/ranking', handler('rank.hbs', handlers.rankHandler))
+app.get('/sammenlign', handler('compare.hbs', handlers.compareHandler))
+app.get('/kart/:uid', handler('map.hbs', handlers.mapHandler))
 app.get('/api/search', jsonHandler(handlers.jsonSearchHandler))
 app.get('/api/graph/compare', jsonHandler(handlers.compareGraphHandler))
-app.get('/kalender', handler('cal', () => {
+app.get('/kalender', handler('cal.hbs', () => {
   return {
     status: 200,
     active: 'cal',
@@ -94,7 +101,7 @@ app.get('/kalender', handler('cal', () => {
   }
 }))
 
-app.post('/sok/', handler('search', handlers.searchHandler, 100))
+app.post('/sok/', handler('search.hbs', handlers.searchHandler, 100))
 
 app.get('/img/:file', (req, res) => {
   const file = req.params.file
@@ -112,7 +119,6 @@ app.get('/assets/js/:file', (req, res) => {
 })
 
 app.get('/assets/img/:file', (req, res) => {
-  log.debug(`request for ${req.path}`)
   const file = req.params.file
 
   return res.header('Cache-Control', `public, max-age=${ASSET_LONG_CACHE_TIME}`).sendFile(`img/${file}`)
@@ -129,11 +135,14 @@ app.get('/assets/css/:file', (req, res) => {
 
 async function render (res, template, context, maxAge, status) {
   const s = status || 200
+
+  const html = await app.view(template, Object.assign({imageUrl: config.get('images.url')}, context))
+
   res
     .type('text/html')
     .code(s)
     .header('Cache-Control',`public, max-age=${maxAge}`)
-    .view(template, Object.assign({imageUrl: config.get('images.url')}, context))
+    .send(html)
 }
 
 function stop () {
