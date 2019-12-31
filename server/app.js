@@ -74,15 +74,7 @@ app.get('/sammenlign', handler('compare.hbs', handlers.compareHandler))
 app.get('/kart/:uid', handler('map.hbs', handlers.mapHandler))
 app.get('/api/search', jsonHandler(handlers.jsonSearchHandler))
 app.get('/api/graph/compare', jsonHandler(handlers.compareGraphHandler))
-app.get('/kalender', handler('cal.hbs', () => {
-  return {
-    status: 200,
-    active: 'cal',
-    title: 'Rittkalender 2020',
-    docTitle: 'Norsk enduro: Rittkalender for sesongen 2020',
-    description: 'Rittkalender for sesongen 2020'
-  }
-}))
+app.get('/kalender', handler('cal.hbs', handlers.calendarHandler))
 
 app.post('/sok/', handler('search.hbs', handlers.searchHandler, 100))
 

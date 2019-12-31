@@ -181,6 +181,16 @@ async function fullRaceHandler (req) {
   }
 }
 
+async function calendarHandler () {
+  return {
+    status: 200,
+    active: 'cal',
+    title: 'Rittkalender 2020',
+    docTitle: 'Norsk enduro: Rittkalender for sesongen 2020',
+    description: 'Rittkalender for sesongen 2020'
+  }
+}
+
 async function indexHandler () {
   log.debug('request for /')
   const races = await db.findRaces(10)
@@ -366,5 +376,6 @@ module.exports = {
   compareGraphHandler,
   rankHandler,
   manifestHandler,
-  mapHandler
+  mapHandler,
+  calendarHandler
 }
