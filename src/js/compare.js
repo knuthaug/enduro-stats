@@ -1,5 +1,5 @@
 const feather = require('feather-icons')
-const { convertMsToTime } = require('../../../lib/time.js')
+const { convertMsToTime } = require('../../lib/time.js')
 
 document.addEventListener('DOMContentLoaded', function (event) {
   feather.replace()
