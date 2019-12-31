@@ -343,7 +343,6 @@ UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://m
 UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where uid='afadf4ba08b83834a58e42759c5cf91a';/*Ida Håkonsson*/
 UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where uid='aef0dfa973efca5eb7fda10c0c2f3871';/*Astrid Knudsen*/
 UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where uid='4983f59d0463b5fb66bc9e843227739e';/*Maria Bergli*/
-UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where uid='26cc14be3c12c4eedc1128bdb98eb32f';/*Joline Johansson*/
 UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where uid='b21f635ee42b4fd87c377ca964e4d04c';/*Ragnhild Solheim*/
 UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where uid='ec01ed0e910ef0ebe0fcdb10f87e6733';/*Jennifer Jones Arnesen*/
 UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where uid='91d570982217820b0d96a2972c2ca491';/*Vibeke Brandvold*/
