@@ -15,11 +15,11 @@ const ASSET_LONG_CACHE_TIME = 400000
 const ASSET_SHORT_CACHE_TIME = 7000
 const NOT_FOUND_CACHE_TIME = 60
 
-const isProduction = config.get('env') !== 'production'
+const shouldLog = config.get('env') !== 'production' && config.get('env') !== 'test'
 const db = new Db()
 
 const app = Fastify({
-  logger: isProduction
+  logger: shouldLog
 })
 
 handlebars.registerHelper('hashedAssets', helpers.hashedAssets)
@@ -109,7 +109,7 @@ function handler (template, dataHandler, cacheTime) {
   return async function (req, res) {
     const context = await dataHandler(req)
     if (context.status !== 200) {
-      return render(res, '404', context, NOT_FOUND_CACHE_TIME, 404)
+      return render(res, '404.hbs', context, NOT_FOUND_CACHE_TIME, 404)
     }
     return render(res, template, context, cacheTime || DEFAULT_CACHE_TIME_PAGES)
   }
