@@ -4,7 +4,6 @@ const compression = require('fastify-compress')
 const pointOfView = require('point-of-view')
 const formbody = require('fastify-formbody')
 const handlebars = require('handlebars')
-const morgan = require('morgan')
 const config = require('../config')
 const path = require('path')
 const log = require('./log')
@@ -62,22 +61,6 @@ app.register(pointOfView, {
 
 const db = new Db()
 
-function handler(template, dataHandler, cacheTime) {
-  return async function (req, res) {
-    const context = await dataHandler(req)
-    if (context.status !== 200) {
-      return render(res, '404', context, NOT_FOUND_CACHE_TIME, 404)
-    }
-    return render(res, template, context, cacheTime || DEFAULT_CACHE_TIME_PAGES)
-  }
-}
-
-function jsonHandler (dataHandler) {
-  return async function (req, res) {
-    return res.send(await dataHandler(req))
-  }
-}
-
 app.get('/', handler('index.hbs', handlers.indexHandler, 2000))
 app.get('/site.webmanifest', jsonHandler(handlers.manifestHandler))
 app.get('/ritt', handler('races.hbs', handlers.racesHandler))
@@ -132,6 +115,22 @@ app.get('/assets/css/:file', (req, res) => {
   }
   return res.header('Cache-Control', `public, max-age=${ASSET_SHORT_CACHE_TIME}`).sendFile(`css/${file}`)
 })
+
+function handler(template, dataHandler, cacheTime) {
+  return async function (req, res) {
+    const context = await dataHandler(req)
+    if (context.status !== 200) {
+      return render(res, '404', context, NOT_FOUND_CACHE_TIME, 404)
+    }
+    return render(res, template, context, cacheTime || DEFAULT_CACHE_TIME_PAGES)
+  }
+}
+
+function jsonHandler (dataHandler) {
+  return async function (req, res) {
+    return res.send(await dataHandler(req))
+  }
+}
 
 async function render (res, template, context, maxAge, status) {
   const s = status || 200
