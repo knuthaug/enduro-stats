@@ -169,3 +169,6 @@ echo "  Trysil"
 node import/importer.js -m -f results/2019/trysil/trysil-2019.csv
 echo "  Ringerike"
 node import/importer.js -m -f results/2019/ringerike/ringerike-2019.csv
+
+
+psql -U endurostats endurostats < scripts/byline.sql
