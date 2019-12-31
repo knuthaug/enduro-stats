@@ -100,7 +100,8 @@ function findStageTotals (rows, stages, className) {
         return {
           rider: r.rider_id,
           time: r.acc_time_ms
-        }})
+        }
+      })
       .filter(r => r.time !== 0)
       .sort((a, b) => a.time - b.time)
   }

@@ -7,4 +7,3 @@ const optionDefinitions = [
 const options = cmd(optionDefinitions)
 const db = new Db()
 db.deleteRace(options.uid)
-

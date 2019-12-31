@@ -2,7 +2,7 @@ const inquirer = require('inquirer')
 const cmd = require('command-line-args')
 
 const Db = require('../import/db.js')
-var fs = require('fs');
+var fs = require('fs')
 const db = new Db()
 
 const bylineMap = {
@@ -41,18 +41,18 @@ const bylineMap = {
 
 }
 
-init();
+init()
 
-async function init() {
+async function init () {
   const optionDefinitions = [
-    { name: 'race', alias: 'r', type: String, defaultOption: true },
+    { name: 'race', alias: 'r', type: String, defaultOption: true }
   ]
 
   const options = cmd(optionDefinitions)
   startWithByline(options.race, options)
 }
 
-async function startWithByline(race, options) {
+async function startWithByline (race, options) {
   inquirer
     .prompt([
       {
@@ -65,10 +65,9 @@ async function startWithByline(race, options) {
     .then(async answers => {
       startWithList(race, options, bylineMap[answers.byline])
     })
-
 }
 
-async function startWithList(raceId, options, byline) {
+async function startWithList (raceId, options, byline) {
   const riders = await getRiders(raceId)
   inquirer
     .prompt([
@@ -101,42 +100,42 @@ async function startWithList(raceId, options, byline) {
           await matchImage(answers, byline, answers2.mode)
           startWithList(raceId, options, byline)
         })
-    });
+    })
 }
 
-async function matchImage(answers, byline, imageMode) {
-  //console.log(JSON.stringify(answers, null, '  '));
+async function matchImage (answers, byline, imageMode) {
+  // console.log(JSON.stringify(answers, null, '  '));
   const parts = answers.rider.split(';')
   const uid = parts[3]
   const bib = parts[0]
   const name = parts[1]
   const riderId = parts[2]
 
-  //mv image to images/uid.jpg
-  fs.rename(`raw_images/${bib}.jpg`, `cdn/${uid}.jpg`, function(err) {
-    if ( err ) {
-      console.log('ERROR: ' + err);
+  // mv image to images/uid.jpg
+  fs.rename(`raw_images/${bib}.jpg`, `cdn/${uid}.jpg`, function (err) {
+    if (err) {
+      console.log('ERROR: ' + err)
       return
     }
     console.log(`renamed image images/${bib}.jpg to images/${uid}.jpg`)
-  });
-  //update riders table with byline
+  })
+  // update riders table with byline
   await db.addByline(riderId, byline.text, byline.url, imageMode)
   console.log(`added byline info to rider ${riderId}`)
-  //add to file
+  // add to file
   fs.appendFile('scripts/byline.sql', `UPDATE riders set byline_text='${byline.text}', byline_url='${byline.url}', image_mode='${imageMode}' where uid='${uid}';/*${name}*/\n`, function (err) {
-    if (err) throw err;
-    console.log('Saved!');
-  });
-  //restart
+    if (err) throw err
+    console.log('Saved!')
+  })
+  // restart
 }
 
-async function getRiders(id) {
+async function getRiders (id) {
   const list = await db.ridersWithoutImage(id)
   return list.sort((a, b) => {
-    if(Number(a.bib) > Number(b.bib)) {
+    if (Number(a.bib) > Number(b.bib)) {
       return 1
-    } else if(Number(b.bib) > Number(a.bib)) {
+    } else if (Number(b.bib) > Number(a.bib)) {
       return -1
     }
     return 0

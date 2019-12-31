@@ -6,7 +6,6 @@ const formbody = require('fastify-formbody')
 const handlebars = require('handlebars')
 const config = require('../config')
 const path = require('path')
-const log = require('./log')
 const Db = require('./db')
 const handlers = require('./handlers')
 const helpers = require('./helpers')
@@ -17,23 +16,24 @@ const ASSET_SHORT_CACHE_TIME = 7000
 const NOT_FOUND_CACHE_TIME = 60
 
 const isProduction = config.get('env') !== 'production'
+const db = new Db()
 
 const app = Fastify({
   logger: isProduction
 })
 
-handlebars.registerHelper('hashedAssets', require('../views/helpers/hashed-assets.js'))
-handlebars.registerHelper('compare', require('../views/helpers/compare.js'))
-handlebars.registerHelper('cat', require('../views/helpers/cat.js'))
-handlebars.registerHelper('propFor', require('../views/helpers/propFor.js'))
-handlebars.registerHelper('isDNF', require('../views/helpers/isDNF.js'))
-handlebars.registerHelper('isDNS', require('../views/helpers/isDNS.js'))
-handlebars.registerHelper('isDSQ', require('../views/helpers/isDSQ.js'))
-handlebars.registerHelper('isError', require('../views/helpers/isError.js'))
-handlebars.registerHelper('isOK', require('../views/helpers/isOK.js'))
-handlebars.registerHelper('title', require('../views/helpers/title.js'))
-handlebars.registerHelper('formatPercent', require('../views/helpers/formatPercent.js'))
-handlebars.registerHelper('inc', require('../views/helpers/inc.js'))
+handlebars.registerHelper('hashedAssets', helpers.hashedAssets)
+handlebars.registerHelper('compare', helpers.compare)
+handlebars.registerHelper('cat', helpers.cat)
+handlebars.registerHelper('propFor', helpers.propFor)
+handlebars.registerHelper('isDNF', helpers.isDNF)
+handlebars.registerHelper('isDNS', helpers.isDNS)
+handlebars.registerHelper('isDSQ', helpers.isDSQ)
+handlebars.registerHelper('isError', helpers.isError)
+handlebars.registerHelper('isOK', helpers.isOK)
+handlebars.registerHelper('title', helpers.title)
+handlebars.registerHelper('formatPercent', helpers.formatPercent)
+handlebars.registerHelper('inc', helpers.inc)
 
 app.register(fastifyStatic, {
   root: path.join(__dirname, 'dist')
@@ -41,7 +41,6 @@ app.register(fastifyStatic, {
 
 app.register(compression)
 app.register(formbody)
-
 app.register(pointOfView, {
   engine: {
     handlebars: handlebars
@@ -53,13 +52,11 @@ app.register(pointOfView, {
       analytics: 'partials/analytics.hbs',
       icon: 'partials/icon.hbs',
       'rider-bio': 'partials/rider-bio.hbs',
-      'series': 'partials/series.hbs',
-      'stagetime': 'partials/stagetime.hbs',
+      series: 'partials/series.hbs',
+      stagetime: 'partials/stagetime.hbs'
     }
   }
 })
-
-const db = new Db()
 
 app.get('/', handler('index.hbs', handlers.indexHandler, 2000))
 app.get('/site.webmanifest', jsonHandler(handlers.manifestHandler))
@@ -108,7 +105,7 @@ app.get('/assets/css/:file', (req, res) => {
   return res.header('Cache-Control', `public, max-age=${ASSET_SHORT_CACHE_TIME}`).sendFile(`css/${file}`)
 })
 
-function handler(template, dataHandler, cacheTime) {
+function handler (template, dataHandler, cacheTime) {
   return async function (req, res) {
     const context = await dataHandler(req)
     if (context.status !== 200) {
@@ -127,12 +124,12 @@ function jsonHandler (dataHandler) {
 async function render (res, template, context, maxAge, status) {
   const s = status || 200
 
-  const html = await app.view(template, Object.assign({imageUrl: config.get('images.url')}, context))
+  const html = await app.view(template, Object.assign({ imageUrl: config.get('images.url') }, context))
 
   res
     .type('text/html')
     .code(s)
-    .header('Cache-Control',`public, max-age=${maxAge}`)
+    .header('Cache-Control', `public, max-age=${maxAge}`)
     .send(html)
 }
 

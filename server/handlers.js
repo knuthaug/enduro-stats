@@ -18,25 +18,23 @@ async function manifestHandler (req) {
   }
 }
 
-async function mapHandler(req) {
-
-  if(!req.params.uid ) {
+async function mapHandler (req) {
+  if (!req.params.uid) {
     return { status: 404 }
   }
 
   const race = await db.findRace(req.params.uid)
   const stageDetails = await db.stageDetails(req.params.uid)
 
-  if(!race.lat) {
+  if (!race.lat) {
     return { status: 404 }
   }
 
   const data = {
     center: [race.lat, race.long],
     zoom: race.zoom || 14,
-    stageDetails,
+    stageDetails
   }
-
 
   if (!race.id) {
     return { status: 404 }
@@ -88,7 +86,7 @@ async function compareGraphHandler (req) {
   const race = req.query.race
   const type = req.query.type
 
-  if(!riders) {
+  if (!riders) {
     return []
   }
 
@@ -337,7 +335,8 @@ function toChartData (results) {
         y: e.rank,
         class: e.class,
         race: e.raceName,
-        properDate: parse(e.date) }
+        properDate: parse(e.date)
+      }
     }
   }).filter((e) => {
     return typeof e !== 'undefined'
@@ -352,7 +351,8 @@ function toChartData (results) {
         y: ((e.rank / e.count) * 100),
         class: e.class,
         race: e.raceName,
-        properDate: parse(e.date) }
+        properDate: parse(e.date)
+      }
     }
   }).filter((e) => {
     return typeof e !== 'undefined'

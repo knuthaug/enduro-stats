@@ -112,7 +112,6 @@ async function readRaceData (file) {
     const data = JSON.parse(datafile)
     data.uid = md5(data.name + data.year)
 
-
     const raceId = await db.insertRace(data, 0)
 
     if (data.hasOwnProperty('links')) {
@@ -122,7 +121,6 @@ async function readRaceData (file) {
     if (data.hasOwnProperty('details')) {
       await db.insertStageDetails(raceId, data.details)
     }
-
   } else {
     logger.error(`Data file ${file} was not found`)
     console.log(`Data file ${file} was not found`)

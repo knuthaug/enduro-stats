@@ -19,7 +19,7 @@ class Db {
     try {
       const res = await client.query(query, values)
       return res
-    } catch (error) { 
+    } catch (error) {
       logger.error(`error for insert! Query: ${query}, values:${values}`)
       logger.error(error)
       return { error }
@@ -42,7 +42,7 @@ class Db {
     }
   }
 
-  async deleteRace(uid) {
+  async deleteRace (uid) {
     const id = await this.find('SELECT id from races where uid = $1', [uid], '')
 
     await this.update('DELETE FROM raw_results where race_id = $1', [id])
@@ -53,7 +53,6 @@ class Db {
     await this.update('DELETE FROM race_links where race_id = $1', [id])
     await this.update('DELETE FROM rider_races where race_id = $1', [id])
     await this.update('DELETE FROM races where id = $1', [id])
-    return
   }
 
   async updateClub (id, club) {
@@ -305,7 +304,7 @@ class Db {
     return this.findSet(query, values, `Error finding riders without images for race id=${raceId}`)
   }
 
-  async addByline(riderId, bylineText, bylineUrl, imageMode) {
+  async addByline (riderId, bylineText, bylineUrl, imageMode) {
     return this.update('update riders set byline_text = $1, byline_url = $2, image_mode = $3  where id = $4', [bylineText, bylineUrl, imageMode, riderId])
   }
 

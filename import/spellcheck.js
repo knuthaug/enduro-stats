@@ -153,7 +153,7 @@ const subs = {
   'Ole-Hermann Bergby': 'Ole-Herman Bergby',
   'Per Henrik Thorp': 'Per Henrik Opsal Thorp',
   'Petter Anthonse': 'Petter Anthonsen',
-  'Petter Anthansen' : 'Petter Anthonsen',
+  'Petter Anthansen': 'Petter Anthonsen',
   'Sean Engebretsen': 'Sean Ingvaldsen Engebretsen',
   'Sebastien Amat': 'Sebastien Amat Finstad',
   'Sindre Aaroy Holtet': 'Sindre Aarøy Holtet',
