@@ -261,6 +261,38 @@ async function jsonSearchHandler (req) {
   return results
 }
 
+async function riderGraphHandler (req) {
+  const uid = req.params.uid
+  const type = req.query.type
+
+  const rider = await db.findRider(req.params.uid)
+
+  if (!rider.id) {
+    return { status: 404 }
+  }
+
+  const rawRaces = await db.raceResultsForRider(req.params.uid)
+
+  if (!rawRaces.length) {
+    return { status: 404, message: 'Rytteren finnes i databasen, men det fantes ingen ritt for denne rytteren (noe som tyder på en feil et sted hos oss)' }
+  }
+
+  const races = riderViewMapper(rawRaces)
+  const raceIds = races.map((r) => {
+    return { race: r.race, class: r.class }
+  })
+
+  const ridersPerClass = await db.ridersForClassAndRace(raceIds)
+
+  const results = percentRanks(races, ridersPerClass)
+
+  if(type === 'percent') {
+    return resultsToPercentChart(results)
+  }
+  return resultsToPlacesChart(results)
+}
+
+
 async function riderHandler (req) {
   const rider = await db.findRider(req.params.uid)
 
@@ -285,8 +317,6 @@ async function riderHandler (req) {
 
   const results = percentRanks(races, ridersPerClass)
 
-  const { placesChart, percentChart } = toChartData(results)
-
   const { year, avg, score } = await db.riderRanking(rider.id)
   const startYear = results[results.length - 1].year
 
@@ -297,8 +327,6 @@ async function riderHandler (req) {
     startYear,
     year,
     portrait: rider.image_mode === 'portrait',
-    placesChart,
-    percentChart,
     avg,
     score,
     results,
@@ -332,8 +360,8 @@ function toComparisonChartData (races) {
   })
 }
 
-function toChartData (results) {
-  const placesChart = JSON.stringify(results.map((e) => {
+function resultsToPlacesChart(results) {
+  return results.map((e) => {
     if (e.time !== 'DNS' && e.time !== 'DNF') {
       return {
         x: e.date,
@@ -347,9 +375,11 @@ function toChartData (results) {
     return typeof e !== 'undefined'
   }).sort((a, b) => {
     return compareAsc(a.properDate, b.properDate)
-  }))
+  }).map((e) => { return [ e.x, e.y ] })
+}
 
-  const percentChart = JSON.stringify(results.map((e) => {
+function resultsToPercentChart(results) {
+  return results.map((e) => {
     if (e.time !== 'DNS' && e.time !== 'DNF') {
       return {
         x: e.date,
@@ -363,9 +393,7 @@ function toChartData (results) {
     return typeof e !== 'undefined'
   }).sort((a, b) => {
     return compareAsc(a.properDate, b.properDate)
-  }))
-
-  return { placesChart, percentChart }
+  }).map((e) => { return [ e.x, e.y ] })
 }
 
 module.exports = {
@@ -379,6 +407,7 @@ module.exports = {
   jsonSearchHandler,
   compareHandler,
   compareGraphHandler,
+  riderGraphHandler,
   rankHandler,
   manifestHandler,
   mapHandler,

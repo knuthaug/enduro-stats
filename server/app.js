@@ -52,6 +52,7 @@ app.register(pointOfView, {
       analytics: 'partials/analytics.hbs',
       icon: 'partials/icon.hbs',
       'rider-bio': 'partials/rider-bio.hbs',
+      'rider-graph': 'partials/rider-graph.hbs',
       series: 'partials/series.hbs',
       stagetime: 'partials/stagetime.hbs'
     }
@@ -71,6 +72,7 @@ app.get('/sammenlign', handler('compare.hbs', handlers.compareHandler))
 app.get('/kart/:uid', handler('map.hbs', handlers.mapHandler))
 app.get('/api/search', jsonHandler(handlers.jsonSearchHandler))
 app.get('/api/graph/compare', jsonHandler(handlers.compareGraphHandler))
+app.get('/api/graph/rider/:uid', jsonHandler(handlers.riderGraphHandler))
 app.get('/kalender', handler('cal.hbs', handlers.calendarHandler))
 
 app.post('/sok/', handler('search.hbs', handlers.searchHandler, 100))

@@ -127,49 +127,71 @@ function chooseTooltip(data, graph) {
   }
 }
 
+async function fetchData(riderUid) {
+  const selector = document.getElementById(`rider-graph-selector`)
+  const type = selector.options[selector.selectedIndex].value
 
-function setupGraph (el, graph) {
-  const index = el.getAttribute('data-highcharts-chart')
+  return fetch(`/api/graph/rider/${riderUid}?type=${type}`)
+    .then(response => response.json())
+    .then(json => json)
+}
 
-  if (index) { // existing graph
-    const chart = Highcharts.charts[index]
-    const data = JSON.parse(el.getAttribute(`data-object-${graph}`))
+function yAxisGraphTitle(graph) {
+  return graph === 'places' ? 'Plass i klasse' : 'Plass % i klasse'
+}
 
-    chart.update({
+function yAxisLabel(graph) {
+  return graph === 'places' ? '{value}' : "{value:.2f} %"
+}
+
+function graphTitle(graph) {
+  return graph === 'places' ? 'Rittplasseringer' : 'Rittplasseringer %'
+}
+
+function seriesName(graph) {
+  return graph === 'places' ? 'Plassering' : 'Plassering %'
+}
+
+async function updateGraph(index, uid, graph) {
+  const chart = Highcharts.charts[index]
+  const data = await fetchData(uid)
+  chart.update({
+    yAxis: {
+      title: {
+        text: yAxisGraphTitle(graph) 
+      },
+      type: 'linear',
+      labels: {
+        format: yAxisLabel(graph)
+      }
+    },
+    title: {
+      text: graphTitle(graph)
+    },
+    tooltip: {
+      formatter: chooseTooltip(data, graph)
+    },
+    series: [{
+      name: seriesName(graph),
+      data
+    }]
+  })
+}
+
+async function newGraph(id, uid, graph) {
+  const data = await fetchData(uid)
+    Highcharts.chart(id, {
+
+      title: {
+        text: graphTitle(graph)
+      },
+
       yAxis: {
         title: {
-          text: graph === 'places' ? 'Plass i klasse' : 'Plass % i klasse'
-        },
-        type: 'linear',
-        labels: {
-          format: graph === 'places' ? '{value}' : "{value:.2f} %"
-        }
-      },
-      title: {
-        text: graph === 'places' ? 'Rittplasseringer' : 'Rittplasseringer %'
-      },
-      tooltip: {
-        formatter: chooseTooltip(data, graph)
-      },
-      series: [{
-        name: graph === 'places' ? 'Plassering' : 'Plassering %',
-        data: data.map((e) => { return [ e.x, e.y ] })
-      }]
-    })
-  } else {
-    const data = JSON.parse(el.getAttribute(`data-object-${graph}`))
-    Highcharts.chart(el.getAttribute('id'), {
-
-      title: {
-        text: graph === 'places' ? 'Rittplasseringer' : 'Rittplasseringer %'
-      },
-
-      yAxis: {
-        title: {
-          text: graph === 'places' ? 'Plass i klasse' : 'Plass % i klasse'
+          text: yAxisGraphTitle(graph)
         },
         labels: {
-          format: graph === 'places' ? '{value}' : "{value:.2f} %"
+          format: yAxisLabel(graph)
         }
       },
       chart: {
@@ -211,8 +233,8 @@ function setupGraph (el, graph) {
       },
 
       series: [{
-        name: graph === 'places' ? 'Plassering' : 'Plassering %',
-        data: data.map((e) => { return [ e.x, e.y ] })
+        name: seriesName(graph),
+        data
       }],
 
       responsive: {
@@ -231,5 +253,16 @@ function setupGraph (el, graph) {
       }
 
     })
+}
+
+async function setupGraph (el, graph) {
+  const index = el.getAttribute('data-highcharts-chart')
+  const g = document.querySelectorAll('[data-uid]')[0]
+  const uid = g.getAttribute('data-uid')
+
+  if (index) { // existing graph
+    updateGraph(index, uid, graph)
+  } else {
+    newGraph(el.getAttribute('id'), uid, graph)
   }
 }

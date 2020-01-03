@@ -97,8 +97,8 @@
     "foo": {
       "patterns": [
         "server/*.js",
-        "server/src/js",
-        "server/src/css",
+        "src/js",
+        "src/css",
         "config",
         "views/",
         "views/partials",
