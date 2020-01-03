@@ -51,7 +51,12 @@ async function mapHandler (req) {
 }
 
 async function racesHandler (req) {
-  const races = raceViewMapper(await db.findRaces())
+  const allRaces = await db.findRaces()
+  const races = raceViewMapper(allRaces.map(r => {
+    r.hasMap = r.lat !== null
+    return r
+  }))
+  console.log(races)
   return {
     status: 200,
     races,

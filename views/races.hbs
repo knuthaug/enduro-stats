@@ -4,18 +4,20 @@
   {{#each races}}
   <div class="col-4">
     <h3 class="m-m-t">{{year}}</h3>
-     {{#each races}}
-    <a class="padded-link" href="/ritt/{{uid}}">{{name}}</a><br/>
+    {{#each races}}
+      <a class="padded-link" href="/ritt/{{uid}}">{{name}}</a> {{#if hasMap}}{{>icon type='map'}}{{/if}}<br/>
     {{/each}}
   </div>
   {{#compare @index '%' 2}}
-   </div>
-    <div class="row">
-      <div class="col-2"></div>
-      {{/compare}}
-    {{/each}}
-  </div>
+</div>
+<div class="row">
+  <div class="col-2"></div>
+  {{/compare}}
+  {{/each}}
+</div>
 <div class="col-2">
 </div>
 </div>
+
+<script src="/assets/js/{{hashedAssets 'races.js'}}" crossorigin="anonymous"></script>
 
