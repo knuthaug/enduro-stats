@@ -11,7 +11,6 @@ module.exports = {
     bundle: './src/js/index.js',
     rider: './src/js/rider.js',
     race: './src/js/race.js',
-    races: './src/js/races.js',
     cal: './src/js/cal.js',
     fullrace: './src/js/fullrace.js',
     riders: './src/js/riders.js',
