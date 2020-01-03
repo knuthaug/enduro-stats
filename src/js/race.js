@@ -3,6 +3,7 @@
 const format = require('date-fns/format')
 const parse = require('date-fns/parse')
 const feather = require('feather-icons')
+const charts = require('./charts.js')
 
 document.addEventListener('DOMContentLoaded', function (event) {
   feather.replace()
@@ -70,21 +71,10 @@ function setupRaceDetailGraph (element) {
   const data = JSON.parse(element.getAttribute('data-object'))
 
   Highcharts.chart(element.getAttribute('id'), {
-    chart: {
-      borderColor: '#000000',
-      borderWidth: 1,
-      borderRadius: 2,
-      style: {
-        fontFamily: "'Helvetica Neue', Arial, sans-serif"
-      }
-    },
+    chart: charts.chartOptions(),
     title: {
       text: 'Nærmeste konkurrenter',
-      style: {
-        color: '#FFFFFF',
-        'font-size': '90%',
-        fontWeight: 'normal'
-      }
+      style: charts.smallChartTitleStyle()
     },
     tooltip: {
       formatter: function () {
@@ -173,14 +163,7 @@ function setupRaceGraph (element, graph) {
     const data = JSON.parse(element.getAttribute(`data-object-places`))
 
     Highcharts.chart(element.getAttribute('id'), {
-      chart: {
-        borderColor: '#000000',
-        borderWidth: 1,
-        borderRadius: 2,
-        style: {
-          fontFamily: "'Helvetica Neue', Arial, sans-serif"
-        }
-      },
+      chart: charts.chartOptions(),
       tooltip: {
         formatter: placeFormatter
       },

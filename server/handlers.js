@@ -375,7 +375,7 @@ function resultsToPlacesChart(results) {
     return typeof e !== 'undefined'
   }).sort((a, b) => {
     return compareAsc(a.properDate, b.properDate)
-  }).map((e) => { return [ e.x, e.y ] })
+  })
 }
 
 function resultsToPercentChart(results) {
@@ -393,7 +393,7 @@ function resultsToPercentChart(results) {
     return typeof e !== 'undefined'
   }).sort((a, b) => {
     return compareAsc(a.properDate, b.properDate)
-  }).map((e) => { return [ e.x, e.y ] })
+  })
 }
 
 module.exports = {

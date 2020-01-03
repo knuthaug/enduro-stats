@@ -3,6 +3,7 @@
 const format = require('date-fns/format')
 const parse = require('date-fns/parse')
 const feather = require('feather-icons')
+const charts = require('./charts.js')
 
 document.addEventListener('DOMContentLoaded', function (event) {
   feather.replace()
@@ -43,21 +44,10 @@ function setupRaceGraph (element) {
   const data = JSON.parse(element.getAttribute('data-object'))
 
   Highcharts.chart(element.getAttribute('id'), {
-    chart: {
-      borderColor: '#000000',
-      borderWidth: 1,
-      borderRadius: 2,
-      style: {
-        fontFamily: "'Helvetica Neue', Arial, sans-serif"
-      }
-    },
+    chart: charts.chartOptions(),
     title: {
       text: 'Etappeplasseringer %',
-      style: {
-        color: '#FFFFFF',
-        'font-size': '90%',
-        fontWeight: 'normal'
-      }
+      style: charts.smallChartTitleStyle()
     },
     yAxis: {
       title: {
@@ -111,6 +101,7 @@ function setupRaceGraph (element) {
 }
 
 function chooseTooltip(data, graph) {
+
   if(graph === 'places') {
     return function () {
       const pointData = data.find((row) => {
@@ -173,7 +164,7 @@ async function updateGraph(index, uid, graph) {
     },
     series: [{
       name: seriesName(graph),
-      data
+      data: data.map((e) => { return [ e.x, e.y ] })
     }]
   })
 }
@@ -194,14 +185,7 @@ async function newGraph(id, uid, graph) {
           format: yAxisLabel(graph)
         }
       },
-      chart: {
-        borderColor: '#000000',
-        borderWidth: 1,
-        borderRadius: 2,
-        style: {
-          fontFamily: "'Helvetica Neue', Arial, sans-serif"
-        }
-      },
+      chart: charts.chartOptions(),
       xAxis: {
         title: {
           text: 'År'
@@ -234,7 +218,7 @@ async function newGraph(id, uid, graph) {
 
       series: [{
         name: seriesName(graph),
-        data
+        data: data.map((e) => { return [ e.x, e.y ] })
       }],
 
       responsive: {
