@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd ..
+
 # EQ results
 #2012
 echo "2012:"
