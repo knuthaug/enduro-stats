@@ -111,11 +111,7 @@ function setupRaceDetailGraph (element) {
           maxWidth: 500
         },
         chartOptions: {
-          legend: {
-            layout: 'horizontal',
-            align: 'center',
-            verticalAlign: 'bottom'
-          }
+          legend: charts.legendOptions()
         }
       }]
     }
@@ -193,20 +189,7 @@ function setupRaceGraph (element, graph) {
         }
       },
       series: data,
-      responsive: {
-        rules: [{
-          condition: {
-            maxWidth: 700
-          },
-          chartOptions: {
-            legend: {
-              layout: 'horizontal',
-              align: 'center',
-              verticalAlign: 'bottom'
-            }
-          }
-        }]
-      }
+      responsive: charts.responsiveO()
     })
   }
 }

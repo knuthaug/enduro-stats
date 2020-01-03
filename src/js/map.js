@@ -1,3 +1,4 @@
+const charts = require('./charts.js')
 const L = require('leaflet')
 const gpx = require('leaflet-gpx')
 
@@ -170,21 +171,10 @@ function setupGraph(id, data) {
     });
 
   Highcharts.chart(id, {
-    chart: {
-      borderColor: '#000000',
-      borderWidth: 1,
-      borderRadius: 2,
-      style: {
-        fontFamily: "'Helvetica Neue', Arial, sans-serif"
-      }
-    },
+    chart: charts.chartOptions(),
     title: {
       text: `Høydeprofil ${id}`,
-      style: {
-        color: '#FFFFFF',
-        'font-size': '90%',
-        fontWeight: 'normal'
-      }
+      style: charts.smallChartTitleStyle()
     },
     yAxis: {
       title: {

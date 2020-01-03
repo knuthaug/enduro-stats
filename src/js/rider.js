@@ -88,11 +88,7 @@ function setupRaceGraph (element) {
           maxWidth: 400
         },
         chartOptions: {
-          legend: {
-            layout: 'horizontal',
-            align: 'center',
-            verticalAlign: 'bottom'
-          }
+          legend: charts.legendOptions()
         }
       }]
     }
@@ -227,11 +223,7 @@ async function newGraph(id, uid, graph) {
             maxWidth: 500
           },
           chartOptions: {
-            legend: {
-              layout: 'horizontal',
-              align: 'center',
-              verticalAlign: 'bottom'
-            }
+            legend: charts.legendOptions()
           }
         }]
       }

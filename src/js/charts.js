@@ -18,7 +18,30 @@ function smallChartTitleStyle() {
 
 }
 
+function responsiveOptions() {
+  return {
+    rules: [{
+      condition: {
+        maxWidth: 700
+      },
+      chartOptions: {
+        legend: legendOptions()
+      }
+    }]
+  }
+}
+
+function legendOptions() {
+  return {
+    layout: 'horizontal',
+    align: 'center',
+    verticalAlign: 'bottom'
+  }
+}
+
 module.exports = {
   chartOptions,
-  smallChartTitleStyle
+  smallChartTitleStyle,
+  responsiveOptions,
+  legendOptions
 }

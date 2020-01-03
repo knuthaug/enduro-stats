@@ -1,5 +1,6 @@
 const feather = require('feather-icons')
 const { convertMsToTime } = require('../../lib/time.js')
+const charts = require('./charts.js')
 
 document.addEventListener('DOMContentLoaded', function (event) {
   feather.replace()
@@ -95,14 +96,7 @@ function findFormatter(type) {
 
 async function setupRaceDetailGraph(id, type) {
   Highcharts.chart(id, {
-    chart: {
-      borderColor: '#000000',
-      borderWidth: 1,
-      borderRadius: 2,
-      style: {
-        fontFamily: "'Helvetica Neue', Arial, sans-serif"
-      }
-    },
+    chart: charts.chartOptions(),
     tooltip: {
       formatter: findFormatter(type)
     },
@@ -136,11 +130,7 @@ async function setupRaceDetailGraph(id, type) {
           minHeight: 400
         },
         chartOptions: {
-          legend: {
-            layout: 'horizontal',
-            align: 'center',
-            verticalAlign: 'bottom'
-          }
+          legend: charts.legendOptions()
         }
       }]
     }
@@ -290,15 +280,8 @@ function setupRaceGraph (element) {
   const data = JSON.parse(element.getAttribute(`data-object`))
 
   Highcharts.chart(element.getAttribute('id'), {
-    chart: {
-      borderColor: '#000000',
-      borderWidth: 1,
-      borderRadius: 2,
-      style: {
-        fontFamily: "'Helvetica Neue', Arial, sans-serif"
-      }
-    },
-    tooltip: {
+    chart: charts.chartOptions(),
+        tooltip: {
       formatter: timeFormatter
     },
     title: {
@@ -333,20 +316,7 @@ function setupRaceGraph (element) {
       }
     },
     series: data,
-    responsive: {
-      rules: [{
-        condition: {
-          maxWidth: 700
-        },
-        chartOptions: {
-          legend: {
-            layout: 'horizontal',
-            align: 'center',
-            verticalAlign: 'bottom'
-          }
-        }
-      }]
-    }
+    responsive: charts.responsiveOptions()
   })
 }
 
