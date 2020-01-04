@@ -139,30 +139,16 @@ function seriesName(graph) {
   return graph === 'places' ? 'Plassering' : 'Plassering %'
 }
 
-async function updateGraph(index, uid, graph) {
+async function updateGraph(index, uid, graph, id) {
   const chart = Highcharts.charts[index]
   const data = await fetchData(uid)
-  chart.update({
-    yAxis: {
-      title: {
-        text: yAxisGraphTitle(graph) 
-      },
-      type: 'linear',
-      labels: {
-        format: yAxisLabel(graph)
-      }
-    },
-    title: {
-      text: graphTitle(graph)
-    },
-    tooltip: {
-      formatter: chooseTooltip(data, graph)
-    },
-    series: [{
-      name: seriesName(graph),
-      data: data.map((e) => { return [ e.x, e.y ] })
-    }]
-  })
+
+  if(graph === 'box') {
+    updateBoxGraph(chart, data, graph, id)
+  } else {
+    chart.destroy()
+    newGraph(id, uid, graph)
+  }
 }
 
 async function newGraph(id, uid, graph) {
@@ -231,13 +217,77 @@ async function newGraph(id, uid, graph) {
     })
 }
 
+async function updateBoxGraph(chart, data, graph, id) {
+  //console.log(data)
+  chart.destroy()
+  Highcharts.chart(id, {
+    chart: {
+        type: 'scatter',
+        zoomType: 'xy'
+    },
+    title: {
+        text: 'Tid bak (%) per etappe'
+    },
+    xAxis: {
+        title: {
+            enabled: true,
+            text: 'Ritt'
+        },
+        categories: data.categories,
+        startOnTick: true,
+        endOnTick: true,
+        showLastLabel: true
+    },
+    yAxis: {
+        title: {
+            text: 'prosent bak'
+        }
+    },
+    plotOptions: {
+        scatter: {
+            marker: {
+                radius: 5,
+                states: {
+                    hover: {
+                        enabled: true,
+                        lineColor: 'rgb(100,100,100)'
+                    }
+                }
+            },
+            states: {
+                hover: {
+                    marker: {
+                        enabled: false
+                    }
+                }
+            },
+            tooltip: {
+                headerFormat: '<b>{series.name}</b><br>',
+                pointFormat: '{point.y} % bak'
+            }
+        }
+    },
+    series: data.series, 
+    responsive: {
+      rules: [{
+        condition: {
+          minHeight: 500
+        },
+        chartOptions: {
+          legend: charts.legendOptions()
+        }
+      }]
+    }
+  })
+}
+
 async function setupGraph (el, graph) {
   const index = el.getAttribute('data-highcharts-chart')
   const g = document.querySelectorAll('[data-uid]')[0]
   const uid = g.getAttribute('data-uid')
 
   if (index) { // existing graph
-    updateGraph(index, uid, graph)
+    updateGraph(index, uid, graph, el.getAttribute('id'))
   } else {
     newGraph(el.getAttribute('id'), uid, graph)
   }

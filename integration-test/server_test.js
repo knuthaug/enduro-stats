@@ -58,6 +58,10 @@ tap.test('graph api for comparison responds with 200', t => {
   inject('/api/graph/compare?uid=1234', t, 'application/json; charset=utf-8')
 })
 
+tap.test('graph api for rider page', t => {
+  inject('/api/graph/rider/00fde8e308a30a453c1f22e9bf8600a8?type=percent', t, 'application/json; charset=utf-8')
+})
+
 function inject(url, t, contentType = 'text/html', status = 200) {
   app.inject({
     method: 'GET',

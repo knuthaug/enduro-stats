@@ -7,7 +7,7 @@ const { riderViewMapper } = require('./riderViewMapper')
 const compareAsc = require('date-fns/compare_asc')
 const parse = require('date-fns/parse')
 const { percentRanks } = require('../lib/percent_ranks')
-
+const { toNumber } = require('./riderViewMapper.js')
 const comparisonMapper = require('./comparisonMapper')
 const comparisonGraphMapper = require('./comparisonGraphMapper')
 const db = new Db()
@@ -288,6 +288,8 @@ async function riderGraphHandler (req) {
 
   if(type === 'percent') {
     return resultsToPercentChart(results)
+  } else if(type === 'box') {
+    return resultsToColumnChart(results)
   }
   return resultsToPlacesChart(results)
 }
@@ -316,7 +318,6 @@ async function riderHandler (req) {
   const ridersPerClass = await db.ridersForClassAndRace(raceIds)
 
   const results = percentRanks(races, ridersPerClass)
-
   const { year, avg, score } = await db.riderRanking(rider.id)
   const startYear = results[results.length - 1].year
 
@@ -358,6 +359,29 @@ function toComparisonChartData (races) {
       data: ridersSeries[key]
     }
   })
+}
+
+function resultsToColumnChart(results) {
+  const series = []
+  const categories = []
+
+  const res = results.reverse()
+  for(let i = 0; i < res.length; i++) {
+    const cur = res[i]
+    categories.push(`${cur.raceName} ${cur.year}`)
+    for(let j = 0; j < cur.details.length; j++) {
+      const stage = toNumber(cur.details[j].name)
+      if(stage && !series[stage-1]) {
+        series[stage-1] = {
+          name: cur.details[j].name,
+          data: [cur.details[j].percent_behind]
+        }
+      } else {
+        series[stage-1].data.push(cur.details[j].percent_behind)
+      }
+    }
+  }
+  return { series, categories}
 }
 
 function resultsToPlacesChart(results) {
