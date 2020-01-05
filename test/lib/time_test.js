@@ -38,6 +38,7 @@ tap.test('converts from time to ms', (t) => {
   t.equals(convertTimeToMs('2:00'), 120000, 'just minutes')
   t.equals(convertTimeToMs('2:15'), 135000, 'minutes and second')
   t.equals(convertTimeToMs('02:15'), 135000, 'supports leading zero')
+  t.equals(convertTimeToMs('02:15.6'), 135600, 'supports leading zero and ms')
   t.equals(convertTimeToMs('01:02:15'), 3735000, 'supports hours')
   t.equals(convertTimeToMs('06:04.6'), 364600, 'supports hours')
   t.end()

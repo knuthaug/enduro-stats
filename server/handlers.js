@@ -10,6 +10,8 @@ const { percentRanks } = require('../lib/percent_ranks')
 const { toNumber } = require('./riderViewMapper.js')
 const comparisonMapper = require('./comparisonMapper')
 const comparisonGraphMapper = require('./comparisonGraphMapper')
+const { convertTimeToMs } = require('../lib/time.js')
+
 const db = new Db()
 
 async function manifestHandler (req) {
