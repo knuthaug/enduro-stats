@@ -61,6 +61,7 @@ class Db {
   }
 
   async insertRace (race, stages) {
+
     const id = await this.findRace(race.name, race.year)
 
     if (id) {

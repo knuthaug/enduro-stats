@@ -189,7 +189,7 @@ function setupRaceGraph (element, graph) {
         }
       },
       series: data,
-      responsive: charts.responsiveO()
+      responsive: charts.responsiveOptions()
     })
   }
 }
