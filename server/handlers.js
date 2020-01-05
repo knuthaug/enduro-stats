@@ -56,7 +56,7 @@ async function racesHandler (req) {
     r.hasMap = r.lat !== null
     return r
   }))
-  console.log(races)
+
   return {
     status: 200,
     races,
