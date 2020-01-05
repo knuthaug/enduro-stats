@@ -143,9 +143,10 @@ async function updateGraph(index, uid, graph, id) {
   const chart = Highcharts.charts[index]
   const data = await fetchData(uid)
 
-  if(graph === 'box') {
-    updateBoxGraph(chart, data, graph, id)
+  if(graph === 'column') {
+    updateColumnGraph(chart, data, graph, id)
   } else {
+    document.getElementById('hidden-graph-text').classList.add('invisible')
     chart.destroy()
     newGraph(id, uid, graph)
   }
@@ -217,12 +218,13 @@ async function newGraph(id, uid, graph) {
     })
 }
 
-async function updateBoxGraph(chart, data, graph, id) {
-  //console.log(data)
+async function updateColumnGraph(chart, data, graph, id) {
+
+  document.getElementById('hidden-graph-text').classList.toggle('invisible')
   chart.destroy()
   Highcharts.chart(id, {
     chart: {
-        type: 'scatter',
+        type: 'column',
         zoomType: 'xy'
     },
     title: {
@@ -243,29 +245,9 @@ async function updateBoxGraph(chart, data, graph, id) {
             text: 'prosent bak'
         }
     },
-    plotOptions: {
-        scatter: {
-            marker: {
-                radius: 5,
-                states: {
-                    hover: {
-                        enabled: true,
-                        lineColor: 'rgb(100,100,100)'
-                    }
-                }
-            },
-            states: {
-                hover: {
-                    marker: {
-                        enabled: false
-                    }
-                }
-            },
-            tooltip: {
-                headerFormat: '<b>{series.name}</b><br>',
-                pointFormat: '{point.y} % bak'
-            }
-        }
+    tooltip: {
+      headerFormat: '<b>{series.name}</b><br>',
+      pointFormat: '{point.y} % bak'
     },
     series: data.series, 
     responsive: {

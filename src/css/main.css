@@ -312,6 +312,14 @@ table[data-sortable] th[data-sorted-direction="ascending"]:after {
   visibility: hidden;
 }
 
+.invisible {
+  display: none;
+}
+
+#hidden-graph-text {
+  padding-top: 5px;
+}
+
 #compare-list svg {
   margin-right: 1rem;
   width: 20px;

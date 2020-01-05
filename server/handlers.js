@@ -290,7 +290,7 @@ async function riderGraphHandler (req) {
 
   if(type === 'percent') {
     return resultsToPercentChart(results)
-  } else if(type === 'box') {
+  } else if(type === 'column') {
     return resultsToColumnChart(results)
   }
   return resultsToPlacesChart(results)
@@ -367,19 +367,34 @@ function resultsToColumnChart(results) {
   const series = []
   const categories = []
 
+  const maxStage = results.reduce((acc, cur) => {
+    return cur.details.length > acc ? cur.details.length : acc
+  }, 0)
+
   const res = results.reverse()
   for(let i = 0; i < res.length; i++) {
     const cur = res[i]
     categories.push(`${cur.raceName} ${cur.year}`)
-    for(let j = 0; j < cur.details.length; j++) {
-      const stage = toNumber(cur.details[j].name)
-      if(stage && !series[stage-1]) {
-        series[stage-1] = {
-          name: cur.details[j].name,
-          data: [cur.details[j].percent_behind]
+    for(let j = 0; j < maxStage; j++) {
+      if(!cur.details[j]) {
+        if(!series[j]) {
+          series[j] = {
+            name: `FE${j + 1}`,
+            data: [0]
+          }
+        } else {
+          series[j].data.push(0)
         }
       } else {
-        series[stage-1].data.push(cur.details[j].percent_behind)
+        const stage = toNumber(cur.details[j].name)
+        if(stage && !series[stage - 1]) {
+          series[stage - 1] = {
+            name: cur.details[j].name,
+            data: [cur.details[j].percent_behind]
+          }
+        } else {
+          series[stage - 1].data.push(cur.details[j].percent_behind)
+        }
       }
     }
   }

@@ -1,6 +1,11 @@
 <label for="rider-graph-selector">Velg graf:</label> <select id="rider-graph-selector" class="mb-2 rider-graph-selector">
   <option value="percent" selected>Prosentvis plassering</option>
   <option value="places">Plassering i klasse</option>
-  <option value="box">Prosent bak i alle ritt</option>
+  <option value="column">Prosent bak i alle ritt</option>
 </select>
 <div data-uid="{{rider.uid}}" id="rider-chart" class="rider-chart"></div>
+<div id="hidden-graph-text" class="invisible">
+  Forklaring: Denne grafen viser tid bak per etappe i prosent av totaltid til vinneren, altså hvor langt bak man er etappevinneren for hver etappe i alle ritt man har deltatt i. Høye kolonner angir mye tid bak, korte kolonner lite tid bak. Vinner man etappen er kolonnen for den etappen manglende (høyde null). Det samme vil være tilfelle om man får en DNS/DNF på en etappe. Grafen er zoombar for å undersøke enkelte ritt nærmere. Bruk mus til å markere et område for zoom. 
+</div>
+
+ 
