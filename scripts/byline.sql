@@ -528,3 +528,7 @@ UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://m
 UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='portrait' where uid='3ea6497ba636919b8040dcff6e8d82a6';/*Steinar Willassen*/
 UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='portrait' where uid='3bf21f26d88266ffb9ad1fbd29d82542';/*Fredrik Solenes Madsen*/
 UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='portrait' where uid='172f04275adcf67ccce7e9ce509840f3';/*Sondre Eidsten*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='portrait' where uid='afc2df311e1b51ad32ae39ad6e8f3ef8';/*Christopher Leachman*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='portrait' where uid='968ba99126521381a6440fb70e10da6a';/*Eirik Semb*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='portrait' where uid='725d71e3a2fc87ac5e01996852ad1010';/*Kristoffer Steen*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='portrait' where uid='58ae7511f9160ebd4d120ccf816c2418';/*Simen Scharning*/
