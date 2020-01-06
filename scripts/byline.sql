@@ -522,3 +522,9 @@ UPDATE riders set byline_text='Svenn Fjeldheim', byline_url='', image_mode='land
 UPDATE riders set byline_text='Svenn Fjeldheim', byline_url='', image_mode='landscape' where uid='102f255ec80f46172a1c9a861baf6cbd';/*Theodor Bakken*/
 UPDATE riders set byline_text='Svenn Fjeldheim', byline_url='', image_mode='landscape' where uid='bf961dfa53ad6895e243fba27a90696f';/*Tobias Hoel Sandengen*/
 UPDATE riders set byline_text='Svenn Fjeldheim', byline_url='', image_mode='landscape' where uid='e3adee14d9a31afedf9266c6e3318501';/*Pål Neverdal*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='portrait' where uid='26cc14be3c12c4eedc1128bdb98eb32f';/*Joline Johansson*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='portrait' where uid='d6786b567668d7d9f4e61c69e04d5c3c';/*Morgan Bakken*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='portrait' where uid='8543e432df019d4116cff22d531dc30c';/*Nikolai Sele*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='portrait' where uid='3ea6497ba636919b8040dcff6e8d82a6';/*Steinar Willassen*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='portrait' where uid='3bf21f26d88266ffb9ad1fbd29d82542';/*Fredrik Solenes Madsen*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='portrait' where uid='172f04275adcf67ccce7e9ce509840f3';/*Sondre Eidsten*/
