@@ -577,3 +577,7 @@ UPDATE riders set byline_text='Svenn Fjeldheim', byline_url='', image_mode='land
 UPDATE riders set byline_text='Svenn Fjeldheim', byline_url='', image_mode='landscape' where uid='0ee7b5118d121cbb85e1a1ad92b294e6';/*Marie Petterson*/
 UPDATE riders set byline_text='Svenn Fjeldheim', byline_url='', image_mode='landscape' where uid='b21d7091489465e7a4654afa118af525';/*Jakob Lidén*/
 UPDATE riders set byline_text='Svenn Fjeldheim', byline_url='', image_mode='landscape' where uid='45267561a0c5b0b0e19f00cf612ef78c';/*Mårten Gunnarsson*/
+UPDATE riders set byline_text='Svenn Fjeldheim', byline_url='', image_mode='landscape' where uid='40e2cc1638054886d91d35e02f8d0d7a';/*Max Lenthall*/
+UPDATE riders set byline_text='Svenn Fjeldheim', byline_url='', image_mode='landscape' where uid='3b93738d2a89f89ff06666bd91828f31';/*Sigmund Horrig*/
+UPDATE riders set byline_text='Svenn Fjeldheim', byline_url='', image_mode='landscape' where uid='209817790101290f320433c0f9e28855';/*Kristoffer Andresen*/
+UPDATE riders set byline_text='Svenn Fjeldheim', byline_url='', image_mode='landscape' where uid='7f3d7e2599d5012c097c732d31d70a98';/*Martin Fuglstad*/
