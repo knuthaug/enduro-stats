@@ -7,6 +7,11 @@
       "type": "images",
       "desc": "Bildealbum",
       "url": "https://www.hardbarka.com/apps/photos/album?albumid=16095227"
+    },
+        {
+      "type": "results",
+      "desc": "Originale resultater",
+      "url": "https://www.hardbarka.com/resultater-2017"
     }
   ]
 

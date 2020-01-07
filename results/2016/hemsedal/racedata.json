@@ -1,5 +1,17 @@
 {
   "name": "Hardbarka enduro",
   "year": 2016,
-  "date": "2016-10-01"
+  "date": "2016-10-01",
+  "links": [
+    {
+      "type": "images",
+      "desc": "Bildealbum",
+      "url": "https://www.hardbarka.com/apps/photos/album?albumid=16025321"
+    },
+        {
+      "type": "results",
+      "desc": "Originale resultater",
+      "url": "https://www.hardbarka.com/Hardbarka%20resultat%202016.pdf"
+    }
+  ]
 }
