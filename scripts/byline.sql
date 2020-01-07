@@ -532,3 +532,44 @@ UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://m
 UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='portrait' where uid='968ba99126521381a6440fb70e10da6a';/*Eirik Semb*/
 UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='portrait' where uid='725d71e3a2fc87ac5e01996852ad1010';/*Kristoffer Steen*/
 UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='portrait' where uid='58ae7511f9160ebd4d120ccf816c2418';/*Simen Scharning*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='landscape' where uid='cae52cca7108412145bee02a66b3904e';/*Guro Stjernvang*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='landscape' where uid='d34c07c6b5707790a4d334edd025acee';/*Inger Helene Hamborg*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='portrait' where uid='08a74545b9f4fa8bff999338c5312852';/*Susanne Beijer*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='landscape' where uid='9db6878a92b3d99069cb361843424866';/*Silje Kile*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='landscape' where uid='8009471b0c618f19084008c3c32eebc3';/*Helene Thon Moland*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='portrait' where uid='5489f9f5e79600725470a0f04baede40';/*Jon Bokrantz*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='landscape' where uid='509c442422d39f55735e7dccb4109a37';/*Torjus Røn Sonerud*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='landscape' where uid='e71fef950b75cbf934f80b254f3e9c75';/*Anton Odbro*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='landscape' where uid='404ce0459e88f4c45bd3732c67eab1dc';/*Jonas Lundin*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='landscape' where uid='9ccdd66f9e957d4368a8be58740730ef';/*Simen Thorvaldsen*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='landscape' where uid='36aa371be31e2a7a861be091c9b0ed8a';/*Thomas Borthen*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='landscape' where uid='0aaa4f9c509445b5b103ea9641ee3ef3';/*Kristian Ertnes*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='portrait' where uid='ffb2d9b9b3ab3e7db0f2a4a56990b297';/*Michal Wiecyk*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='portrait' where uid='d122a764b6cef51b3be3870229668c50';/*Trygve August Nyborg*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='landscape' where uid='1a5a1ca8735b9844af00c47b286e4582';/*Peter Lomsdalen*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='portrait' where uid='a8cba013262fc71dd9ebb99d50eff640';/*Runar Sagerud*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='portrait' where uid='c738ac1fc8b04679488b8682c135f57f';/*Daniel Richardson*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='portrait' where uid='71c337f1d7dc128aa46219daadfced19';/*Torbjørn Engedal*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='portrait' where uid='94142faf0c5446492eb946d2e9f3d7f2';/*Ola Paaske Gulbrandsen*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='portrait' where uid='3d1f3d6410dd71f02f2f1e5ab4f5a697';/*David Rintalan*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='portrait' where uid='472bdbcbb2f5cfd7b4d8dd338519968d';/*Trond Sverre Hagelien*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='landscape' where uid='7ce9d60887d2b401382de49f6cc78165';/*Stian Bergeland*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='landscape' where uid='58a6f691a29727749bed4a58d8391d2f';/*Thomas Gajda Asbjørnhus*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='landscape' where uid='d1e273e834844fb71f3c43c0d62c1ff7';/*Gerhard Sørensen-Fuglem*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='landscape' where uid='33a49172e8daa07b2cafeb115e3fe02c';/*Tarjei Hofset*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='portrait' where uid='171d77fb7f2fa58a46c5342e301a67e8';/*Mats Vikan*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='landscape' where uid='701d43778893b57f9abf793d0c3fa67a';/*Philip Johannessen Bjørkesett*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='portrait' where uid='9fe7d2f6c07786521abaf5d0111369c2';/*Jostein Thorvaldsen*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='landscape' where uid='67a23bf0f237be988b82cf87a5ae2b0b';/*Arne Ask*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='landscape' where uid='b06748fb2fc8aa62aab25390500153b7';/*Nils Einar Berget*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='landscape' where uid='197cfea7d38fcffbe4f4611f57021460';/*Hermann Solvær*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='landscape' where uid='b374454b3bd794fee7fa6f9b57b6097f';/*Michael Overbeck Cook*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='landscape' where uid='bc3a529180bd26e6d9428cae9e01f2de';/*Audun Rogstadkjærnet*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='landscape' where uid='51af2f2bedff88503ff1261efd162a30';/*Thomas Klingenberg*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='portrait' where uid='bfebc28a21f15fc290571dde77638e07';/*Kim Norgård*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='landscape' where uid='4da708356d4ece870a402d8a767d59df';/*Stian Grieg Sæthre*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='landscape' where uid='b9485f34f9790fb6cefb80bac2ac01f3';/*Halvor Odden*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='landscape' where uid='218449f75952c52b49235fd490f9f4bc';/*Johannes Dvorak Lagos*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='landscape' where uid='74c480ddbdbdae0bc67c3ec8a3d75a46';/*Timothy Glazebrook*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='landscape' where uid='af3a88eb792acc4e272400f3e97912bf';/*Ola Aarsland*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='portrait' where uid='a7a864af205398cf855855cffe01bb09';/*Erik Olsson*/
