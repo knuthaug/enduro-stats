@@ -573,3 +573,7 @@ UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://m
 UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='landscape' where uid='74c480ddbdbdae0bc67c3ec8a3d75a46';/*Timothy Glazebrook*/
 UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='landscape' where uid='af3a88eb792acc4e272400f3e97912bf';/*Ola Aarsland*/
 UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='portrait' where uid='a7a864af205398cf855855cffe01bb09';/*Erik Olsson*/
+UPDATE riders set byline_text='Svenn Fjeldheim', byline_url='', image_mode='landscape' where uid='cc146470bc2d0ad28f5313d2642a26e5';/*Johan Lindestaf*/
+UPDATE riders set byline_text='Svenn Fjeldheim', byline_url='', image_mode='landscape' where uid='0ee7b5118d121cbb85e1a1ad92b294e6';/*Marie Petterson*/
+UPDATE riders set byline_text='Svenn Fjeldheim', byline_url='', image_mode='landscape' where uid='b21d7091489465e7a4654afa118af525';/*Jakob Lidén*/
+UPDATE riders set byline_text='Svenn Fjeldheim', byline_url='', image_mode='landscape' where uid='45267561a0c5b0b0e19f00cf612ef78c';/*Mårten Gunnarsson*/
