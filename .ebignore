@@ -15,6 +15,7 @@ cdn
 images
 raw_images
 server/img
+.git
 dump*
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
