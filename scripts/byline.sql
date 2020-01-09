@@ -581,3 +581,5 @@ UPDATE riders set byline_text='Svenn Fjeldheim', byline_url='', image_mode='land
 UPDATE riders set byline_text='Svenn Fjeldheim', byline_url='', image_mode='landscape' where uid='3b93738d2a89f89ff06666bd91828f31';/*Sigmund Horrig*/
 UPDATE riders set byline_text='Svenn Fjeldheim', byline_url='', image_mode='landscape' where uid='209817790101290f320433c0f9e28855';/*Kristoffer Andresen*/
 UPDATE riders set byline_text='Svenn Fjeldheim', byline_url='', image_mode='landscape' where uid='7f3d7e2599d5012c097c732d31d70a98';/*Martin Fuglstad*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='portrait' where uid='810f37ea244c433cf5921e43359bf75d';/*Amund Hognestad Jensen*/
+UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='portrait' where uid='a0971d2751974f5fd0f570aa8b44aac4';/*Peder August Gaasø*/
