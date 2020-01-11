@@ -64,7 +64,8 @@ node import/importer.js -a -f results/2015/oslo/oslo-2015.csv
 echo "  Oppdal"
 node import/importer.js -a -f results/2015/oppdal/oppdal-2015.csv
 echo "  Molde"
-node import/importer.js -r results/2015/molde/racedata.json
+#node import/importer.js -r results/2015/molde/racedata.json
+node import/importer.js -m -f results/2015/molde/molde-2015.csv
 
 
 #2016
