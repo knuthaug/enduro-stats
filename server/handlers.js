@@ -68,11 +68,17 @@ async function racesHandler (req) {
 }
 
 async function compareHandler (req) {
-  const ridersParam = req.query.riders
+  let ridersParam
   let ridersData = []
   let riders = []
 
-  if (ridersParam) {
+  if(Array.isArray(req.query.riders)) {
+    ridersParam = req.query.riders 
+  } else {
+    ridersParam = [req.query.riders]
+  }
+
+  if (req.query.riders) {
     ridersData = comparisonMapper(await db.raceResultsForRiders(ridersParam))
     riders = await db.findRiders(ridersParam)
   }

@@ -1,6 +1,9 @@
 const feather = require('feather-icons')
 const { convertMsToTime } = require('../../lib/time.js')
 const charts = require('./charts.js')
+const ui = require('./ui.js')
+
+const {input, li, i, a, option } = ui.create()
 
 document.addEventListener('DOMContentLoaded', function (event) {
   feather.replace()
@@ -213,26 +216,13 @@ function removeUser(event) {
 }
 
 function addUser(form, uid, name) {
-  const hidden = document.createElement('input')
-  hidden.setAttribute('type', 'hidden')
-  hidden.setAttribute('name', 'riders')
-  hidden.value = uid
-  hidden.setAttribute('id', uid)
+  const hidden = input({type: 'hidden', name: 'riders', value: uid, id: uid})
   form.appendChild(hidden)
 
   const list = document.getElementById('compare-list')
-  const listElement = document.createElement('li')
-
-  const cross = document.createElement('i')
-  cross.classList.add('icon')
-  cross.innerHTML = feather.icons['x-circle'].toSvg()
-
-  cross.addEventListener('click', removeUser)
-
-  listElement.appendChild(cross)
-  listElement.setAttribute('data-uid', uid)
-  listElement.appendChild(document.createTextNode(name))
-  listElement.classList.add('list-group-item-dark', 'list-group-item')
+  const iEl = i({class: 'icon', onclick: removeUser})
+  iEl.innerHTML = feather.icons['x-circle'].toSvg()
+  const listElement = li({'data-uid': uid, class: ['list-group-item-dark', 'list-group-item']}, [iEl, a({href: `/rytter/${uid}`}, name)])
   list.appendChild(listElement)
 }
 
@@ -255,10 +245,7 @@ function compareSearchHint (event) {
         list.innerHTML = ''
 
         response.forEach(function (item) {
-          var option = document.createElement('option')
-          option.setAttribute('data-uid', item.uid)
-          option.appendChild(document.createTextNode(item.name))
-          list.appendChild(option)
+          list.appendChild(option({'data-uid': item.uid}, item.name))
         })
       }
     }

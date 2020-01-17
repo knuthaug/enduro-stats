@@ -1,7 +1,7 @@
 function create() {
 
-  function isEvent(k) {
-    return k.startsWith("on")
+  function isEvent(key, value) {
+    return key.startsWith("on") && typeof value === 'function'
   }
 
   function eventName(k) {
@@ -13,7 +13,7 @@ function create() {
 
   function attrs(el, props) {
     for (let [key, val] of Object.entries(props)) {
-      if (isEvent(key)) {
+      if (isEvent(key, val)) {
         el.addEventListener(eventName(key), val)
       } else if (key === "class") {
         const classes = Array.isArray(val) ? val : [val]
@@ -44,7 +44,7 @@ function create() {
           const el = attrs(document.createElement(tag), props)
           children.forEach(function(i) {
             if (isString(i)) {
-              el.textContent = i
+              el.appendChild(document.createTextNode(i))
             } else {
               el.appendChild(i)
             }

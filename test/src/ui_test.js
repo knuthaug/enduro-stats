@@ -19,9 +19,12 @@ tap.test('test compound tags', async t => {
   t.end()
 })
 
-tap.test('test multiplr children', async t => {
+tap.test('test multiple children', async t => {
   let { h1, div } = ui.create();
   t.equals(div([h1("test"), h1("test2")]).outerHTML, '<div><h1>test</h1><h1>test2</h1></div>')
+  t.equals(div("test2").outerHTML, '<div>test2</div>')
+  t.equals(div([h1("test"), "test2"]).outerHTML, '<div><h1>test</h1>test2</div>')
+  t.equals(div(["test", h1("test2")]).outerHTML, '<div>test<h1>test2</h1></div>')
   t.end()
 })
 
@@ -32,9 +35,3 @@ tap.test('test eventlisteners', async t => {
   t.end()
 })
 
-
-tap.test('test eventlisteners', async t => {
-  let { div } = ui.create();
-  t.deepEquals(div({'onClick': () => {}}), {})
-  t.end()
-})
