@@ -1,6 +1,9 @@
 const charts = require('./charts.js')
 const L = require('leaflet')
 const gpx = require('leaflet-gpx')
+const ui = require('./ui.js')
+
+const { div, h3, p, span, strong, br, a } = ui.create()
 
 const colors = [
   {
@@ -84,12 +87,7 @@ function handleFile(o, parent, map, stages, index) {
 
       //add details
       parent.appendChild(addCell(g, o))
-
-      const row = document.createElement('div')
-      row.classList.toggle("row")
-      row.appendChild(addSpace('col-3'))
-      row.appendChild(addSpace('col-6', 'details-row'))
-      parent.appendChild(row)
+      parent.appendChild(div({class: 'row'}, [ addSpace(['col-3']), addSpace(['col-6', 'details-row'])]))
 
       //graph
       setupGraph(g.get_name(), g._info.elevation._points)
@@ -229,72 +227,46 @@ function setupGraph(id, data) {
 }
 
 function addCell(g, stage) {
-  const row = document.createElement('div')
-  row.classList.toggle("row")
-  row.appendChild(addSpace())
-
-  const content = document.createElement('div')
-  content.classList.toggle("col-3")
-
-  const mapHolder = document.createElement('div')
-  mapHolder.classList.toggle("col-7")
-
-  const map = document.createElement('div')
-  map.id = g.get_name()
-  map.classList.toggle('map-chart-container')
-  mapHolder.appendChild(map)
-
-  const title = document.createElement('h3')
-  const text = document.createTextNode(g.get_name())
-  title.appendChild(text)
-  content.appendChild(title)
-  content.appendChild(addDetails(g, stage))
-  row.appendChild(content)
-  row.appendChild(mapHolder)
-  return row
+  return div({class: 'row'}, [
+    addSpace(),
+    div({class: 'col-3'}, [h3({}, g.get_name()), addDetails(g, stage)]),
+    div({class: 'col-7'}, div({class: 'map-chart-container', id: g.get_name()}))
+  ])
 }
 
-function addSpace(clazz = 'col-1', clazz2 = null) {
-  const div = document.createElement('div')
-  div.classList.toggle(clazz)
-  if(clazz2) {
-    div.classList.toggle(clazz2)
-  }
-  return div
+function addSpace(classes = ['col-1']) {
+  return div({class: classes})
 }
- 
+
 function addDetails(g, stage) {
-  const p = document.createElement('p')
-  p.appendChild(row(g, 'Lengde: ', 'meter', g.get_distance()))
-  p.appendChild(row(g, 'Høydemeter ned: ', 'meter', g.get_elevation_loss()))
-  p.appendChild(row(g, 'Høydemeter opp: ', 'meter', g.get_elevation_gain()))
-  p.appendChild(row(g, 'Gjennomsnittlig fall: ', '%', (g.get_elevation_loss() / g.get_distance()) * 100))
-  //p.appendChild(rowLink(g, 'Strava-segment: ', stage.strava_name, stage.strava_url))
-  //p.appendChild(row(g, 'Bestetid strava: ', '', ''))
-  return p
+  const rows = [
+    row(g, 'Lengde: ', 'meter', g.get_distance()),
+    row(g, 'Høydemeter ned: ', 'meter', g.get_elevation_loss()),
+    row(g, 'Høydemeter opp: ', 'meter', g.get_elevation_gain()),
+    row(g, 'Gjennomsnittlig fall: ', '%', (g.get_elevation_loss() / g.get_distance()) * 100)
+  ]
+
+  if(stage.strava_url) {
+    rows.push(rowLink(g, 'Stravasegment: ', stage.strava_name, stage.strava_url))
+  }
+
+  return p({}, rows)
 }
 
 function row(g, text, unit, value) {
-  const span = document.createElement('span')
-  const bold = document.createElement('strong')
-  bold.appendChild(document.createTextNode(text))
-  span.appendChild(bold)
-  span.appendChild(document.createTextNode(`${Math.round(value)} ${unit}`))
-  span.appendChild(document.createElement('br'))
-  return span
+  return span([
+    strong(text),
+    `${Math.round(value)} ${unit}`,
+    br()
+  ])
 }
 
 function rowLink(g, text, urlText, url) {
-  const span = document.createElement('span')
-  const bold = document.createElement('strong')
-  bold.appendChild(document.createTextNode(text))
-  const a = document.createElement('a')
-  a.href = url
-  a.appendChild(document.createTextNode(urlText))
-  span.appendChild(bold)
-  span.appendChild(a)
-  span.appendChild(document.createElement('br'))
-  return span
+  return span([
+    strong(text),
+    a({ href: url}, urlText),
+    br()
+  ])
 }
 
 function createMap(data) {
