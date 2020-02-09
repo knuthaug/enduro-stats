@@ -163,6 +163,13 @@ class Db {
     return this.find(query, values)
   }
 
+  async racesBySeriesAndYear(series, year) {
+    const query = 'select id, class, final_rank, acc_time_ms, acc_time_behind, (SELECT name FROM riders where id = results.rider_id) as name from results where race_id in (select id from races where series = $1 and year = $2) AND final_rank IS NOT NULL order by race_id, class, final_rank'
+
+    const values = [series, year]
+    return this.find(query, values)
+  }
+
   async search (search, limit) {
     const l = limit || 15
 

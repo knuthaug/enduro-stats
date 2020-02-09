@@ -156,6 +156,32 @@ async function raceHandler (req) {
   }
 }
 
+async function seriesHandler (req) {
+  log.debug(`request for ${req.path}`)
+  const race = await db.findRace(req.params.uid)
+
+  if (!race.id) {
+    return { status: 404 }
+  }
+
+  const allRaces = db.racesBySeriesAndYear(race.series, race.year)
+
+  const series = {
+    name: race.series,
+    year: race.year
+  }
+
+  return {
+    status: 200,
+    series,
+    race,
+    backdrop: true,
+    active: 'ritt',
+    docTitle: `${series.name} ${series.year} : Norsk enduro`,
+    description: `Sammenlagtresultater for  ${series.name} ${series.year}`
+  }
+}
+
 async function fullRaceHandler (req) {
   log.debug(`request for ${req.path}`)
   const race = await db.findRace(req.params.uid)
@@ -458,5 +484,6 @@ module.exports = {
   rankHandler,
   manifestHandler,
   mapHandler,
-  calendarHandler
+  calendarHandler,
+  seriesHandler
 }
