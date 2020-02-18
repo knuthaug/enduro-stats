@@ -2,6 +2,7 @@ const log = require('./log')
 const Db = require('./db')
 const resultViewMapper = require('./resultViewMapper')
 const fullResultViewMapper = require('./fullResultViewMapper')
+const seriesMapper = require('./seriesResultMapper.js')
 const raceViewMapper = require('./raceViewMapper.js')
 const { riderViewMapper } = require('./riderViewMapper')
 const compareAsc = require('date-fns/compare_asc')
@@ -164,16 +165,18 @@ async function seriesHandler (req) {
     return { status: 404 }
   }
 
-  const allRaces = db.racesBySeriesAndYear(race.series, race.year)
+  const allRaces = await db.racesBySeriesAndYear(race.series, race.year)
+  const results = seriesMapper(allRaces)
 
   const series = {
     name: race.series,
-    year: race.year
+    year: race.year,
   }
 
   return {
     status: 200,
     series,
+    results,
     race,
     backdrop: true,
     active: 'ritt',

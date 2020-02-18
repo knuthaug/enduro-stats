@@ -164,7 +164,7 @@ class Db {
   }
 
   async racesBySeriesAndYear(series, year) {
-    const query = 'select id, race_id, (select name from races where race_id = id) as race_name, class, final_rank, acc_time_ms, acc_time_behind, (SELECT name FROM riders where id = results.rider_id) as name from results where race_id in (select id from races where series = $1 and year = $2) AND final_rank IS NOT NULL AND class NOT ILIKE $3 order by race_id, class, final_rank'
+    const query = 'select id, race_id, (select uid from riders where id = rider_id) as uid, (select name from races where race_id = id) as race_name, (select date from races where race_id = id) as race_date, class, final_rank, acc_time_ms, acc_time_behind, (SELECT name FROM riders where id = results.rider_id) as name from results where race_id in (select id from races where series = $1 and year = $2) AND final_rank IS NOT NULL AND class NOT ILIKE $3 order by race_date, class, final_rank'
 
     const values = [series, year, '%funduro%']
     return this.find(query, values)
