@@ -200,16 +200,6 @@
     "name": "Sean Ingvaldsen Engebretsen"
   },
   {
-    "id": 21399,
-    "race_id": 58,
-    "race_name": "Telemark enduro",
-    "class": "M11-12",
-    "final_rank": 6,
-    "acc_time_ms": 177000,
-    "acc_time_behind": 29000,
-    "name": "Marius W. Berget"
-  },
-  {
     "id": 21400,
     "race_id": 58,
     "race_name": "Telemark enduro",
@@ -218,6 +208,16 @@
     "acc_time_ms": 177000,
     "acc_time_behind": 29000,
     "name": "Noah Møller Nyegaard"
+  },
+  {
+    "id": 21399,
+    "race_id": 58,
+    "race_name": "Telemark enduro",
+    "class": "M11-12",
+    "final_rank": 6,
+    "acc_time_ms": 177000,
+    "acc_time_behind": 29000,
+    "name": "Marius W. Berget"
   },
   {
     "id": 21401,
@@ -850,16 +850,6 @@
     "name": "Roy Ripe"
   },
   {
-    "id": 21975,
-    "race_id": 58,
-    "race_name": "Telemark enduro",
-    "class": "Menn master",
-    "final_rank": 25,
-    "acc_time_ms": 830000,
-    "acc_time_behind": 127000,
-    "name": "Kenneth Melsom-Hansen"
-  },
-  {
     "id": 21987,
     "race_id": 58,
     "race_name": "Telemark enduro",
@@ -868,6 +858,16 @@
     "acc_time_ms": 830000,
     "acc_time_behind": 127000,
     "name": "Jon Bruu"
+  },
+  {
+    "id": 21975,
+    "race_id": 58,
+    "race_name": "Telemark enduro",
+    "class": "Menn master",
+    "final_rank": 25,
+    "acc_time_ms": 830000,
+    "acc_time_behind": 127000,
+    "name": "Kenneth Melsom-Hansen"
   },
   {
     "id": 21962,
@@ -1450,16 +1450,6 @@
     "name": "Morgan Bakken"
   },
   {
-    "id": 22809,
-    "race_id": 58,
-    "race_name": "Telemark enduro",
-    "class": "Menn senior",
-    "final_rank": 17,
-    "acc_time_ms": 770000,
-    "acc_time_behind": 122000,
-    "name": "Tom Are Grøv"
-  },
-  {
     "id": 22856,
     "race_id": 58,
     "race_name": "Telemark enduro",
@@ -1468,6 +1458,16 @@
     "acc_time_ms": 770000,
     "acc_time_behind": 122000,
     "name": "Ola Myklatun Krosness"
+  },
+  {
+    "id": 22809,
+    "race_id": 58,
+    "race_name": "Telemark enduro",
+    "class": "Menn senior",
+    "final_rank": 17,
+    "acc_time_ms": 770000,
+    "acc_time_behind": 122000,
+    "name": "Tom Are Grøv"
   },
   {
     "id": 22810,
@@ -1510,6 +1510,16 @@
     "name": "Ole André Tveit"
   },
   {
+    "id": 22826,
+    "race_id": 58,
+    "race_name": "Telemark enduro",
+    "class": "Menn senior",
+    "final_rank": 23,
+    "acc_time_ms": 778000,
+    "acc_time_behind": 130000,
+    "name": "Kristoffer Andresen"
+  },
+  {
     "id": 22857,
     "race_id": 58,
     "race_name": "Telemark enduro",
@@ -1528,16 +1538,6 @@
     "acc_time_ms": 778000,
     "acc_time_behind": 130000,
     "name": "Christian Rief"
-  },
-  {
-    "id": 22826,
-    "race_id": 58,
-    "race_name": "Telemark enduro",
-    "class": "Menn senior",
-    "final_rank": 23,
-    "acc_time_ms": 778000,
-    "acc_time_behind": 130000,
-    "name": "Kristoffer Andresen"
   },
   {
     "id": 22827,
@@ -1570,16 +1570,6 @@
     "name": "Knut Erik Haugen"
   },
   {
-    "id": 22868,
-    "race_id": 58,
-    "race_name": "Telemark enduro",
-    "class": "Menn senior",
-    "final_rank": 29,
-    "acc_time_ms": 794000,
-    "acc_time_behind": 146000,
-    "name": "Fredrik Nygaard"
-  },
-  {
     "id": 22891,
     "race_id": 58,
     "race_name": "Telemark enduro",
@@ -1588,6 +1578,16 @@
     "acc_time_ms": 794000,
     "acc_time_behind": 146000,
     "name": "Joachim Bøhler"
+  },
+  {
+    "id": 22868,
+    "race_id": 58,
+    "race_name": "Telemark enduro",
+    "class": "Menn senior",
+    "final_rank": 29,
+    "acc_time_ms": 794000,
+    "acc_time_behind": 146000,
+    "name": "Fredrik Nygaard"
   },
   {
     "id": 22829,
@@ -1600,16 +1600,6 @@
     "name": "Håvard Mageli"
   },
   {
-    "id": 22817,
-    "race_id": 58,
-    "race_name": "Telemark enduro",
-    "class": "Menn senior",
-    "final_rank": 32,
-    "acc_time_ms": 798000,
-    "acc_time_behind": 150000,
-    "name": "Martin Solheim Sigley"
-  },
-  {
     "id": 22830,
     "race_id": 58,
     "race_name": "Telemark enduro",
@@ -1618,6 +1608,16 @@
     "acc_time_ms": 798000,
     "acc_time_behind": 150000,
     "name": "Hans Jørgen Kvåle"
+  },
+  {
+    "id": 22817,
+    "race_id": 58,
+    "race_name": "Telemark enduro",
+    "class": "Menn senior",
+    "final_rank": 32,
+    "acc_time_ms": 798000,
+    "acc_time_behind": 150000,
+    "name": "Martin Solheim Sigley"
   },
   {
     "id": 22818,
@@ -1720,16 +1720,6 @@
     "name": "Arne Diederik Kildahl"
   },
   {
-    "id": 22845,
-    "race_id": 58,
-    "race_name": "Telemark enduro",
-    "class": "Menn senior",
-    "final_rank": 44,
-    "acc_time_ms": 824000,
-    "acc_time_behind": 176000,
-    "name": "Kristoffer Løken"
-  },
-  {
     "id": 22821,
     "race_id": 58,
     "race_name": "Telemark enduro",
@@ -1738,6 +1728,16 @@
     "acc_time_ms": 824000,
     "acc_time_behind": 176000,
     "name": "Karl Andreas Sagadalen"
+  },
+  {
+    "id": 22845,
+    "race_id": 58,
+    "race_name": "Telemark enduro",
+    "class": "Menn senior",
+    "final_rank": 44,
+    "acc_time_ms": 824000,
+    "acc_time_behind": 176000,
+    "name": "Kristoffer Løken"
   },
   {
     "id": 22869,
@@ -1770,16 +1770,6 @@
     "name": "Håkon Trydal"
   },
   {
-    "id": 22884,
-    "race_id": 58,
-    "race_name": "Telemark enduro",
-    "class": "Menn senior",
-    "final_rank": 49,
-    "acc_time_ms": 846000,
-    "acc_time_behind": 198000,
-    "name": "Edmund Høydahl"
-  },
-  {
     "id": 22813,
     "race_id": 58,
     "race_name": "Telemark enduro",
@@ -1788,6 +1778,16 @@
     "acc_time_ms": 846000,
     "acc_time_behind": 198000,
     "name": "Markus Finholt"
+  },
+  {
+    "id": 22884,
+    "race_id": 58,
+    "race_name": "Telemark enduro",
+    "class": "Menn senior",
+    "final_rank": 49,
+    "acc_time_ms": 846000,
+    "acc_time_behind": 198000,
+    "name": "Edmund Høydahl"
   },
   {
     "id": 22846,
@@ -1990,14 +1990,14 @@
     "name": "Fredrik Hansen"
   },
   {
-    "id": 22835,
+    "id": 22887,
     "race_id": 58,
     "race_name": "Telemark enduro",
     "class": "Menn senior",
     "final_rank": 71,
     "acc_time_ms": 876000,
     "acc_time_behind": 228000,
-    "name": "Magnus Finnes Jahnsen"
+    "name": "Jostein Semb"
   },
   {
     "id": 22864,
@@ -2010,14 +2010,14 @@
     "name": "Espen Strandbråten"
   },
   {
-    "id": 22887,
+    "id": 22835,
     "race_id": 58,
     "race_name": "Telemark enduro",
     "class": "Menn senior",
     "final_rank": 71,
     "acc_time_ms": 876000,
     "acc_time_behind": 228000,
-    "name": "Jostein Semb"
+    "name": "Magnus Finnes Jahnsen"
   },
   {
     "id": 22865,
@@ -2330,16 +2330,6 @@
     "name": "Martin Strømstad"
   },
   {
-    "id": 22854,
-    "race_id": 58,
-    "race_name": "Telemark enduro",
-    "class": "Menn senior",
-    "final_rank": 105,
-    "acc_time_ms": 1019000,
-    "acc_time_behind": 371000,
-    "name": "Jon Olav Bjervamoen"
-  },
-  {
     "id": 22901,
     "race_id": 58,
     "race_name": "Telemark enduro",
@@ -2348,6 +2338,16 @@
     "acc_time_ms": 1019000,
     "acc_time_behind": 371000,
     "name": "Petter Svarstad Andresen"
+  },
+  {
+    "id": 22854,
+    "race_id": 58,
+    "race_name": "Telemark enduro",
+    "class": "Menn senior",
+    "final_rank": 105,
+    "acc_time_ms": 1019000,
+    "acc_time_behind": 371000,
+    "name": "Jon Olav Bjervamoen"
   },
   {
     "id": 22910,
@@ -2590,207 +2590,7 @@
     "name": "Jon Terje Davidsen"
   },
   {
-    "id": 23780,
-    "race_id": 61,
-    "race_name": "Traktorland enduro",
-    "class": "Funduro",
-    "final_rank": 1,
-    "acc_time_ms": 1881000,
-    "acc_time_behind": 0,
-    "name": "Nils Norling"
-  },
-  {
-    "id": 23781,
-    "race_id": 61,
-    "race_name": "Traktorland enduro",
-    "class": "Funduro",
-    "final_rank": 2,
-    "acc_time_ms": 2233000,
-    "acc_time_behind": 352000,
-    "name": "Stian Rismyhr"
-  },
-  {
-    "id": 23782,
-    "race_id": 61,
-    "race_name": "Traktorland enduro",
-    "class": "Funduro",
-    "final_rank": 3,
-    "acc_time_ms": 2313000,
-    "acc_time_behind": 432000,
-    "name": "Niels Christian Nielsen"
-  },
-  {
-    "id": 23783,
-    "race_id": 61,
-    "race_name": "Traktorland enduro",
-    "class": "Funduro",
-    "final_rank": 4,
-    "acc_time_ms": 3129000,
-    "acc_time_behind": 1248000,
-    "name": "Kine Lidsheim"
-  },
-  {
-    "id": 23804,
-    "race_id": 61,
-    "race_name": "Traktorland enduro",
-    "class": "Gutter 11-12",
-    "final_rank": 1,
-    "acc_time_ms": 2022000,
-    "acc_time_behind": 0,
-    "name": "Kyrre Matheo Johannessen"
-  },
-  {
-    "id": 23805,
-    "race_id": 61,
-    "race_name": "Traktorland enduro",
-    "class": "Gutter 11-12",
-    "final_rank": 2,
-    "acc_time_ms": 2093000,
-    "acc_time_behind": 71000,
-    "name": "Joakim Rø"
-  },
-  {
-    "id": 23806,
-    "race_id": 61,
-    "race_name": "Traktorland enduro",
-    "class": "Gutter 11-12",
-    "final_rank": 3,
-    "acc_time_ms": 2579000,
-    "acc_time_behind": 557000,
-    "name": "Bård G. Røisli"
-  },
-  {
-    "id": 23807,
-    "race_id": 61,
-    "race_name": "Traktorland enduro",
-    "class": "Gutter 11-12",
-    "final_rank": 4,
-    "acc_time_ms": 2682000,
-    "acc_time_behind": 660000,
-    "name": "Isak Knutsen"
-  },
-  {
-    "id": 23833,
-    "race_id": 61,
-    "race_name": "Traktorland enduro",
-    "class": "Gutter 13-14",
-    "final_rank": 1,
-    "acc_time_ms": 1725000,
-    "acc_time_behind": 0,
-    "name": "Ludvig Strand"
-  },
-  {
-    "id": 23836,
-    "race_id": 61,
-    "race_name": "Traktorland enduro",
-    "class": "Gutter 13-14",
-    "final_rank": 2,
-    "acc_time_ms": 1812000,
-    "acc_time_behind": 87000,
-    "name": "Brage Lidsheim"
-  },
-  {
-    "id": 23835,
-    "race_id": 61,
-    "race_name": "Traktorland enduro",
-    "class": "Gutter 13-14",
-    "final_rank": 3,
-    "acc_time_ms": 1933000,
-    "acc_time_behind": 208000,
-    "name": "Edin Almaas-Edvardsen"
-  },
-  {
-    "id": 23834,
-    "race_id": 61,
-    "race_name": "Traktorland enduro",
-    "class": "Gutter 13-14",
-    "final_rank": 4,
-    "acc_time_ms": 2007000,
-    "acc_time_behind": 282000,
-    "name": "Jo Røisli"
-  },
-  {
-    "id": 23837,
-    "race_id": 61,
-    "race_name": "Traktorland enduro",
-    "class": "Gutter 13-14",
-    "final_rank": 5,
-    "acc_time_ms": 0,
-    "acc_time_behind": 0,
-    "name": "Daniel Kleppan"
-  },
-  {
-    "id": 23888,
-    "race_id": 61,
-    "race_name": "Traktorland enduro",
-    "class": "Gutter 15-16",
-    "final_rank": 1,
-    "acc_time_ms": 2002000,
-    "acc_time_behind": 0,
-    "name": "Per Einar Brovold"
-  },
-  {
-    "id": 23887,
-    "race_id": 61,
-    "race_name": "Traktorland enduro",
-    "class": "Gutter 15-16",
-    "final_rank": 2,
-    "acc_time_ms": 2104000,
-    "acc_time_behind": 102000,
-    "name": "Jannik Eschler"
-  },
-  {
-    "id": 23891,
-    "race_id": 61,
-    "race_name": "Traktorland enduro",
-    "class": "Gutter 15-16",
-    "final_rank": 3,
-    "acc_time_ms": 2234000,
-    "acc_time_behind": 232000,
-    "name": "William Re"
-  },
-  {
-    "id": 23890,
-    "race_id": 61,
-    "race_name": "Traktorland enduro",
-    "class": "Gutter 15-16",
-    "final_rank": 4,
-    "acc_time_ms": 2247000,
-    "acc_time_behind": 245000,
-    "name": "Simen Brekke"
-  },
-  {
-    "id": 23889,
-    "race_id": 61,
-    "race_name": "Traktorland enduro",
-    "class": "Gutter 15-16",
-    "final_rank": 5,
-    "acc_time_ms": 2272000,
-    "acc_time_behind": 270000,
-    "name": "Mads Langeland"
-  },
-  {
-    "id": 23892,
-    "race_id": 61,
-    "race_name": "Traktorland enduro",
-    "class": "Gutter 15-16",
-    "final_rank": 6,
-    "acc_time_ms": 2354000,
-    "acc_time_behind": 352000,
-    "name": "Alexander Sandengen"
-  },
-  {
-    "id": 23893,
-    "race_id": 61,
-    "race_name": "Traktorland enduro",
-    "class": "Gutter 15-16",
-    "final_rank": 7,
-    "acc_time_ms": 0,
-    "acc_time_behind": 0,
-    "name": "Sigurd Bjørndalen Mathisen"
-  },
-  {
-    "id": 23926,
+    "id": 23816,
     "race_id": 61,
     "race_name": "Traktorland enduro",
     "class": "Kvinner master",
@@ -2800,7 +2600,7 @@
     "name": "Marte Lund"
   },
   {
-    "id": 23928,
+    "id": 23818,
     "race_id": 61,
     "race_name": "Traktorland enduro",
     "class": "Kvinner master",
@@ -2810,7 +2610,7 @@
     "name": "Linda Lønmo"
   },
   {
-    "id": 23927,
+    "id": 23817,
     "race_id": 61,
     "race_name": "Traktorland enduro",
     "class": "Kvinner master",
@@ -2820,7 +2620,7 @@
     "name": "Elinborg Ólafsdóttir"
   },
   {
-    "id": 23929,
+    "id": 23819,
     "race_id": 61,
     "race_name": "Traktorland enduro",
     "class": "Kvinner master",
@@ -2830,7 +2630,7 @@
     "name": "Kari Gulden Olstad"
   },
   {
-    "id": 23994,
+    "id": 23884,
     "race_id": 61,
     "race_name": "Traktorland enduro",
     "class": "Kvinner senior",
@@ -2840,7 +2640,7 @@
     "name": "Hilde Sangesland Strædet"
   },
   {
-    "id": 23996,
+    "id": 23886,
     "race_id": 61,
     "race_name": "Traktorland enduro",
     "class": "Kvinner senior",
@@ -2850,7 +2650,7 @@
     "name": "Emily Nerland"
   },
   {
-    "id": 23998,
+    "id": 23888,
     "race_id": 61,
     "race_name": "Traktorland enduro",
     "class": "Kvinner senior",
@@ -2860,7 +2660,7 @@
     "name": "Ida Rydland Nærum"
   },
   {
-    "id": 23997,
+    "id": 23887,
     "race_id": 61,
     "race_name": "Traktorland enduro",
     "class": "Kvinner senior",
@@ -2870,7 +2670,7 @@
     "name": "Stine Torgersbråten"
   },
   {
-    "id": 23995,
+    "id": 23885,
     "race_id": 61,
     "race_name": "Traktorland enduro",
     "class": "Kvinner senior",
@@ -2880,7 +2680,7 @@
     "name": "Vera Leivsdottir"
   },
   {
-    "id": 23999,
+    "id": 23889,
     "race_id": 61,
     "race_name": "Traktorland enduro",
     "class": "Kvinner senior",
@@ -2890,7 +2690,7 @@
     "name": "Beate Akselsen"
   },
   {
-    "id": 24000,
+    "id": 23890,
     "race_id": 61,
     "race_name": "Traktorland enduro",
     "class": "Kvinner senior",
@@ -2900,7 +2700,7 @@
     "name": "Ann Kristin Eriksen"
   },
   {
-    "id": 24001,
+    "id": 23891,
     "race_id": 61,
     "race_name": "Traktorland enduro",
     "class": "Kvinner senior",
@@ -2908,6 +2708,166 @@
     "acc_time_ms": 0,
     "acc_time_behind": 0,
     "name": "Tonje Leine Kristiansen"
+  },
+  {
+    "id": 23912,
+    "race_id": 61,
+    "race_name": "Traktorland enduro",
+    "class": "M11-12",
+    "final_rank": 1,
+    "acc_time_ms": 2022000,
+    "acc_time_behind": 0,
+    "name": "Kyrre Matheo Johannessen"
+  },
+  {
+    "id": 23913,
+    "race_id": 61,
+    "race_name": "Traktorland enduro",
+    "class": "M11-12",
+    "final_rank": 2,
+    "acc_time_ms": 2093000,
+    "acc_time_behind": 71000,
+    "name": "Joakim Rø"
+  },
+  {
+    "id": 23914,
+    "race_id": 61,
+    "race_name": "Traktorland enduro",
+    "class": "M11-12",
+    "final_rank": 3,
+    "acc_time_ms": 2579000,
+    "acc_time_behind": 557000,
+    "name": "Bård G. Røisli"
+  },
+  {
+    "id": 23915,
+    "race_id": 61,
+    "race_name": "Traktorland enduro",
+    "class": "M11-12",
+    "final_rank": 4,
+    "acc_time_ms": 2682000,
+    "acc_time_behind": 660000,
+    "name": "Isak Knutsen"
+  },
+  {
+    "id": 23941,
+    "race_id": 61,
+    "race_name": "Traktorland enduro",
+    "class": "M13-14",
+    "final_rank": 1,
+    "acc_time_ms": 1725000,
+    "acc_time_behind": 0,
+    "name": "Ludvig Strand"
+  },
+  {
+    "id": 23944,
+    "race_id": 61,
+    "race_name": "Traktorland enduro",
+    "class": "M13-14",
+    "final_rank": 2,
+    "acc_time_ms": 1812000,
+    "acc_time_behind": 87000,
+    "name": "Brage Lidsheim"
+  },
+  {
+    "id": 23943,
+    "race_id": 61,
+    "race_name": "Traktorland enduro",
+    "class": "M13-14",
+    "final_rank": 3,
+    "acc_time_ms": 1933000,
+    "acc_time_behind": 208000,
+    "name": "Edin Almaas-Edvardsen"
+  },
+  {
+    "id": 23942,
+    "race_id": 61,
+    "race_name": "Traktorland enduro",
+    "class": "M13-14",
+    "final_rank": 4,
+    "acc_time_ms": 2007000,
+    "acc_time_behind": 282000,
+    "name": "Jo Røisli"
+  },
+  {
+    "id": 23945,
+    "race_id": 61,
+    "race_name": "Traktorland enduro",
+    "class": "M13-14",
+    "final_rank": 5,
+    "acc_time_ms": 0,
+    "acc_time_behind": 0,
+    "name": "Daniel Kleppan"
+  },
+  {
+    "id": 23996,
+    "race_id": 61,
+    "race_name": "Traktorland enduro",
+    "class": "M15-16",
+    "final_rank": 1,
+    "acc_time_ms": 2002000,
+    "acc_time_behind": 0,
+    "name": "Per Einar Brovold"
+  },
+  {
+    "id": 23995,
+    "race_id": 61,
+    "race_name": "Traktorland enduro",
+    "class": "M15-16",
+    "final_rank": 2,
+    "acc_time_ms": 2104000,
+    "acc_time_behind": 102000,
+    "name": "Jannik Eschler"
+  },
+  {
+    "id": 23999,
+    "race_id": 61,
+    "race_name": "Traktorland enduro",
+    "class": "M15-16",
+    "final_rank": 3,
+    "acc_time_ms": 2234000,
+    "acc_time_behind": 232000,
+    "name": "William Re"
+  },
+  {
+    "id": 23998,
+    "race_id": 61,
+    "race_name": "Traktorland enduro",
+    "class": "M15-16",
+    "final_rank": 4,
+    "acc_time_ms": 2247000,
+    "acc_time_behind": 245000,
+    "name": "Simen Brekke"
+  },
+  {
+    "id": 23997,
+    "race_id": 61,
+    "race_name": "Traktorland enduro",
+    "class": "M15-16",
+    "final_rank": 5,
+    "acc_time_ms": 2272000,
+    "acc_time_behind": 270000,
+    "name": "Mads Langeland"
+  },
+  {
+    "id": 24000,
+    "race_id": 61,
+    "race_name": "Traktorland enduro",
+    "class": "M15-16",
+    "final_rank": 6,
+    "acc_time_ms": 2354000,
+    "acc_time_behind": 352000,
+    "name": "Alexander Sandengen"
+  },
+  {
+    "id": 24001,
+    "race_id": 61,
+    "race_name": "Traktorland enduro",
+    "class": "M15-16",
+    "final_rank": 7,
+    "acc_time_ms": 0,
+    "acc_time_behind": 0,
+    "name": "Sigurd Bjørndalen Mathisen"
   },
   {
     "id": 24058,
@@ -3340,6 +3300,16 @@
     "name": "Kristian Østlie"
   },
   {
+    "id": 24604,
+    "race_id": 61,
+    "race_name": "Traktorland enduro",
+    "class": "Menn senior",
+    "final_rank": 22,
+    "acc_time_ms": 2921000,
+    "acc_time_behind": 693000,
+    "name": "Petter Anthonsen"
+  },
+  {
     "id": 24598,
     "race_id": 61,
     "race_name": "Traktorland enduro",
@@ -3358,16 +3328,6 @@
     "acc_time_ms": 2921000,
     "acc_time_behind": 693000,
     "name": "Oskar Omdal"
-  },
-  {
-    "id": 24604,
-    "race_id": 61,
-    "race_name": "Traktorland enduro",
-    "class": "Menn senior",
-    "final_rank": 22,
-    "acc_time_ms": 2921000,
-    "acc_time_behind": 693000,
-    "name": "Petter Anthonsen"
   },
   {
     "id": 24600,
@@ -3600,146 +3560,6 @@
     "name": "Christian Rief"
   },
   {
-    "id": 24796,
-    "race_id": 63,
-    "race_name": "DrammEnduro",
-    "class": "Funduro Gutter 15-16",
-    "final_rank": 1,
-    "acc_time_ms": 949000,
-    "acc_time_behind": 0,
-    "name": "Falk Håkenstad-Bråten"
-  },
-  {
-    "id": 24794,
-    "race_id": 63,
-    "race_name": "DrammEnduro",
-    "class": "Funduro Gutter 15-16",
-    "final_rank": 2,
-    "acc_time_ms": 998000,
-    "acc_time_behind": 49000,
-    "name": "William Scheele"
-  },
-  {
-    "id": 24795,
-    "race_id": 63,
-    "race_name": "DrammEnduro",
-    "class": "Funduro Gutter 15-16",
-    "final_rank": 3,
-    "acc_time_ms": 1018000,
-    "acc_time_behind": 69000,
-    "name": "Theodor Bakken"
-  },
-  {
-    "id": 24797,
-    "race_id": 63,
-    "race_name": "DrammEnduro",
-    "class": "Funduro Gutter 15-16",
-    "final_rank": 4,
-    "acc_time_ms": 1027000,
-    "acc_time_behind": 78000,
-    "name": "William Rø"
-  },
-  {
-    "id": 24799,
-    "race_id": 63,
-    "race_name": "DrammEnduro",
-    "class": "Funduro Gutter 15-16",
-    "final_rank": 5,
-    "acc_time_ms": 1035000,
-    "acc_time_behind": 86000,
-    "name": "Erik Tønnessen"
-  },
-  {
-    "id": 24798,
-    "race_id": 63,
-    "race_name": "DrammEnduro",
-    "class": "Funduro Gutter 15-16",
-    "final_rank": 6,
-    "acc_time_ms": 1044000,
-    "acc_time_behind": 95000,
-    "name": "Alexander Sandengen"
-  },
-  {
-    "id": 24802,
-    "race_id": 63,
-    "race_name": "DrammEnduro",
-    "class": "Funduro Gutter 15-16",
-    "final_rank": 7,
-    "acc_time_ms": 1103000,
-    "acc_time_behind": 154000,
-    "name": "Mads Henrik Kjemperud"
-  },
-  {
-    "id": 24800,
-    "race_id": 63,
-    "race_name": "DrammEnduro",
-    "class": "Funduro Gutter 15-16",
-    "final_rank": 8,
-    "acc_time_ms": 1134000,
-    "acc_time_behind": 185000,
-    "name": "Oscar Holst"
-  },
-  {
-    "id": 24805,
-    "race_id": 63,
-    "race_name": "DrammEnduro",
-    "class": "Funduro Gutter 15-16",
-    "final_rank": 9,
-    "acc_time_ms": 1254000,
-    "acc_time_behind": 305000,
-    "name": "Even Martinsen"
-  },
-  {
-    "id": 24804,
-    "race_id": 63,
-    "race_name": "DrammEnduro",
-    "class": "Funduro Gutter 15-16",
-    "final_rank": 10,
-    "acc_time_ms": 1302000,
-    "acc_time_behind": 353000,
-    "name": "Oliver Andersen"
-  },
-  {
-    "id": 24803,
-    "race_id": 63,
-    "race_name": "DrammEnduro",
-    "class": "Funduro Gutter 15-16",
-    "final_rank": 11,
-    "acc_time_ms": 1307000,
-    "acc_time_behind": 358000,
-    "name": "Alexander Bredesen"
-  },
-  {
-    "id": 24801,
-    "race_id": 63,
-    "race_name": "DrammEnduro",
-    "class": "Funduro Gutter 15-16",
-    "final_rank": 12,
-    "acc_time_ms": 1371000,
-    "acc_time_behind": 422000,
-    "name": "Even Western"
-  },
-  {
-    "id": 24807,
-    "race_id": 63,
-    "race_name": "DrammEnduro",
-    "class": "Funduro Gutter 15-16",
-    "final_rank": 13,
-    "acc_time_ms": 0,
-    "acc_time_behind": 0,
-    "name": "Emil Bjertnes Aabye"
-  },
-  {
-    "id": 24806,
-    "race_id": 63,
-    "race_name": "DrammEnduro",
-    "class": "Funduro Gutter 15-16",
-    "final_rank": 14,
-    "acc_time_ms": 0,
-    "acc_time_behind": 0,
-    "name": "Sigurd Bjørndalen Mathisen"
-  },
-  {
     "id": 24820,
     "race_id": 63,
     "race_name": "DrammEnduro",
@@ -3798,36 +3618,6 @@
     "acc_time_ms": 0,
     "acc_time_behind": 0,
     "name": "Mathias Skjedsvold Johansen"
-  },
-  {
-    "id": 24836,
-    "race_id": 63,
-    "race_name": "DrammEnduro",
-    "class": "Kvinner funduro",
-    "final_rank": 1,
-    "acc_time_ms": 1457000,
-    "acc_time_behind": 0,
-    "name": "Anne Trahaug"
-  },
-  {
-    "id": 24835,
-    "race_id": 63,
-    "race_name": "DrammEnduro",
-    "class": "Kvinner funduro",
-    "final_rank": 2,
-    "acc_time_ms": 1536000,
-    "acc_time_behind": 79000,
-    "name": "Lise Pettersen"
-  },
-  {
-    "id": 24837,
-    "race_id": 63,
-    "race_name": "DrammEnduro",
-    "class": "Kvinner funduro",
-    "final_rank": 3,
-    "acc_time_ms": 1555000,
-    "acc_time_behind": 98000,
-    "name": "Marianne Hage"
   },
   {
     "id": 24853,
@@ -3998,126 +3788,6 @@
     "acc_time_ms": 2093000,
     "acc_time_behind": 547000,
     "name": "Cecilie Bergli"
-  },
-  {
-    "id": 24976,
-    "race_id": 63,
-    "race_name": "DrammEnduro",
-    "class": "Menn funduro",
-    "final_rank": 1,
-    "acc_time_ms": 1094000,
-    "acc_time_behind": 0,
-    "name": "Sivert Uhre Solo"
-  },
-  {
-    "id": 24977,
-    "race_id": 63,
-    "race_name": "DrammEnduro",
-    "class": "Menn funduro",
-    "final_rank": 2,
-    "acc_time_ms": 1110000,
-    "acc_time_behind": 16000,
-    "name": "Stian Lie Hansen"
-  },
-  {
-    "id": 24978,
-    "race_id": 63,
-    "race_name": "DrammEnduro",
-    "class": "Menn funduro",
-    "final_rank": 3,
-    "acc_time_ms": 1167000,
-    "acc_time_behind": 73000,
-    "name": "Jørn Inge Woldmo"
-  },
-  {
-    "id": 24981,
-    "race_id": 63,
-    "race_name": "DrammEnduro",
-    "class": "Menn funduro",
-    "final_rank": 4,
-    "acc_time_ms": 1329000,
-    "acc_time_behind": 235000,
-    "name": "Lars Christian Arvidson"
-  },
-  {
-    "id": 24980,
-    "race_id": 63,
-    "race_name": "DrammEnduro",
-    "class": "Menn funduro",
-    "final_rank": 5,
-    "acc_time_ms": 1344000,
-    "acc_time_behind": 250000,
-    "name": "Scott Hall"
-  },
-  {
-    "id": 24982,
-    "race_id": 63,
-    "race_name": "DrammEnduro",
-    "class": "Menn funduro",
-    "final_rank": 6,
-    "acc_time_ms": 1345000,
-    "acc_time_behind": 251000,
-    "name": "Roy Arne Syversrud"
-  },
-  {
-    "id": 24983,
-    "race_id": 63,
-    "race_name": "DrammEnduro",
-    "class": "Menn funduro",
-    "final_rank": 7,
-    "acc_time_ms": 1498000,
-    "acc_time_behind": 404000,
-    "name": "Jens Andre Jensen"
-  },
-  {
-    "id": 24984,
-    "race_id": 63,
-    "race_name": "DrammEnduro",
-    "class": "Menn funduro",
-    "final_rank": 8,
-    "acc_time_ms": 1562000,
-    "acc_time_behind": 468000,
-    "name": "Aleksander Haukøya"
-  },
-  {
-    "id": 24985,
-    "race_id": 63,
-    "race_name": "DrammEnduro",
-    "class": "Menn funduro",
-    "final_rank": 9,
-    "acc_time_ms": 1773000,
-    "acc_time_behind": 679000,
-    "name": "Sigurd Rolland Pettersen"
-  },
-  {
-    "id": 24979,
-    "race_id": 63,
-    "race_name": "DrammEnduro",
-    "class": "Menn funduro",
-    "final_rank": 10,
-    "acc_time_ms": 0,
-    "acc_time_behind": 0,
-    "name": "Rune Vidar Vestre"
-  },
-  {
-    "id": 24986,
-    "race_id": 63,
-    "race_name": "DrammEnduro",
-    "class": "Menn funduro",
-    "final_rank": 11,
-    "acc_time_ms": 0,
-    "acc_time_behind": 0,
-    "name": "Henrik Bergman Nørbech Johansen"
-  },
-  {
-    "id": 24987,
-    "race_id": 63,
-    "race_name": "DrammEnduro",
-    "class": "Menn funduro",
-    "final_rank": 12,
-    "acc_time_ms": 0,
-    "acc_time_behind": 0,
-    "name": "Are Paulsrud"
   },
   {
     "id": 25038,
@@ -4770,16 +4440,6 @@
     "name": "Kim-Erik Larsen Augerød"
   },
   {
-    "id": 25696,
-    "race_id": 63,
-    "race_name": "DrammEnduro",
-    "class": "Menn senior",
-    "final_rank": 17,
-    "acc_time_ms": 1498000,
-    "acc_time_behind": 193000,
-    "name": "Peter Seidl"
-  },
-  {
     "id": 25719,
     "race_id": 63,
     "race_name": "DrammEnduro",
@@ -4788,6 +4448,16 @@
     "acc_time_ms": 1498000,
     "acc_time_behind": 193000,
     "name": "Anders Samnøy"
+  },
+  {
+    "id": 25696,
+    "race_id": 63,
+    "race_name": "DrammEnduro",
+    "class": "Menn senior",
+    "final_rank": 17,
+    "acc_time_ms": 1498000,
+    "acc_time_behind": 193000,
+    "name": "Peter Seidl"
   },
   {
     "id": 25703,
@@ -5400,247 +5070,7 @@
     "name": "Anders Rekdal"
   },
   {
-    "id": 26033,
-    "race_id": 65,
-    "race_name": "Oslo enduro",
-    "class": "Gutter 13-14",
-    "final_rank": 1,
-    "acc_time_ms": 810000,
-    "acc_time_behind": 0,
-    "name": "Ludvig Strand"
-  },
-  {
-    "id": 26032,
-    "race_id": 65,
-    "race_name": "Oslo enduro",
-    "class": "Gutter 13-14",
-    "final_rank": 2,
-    "acc_time_ms": 811000,
-    "acc_time_behind": 1000,
-    "name": "Eirik Ødegårdstuen"
-  },
-  {
-    "id": 26034,
-    "race_id": 65,
-    "race_name": "Oslo enduro",
-    "class": "Gutter 13-14",
-    "final_rank": 3,
-    "acc_time_ms": 882000,
-    "acc_time_behind": 72000,
-    "name": "Henrik Bjerkelund"
-  },
-  {
-    "id": 26035,
-    "race_id": 65,
-    "race_name": "Oslo enduro",
-    "class": "Gutter 13-14",
-    "final_rank": 4,
-    "acc_time_ms": 883000,
-    "acc_time_behind": 73000,
-    "name": "Brage Lidsheim"
-  },
-  {
-    "id": 26036,
-    "race_id": 65,
-    "race_name": "Oslo enduro",
-    "class": "Gutter 13-14",
-    "final_rank": 5,
-    "acc_time_ms": 921000,
-    "acc_time_behind": 111000,
-    "name": "Waldemar Huss"
-  },
-  {
-    "id": 26037,
-    "race_id": 65,
-    "race_name": "Oslo enduro",
-    "class": "Gutter 13-14",
-    "final_rank": 6,
-    "acc_time_ms": 974000,
-    "acc_time_behind": 164000,
-    "name": "Jonas Urianstad Bertelsen"
-  },
-  {
-    "id": 26038,
-    "race_id": 65,
-    "race_name": "Oslo enduro",
-    "class": "Gutter 13-14",
-    "final_rank": 7,
-    "acc_time_ms": 1078000,
-    "acc_time_behind": 268000,
-    "name": "Marcus Arnesen"
-  },
-  {
-    "id": 26039,
-    "race_id": 65,
-    "race_name": "Oslo enduro",
-    "class": "Gutter 13-14",
-    "final_rank": 8,
-    "acc_time_ms": 1114000,
-    "acc_time_behind": 304000,
-    "name": "Christoffer Djupvik Hansen"
-  },
-  {
-    "id": 26040,
-    "race_id": 65,
-    "race_name": "Oslo enduro",
-    "class": "Gutter 13-14",
-    "final_rank": 9,
-    "acc_time_ms": 0,
-    "acc_time_behind": 0,
-    "name": "Sigurd Bjørndalen Mathisen"
-  },
-  {
-    "id": 26116,
-    "race_id": 65,
-    "race_name": "Oslo enduro",
-    "class": "Gutter 15-16",
-    "final_rank": 1,
-    "acc_time_ms": 846000,
-    "acc_time_behind": 0,
-    "name": "William Scheele"
-  },
-  {
-    "id": 26117,
-    "race_id": 65,
-    "race_name": "Oslo enduro",
-    "class": "Gutter 15-16",
-    "final_rank": 2,
-    "acc_time_ms": 864000,
-    "acc_time_behind": 18000,
-    "name": "Per Einar Brovold"
-  },
-  {
-    "id": 26118,
-    "race_id": 65,
-    "race_name": "Oslo enduro",
-    "class": "Gutter 15-16",
-    "final_rank": 3,
-    "acc_time_ms": 887000,
-    "acc_time_behind": 41000,
-    "name": "Theodor Bakken"
-  },
-  {
-    "id": 26119,
-    "race_id": 65,
-    "race_name": "Oslo enduro",
-    "class": "Gutter 15-16",
-    "final_rank": 4,
-    "acc_time_ms": 893000,
-    "acc_time_behind": 47000,
-    "name": "Kevin Scott Johnsen"
-  },
-  {
-    "id": 26124,
-    "race_id": 65,
-    "race_name": "Oslo enduro",
-    "class": "Gutter 15-16",
-    "final_rank": 5,
-    "acc_time_ms": 900000,
-    "acc_time_behind": 54000,
-    "name": "Simen Brekke"
-  },
-  {
-    "id": 26121,
-    "race_id": 65,
-    "race_name": "Oslo enduro",
-    "class": "Gutter 15-16",
-    "final_rank": 6,
-    "acc_time_ms": 923000,
-    "acc_time_behind": 77000,
-    "name": "Mads Langeland"
-  },
-  {
-    "id": 26123,
-    "race_id": 65,
-    "race_name": "Oslo enduro",
-    "class": "Gutter 15-16",
-    "final_rank": 7,
-    "acc_time_ms": 933000,
-    "acc_time_behind": 87000,
-    "name": "William Rø"
-  },
-  {
-    "id": 26126,
-    "race_id": 65,
-    "race_name": "Oslo enduro",
-    "class": "Gutter 15-16",
-    "final_rank": 8,
-    "acc_time_ms": 939000,
-    "acc_time_behind": 93000,
-    "name": "Alexander Sandengen"
-  },
-  {
-    "id": 26125,
-    "race_id": 65,
-    "race_name": "Oslo enduro",
-    "class": "Gutter 15-16",
-    "final_rank": 9,
-    "acc_time_ms": 959000,
-    "acc_time_behind": 113000,
-    "name": "Even Western"
-  },
-  {
-    "id": 26130,
-    "race_id": 65,
-    "race_name": "Oslo enduro",
-    "class": "Gutter 15-16",
-    "final_rank": 10,
-    "acc_time_ms": 986000,
-    "acc_time_behind": 140000,
-    "name": "Petter Brochmann"
-  },
-  {
-    "id": 26127,
-    "race_id": 65,
-    "race_name": "Oslo enduro",
-    "class": "Gutter 15-16",
-    "final_rank": 11,
-    "acc_time_ms": 1045000,
-    "acc_time_behind": 199000,
-    "name": "Mads Henrik Kjemperud"
-  },
-  {
-    "id": 26128,
-    "race_id": 65,
-    "race_name": "Oslo enduro",
-    "class": "Gutter 15-16",
-    "final_rank": 12,
-    "acc_time_ms": 1052000,
-    "acc_time_behind": 206000,
-    "name": "Oscar Holst"
-  },
-  {
-    "id": 26129,
-    "race_id": 65,
-    "race_name": "Oslo enduro",
-    "class": "Gutter 15-16",
-    "final_rank": 13,
-    "acc_time_ms": 1108000,
-    "acc_time_behind": 262000,
-    "name": "Sebastien Amat Finstad"
-  },
-  {
-    "id": 26120,
-    "race_id": 65,
-    "race_name": "Oslo enduro",
-    "class": "Gutter 15-16",
-    "final_rank": 14,
-    "acc_time_ms": 1125000,
-    "acc_time_behind": 279000,
-    "name": "Mikkel Pedersen"
-  },
-  {
-    "id": 26122,
-    "race_id": 65,
-    "race_name": "Oslo enduro",
-    "class": "Gutter 15-16",
-    "final_rank": 15,
-    "acc_time_ms": 1484000,
-    "acc_time_behind": 638000,
-    "name": "Aleksander Nilsen"
-  },
-  {
-    "id": 26156,
+    "id": 26021,
     "race_id": 65,
     "race_name": "Oslo enduro",
     "class": "Kvinner master",
@@ -5650,7 +5080,7 @@
     "name": "Marte Lund"
   },
   {
-    "id": 26158,
+    "id": 26023,
     "race_id": 65,
     "race_name": "Oslo enduro",
     "class": "Kvinner master",
@@ -5660,7 +5090,7 @@
     "name": "Kristine Skeie"
   },
   {
-    "id": 26157,
+    "id": 26022,
     "race_id": 65,
     "race_name": "Oslo enduro",
     "class": "Kvinner master",
@@ -5670,7 +5100,7 @@
     "name": "Kari Gulden Olstad"
   },
   {
-    "id": 26159,
+    "id": 26024,
     "race_id": 65,
     "race_name": "Oslo enduro",
     "class": "Kvinner master",
@@ -5680,7 +5110,7 @@
     "name": "Kine Lidsheim"
   },
   {
-    "id": 26160,
+    "id": 26025,
     "race_id": 65,
     "race_name": "Oslo enduro",
     "class": "Kvinner master",
@@ -5690,7 +5120,7 @@
     "name": "Therese Vågen"
   },
   {
-    "id": 26206,
+    "id": 26071,
     "race_id": 65,
     "race_name": "Oslo enduro",
     "class": "Kvinner senior",
@@ -5700,7 +5130,7 @@
     "name": "Hilde Sangesland Strædet"
   },
   {
-    "id": 26208,
+    "id": 26073,
     "race_id": 65,
     "race_name": "Oslo enduro",
     "class": "Kvinner senior",
@@ -5710,7 +5140,7 @@
     "name": "Anna Littorin-Sandbu"
   },
   {
-    "id": 26207,
+    "id": 26072,
     "race_id": 65,
     "race_name": "Oslo enduro",
     "class": "Kvinner senior",
@@ -5720,7 +5150,7 @@
     "name": "Josefine Björkman"
   },
   {
-    "id": 26209,
+    "id": 26074,
     "race_id": 65,
     "race_name": "Oslo enduro",
     "class": "Kvinner senior",
@@ -5730,7 +5160,7 @@
     "name": "Stine Torgersbråten"
   },
   {
-    "id": 26210,
+    "id": 26075,
     "race_id": 65,
     "race_name": "Oslo enduro",
     "class": "Kvinner senior",
@@ -5740,7 +5170,7 @@
     "name": "Sigrid Stjernvang"
   },
   {
-    "id": 26211,
+    "id": 26076,
     "race_id": 65,
     "race_name": "Oslo enduro",
     "class": "Kvinner senior",
@@ -5750,7 +5180,7 @@
     "name": "Kristel Karlsen-Mulelid"
   },
   {
-    "id": 26213,
+    "id": 26078,
     "race_id": 65,
     "race_name": "Oslo enduro",
     "class": "Kvinner senior",
@@ -5760,7 +5190,7 @@
     "name": "Tonje Sameien"
   },
   {
-    "id": 26214,
+    "id": 26079,
     "race_id": 65,
     "race_name": "Oslo enduro",
     "class": "Kvinner senior",
@@ -5770,7 +5200,7 @@
     "name": "Silje Gjerde"
   },
   {
-    "id": 26212,
+    "id": 26077,
     "race_id": 65,
     "race_name": "Oslo enduro",
     "class": "Kvinner senior",
@@ -5778,6 +5208,246 @@
     "acc_time_ms": 1314000,
     "acc_time_behind": 423000,
     "name": "Jeanette Louise Bryng"
+  },
+  {
+    "id": 26117,
+    "race_id": 65,
+    "race_name": "Oslo enduro",
+    "class": "M13-14",
+    "final_rank": 1,
+    "acc_time_ms": 810000,
+    "acc_time_behind": 0,
+    "name": "Ludvig Strand"
+  },
+  {
+    "id": 26116,
+    "race_id": 65,
+    "race_name": "Oslo enduro",
+    "class": "M13-14",
+    "final_rank": 2,
+    "acc_time_ms": 811000,
+    "acc_time_behind": 1000,
+    "name": "Eirik Ødegårdstuen"
+  },
+  {
+    "id": 26118,
+    "race_id": 65,
+    "race_name": "Oslo enduro",
+    "class": "M13-14",
+    "final_rank": 3,
+    "acc_time_ms": 882000,
+    "acc_time_behind": 72000,
+    "name": "Henrik Bjerkelund"
+  },
+  {
+    "id": 26119,
+    "race_id": 65,
+    "race_name": "Oslo enduro",
+    "class": "M13-14",
+    "final_rank": 4,
+    "acc_time_ms": 883000,
+    "acc_time_behind": 73000,
+    "name": "Brage Lidsheim"
+  },
+  {
+    "id": 26120,
+    "race_id": 65,
+    "race_name": "Oslo enduro",
+    "class": "M13-14",
+    "final_rank": 5,
+    "acc_time_ms": 921000,
+    "acc_time_behind": 111000,
+    "name": "Waldemar Huss"
+  },
+  {
+    "id": 26121,
+    "race_id": 65,
+    "race_name": "Oslo enduro",
+    "class": "M13-14",
+    "final_rank": 6,
+    "acc_time_ms": 974000,
+    "acc_time_behind": 164000,
+    "name": "Jonas Urianstad Bertelsen"
+  },
+  {
+    "id": 26122,
+    "race_id": 65,
+    "race_name": "Oslo enduro",
+    "class": "M13-14",
+    "final_rank": 7,
+    "acc_time_ms": 1078000,
+    "acc_time_behind": 268000,
+    "name": "Marcus Arnesen"
+  },
+  {
+    "id": 26123,
+    "race_id": 65,
+    "race_name": "Oslo enduro",
+    "class": "M13-14",
+    "final_rank": 8,
+    "acc_time_ms": 1114000,
+    "acc_time_behind": 304000,
+    "name": "Christoffer Djupvik Hansen"
+  },
+  {
+    "id": 26124,
+    "race_id": 65,
+    "race_name": "Oslo enduro",
+    "class": "M13-14",
+    "final_rank": 9,
+    "acc_time_ms": 0,
+    "acc_time_behind": 0,
+    "name": "Sigurd Bjørndalen Mathisen"
+  },
+  {
+    "id": 26200,
+    "race_id": 65,
+    "race_name": "Oslo enduro",
+    "class": "M15-16",
+    "final_rank": 1,
+    "acc_time_ms": 846000,
+    "acc_time_behind": 0,
+    "name": "William Scheele"
+  },
+  {
+    "id": 26201,
+    "race_id": 65,
+    "race_name": "Oslo enduro",
+    "class": "M15-16",
+    "final_rank": 2,
+    "acc_time_ms": 864000,
+    "acc_time_behind": 18000,
+    "name": "Per Einar Brovold"
+  },
+  {
+    "id": 26202,
+    "race_id": 65,
+    "race_name": "Oslo enduro",
+    "class": "M15-16",
+    "final_rank": 3,
+    "acc_time_ms": 887000,
+    "acc_time_behind": 41000,
+    "name": "Theodor Bakken"
+  },
+  {
+    "id": 26203,
+    "race_id": 65,
+    "race_name": "Oslo enduro",
+    "class": "M15-16",
+    "final_rank": 4,
+    "acc_time_ms": 893000,
+    "acc_time_behind": 47000,
+    "name": "Kevin Scott Johnsen"
+  },
+  {
+    "id": 26208,
+    "race_id": 65,
+    "race_name": "Oslo enduro",
+    "class": "M15-16",
+    "final_rank": 5,
+    "acc_time_ms": 900000,
+    "acc_time_behind": 54000,
+    "name": "Simen Brekke"
+  },
+  {
+    "id": 26205,
+    "race_id": 65,
+    "race_name": "Oslo enduro",
+    "class": "M15-16",
+    "final_rank": 6,
+    "acc_time_ms": 923000,
+    "acc_time_behind": 77000,
+    "name": "Mads Langeland"
+  },
+  {
+    "id": 26207,
+    "race_id": 65,
+    "race_name": "Oslo enduro",
+    "class": "M15-16",
+    "final_rank": 7,
+    "acc_time_ms": 933000,
+    "acc_time_behind": 87000,
+    "name": "William Rø"
+  },
+  {
+    "id": 26210,
+    "race_id": 65,
+    "race_name": "Oslo enduro",
+    "class": "M15-16",
+    "final_rank": 8,
+    "acc_time_ms": 939000,
+    "acc_time_behind": 93000,
+    "name": "Alexander Sandengen"
+  },
+  {
+    "id": 26209,
+    "race_id": 65,
+    "race_name": "Oslo enduro",
+    "class": "M15-16",
+    "final_rank": 9,
+    "acc_time_ms": 959000,
+    "acc_time_behind": 113000,
+    "name": "Even Western"
+  },
+  {
+    "id": 26214,
+    "race_id": 65,
+    "race_name": "Oslo enduro",
+    "class": "M15-16",
+    "final_rank": 10,
+    "acc_time_ms": 986000,
+    "acc_time_behind": 140000,
+    "name": "Petter Brochmann"
+  },
+  {
+    "id": 26211,
+    "race_id": 65,
+    "race_name": "Oslo enduro",
+    "class": "M15-16",
+    "final_rank": 11,
+    "acc_time_ms": 1045000,
+    "acc_time_behind": 199000,
+    "name": "Mads Henrik Kjemperud"
+  },
+  {
+    "id": 26212,
+    "race_id": 65,
+    "race_name": "Oslo enduro",
+    "class": "M15-16",
+    "final_rank": 12,
+    "acc_time_ms": 1052000,
+    "acc_time_behind": 206000,
+    "name": "Oscar Holst"
+  },
+  {
+    "id": 26213,
+    "race_id": 65,
+    "race_name": "Oslo enduro",
+    "class": "M15-16",
+    "final_rank": 13,
+    "acc_time_ms": 1108000,
+    "acc_time_behind": 262000,
+    "name": "Sebastien Amat Finstad"
+  },
+  {
+    "id": 26204,
+    "race_id": 65,
+    "race_name": "Oslo enduro",
+    "class": "M15-16",
+    "final_rank": 14,
+    "acc_time_ms": 1125000,
+    "acc_time_behind": 279000,
+    "name": "Mikkel Pedersen"
+  },
+  {
+    "id": 26206,
+    "race_id": 65,
+    "race_name": "Oslo enduro",
+    "class": "M15-16",
+    "final_rank": 15,
+    "acc_time_ms": 1484000,
+    "acc_time_behind": 638000,
+    "name": "Aleksander Nilsen"
   },
   {
     "id": 26255,
@@ -6300,16 +5970,6 @@
     "name": "Thomas Klingenberg"
   },
   {
-    "id": 26873,
-    "race_id": 65,
-    "race_name": "Oslo enduro",
-    "class": "Menn senior",
-    "final_rank": 7,
-    "acc_time_ms": 777000,
-    "acc_time_behind": 38000,
-    "name": "Anders Skarstein"
-  },
-  {
     "id": 26872,
     "race_id": 65,
     "race_name": "Oslo enduro",
@@ -6318,6 +5978,16 @@
     "acc_time_ms": 777000,
     "acc_time_behind": 38000,
     "name": "Andreas Aalby"
+  },
+  {
+    "id": 26873,
+    "race_id": 65,
+    "race_name": "Oslo enduro",
+    "class": "Menn senior",
+    "final_rank": 7,
+    "acc_time_ms": 777000,
+    "acc_time_behind": 38000,
+    "name": "Anders Skarstein"
   },
   {
     "id": 26875,
@@ -6380,16 +6050,6 @@
     "name": "Oskar Omdal"
   },
   {
-    "id": 26881,
-    "race_id": 65,
-    "race_name": "Oslo enduro",
-    "class": "Menn senior",
-    "final_rank": 15,
-    "acc_time_ms": 833000,
-    "acc_time_behind": 94000,
-    "name": "Thomas Rambekk Henriksen"
-  },
-  {
     "id": 26887,
     "race_id": 65,
     "race_name": "Oslo enduro",
@@ -6398,6 +6058,16 @@
     "acc_time_ms": 833000,
     "acc_time_behind": 94000,
     "name": "Lukas Leiro"
+  },
+  {
+    "id": 26881,
+    "race_id": 65,
+    "race_name": "Oslo enduro",
+    "class": "Menn senior",
+    "final_rank": 15,
+    "acc_time_ms": 833000,
+    "acc_time_behind": 94000,
+    "name": "Thomas Rambekk Henriksen"
   },
   {
     "id": 26883,
@@ -6490,16 +6160,6 @@
     "name": "Kristoffer Rakneberg"
   },
   {
-    "id": 26903,
-    "race_id": 65,
-    "race_name": "Oslo enduro",
-    "class": "Menn senior",
-    "final_rank": 26,
-    "acc_time_ms": 884000,
-    "acc_time_behind": 145000,
-    "name": "Kristian Østlie"
-  },
-  {
     "id": 26900,
     "race_id": 65,
     "race_name": "Oslo enduro",
@@ -6508,6 +6168,16 @@
     "acc_time_ms": 884000,
     "acc_time_behind": 145000,
     "name": "Hans Kristian Blichfeldt"
+  },
+  {
+    "id": 26903,
+    "race_id": 65,
+    "race_name": "Oslo enduro",
+    "class": "Menn senior",
+    "final_rank": 26,
+    "acc_time_ms": 884000,
+    "acc_time_behind": 145000,
+    "name": "Kristian Østlie"
   },
   {
     "id": 26898,
@@ -6690,16 +6360,6 @@
     "name": "Dag Erik Kristoffersen"
   },
   {
-    "id": 26920,
-    "race_id": 65,
-    "race_name": "Oslo enduro",
-    "class": "Menn senior",
-    "final_rank": 46,
-    "acc_time_ms": 972000,
-    "acc_time_behind": 233000,
-    "name": "Karl-Oskar Sæther"
-  },
-  {
     "id": 26901,
     "race_id": 65,
     "race_name": "Oslo enduro",
@@ -6708,6 +6368,16 @@
     "acc_time_ms": 972000,
     "acc_time_behind": 233000,
     "name": "Martin Stene"
+  },
+  {
+    "id": 26920,
+    "race_id": 65,
+    "race_name": "Oslo enduro",
+    "class": "Menn senior",
+    "final_rank": 46,
+    "acc_time_ms": 972000,
+    "acc_time_behind": 233000,
+    "name": "Karl-Oskar Sæther"
   },
   {
     "id": 26914,
@@ -6760,16 +6430,6 @@
     "name": "Martin Singstad"
   },
   {
-    "id": 26923,
-    "race_id": 65,
-    "race_name": "Oslo enduro",
-    "class": "Menn senior",
-    "final_rank": 53,
-    "acc_time_ms": 1019000,
-    "acc_time_behind": 280000,
-    "name": "Marcus Emil Sletten"
-  },
-  {
     "id": 26911,
     "race_id": 65,
     "race_name": "Oslo enduro",
@@ -6778,6 +6438,16 @@
     "acc_time_ms": 1019000,
     "acc_time_behind": 280000,
     "name": "Simon Risan"
+  },
+  {
+    "id": 26923,
+    "race_id": 65,
+    "race_name": "Oslo enduro",
+    "class": "Menn senior",
+    "final_rank": 53,
+    "acc_time_ms": 1019000,
+    "acc_time_behind": 280000,
+    "name": "Marcus Emil Sletten"
   },
   {
     "id": 26919,
@@ -6810,16 +6480,6 @@
     "name": "Simon Nysæter"
   },
   {
-    "id": 26930,
-    "race_id": 65,
-    "race_name": "Oslo enduro",
-    "class": "Menn senior",
-    "final_rank": 58,
-    "acc_time_ms": 1076000,
-    "acc_time_behind": 337000,
-    "name": "Pablo Allendes"
-  },
-  {
     "id": 26931,
     "race_id": 65,
     "race_name": "Oslo enduro",
@@ -6828,6 +6488,16 @@
     "acc_time_ms": 1076000,
     "acc_time_behind": 337000,
     "name": "Alexander Berg Olsen"
+  },
+  {
+    "id": 26930,
+    "race_id": 65,
+    "race_name": "Oslo enduro",
+    "class": "Menn senior",
+    "final_rank": 58,
+    "acc_time_ms": 1076000,
+    "acc_time_behind": 337000,
+    "name": "Pablo Allendes"
   },
   {
     "id": 26924,
@@ -6990,417 +6660,7 @@
     "name": "Phillip Mayhew"
   },
   {
-    "id": 27299,
-    "race_id": 67,
-    "race_name": "Hakadal enduro",
-    "class": "G10-12",
-    "final_rank": 1,
-    "acc_time_ms": 733000,
-    "acc_time_behind": 0,
-    "name": "Noah Heieren"
-  },
-  {
-    "id": 27300,
-    "race_id": 67,
-    "race_name": "Hakadal enduro",
-    "class": "G10-12",
-    "final_rank": 2,
-    "acc_time_ms": 798000,
-    "acc_time_behind": 65000,
-    "name": "Einar Andreas S. Bjørn-Lian"
-  },
-  {
-    "id": 27301,
-    "race_id": 67,
-    "race_name": "Hakadal enduro",
-    "class": "G10-12",
-    "final_rank": 3,
-    "acc_time_ms": 800000,
-    "acc_time_behind": 67000,
-    "name": "Bård Gujord Røisli"
-  },
-  {
-    "id": 27302,
-    "race_id": 67,
-    "race_name": "Hakadal enduro",
-    "class": "G10-12",
-    "final_rank": 4,
-    "acc_time_ms": 813000,
-    "acc_time_behind": 80000,
-    "name": "Mees Van Weerdhuizen"
-  },
-  {
-    "id": 27298,
-    "race_id": 67,
-    "race_name": "Hakadal enduro",
-    "class": "G10-12",
-    "final_rank": 5,
-    "acc_time_ms": 829000,
-    "acc_time_behind": 96000,
-    "name": "Markus Skeie-Lebreux"
-  },
-  {
-    "id": 27303,
-    "race_id": 67,
-    "race_name": "Hakadal enduro",
-    "class": "G10-12",
-    "final_rank": 6,
-    "acc_time_ms": 888000,
-    "acc_time_behind": 155000,
-    "name": "Kevin André Vestli"
-  },
-  {
-    "id": 27304,
-    "race_id": 67,
-    "race_name": "Hakadal enduro",
-    "class": "G10-12",
-    "final_rank": 7,
-    "acc_time_ms": 916000,
-    "acc_time_behind": 183000,
-    "name": "Markus Bye Jacobsen"
-  },
-  {
-    "id": 27305,
-    "race_id": 67,
-    "race_name": "Hakadal enduro",
-    "class": "G10-12",
-    "final_rank": 8,
-    "acc_time_ms": 965000,
-    "acc_time_behind": 232000,
-    "name": "Frederic Sandengen"
-  },
-  {
-    "id": 27306,
-    "race_id": 67,
-    "race_name": "Hakadal enduro",
-    "class": "G10-12",
-    "final_rank": 9,
-    "acc_time_ms": 1008000,
-    "acc_time_behind": 275000,
-    "name": "Joakim Rø"
-  },
-  {
-    "id": 27307,
-    "race_id": 67,
-    "race_name": "Hakadal enduro",
-    "class": "G10-12",
-    "final_rank": 10,
-    "acc_time_ms": 1134000,
-    "acc_time_behind": 401000,
-    "name": "Sigurd Foss Andersen"
-  },
-  {
-    "id": 27308,
-    "race_id": 67,
-    "race_name": "Hakadal enduro",
-    "class": "G10-12",
-    "final_rank": 11,
-    "acc_time_ms": 0,
-    "acc_time_behind": 0,
-    "name": "Sean Ingvaldsen Engebretsen"
-  },
-  {
-    "id": 27325,
-    "race_id": 67,
-    "race_name": "Hakadal enduro",
-    "class": "G13-14",
-    "final_rank": 1,
-    "acc_time_ms": 659000,
-    "acc_time_behind": 0,
-    "name": "Ludvig Strand"
-  },
-  {
-    "id": 27326,
-    "race_id": 67,
-    "race_name": "Hakadal enduro",
-    "class": "G13-14",
-    "final_rank": 2,
-    "acc_time_ms": 676000,
-    "acc_time_behind": 17000,
-    "name": "Jo Gujord Røisli"
-  },
-  {
-    "id": 27327,
-    "race_id": 67,
-    "race_name": "Hakadal enduro",
-    "class": "G13-14",
-    "final_rank": 3,
-    "acc_time_ms": 691000,
-    "acc_time_behind": 32000,
-    "name": "Eirik Ødegårdstuen"
-  },
-  {
-    "id": 27329,
-    "race_id": 67,
-    "race_name": "Hakadal enduro",
-    "class": "G13-14",
-    "final_rank": 4,
-    "acc_time_ms": 720000,
-    "acc_time_behind": 61000,
-    "name": "Brage Lidsheim"
-  },
-  {
-    "id": 27330,
-    "race_id": 67,
-    "race_name": "Hakadal enduro",
-    "class": "G13-14",
-    "final_rank": 5,
-    "acc_time_ms": 732000,
-    "acc_time_behind": 73000,
-    "name": "Torben Hjelset"
-  },
-  {
-    "id": 27328,
-    "race_id": 67,
-    "race_name": "Hakadal enduro",
-    "class": "G13-14",
-    "final_rank": 6,
-    "acc_time_ms": 746000,
-    "acc_time_behind": 87000,
-    "name": "Anders Kvalheim"
-  },
-  {
-    "id": 27331,
-    "race_id": 67,
-    "race_name": "Hakadal enduro",
-    "class": "G13-14",
-    "final_rank": 7,
-    "acc_time_ms": 757000,
-    "acc_time_behind": 98000,
-    "name": "Edvin Almaas-Edvardsen"
-  },
-  {
-    "id": 27332,
-    "race_id": 67,
-    "race_name": "Hakadal enduro",
-    "class": "G13-14",
-    "final_rank": 8,
-    "acc_time_ms": 797000,
-    "acc_time_behind": 138000,
-    "name": "Per Øystein Ås"
-  },
-  {
-    "id": 27333,
-    "race_id": 67,
-    "race_name": "Hakadal enduro",
-    "class": "G13-14",
-    "final_rank": 9,
-    "acc_time_ms": 866000,
-    "acc_time_behind": 207000,
-    "name": "Marius Fenstad Skjærstad"
-  },
-  {
-    "id": 27335,
-    "race_id": 67,
-    "race_name": "Hakadal enduro",
-    "class": "G13-14",
-    "final_rank": 10,
-    "acc_time_ms": 877000,
-    "acc_time_behind": 218000,
-    "name": "Jesper Skalmerud"
-  },
-  {
-    "id": 27336,
-    "race_id": 67,
-    "race_name": "Hakadal enduro",
-    "class": "G13-14",
-    "final_rank": 11,
-    "acc_time_ms": 885000,
-    "acc_time_behind": 226000,
-    "name": "Øystein Berntzen"
-  },
-  {
-    "id": 27334,
-    "race_id": 67,
-    "race_name": "Hakadal enduro",
-    "class": "G13-14",
-    "final_rank": 12,
-    "acc_time_ms": 894000,
-    "acc_time_behind": 235000,
-    "name": "Fredrik Solberg Hernes"
-  },
-  {
-    "id": 27337,
-    "race_id": 67,
-    "race_name": "Hakadal enduro",
-    "class": "G13-14",
-    "final_rank": 13,
-    "acc_time_ms": 976000,
-    "acc_time_behind": 317000,
-    "name": "William Smith"
-  },
-  {
-    "id": 27338,
-    "race_id": 67,
-    "race_name": "Hakadal enduro",
-    "class": "G13-14",
-    "final_rank": 14,
-    "acc_time_ms": 0,
-    "acc_time_behind": 0,
-    "name": "Jonas Urianstad Bertelsen"
-  },
-  {
-    "id": 27339,
-    "race_id": 67,
-    "race_name": "Hakadal enduro",
-    "class": "G13-14",
-    "final_rank": 15,
-    "acc_time_ms": 0,
-    "acc_time_behind": 0,
-    "name": "Sebastian Halvorsen"
-  },
-  {
-    "id": 27340,
-    "race_id": 67,
-    "race_name": "Hakadal enduro",
-    "class": "G13-14",
-    "final_rank": 16,
-    "acc_time_ms": 0,
-    "acc_time_behind": 0,
-    "name": "Mathias Johansen"
-  },
-  {
-    "id": 27369,
-    "race_id": 67,
-    "race_name": "Hakadal enduro",
-    "class": "G15-16",
-    "final_rank": 1,
-    "acc_time_ms": 1258000,
-    "acc_time_behind": 0,
-    "name": "Falk Håkenstad-Bråten"
-  },
-  {
-    "id": 27370,
-    "race_id": 67,
-    "race_name": "Hakadal enduro",
-    "class": "G15-16",
-    "final_rank": 2,
-    "acc_time_ms": 1318000,
-    "acc_time_behind": 60000,
-    "name": "William Scheele"
-  },
-  {
-    "id": 27371,
-    "race_id": 67,
-    "race_name": "Hakadal enduro",
-    "class": "G15-16",
-    "final_rank": 3,
-    "acc_time_ms": 1344000,
-    "acc_time_behind": 86000,
-    "name": "Mikkel Pedersen"
-  },
-  {
-    "id": 27372,
-    "race_id": 67,
-    "race_name": "Hakadal enduro",
-    "class": "G15-16",
-    "final_rank": 4,
-    "acc_time_ms": 1372000,
-    "acc_time_behind": 114000,
-    "name": "Erik Tønnessen"
-  },
-  {
-    "id": 27374,
-    "race_id": 67,
-    "race_name": "Hakadal enduro",
-    "class": "G15-16",
-    "final_rank": 5,
-    "acc_time_ms": 1430000,
-    "acc_time_behind": 172000,
-    "name": "Kevin Scott Johnsen"
-  },
-  {
-    "id": 27373,
-    "race_id": 67,
-    "race_name": "Hakadal enduro",
-    "class": "G15-16",
-    "final_rank": 6,
-    "acc_time_ms": 1438000,
-    "acc_time_behind": 180000,
-    "name": "Theodor Bakken"
-  },
-  {
-    "id": 27377,
-    "race_id": 67,
-    "race_name": "Hakadal enduro",
-    "class": "G15-16",
-    "final_rank": 7,
-    "acc_time_ms": 1441000,
-    "acc_time_behind": 183000,
-    "name": "Emil Aabye"
-  },
-  {
-    "id": 27376,
-    "race_id": 67,
-    "race_name": "Hakadal enduro",
-    "class": "G15-16",
-    "final_rank": 8,
-    "acc_time_ms": 1490000,
-    "acc_time_behind": 232000,
-    "name": "Alexander Sandengen"
-  },
-  {
-    "id": 27375,
-    "race_id": 67,
-    "race_name": "Hakadal enduro",
-    "class": "G15-16",
-    "final_rank": 9,
-    "acc_time_ms": 1521000,
-    "acc_time_behind": 263000,
-    "name": "William Rø"
-  },
-  {
-    "id": 27378,
-    "race_id": 67,
-    "race_name": "Hakadal enduro",
-    "class": "G15-16",
-    "final_rank": 10,
-    "acc_time_ms": 1536000,
-    "acc_time_behind": 278000,
-    "name": "Oscar Saksvik"
-  },
-  {
-    "id": 27379,
-    "race_id": 67,
-    "race_name": "Hakadal enduro",
-    "class": "G15-16",
-    "final_rank": 11,
-    "acc_time_ms": 1595000,
-    "acc_time_behind": 337000,
-    "name": "Petter Brochmann"
-  },
-  {
-    "id": 27380,
-    "race_id": 67,
-    "race_name": "Hakadal enduro",
-    "class": "G15-16",
-    "final_rank": 12,
-    "acc_time_ms": 1643000,
-    "acc_time_behind": 385000,
-    "name": "Sebastien Amat Finstad"
-  },
-  {
-    "id": 27381,
-    "race_id": 67,
-    "race_name": "Hakadal enduro",
-    "class": "G15-16",
-    "final_rank": 13,
-    "acc_time_ms": 1707000,
-    "acc_time_behind": 449000,
-    "name": "Jonas Øien Skare"
-  },
-  {
-    "id": 27382,
-    "race_id": 67,
-    "race_name": "Hakadal enduro",
-    "class": "G15-16",
-    "final_rank": 14,
-    "acc_time_ms": 2005000,
-    "acc_time_behind": 747000,
-    "name": "Even Sandberg"
-  },
-  {
-    "id": 27385,
+    "id": 27289,
     "race_id": 67,
     "race_name": "Hakadal enduro",
     "class": "Kvinner junior",
@@ -7410,7 +6670,7 @@
     "name": "Hedda Brenningen Bjørklund"
   },
   {
-    "id": 27394,
+    "id": 27298,
     "race_id": 67,
     "race_name": "Hakadal enduro",
     "class": "Kvinner master",
@@ -7420,7 +6680,7 @@
     "name": "Marte Lund"
   },
   {
-    "id": 27395,
+    "id": 27299,
     "race_id": 67,
     "race_name": "Hakadal enduro",
     "class": "Kvinner master",
@@ -7430,7 +6690,7 @@
     "name": "Linda Lønmo"
   },
   {
-    "id": 27396,
+    "id": 27300,
     "race_id": 67,
     "race_name": "Hakadal enduro",
     "class": "Kvinner master",
@@ -7440,7 +6700,7 @@
     "name": "Kari Gulden Olstad"
   },
   {
-    "id": 27397,
+    "id": 27301,
     "race_id": 67,
     "race_name": "Hakadal enduro",
     "class": "Kvinner master",
@@ -7450,7 +6710,7 @@
     "name": "Kine Lidsheim"
   },
   {
-    "id": 27410,
+    "id": 27314,
     "race_id": 67,
     "race_name": "Hakadal enduro",
     "class": "Kvinner senior",
@@ -7460,7 +6720,7 @@
     "name": "Hilde Sangesland Strædet"
   },
   {
-    "id": 27412,
+    "id": 27316,
     "race_id": 67,
     "race_name": "Hakadal enduro",
     "class": "Kvinner senior",
@@ -7470,7 +6730,7 @@
     "name": "Anna Littorin-Sandbu"
   },
   {
-    "id": 27411,
+    "id": 27315,
     "race_id": 67,
     "race_name": "Hakadal enduro",
     "class": "Kvinner senior",
@@ -7480,7 +6740,7 @@
     "name": "Lene Snerk Pettersen"
   },
   {
-    "id": 27414,
+    "id": 27318,
     "race_id": 67,
     "race_name": "Hakadal enduro",
     "class": "Kvinner senior",
@@ -7490,7 +6750,7 @@
     "name": "Ida Rydland Nærum"
   },
   {
-    "id": 27413,
+    "id": 27317,
     "race_id": 67,
     "race_name": "Hakadal enduro",
     "class": "Kvinner senior",
@@ -7500,7 +6760,7 @@
     "name": "Stine Torgersbråten"
   },
   {
-    "id": 27415,
+    "id": 27319,
     "race_id": 67,
     "race_name": "Hakadal enduro",
     "class": "Kvinner senior",
@@ -7508,6 +6768,416 @@
     "acc_time_ms": 1984000,
     "acc_time_behind": 575000,
     "name": "Tonje Sameien"
+  },
+  {
+    "id": 27332,
+    "race_id": 67,
+    "race_name": "Hakadal enduro",
+    "class": "M11-12",
+    "final_rank": 1,
+    "acc_time_ms": 733000,
+    "acc_time_behind": 0,
+    "name": "Noah Heieren"
+  },
+  {
+    "id": 27333,
+    "race_id": 67,
+    "race_name": "Hakadal enduro",
+    "class": "M11-12",
+    "final_rank": 2,
+    "acc_time_ms": 798000,
+    "acc_time_behind": 65000,
+    "name": "Einar Andreas S. Bjørn-Lian"
+  },
+  {
+    "id": 27334,
+    "race_id": 67,
+    "race_name": "Hakadal enduro",
+    "class": "M11-12",
+    "final_rank": 3,
+    "acc_time_ms": 800000,
+    "acc_time_behind": 67000,
+    "name": "Bård Gujord Røisli"
+  },
+  {
+    "id": 27335,
+    "race_id": 67,
+    "race_name": "Hakadal enduro",
+    "class": "M11-12",
+    "final_rank": 4,
+    "acc_time_ms": 813000,
+    "acc_time_behind": 80000,
+    "name": "Mees Van Weerdhuizen"
+  },
+  {
+    "id": 27331,
+    "race_id": 67,
+    "race_name": "Hakadal enduro",
+    "class": "M11-12",
+    "final_rank": 5,
+    "acc_time_ms": 829000,
+    "acc_time_behind": 96000,
+    "name": "Markus Skeie-Lebreux"
+  },
+  {
+    "id": 27336,
+    "race_id": 67,
+    "race_name": "Hakadal enduro",
+    "class": "M11-12",
+    "final_rank": 6,
+    "acc_time_ms": 888000,
+    "acc_time_behind": 155000,
+    "name": "Kevin André Vestli"
+  },
+  {
+    "id": 27337,
+    "race_id": 67,
+    "race_name": "Hakadal enduro",
+    "class": "M11-12",
+    "final_rank": 7,
+    "acc_time_ms": 916000,
+    "acc_time_behind": 183000,
+    "name": "Markus Bye Jacobsen"
+  },
+  {
+    "id": 27338,
+    "race_id": 67,
+    "race_name": "Hakadal enduro",
+    "class": "M11-12",
+    "final_rank": 8,
+    "acc_time_ms": 965000,
+    "acc_time_behind": 232000,
+    "name": "Frederic Sandengen"
+  },
+  {
+    "id": 27339,
+    "race_id": 67,
+    "race_name": "Hakadal enduro",
+    "class": "M11-12",
+    "final_rank": 9,
+    "acc_time_ms": 1008000,
+    "acc_time_behind": 275000,
+    "name": "Joakim Rø"
+  },
+  {
+    "id": 27340,
+    "race_id": 67,
+    "race_name": "Hakadal enduro",
+    "class": "M11-12",
+    "final_rank": 10,
+    "acc_time_ms": 1134000,
+    "acc_time_behind": 401000,
+    "name": "Sigurd Foss Andersen"
+  },
+  {
+    "id": 27341,
+    "race_id": 67,
+    "race_name": "Hakadal enduro",
+    "class": "M11-12",
+    "final_rank": 11,
+    "acc_time_ms": 0,
+    "acc_time_behind": 0,
+    "name": "Sean Ingvaldsen Engebretsen"
+  },
+  {
+    "id": 27358,
+    "race_id": 67,
+    "race_name": "Hakadal enduro",
+    "class": "M13-14",
+    "final_rank": 1,
+    "acc_time_ms": 659000,
+    "acc_time_behind": 0,
+    "name": "Ludvig Strand"
+  },
+  {
+    "id": 27359,
+    "race_id": 67,
+    "race_name": "Hakadal enduro",
+    "class": "M13-14",
+    "final_rank": 2,
+    "acc_time_ms": 676000,
+    "acc_time_behind": 17000,
+    "name": "Jo Gujord Røisli"
+  },
+  {
+    "id": 27360,
+    "race_id": 67,
+    "race_name": "Hakadal enduro",
+    "class": "M13-14",
+    "final_rank": 3,
+    "acc_time_ms": 691000,
+    "acc_time_behind": 32000,
+    "name": "Eirik Ødegårdstuen"
+  },
+  {
+    "id": 27362,
+    "race_id": 67,
+    "race_name": "Hakadal enduro",
+    "class": "M13-14",
+    "final_rank": 4,
+    "acc_time_ms": 720000,
+    "acc_time_behind": 61000,
+    "name": "Brage Lidsheim"
+  },
+  {
+    "id": 27363,
+    "race_id": 67,
+    "race_name": "Hakadal enduro",
+    "class": "M13-14",
+    "final_rank": 5,
+    "acc_time_ms": 732000,
+    "acc_time_behind": 73000,
+    "name": "Torben Hjelset"
+  },
+  {
+    "id": 27361,
+    "race_id": 67,
+    "race_name": "Hakadal enduro",
+    "class": "M13-14",
+    "final_rank": 6,
+    "acc_time_ms": 746000,
+    "acc_time_behind": 87000,
+    "name": "Anders Kvalheim"
+  },
+  {
+    "id": 27364,
+    "race_id": 67,
+    "race_name": "Hakadal enduro",
+    "class": "M13-14",
+    "final_rank": 7,
+    "acc_time_ms": 757000,
+    "acc_time_behind": 98000,
+    "name": "Edvin Almaas-Edvardsen"
+  },
+  {
+    "id": 27365,
+    "race_id": 67,
+    "race_name": "Hakadal enduro",
+    "class": "M13-14",
+    "final_rank": 8,
+    "acc_time_ms": 797000,
+    "acc_time_behind": 138000,
+    "name": "Per Øystein Ås"
+  },
+  {
+    "id": 27366,
+    "race_id": 67,
+    "race_name": "Hakadal enduro",
+    "class": "M13-14",
+    "final_rank": 9,
+    "acc_time_ms": 866000,
+    "acc_time_behind": 207000,
+    "name": "Marius Fenstad Skjærstad"
+  },
+  {
+    "id": 27368,
+    "race_id": 67,
+    "race_name": "Hakadal enduro",
+    "class": "M13-14",
+    "final_rank": 10,
+    "acc_time_ms": 877000,
+    "acc_time_behind": 218000,
+    "name": "Jesper Skalmerud"
+  },
+  {
+    "id": 27369,
+    "race_id": 67,
+    "race_name": "Hakadal enduro",
+    "class": "M13-14",
+    "final_rank": 11,
+    "acc_time_ms": 885000,
+    "acc_time_behind": 226000,
+    "name": "Øystein Berntzen"
+  },
+  {
+    "id": 27367,
+    "race_id": 67,
+    "race_name": "Hakadal enduro",
+    "class": "M13-14",
+    "final_rank": 12,
+    "acc_time_ms": 894000,
+    "acc_time_behind": 235000,
+    "name": "Fredrik Solberg Hernes"
+  },
+  {
+    "id": 27370,
+    "race_id": 67,
+    "race_name": "Hakadal enduro",
+    "class": "M13-14",
+    "final_rank": 13,
+    "acc_time_ms": 976000,
+    "acc_time_behind": 317000,
+    "name": "William Smith"
+  },
+  {
+    "id": 27371,
+    "race_id": 67,
+    "race_name": "Hakadal enduro",
+    "class": "M13-14",
+    "final_rank": 14,
+    "acc_time_ms": 0,
+    "acc_time_behind": 0,
+    "name": "Jonas Urianstad Bertelsen"
+  },
+  {
+    "id": 27372,
+    "race_id": 67,
+    "race_name": "Hakadal enduro",
+    "class": "M13-14",
+    "final_rank": 15,
+    "acc_time_ms": 0,
+    "acc_time_behind": 0,
+    "name": "Sebastian Halvorsen"
+  },
+  {
+    "id": 27373,
+    "race_id": 67,
+    "race_name": "Hakadal enduro",
+    "class": "M13-14",
+    "final_rank": 16,
+    "acc_time_ms": 0,
+    "acc_time_behind": 0,
+    "name": "Mathias Johansen"
+  },
+  {
+    "id": 27402,
+    "race_id": 67,
+    "race_name": "Hakadal enduro",
+    "class": "M15-16",
+    "final_rank": 1,
+    "acc_time_ms": 1258000,
+    "acc_time_behind": 0,
+    "name": "Falk Håkenstad-Bråten"
+  },
+  {
+    "id": 27403,
+    "race_id": 67,
+    "race_name": "Hakadal enduro",
+    "class": "M15-16",
+    "final_rank": 2,
+    "acc_time_ms": 1318000,
+    "acc_time_behind": 60000,
+    "name": "William Scheele"
+  },
+  {
+    "id": 27404,
+    "race_id": 67,
+    "race_name": "Hakadal enduro",
+    "class": "M15-16",
+    "final_rank": 3,
+    "acc_time_ms": 1344000,
+    "acc_time_behind": 86000,
+    "name": "Mikkel Pedersen"
+  },
+  {
+    "id": 27405,
+    "race_id": 67,
+    "race_name": "Hakadal enduro",
+    "class": "M15-16",
+    "final_rank": 4,
+    "acc_time_ms": 1372000,
+    "acc_time_behind": 114000,
+    "name": "Erik Tønnessen"
+  },
+  {
+    "id": 27407,
+    "race_id": 67,
+    "race_name": "Hakadal enduro",
+    "class": "M15-16",
+    "final_rank": 5,
+    "acc_time_ms": 1430000,
+    "acc_time_behind": 172000,
+    "name": "Kevin Scott Johnsen"
+  },
+  {
+    "id": 27406,
+    "race_id": 67,
+    "race_name": "Hakadal enduro",
+    "class": "M15-16",
+    "final_rank": 6,
+    "acc_time_ms": 1438000,
+    "acc_time_behind": 180000,
+    "name": "Theodor Bakken"
+  },
+  {
+    "id": 27410,
+    "race_id": 67,
+    "race_name": "Hakadal enduro",
+    "class": "M15-16",
+    "final_rank": 7,
+    "acc_time_ms": 1441000,
+    "acc_time_behind": 183000,
+    "name": "Emil Aabye"
+  },
+  {
+    "id": 27409,
+    "race_id": 67,
+    "race_name": "Hakadal enduro",
+    "class": "M15-16",
+    "final_rank": 8,
+    "acc_time_ms": 1490000,
+    "acc_time_behind": 232000,
+    "name": "Alexander Sandengen"
+  },
+  {
+    "id": 27408,
+    "race_id": 67,
+    "race_name": "Hakadal enduro",
+    "class": "M15-16",
+    "final_rank": 9,
+    "acc_time_ms": 1521000,
+    "acc_time_behind": 263000,
+    "name": "William Rø"
+  },
+  {
+    "id": 27411,
+    "race_id": 67,
+    "race_name": "Hakadal enduro",
+    "class": "M15-16",
+    "final_rank": 10,
+    "acc_time_ms": 1536000,
+    "acc_time_behind": 278000,
+    "name": "Oscar Saksvik"
+  },
+  {
+    "id": 27412,
+    "race_id": 67,
+    "race_name": "Hakadal enduro",
+    "class": "M15-16",
+    "final_rank": 11,
+    "acc_time_ms": 1595000,
+    "acc_time_behind": 337000,
+    "name": "Petter Brochmann"
+  },
+  {
+    "id": 27413,
+    "race_id": 67,
+    "race_name": "Hakadal enduro",
+    "class": "M15-16",
+    "final_rank": 12,
+    "acc_time_ms": 1643000,
+    "acc_time_behind": 385000,
+    "name": "Sebastien Amat Finstad"
+  },
+  {
+    "id": 27414,
+    "race_id": 67,
+    "race_name": "Hakadal enduro",
+    "class": "M15-16",
+    "final_rank": 13,
+    "acc_time_ms": 1707000,
+    "acc_time_behind": 449000,
+    "name": "Jonas Øien Skare"
+  },
+  {
+    "id": 27415,
+    "race_id": 67,
+    "race_name": "Hakadal enduro",
+    "class": "M15-16",
+    "final_rank": 14,
+    "acc_time_ms": 2005000,
+    "acc_time_behind": 747000,
+    "name": "Even Sandberg"
   },
   {
     "id": 27430,
@@ -7770,16 +7440,6 @@
     "name": "Jan Erik Kørra"
   },
   {
-    "id": 27601,
-    "race_id": 67,
-    "race_name": "Hakadal enduro",
-    "class": "Menn senior",
-    "final_rank": 5,
-    "acc_time_ms": 1173000,
-    "acc_time_behind": 53000,
-    "name": "Bård Stærkebye Pettersen"
-  },
-  {
     "id": 27597,
     "race_id": 67,
     "race_name": "Hakadal enduro",
@@ -7788,6 +7448,16 @@
     "acc_time_ms": 1173000,
     "acc_time_behind": 53000,
     "name": "Jens Bergmann"
+  },
+  {
+    "id": 27601,
+    "race_id": 67,
+    "race_name": "Hakadal enduro",
+    "class": "Menn senior",
+    "final_rank": 5,
+    "acc_time_ms": 1173000,
+    "acc_time_behind": 53000,
+    "name": "Bård Stærkebye Pettersen"
   },
   {
     "id": 27602,
@@ -8140,16 +7810,6 @@
     "name": "Kristoffer Andresen"
   },
   {
-    "id": 27632,
-    "race_id": 67,
-    "race_name": "Hakadal enduro",
-    "class": "Menn senior",
-    "final_rank": 42,
-    "acc_time_ms": 1555000,
-    "acc_time_behind": 435000,
-    "name": "Fredrik Nygaard"
-  },
-  {
     "id": 27640,
     "race_id": 67,
     "race_name": "Hakadal enduro",
@@ -8158,6 +7818,16 @@
     "acc_time_ms": 1555000,
     "acc_time_behind": 435000,
     "name": "Peter Hjertson"
+  },
+  {
+    "id": 27632,
+    "race_id": 67,
+    "race_name": "Hakadal enduro",
+    "class": "Menn senior",
+    "final_rank": 42,
+    "acc_time_ms": 1555000,
+    "acc_time_behind": 435000,
+    "name": "Fredrik Nygaard"
   },
   {
     "id": 27630,
@@ -8290,177 +7960,17 @@
     "name": "Lars Strømme"
   },
   {
-    "id": 28917,
+    "id": 28910,
     "race_id": 71,
     "race_name": "Ringerike enduro",
-    "class": "Gutter 13-14",
-    "final_rank": 1,
-    "acc_time_ms": 533000,
-    "acc_time_behind": 0,
-    "name": "Eirik Ødegårdstuen"
-  },
-  {
-    "id": 28918,
-    "race_id": 71,
-    "race_name": "Ringerike enduro",
-    "class": "Gutter 13-14",
-    "final_rank": 2,
-    "acc_time_ms": 551000,
-    "acc_time_behind": 18000,
-    "name": "Jonas Kind Høydahl"
-  },
-  {
-    "id": 28919,
-    "race_id": 71,
-    "race_name": "Ringerike enduro",
-    "class": "Gutter 13-14",
-    "final_rank": 3,
-    "acc_time_ms": 579000,
-    "acc_time_behind": 46000,
-    "name": "Jo Røisli"
-  },
-  {
-    "id": 28920,
-    "race_id": 71,
-    "race_name": "Ringerike enduro",
-    "class": "Gutter 13-14",
-    "final_rank": 4,
-    "acc_time_ms": 590000,
-    "acc_time_behind": 57000,
-    "name": "Edvin Almaas-Edvardsen"
-  },
-  {
-    "id": 28921,
-    "race_id": 71,
-    "race_name": "Ringerike enduro",
-    "class": "Gutter 13-14",
-    "final_rank": 5,
-    "acc_time_ms": 643000,
-    "acc_time_behind": 110000,
-    "name": "Brage Lidsheim"
-  },
-  {
-    "id": 28922,
-    "race_id": 71,
-    "race_name": "Ringerike enduro",
-    "class": "Gutter 13-14",
-    "final_rank": 6,
-    "acc_time_ms": 749000,
-    "acc_time_behind": 216000,
-    "name": "Lasse Jenserud"
-  },
-  {
-    "id": 28923,
-    "race_id": 71,
-    "race_name": "Ringerike enduro",
-    "class": "Gutter 13-14",
-    "final_rank": 7,
-    "acc_time_ms": 0,
-    "acc_time_behind": 0,
-    "name": "Jonathan Lothe"
-  },
-  {
-    "id": 28924,
-    "race_id": 71,
-    "race_name": "Ringerike enduro",
-    "class": "Gutter 13-14",
-    "final_rank": 8,
-    "acc_time_ms": 0,
-    "acc_time_behind": 0,
-    "name": "Marcus Arnesen"
-  },
-  {
-    "id": 28933,
-    "race_id": 71,
-    "race_name": "Ringerike enduro",
-    "class": "Gutter 15-16",
-    "final_rank": 1,
-    "acc_time_ms": 496000,
-    "acc_time_behind": 0,
-    "name": "Theodor Bakken"
-  },
-  {
-    "id": 28934,
-    "race_id": 71,
-    "race_name": "Ringerike enduro",
-    "class": "Gutter 15-16",
-    "final_rank": 2,
-    "acc_time_ms": 524000,
-    "acc_time_behind": 28000,
-    "name": "Mikkel Pedersen"
-  },
-  {
-    "id": 28935,
-    "race_id": 71,
-    "race_name": "Ringerike enduro",
-    "class": "Gutter 15-16",
-    "final_rank": 2,
-    "acc_time_ms": 524000,
-    "acc_time_behind": 28000,
-    "name": "Kevin Scott Johnsen"
-  },
-  {
-    "id": 28936,
-    "race_id": 71,
-    "race_name": "Ringerike enduro",
-    "class": "Gutter 15-16",
-    "final_rank": 4,
-    "acc_time_ms": 527000,
-    "acc_time_behind": 31000,
-    "name": "Alexander Bredesen"
-  },
-  {
-    "id": 28938,
-    "race_id": 71,
-    "race_name": "Ringerike enduro",
-    "class": "Gutter 15-16",
-    "final_rank": 5,
-    "acc_time_ms": 592000,
-    "acc_time_behind": 96000,
-    "name": "Even Olav Sandberg"
-  },
-  {
-    "id": 28937,
-    "race_id": 71,
-    "race_name": "Ringerike enduro",
-    "class": "Gutter 15-16",
-    "final_rank": 6,
-    "acc_time_ms": 623000,
-    "acc_time_behind": 127000,
-    "name": "Thorstein Johansen"
-  },
-  {
-    "id": 28939,
-    "race_id": 71,
-    "race_name": "Ringerike enduro",
-    "class": "Gutter 15-16",
-    "final_rank": 7,
-    "acc_time_ms": 638000,
-    "acc_time_behind": 142000,
-    "name": "Sigurd Bjørndalen Mathisen"
-  },
-  {
-    "id": 28940,
-    "race_id": 71,
-    "race_name": "Ringerike enduro",
-    "class": "Gutter 15-16",
-    "final_rank": 8,
-    "acc_time_ms": 701000,
-    "acc_time_behind": 205000,
-    "name": "Jo Randar Holmøy"
-  },
-  {
-    "id": 28942,
-    "race_id": 71,
-    "race_name": "Ringerike enduro",
-    "class": "Jenter 15-16",
+    "class": "K15-16",
     "final_rank": 1,
     "acc_time_ms": 861000,
     "acc_time_behind": 0,
     "name": "Emily Dring"
   },
   {
-    "id": 28949,
+    "id": 28917,
     "race_id": 71,
     "race_name": "Ringerike enduro",
     "class": "Kvinner junior",
@@ -8470,7 +7980,7 @@
     "name": "Hedda Brenningen Bjørklund"
   },
   {
-    "id": 28950,
+    "id": 28918,
     "race_id": 71,
     "race_name": "Ringerike enduro",
     "class": "Kvinner junior",
@@ -8480,7 +7990,7 @@
     "name": "Sofie Thomassen"
   },
   {
-    "id": 28976,
+    "id": 28944,
     "race_id": 71,
     "race_name": "Ringerike enduro",
     "class": "Kvinner master",
@@ -8490,7 +8000,7 @@
     "name": "Marte Lund"
   },
   {
-    "id": 28975,
+    "id": 28943,
     "race_id": 71,
     "race_name": "Ringerike enduro",
     "class": "Kvinner master",
@@ -8500,7 +8010,7 @@
     "name": "Linda Lønmo"
   },
   {
-    "id": 28977,
+    "id": 28945,
     "race_id": 71,
     "race_name": "Ringerike enduro",
     "class": "Kvinner master",
@@ -8510,7 +8020,7 @@
     "name": "Janniche Ødegård"
   },
   {
-    "id": 28978,
+    "id": 28946,
     "race_id": 71,
     "race_name": "Ringerike enduro",
     "class": "Kvinner master",
@@ -8520,7 +8030,7 @@
     "name": "Kristine Skeie"
   },
   {
-    "id": 28980,
+    "id": 28948,
     "race_id": 71,
     "race_name": "Ringerike enduro",
     "class": "Kvinner master",
@@ -8530,7 +8040,7 @@
     "name": "Nina Strand Ølnes"
   },
   {
-    "id": 28979,
+    "id": 28947,
     "race_id": 71,
     "race_name": "Ringerike enduro",
     "class": "Kvinner master",
@@ -8540,7 +8050,7 @@
     "name": "Hanne Hansen"
   },
   {
-    "id": 28981,
+    "id": 28949,
     "race_id": 71,
     "race_name": "Ringerike enduro",
     "class": "Kvinner master",
@@ -8550,7 +8060,7 @@
     "name": "Kine Lidsheim"
   },
   {
-    "id": 28982,
+    "id": 28950,
     "race_id": 71,
     "race_name": "Ringerike enduro",
     "class": "Kvinner master",
@@ -8560,7 +8070,7 @@
     "name": "Kari Gulden Olstad"
   },
   {
-    "id": 29010,
+    "id": 28978,
     "race_id": 71,
     "race_name": "Ringerike enduro",
     "class": "Kvinner senior",
@@ -8570,7 +8080,7 @@
     "name": "Sunniva Dring"
   },
   {
-    "id": 29012,
+    "id": 28980,
     "race_id": 71,
     "race_name": "Ringerike enduro",
     "class": "Kvinner senior",
@@ -8580,7 +8090,7 @@
     "name": "Lene Snerk Pettersen"
   },
   {
-    "id": 29011,
+    "id": 28979,
     "race_id": 71,
     "race_name": "Ringerike enduro",
     "class": "Kvinner senior",
@@ -8590,7 +8100,7 @@
     "name": "Anna Littorin-Sandbu"
   },
   {
-    "id": 29014,
+    "id": 28982,
     "race_id": 71,
     "race_name": "Ringerike enduro",
     "class": "Kvinner senior",
@@ -8600,7 +8110,7 @@
     "name": "Stine Torgersbråten"
   },
   {
-    "id": 29013,
+    "id": 28981,
     "race_id": 71,
     "race_name": "Ringerike enduro",
     "class": "Kvinner senior",
@@ -8610,7 +8120,7 @@
     "name": "Ida Rydland Nærum"
   },
   {
-    "id": 29015,
+    "id": 28983,
     "race_id": 71,
     "race_name": "Ringerike enduro",
     "class": "Kvinner senior",
@@ -8620,7 +8130,7 @@
     "name": "Anne Trahaug"
   },
   {
-    "id": 29016,
+    "id": 28984,
     "race_id": 71,
     "race_name": "Ringerike enduro",
     "class": "Kvinner senior",
@@ -8630,7 +8140,7 @@
     "name": "Cecilie Bergli"
   },
   {
-    "id": 29017,
+    "id": 28985,
     "race_id": 71,
     "race_name": "Ringerike enduro",
     "class": "Kvinner senior",
@@ -8640,7 +8150,7 @@
     "name": "Solveig Mostad"
   },
   {
-    "id": 29018,
+    "id": 28986,
     "race_id": 71,
     "race_name": "Ringerike enduro",
     "class": "Kvinner senior",
@@ -8648,6 +8158,166 @@
     "acc_time_ms": 0,
     "acc_time_behind": 0,
     "name": "Sigrid Stjernvang"
+  },
+  {
+    "id": 28995,
+    "race_id": 71,
+    "race_name": "Ringerike enduro",
+    "class": "M13-14",
+    "final_rank": 1,
+    "acc_time_ms": 533000,
+    "acc_time_behind": 0,
+    "name": "Eirik Ødegårdstuen"
+  },
+  {
+    "id": 28996,
+    "race_id": 71,
+    "race_name": "Ringerike enduro",
+    "class": "M13-14",
+    "final_rank": 2,
+    "acc_time_ms": 551000,
+    "acc_time_behind": 18000,
+    "name": "Jonas Kind Høydahl"
+  },
+  {
+    "id": 28997,
+    "race_id": 71,
+    "race_name": "Ringerike enduro",
+    "class": "M13-14",
+    "final_rank": 3,
+    "acc_time_ms": 579000,
+    "acc_time_behind": 46000,
+    "name": "Jo Røisli"
+  },
+  {
+    "id": 28998,
+    "race_id": 71,
+    "race_name": "Ringerike enduro",
+    "class": "M13-14",
+    "final_rank": 4,
+    "acc_time_ms": 590000,
+    "acc_time_behind": 57000,
+    "name": "Edvin Almaas-Edvardsen"
+  },
+  {
+    "id": 28999,
+    "race_id": 71,
+    "race_name": "Ringerike enduro",
+    "class": "M13-14",
+    "final_rank": 5,
+    "acc_time_ms": 643000,
+    "acc_time_behind": 110000,
+    "name": "Brage Lidsheim"
+  },
+  {
+    "id": 29000,
+    "race_id": 71,
+    "race_name": "Ringerike enduro",
+    "class": "M13-14",
+    "final_rank": 6,
+    "acc_time_ms": 749000,
+    "acc_time_behind": 216000,
+    "name": "Lasse Jenserud"
+  },
+  {
+    "id": 29001,
+    "race_id": 71,
+    "race_name": "Ringerike enduro",
+    "class": "M13-14",
+    "final_rank": 7,
+    "acc_time_ms": 0,
+    "acc_time_behind": 0,
+    "name": "Jonathan Lothe"
+  },
+  {
+    "id": 29002,
+    "race_id": 71,
+    "race_name": "Ringerike enduro",
+    "class": "M13-14",
+    "final_rank": 8,
+    "acc_time_ms": 0,
+    "acc_time_behind": 0,
+    "name": "Marcus Arnesen"
+  },
+  {
+    "id": 29011,
+    "race_id": 71,
+    "race_name": "Ringerike enduro",
+    "class": "M15-16",
+    "final_rank": 1,
+    "acc_time_ms": 496000,
+    "acc_time_behind": 0,
+    "name": "Theodor Bakken"
+  },
+  {
+    "id": 29012,
+    "race_id": 71,
+    "race_name": "Ringerike enduro",
+    "class": "M15-16",
+    "final_rank": 2,
+    "acc_time_ms": 524000,
+    "acc_time_behind": 28000,
+    "name": "Mikkel Pedersen"
+  },
+  {
+    "id": 29013,
+    "race_id": 71,
+    "race_name": "Ringerike enduro",
+    "class": "M15-16",
+    "final_rank": 2,
+    "acc_time_ms": 524000,
+    "acc_time_behind": 28000,
+    "name": "Kevin Scott Johnsen"
+  },
+  {
+    "id": 29014,
+    "race_id": 71,
+    "race_name": "Ringerike enduro",
+    "class": "M15-16",
+    "final_rank": 4,
+    "acc_time_ms": 527000,
+    "acc_time_behind": 31000,
+    "name": "Alexander Bredesen"
+  },
+  {
+    "id": 29016,
+    "race_id": 71,
+    "race_name": "Ringerike enduro",
+    "class": "M15-16",
+    "final_rank": 5,
+    "acc_time_ms": 592000,
+    "acc_time_behind": 96000,
+    "name": "Even Olav Sandberg"
+  },
+  {
+    "id": 29015,
+    "race_id": 71,
+    "race_name": "Ringerike enduro",
+    "class": "M15-16",
+    "final_rank": 6,
+    "acc_time_ms": 623000,
+    "acc_time_behind": 127000,
+    "name": "Thorstein Johansen"
+  },
+  {
+    "id": 29017,
+    "race_id": 71,
+    "race_name": "Ringerike enduro",
+    "class": "M15-16",
+    "final_rank": 7,
+    "acc_time_ms": 638000,
+    "acc_time_behind": 142000,
+    "name": "Sigurd Bjørndalen Mathisen"
+  },
+  {
+    "id": 29018,
+    "race_id": 71,
+    "race_name": "Ringerike enduro",
+    "class": "M15-16",
+    "final_rank": 8,
+    "acc_time_ms": 701000,
+    "acc_time_behind": 205000,
+    "name": "Jo Randar Holmøy"
   },
   {
     "id": 29037,
@@ -9000,16 +8670,6 @@
     "name": "Anders Skarstein"
   },
   {
-    "id": 29298,
-    "race_id": 71,
-    "race_name": "Ringerike enduro",
-    "class": "Menn senior",
-    "final_rank": 8,
-    "acc_time_ms": 1120000,
-    "acc_time_behind": 125000,
-    "name": "Erlend Hegrum Askjer"
-  },
-  {
     "id": 29294,
     "race_id": 71,
     "race_name": "Ringerike enduro",
@@ -9018,6 +8678,16 @@
     "acc_time_ms": 1120000,
     "acc_time_behind": 125000,
     "name": "Kristoffer Ylven Westgaard"
+  },
+  {
+    "id": 29298,
+    "race_id": 71,
+    "race_name": "Ringerike enduro",
+    "class": "Menn senior",
+    "final_rank": 8,
+    "acc_time_ms": 1120000,
+    "acc_time_behind": 125000,
+    "name": "Erlend Hegrum Askjer"
   },
   {
     "id": 29295,
@@ -9260,16 +8930,6 @@
     "name": "Tobias Bjerknes"
   },
   {
-    "id": 29315,
-    "race_id": 71,
-    "race_name": "Ringerike enduro",
-    "class": "Menn senior",
-    "final_rank": 34,
-    "acc_time_ms": 1299000,
-    "acc_time_behind": 304000,
-    "name": "Stian Eilifsen"
-  },
-  {
     "id": 29314,
     "race_id": 71,
     "race_name": "Ringerike enduro",
@@ -9278,6 +8938,16 @@
     "acc_time_ms": 1299000,
     "acc_time_behind": 304000,
     "name": "Joakim Melby"
+  },
+  {
+    "id": 29315,
+    "race_id": 71,
+    "race_name": "Ringerike enduro",
+    "class": "Menn senior",
+    "final_rank": 34,
+    "acc_time_ms": 1299000,
+    "acc_time_behind": 304000,
+    "name": "Stian Eilifsen"
   },
   {
     "id": 29318,
