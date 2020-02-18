@@ -9,7 +9,7 @@ const data = deepFreeze(JSON.parse(fs.readFileSync(path.join(__dirname, '../data
 const r = mapper(data)
 
 tap.test('maps to classes', (t) => {
-  t.equals(r.length, 10, 'all classes in toplevel')
+  t.equals(r.length, 7, 'all classes in toplevel')
   t.end()
 })
 
