@@ -20,10 +20,6 @@ function mapToSeriesTotals(data) {
     resultsForClass.forEach(result => {
       const found = riderRows.findIndex(r => r.name === result.name)
 
-      if(result.name === 'Knut Haugen') {
-        console.log(`adding race ${result.race_name}`)
-      }
-
       if(found !== -1) {
         riderRows[found].races.push({
           name: result.race_name,

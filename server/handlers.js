@@ -167,7 +167,8 @@ async function seriesHandler (req) {
 
   const allRaces = await db.racesBySeriesAndYear(race.series, race.year)
   const results = seriesMapper(allRaces)
-
+  const sortedClasses = results.map(r => r.name).sort()
+  console.log(sortedClasses)
   const series = {
     name: race.series,
     year: race.year,
@@ -177,6 +178,7 @@ async function seriesHandler (req) {
     status: 200,
     series,
     results,
+    sortedClasses,
     race,
     backdrop: true,
     active: 'ritt',
