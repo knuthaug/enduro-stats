@@ -1,8 +1,15 @@
 {{#if series.name}}
   <div class="row">
     <div class="col-12">
-      <h2>Sammenlagtresultater for {{series.name}} {{series.year}}</h2>
+      <h2>{{series.name}} {{series.year}} sammenlagt</h2>
       {{#each sortedClasses}}<a class="btn btn-outline-light mr-1 mt-2" title="Hopp til resultater for {{this}}" href="#{{this}}">{{this}}</a> {{/each}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">Sammenlagt er beregnet med maksimalt 4 tellende ritt og samme poengskala som (i det minste) Østafjells-serien brukte i 2019.Det kan være små forskjeller rundt hvordan det faktisk ble beregnet et gitt år, men disse sidene bruker samme metode for alle år, og begge serier. Explorer og funduro-klasser er ikke med i sammenlagt-beregningene.</div>
+  </div>
+  <div class="row">
+    <div class="col-12">
       {{#each results}}
         <h3><a name="{{name}}">{{name}}</a></h3>
         <table class="table table-dark table-borderless table-striped table-sm main-table">
