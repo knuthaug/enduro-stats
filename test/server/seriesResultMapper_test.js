@@ -22,12 +22,12 @@ tap.test('sorts by overall placements', (t) => {
   t.equals(r[0].entries[0].totalPoints, 2000, 'entries have total points')
   t.equals(r[0].entries[0].races.length, 6, 'all races in row, also not participated')
   t.deepEquals(r[0].entries[0].races, [
-    { name: 'Telemark enduro', rank: 1 , points: 500},
-    { name: 'Traktorland enduro', rank: 1, points: 500 },
+    { name: 'Telemark enduro', rank: 1 , totalInClass: 4, points: 500},
+    { name: 'Traktorland enduro', rank: 1, totalInClass: 4, points: 500 },
     { name: 'DrammEnduro', rank: 0, points: 0 },
-    { name: 'Oslo enduro', rank: 1, points: 500 },
-    { name: 'Hakadal enduro', rank: 1, points: 500},
-    { name: 'Ringerike enduro', rank: 1, points: 500 },
+    { name: 'Oslo enduro', rank: 1, totalInClass: 5, points: 500 },
+    { name: 'Hakadal enduro', rank: 1, totalInClass: 4, points: 500},
+    { name: 'Ringerike enduro', rank: 1, totalInClass: 8, points: 500 },
   ], 'all races in row, also not participated')
 
   t.equals(r[0].entries[1].avgRank, 1.5, 'entries have avg. rank')

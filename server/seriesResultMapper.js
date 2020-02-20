@@ -24,6 +24,7 @@ function mapToSeriesTotals(data) {
         riderRows[found].races.push({
           name: result.race_name,
           rank: result.final_rank,
+          totalInClass: totalInClass(resultsForClass, result.race_name),
           points: pointsForClass(className, result.final_rank)
         })
       } else {
@@ -31,6 +32,7 @@ function mapToSeriesTotals(data) {
           {
             name: result.race_name,
             rank: result.final_rank,
+            totalInClass: totalInClass(resultsForClass, result.race_name),
             points: pointsForClass(className, result.final_rank)
           }
         ]})
@@ -78,6 +80,10 @@ function mapToSeriesTotals(data) {
   })
 
   return mapping
+}
+
+function totalInClass(results, name) {
+  return results.filter(r => r.race_name === name).length
 }
 
 function indexOfSmallest(array) {
