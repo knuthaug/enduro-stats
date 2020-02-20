@@ -2,6 +2,7 @@ const log = require('./log')
 const Db = require('./db')
 const resultViewMapper = require('./resultViewMapper')
 const fullResultViewMapper = require('./fullResultViewMapper')
+const seriesMapper = require('./seriesResultMapper.js')
 const raceViewMapper = require('./raceViewMapper.js')
 const { riderViewMapper } = require('./riderViewMapper')
 const compareAsc = require('date-fns/compare_asc')
@@ -153,6 +154,36 @@ async function raceHandler (req) {
     active: 'ritt',
     docTitle: `${race.name} ${race.year} : Norsk enduro`,
     description: `Resultater og statistikk for ${race.name} ${race.year}`
+  }
+}
+
+async function seriesHandler (req) {
+  log.debug(`request for ${req.path}`)
+  const race = await db.findRace(req.params.uid)
+
+  if (!race.id) {
+    return { status: 404 }
+  }
+
+  const allRaces = await db.racesBySeriesAndYear(race.series, race.year)
+  const results = seriesMapper(allRaces)
+  const sortedClasses = results.map(r => r.name).sort()
+
+  const series = {
+    name: race.series,
+    year: race.year,
+  }
+
+  return {
+    status: 200,
+    series,
+    results,
+    sortedClasses,
+    race,
+    backdrop: true,
+    active: 'ritt',
+    docTitle: `${series.name} ${series.year} : Norsk enduro`,
+    description: `Sammenlagtresultater for  ${series.name} ${series.year}`
   }
 }
 
@@ -458,5 +489,6 @@ module.exports = {
   rankHandler,
   manifestHandler,
   mapHandler,
-  calendarHandler
+  calendarHandler,
+  seriesHandler
 }

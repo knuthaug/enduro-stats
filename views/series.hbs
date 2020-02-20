@@ -1,0 +1,49 @@
+{{#if series.name}}
+  <div class="row">
+    <div class="col-12">
+      <h2>{{series.name}} {{series.year}} sammenlagt</h2>
+      {{#each sortedClasses}}<a class="btn btn-outline-light mr-1 mt-2" title="Hopp til resultater for {{this}}" href="#{{this}}">{{this}}</a> {{/each}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">Sammenlagt er beregnet med maksimalt 4 tellende ritt og samme poengskala som (i det minste) Østafjells-serien brukte i 2019. Det kan være små forskjeller rundt hvordan det faktisk ble beregnet et gitt år, men disse sidene bruker samme metode for alle år, og begge serier. Explorer og funduro-klasser er ikke med i sammenlagt-beregningene.</div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      {{#each results}}
+        <h3><a name="{{name}}">{{name}}</a></h3>
+        <table class="table table-dark table-borderless table-striped table-sm main-table">
+          <thead>
+            <th scope="col" data-sortable-type="numeric">Plass</th>
+            <th scope="col">Navn</th>
+            {{#each allRaces}}
+              <th scope="col" data-sortable-type="numeric">{{this}}</th>
+            {{/each}}
+            <th>Totalt</th>
+          </thead>
+          <tbody>
+            {{#each entries}}
+              <tr>
+                <td>{{inc @index}}</td>
+                <td><a href="/rytter/{{uid}}">{{name}}</a></td>
+                {{#each races}}
+                  <td>{{#compare rank '===' 0}}-{{else}}{{../points}} <span class="stagerank">({{../rank}}/{{../totalInClass}})</span>{{/compare}}</td>
+                {{/each}}
+                <td>{{totalPoints}}</td>
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      {{/each}}
+    </div>
+  </div>
+{{else}}
+<div class="row">
+  <div class="col-2">
+  </div>
+  <div class="col-10">
+    <p>Beklager, den serien fant vi ikke. Sikker på at url er riktig?</p>
+  </div>
+</div>
+
+{{/if}}

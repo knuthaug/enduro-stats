@@ -1,18 +1,18 @@
 Pos klasse;bib;Category;First Name;Surname;Team;Time;Gap;Penalties;FE 1 Time;FE 1 Pos;FE 2 Time;FE 2 Pos;FE 3 Time;FE 3 Pos;gender
-1;144;G15-16;Falk;Håkenstad-Bråten;Lillehammer CK;00:20:58;;;00:06:09;1;00:05:48;1;00:09:01;1;M
-2;150;G15-16;William;Scheele;SK Rye;00:21:58;+00:01:00;;00:06:24;3;00:06:18;2;00:09:16;2;M
-3;148;G15-16;Mikkel;Pedersen;IF Frøy;00:22:24;+00:01:26;;00:06:17;2;00:06:31;3;00:09:36;3;M
-4;151;G15-16;Erik;Tønnessen;Mck;00:22:52;+00:01:54;;00:06:34;4;00:06:32;5;00:09:46;4;M
-5;140;G15-16;Kevin;Scott Johnsen ;;00:23:50;+00:02:52;;00:06:46;6;00:06:42;6;00:10:22;6;M
-6;145;G15-16;Theodor;Bakken;Aron SK;00:23:58;+00:03:00;;00:07:02;7;00:06:51;7;00:10:05;5;M
-7;146;G15-16;Emil;Aabye;Team Sykleriet;00:24:01;+00:03:03;;00:06:39;5;00:06:31;3;00:10:51;9;M
-8;149;G15-16;Alexander;Sandengen;Kongen's berg sti og landeveis røvere;00:24:50;+00:03:52;;00:07:08;9;00:06:58;8;00:10:44;8;M
-9;147;G15-16;William;Rø;;00:25:21;+00:04:23;;00:07:02;7;00:07:39;11;00:10:40;7;M
-10;143;G15-16;Oscar;Saksvik;Asker CK;00:25:36;+00:04:38;;00:07:21;10;00:07:06;9;00:11:09;10;M
-11;153;G15-16;Petter;Brochmann;CK Nittedal;00:26:35;+00:05:37;;00:07:22;11;00:07:18;10;00:11:55;11;M
-12;154;G15-16;Sebastien;Amat Finstad;Nittedal CK;00:27:23;+00:06:25;;00:07:36;12;00:07:50;12;00:11:57;12;M
-13;142;G15-16;Jonas;Øien Skare;Gauldal Sk;00:28:27;+00:07:29;;00:07:48;13;00:08:41;13;00:11:58;13;M
-14;152;G15-16;Even;Sandberg;Ck Nittedal;00:33:25;+00:12:27;;00:08:47;14;00:11:30;14;00:13:08;14;M
+1;144;M15-16;Falk;Håkenstad-Bråten;Lillehammer CK;00:20:58;;;00:06:09;1;00:05:48;1;00:09:01;1;M
+2;150;M15-16;William;Scheele;SK Rye;00:21:58;+00:01:00;;00:06:24;3;00:06:18;2;00:09:16;2;M
+3;148;M15-16;Mikkel;Pedersen;IF Frøy;00:22:24;+00:01:26;;00:06:17;2;00:06:31;3;00:09:36;3;M
+4;151;M15-16;Erik;Tønnessen;Mck;00:22:52;+00:01:54;;00:06:34;4;00:06:32;5;00:09:46;4;M
+5;140;M15-16;Kevin;Scott Johnsen ;;00:23:50;+00:02:52;;00:06:46;6;00:06:42;6;00:10:22;6;M
+6;145;M15-16;Theodor;Bakken;Aron SK;00:23:58;+00:03:00;;00:07:02;7;00:06:51;7;00:10:05;5;M
+7;146;M15-16;Emil;Aabye;Team Sykleriet;00:24:01;+00:03:03;;00:06:39;5;00:06:31;3;00:10:51;9;M
+8;149;M15-16;Alexander;Sandengen;Kongen's berg sti og landeveis røvere;00:24:50;+00:03:52;;00:07:08;9;00:06:58;8;00:10:44;8;M
+9;147;M15-16;William;Rø;;00:25:21;+00:04:23;;00:07:02;7;00:07:39;11;00:10:40;7;M
+10;143;M15-16;Oscar;Saksvik;Asker CK;00:25:36;+00:04:38;;00:07:21;10;00:07:06;9;00:11:09;10;M
+11;153;M15-16;Petter;Brochmann;CK Nittedal;00:26:35;+00:05:37;;00:07:22;11;00:07:18;10;00:11:55;11;M
+12;154;M15-16;Sebastien;Amat Finstad;Nittedal CK;00:27:23;+00:06:25;;00:07:36;12;00:07:50;12;00:11:57;12;M
+13;142;M15-16;Jonas;Øien Skare;Gauldal Sk;00:28:27;+00:07:29;;00:07:48;13;00:08:41;13;00:11:58;13;M
+14;152;M15-16;Even;Sandberg;Ck Nittedal;00:33:25;+00:12:27;;00:08:47;14;00:11:30;14;00:13:08;14;M
 1;118;Menn junior;Kristian;Holiman;rye;00:20:36;;;00:05:47;1;00:05:53;1;00:08:56;1;M
 2;117;Menn junior;Henrik;Langeland Nielsen;Kristiansand CK;00:22:09;+00:01:33;;00:06:10;2;00:06:14;4;00:09:45;4;M
 3;113;Menn junior;Jonas;Olsson;Sk Rye;00:22:14;+00:01:38;;00:06:22;3;00:06:10;3;00:09:42;3;M
@@ -102,31 +102,31 @@ DNF;64;Menn senior;Lars;Strømme;;;;;00:14:42;56;;;;;M
 5;7;Kvinner senior;Ida;Nærum;CK Nittedal;00:28:37;+00:05:44;;00:07:49;5;00:08:05;5;00:12:43;6;F
 6;14;Kvinner senior;Stine;Torgersbråten;Team Letth;00:30:48;+00:07:55;;00:08:51;7;00:09:16;6;00:12:41;5;F
 7;13;Kvinner senior;Tonje;Sameien;Team BIFF;00:33:04;+00:10:11;;00:08:36;6;00:09:52;7;00:14:36;7;F
-1;171;G10-12;Noah;Heieren;SK Rye;00:12:13;;;00:04:23;2;00:07:50;2;;;M
-2;172;G10-12;Einar Andreas S;Bjørn-Lian;Follo SK;00:13:18;;;00:05:01;6;00:08:17;3;;;M
-3;;G10-12;Bård;Gujord Røisli;CK Nittedal;00:13:20;;;00:04:57;5;00:08:23;4;;;M
-4;;G10-12;Mees;Van Weerdhuizen;IF Frøy;00:13:33;;;00:04:40;3;00:08:53;5;;;M
-5;;G10-12;Markus;Skeie-Lebreux;Ck Nittedal;00:13:49;;;00:07:09;11;00:06:40;1;;;M
-6;;G10-12;Kevin André;Vestli;Nes sykkelklubb;00:14:48;;;00:05:05;7;00:09:43;6;;;M
-7;;G10-12;Markus ;Bye Jacobsen;Frøy IL;00:15:16;;;00:04:54;4;00:10:22;7;;;M
-8;;G10-12;Frederic;Sandengen;Kongen's berg sti og landeveis røvere;00:16:05;;;00:05:30;8;00:10:35;8;;;M
-9;;G10-12;Joakim;Rø;;00:16:48;;;00:04:22;1;00:12:26;9;;;M
-10;;G10-12;Sigurd;Foss Andersen;CK Nittedal;00:18:54;;;00:06:13;9;00:12:41;10;;;M
-11;;G10-12;Sean;Ingvaldsen Engebretsen;Team Lapierre Norge;DNF;;;00:06:58;10;00:00:00;DNF;;;M
-1;;G13-14;Ludvig;Strand;Heming;00:10:59;;;00:04:00;1;00:06:59;1;;;M
-2;;G13-14;Jo;Gujord Røisli;CK Nittedal;00:11:16;;;00:04:11;3;00:07:05;2;;;M
-3;;G13-14;Eirik;Ølnes Ødegårdstuen;SK Rye;00:11:31;;;00:04:04;2;00:07:27;3;;;M
-4;;G13-14;Brage;Lidsheim;CK Nittedal;00:12:00;;;00:04:19;4;00:07:41;5;;;M
-5;;G13-14;Torben;Hjelset;CK Nittedal;00:12:12;;;00:04:23;5;00:07:49;6;;;M
-6;;G13-14;Anders;Kvalheim;SK Rye;00:12:26;;;00:04:50;10;00:07:36;4;;;M
-7;;G13-14;Edvin;Almaas-Edvardsen;;00:12:37;;;00:04:45;7;00:07:52;7;;;M
-8;;G13-14;Per Øystein;Ås;Mandal Sykkelklubb;00:13:17;;;00:04:34;6;00:08:43;8;;;M
-9;;G13-14;Marius;Fenstad Skjærstad;SK Rye;00:14:26;;;00:04:59;13;00:09:27;9;;;M
-10;;G13-14;Jesper;Skalmerud;SK Rye;00:14:37;;;00:04:51;11;00:09:46;11;;;M
-11;;G13-14;Øystein;Berntzen;SK Rye;00:14:45;;;00:04:56;12;00:09:49;12;;;M
-12;;G13-14;Fredrik;Solberg Hernes;Nes SK;00:14:54;;;00:05:14;14;00:09:40;10;;;M
-13;;G13-14;William;Smith;SK Rye;00:16:16;;;00:05:54;15;00:10:22;13;;;M
-14;;G13-14;Jonas;Urianstad Bertelsen;;DNF;;;00:04:47;8;DNF;;;;M
-15;;G13-14;Sebastian;Halvorsen;Team Lapierre Norge;DNF;;;00:04:49;9;DNF;;;;M
-16;;G13-14;Mathias;Johansen;Team Lapierre Norge;DNF;;;00:13:40;16;DNF;;;;M
-17;;G13-14;Henrik;Braaten;CK Nittedal;DNF;;;DNF;;DNF;;;;M
+1;171;M11-12;Noah;Heieren;SK Rye;00:12:13;;;00:04:23;2;00:07:50;2;;;M
+2;172;M11-12;Einar Andreas S;Bjørn-Lian;Follo SK;00:13:18;;;00:05:01;6;00:08:17;3;;;M
+3;;M11-12;Bård;Gujord Røisli;CK Nittedal;00:13:20;;;00:04:57;5;00:08:23;4;;;M
+4;;M11-12;Mees;Van Weerdhuizen;IF Frøy;00:13:33;;;00:04:40;3;00:08:53;5;;;M
+5;;M11-12;Markus;Skeie-Lebreux;Ck Nittedal;00:13:49;;;00:07:09;11;00:06:40;1;;;M
+6;;M11-12;Kevin André;Vestli;Nes sykkelklubb;00:14:48;;;00:05:05;7;00:09:43;6;;;M
+7;;M11-12;Markus ;Bye Jacobsen;Frøy IL;00:15:16;;;00:04:54;4;00:10:22;7;;;M
+8;;M11-12;Frederic;Sandengen;Kongen's berg sti og landeveis røvere;00:16:05;;;00:05:30;8;00:10:35;8;;;M
+9;;M11-12;Joakim;Rø;;00:16:48;;;00:04:22;1;00:12:26;9;;;M
+10;;M11-12;Sigurd;Foss Andersen;CK Nittedal;00:18:54;;;00:06:13;9;00:12:41;10;;;M
+11;;M11-12;Sean;Ingvaldsen Engebretsen;Team Lapierre Norge;DNF;;;00:06:58;10;00:00:00;DNF;;;M
+1;;M13-14;Ludvig;Strand;Heming;00:10:59;;;00:04:00;1;00:06:59;1;;;M
+2;;M13-14;Jo;Gujord Røisli;CK Nittedal;00:11:16;;;00:04:11;3;00:07:05;2;;;M
+3;;M13-14;Eirik;Ølnes Ødegårdstuen;SK Rye;00:11:31;;;00:04:04;2;00:07:27;3;;;M
+4;;M13-14;Brage;Lidsheim;CK Nittedal;00:12:00;;;00:04:19;4;00:07:41;5;;;M
+5;;M13-14;Torben;Hjelset;CK Nittedal;00:12:12;;;00:04:23;5;00:07:49;6;;;M
+6;;M13-14;Anders;Kvalheim;SK Rye;00:12:26;;;00:04:50;10;00:07:36;4;;;M
+7;;M13-14;Edvin;Almaas-Edvardsen;;00:12:37;;;00:04:45;7;00:07:52;7;;;M
+8;;M13-14;Per Øystein;Ås;Mandal Sykkelklubb;00:13:17;;;00:04:34;6;00:08:43;8;;;M
+9;;M13-14;Marius;Fenstad Skjærstad;SK Rye;00:14:26;;;00:04:59;13;00:09:27;9;;;M
+10;;M13-14;Jesper;Skalmerud;SK Rye;00:14:37;;;00:04:51;11;00:09:46;11;;;M
+11;;M13-14;Øystein;Berntzen;SK Rye;00:14:45;;;00:04:56;12;00:09:49;12;;;M
+12;;M13-14;Fredrik;Solberg Hernes;Nes SK;00:14:54;;;00:05:14;14;00:09:40;10;;;M
+13;;M13-14;William;Smith;SK Rye;00:16:16;;;00:05:54;15;00:10:22;13;;;M
+14;;M13-14;Jonas;Urianstad Bertelsen;;DNF;;;00:04:47;8;DNF;;;;M
+15;;M13-14;Sebastian;Halvorsen;Team Lapierre Norge;DNF;;;00:04:49;9;DNF;;;;M
+16;;M13-14;Mathias;Johansen;Team Lapierre Norge;DNF;;;00:13:40;16;DNF;;;;M
+17;;M13-14;Henrik;Braaten;CK Nittedal;DNF;;;DNF;;DNF;;;;M

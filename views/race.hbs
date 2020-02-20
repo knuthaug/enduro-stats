@@ -16,7 +16,7 @@
     </div>
     <div class="row">
       <div class="col-4 middle-align">{{race.date}} {{race.stages}} {{#compare race.stages '===' 1}}etappe{{else}}etapper{{/compare}} {{#if race.lat}}(<a href="/kart/{{race.uid}}">Etappedetaljer</a>) {{/if}}</div>
-      <div class="col-3 middle-align">{{> series race}}</div>
+      <div class="col-4 middle-align">{{> series race}}</div>
     </div>
     {{#if race.text}}
     <div class="row">
