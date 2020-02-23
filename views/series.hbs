@@ -6,7 +6,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-12">Sammenlagt er beregnet med maksimalt 4 tellende ritt og samme poengskala som (i det minste) Østafjells-serien brukte i 2019. Det kan være små forskjeller rundt hvordan det faktisk ble beregnet et gitt år, men disse sidene bruker samme metode for alle år, og begge serier. Explorer og funduro-klasser er ikke med i sammenlagt-beregningene.</div>
+    <div class="col-12">Sammenlagt er beregnet med maksimalt 4 tellende ritt og samme poengskala som (i det minste) Østafjells-serien brukte i 2019. Det kan være små forskjeller rundt hvordan det faktisk ble beregnet et gitt år, men disse sidene bruker samme metode for alle år, og begge serier. Explorer og funduro-klasser er ikke med i sammenlagt-beregningene.(Alle poeng for serien i året i parantes)</div>
   </div>
   <div class="row">
     <div class="col-12">
@@ -29,7 +29,7 @@
                 {{#each races}}
                   <td>{{#compare rank '===' 0}}-{{else}}{{../points}} <span class="stagerank">({{../rank}}/{{../totalInClass}})</span>{{/compare}}</td>
                 {{/each}}
-                <td>{{totalPoints}}</td>
+                <td>{{totalPoints}} <span class="stagerank">({{maxTotalPoints}})</span></td>
               </tr>
             {{/each}}
           </tbody>

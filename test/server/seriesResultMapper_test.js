@@ -20,6 +20,7 @@ tap.test('sorts by overall placements', (t) => {
   t.equals(r[0].entries[0].uid, '82cf4f5e7c6f14635da21560a8ba44d8', 'entries have uid')
   t.equals(r[0].entries[0].avgRank, 0.8333333333333334, 'entries have avg. rank')
   t.equals(r[0].entries[0].totalPoints, 2000, 'entries have total points')
+  t.equals(r[0].entries[0].maxTotalPoints, 2500, 'entries have maxtotal points')
   t.equals(r[0].entries[0].races.length, 6, 'all races in row, also not participated')
   t.deepEquals(r[0].entries[0].races, [
     { name: 'Telemark enduro', rank: 1 , totalInClass: 4, points: 500},
@@ -32,6 +33,7 @@ tap.test('sorts by overall placements', (t) => {
 
   t.equals(r[0].entries[1].avgRank, 1.5, 'entries have avg. rank')
   t.equals(r[0].entries[1].totalPoints, 1880, 'entries have total points')
+  t.equals(r[0].entries[1].maxTotalPoints, 2340, 'entries have maxtotal points')
   t.end() 
 })
 

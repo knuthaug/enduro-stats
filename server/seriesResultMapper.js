@@ -70,6 +70,10 @@ function mapToSeriesTotals(data) {
         return sum + value.points;
       }, 0)
 
+      r.maxTotalPoints = r.races.reduce(function (sum, value) {
+        return sum + value.points;
+      }, 0)
+
 
 
       return r
