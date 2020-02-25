@@ -23,7 +23,8 @@
           </thead>
           <tbody>
             {{#each entries}}
-              <tr>
+              <tr class="{{#compare @index '%' 2}}even{{else}}odd{{/compare}}">
+                <td data-sort="f"> {{> icon type='plus'}}</td>
                 <td>{{inc @index}}</td>
                 <td><a href="/rytter/{{uid}}">{{name}}</a></td>
                 {{#each races}}
@@ -31,16 +32,21 @@
                 {{/each}}
                 <td>{{totalPoints}} <span class="stagerank">({{maxTotalPoints}})</span></td>
               </tr>
+              <tr class="hide series-details">
+                <td colspan="10" id="rider-{{uid}}">
+                  
+                </td>
+              </tr>
             {{/each}}
           </tbody>
         </table>
       {{/each}}
     </div>
   </div>
+  <script src="/assets/js/{{hashedAssets 'series.js'}}" crossorigin="anonymous"></script>
 {{else}}
 <div class="row">
-  <div class="col-2">
-  </div>
+  <div class="col-2"></div>
   <div class="col-10">
     <p>Beklager, den serien fant vi ikke. Sikker på at url er riktig?</p>
   </div>

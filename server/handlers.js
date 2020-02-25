@@ -95,6 +95,11 @@ async function compareHandler (req) {
   }
 }
 
+async function riderSeriesHandler(req) {
+  const riders = req.query.rider
+  return []
+}
+
 async function compareGraphHandler (req) {
   const riders = req.query.riders
   const race = req.query.race
@@ -490,5 +495,6 @@ module.exports = {
   manifestHandler,
   mapHandler,
   calendarHandler,
-  seriesHandler
+  seriesHandler,
+  riderSeriesHandler
 }

@@ -16,7 +16,8 @@ module.exports = {
     riders: './src/js/riders.js',
     compare: './src/js/compare.js',
     rank: './src/js/rank.js',
-    map: './src/js/map.js'
+    map: './src/js/map.js',
+    series: './src/js/series.js'
   },
   output: {
     filename: '[name]-[chunkhash].js',
