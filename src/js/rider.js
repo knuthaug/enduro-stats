@@ -223,10 +223,10 @@ async function updateColumnGraph(chart, data, graph, id) {
   document.getElementById('hidden-graph-text').classList.toggle('invisible')
   chart.destroy()
   Highcharts.chart(id, {
-    chart: {
+    chart: Object.assign({
         type: 'column',
         zoomType: 'xy'
-    },
+    }, charts.chartOptions()),
     title: {
         text: 'Tid bak (%) per etappe'
     },
@@ -249,7 +249,7 @@ async function updateColumnGraph(chart, data, graph, id) {
       headerFormat: '<b>{series.name}</b><br>',
       pointFormat: '{point.y} % bak'
     },
-    series: data.series, 
+    series: data.series,
     responsive: {
       rules: [{
         condition: {
