@@ -1,199 +1,3 @@
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=14310;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=12133;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=7328;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=20841;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=17627;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=7389;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=2054;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=9007;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=4938;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=25694;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=19825;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=26942;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=10431;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=8792;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=13281;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=21147;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=14322;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=26935;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=23451;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=10140;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=25726;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=12079;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=25384;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=26948;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=17729;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=26983;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=21006;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=13226;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=13230;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=21247;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=19851;
-UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com' where id=26927;
-UPDATE riders set byline_text='Ola Morken', byline_url='' where id=33;
-UPDATE riders set byline_text='Ola Morken', byline_url='' where id=20390;
-UPDATE riders set byline_text='Ola Morken', byline_url='' where id=25685;
-UPDATE riders set byline_text='Ola Morken', byline_url='' where id=20426;
-UPDATE riders set byline_text='Ola Morken', byline_url='' where id=25727;
-UPDATE riders set byline_text='Ola Morken', byline_url='' where id=21215;
-UPDATE riders set byline_text='Ola Morken', byline_url='' where id=11401;
-UPDATE riders set byline_text='Ola Morken', byline_url='' where id=19827;
-UPDATE riders set byline_text='Ola Morken', byline_url='' where id=13282;
-UPDATE riders set byline_text='Ola Morken', byline_url='' where id=25730;
-UPDATE riders set byline_text='Ola Morken', byline_url='' where id=16923;
-UPDATE riders set byline_text='Ola Morken', byline_url='' where id=19045;
-UPDATE riders set byline_text='Ola Morken', byline_url='' where id=9545;
-UPDATE riders set byline_text='Ola Morken', byline_url='' where id=10446;
-UPDATE riders set byline_text='Ola Morken', byline_url='' where id=21051;
-UPDATE riders set byline_text='Ola Morken', byline_url='' where id=17731;
-UPDATE riders set byline_text='Ola Morken', byline_url='' where id=11394;
-UPDATE riders set byline_text='Ola Morken', byline_url='' where id=19;
-UPDATE riders set byline_text='Ola Morken', byline_url='' where id=1658;
-UPDATE riders set byline_text='Ola Morken', byline_url='' where id=10411;
-UPDATE riders set byline_text='Ola Morken', byline_url='' where id=16929;
-UPDATE riders set byline_text='Ola Morken', byline_url='' where id=25724;
-UPDATE riders set byline_text='Ola Morken', byline_url='' where id=25631;
-UPDATE riders set byline_text='Ola Morken', byline_url='' where id=11404;
-UPDATE riders set byline_text='Ola Morken', byline_url='' where id=21037;
-UPDATE riders set byline_text='Ola Morken', byline_url='' where id=25661;
-UPDATE riders set byline_text='Ola Morken', byline_url='' where id=25658;
-UPDATE riders set byline_text='Ola Morken', byline_url='' where id=15996;
-UPDATE riders set byline_text='Ola Morken', byline_url='' where id=21224;
-UPDATE riders set byline_text='Ola Morken', byline_url='' where id=25692;
-UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=12084;
-UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=17288;
-UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=13718;
-UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=24448;
-UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=6000;
-UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=3641;
-UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=11408;
-UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=24424;
-UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=10378;
-UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=5675;
-UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=11385;
-UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=21216;
-UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=12085;
-UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=7432;
-UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=21;
-UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=10430;
-UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=241;
-UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=13233;
-UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=13227;
-UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=16922;
-UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=15523;
-UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=13736;
-UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=21223;
-UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=24384;
-UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=9515;
-UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=23479;
-UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=5692;
-UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=5860;
-UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=2018;
-UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=20393;
-UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=7325;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=25646;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=16084;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=5243;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=28521;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=28525;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=5992;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=28516;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=7443;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=24380;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=20397;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=28510;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=3750;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=10156;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=13232;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=28505;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=23506;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=27326;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=16644;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=21092;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=28588;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=25375;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=5189;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=13746;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=3109;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=29020;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=21157;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=28569;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=13248;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=984;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=9022;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=28591;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=28587;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=1311;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=28584;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=21144;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=21127;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=3139;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=150;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=9048;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=24456;
-UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=2;
-UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=12584;
-UPDATE riders set byline_text='Moldestad Photography', byline_url='https://www.facebook.com/moldestadphotography/' where id=19838;
-UPDATE riders set byline_text='Moldestad Photography', byline_url='https://www.facebook.com/moldestadphotography/' where id=15520;
-UPDATE riders set byline_text='Moldestad Photography', byline_url='https://www.facebook.com/moldestadphotography/' where id=21059;
-UPDATE riders set byline_text='Moldestad Photography', byline_url='https://www.facebook.com/moldestadphotography/' where id=20436;
-UPDATE riders set byline_text='Moldestad Photography', byline_url='https://www.facebook.com/moldestadphotography/' where id=21080;
-UPDATE riders set byline_text='Moldestad Photography', byline_url='https://www.facebook.com/moldestadphotography/' where id=3145;
-UPDATE riders set byline_text='Moldestad Photography', byline_url='https://www.facebook.com/moldestadphotography/' where id=2802;
-UPDATE riders set byline_text='Moldestad Photography', byline_url='https://www.facebook.com/moldestadphotography/' where id=14457;
-UPDATE riders set byline_text='Moldestad Photography', byline_url='https://www.facebook.com/moldestadphotography/' where id=20469;
-UPDATE riders set byline_text='Moldestad Photography', byline_url='https://www.facebook.com/moldestadphotography/' where id=17677;
-UPDATE riders set byline_text='Moldestad Photography', byline_url='https://www.facebook.com/moldestadphotography/' where id=17293;
-UPDATE riders set byline_text='Moldestad Photography', byline_url='https://www.facebook.com/moldestadphotography/' where id=14379;
-UPDATE riders set byline_text='Moldestad Photography', byline_url='https://www.facebook.com/moldestadphotography/' where id=21211;
-UPDATE riders set byline_text='Moldestad Photography', byline_url='https://www.facebook.com/moldestadphotography/' where id=21012;
-UPDATE riders set byline_text='Moldestad Photography', byline_url='https://www.facebook.com/moldestadphotography/' where id=21206;
-UPDATE riders set byline_text='Moldestad Photography', byline_url='https://www.facebook.com/moldestadphotography/' where id=21197;
-UPDATE riders set byline_text='Moldestad Photography', byline_url='https://www.facebook.com/moldestadphotography/' where id=21161;
-UPDATE riders set byline_text='Moldestad Photography', byline_url='https://www.facebook.com/moldestadphotography/' where id=14461;
-UPDATE riders set byline_text='Moldestad Photography', byline_url='https://www.facebook.com/moldestadphotography/' where id=21035;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=21227;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=27249;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=27262;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=27263;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=15460;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=27290;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=3741;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=27288;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=27286;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=13548;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=17695;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=11386;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=13713;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=8783;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=17651;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=4867;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=27336;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=27330;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=20861;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=26981;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=10443;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=27318;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=27327;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=1307;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=24235;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=27329;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=8766;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=27332;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=27303;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=14332;
-UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/' where id=1633;
-UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=27870;
-UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=2007;
-UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=10459;
-UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=3812;
-UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=5947;
-UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=17673;
-UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=19836;
-UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=11;
-UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=22692;
-UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=7406;
-UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/' where id=27988;
 UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where uid='c83a2e5df66e1fb735b8455b74d2fc33';/*Ida Rydland Nærum */
 UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where uid='105fe7e9a0446b152bef347939aeba57';/*Stina Bondehagen*/
 UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/' where uid='68d45c425da0980ebef63c793f1fb710';/*Elise Marie Bugge*/
@@ -618,3 +422,33 @@ UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.c
 UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/', image_mode='portrait' where uid='bffe54938edad11c3685a65134d6d22d';/*Kristian Holiman*/
 UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/', image_mode='portrait' where uid='a172731a425bc3ac42898c244ccf2d23';/*Andreas Aalby*/
 UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/', image_mode='landscape' where uid='a896e2f8946354a721288f22bb1db8d0';/*Stine Torgersbråten*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='580989781ef60d13a801dd06bb34f89f';/*Christian Erga*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='35f97e6b784ecc2fda7f9c0f02053056';/*Andreas Moen Arnet*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='4cc3df64184907e00a4f5f51552f9893';/*Stian Eilifsen*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='240ec0d7fbe49c09615a886b92533cfe';/*Christoffer Borge Olsen*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='55ab1abfe1031192a73f2f9e349d2e62';/*Rune Høydahl*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='aa03112484247348ac0db80d934ac73a';/*Peter Seidel*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='df1606177db6c15f82e20f38b38dde7e';/*Gard Brovold*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='18ba904106ed191dbef3333629071b36';/*Kristian Dyrset*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='16b446195eef40a85ceb929502af31cc';/*Fredrik Hansen*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='917b8aa90fadc8873d0de2baf705dcf8';/*Henrik Sandaker Palm*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='dfcbc532f27e39bc67f80292a4f33192';/*Stig Ove Simensen*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='fb2215fa8f41cef19e5ee853ad76d10e';/*André Fjæra Bratli*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='8fba36664f3ce6fe993e2ff0f1ce3ce3';/*Kine Lidsheim*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='7544d68e13c20d3dc610488378f32160';/*Cecilie Bergli*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='6003566cd96a25d05c3542635f60224c';/*Nina Strand Ølnes*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='971e4d95db95e75fecab1fc834f0f530';/*Ottar Formodalen*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='8925b375a9febc5e94478b28f6957adf';/*Hans Jørgen Kvåle*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='00e9b981d9bb4f849a0b9c55f74dda81';/*Stein Kåre Øfjord*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='b0400c46142d0286e80dfcef5a562083';/*Kjetil Voldhaug*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='81b91d8a2225a60576347fd4c14682e0';/*Øyvind Hofseth*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='10d90365ba8dd12a611bebcce0967f3d';/*Kim-Erik Larsen*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='ccc0d626e182fa55ad38a0b33b7f7ab4';/*Frode Nysæter*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='5beb5e099b563980dfadf0ee5154f7bc';/*Sander Blom*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='277d992c84e20f737eef3161549bf944';/*Anders Johnsrud*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='b2087d15a9691d60bd59cdacc13f58e4';/*Per Jørgen Sletto*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='6d4e8780a94e45204c0683feff1a87d6';/*Leo Solland*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='0ab2f3c8cb4c8ca4104cad3deb5d0d3a';/*Iver Holiman*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='c7973e627bedc913db449439c5d798e1';/*Christopher Omtvedt*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='34eba0f95e3ca518aca6b341ca691dd7';/*Fredrik Holter*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='254d9322e8d1b1e56d32565d96bb038e';/*Thomas Kristiansen*/
