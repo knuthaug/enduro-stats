@@ -18,7 +18,7 @@
     "build:css": "postcss src/css/main.css -o server/dist/css/bundle.css && postcss server/dist/css/bundle.css -o server/dist/css/bundle.css && cp src/css/bootstrap* server/dist/css/ && cp src/css/sort-table.css server/dist/css/ && postcss server/dist/css/sort-table.css -o server/dist/css/sort-table.css",
     "build": "npm run clean && npm run build:js && npm run build:css",
     "lint": "standard --fix",
-    "dev": "dvlp --port 8000 index.js"
+    "dev": "dvlp --port 8080 index.js"
   },
   "repository": {
     "type": "git",
