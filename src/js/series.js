@@ -30,10 +30,8 @@ async function handleRowExpand(event) {
       .then(data => {
         row.setAttribute('data-results', JSON.stringify(data))
         data.forEach(d => {
-          console.log(d)
           const container = row.nextSibling.nextSibling.firstChild
-          console.log(container)
-          container.appendChild(h2(d.year))
+          container.appendChild(h2(`${d.year}`))
         })
       })
   }
