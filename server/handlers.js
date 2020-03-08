@@ -96,8 +96,11 @@ async function compareHandler (req) {
 }
 
 async function riderSeriesHandler(req) {
-  const riders = req.query.rider
-  return []
+  const rider = req.params.uid
+  const year = req.query.year
+  const series = req.query.series
+  const results = await db.allSeriesResultsForRider(rider)
+  return seriesMapper.mapToSeriesForRider(results)
 }
 
 async function compareGraphHandler (req) {
@@ -171,7 +174,7 @@ async function seriesHandler (req) {
   }
 
   const allRaces = await db.racesBySeriesAndYear(race.series, race.year)
-  const results = seriesMapper(allRaces)
+  const results = seriesMapper.mapToSeries(allRaces)
   const sortedClasses = results.map(r => r.name).sort()
 
   const series = {

@@ -23,7 +23,7 @@
           </thead>
           <tbody>
             {{#each entries}}
-              <tr class="{{#compare @index '%' 2}}even{{else}}odd{{/compare}}">
+              <tr data-uid="{{uid}}" class="{{#compare @index '%' 2}}even{{else}}odd{{/compare}}">
                 <td data-sort="f"> {{> icon type='plus'}}</td>
                 <td>{{inc @index}}</td>
                 <td><a href="/rytter/{{uid}}">{{name}}</a></td>
@@ -32,11 +32,7 @@
                 {{/each}}
                 <td>{{totalPoints}} <span class="stagerank">({{maxTotalPoints}})</span></td>
               </tr>
-              <tr class="hide series-details">
-                <td colspan="10" id="rider-{{uid}}">
-                  
-                </td>
-              </tr>
+              <tr class="hide series-details"><td colspan="10" id="rider-{{uid}}"></td></tr>
             {{/each}}
           </tbody>
         </table>

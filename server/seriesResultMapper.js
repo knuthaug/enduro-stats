@@ -1,7 +1,39 @@
 const compareAsc = require('date-fns/compare_asc')
 const parse = require('date-fns/parse')
 
-function mapToSeriesTotals(data) {
+function mapToSeriesForRider(data) {
+  const results = []
+
+  data.forEach(row => {
+    if(!results.find(r => r.year === row.race_year)) {
+      results.push({year: row.race_year, series: []})
+    }
+  })
+
+  results.forEach(r => {
+
+    ['80/20 enduro series', 'Østafjells enduroserie'].forEach(seriesName => {
+      const results = data.filter(row => row.race_year === r.year)
+            .filter(row => row.series === seriesName)
+            .map(row => {
+              return { raceName: row.race_name, rank: row.final_rank}
+            })
+
+      if(results.length > 0) {
+        r.series.push({
+          seriesName,
+          results
+        })
+      }
+    })
+  })
+
+  return results.filter(r => {
+    return r.series[0].results.length !== 0 || r.series[1].results.length !== 0
+  })
+}
+
+function mapToSeries(data) {
   const classes = [...new Set(data.map(r => r.class))]
   const raceNames = data
         .slice()
@@ -140,4 +172,7 @@ Array.min = function(array){
   return Math.min.apply(Math, array);
 }
 
-module.exports = mapToSeriesTotals
+module.exports = {
+  mapToSeries,
+  mapToSeriesForRider
+}
