@@ -55,7 +55,6 @@ tap.test('has all races as list on toplevel', (t) => {
 
 
 tap.test('maps to years', (t) => {
-  console.log(rRider[0].series[0])
   t.equals(rRider.length, 5, '5 years')
   t.equals(rRider[0].year, 2015, 'year in ascending order')
   t.equals(rRider[1].year, 2016, 'year in ascending order')
@@ -65,6 +64,7 @@ tap.test('maps to years', (t) => {
   t.equals(rRider[3].series[1].seriesName, 'Østafjells enduroserie', 'Østafjells second')
 
   t.equals(rRider[0].series[0].results.length, 5, 'all races in series for year')
+  t.equals(rRider[0].series[0].results[0].raceUid, '17251312d0557cd78a88ee4636b5c77d', 'all races in series for year')
 
   t.end()
 })

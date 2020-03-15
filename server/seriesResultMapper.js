@@ -16,7 +16,7 @@ function mapToSeriesForRider(data) {
       const results = data.filter(row => row.race_year === r.year)
             .filter(row => row.series === seriesName)
             .map(row => {
-              return { raceName: row.race_name, rank: row.final_rank}
+              return { raceName: row.race_name, raceUid: row.race_uid, rank: row.final_rank}
             })
 
       if(results.length > 0) {

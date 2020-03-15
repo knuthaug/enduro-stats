@@ -26,6 +26,10 @@ h2 {
   letter-spacing: 0.1rem;
 }
 
+h4.detail {
+  font-size: 115%;
+}
+
 th {
   letter-spacing: 0.08rem;
 }
@@ -161,7 +165,7 @@ a.toplink {
   display: block;
 }
 
-.race-details {
+.race-details, .series-details {
   transition: all 0.3s ease;
 }
 

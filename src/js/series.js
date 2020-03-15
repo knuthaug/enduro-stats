@@ -1,7 +1,7 @@
 const feather = require('feather-icons')
 const ui = require('./ui.js')
 
-const { h2 } = ui.create()
+const { h4, table, thead, tbody, th, tr, td, strong, a } = ui.create()
 
 document.addEventListener('DOMContentLoaded', function (event) {
   feather.replace()
@@ -31,9 +31,31 @@ async function handleRowExpand(event) {
         row.setAttribute('data-results', JSON.stringify(data))
         data.forEach(d => {
           const container = row.nextSibling.nextSibling.firstChild
-          container.appendChild(h2(`${d.year}`))
+          container.appendChild(h4({class: 'detail'}, `${d.year}`))
+          addTable(d, container)
         })
       })
   }
+}
 
+function addTable(data, container) {
+  container.appendChild(table([
+    tbody(
+      data.series.map(s => {
+        console.log(s)
+        return tr([
+          td([
+            strong([
+              a({href: `/serie/${s.results[0].raceUid}`}, `${s.seriesName}:`)
+            ])
+          ]),
+          ...s.results.map(r => {
+            return td([
+              a({href: `/ritt/${r.raceUid}`}, `${r.raceName}: ${r.rank}`)
+            ])
+          })
+        ])
+      })
+    )
+  ]))
 }

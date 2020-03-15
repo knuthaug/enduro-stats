@@ -100,6 +100,7 @@ async function riderSeriesHandler(req) {
   const year = req.query.year
   const series = req.query.series
   const results = await db.allSeriesResultsForRider(rider)
+  //return results
   return seriesMapper.mapToSeriesForRider(results)
 }
 
