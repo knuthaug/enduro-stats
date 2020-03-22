@@ -5,8 +5,10 @@ const deepFreeze = require('deep-freeze')
 
 const mapper = require('../../server/seriesResultMapper.js')
 const data = deepFreeze(JSON.parse(fs.readFileSync(path.join(__dirname, '../data/racesForSeries.json')).toString()))
+const riderData = deepFreeze(JSON.parse(fs.readFileSync(path.join(__dirname, '../data/series_for_rider.json')).toString()))
 
-const r = mapper(data)
+const r = mapper.mapToSeries(data)
+const rRider = mapper.mapToSeriesForRider(riderData)
 
 tap.test('maps to classes', (t) => {
   t.equals(r.length, 10, 'all classes in toplevel')
@@ -51,4 +53,19 @@ tap.test('has all races as list on toplevel', (t) => {
   t.end() 
 })
 
+
+tap.test('maps to years', (t) => {
+  t.equals(rRider.length, 2, '2 series')
+  t.equals(rRider[0].years[0].year, 2015, 'year in ascending order')
+  t.equals(rRider[1].years[0].year, 2018, 'year in ascending order')
+
+  t.equals(rRider[0].years.length, 5, 'one year for series ')
+  t.equals(rRider[0].years[0].races[0].raceName, '80/20 Luster enduro', '')
+  t.equals(rRider[1].years[1].races[0].raceName, 'Hakadal enduro', 'Østafjells second')
+
+  // t.equals(rRider[0].series[0].results.length, 5, 'all races in series for year')
+  // t.equals(rRider[0].series[0].results[0].raceUid, '17251312d0557cd78a88ee4636b5c77d', 'all races in series for year')
+
+  t.end()
+})
 

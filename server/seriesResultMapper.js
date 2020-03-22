@@ -1,7 +1,58 @@
 const compareAsc = require('date-fns/compare_asc')
 const parse = require('date-fns/parse')
 
-function mapToSeriesTotals(data) {
+function mapToSeriesForRider(data) {
+  const results = []
+
+  data.forEach(row => {
+    if(!results.find(r => r.series === row.series)) {
+      results.push({series: row.series, years: []})
+    }
+  })
+
+  const allYears = []
+  data.forEach(row => {
+    if(!allYears.find(y => y === row.race_year)) {
+      allYears.push(row.race_year)
+    }
+  })
+
+  allYears.forEach(year => {
+    data.filter(d => d.race_year === year).forEach(d => {
+      const resultIndex = results.findIndex(ri => ri.series === d.series)
+      if(results[resultIndex].years.length === 0) {
+        results[resultIndex].years.push({
+          year: d.race_year,
+          races: [{
+            raceName: d.race_name,
+            raceUid: d.race_uid,
+            rank: d.final_rank}]
+        })
+      } else {
+        const yearIndex = results[resultIndex].years.findIndex(y => year === y.year)
+        if(yearIndex === -1) {
+          results[resultIndex].years.push({
+            year: d.race_year,
+            races: [{
+              raceName: d.race_name,
+              raceUid: d.race_uid,
+              rank: d.final_rank}]
+          })
+        } else {
+          results[resultIndex].years[yearIndex].races.push({
+            raceName: d.race_name,
+            raceUid: d.race_uid,
+            rank: d.final_rank
+          })
+        }
+      }
+    })
+  })
+
+  return results
+}
+
+function mapToSeries(data) {
   const classes = [...new Set(data.map(r => r.class))]
   const raceNames = data
         .slice()
@@ -140,4 +191,7 @@ Array.min = function(array){
   return Math.min.apply(Math, array);
 }
 
-module.exports = mapToSeriesTotals
+module.exports = {
+  mapToSeries,
+  mapToSeriesForRider
+}
