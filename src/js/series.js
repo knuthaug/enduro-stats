@@ -1,7 +1,7 @@
 const feather = require('feather-icons')
 const ui = require('./ui.js')
 
-const { h4, table, thead, tbody, th, tr, td, strong, a } = ui.create()
+const { h4, table, thead, tbody, th, tr, td, strong, a, span } = ui.create()
 
 document.addEventListener('DOMContentLoaded', function (event) {
   feather.replace()
@@ -47,14 +47,14 @@ function addTable(data, container) {
   container.appendChild(table([
     tbody(
       data.years.map(year => {
-        console.log(year)
         return tr([
           td([strong(`${year.year}:`)]),
           ...year.races.map(r => {
             return td([
               a({href: `/ritt/${r.raceUid}`}, `${strip(r.raceName)}: ${r.rank}`)
             ])
-          })
+          }),
+          td([span(`snitt: ${(year.races.reduce((a, b) => { return a + b.rank }, 0) / year.races.length).toFixed(2)}`)])
         ])
       })
     )
