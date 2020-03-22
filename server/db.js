@@ -74,7 +74,7 @@ class Db {
   }
 
   async allSeriesResultsForRider(uid) {
-    const query = 'select id, race_id, (select name from races where race_id = id) as race_name, (select uid from races where race_id = id) as race_uid, (select year from races where race_id = id) as race_year, class, final_rank, acc_time_ms, acc_time_behind, (SELECT series from races where id = race_id) as series, (SELECT uid FROM riders where id = results.rider_id) as uid, (SELECT name FROM riders where id = results.rider_id) as name from results where race_id in (select id from races where (series = $1 OR series = $2)) AND class NOT ILIKE $3 AND class NOT ILIKE $4 AND final_rank IS NOT NULL AND (SELECT uid FROM riders where id = results.rider_id) = $5 order by race_year, class, series, final_rank'
+    const query = 'select id, race_id, (select name from races where race_id = id) as race_name, (select uid from races where race_id = id) as race_uid, (select year from races where race_id = id) as race_year, (select date from races where race_id = id) as race_date, class, final_rank, acc_time_ms, acc_time_behind, (SELECT series from races where id = race_id) as series, (SELECT uid FROM riders where id = results.rider_id) as uid, (SELECT name FROM riders where id = results.rider_id) as name from results where race_id in (select id from races where (series = $1 OR series = $2)) AND class NOT ILIKE $3 AND class NOT ILIKE $4 AND final_rank IS NOT NULL AND (SELECT uid FROM riders where id = results.rider_id) = $5 order by series, race_year, race_date, class, final_rank'
     const values = ['80/20 enduro series', 'Østafjells enduroserie', '%funduro%', '%explorer%', uid]
     return this.find(query, values)
   }

@@ -22,6 +22,7 @@ async function handleRowExpand(event) {
   let el = row.nextSibling.nextSibling
   el.classList.toggle('hide')
   const data = row.getAttribute('data-results')
+
   if(!data) {
     const uid = row.getAttribute('data-uid')
     fetch(`/api/series/rider/${uid}`)
@@ -31,27 +32,27 @@ async function handleRowExpand(event) {
         row.setAttribute('data-results', JSON.stringify(data))
         data.forEach(d => {
           const container = row.nextSibling.nextSibling.firstChild
-          container.appendChild(h4({class: 'detail'}, `${d.year}`))
+          container.appendChild(h4({class: 'detail'}, `${d.series}`))
           addTable(d, container)
         })
       })
   }
 }
 
+function strip(name) {
+  return name.replace('80/20 ' ,'')
+}
+
 function addTable(data, container) {
   container.appendChild(table([
     tbody(
-      data.series.map(s => {
-        console.log(s)
+      data.years.map(year => {
+        console.log(year)
         return tr([
-          td([
-            strong([
-              a({href: `/serie/${s.results[0].raceUid}`}, `${s.seriesName}:`)
-            ])
-          ]),
-          ...s.results.map(r => {
+          td([strong(`${year.year}:`)]),
+          ...year.races.map(r => {
             return td([
-              a({href: `/ritt/${r.raceUid}`}, `${r.raceName}: ${r.rank}`)
+              a({href: `/ritt/${r.raceUid}`}, `${strip(r.raceName)}: ${r.rank}`)
             ])
           })
         ])

@@ -5,32 +5,51 @@ function mapToSeriesForRider(data) {
   const results = []
 
   data.forEach(row => {
-    if(!results.find(r => r.year === row.race_year)) {
-      results.push({year: row.race_year, series: []})
+    if(!results.find(r => r.series === row.series)) {
+      results.push({series: row.series, years: []})
     }
   })
 
-  results.forEach(r => {
+  const allYears = []
+  data.forEach(row => {
+    if(!allYears.find(y => y === row.race_year)) {
+      allYears.push(row.race_year)
+    }
+  })
 
-    ['80/20 enduro series', 'Østafjells enduroserie'].forEach(seriesName => {
-      const results = data.filter(row => row.race_year === r.year)
-            .filter(row => row.series === seriesName)
-            .map(row => {
-              return { raceName: row.race_name, raceUid: row.race_uid, rank: row.final_rank}
-            })
-
-      if(results.length > 0) {
-        r.series.push({
-          seriesName,
-          results
+  allYears.forEach(year => {
+    data.filter(d => d.race_year === year).forEach(d => {
+      const resultIndex = results.findIndex(ri => ri.series === d.series)
+      if(results[resultIndex].years.length === 0) {
+        results[resultIndex].years.push({
+          year: d.race_year,
+          races: [{
+            raceName: d.race_name,
+            raceUid: d.race_uid,
+            rank: d.final_rank}]
         })
+      } else {
+        const yearIndex = results[resultIndex].years.findIndex(y => year === y.year)
+        if(yearIndex === -1) {
+          results[resultIndex].years.push({
+            year: d.race_year,
+            races: [{
+              raceName: d.race_name,
+              raceUid: d.race_uid,
+              rank: d.final_rank}]
+          })
+        } else {
+          results[resultIndex].years[yearIndex].races.push({
+            raceName: d.race_name,
+            raceUid: d.race_uid,
+            rank: d.final_rank
+          })
+        }
       }
     })
   })
 
-  return results.filter(r => {
-    return r.series[0].results.length !== 0 || r.series[1].results.length !== 0
-  })
+  return results
 }
 
 function mapToSeries(data) {
