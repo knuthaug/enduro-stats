@@ -43,7 +43,7 @@
     "copy-webpack-plugin": "5.1.0",
     "css-loader": "1.0.1",
     "cssnano": "4.1.10",
-    "db-migrate": "0.11.6",
+    "db-migrate": "0.11.10",
     "db-migrate-pg": "1.0.0",
     "db-migrate-sqlite3": "0.3.1",
     "deep-freeze": "0.0.1",
