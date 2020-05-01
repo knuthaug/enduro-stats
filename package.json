@@ -76,7 +76,7 @@
     "supervisor": "latest",
     "tap": "14.10.7",
     "webpack": "4.42.0",
-    "webpack-cli": "3.1.2"
+    "webpack-cli": "3.3.11"
   },
   "dependencies": {
     "convict": "4.4.0",
