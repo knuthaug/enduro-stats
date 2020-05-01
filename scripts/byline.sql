@@ -452,3 +452,4 @@ UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto
 UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='c7973e627bedc913db449439c5d798e1';/*Christopher Omtvedt*/
 UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='34eba0f95e3ca518aca6b341ca691dd7';/*Fredrik Holter*/
 UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='254d9322e8d1b1e56d32565d96bb038e';/*Thomas Kristiansen*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='00fde8e308a30a453c1f22e9bf8600a8';/*Knut Haugen*/
