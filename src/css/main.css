@@ -445,6 +445,18 @@ table.legend td {
   font-size: 85%;
 }
 
+table.counted {
+  counter-reset: calendar-counter;
+}
+
+table.counted tbody tr {
+  counter-increment: calendar-counter;
+}
+
+table.counted tbody tr:before {
+  content: counter(calendar-counter);
+}
+
 .color {
   width: 70px;
   height: 20px;
