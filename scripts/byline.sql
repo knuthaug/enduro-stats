@@ -482,3 +482,17 @@ UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://m
 UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='landscape' where uid='715732544a88f3768b28cfaa1f271b81';/*Jonathan Paddon*/
 UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='portrait' where uid='fa4f746e3f2a259b4d344dc972af263b';/*Knut Erik Haugen*/
 UPDATE riders set byline_text='Eirik Grønevik/mtbfoto.no', byline_url='http://mtbfoto.no/', image_mode='landscape' where uid='417888ee933b8bb421f88b233040be3a';/*Kjell Ivar Moland*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='33682e8062c727a15d48a6490438cab7';/*Anders Samnøy*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='3753e41162a5ebb9148604abb0337333';/*Eirik André Melby*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='685dca9aa3f8f3c4b7ba8e81201083d9';/*Remi Bjerknes*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='1f2c30632651675035255faa8e5a1a94';/*Pål Johansen*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='1008c83c534cedaee0e4a224128c58c1';/*Geir Byberg*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='290d630921c4e8d297fe888f703fa8aa';/*Kjetil Øygard*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='be3bf74f729f9491e7516d8dc40547d5';/*Svein Arne Vestli*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='32b8116595a8e03bcb666bc751c55ad9';/*Håkon Sletmoen Knutsen*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='91656f26f1f7c7ca0dda209271463752';/*Levi Vøllestad Aakre*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='ccdecb467ccdfb4ee7c5dee33139c606';/*Frode Kristian*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='608b85d3256fd43b79dfdcad86f5fe4a';/*Torbjørn Vedde*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='d46dc97906c59f70779608b99fa1ca5a';/*Glenn Salterød*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='15d5f0d2da78fb5a1172350eedda045e';/*Christian Skollevoll*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='48edfaa0b8c2702e572862a768208746';/*Rufus Preiss*/
