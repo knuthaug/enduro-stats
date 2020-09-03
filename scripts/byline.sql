@@ -496,3 +496,33 @@ UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto
 UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='d46dc97906c59f70779608b99fa1ca5a';/*Glenn Salterød*/
 UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='15d5f0d2da78fb5a1172350eedda045e';/*Christian Skollevoll*/
 UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='48edfaa0b8c2702e572862a768208746';/*Rufus Preiss*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='cabacb89afee6bf6b886122865e8aa26';/*Marita Damry*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='a518280bc853729d91facbe915e3e831';/*Herman Ingebretsen*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='1a0079f49093f2d81e63980bd21b8553';/*Ola Bjølgerud*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='2e6a3f5fcadbe8c35f68b8f416fda0bb';/*Andreas Norwich*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='5c4802a2494241b251e8fc1dccb8667e';/*Tom Custers Nedrebø*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='f4f118c155d907adf96abf13ace01c84';/*Sindre Balstad*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='520b42ab10313e0d6f850404d97c46ad';/*Arnstein Dahle Svanholm*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='c419d3fb3775dc18a18e2233d9c85779';/*Rune Hennie*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='b5a78c93f121c982833b6d84c819b15e';/*Sondre Lindkjølen*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='0ba37e99b44ce98f6c31021ce03e85bb';/*Preben Alexander Nøkleby*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='e5ffdd441b4e194d31b91dc6242d721b';/*Raphael Wagner*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='7d05a047382afad3f7863690a8e64d72';/*Sivert Risheim*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='2a514567a2a3dc02bcb8c53dde4e23d9';/*Oskar Omdal*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='portrait' where uid='fc33c086d855c041a09471d827891236';/*Stein Inge Dahle*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='aa4c4c0e61ca5a6379b3a8097e44b8ac';/*Marius Rønningen Diseth*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='a4f5e37873cb5f19f20dded036fd8846';/*Eirik Østenengen*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='e0dd56fd270619df4dad7de2f2b852d8';/*Pål Henrik Bogen*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='61db60ae554a801912e2b05e31de7f39';/*Morten Selje Oksnes*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='b2ad99bf595629c18bb83fe867597e66';/*Tor Sæthre*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='portrait' where uid='7f737f90ce90925f1c99ba7a55064a95';/*Peder Kirkebøen*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='67cf07ac670383922aff2623f5d1b417';/*Bjørn Inge Larsen*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='portrait' where uid='d608e6bdf32d8b9dcecdb90a92ff641a';/*Geir Hanssen*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='4eac8236798e713a61898d7503e69e92';/*William Gibson*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='2a1a206153f5d41fa8c6844121398903';/*Karsten Hjelseth*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='c657316cebbd0aa40740e9a12116d6a7';/*Andre Aamodt*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='portrait' where uid='820a7ad91410a5f1419a706a78992ec3';/*Anders Veland*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='8b567ca2008fbf131abc6c6cf6c0706e';/*Dag Lofthus*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='566ae05582301e0b42b5fe741b4a2a72';/*Martin Thorvaldsen Venedik*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='64a88855ae0ffef6151684cbbbcd8ce9';/*Alex Sandengen*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='6042ab2e335ed03a0166ee540db4ac89';/*Magnus Grönberg*/
