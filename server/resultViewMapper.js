@@ -88,7 +88,14 @@ module.exports = function resultViewMapper (classes, results) {
     }
   }
 
-  return [stages, out, graphs]
+  const sortedKeys = Object.keys(out).sort()
+  const sortedResults = {}
+
+  sortedKeys.forEach((k) => {
+    sortedResults[k] = out[k]
+  })
+
+  return [stages, sortedResults, graphs]
 }
 
 function findStageTotals (rows, stages, className) {
