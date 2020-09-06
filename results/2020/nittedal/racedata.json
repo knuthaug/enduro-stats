@@ -1,0 +1,41 @@
+{
+  "name": "Nittedal ungdomsenduro",
+  "year": 2020,
+  "date": "2020-09-05",
+  "text": "Enduroritt bare for ungdommen i Varingskollen. Tidene for de valgfrie etappene er fjernet fra listene her, for å unngå å forvirre kalkuleringene. Følg linken for originalresultater for de.",
+  "lat": 60.0996,
+  "long": 10.8381,
+  "details": [
+    {
+      "name": "FE 1",
+      "strava_name": "",
+      "file": "nittedal-2020-fe1.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 2",
+      "strava_name": "",
+      "file": "nittedal-2020-fe2.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 3",
+      "strava_name": "",
+      "file": "nittedal-2020-fe3.gpx",
+      "strava_url": ""
+    },
+      {
+      "name": "FE 4",
+      "strava_name": "FE 2 Hakadal enduro 2019",
+      "file": "nittedal-2020-fe4.gpx",
+      "strava_url": "https://www.strava.com/segments/21373418"
+    }
+  ],
+  "links": [
+    {
+      "type": "results",
+      "desc": "Originale resultater",
+      "url": "https://www.cknittedal.no/post/en-str%C3%A5lende-dag-med-nittedal-ungdomsenduro"
+    }
+  ]
+}

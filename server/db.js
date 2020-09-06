@@ -85,10 +85,17 @@ class Db {
     return this.find(query, values)
   }
 
-  async winnerTimeOfRace (raceId, gender) {
+  async winnerTimeOfRace (raceId, gender, raceUid) {
     const query = 'select results.id, acc_time_ms from results, riders where race_id = $1 and acc_time_ms = (select min(acc_time_ms) from results, riders where race_id = $1 and acc_time_ms != 0 and results.rider_id = riders.id and riders.gender = $2 and results.class like $3 and final_rank IS NOT null) and results.rider_id = riders.id'
 
-    const values = [raceId, gender, gender === 'F' ? 'Kvinner%' : 'Menn%']
+    let classPrefix = ''
+    if(raceUid === '77f9b01807c96affc1e54cd41b0583dc') { // special case for race with only youth
+      classPrefix = gender === 'F' ? 'K%' : 'M%';
+    } else {
+      classPrefix = gender === 'F' ? 'Kvinner%' : 'Menn%'
+    }
+
+    const values = [raceId, gender, classPrefix]
     return this.findOne(query, values, 'acc_time_ms')
   }
 

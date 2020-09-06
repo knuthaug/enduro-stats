@@ -172,5 +172,8 @@ node import/importer.js -m -f results/2019/trysil/trysil-2019.csv
 echo "  Ringerike"
 node import/importer.js -m -f results/2019/ringerike/ringerike-2019.csv
 
+echo "2020"
+echo "Nittedal ungdomsenduro"
+node import/importer.js -m -f results/2020/nittedal/nittedal-2020.csv
 
 psql -U endurostats endurostats < scripts/byline.sql
