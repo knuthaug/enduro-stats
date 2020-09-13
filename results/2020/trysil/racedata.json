@@ -1,0 +1,48 @@
+{
+  "name": "Trysil Enduro",
+  "year": 2020,
+  "date": "2020-09-13",
+  "text": "Norges Terrengsykkelhovedstad(?) trår til igjen med enduro. Denne gangen uten snø. ",
+  "lat": 61.3136,
+  "long": 12.2441,
+  "zoom": 12,
+  "details": [
+    {
+      "name": "FE 1",
+      "strava_name": "Trysil Enduro FE1 2020",
+      "file": "trysil-2020-fe1.gpx",
+      "strava_url": "https://www.strava.com/segments/25686166"
+    },
+    {
+      "name": "FE 2",
+      "strava_name": "Sti: Grimsåsen-Mariusstien",
+      "file": "trysil-2020-fe2.gpx",
+      "strava_url": "https://www.strava.com/segments/24842108"
+    },
+    {
+      "name": "FE 3",
+      "strava_name": "",
+      "file": "trysil-2020-fe3.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 4",
+      "strava_name": "",
+      "file": "trysil-2020-fe4.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 5",
+      "strava_name": "Trysil Enduro FE5 2020",
+      "file": "trysil-2020-fe5.gpx",
+      "strava_url": "https://www.strava.com/segments/25686210"
+    }
+  ],
+  "links": [
+    {
+      "type": "results",
+      "desc": "Originale resultater",
+      "url": "https://drive.google.com/file/d/1SZQdfXGmPZaWnfH3eLdqukPZxPN9qUm8/view?fbclid=IwAR0cnrt6relzkl1txP3lfac13Q03Uvq67nqqBDCocfYbi8B4I7-LMgIx3AU"
+    }
+  ]
+}
