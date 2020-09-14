@@ -42,9 +42,11 @@ module.exports = {
     ]
   },
   plugins: [
-    new CopyWebpackPlugin([
-      { from: 'src/js' }
-    ]),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: 'src/js' }  
+      ]
+    }),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery'
