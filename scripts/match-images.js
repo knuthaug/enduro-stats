@@ -37,6 +37,10 @@ const bylineMap = {
   '80/20 Enduro series': {
     text: '80/20 Enduro series',
     url: ''
+  },
+  'Jonas Sjögren/Trysil Bike Arena': {
+    text: 'Jonas Sjögren/Trysil Bike Arena',
+    url: ''
   }
 
 }

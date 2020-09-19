@@ -526,3 +526,53 @@ UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto
 UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='566ae05582301e0b42b5fe741b4a2a72';/*Martin Thorvaldsen Venedik*/
 UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='64a88855ae0ffef6151684cbbbcd8ce9';/*Alex Sandengen*/
 UPDATE riders set byline_text='Pål Westgaard', byline_url='http://westgaardfoto.no/', image_mode='landscape' where uid='6042ab2e335ed03a0166ee540db4ac89';/*Magnus Grönberg*/
+UPDATE riders set byline_text='Jonas Sjögren/Trysil Bike Arena', byline_url='', image_mode='landscape' where uid='b9a7d6670b23ce7ed323c5119d1b4793';/*Hans Lindqvist*/
+UPDATE riders set byline_text='Jonas Sjögren/Trysil Bike Arena', byline_url='', image_mode='portrait' where uid='160071025f2a040b7d9bf87438116d0a';/*Tim Hassel*/
+UPDATE riders set byline_text='Jonas Sjögren/Trysil Bike Arena', byline_url='', image_mode='landscape' where uid='c1e055a419fc02ba15e2f8ec439c9666';/*André Røsvik*/
+UPDATE riders set byline_text='Jonas Sjögren/Trysil Bike Arena', byline_url='', image_mode='landscape' where uid='c6157b156b525438581ef9e26dd481c3';/*Anne Jorun Gudmestad*/
+UPDATE riders set byline_text='Jonas Sjögren/Trysil Bike Arena', byline_url='', image_mode='landscape' where uid='5960a60941906fb05b5ce333bafefcdc';/*Gintare Kalkauskaite*/
+UPDATE riders set byline_text='Jonas Sjögren/Trysil Bike Arena', byline_url='', image_mode='landscape' where uid='f79568dc5ca960ca0a3f5500dc4d92e8';/*Maria Theander*/
+UPDATE riders set byline_text='Jonas Sjögren/Trysil Bike Arena', byline_url='', image_mode='landscape' where uid='ca5dc327ce2566102298e875029c165c';/*Anna Grande*/
+UPDATE riders set byline_text='Jonas Sjögren/Trysil Bike Arena', byline_url='', image_mode='landscape' where uid='f883641a19c3d482797cfd5915ed3ea2';/*Kristine Skeie*/
+UPDATE riders set byline_text='Jonas Sjögren/Trysil Bike Arena', byline_url='', image_mode='portrait' where uid='665cd973e7756689f9c89d8363d31dc4';/*Jesper Vea Halvorsen*/
+UPDATE riders set byline_text='Jonas Sjögren/Trysil Bike Arena', byline_url='', image_mode='landscape' where uid='456dadda09cc3cef74a57ece72fc750b';/*Lars Lindgren*/
+UPDATE riders set byline_text='Jonas Sjögren/Trysil Bike Arena', byline_url='', image_mode='landscape' where uid='776ba35635181c49d1b8449073199fc0';/*Didrik Rundfloen*/
+UPDATE riders set byline_text='Jonas Sjögren/Trysil Bike Arena', byline_url='', image_mode='landscape' where uid='4e18f1df6b762632c7208beb90baef0f';/*Mads Wålberg*/
+UPDATE riders set byline_text='Jonas Sjögren/Trysil Bike Arena', byline_url='', image_mode='landscape' where uid='c031303ba6305b50ccb1cfdf95c89d73';/*Oskar Johansson*/
+UPDATE riders set byline_text='Jonas Sjögren/Trysil Bike Arena', byline_url='', image_mode='portrait' where uid='b88348816ad509f0be678f7b318d284c';/*Lars Vemund Solerød*/
+UPDATE riders set byline_text='Jonas Sjögren/Trysil Bike Arena', byline_url='', image_mode='portrait' where uid='bc61b774bfc260a797d8a509a620631e';/*Lars Erik Magnusson*/
+UPDATE riders set byline_text='Jonas Sjögren/Trysil Bike Arena', byline_url='', image_mode='portrait' where uid='76009511d244c4c66da108aa88598a18';/*Ola Nilsson*/
+UPDATE riders set byline_text='Jonas Sjögren/Trysil Bike Arena', byline_url='', image_mode='portrait' where uid='13d753b66ce1960ad4a62a4700480215';/*Rickard Jönsson*/
+UPDATE riders set byline_text='Jonas Sjögren/Trysil Bike Arena', byline_url='', image_mode='landscape' where uid='5fe664091a50465e4c57c028e09a447e';/*Terje Unnerud*/
+UPDATE riders set byline_text='Jonas Sjögren/Trysil Bike Arena', byline_url='', image_mode='landscape' where uid='996f728a73f73a87f1cfeb2ad3f3599e';/*Magnus Heen*/
+UPDATE riders set byline_text='Jonas Sjögren/Trysil Bike Arena', byline_url='', image_mode='landscape' where uid='d377b01ef40b4dc293ba9f261417c250';/*Pål Røsvik*/
+UPDATE riders set byline_text='Jonas Sjögren/Trysil Bike Arena', byline_url='', image_mode='landscape' where uid='6047aa3bf4715ac56947a58863ae3020';/*Martin Kvisler*/
+UPDATE riders set byline_text='Jonas Sjögren/Trysil Bike Arena', byline_url='', image_mode='landscape' where uid='b130b8ccd3bfa7a0d87331e628a4dbbc';/*Bastian Solbakken*/
+UPDATE riders set byline_text='Jonas Sjögren/Trysil Bike Arena', byline_url='', image_mode='portrait' where uid='11530fc08cb54a3c45bd3466dd011788';/*Øivind Aabye*/
+UPDATE riders set byline_text='Jonas Sjögren/Trysil Bike Arena', byline_url='', image_mode='portrait' where uid='7a2313d124eee49e1336ea3833b27e5a';/*Even Baardseth*/
+UPDATE riders set byline_text='Jonas Sjögren/Trysil Bike Arena', byline_url='', image_mode='landscape' where uid='7f21bd6911227c31a51574d0b72c0e73';/*Olav Engen*/
+UPDATE riders set byline_text='Jonas Sjögren/Trysil Bike Arena', byline_url='', image_mode='portrait' where uid='1d3056f5ea75fc2265ed32a614607ac2';/*Marius Moe Ellefsrud*/
+UPDATE riders set byline_text='Jonas Sjögren/Trysil Bike Arena', byline_url='', image_mode='portrait' where uid='2d2014d03cf1c3724e97ce55825494b3';/*Fredrik Johannessen*/
+UPDATE riders set byline_text='Jonas Sjögren/Trysil Bike Arena', byline_url='', image_mode='portrait' where uid='2deeb61988e70de561db47ee3c861494';/*Anders Nilsen*/
+UPDATE riders set byline_text='Jonas Sjögren/Trysil Bike Arena', byline_url='', image_mode='portrait' where uid='0f8cbc4313685565ad1a1904ceacecce';/*Peter Hjertson*/
+UPDATE riders set byline_text='Jonas Sjögren/Trysil Bike Arena', byline_url='', image_mode='portrait' where uid='de0764936b3ae3c40f29be16cf668b2c';/*Joakim Fjeld Kristoffersen*/
+UPDATE riders set byline_text='Jonas Sjögren/Trysil Bike Arena', byline_url='', image_mode='portrait' where uid='4aa1f740787a7d2b637ffb87c58eff0d';/*Tom Are Grøv*/
+UPDATE riders set byline_text='Jonas Sjögren/Trysil Bike Arena', byline_url='', image_mode='portrait' where uid='4f0ee78a2061391773659f5079248eb2';/*Herman Knoop*/
+UPDATE riders set byline_text='Jonas Sjögren/Trysil Bike Arena', byline_url='', image_mode='landscape' where uid='9f01cc1505d0c4c180e94a2175f11d93';/*Magnus Nyke Fagernes*/
+UPDATE riders set byline_text='Jonas Sjögren/Trysil Bike Arena', byline_url='', image_mode='landscape' where uid='3e2708e36a450947abd172e7cd247cb8';/*Ronnie Dyhr-Nielsen*/
+UPDATE riders set byline_text='Jonas Sjögren/Trysil Bike Arena', byline_url='', image_mode='landscape' where uid='cebe2532ddfd05012c2ed045b0c45636';/*Martin Aasen*/
+UPDATE riders set byline_text='Jonas Sjögren/Trysil Bike Arena', byline_url='', image_mode='portrait' where uid='cfd894453644210b9ff26eba34847563';/*Carl Engelstad*/
+UPDATE riders set byline_text='Jonas Sjögren/Trysil Bike Arena', byline_url='', image_mode='landscape' where uid='6d59a098a4688ca6cec38e5150195d13';/*Jesper Smith*/
+UPDATE riders set byline_text='Jonas Sjögren/Trysil Bike Arena', byline_url='', image_mode='portrait' where uid='76838629a978969c54b84802f946e291';/*Fredrik Bekkåsen*/
+UPDATE riders set byline_text='Jonas Sjögren/Trysil Bike Arena', byline_url='', image_mode='landscape' where uid='f46e9aed406f47ca2a687e048e9b6d2c';/*Kristoffer Westgaard*/
+UPDATE riders set byline_text='Jonas Sjögren/Trysil Bike Arena', byline_url='', image_mode='landscape' where uid='b38ee9965b6bcbc32e8ed68b8673036b';/*Stian Bjørnli*/
+UPDATE riders set byline_text='Jonas Sjögren/Trysil Bike Arena', byline_url='', image_mode='landscape' where uid='81db155ce71be0b240c67504cdd02862';/*Mattias Olsson*/
+UPDATE riders set byline_text='Jonas Sjögren/Trysil Bike Arena', byline_url='', image_mode='landscape' where uid='7ee92b98d7e05cb1a4adaf7404e8687f';/*Sindre Sollund*/
+UPDATE riders set byline_text='Jonas Sjögren/Trysil Bike Arena', byline_url='', image_mode='landscape' where uid='2e677f9aeaf3243467756e1b6009b0d6';/*Daniel Melilla*/
+UPDATE riders set byline_text='Jonas Sjögren/Trysil Bike Arena', byline_url='', image_mode='landscape' where uid='4292ef9fc047ae1aefee8009d84dbd02';/*Per Omar Melilla*/
+UPDATE riders set byline_text='Jonas Sjögren/Trysil Bike Arena', byline_url='', image_mode='landscape' where uid='23db983680d972795fcab95307c31732';/*Håkon Sylte*/
+UPDATE riders set byline_text='Jonas Sjögren/Trysil Bike Arena', byline_url='', image_mode='landscape' where uid='fe07095923421092121dbbbcef91c9f5';/*Ole Martin Nessemo*/
+UPDATE riders set byline_text='Jonas Sjögren/Trysil Bike Arena', byline_url='', image_mode='landscape' where uid='1c6ad1a07cd3a939a013b3a4f81efcc6';/*Rene Valen*/
+UPDATE riders set byline_text='Jonas Sjögren/Trysil Bike Arena', byline_url='', image_mode='landscape' where uid='a1e38af00ce31069de7c4d2ec567b019';/*Eivind Holtet*/
+UPDATE riders set byline_text='Jonas Sjögren/Trysil Bike Arena', byline_url='', image_mode='landscape' where uid='ed97533d6a3e2b4d1c39ecd2bfae0df5';/*Martin Rosner Christensen*/
+UPDATE riders set byline_text='Jonas Sjögren/Trysil Bike Arena', byline_url='', image_mode='landscape' where uid='81c23f75ee62a94ab0a5b6eb65226d49';/*Tor Frithjof Haug*/
