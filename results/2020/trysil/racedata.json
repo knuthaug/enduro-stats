@@ -6,6 +6,7 @@
   "lat": 61.3136,
   "long": 12.2441,
   "zoom": 12,
+  "byline_text": "Jonas Sjögren/Trysil Bike Arena",
   "details": [
     {
       "name": "FE 1",
@@ -46,7 +47,7 @@
     },
     {
       "type": "images",
-      "desc" "Bilder fra jonas Sjögren og Trysil Bike Arena",
+      "desc": "Bilder fra jonas Sjögren og Trysil Bike Arena",
       "url": "https://drive.google.com/drive/folders/1ebY2FyT3dysCFkXhVOpotmFZPTD5llvq?fbclid=IwAR0ogSoZKGjE7O1v-x9oYf42KAM-PiC1KSPINPwHQCO7VRnzqdiApjT4Rho"
     }
   ]
