@@ -1,0 +1,60 @@
+{
+  "name": "DrammEnduro",
+  "year": 2020,
+  "date": "2020-09-19",
+  "text": "6 etapper på Drammens fineste stier, også i år med tørre og fine forhold og raske tider. Ny etappe av året i bikeparken også. ",
+  "series": "",
+  "lat": 59.7805,
+  "long": 10.1089,
+  "zoom": 13,
+  "details": [
+    {
+      "name": "FE 1",
+      "strava_name": "",
+      "file": "drammen-2020-fe1.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 2",
+      "strava_name": "",
+      "file": "drammen-2020-fe2.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 3",
+      "strava_name": "",
+      "file": "drammen-2020-fe3.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 4",
+      "strava_name": "",
+      "file": "drammen-2020-fe4.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 5",
+      "strava_name": "",
+      "file": "drammen-2020-fe5.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 6",
+      "strava_name": "",
+      "file": "drammen-2020-fe6.gpx",
+      "strava_url": ""
+    }
+  ],
+  "links": [
+    {
+      "type": "results",
+      "desc": "Originale resultater",
+      "url": "https://drive.google.com/file/d/1tMOzf3n5DZPYW7Js0fHxKb2Qj1HcqiOd/view"
+    },
+    {
+      "type": "images",
+      "desc": "Bilder fra terrengsykkel.no",
+      "url": "https://www.terrengsykkel.no/enduro/bildegalleri-fra-drammenduro-2020"
+    }
+  ]
+}

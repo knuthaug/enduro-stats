@@ -12,7 +12,7 @@ app.yaml
 bundlemap-css.json
 bundlemap-js.json
 switchdb
-sync-images.sh
+sync-cdn
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
