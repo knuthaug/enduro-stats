@@ -55,6 +55,11 @@
       "type": "images",
       "desc": "Bilder fra terrengsykkel.no",
       "url": "https://www.terrengsykkel.no/enduro/bildegalleri-fra-drammenduro-2020"
+    },
+        {
+      "type": "images",
+      "desc": "Bilder fra Jon Borgersen",
+      "url": "http://jonborgersen.com/drammenduro-2020/"
     }
   ]
 }

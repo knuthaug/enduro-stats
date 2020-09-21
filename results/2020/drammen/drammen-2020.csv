@@ -1,4 +1,4 @@
-﻿rank;bib;name;club;FE1;FE1 Pos;FE2;FE2 Pos;FE3;FE3 Pos;FE4;FE4 Pos;FE5;FE5 Pos;FE6;FE6 Pos;chiptime;diff;gender;Class;Pos klasse
+﻿rank;bib;name;club;FE1;FE1 Pos;FE2;FE2 Pos;FE3;FE3 Pos;FE4;FE4 Pos;FE5;FE5 Pos;FE6;FE6 Pos;chiptime;diff;gender;Class;Pos Klasse
 1st;4;Tobias Hoel Sandengen;Aron Skiklubb;00:05:29;1;00:03:20;2;00:03:19;2;00:03:38;4;00:05:24;1;00:04:02;1;00:25:12;;M;Menn junior;
 2nd;10;Jannik Eschler;Bigfriends MTB Team;00:05:39;3;00:03:26;5;00:03:21;3;00:03:30;2;00:05:29;2;00:04:05;2;00:25:30;+00:00:18;M;Menn junior;
 3rd;8;Henrik Langeland Nielsen;Kristiansands CK;00:06:01;6;00:03:38;7;00:03:34;5;00:03:50;8;00:06:00;3;00:04:31;6;00:27:34;+00:02:22;M;Menn junior;
@@ -116,7 +116,7 @@
 ;89;Ola Gulbrandsen;;;;;;;;;;;;;DNS;;;M;Menn senior;
 ;71;Kristian Østlie;CK Nittedal;;;;;;;;;;;;DNS;;;M;Menn senior;
 ;84;Eirik Jelstad;Kjølstadkara;;;;;;;;;;;;DNS;;;M;Menn senior;
-1st;120;Lene Pettersen;Eidanger IL;00:06:25;2;00:03:51;2;00:03:48;1;00:04:00;1;00:06:14;2;00:04:33;1;00:28:51;;F;Kvinner senior;
+1st;120;Lene Snerk Pettersen;Eidanger IL;00:06:25;2;00:03:51;2;00:03:48;1;00:04:00;1;00:06:14;2;00:04:33;1;00:28:51;;F;Kvinner senior;
 2nd;127;Anna Littorin-Sandbu;Lillehammer CK;00:06:17;1;00:04:01;7;00:03:50;3;00:04:01;2;00:06:12;1;00:04:35;2;00:28:56;+00:00:05;F;Kvinner senior;
 3rd;122;Berit Nordsæter Resell;Lillehammer CK;00:06:27;3;00:03:50;1;00:03:49;2;00:04:03;3;00:06:15;3;00:04:57;4;00:29:21;+00:00:30;F;Kvinner senior;
 4th;128;Anette Røssum Bastnes;SK Rye sykkel;00:06:40;4;00:03:56;3;00:03:50;3;00:04:13;4;00:06:21;5;00:04:47;3;00:29:47;+00:00:56;F;Kvinner senior;
