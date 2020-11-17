@@ -76,7 +76,7 @@ app.get('/api/graph/compare', jsonHandler(handlers.compareGraphHandler))
 app.get('/api/graph/rider/:uid', jsonHandler(handlers.riderGraphHandler))
 app.get('/api/series/rider/:uid', jsonHandler(handlers.riderSeriesHandler))
 app.get('/kalender', handler('cal.hbs', handlers.calendarHandler))
-
+app.get('/kalender/:year', dynamicHandler(handlers.calendarHandler))
 app.post('/sok/', handler('search.hbs', handlers.searchHandler, 100))
 
 app.get('/img/:file', (req, res) => {
@@ -109,6 +109,13 @@ app.get('/assets/css/:file', (req, res) => {
   return res.header('Cache-Control', `public, max-age=${ASSET_SHORT_CACHE_TIME}`).sendFile(`css/${file}`)
 })
 
+function dynamicHandler (dataHandler) {
+  return async function (req, res) {
+    const context = await dataHandler(req);
+    return render(res, context.template, context, DEFAULT_CACHE_TIME_PAGES);
+  }
+}
+
 function handler (template, dataHandler, cacheTime) {
   return async function (req, res) {
     const context = await dataHandler(req)
@@ -124,6 +131,7 @@ function jsonHandler (dataHandler) {
     return res.send(await dataHandler(req))
   }
 }
+
 
 async function render (res, template, context, maxAge, status) {
   const s = status || 200

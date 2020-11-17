@@ -232,13 +232,16 @@ async function fullRaceHandler (req) {
   }
 }
 
-async function calendarHandler () {
+async function calendarHandler (req) {
+  const year = req.params.year || 2021;
+
   return {
+    template: year === 2021 ? 'cal.hbs' : `cal-${year}.hbs`,
     status: 200,
     active: 'cal',
-    title: 'Rittkalender 2020',
-    docTitle: 'Norsk enduro: Rittkalender for sesongen 2020',
-    description: 'Rittkalender for sesongen 2020'
+    title: `Rittkalender ${year}`,
+    docTitle: `Norsk enduro: Rittkalender for sesongen ${year}`,
+    description: `Rittkalender for sesongen ${year}`
   }
 }
 
