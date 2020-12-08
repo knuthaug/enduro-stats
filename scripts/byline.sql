@@ -637,3 +637,4 @@ UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.c
 UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/', image_mode='landscape' where uid='499897bad578566d8705873afa58db16';/*Are Pedersen*/
 UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/', image_mode='landscape' where uid='59f2b0cef1f9325fae3922d09b31e57d';/*Thomas Horgen*/
 UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/', image_mode='landscape' where uid='afacbdef178cc33add1e8311e5dd9ace';/*Eirik Melby*/
+UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/', image_mode='landscape' where uid='1ce54abd1ac4035c024d178f1e2769e8';/*Zakarias Blom Johansen*/
