@@ -44,13 +44,13 @@ module.exports = {
   plugins: [
     new CopyWebpackPlugin({
       patterns: [
-        { from: 'src/js' }  
+        { from: 'src/js' }
       ]
     }),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery'
     }),
-    new AssetsPlugin({ filename: 'bundlemap-js.json' })
+    new AssetsPlugin({ filename: 'bundlemap-js.json', fullPath: false, removeFullPathAutoPrefix: true })
   ]
 }
