@@ -506,6 +506,7 @@ table.counted tbody tr:before {
   border-radius: 5px;
   padding: 10px 15px 10px 15px;
   background-color: #222;
+  margin-top: 20px;
 }
 
 .frontpage-news h5 {
