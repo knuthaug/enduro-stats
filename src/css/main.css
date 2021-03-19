@@ -500,3 +500,13 @@ table.counted tbody tr:before {
 .mlb {
   margin-left: 5px;
 }
+
+.frontpage-news {
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  padding: 10px 15px 10px 15px;
+}
+
+.frontpage-news h5 {
+  color: #999;
+}
