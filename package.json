@@ -42,6 +42,7 @@
     "command-line-args": "5.0.2",
     "copy-webpack-plugin": "6.1.0",
     "css-loader": "5.2.4",
+    "css-what": ">=5.0.1",
     "cssnano": "5.0.5",
     "db-migrate": "0.11.10",
     "db-migrate-pg": "1.0.0",
