@@ -180,5 +180,9 @@ node import/importer.js -m -f results/2020/trysil/trysil-2020.csv
 echo "Drammenduro"
 node import/importer.js -m -f results/2020/drammen/drammen-2020.csv
 
+echo "2021"
+
+echo "Ekstremsportveko enduro"
+node import/importer.js -m -f results/2021/voss/voss-2021.csv
 
 psql -U endurostats endurostats < scripts/byline.sql
