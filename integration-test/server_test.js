@@ -36,7 +36,7 @@ tap.test('rider page responds with 404 for rider not found', t => {
 })
 
 tap.test('series page responds with 200 for one race in that series', t => {
-  inject('/series/31cc5663f5067534cb4427ab9bc4cd91', t)
+  inject('/serie/31cc5663f5067534cb4427ab9bc4cd91', t)
 })
 
 tap.test('about page responds with 200', t => {
