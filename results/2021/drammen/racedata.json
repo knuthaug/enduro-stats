@@ -1,0 +1,17 @@
+{
+  "name": "DrammEnduro",
+  "year": 2021,
+  "date": "2021-08-14",
+  "text": "6 etapper på Drammens fineste stier, svaberg nok til alle og bittelitt gjørme var det også. ",
+  "series": "NC",
+  "lat": 59.7805,
+  "long": 10.1089,
+  "zoom": 13,
+  "links": [
+    {
+      "type": "results",
+      "desc": "Originale resultater",
+      "url": "https://drammenduro.files.wordpress.com/2021/08/results_20210814182035.pdf"
+    }
+  ]
+}
