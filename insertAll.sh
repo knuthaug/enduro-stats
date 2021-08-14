@@ -185,4 +185,7 @@ echo "2021"
 echo "Ekstremsportveko enduro"
 node import/importer.js -m -f results/2021/voss/voss-2021.csv
 
+echo "Ekstremsportveko enduro"
+node import/importer.js -m -f results/2021/drammen/drammen-2021.csv
+
 psql -U endurostats endurostats < scripts/byline.sql
