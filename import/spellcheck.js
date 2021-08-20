@@ -98,6 +98,7 @@ const subs = {
   'Lars Sandviken': 'Lars Vatnebryn Sandviken',
   'Jarstø Karl Håkon': 'Karl Håkon Jarstø',
   'Andre Jaksland Aamodt': 'André Aamodt',
+  'Andre Aamodt': 'André Aamodt',
   'Andreas Hegrum': 'Andreas Hegrum Askjer',
   'Andreas Askjer': 'Andreas Hegrum Askjer',
   'Erlend Askjer': 'Erlend Hegrum Aksjer',
