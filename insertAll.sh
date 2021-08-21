@@ -173,19 +173,21 @@ echo "  Ringerike"
 node import/importer.js -m -f results/2019/ringerike/ringerike-2019.csv
 
 echo "2020"
-echo "Nittedal ungdomsenduro"
+echo "  Nittedal ungdomsenduro"
 node import/importer.js -m -f results/2020/nittedal/nittedal-2020.csv
-echo "Trysil Enduro"
+echo "  Trysil Enduro"
 node import/importer.js -m -f results/2020/trysil/trysil-2020.csv
-echo "Drammenduro"
+echo "  Drammenduro"
 node import/importer.js -m -f results/2020/drammen/drammen-2020.csv
 
 echo "2021"
-
-echo "Ekstremsportveko enduro"
+echo "  Ekstremsportveko enduro"
 node import/importer.js -m -f results/2021/voss/voss-2021.csv
 
-echo "Ekstremsportveko enduro"
+echo "  Drammen"
 node import/importer.js -m -f results/2021/drammen/drammen-2021.csv
+
+echo "  Traktorland"
+node import/importer.js -m -f results/2021/traktorland/traktorland-2021.csv
 
 psql -U endurostats endurostats < scripts/byline.sql
