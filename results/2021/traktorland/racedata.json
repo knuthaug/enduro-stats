@@ -3,7 +3,7 @@
   "year": 2021,
   "date": "2021-08-21",
   "series": "",
-  "text": "Storbonden Peter Lomsdalen i Traktor Bike Park og Hadeland sykkelklubb byr nok en gang opp til fest på fete (men dog tekniske) stier ved Randsfjordens bredd. Nydelige forhold, bra vær, god stemning og alt som det skal. ",
+  "text": "Peter Lomsdalen i Traktor Bike Park og Hadeland sykkelklubb byr nok en gang opp til fest på fete (men dog tekniske) stier ved Randsfjordens bredd. Nydelige forhold, bra vær, god stemning og alt som det skal. ",
   "lat": 60.5783,
   "long": 10.3533,
   "zoom": 14,
@@ -45,5 +45,10 @@
       "strava_url": ""
     }
   ],  "links": [
+    {
+      "type": "results",
+      "desc": "Originale resultater",
+      "url": "https://d1hoqbrdo21qk8.cloudfront.net/results/traktorland-2021.pdf"
+    }
   ]
 }
