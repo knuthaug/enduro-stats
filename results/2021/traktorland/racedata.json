@@ -4,6 +4,46 @@
   "date": "2021-08-21",
   "series": "",
   "text": "Storbonden Peter Lomsdalen i Traktor Bike Park og Hadeland sykkelklubb byr nok en gang opp til fest på fete (men dog tekniske) stier ved Randsfjordens bredd. Nydelige forhold, bra vær, god stemning og alt som det skal. ",
-  "links": [
+  "lat": 60.5783,
+  "long": 10.3533,
+  "zoom": 14,
+  "details": [
+    {
+      "name": "FE 1",
+      "strava_name": "",
+      "file": "traktorland-2021-fe1.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 2",
+      "strava_name": "",
+      "file": "traktorland-2021-fe2.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 3",
+      "strava_name": "",
+      "file": "traktorland-2021-fe3.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 4",
+      "strava_name": "Sagas sti",
+      "file": "traktorland-2021-fe4.gpx",
+      "strava_url": "https://www.strava.com/segments/20841339"
+    },
+    {
+      "name": "FE 5",
+      "strava_name": "SS3 Traktor 2015",
+      "file": "traktorland-2021-fe5.gpx",
+      "strava_url": "https://www.strava.com/segments/9675637"
+    },
+    {
+      "name": "FE 6",
+      "strava_name": "",
+      "file": "traktorland-2021-fe6.gpx",
+      "strava_url": ""
+    }
+  ],  "links": [
   ]
 }
