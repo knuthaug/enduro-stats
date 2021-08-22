@@ -125,6 +125,7 @@ const subs = {
   'Christoffer E. Bakke': 'Christoffer Engebretsen Bakke',
   'Eirik Lind Hanes': 'Eirik Lind Hånes',
   'Gunnar Vestholm': 'Gunnar Westholm',
+  'Jostein Sanderlien Hole': 'Jostein Hole',
   'Hans Jørgen Kvale': 'Hans Jørgen Kvåle',
   'June Janson': 'June Jansson',
   'Magnus Brandtzeg': 'Magnus Brandtzæg',
