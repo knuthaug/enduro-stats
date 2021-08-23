@@ -365,6 +365,18 @@ table[data-sortable] th[data-sorted-direction="ascending"]:after {
   font-size: 80%;
 }
 
+.stagerank {
+  position: relative;
+  bottom: 1px;
+  left: 1px;
+  font-weight: 700;
+  color: #ccc;
+}
+
+.stagetime {
+  font-variant-numeric: tabular-nums;
+}
+
 .toplink {
   position: relative;
   top: 7px;
