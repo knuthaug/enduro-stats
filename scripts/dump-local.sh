@@ -1,3 +1,3 @@
 #!/bin/sh
 
-pg_dump -O endurostats > dump-2020.sql
+pg_dump -O endurostats > dump-2021.sql
