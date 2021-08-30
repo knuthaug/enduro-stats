@@ -1,0 +1,39 @@
+{
+  "name": "Harstad Enduro",
+  "year": 2021,
+  "date": "2021-08-29",
+  "text": "",
+  "links": [
+    {
+      "type": "results",
+      "desc": "Originale resultater",
+      "url": "https://live.eqtiming.com/57615?fbclid=IwAR2IcBmxiKrQxw-pnOq1hsgYo6_romRrHcTzIotIyxDyWJ-EpS7y7Mgioyg#series"
+    }
+  ],
+  "details": [
+    {
+      "name": "FE 1",
+      "strava_name": "HER 2019 FE1",
+      "file": "harstad-2019-fe1.gpx",
+      "strava_url": "https://www.strava.com/segments/21592399"
+    },
+    {
+      "name": "FE 2",
+      "strava_name": "HER 2019 FE2",
+      "file": "harstad-2019-fe2.gpx",
+      "strava_url": "https://www.strava.com/segments/21592422"
+    },
+    {
+      "name": "FE 3",
+      "strava_name": "HER 2019 FE3",
+      "file": "harstad-2019-fe3.gpx",
+      "strava_url": "https://www.strava.com/segments/21592458"
+    },
+    {
+      "name": "FE 4",
+      "strava_name": "HER 2019 FE4",
+      "file": "harstad-2019-fe4.gpx",
+      "strava_url": "https://www.strava.com/segments/21592491"
+    }
+  ]
+}
