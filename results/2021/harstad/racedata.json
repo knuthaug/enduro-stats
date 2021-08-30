@@ -3,6 +3,9 @@
   "year": 2021,
   "date": "2021-08-29",
   "text": "",
+  "lat": 68.7372,
+  "long": 16.5183,
+  "zoom": 13,
   "links": [
     {
       "type": "results",
@@ -13,27 +16,27 @@
   "details": [
     {
       "name": "FE 1",
-      "strava_name": "HER 2019 FE1",
-      "file": "harstad-2019-fe1.gpx",
-      "strava_url": "https://www.strava.com/segments/21592399"
+      "strava_name": "FE1 HER 21",
+      "file": "harstad-2021-fe1.gpx",
+      "strava_url": "https://www.strava.com/segments/29672317"
     },
     {
       "name": "FE 2",
-      "strava_name": "HER 2019 FE2",
-      "file": "harstad-2019-fe2.gpx",
-      "strava_url": "https://www.strava.com/segments/21592422"
+      "strava_name": "FE2 HER 21",
+      "file": "harstad-2021-fe2.gpx",
+      "strava_url": "https://www.strava.com/segments/29672376"
     },
     {
       "name": "FE 3",
-      "strava_name": "HER 2019 FE3",
-      "file": "harstad-2019-fe3.gpx",
-      "strava_url": "https://www.strava.com/segments/21592458"
+      "strava_name": "FE3 HER 21",
+      "file": "harstad-2021-fe3.gpx",
+      "strava_url": "https://www.strava.com/segments/29672398"
     },
     {
       "name": "FE 4",
-      "strava_name": "HER 2019 FE4",
-      "file": "harstad-2019-fe4.gpx",
-      "strava_url": "https://www.strava.com/segments/21592491"
+      "strava_name": "FE4 HER 21",
+      "file": "harstad-2021-fe4.gpx",
+      "strava_url": "https://www.strava.com/segments/29673886"
     }
   ]
 }
