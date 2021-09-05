@@ -39,6 +39,8 @@ class Converter {
       return 'Menn junior'
     } else if (/K.+junior|k.+jr/i.test(name)) {
       return 'Kvinner junior'
+    } else if (/^Menn sport/i.test(name)) {
+      return 'Menn sport'
     } else if (/^M|Menn/i.test(name)) {
       return 'Menn senior'
     } else if (/^K|Kvinner/i.test(name) || /Women/i.test(name)) {
