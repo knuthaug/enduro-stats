@@ -4,10 +4,12 @@
 # EQ results
 #2012
 echo "2012:"
+echo "  Nesbyen I"
+node import/importer.js -f results/2012/nesbyen-I/nesbyen-2012-I.csv
 echo "  Oslo"
 node import/importer.js -f results/2012/oslo/oslo-2012.csv
 echo "  Nesbyen"
-node import/importer.js -f results/2012/nesbyen/nesbyen-2012.csv
+node import/importer.js -f results/2012/nesbyen-II/nesbyen-2012.csv
 echo "  Kongsberg"
 node import/importer.js -a -f results/2012/kongsberg/kongsberg-2012.csv
 
