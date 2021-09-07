@@ -5,7 +5,7 @@
 #2012
 echo "2012:"
 echo "  Nesbyen I"
-node import/importer.js -f results/2012/nesbyen-I/nesbyen-2012-I.csv
+node import/importer.js -m -f results/2012/nesbyen-I/nesbyen-2012-I.csv
 echo "  Oslo"
 node import/importer.js -f results/2012/oslo/oslo-2012.csv
 echo "  Nesbyen"
