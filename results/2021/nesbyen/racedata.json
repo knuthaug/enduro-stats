@@ -3,7 +3,42 @@
   "year": 2021,
   "date": "2021-09-05",
   "text": "Historiens første offisielle NM i enduro. Tørre forhold og en helt ny sti på vestsiden av dalen på programmet. ",
+  "lat": 60.5740,
+  "long": 9.1057,
+  "zoom": 13,
   "byline_text": "Tom Are Grøv/@sideknasten",
+  "details": [
+    {
+      "name": "FE 1",
+      "strava_name": "",
+      "file": "nesbyen-2021-fe1.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 2",
+      "strava_name": "",
+      "file": "nesbyen-2021-fe2.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 3",
+      "strava_name": "",
+      "file": "nesbyen-2021-fe3.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 4",
+      "strava_name": "",
+      "file": "nesbyen-2021-fe4.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 5",
+      "strava_name": "",
+      "file": "nesbyen-2021-fe5.gpx",
+      "strava_url": ""
+    }
+  ],
   "links": [
     {
       "type": "results",
