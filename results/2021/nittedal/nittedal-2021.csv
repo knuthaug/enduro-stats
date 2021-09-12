@@ -1,0 +1,72 @@
+﻿Pos Klasse;bib;name;club;Class;FE1;FE1 Pos;FE2;FE2 Pos;FE3;FE3 Pos;FE4;FE4 Pos;FE5;FE5 Pos;FE6;FE6 Pos;chiptime;diff;gender
+;1;Sofie Langum;Aron Skiklubb;K10;;;0:03:15;1;;;;;0:02:05;1;;;0:05:20;;F
+;5;Aksel Valen-Sendstad;CK Nittedal;M10;;;0:03:39;6;;;;;0:02:32;6;;;0:06:11;; M
+;2;Theo Hjelseth;;M10;;;0:02:23;1;;;;;0:01:30;1;;;0:03:53;; M
+;4;Iver Bjella Unneberg;IF Frøy;M10;;;0:03:20;3;;;;;0:02:20;4;;;0:05:40;; M
+;6;Sondre Aasen;Lillehammer CK;M10;;;0:02:57;2;;;;;0:02:00;2;;;0:04:57;; M
+;89;Jesper Bjerkås;CK Nittedal;M10;;;0:03:20;3;;;;;0:02:15;3;;;0:05:35;; M
+;3;Herman Dahl Hugøy;CK Nittedal;M10;;;0:03:29;5;;;;;0:02:25;5;;;0:05:54;; M
+;7;Emily Skeie-Lebreux;CK Nittedal;K11-12;;;0:02:36;2;;;0:02:31;2;0:01:40;2;0:08:33;2;0:15:20;;F
+;8;Jenny Langum;Aron Skiklubb;K11-12;;;0:02:36;2;;;0:02:38;3;0:01:44;3;0:09:22;3;0:16:20;;F
+;9;Astrid Egge Halvorsen;IL Heming - sykkelgr.;K11-12;;;0:02:25;1;;;0:02:21;1;0:01:34;1;0:08:06;1;0:14:26;;F
+;15;Bård Gujord Røisli;CK Nittedal;M11-12;;;0:02:19;2;;;0:02:00;1;0:01:25;1;0:05:47;1;0:11:31;;M
+;14;Vebjørn Bakken;Sykleriet;M11-12;;;0:02:19;1;;;0:02:03;2;0:01:39;3;0:06:00;2;0:12:01;;M
+;19;Emil Johnsgaard Holmsen;CK Nittedal;M11-12;;;0:02:47;12;;;0:02:34;8;0:01:39;5;0:06:31;3;0:13:31;;M
+;87;Gustav Strand Gulsrud;Fossum IF;M11-12;;;0:02:33;5;;;0:02:18;4;0:01:41;6;0:06:36;4;0:13:08;;M
+;29;Malte Andreas Torp Bure;Gresvik IF;M11-12;;;0:02:37;6;;;0:02:20;6;0:01:41;7;0:06:36;5;0:13:14;;M
+;25;Sindre Hynne-Øye;Nittedal CK;M11-12;;;0:02:23;3;;;0:02:13;3;0:01:36;2;0:06:41;6;0:12:53;;M
+;23;Tobias Haugen Opsahl;Asker CK;M11-12;;;0:02:42;10;;;0:02:35;9;0:01:44;9;0:06:42;7;0:13:43;;M
+;22;Peder Lid-Strand;IF Frøy;M11-12;;;0:02:40;9;;;0:02:54;16;0:01:43;8;0:07:00;8;0:14:17;;M
+;31;Sixten Magnus Schybergson;Fossum IF stisykkel;M11-12;;;0:02:31;4;;;0:02:19;5;0:01:39;4;0:07:07;9;0:13:36;;M
+;27;Even Stensland;Modum CK;M11-12;;;0:02:39;7;;;0:02:30;7;0:01:49;12;0:07:07;10;0:14:05;;M
+;18;Oliver Hjertum Jarsve;CK Nittedal;M11-12;;;0:02:52;14;;;0:02:36;10;0:01:52;15;0:07:09;11;0:14:29;;M
+;30;Emil Kalfoss Eilertsen;CK Nittedal;M11-12;;;0:02:39;8;;;0:02:41;13;0:01:44;10;0:07:15;12;0:14:19;;M
+;24;Magnus Kongsrud;Modum CK;M11-12;;;0:02:47;13;;;0:02:39;11;0:01:50;13;0:07:22;13;0:14:38;;M
+;13;Leopold Kollerud;Asker CK;M11-12;;;0:02:55;17;;;0:03:10;17;0:01:56;16;0:07:23;14;0:15:21;;M
+;17;Mio Alexander Grubbli;CK Nittedal;M11-12;;;0:02:57;18;;;0:02:47;15;0:02:05;19;0:07:34;15;0:15:23;;M
+;26;Åsmund Kirkeby;CK Nittedal;M11-12;;;0:02:52;15;;;0:02:42;14;0:01:46;11;0:07:42;16;0:15:02;;M
+;16;Mikkel Ralle Larsen;Sandefjord SK;M11-12;;;0:02:53;16;;;0:03:14;18;0:02:02;17;0:08:03;17;0:16:12;;M
+;20;Ole Edvald Tangen Risheim;IF Frøy;M11-12;;;0:02:58;19;;;0:03:35;19;0:02:04;18;0:08:19;18;0:16:56;;M
+;11;Max Backsæther;Trysil SK;M11-12;;;0:02:45;11;;;0:02:40;12;0:01:51;14;0:09:43;19;0:16:59;;M
+;10;Aksel Fredrik Rosenvinge;Nittedal CK;M11-12;;;0:04:08;20;;;0:09:21;20;0:02:53;20;0:12:44;20;0:29:06;;M
+1;33;Maren Stærkebye-Ellingsen;Sykleriet;K13-14;;;0:02:37;1;0:07:04;1;;;0:02:12;1;0:18:52;1;0:30:45;;F
+1;59;Markus Skeie-Lebreux;CK Nittedal;M13-14;;;0:01:55;1;0:04:26;1;;;0:01:15;1;0:04:54;1;0:12:30;;M
+2;60;Sondre Hafskjold;SK Rye sykkel;M13-14;;;0:02:08;2;0:04:58;2;;;0:01:22;2;0:05:15;2;0:13:43;;M
+3;41;Sverre Spenningsby;CK Nittedal;M13-14;;;0:02:08;3;0:05:10;3;;;0:01:25;3;0:05:39;4;0:14:22;;M
+4;34;Ådne Saugerud;Kongsberg;M13-14;;;0:02:13;7;0:05:21;4;;;0:01:27;5;0:05:26;3;0:14:27;;M
+5;58;Cornelius Varden Økern;SK Rye sykkel;M13-14;;;0:02:12;5;0:05:30;6;;;0:01:25;4;0:05:43;6;0:14:50;;M
+6;44;Kristoffer Nybråten;Kongsberg;M13-14;;;0:02:14;8;0:05:35;8;;;0:01:30;8;0:05:42;5;0:15:01;;M
+7;56;Tobias Hjelset;CK Nittedal;M13-14;;;0:02:12;6;0:05:41;9;;;0:01:28;6;0:05:50;8;0:15:11;;M
+8;61;Håkon Hofoss;CK Nittedal;M13-14;;;0:02:21;10;0:05:34;7;;;0:01:32;10;0:06:00;10;0:15:27;;M
+9;52;Felix Sveva;Sandefjord SK;M13-14;;;0:02:23;11;0:05:47;12;;;0:01:30;9;0:05:47;7;0:15:27;;M
+10;38;Oskar Myro;SK Rye sykkel;M13-14;;;0:02:18;9;0:05:45;10;;;0:01:29;7;0:06:01;11;0:15:33;;M
+11;43;Wilhelm Kollerud;Asker Cykelklubb;M13-14;;;0:02:23;12;0:06:24;13;;;0:01:32;11;0:05:50;9;0:16:09;;M
+12;55;Edvard Feste;Sandefjord SK;M13-14;;;0:02:57;21;0:05:45;11;;;0:01:36;13;0:06:02;12;0:16:20;;M
+13;62;Markus Hegna Kuyper;Rye sykkelklubb;M13-14;;;0:02:25;13;0:06:33;14;;;0:01:38;14;0:06:20;15;0:16:56;;M
+14;90;Mathias Yggeseth;;M13-14;;;0:02:28;14;0:06:33;15;;;0:01:40;15;0:06:18;14;0:16:59;;M
+15;45;Kevin André Vestli;Nes SK;M13-14;;;0:02:52;20;0:07:16;19;;;0:01:33;12;0:06:18;13;0:17:59;;M
+16;57;Iver Brunborg;Aron Skiklubb;M13-14;;;0:02:41;16;0:07:05;17;;;0:01:45;17;0:06:30;16;0:18:01;;M
+17;49;Kasper Thingelstad Mayer;Team Sykleriet;M13-14;;;0:02:34;15;0:07:13;18;;;0:01:43;16;0:06:33;17;0:18:03;;M
+18;42;Tobias Johansen;Ringerike SK;M13-14;;;0:02:41;17;0:07:04;16;;;0:01:50;18;0:07:06;18;0:18:41;;M
+19;40;Erlend Bottolfs;Team Sykleriet;M13-14;;;0:03:27;23;0:10:00;20;;;0:02:26;21;0:09:30;21;0:25:23;;M
+20;47;Embrik Segelvik Aasen;Eiker CK;M13-14;;;0:02:41;18;0:12:19;22;;;0:02:01;19;0:09:30;20;0:26:31;;M
+21;37;Eirik Bottolfs;Team Sykleriet;M13-14;;;0:03:21;22;0:12:07;21;;;0:02:08;20;0:09:00;19;0:26:36;;M
+DNF;46;Sigurd Foss Andersen;CK Nittedal;M13-14;;;0:02:11;4;0:05:23;5;;;0:02:48;22;DNF;DNF;DNF;;M
+DNF;36;David Brekken;Team Sykleriet;M13-14;;;0:02:49;19;DNF;DNF;;;DNS;DNS;DNS;DNS;DNF;;M
+1;75;Mathias Stenberg;Eiker-Kvikk sykkel;M15-16;0:05:50;2;;;0:04:33;3;;;0:01:16;1;;;0:11:39;;M
+2;80;Eskil Hafskjold;Rye SK;M15-16;0:06:06;3;;;0:04:22;2;;;0:01:17;3;;;0:11:45;;M
+3;73;Jo Røisli;CK Nittedal;M15-16;0:06:13;5;;;0:04:20;1;;;0:01:17;2;;;0:11:50;;M
+4;76;Torben Hjelset;CK Nittedal;M15-16;0:05:38;1;;;0:04:55;5;;;0:01:18;4;;;0:11:51;;M
+5;65;Lasse Jenserud;Hadeland CK;M15-16;0:06:07;4;;;0:04:49;4;;;0:01:24;5;;;0:12:20;;M
+6;81;Vegard Vartdal Sund;Bærum OCK;M15-16;0:06:27;6;;;0:05:01;7;;;0:01:26;7;;;0:12:54;;M
+7;66;Oskar Mollatt Wirstad;SK Rye sykkel;M15-16;0:06:33;7;;;0:05:39;9;;;0:01:24;6;;;0:13:36;;M
+8;79;Marius Løken;CK Nittedal;M15-16;0:07:15;10;;;0:04:55;6;;;0:01:28;8;;;0:13:38;;M
+9;68;Rasmus Mackenzie;SK Rye sykkel;M15-16;0:07:07;9;;;0:05:25;8;;;0:01:30;9;;;0:14:02;;M
+10;70;Sindre Ingebretsen Solheim;Hadeland sykkelklubb;M15-16;0:06:48;8;;;0:05:56;10;;;0:01:31;10;;;0:14:15;;M
+11;64;Jonas Wilsberg;Oslo;M15-16;0:08:16;11;;;0:07:00;11;;;0:01:32;11;;;0:16:48;;M
+DNS;63;Trym Hegerstrøm;Nes SK;M15-16;DNS;DNS;;;DNS;DNS;;;DNS;DNS;;;DNS;;M
+1;83;Mikkel Pedersen;IF Frøy;M17-18;0:05:36;2;;0:11:10;0:04:17;1;;;0:01:17;2;;;0:11:10;;M
+2;84;Theodor Bakken;Aron Skiklubb;M17-18;0:05:32;1;;0:11:12;0:04:24;2;;;0:01:16;1;;;0:11:12;;M
+3;86;Mads Henrik Kjemperud;Åmot;M17-18;0:06:33;4;;0:12:35;0:04:40;3;;;0:01:22;3;;;0:12:35;;M
+4;82;Sebastien Amat;CK Nittedal;M17-18;0:06:11;3;;0:13:10;0:05:29;5;;;0:01:30;5;;;0:13:10;;M
+5;85;Thorstein Johansen;Ringerike SK;M17-18;0:06:51;5;;0:13:25;0:05:12;4;;;0:01:22;3;;;0:13:25;;M
