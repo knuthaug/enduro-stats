@@ -1,4 +1,4 @@
- /**
+  /**
  * @fileOverview Super-class for converters with common methods shared between mylaps and eq converters
  * @name converter.js
  * @author  Knut Haugen
@@ -26,7 +26,7 @@ class Converter {
       return 'Menn master'
     } else if (/master kvinner|kvinner master/i.test(name)) {
       return 'Kvinner master'
-    } else if (/Kvinner Åpen.*17+/.test(name) || /Menn Åpen.*17+/i.test(name) || /.*Elduro.*/i.test(name) || /M\s?17-18/.test(name)) {
+    } else if (/Kvinner Åpen.*17+/.test(name) || /Menn Åpen.*17+|Menn trim/i.test(name) || /.*Elduro.*/i.test(name) || /M\s?17-18/.test(name) || /Kvinner U23/.test(name)) {
       return name
     } else if (/K\s?17+/.test(name)) {
       return 'Kvinner senior'

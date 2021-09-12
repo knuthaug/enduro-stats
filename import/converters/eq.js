@@ -135,7 +135,6 @@ class EqConverter extends Converter {
         })
       })
     }
-
     return stages
   }
 
