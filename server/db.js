@@ -89,7 +89,7 @@ class Db {
     const query = 'select results.id, acc_time_ms from results, riders where race_id = $1 and acc_time_ms = (select min(acc_time_ms) from results, riders where race_id = $1 and acc_time_ms != 0 and results.rider_id = riders.id and riders.gender = $2 and results.class like $3 and final_rank IS NOT null) and results.rider_id = riders.id'
 
     let classPrefix = ''
-    if(raceUid === '77f9b01807c96affc1e54cd41b0583dc') { // special case for race with only youth
+    if(raceUid === '77f9b01807c96affc1e54cd41b0583dc' || raceUid === '0d9c144ca0063d89c64b9e263276efbe') { // special case for races with only youth
       classPrefix = gender === 'F' ? 'K%' : 'M%';
     } else {
       classPrefix = gender === 'F' ? 'Kvinner%' : 'Menn%'
