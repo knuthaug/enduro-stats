@@ -239,9 +239,10 @@ function addSpace(classes = ['col-1']) {
 }
 
 function addDetails(g, stage) {
+  const gain = g.get_elevation_gain();
   const rows = [
     row(g, 'Lengde: ', 'meter', g.get_distance()),
-    row(g, 'Høydeforskjell ned/opp: ', 'meter', g.get_elevation_loss(), g.get_elevation_gain()),
+    row(g, 'Høydeforskjell ned/opp: ', 'meter', g.get_elevation_loss(), gain ? gain : 0),
     row(g, 'Gjennomsnittlig fall: ', '%', (g.get_elevation_loss() / g.get_distance()) * 100),
     rowLink(g, 'GPX-fil: ', 'Last ned', `https://d1hoqbrdo21qk8.cloudfront.net/gpx/${stage.filename}`)
   ];
