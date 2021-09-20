@@ -241,10 +241,10 @@ function addSpace(classes = ['col-1']) {
 function addDetails(g, stage) {
   const rows = [
     row(g, 'Lengde: ', 'meter', g.get_distance()),
-    row(g, 'Høydemeter ned: ', 'meter', g.get_elevation_loss()),
-    row(g, 'Høydemeter opp: ', 'meter', g.get_elevation_gain()),
-    row(g, 'Gjennomsnittlig fall: ', '%', (g.get_elevation_loss() / g.get_distance()) * 100)
-  ]
+    row(g, 'Høydeforskjell ned/opp: ', 'meter', g.get_elevation_loss(), g.get_elevation_gain()),
+    row(g, 'Gjennomsnittlig fall: ', '%', (g.get_elevation_loss() / g.get_distance()) * 100),
+    rowLink(g, 'GPX-fil: ', 'Last ned', `https://d1hoqbrdo21qk8.cloudfront.net/gpx/${stage.filename}`)
+  ];
 
   if(stage.strava_url) {
     rows.push(rowLink(g, 'Stravasegment: ', stage.strava_name, stage.strava_url))
@@ -253,12 +253,13 @@ function addDetails(g, stage) {
   return p({}, rows)
 }
 
-function row(g, text, unit, value) {
+
+function row(g, text, unit, value, value2 = undefined) {
   return span([
     strong(text),
-    `${Math.round(value)} ${unit}`,
+    `${Math.round(value)}${value2 ? `/${Math.round(value2)}` : ''} ${unit}`,
     br()
-  ])
+  ]);
 }
 
 function rowLink(g, text, urlText, url) {
