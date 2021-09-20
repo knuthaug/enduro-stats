@@ -3,6 +3,45 @@
   "year": 2021,
   "date": "2021-09-18",
   "text": "Kompakt ritt med fem etapper på østsiden av dalen i Trysil. Fine forhold og bratte bakker. Merk at tidene her er med tidels sekunder mens totaltiden i offisiell postet resultatliste er uten, pga. excelutfordringer. ",
-  "links": [
+  "lat": 61.3136,
+  "long": 12.2441,
+  "zoom": 13,
+  "details": [
+    {
+      "name": "FE 1",
+      "strava_name": "",
+      "file": "trysil-2021-fe1.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 2",
+      "strava_name": "Logging run down",
+      "file": "trysil-2021-fe2.gpx",
+      "strava_url": "https://www.strava.com/segments/18683838"
+    },
+    {
+      "name": "FE 3",
+      "strava_name": "",
+      "file": "trysil-2021-fe3.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 4",
+      "strava_name": "",
+      "file": "trysil-2021-fe4.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 5",
+      "strava_name": "",
+      "file": "trysil-2021-fe5.gpx",
+      "strava_url": ""
+    },
+    "links": [
+    {
+      "type": "results",
+      "desc": "Original resultater",
+      "url": "https://www.trysil.com/globalassets/documents/trysil_enduro_2021_resultater.pdf"
+    }
   ]
 }
