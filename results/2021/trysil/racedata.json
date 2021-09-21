@@ -6,6 +6,7 @@
   "lat": 61.3253,
   "long": 12.2821,
   "zoom": 13,
+  "byline_text": "Jonas Sjögren/Trysil Bike Arena",
   "details": [
     {
       "name": "FE 1",
@@ -39,10 +40,20 @@
     }
     ],
     "links": [
-    {
-      "type": "results",
-      "desc": "Originale resultater",
-      "url": "https://www.trysil.com/globalassets/documents/trysil_enduro_2021_resultater.pdf"
-    }
+      {
+        "type": "results",
+        "desc": "Originale resultater",
+        "url": "https://www.trysil.com/globalassets/documents/trysil_enduro_2021_resultater.pdf"
+      },
+      {
+        "type": "images",
+        "desc": "Bilder fra Jonas Sjögren/Trysil Bike Arena",
+        "url": "https://drive.google.com/drive/folders/1r9j2xT1xm0GBdohdsoMbj_bcjQFiMmPD?fbclid=IwAR06OcYOSxijk9R1IcEoLKbgd8l_Nlmqmwvi7vdVmTUXhA90Rc-1-jYKLQc"
+      },
+      {
+        "type": "images",
+        "desc": "Bilder fra Tom Are Grøv",
+        "url": "https://lightroom.adobe.com/shares/8172591cd17e41819421c79849f0993b"
+      }
   ]
 }
