@@ -347,6 +347,11 @@ async function riderGraphHandler (req) {
 
 
 async function riderHandler (req) {
+  // 410 gone for people who wnat to be deleted
+  if(req.params.uid === '9bf7ef23cda096ef922d2a78cdb9723a') {
+    return { status: 410 }
+  }
+
   const rider = await db.findRider(req.params.uid)
 
   if (!rider.id) {

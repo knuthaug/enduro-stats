@@ -109,6 +109,7 @@ app.get('/assets/css/:file', (req, res) => {
   return res.header('Cache-Control', `public, max-age=${ASSET_SHORT_CACHE_TIME}`).sendFile(`css/${file}`)
 })
 
+
 function dynamicHandler (dataHandler) {
   return async function (req, res) {
     const context = await dataHandler(req);
@@ -119,6 +120,9 @@ function dynamicHandler (dataHandler) {
 function handler (template, dataHandler, cacheTime) {
   return async function (req, res) {
     const context = await dataHandler(req)
+    if(context.status === 410) {
+      return res.code(410).send('410 GONE');
+    }
     if (context.status !== 200) {
       return render(res, '404.hbs', context, NOT_FOUND_CACHE_TIME, 404)
     }
