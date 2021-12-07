@@ -50,6 +50,8 @@ const subs = {
   'Magnus Sørli': 'Magnus Slinger Sørli',
   'Martin Rødal': 'Martin Rødahl',
   'Oscar Smith': 'Oscar Schiøtz Smith',
+  'Bård G. Røisli' : 'Bård Gujord Røisli',
+  'Jo Røisli': 'Jo Gujord Røisli',
   'Petter Saleen': 'Petter Salen',
   'Preben Nøkleby': 'Preben Alexander Nøkleby',
   'Severin Poppe': 'Severin Poppe Midteide',
