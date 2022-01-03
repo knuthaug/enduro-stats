@@ -38,7 +38,6 @@
     "babel": "6.23.0",
     "babel-loader": "8.0.4",
     "bootstrap": "4.5.3",
-    "caniuse-lite": "1.0.30001015",
     "command-line-args": "5.0.2",
     "copy-webpack-plugin": "6.1.0",
     "css-loader": "5.2.4",
