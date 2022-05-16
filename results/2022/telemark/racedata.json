@@ -3,12 +3,79 @@
   "year": 2022,
   "date": "2022-05-14",
   "text": "Sesongåpneren i Skien leverer varene igjen, men nå har de jaggu sagt det er siste året. Det går jo ikke an! God stemning, fint vær og knusktørre stier med masse flyt. Herrlig. ",
-
+  "lat": 59.1765,
+  "long": 9.5925,
+  "zoom": 13,
+  "details": [
+    {
+    "name": "FE 1",
+    "strava_name": "",
+    "strava_url": "",
+      "file": "telemark-2022-fe1.gpx"
+    },
+    {
+      "name": "FE 2",
+      "strava_name": "",
+      "strava_url": "",
+      "file": "telemark-2022-fe2.gpx"
+    },
+    {
+      "name": "FE 3",
+      "strava_name": "",
+      "strava_url": "",
+      "file": "telemark-2022-fe3.gpx"
+    },
+    {
+      "name": "FE 4",
+      "strava_name": "",
+      "strava_url": "",
+      "file": "telemark-2022-fe4.gpx"
+    },
+    {
+      "name": "FE 5",
+      "strava_name": "",
+      "strava_url": "",
+      "file": "telemark-2022-fe5.gpx"
+    },
+    {
+      "name": "FE 6",
+      "strava_name": "",
+      "strava_url": "",
+      "file": "telemark-2022-fe6.gpx"
+    },
+    {
+      "name": "FE 7",
+      "strava_name": "",
+      "strava_url": "",
+      "file": "telemark-2022-fe7.gpx"
+    },
+    {
+      "name": "FE 8",
+      "strava_name": "",
+      "strava_url": "",
+      "file": "telemark-2022-fe8.gpx"
+    }
+  ],
   "links": [
     {
       "type": "results",
       "desc": "Originale resultater",
     "url": "https://cdn.fbsbx.com/v/t59.2708-21/281121527_729216331543978_5382591162433249387_n.pdf/Results_20220514162032.pdf?_nc_cat=110&ccb=1-6&_nc_sid=0cab14&_nc_ohc=4qlNsQIZ1A4AX_ZMG33&_nc_ht=cdn.fbsbx.com&oh=03_AVLKWBUKNGDnLpfE7_UbXwv7hw7u-sTgZeMeHECpyFcDKg&oe=6281AD48&dl=1&fbclid=IwAR2PblYbLEkhZg5KZuddTyAYaIv_DD6tuHkw4a9RFb6mgaf6iNgQEWreT6k"
-    }
+  },
+    {
+    "type": "images",
+    "desc": "Bilder fra Kristoffer Engen",
+    "url": "https://www.facebook.com/photo/?fbid=10166448896020385&set=pcb.10166448933205385"
+  },
+    {
+    "type": "images",
+    "desc": "Bilder fra Billbophotography",
+    "url": "https://www.facebook.com/Billbophoto/photos/pcb.5337489696313373/5337429279652748/"
+  },
+    {
+    "type": "images",
+    "desc": "Bilder fra Moldestad photography",
+    "url": "https://www.facebook.com/photo/?fbid=346584637462520&set=pcb.346593390794978"
+  }
   ]
 }
