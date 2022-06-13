@@ -41,6 +41,10 @@ const bylineMap = {
   'Jonas Sjögren/Trysil Bike Arena': {
     text: 'Jonas Sjögren/Trysil Bike Arena',
     url: ''
+  },
+  'Radim Hamal': {
+    text: 'Radim Hamal',
+    url: ''
   }
 
 }

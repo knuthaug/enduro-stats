@@ -699,3 +699,56 @@ UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.c
 UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/', image_mode='landscape' where uid='97f71ce4a6a3cc3ed342425a95cef161';/*Edvin Almaas-Edvardsen*/
 UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/', image_mode='portrait' where uid='1873e8cd63c9d9b538210b6b4ce75238';/*Lise Pettersen*/
 UPDATE riders set byline_text='Jon Borgersen', byline_url='http://jonborgersen.com/', image_mode='portrait' where uid='4c912ab8c72a068e4aa7167bd58ca54d';/*Tor Hjelset*/
+UPDATE riders set byline_text='Radim Hamal', byline_url='', image_mode='landscape' where uid='5a65f9fccefbe770d0f1c23ef3ae1594';/*Mattias Arnerdal*/
+UPDATE riders set byline_text='Radim Hamal', byline_url='', image_mode='landscape' where uid='e3b2d79db50c4e767e17b12a8af78517';/*Hampus Rocksjö*/
+UPDATE riders set byline_text='Radim Hamal', byline_url='', image_mode='landscape' where uid='5c0b9050b595d10405e7d82b90de082d';/*Brage Lidsheim*/
+UPDATE riders set byline_text='Radim Hamal', byline_url='', image_mode='landscape' where uid='0add4792d427590d45ba4ca307575376';/*August Gille*/
+UPDATE riders set byline_text='Radim Hamal', byline_url='', image_mode='landscape' where uid='b3d406ddc160e0404b19b69f94bb2164';/*Amandus Strand*/
+UPDATE riders set byline_text='Radim Hamal', byline_url='', image_mode='landscape' where uid='a2848081a5b3c6205ed556d04c5492e4';/*David Tonheim*/
+UPDATE riders set byline_text='Radim Hamal', byline_url='', image_mode='landscape' where uid='32fee3bbaef327426af1868479f29e22';/*Marius Tonheim*/
+UPDATE riders set byline_text='Radim Hamal', byline_url='', image_mode='landscape' where uid='30d16abcbe60fc9e9893c20c7695334f';/*Alvin Strand*/
+UPDATE riders set byline_text='Radim Hamal', byline_url='', image_mode='landscape' where uid='8db27a74494b6bc97a48377ade859aed';/*Ludvig Meldgaard*/
+UPDATE riders set byline_text='Radim Hamal', byline_url='', image_mode='landscape' where uid='3f193fd394a3f9fc790e436f88c73dcb';/*Lo Zetterlund*/
+UPDATE riders set byline_text='Radim Hamal', byline_url='', image_mode='landscape' where uid='5be1edc107a7d7504408d2c4a9db3901';/*Philip Sander Alnes*/
+UPDATE riders set byline_text='Radim Hamal', byline_url='', image_mode='landscape' where uid='e07c6f4e7aa0c9cf36f4335b44e42fce';/*Måns Alvarsson*/
+UPDATE riders set byline_text='Radim Hamal', byline_url='', image_mode='landscape' where uid='96f3cf4260149020624791b911d28aee';/*Noah Heieren*/
+UPDATE riders set byline_text='Radim Hamal', byline_url='', image_mode='landscape' where uid='1fd3882a597f80a1f8d849bf02398ae6';/*Oliver Gjelsvik-Bakke*/
+UPDATE riders set byline_text='Radim Hamal', byline_url='', image_mode='landscape' where uid='a2460ca578e79b4c9b267d88c7a3aa7f';/*Adam O'reilly*/
+UPDATE riders set byline_text='Radim Hamal', byline_url='', image_mode='landscape' where uid='eb310fea82c2980662dce3fcdc976e06';/*Oskar Mollatt Wirstad*/
+UPDATE riders set byline_text='Radim Hamal', byline_url='', image_mode='landscape' where uid='e5627d9e6f2a9fefab36341e01d14196';/*Rasmus Mackenzie*/
+UPDATE riders set byline_text='Radim Hamal', byline_url='', image_mode='portrait' where uid='d1bb747eed790f6fb3eb1739f4a5e533';/*Trond Egil Gjelsvik-Bakke*/
+UPDATE riders set byline_text='Radim Hamal', byline_url='', image_mode='portrait' where uid='eae7cdddc43f631f0c3c5cb8dabb016a';/*Jenny Pedersen*/
+UPDATE riders set byline_text='Radim Hamal', byline_url='', image_mode='portrait' where uid='229401e6434bea46091c3186f3996a21';/*Erik Slettum*/
+UPDATE riders set byline_text='Radim Hamal', byline_url='', image_mode='portrait' where uid='c0043f9719471b747995320e3cb7946d';/*Jacob Slettum*/
+UPDATE riders set byline_text='Radim Hamal', byline_url='', image_mode='portrait' where uid='0033f7119a242b7f0576c9d2ee032911';/*Ask Gikling Borthne*/
+UPDATE riders set byline_text='Radim Hamal', byline_url='', image_mode='portrait' where uid='a2b24b4b81861e6100fb7994b99a63cc';/*Bjørnar Gjesdal*/
+UPDATE riders set byline_text='Radim Hamal', byline_url='', image_mode='portrait' where uid='0aeb5455073f8c83aeb412c6d9ab3667';/*Lavrans Jøranli Sundgaard*/
+UPDATE riders set byline_text='Radim Hamal', byline_url='', image_mode='portrait' where uid='543099b208a344b277c864e75c42c1d5';/*Vegard Bjørnsen*/
+UPDATE riders set byline_text='Radim Hamal', byline_url='', image_mode='portrait' where uid='eaa0429a7c690e80af91855419060a43';/*Bjørnar Bjørnsen*/
+UPDATE riders set byline_text='Radim Hamal', byline_url='', image_mode='portrait' where uid='736eb1315353f997ed12d44c3c725f55';/*Jo Gujord Røisli*/
+UPDATE riders set byline_text='Radim Hamal', byline_url='', image_mode='portrait' where uid='511062476d625b7d78ad315ec785fdc9';/*Sindre Ingebretsen Solheim*/
+UPDATE riders set byline_text='Radim Hamal', byline_url='', image_mode='portrait' where uid='1cc789b9f1e49eb16e25173131b42ef0';/*Christoffer Bakke*/
+UPDATE riders set byline_text='Radim Hamal', byline_url='', image_mode='portrait' where uid='7ed9754263c54fbada9233bfe1c2ca5a';/*Sondre Spieler*/
+UPDATE riders set byline_text='Radim Hamal', byline_url='', image_mode='portrait' where uid='6d14bedf401fd193b1f8a27d4b081afb';/*Fridtjof Digre*/
+UPDATE riders set byline_text='Radim Hamal', byline_url='', image_mode='portrait' where uid='15b55778ca9ddcae5e4455be07e6c143';/*Hamish Ryan*/
+UPDATE riders set byline_text='Radim Hamal', byline_url='', image_mode='portrait' where uid='b137bc0bac218795462e6a3b65be0fa9';/*Ludde Reisten*/
+UPDATE riders set byline_text='Radim Hamal', byline_url='', image_mode='portrait' where uid='644f0c11c2b253fed2f50627867cd171';/*Asbjørn Hoel Winnje*/
+UPDATE riders set byline_text='Radim Hamal', byline_url='', image_mode='portrait' where uid='8681aabd958243ca6f908ef3e767d1f7';/*Bjørn Sætnan*/
+UPDATE riders set byline_text='Radim Hamal', byline_url='', image_mode='portrait' where uid='01fb5a473a4c5352838d23be64ade2c3';/*Michail Eliasson*/
+UPDATE riders set byline_text='Radim Hamal', byline_url='', image_mode='portrait' where uid='4e2c4227c3564a962f8436d92f4637e1';/*Steffen Johannesen*/
+UPDATE riders set byline_text='Radim Hamal', byline_url='', image_mode='portrait' where uid='7887aef6f2af5f6e2768fa0a936bbcad';/*Viktor Elofsson*/
+UPDATE riders set byline_text='Radim Hamal', byline_url='', image_mode='portrait' where uid='b57ce9cc6fa62137fe0a171b1ba1b0dc';/*Johan Schjerve*/
+UPDATE riders set byline_text='Radim Hamal', byline_url='', image_mode='portrait' where uid='80714d8525817e11ca51055c3411c8cd';/*Håvard Sefland*/
+UPDATE riders set byline_text='Radim Hamal', byline_url='', image_mode='portrait' where uid='418cd08f772fdc6045643c546d06cb96';/*Tommy Varg*/
+UPDATE riders set byline_text='Radim Hamal', byline_url='', image_mode='portrait' where uid='cc42460d72615b186fb9f4b5d876012a';/*Elias Tødås*/
+UPDATE riders set byline_text='Radim Hamal', byline_url='', image_mode='portrait' where uid='9da359fbdf0493a5dab75bf8d1a01db8';/*Isak Solomon*/
+UPDATE riders set byline_text='Radim Hamal', byline_url='', image_mode='portrait' where uid='7c1cef9911a5c4ed50b138f5e19b2c01';/*Jukka Kulokorpi*/
+UPDATE riders set byline_text='Radim Hamal', byline_url='', image_mode='portrait' where uid='ab30bde3562b2a8df1acad20db30aa01';/*Herman Taxerås*/
+UPDATE riders set byline_text='Radim Hamal', byline_url='', image_mode='landscape' where uid='2c912659e5165b4f011b07739e8c2d0d';/*Lachlan Cruickshank*/
+UPDATE riders set byline_text='Radim Hamal', byline_url='', image_mode='landscape' where uid='58f092137ce294a91e785fb1e3e8d258';/*Marcus Søyland*/
+UPDATE riders set byline_text='Radim Hamal', byline_url='', image_mode='landscape' where uid='1766be111c437fe1393cc3d056a0f5c3';/*Frode Gyland*/
+UPDATE riders set byline_text='Radim Hamal', byline_url='', image_mode='landscape' where uid='e89dd6233b94c349950d35754781ee22';/*Simon Risan*/
+UPDATE riders set byline_text='Radim Hamal', byline_url='', image_mode='portrait' where uid='98f1cd0ee2adb0f03e9d5f54a9e9d77a';/*Robin Ruston*/
+UPDATE riders set byline_text='Radim Hamal', byline_url='', image_mode='portrait' where uid='6d7a14c617d3190f541b3bdcc48e6bf2';/*Sindre Martin Moe Sollund*/
+UPDATE riders set byline_text='Radim Hamal', byline_url='', image_mode='portrait' where uid='733b47de44a8664b9482c0317e628647';/*Christian Austenå*/
+UPDATE riders set byline_text='Radim Hamal', byline_url='', image_mode='portrait' where uid='536a326922cc14d5bb32bd35e5952950';/*Sean Jonathan Knutsson*/
