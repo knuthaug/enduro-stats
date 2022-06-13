@@ -212,5 +212,8 @@ echo "2022"
 echo "  Telemark Enduro"
 node import/importer.js -m -f results/2022/telemark/telemark-2022.csv
 
+echo "  Nesbyen Enduro"
+node import/importer.js -m -f results/2022/nesbyen/nesbyen-2022.csv
+
 psql -U endurostats endurostats < scripts/byline.sql
 

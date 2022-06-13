@@ -1,0 +1,50 @@
+{
+  "name": "Nesbyenduro",
+  "year": 2022,
+  "date": "2022-06-12",
+  "series": "NC",
+  "text": "Nesbyen - din leverandør av bratt og fart. Verdens første norgescup i enduro startet med NesbyEnduro i år. ",
+  "lat": 60.5740,
+  "long": 9.1057,
+  "zoom": 13,
+  "byline_text": "Tom Are Grøv/@sideknasten",
+  "details": [
+    {
+    "name": "FE 1",
+    "strava_name": "",
+    "file": "nesbyen-2022-fe1.gpx",
+    "strava_url": ""
+  },
+    {
+    "name": "FE 2",
+    "strava_name": "FE2 Nesbyen enduro 21",
+    "file": "nesbyen-2022-fe2.gpx",
+    "strava_url": "https://www.strava.com/segments/29751057"
+  },
+    {
+    "name": "FE 3",
+    "strava_name": "FE3 Nesbyenduro 2019",
+    "file": "nesbyen-2022-fe3.gpx",
+    "strava_url": "https://www.strava.com/segments/21798635"
+  },
+    {
+    "name": "FE 4",
+    "strava_name": "SS4",
+    "file": "nesbyen-2022-fe4.gpx",
+    "strava_url": "https://www.strava.com/segments/31998059"
+  },
+    {
+    "name": "FE 5",
+    "strava_name": "SS5",
+    "file": "nesbyen-2022-fe5.gpx",
+    "strava_url": "https://www.strava.com/segments/31998083"
+  }
+  ],
+  "links": [
+    {
+      "type": "results",
+      "desc": "Originale resultater",
+    "url": "https://www.trailheadnesbyen.no/s/Full-Results_2022-Nesbyen-Enduro.htm"
+    }
+  ]
+}
