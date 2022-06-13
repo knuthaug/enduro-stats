@@ -420,34 +420,35 @@ function toComparisonChartData (races) {
 function resultsToColumnChart(results) {
   const series = []
   const categories = []
-
   const maxStage = results.reduce((acc, cur) => {
     return cur.details.length > acc ? cur.details.length : acc
   }, 0)
+  //console.log('max', maxStage)
 
   const res = results.reverse()
   for(let i = 0; i < res.length; i++) {
     const cur = res[i]
     categories.push(`${cur.raceName} ${cur.year}`)
-    for(let j = 0; j < maxStage; j++) {
-      if(!cur.details[j]) {
-        if(!series[j]) {
-          series[j] = {
-            name: `FE${j + 1}`,
+    for(let j = 1; j <= maxStage; j++) {
+      if(!cur.details[j-1]) {
+        if(!series[j-1]) {
+          series[j-1] = {
+            name: `FE${j}`,
             data: [0]
           }
         } else {
-          series[j].data.push(0)
+          const stage = toNumber(series[j-1].name)
+          series[j-1].data.push(0)
         }
       } else {
-        const stage = toNumber(cur.details[j].name)
-        if(stage && !series[stage - 1]) {
-          series[stage - 1] = {
-            name: cur.details[j].name,
-            data: [cur.details[j].percent_behind]
+        const stage = toNumber(cur.details[j-1].name)
+        if(stage && !series[j - 1]) {
+          series[j - 1] = {
+            name: cur.details[j-1].name,
+            data: [cur.details[j-1].percent_behind]
           }
         } else {
-          series[stage - 1].data.push(cur.details[j].percent_behind)
+          series[j - 1].data.push(cur.details[j-1].percent_behind)
         }
       }
     }
