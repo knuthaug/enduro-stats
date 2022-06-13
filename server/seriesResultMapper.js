@@ -52,7 +52,7 @@ function mapToSeriesForRider(data) {
   return results
 }
 
-function mapToSeries(data) {
+function mapToSeries(data, seriesName) {
   const classes = [...new Set(data.map(r => r.class))]
   const raceNames = data
         .slice()
@@ -76,7 +76,7 @@ function mapToSeries(data) {
           name: result.race_name,
           rank: result.final_rank,
           totalInClass: totalInClass(resultsForClass, result.race_name),
-          points: pointsForClass(className, result.final_rank)
+          points: pointsForClass(className, result.final_rank, seriesName)
         })
       } else {
         riderRows.push({ name: result.name, uid: result.uid, races: [
@@ -84,7 +84,7 @@ function mapToSeries(data) {
             name: result.race_name,
             rank: result.final_rank,
             totalInClass: totalInClass(resultsForClass, result.race_name),
-            points: pointsForClass(className, result.final_rank)
+            points: pointsForClass(className, result.final_rank, seriesName)
           }
         ]})
       }
@@ -152,7 +152,11 @@ function indexOfSmallest(array) {
 }
 
 
-function pointsForClass(cls, place) {
+function pointsForClass(cls, place, series) {
+  if(series && series === 'NC') {
+    return pointsNC[place];
+  }
+
   if('Menn senior'.match(cls)) {
     return pointsMen[place]
   }
@@ -182,6 +186,10 @@ for(let i = 1; i < 300; i++) {
     pointsOther[i] = point -= 40
   }
 }
+
+const pointsNC = [
+  0, 600, 480, 420, 360, 330, 300, 270, 240, 210, 180, 162, 144, 132, 120, 108, 96, 90, 84, 78, 72, 66, 60, 54, 48, 42, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12,11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1
+];
 
 Array.max = function(array){
   return Math.max.apply(Math, array);

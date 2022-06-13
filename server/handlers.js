@@ -175,7 +175,7 @@ async function seriesHandler (req) {
   }
 
   const allRaces = await db.racesBySeriesAndYear(race.series, race.year)
-  const results = seriesMapper.mapToSeries(allRaces)
+  const results = seriesMapper.mapToSeries(allRaces, race.series)
   const sortedClasses = results.map(r => r.name).sort()
 
   const series = {
