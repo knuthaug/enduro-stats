@@ -32,8 +32,8 @@ Pos Klasse;bib;name;chiptime;diff;FE1;FE1 Pos;FE2;FE2 Pos;FE3;FE3 Pos;FE4;FE4 Po
 14;42;Amandus Strand;18:18.763;4:38.844;8:59.024;14;;;;;4:29.832;14;4:49.907;14;Gutter 15-16;M
 15;35;Rasmus Mackenzie;19:47.104;6:07.185;8:50.221;11;;;;;5:21.754;15;5:35.129;16;Gutter 15-16;M
 16;41;Sindre Ingebretsen Solheim;20:08.989;6:29.070;9:49.964;16;;;;;5:24.250;16;4:54.775;15;Gutter 15-16;M
--;27;Adrian Van Lengen Berge;0.000;-;11:23.781;17;;;;;DNS;;DNS;;Gutter 15-16;M
--;44;Vegard Vartdal;0.000;0.000;DNF;DNF;;;;;DNS;;DNS;;Gutter 15-16;M
+;27;Adrian Van Lengen Berge;0.000;-;11:23.781;17;;;;;DNS;;DNS;;Gutter 15-16;M
+;44;Vegard Vartdal;DNF;DNF;DNF;DNF;;;;;DNS;;DNS;;Gutter 15-16;M
 1;56;Jonas Oudalstøl;19:30.595;0.000;6:55.677;3;2:35.442;3;2:55.000;1;3:28.270;2;3:36.206;1;Menn junior;M
 2;55;Ludvig Meldgaard;19:35.536;4.941;6:52.777;2;2:32.315;1;2:56.534;2;3:25.272;1;3:48.638;4;Menn junior;M
 3;62;Lo Zetterlund;19:43.712;13.117;6:50.724;1;2:33.717;2;3:01.826;3;3:36.878;4;3:40.567;2;Menn junior;M
@@ -44,9 +44,9 @@ Pos Klasse;bib;name;chiptime;diff;FE1;FE1 Pos;FE2;FE2 Pos;FE3;FE3 Pos;FE4;FE4 Po
 8;58;Sindre Martin Moe Sollund;22:12.198;2:41.603;8:23.017;8;2:47.793;7;3:12.126;6;3:51.388;8;3:57.874;7;Menn junior;M
 9;52;Vetle Gikling Borthne;24:39.153;5:08.558;8:49.001;11;3:16.390;11;3:47.989;9;4:15.446;9;4:30.327;9;Menn junior;M
 10;59;Sondre Spieler;26:20.033;6:49.438;8:44.185;10;3:01.084;9;4:43.451;11;4:43.641;10;5:07.672;10; Menn junior;M
--;50;Philip Sander Alnes;0.000;0.000;8:27.461;9;3:09.157;10;4:21.850;10;DNS;;DNS;;Menn junior;M
--;53;Fridtjof Digre;0.000;0.000;12:47.436;12;DNS;;DNS;;DNS;;DNS;;Menn junior;M
--;61;Karl Viktor Vatne;0.000;0.000;23:16.310;13;DNS;;DNS;;DNS;;DNS;;Menn junior;M
+;50;Philip Sander Alnes;DNF;DNF;8:27.461;9;3:09.157;10;4:21.850;10;DNS;;DNS;;Menn junior;M
+;53;Fridtjof Digre;DNF;DNF;12:47.436;12;DNS;;DNS;;DNS;;DNS;;Menn junior;M
+;61;Karl Viktor Vatne;DNF;DNF;23:16.310;13;DNS;;DNS;;DNS;;DNS;;Menn junior;M
 1;89;Tommy Varg;19:47.982;DNF;7:00.300;1;2:31.300;1;3:02.155;1;3:29.679;1;3:44.548;1;Menn master;M
 2;74;Viktor Elofsson;20:42.659;54.677;7:31.186;5;2:36.818;2;3:08.815;2;3:35.934;2;3:49.906;3;Menn master;M
 3;84;Hamish Ryan;20:54.081;1:06.099;7:29.855;4;2:41.193;5;3:10.335;3;3:44.908;4;3:47.790;2;Menn master;M
@@ -62,8 +62,8 @@ Pos Klasse;bib;name;chiptime;diff;FE1;FE1 Pos;FE2;FE2 Pos;FE3;FE3 Pos;FE4;FE4 Po
 13;90;Asbjørn Hoel Winnje;27:28.347;7:40.365;9:52.013;13;3:31.528;13;4:11.948;13;4:52.938;13;4:59.920;12;Menn master;M
 14;83;Øystein Røed;29:41.750;9:53.768;10:26.774;14;4:01.521;14;4:52.865;14;5:09.193;14;5:11.397;14;Menn master;M
 15;70;Christian Austenå;37:42.680;17:54.698;14:06.930;15;4:27.633;15;5:57.937;15;6:38.016;15;6:32.164;15;Menn master;M
--;71;Emil Carlson;0.000;0.000;DNF;;DNS;;DNS;;DNS;;DNS;;Menn master;M
--;82;Stian Rismyhr;DNS;DNS;DNS;;DNS;;DNS;;DNS;;DNS;;Menn master;M
+DNF;71;Emil Carlson;DNF;DNF;DNF;DNF;DNS;DNS;DNS;DNS;DNS;DNS;DNS;;Menn master;M
+DNS;82;Stian Rismyhr;DNS;DNS;DNS;DNS;DNS;DNS;DNS;DNS;DNS;;DNS;;Menn master;M
 1;117;Oskar Omdal;17:43.419;0.000;6:18.165;1;2:19.435;1;2:38.119;1;3:06.013;1;3:21.687;1;Menn senior;M
 2;110;Espen Johnsen;18:39.446;56.027;6:38.727;2;2:25.294;2;2:46.524;2;3:15.623;2;3:33.278;2;Menn senior;M
 3;104;Michael Cook;19:20.680;1:37.261;6:51.408;4;2:29.613;4;2:52.442;4;3:19.426;3;3:47.791;7;Menn senior;M
@@ -88,6 +88,6 @@ Pos Klasse;bib;name;chiptime;diff;FE1;FE1 Pos;FE2;FE2 Pos;FE3;FE3 Pos;FE4;FE4 Po
 22;129;Herman Taxerås;26:25.437;8:42.018;9:01.412;21;3:28.997;23;4:02.455;22;4:45.382;23;5:07.191;23;Menn senior;M
 23;103;Christian Coll;26:45.475;9:02.056;10:07.288;23;3:24.404;22;4:04.282;23;4:32.106;22;4:37.395;20;Menn senior;M
 24;131;Axel Torjesen;29:02.516;11:19.097;10:18.866;24;3:34.858;24;4:25.121;24;5:05.353;24;5:38.318;24;Menn senior;M
--;113;Ola Jåvold Landmark;DNF;-;12:34.831;25;DNS;;DNS;;DNS;;DNS;;Menn senior;M
--;132;Håvard Tverberg;DNF;-;DNF;;DNS;;DNS;;DNS;;DNS;;Menn senior;M
+DNF;113;Ola Jåvold Landmark;DNF;-;12:34.831;25;DNS;;DNS;;DNS;;DNS;;Menn senior;M
+DNF;132;Håvard Tverberg;DNF;DNF;DNF;DNF;DNS;DNS;DNS;DNS;DNS;DNS;DNS;;Menn senior;M
 1;149;Trond Egil Gjelsvik-Bakke;23:58.930;0.000;11:28.941;1;;;;;6:42.099;1;5:47.890;1;Explorer;M
