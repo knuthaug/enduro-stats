@@ -1,0 +1,55 @@
+{
+  "name": "DrammEnduro",
+  "year": 2022,
+  "date": "2022-06-26",
+  "text": "Verdens første offisielle NM i enduro i Drammen, med knukstørre stier og tørre svaberg. ",
+  "series": "NC",
+  "lat": 59.7805,
+  "long": 10.1089,
+  "zoom": 13,
+  "details": [
+    {
+      "name": "FE 1",
+      "strava_name": "",
+      "file": "drammen-2022-fe1.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 2",
+      "strava_name": "",
+      "file": "drammen-2022-fe2.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 3",
+      "strava_name": "",
+      "file": "drammen-2022-fe3.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 4",
+      "strava_name": "",
+      "file": "drammen-2022-fe4.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 5",
+      "strava_name": "",
+      "file": "drammen-2022-fe5.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 6",
+      "strava_name": "",
+      "file": "drammen-2022-fe6.gpx",
+      "strava_url": ""
+    }
+  ],
+  "links": [
+    {
+      "type": "results",
+      "desc": "Originale resultater",
+    "url": "https://www.aronsportsklubb.no/_files/ugd/c09eaf_fc5db3946cd3428e9ba375241d2a676d.pdf"
+    }
+  ]
+}
