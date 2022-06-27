@@ -79,6 +79,14 @@ class Db {
   }
 
   async insertRaceLinks (raceId, links) {
+
+    const id = await(this.findRaceLinks(raceId));
+
+    if(id){
+      logger.info('Found existing race links: updating...');
+      this.update('DELETE FROM race_links where race_id = $1', [raceId]);
+    }
+
     logger.info(`Inserting race links for race id ${raceId}`)
     const query = 'INSERT INTO race_links(type, url, description, race_id) VALUES($1, $2, $3, $4)'
 
@@ -88,14 +96,34 @@ class Db {
     }
   }
 
+  async findRaceLinks(raceId) {
+    const query = 'SELECT id from race_links where race_id = $1';
+    const values = [raceId]
+    return this.find(query, values, `Error: could not find race links for race_id='${raceId}'`)
+  }
+
   async insertStageDetails (raceId, details) {
+    const id = this.findStageDetails(raceId);
+
+    if(id) {
+      logger.info('Found existing stage details. Updating...');
+      await this.update('DELETE FROM stages_details where race_id = $1', [raceId]);
+    }
+
     logger.info(`Inserting stage details for race id ${raceId}`)
     const query = 'INSERT INTO stages_details(name, strava_name, strava_url, filename, race_id) VALUES($1, $2, $3, $4, $5)'
 
     for (let i = 0; i < details.length; i++) {
       const values = [details[i].name, details[i].strava_name, details[i].strava_url, details[i].file, raceId]
-      this.insert(query, values)
+      await this.insert(query, values)
+      logger.info(`inserted stage details for stage ${details[i].name}`);
     }
+  }
+
+  async findStageDetails(raceId) {
+    const query = 'SELECT id from stages_details where race_id = $1';
+    const values = [raceId]
+    return this.find(query, values, `Error: could not find stage details for race_id='${raceId}'`)
   }
 
   async insertStage (race, stage, raceId) {
