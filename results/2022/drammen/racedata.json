@@ -2,7 +2,7 @@
   "name": "DrammEnduro",
   "year": 2022,
   "date": "2022-06-26",
-  "text": "Verdens første offisielle NM i enduro i Drammen, med knukstørre stier og tørre svaberg. ",
+  "text": "NM og norgescup i enduro i Drammen, med knusktørre stier og lange svaberg. En test",
   "series": "NC",
   "lat": 59.7805,
   "long": 10.1089,
@@ -50,6 +50,11 @@
       "type": "results",
       "desc": "Originale resultater",
     "url": "https://www.aronsportsklubb.no/_files/ugd/c09eaf_fc5db3946cd3428e9ba375241d2a676d.pdf"
-    }
+  },
+    {
+    "type": "images",
+    "desc": "Bilder fra Pål Westgaard",
+    "url": "https://www.facebook.com/photo/?fbid=3135126136702289&set=pcb.3135130743368495"
+  }
   ]
 }
