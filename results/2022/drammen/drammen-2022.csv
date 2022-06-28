@@ -64,7 +64,7 @@ Pos Klasse;bib;name;club;;Class;FE1;FE1 Pos;FE2;FE2 Pos;FE3;FE3 Pos;FE4;FE4 Pos;
 3rd;102;Ingrid Dos Santos;Aron Sportsklubb;;Kvinner Master 35+;00:04:56;3;00:04:43;2;00:07:09;1;00:08:14;3;00:01:50;4;00:01:55;2;00:28:47;+00:00:22;F
 4th;105;Pernille Aas;Bærum OCK;;Kvinner Master 35+;00:04:50;2;00:04:47;4;00:07:22;4;00:08:32;4;00:01:45;2;00:02:00;5;00:29:16;+00:00:51;F
 5th;101;Ida Karine Nesbø;Siggerud IL - sykkel;;Kvinner Master 35+;00:05:21;5;00:05:04;5;00:07:50;5;00:08:54;5;00:01:53;5;00:01:59;4;00:31:01;+00:02:36;F
-;106;Silje Kreken Almeland;Bærum OCK;;Kvinner Master 35+;;;;;;;DNF;;;;;;;;F
+;106;Silje Kreken Almeland;Bærum OCK;;Kvinner Master 35+;;DNS;;DNS;;DNS;;DNS;;DNS;;DNS;;;F
 1st;110;Helena Nyhus;IF Frøy;;Kvinner Senior 19+;00:04:03;1;00:03:52;2;00:05:53;1;00:06:34;1;00:01:28;3;00:01:28;1;00:23:18;;F
 2nd;107;Anette Røssum Bastnes;Aron Sportsklubb;;Kvinner Senior 19+;00:04:11;3;00:03:45;1;00:05:54;2;00:06:38;2;00:01:27;2;00:01:31;3;00:23:26;+00:00:08;F
 3rd;113;Lene Pettersen;Eidanger IL;;Kvinner Senior 19+;00:04:09;2;00:03:57;3;00:05:55;3;00:06:41;3;00:01:23;1;00:01:29;2;00:23:34;+00:00:16;F
@@ -72,7 +72,7 @@ Pos Klasse;bib;name;club;;Class;FE1;FE1 Pos;FE2;FE2 Pos;FE3;FE3 Pos;FE4;FE4 Pos;
 5th;108;Anna Vihovde;NTNUI;;Kvinner Senior 19+;00:04:34;4;00:04:20;5;00:06:28;5;00:07:05;5;00:01:33;5;00:01:41;5;00:25:41;+00:02:23;F
 6th;114;Mari Elise Hatlo;Aron Sportsklubb;;Kvinner Senior 19+;00:04:45;6;00:04:26;6;00:06:49;6;00:07:38;6;00:01:43;6;00:01:48;6;00:27:09;+00:03:51;F
 7th;112;Kaja Thoresen;Asker CK;;Kvinner Senior 19+;00:04:54;7;00:04:31;7;00:06:52;7;00:07:52;7;00:01:48;7;00:01:50;7;00:27:47;+00:04:29;F
-;115;Nora Stang;SK Rye sykkel;;Kvinner Senior 19+;;;;;;;DNF;;;;;;;;F
+;115;Nora Stang;SK Rye sykkel;;Kvinner Senior 19+;;DNS;;DNS;;DNS;;DNS;;DNS;;DNS;;;F
 1st;226;Erlend Hegrum Askjer;;;Menn Åpen klasse 17+;00:03:37;1;00:03:29;1;00:05:13;2;00:05:42;1;00:01:10;1;00:01:20;1;00:20:31;;M
 2nd;223;Christoffer Engebretsen Bakke;SK Rye sykkel;;Menn Åpen klasse 17+;00:03:39;2;00:03:31;2;00:05:12;1;00:05:43;2;00:01:13;2;00:01:20;1;00:20:38;+00:00:07;M
 3rd;235;Henrik Olsen;Flow;;Menn Åpen klasse 17+;00:03:47;4;00:03:36;3;00:05:27;4;00:06:02;4;00:01:17;4;00:01:22;4;00:21:31;+00:01:00;M
@@ -132,8 +132,8 @@ Pos Klasse;bib;name;club;;Class;FE1;FE1 Pos;FE2;FE2 Pos;FE3;FE3 Pos;FE4;FE4 Pos;
 3rd;269;Are Pedersen;Herkules IF;;Menn Åpen klasse El-sykkel;00:04:19;5;00:03:58;4;00:06:02;5;00:06:41;3;00:01:25;3;00:01:32;3;00:23:57;+00:02:51;M
 4th;79;Thomas Eriksen;;;Menn Åpen klasse El-sykkel;00:04:21;6;00:04:12;5;00:05:57;4;00:06:42;4;00:01:32;4;00:01:36;4;00:24:20;+00:03:14;M
 5th;270;Gunnar Lysaker;Kongsberg IF Sykkel;;Menn Åpen klasse El-sykkel;00:04:26;7;00:04:16;6;00:06:32;6;00:06:53;5;00:01:37;5;00:01:36;4;00:25:20;+00:04:14;M
-;76;Gunnar Westholm;www.tunetsport.no;;Menn Åpen klasse El-sykkel;00:03:50;3;00:03:48;3;00:05:43;3;00:12:43;6;;;DNF;;;;M
-;80;Tomas Langlo;;;Menn Åpen klasse El-sykkel;00:04:16;4;00:04:17;7;;;;;DNF;;;;;;M
+;76;Gunnar Westholm;www.tunetsport.no;;Menn Åpen klasse El-sykkel;00:03:50;3;00:03:48;3;00:05:43;3;00:12:43;6;;DNF;;DNS;;;M
+;80;Tomas Langlo;;;Menn Åpen klasse El-sykkel;00:04:16;4;00:04:17;7;;DNF;;DNS;;DNS;;DNS;;;M
 1st;120;Mads Langeland;Kristiansands CK;;Menn Junior 17-18;00:03:33;1;00:03:23;1;00:05:04;1;00:05:46;1;00:01:15;1;00:01:20;2;00:20:21;;M
 2nd;126;Torben Hjelset;CK Nittedal;;Menn Junior 17-18;00:03:44;2;00:03:36;3;00:05:33;4;00:05:59;2;00:01:17;2;00:01:19;1;00:21:28;+00:01:07;M
 3rd;117;Fridtjof Richard Digre;Konnerud IL Sykkel;;Menn Junior 17-18;00:03:56;4;00:03:37;4;00:05:26;2;00:06:03;3;00:01:22;6;00:01:26;4;00:21:50;+00:01:29;M
@@ -142,10 +142,10 @@ Pos Klasse;bib;name;club;;Class;FE1;FE1 Pos;FE2;FE2 Pos;FE3;FE3 Pos;FE4;FE4 Pos;
 6th;121;Oskar Brækhus;Kongsberg IF Sykkel;;Menn Junior 17-18;00:04:14;9;00:03:55;9;00:05:42;6;00:06:19;6;00:01:19;4;00:01:29;6;00:22:58;+00:02:37;M
 7th;122;Philip Sander Alnes;Konnerud IL Sykkel;;Menn Junior 17-18;00:04:15;10;00:04:01;10;00:06:09;9;00:06:53;8;00:01:27;7;00:01:33;7;00:24:18;+00:03:57;M
 8th;125;Sondre Spieler;Kristiansands CK;;Menn Junior 17-18;00:03:54;3;00:03:33;2;00:06:30;10;00:35:32;10;00:01:51;8;00:01:33;7;00:52:53;+00:32:32;M
-;118;Jim-Runar Hansen;Horten og Omegn's Cykleklubb;;Menn Junior 17-18;00:04:06;6;00:03:51;8;00:05:43;7;00:06:38;7;;;DNF;;;;M
-;119;Karl Viktor Vatne;Kristiansands CK;;Menn Junior 17-18;00:04:06;6;00:03:47;7;00:05:40;5;00:23:14;9;;;DNF;;;;M
-;123;Sigurd Bjørndalen Mathisen;Aron Sportsklubb;;Menn Junior 17-18;;;;;;;DNF;;;;;;;;M
-;116;Alexander Sandengen;Aron Sportsklubb;;Menn Junior 17-18;;;;;;;DNF;;;;;;;;M
+;118;Jim-Runar Hansen;Horten og Omegn's Cykleklubb;;Menn Junior 17-18;00:04:06;6;00:03:51;8;00:05:43;7;00:06:38;7;;DNF;DNF;;;;M
+;119;Karl Viktor Vatne;Kristiansands CK;;Menn Junior 17-18;00:04:06;6;00:03:47;7;00:05:40;5;00:23:14;9;;DNF;DNF;;;;M
+;123;Sigurd Bjørndalen Mathisen;Aron Sportsklubb;;Menn Junior 17-18;;DNS;;DNS;;DNS;;DNS;;DNS;;DNS;;;M
+;116;Alexander Sandengen;Aron Sportsklubb;;Menn Junior 17-18;;DNS;;DNS;;DNS;;DNS;;DNS;;DNS;;;M
 1st;145;Jostein Hole;Aron Sportsklubb;;Menn Master 35+;00:03:21;1;00:03:19;1;00:04:51;1;00:05:25;1;00:01:11;1;00:01:16;1;00:19:23;;M
 2nd;157;Martin Østberg;Aron Sportsklubb;;Menn Master 35+;00:03:45;8;00:03:21;2;00:05:18;4;00:05:44;2;00:01:13;2;00:01:25;10;00:20:46;+00:01:23;M
 3rd;148;Kim-Erik Larsen;Moss BMX;;Menn Master 35+;00:03:37;2;00:03:24;3;00:05:23;8;00:05:52;4;00:01:15;5;00:01:20;2;00:20:51;+00:01:28;M
@@ -187,15 +187,15 @@ Pos Klasse;bib;name;club;;Class;FE1;FE1 Pos;FE2;FE2 Pos;FE3;FE3 Pos;FE4;FE4 Pos;
 39th;132;Bjørn Inge Larsen;Bergen MTB Klubb;;Menn Master 35+;00:04:22;34;00:04:08;33;00:06:46;40;00:07:09;38;00:01:34;34;00:01:39;36;00:25:38;+00:06:15;M
 40th;174;Tore Nilsen;Romsås IL sykkel;;Menn Master 35+;00:05:06;41;00:05:05;41;00:07:00;41;00:07:26;40;00:02:03;40;00:01:48;40;00:28:28;+00:09:05;M
 ;159;Ole Christian Fagerli;IF Frøy;;Menn Master 35+;00:03:47;11;00:03:33;6;00:05:18;4;00:10:59;41;;;DNF;;;;M
-;140;Hamish Ryan;SK Rye sykkel;;Menn Master 35+;;;;;;;DNF;;;;;;;;M
-;173;Tom Ole Haukom;Kongsberg IF Sykkel;;Menn Master 35+;;;;;;;DNF;;;;;;;;M
-;151;Kristian Bøhler;CK Nittedal;;Menn Master 35+;;;;;;;DNF;;;;;;;;M
-;172;Terje Unnerud;Mjølkerampa SK;;Menn Master 35+;;;;;;;DNF;;;;;;;;M
-;143;Jamieson Pothecary;SK Rye sykkel;;Menn Master 35+;;;;;;;DNF;;;;;;;;M
-;135;Fredrik Lingvall;SK Rye sykkel;;Menn Master 35+;;;;;;;DNF;;;;;;;;M
-;133;Christian Erga;Siggerud IL - sykkel;;Menn Master 35+;;;;;;;DNF;;;;;;;;M
-;136;Fredrik Smith;Njård;;Menn Master 35+;;;;;;;DNF;;;;;;;;M
-;138;Frode Dalen;Kjekkas IF;;Menn Master 35+;;;;;;;DNF;;;;;;;;M
+;140;Hamish Ryan;SK Rye sykkel;;Menn Master 35+;;DNS;;DNS;;DNS;DNF;DNS;;DNS;;DNS;;;M
+;173;Tom Ole Haukom;Kongsberg IF Sykkel;;Menn Master 35+;;DNS;;DNS;;DNS;DNF;DNS;;DNS;;DNS;;;M
+;151;Kristian Bøhler;CK Nittedal;;Menn Master 35+;;DNS;;DNS;;DNS;DNF;DNS;;DNS;;DNS;;;M
+;172;Terje Unnerud;Mjølkerampa SK;;Menn Master 35+;;DNS;;DNS;;DNS;DNF;DNS;;DNS;;DNS;;;M
+;143;Jamieson Pothecary;SK Rye sykkel;;Menn Master 35+;;DNS;;DNS;;DNS;DNF;DNS;;DNS;;DNS;;;M
+;135;Fredrik Lingvall;SK Rye sykkel;;Menn Master 35+;;DNS;;DNS;;DNS;DNF;DNS;;DNS;;DNS;;;M
+;133;Christian Erga;Siggerud IL - sykkel;;Menn Master 35+;;DNS;;DNS;;DNS;DNF;DNS;;DNS;;DNS;;;M
+;136;Fredrik Smith;Njård;;Menn Master 35+;;DNS;;DNS;;DNS;DNF;DNS;;DNS;;DNS;;;M
+;138;Frode Dalen;Kjekkas IF;;Menn Master 35+;;DNS;;DNS;;DNS;DNF;DNS;;DNS;;DNS;;;M
 1st;203;Simen Smestad;SK Rye sykkel;;Menn Senior 19+;00:03:31;3;00:03:12;1;00:04:58;1;00:05:23;1;00:01:10;4;00:01:13;1;00:19:27;;M
 2nd;181;Bård Pettersen;Modum CK;;Menn Senior 19+;00:03:23;1;00:03:18;2;00:04:59;2;00:05:33;2;00:01:11;5;00:01:18;5;00:19:42;+00:00:15;M
 3rd;178;Anders Guttormson Skarstein;Asker CK;;Menn Senior 19+;00:03:31;3;00:03:19;3;00:05:01;3;00:05:44;7;00:01:08;1;00:01:14;2;00:19:57;+00:00:30;M
@@ -224,9 +224,9 @@ Pos Klasse;bib;name;club;;Class;FE1;FE1 Pos;FE2;FE2 Pos;FE3;FE3 Pos;FE4;FE4 Pos;
 26th;207;Tobias Bjerknes;CK Nittedal;;Menn Senior 19+;00:04:14;26;00:04:01;27;00:06:04;26;00:06:56;27;00:01:31;28;00:01:36;24;00:24:22;+00:04:55;M
 27th;180;Axel Torjesen;Aron Sportsklubb;;Menn Senior 19+;00:04:22;27;00:04:16;28;00:06:09;27;00:07:15;28;00:01:29;27;00:01:39;27;00:25:10;+00:05:43;M
 28th;248;Lachlan Cruickshank;;;Menn Senior 19+;00:03:45;18;00:03:33;13;00:17:42;28;00:05:57;15;00:01:15;14;00:01:22;15;00:33:34;+00:14:07;M
-;194;Lars Vatnebryn Sandviken;Drammen CK;;Menn Senior 19+;;;;;;;DNF;;;;;;;;M
-;198;Marius Eskelund;Drøbak-Frogn IL Sykkel;;Menn Senior 19+;;;;;;;DNF;;;;;;;;M
-;201;Niklas Halvorsen;Kristiansands CK;;Menn Senior 19+;;;;;;;DNF;;;;;;;;M
-;197;Marcus Søyland;Ryfylke SK;;Menn Senior 19+;;;;;;;DNF;;;;;;;;M
-;186;Jens Bergmann;SK Rye sykkel;;Menn Senior 19+;;;;;;;DNF;;;;;;;;M
-;204;Simon Andreas Hoff;NTNUI;;Menn Senior 19+;;;;;;;DNF;;;;;;;;M
+;194;Lars Vatnebryn Sandviken;Drammen CK;;Menn Senior 19+;;DNS;;DNS;;DNS;DNF;DNS;;DNS;;DNS;;;M
+;198;Marius Eskelund;Drøbak-Frogn IL Sykkel;;Menn Senior 19+;;DNS;;DNS;;DNS;DNF;DNS;;DNS;;DNS;;;M
+;201;Niklas Halvorsen;Kristiansands CK;;Menn Senior 19+;;DNS;;DNS;;DNS;DNF;DNS;;DNS;;DNS;;;M
+;197;Marcus Søyland;Ryfylke SK;;Menn Senior 19+;;DNS;;DNS;;DNS;DNF;DNS;;DNS;;DNS;;;M
+;186;Jens Bergmann;SK Rye sykkel;;Menn Senior 19+;;DNS;;DNS;;DNS;DNF;DNS;;DNS;;DNS;;;M
+;204;Simon Andreas Hoff;NTNUI;;Menn Senior 19+;;DNS;;DNS;;DNS;DNF;DNS;;DNS;;DNS;;;M
