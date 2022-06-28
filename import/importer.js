@@ -14,6 +14,7 @@ const cmd = require('command-line-args')
 const { allRidersRankings } = require('../lib/ranking')
 
 const db = new Db()
+
 const accCalc = new AccumulatedStageCalculations()
 const normalCalc = new NormalStageCalculations()
 
@@ -78,7 +79,7 @@ if (dir) {
       }
 
       await db.insertCalculatedResults(raceId, calcs)
-    }
+7    }
 
     const allRiders = await db.findAllRiders().then((data) => {
       return data.filter((r) => {

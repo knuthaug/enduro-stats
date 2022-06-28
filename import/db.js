@@ -11,7 +11,12 @@ const options = {
 
 class Db {
   constructor () {
+    this.schema = config.get('database.schema');
     this.pool = new Pool(options)
+    this.pool.on('connect', (client) => {
+      console.log('set schema to', config.get('database.schema'))
+      client.query(`SET search_path TO "${config.get('database.schema')}"`);
+    });
   }
 
   async insert (query, values) {
@@ -257,7 +262,7 @@ class Db {
         return res.rows[0].id
       } else {
         const { id, club } = await this.findRider(rider.name, rider.gender)
-        logger.info(`Found existing rider rider ${id} (club=${club} | rider.club=${rider.club})`)
+        logger.info(`Found existing rider ${id} (club=${club} | rider.club=${rider.club})`)
 
         if ((typeof club === 'undefined' && rider.club !== '') && club !== rider.club) {
           logger.info(`updating club for rider ${id}, setting club=${rider.club}`)

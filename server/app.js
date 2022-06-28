@@ -6,7 +6,6 @@ const formbody = require('fastify-formbody')
 const handlebars = require('handlebars')
 const config = require('../config')
 const path = require('path')
-const Db = require('./db')
 const handlers = require('./handlers')
 const helpers = require('./helpers')
 
@@ -16,7 +15,6 @@ const ASSET_SHORT_CACHE_TIME = 7000
 const NOT_FOUND_CACHE_TIME = 60
 
 const shouldLog = config.get('env') !== 'production' && config.get('env') !== 'test'
-const db = new Db()
 
 const app = Fastify({
   logger: shouldLog
@@ -149,9 +147,5 @@ async function render (res, template, context, maxAge, status) {
     .send(html)
 }
 
-function stop () {
-  db.destroy()
-}
 
 module.exports.app = app
-module.exports.stop = stop

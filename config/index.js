@@ -41,6 +41,10 @@ const config = convict({
     database: {
       default: 'endurostats',
       env: 'DATABASE'
+    },
+    schema: {
+      default: 'schema1',
+      env: 'DATABASE_SCHEMA'
     }
   }
 })

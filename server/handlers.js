@@ -13,7 +13,7 @@ const comparisonMapper = require('./comparisonMapper')
 const comparisonGraphMapper = require('./comparisonGraphMapper')
 const { convertTimeToMs } = require('../lib/time.js')
 
-const db = new Db()
+const db = new Db();
 
 async function manifestHandler (req) {
   return {

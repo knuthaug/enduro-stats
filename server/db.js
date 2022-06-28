@@ -11,7 +11,11 @@ const options = {
 
 class Db {
   constructor () {
-    this.pool = new Pool(options)
+    this.pool = new Pool(options);
+    this.pool.on('connect', (client) => {
+      console.log('set schema to', config.get('database.schema'))
+      client.query(`SET search_path TO "${config.get('database.schema')}"`);
+    });
     this.winnerTimeOfRace = this.memoize(this.winnerTimeOfRace)
   }
 
