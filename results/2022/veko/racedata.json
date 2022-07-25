@@ -1,0 +1,29 @@
+{
+  "name": "Ekstremsportveko enduro",
+  "year": 2022,
+  "date": "2022-06-27",
+  "text": "3 etappers mini-enduro under ekstremsportveko på Voss. ",
+  "lat": 60.6370,
+  "long": 6.4335,
+  "zoom": 13,
+  "details": [
+    {
+      "name": "FE 1",
+      "strava_name": "",
+      "file": "veko-2022-fe1.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 2",
+      "strava_name": "",
+      "file": "veko-2022-fe2.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 3",
+      "strava_name": "",
+      "file": "veko-2022-fe3.gpx",
+      "strava_url": ""
+    }
+  ]
+}
