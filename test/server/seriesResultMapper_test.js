@@ -48,6 +48,7 @@ tap.test('sorts by overall placements NC', (t) => {
   t.equal(rNc[0].entries[0].uid, '82cf4f5e7c6f14635da21560a8ba44d8', 'entries have uid')
   t.equal(rNc[0].entries[0].avgRank, 0.8333333333333334, 'entries have avg. rank')
   t.equal(rNc[0].entries[0].totalPoints, 2400, 'entries have total points')
+  t.equal(rNc[0].entries[0].seriesrank, 1, 'entries have seriesrank');
   t.equal(rNc[0].entries[0].maxTotalPoints, 3000, 'entries have maxtotal points')
   t.equal(rNc[0].entries[0].races.length, 6, 'all races in row, also not participated')
   t.same(rNc[0].entries[1].races, [

@@ -62,7 +62,7 @@ function mapToSeries(data, seriesName) {
   const races = [... new Set(raceNames)]
 
   const mapping = classes.map(c => {
-    return { name: c, entries: [], allRaces: races }
+    return { name: c,  entries: [], allRaces: races }
   })
 
   classes.forEach(className => {
@@ -132,7 +132,25 @@ function mapToSeries(data, seriesName) {
       return b.totalPoints - a.totalPoints
     })
 
+    let currentRank = 1;
+    for(let i = 0; i < mapping[foundClass].entries.length; i++) {
+      //currentRank++
+      if(i > 0) {
+        if(mapping[foundClass].entries[i].totalPoints === mapping[foundClass].entries[i - 1].totalPoints) {
+          // after the first one, check for identical points
+          mapping[foundClass].entries[i].seriesrank = mapping[foundClass].entries[i - 1].seriesrank;
+          currentRank++;
+        } else {
+          mapping[foundClass].entries[i].seriesrank = currentRank++;
+        }
+      } else {
+        mapping[foundClass].entries[i].seriesrank = currentRank++;
+      }
+    }
+
   })
+
+  
 
   return mapping
 }

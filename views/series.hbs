@@ -26,12 +26,12 @@
             {{#each entries}}
               <tr data-uid="{{uid}}" class="{{#compare @index '%' 2}}even{{else}}odd{{/compare}}">
                 <td data-sort="f"> {{> icon type='plus'}}</td>
-                <td>{{inc @index}}</td>
+                <td>{{seriesrank}}</td>
                 <td><a href="/rytter/{{uid}}">{{name}}</a></td>
                 {{#each races}}
                   <td>{{#compare rank '===' 0}}-{{else}}{{../points}} <span class="stagerank">({{../rank}}/{{../totalInClass}})</span>{{/compare}}</td>
                 {{/each}}
-                <td>{{totalPoints}} <span class="stagerank">({{maxTotalPoints}})</span></td>
+                <td>{{totalPoints}} {{#compare ../../series.name '!==' 'NC'}}<span class="stagerank">({{../maxTotalPoints}})</span>{{/compare}}</td>
               </tr>
               <tr class="hide series-details"><td colspan="10" id="rider-{{uid}}"></td></tr>
             {{/each}}
