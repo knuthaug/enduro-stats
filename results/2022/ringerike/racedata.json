@@ -1,0 +1,35 @@
+{
+  "name": "Ringerike enduro",
+  "year": 2022,
+  "date": "2022-08-13",
+  "text": "Knusktørre stier i et Ringerike enduro litt tidligere på året enn normalt. Varmt, men post-race bad for de som ville. ",
+  "lat": 60.2383,
+  "long": 10.2975,
+  "details": [
+    {
+      "name": "FE 1/FE 4",
+      "strava_name": "RingerikeEnduro FE3",
+      "file": "ringerike-2022-fe1.gpx",
+    "strava_url": "https://www.strava.com/segments/16322872"
+    },
+    {
+      "name": "FE 2",
+      "strava_name": "fe 2 ringerike 18",
+      "file": "ringerike-2022-fe2.gpx",
+      "strava_url": "https://www.strava.com/segments/19098621"
+    },
+    {
+      "name": "FE 3",
+      "strava_name": "fe 3 ringerike 18",
+      "file": "ringerike-2022-fe3.gpx",
+      "strava_url": "https://www.strava.com/segments/19098626"
+    }
+  ],
+  "links": [
+    {
+    "type": "images",
+    "desc": "Bilder fra Jon Borgersen",
+    "url": "http://www.jonborgersen.com/ringerike-enduro-2022"
+  }
+  ]
+}

@@ -221,5 +221,8 @@ node import/importer.js -m -f results/2022/drammen/drammen-2022.csv
 echo "  Veko"
 node import/importer.js -m -f results/2022/veko/veko-2022.csv
 
+echo "  Ringerike"
+node import/importer.js -m -f results/2022/ringerike/ringerike-2022.csv
+
 psql -U endurostats endurostats < scripts/byline.sql
 

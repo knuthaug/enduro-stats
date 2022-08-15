@@ -752,3 +752,5 @@ UPDATE riders set byline_text='Radim Hamal', byline_url='', image_mode='portrait
 UPDATE riders set byline_text='Radim Hamal', byline_url='', image_mode='portrait' where uid='6d7a14c617d3190f541b3bdcc48e6bf2';/*Sindre Martin Moe Sollund*/
 UPDATE riders set byline_text='Radim Hamal', byline_url='', image_mode='portrait' where uid='733b47de44a8664b9482c0317e628647';/*Christian Austenå*/
 UPDATE riders set byline_text='Radim Hamal', byline_url='', image_mode='portrait' where uid='536a326922cc14d5bb32bd35e5952950';/*Sean Jonathan Knutsson*/
+UPDATE riders set byline_text='Pål Westgaard', byline_url='', image_mode='landscape' where uid='e0a8d0d012395340dc2efe9b5dc54573';/*Lasse Eriksen Årnes*/
+
