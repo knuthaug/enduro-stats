@@ -1,0 +1,48 @@
+{
+  "name": "Traktorland enduro",
+  "year": 2022,
+  "date": "2022-09-03",
+  "series": "NC",
+  "text": "Tekniske stier i overflod i Traktor bike park, som alltid. Traktorland klarte akkurat å få rittet i havn før temperaturen falt for mye i fjorden (tror vi).",
+  "lat": 60.5783,
+  "long": 10.3533,
+  "zoom": 14,
+  "details": [
+    {
+      "name": "FE 1",
+      "strava_name": "",
+      "file": "traktorland-2022-fe1.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 2",
+      "strava_name": "FE1 Traktor Enduro 2015",
+      "file": "traktorland-2022-fe2.gpx",
+      "strava_url": "https://www.strava.com/segments/9677869"
+    },
+    {
+      "name": "FE 3",
+      "strava_name": "Sagas sti",
+      "file": "traktorland-2022-fe3.gpx",
+      "strava_url": "https://www.strava.com/segments/20841339"
+    },
+    {
+      "name": "FE 4",
+      "strava_name": "",
+      "file": "traktorland-2022-fe4.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 5",
+      "strava_name": "FE1 Einars sti 2021",
+      "file": "traktorland-2022-fe5.gpx",
+      "strava_url": "https://www.strava.com/segments/29650710"
+    },
+    {
+      "name": "FE 6",
+      "strava_name": "SS5 2015",
+      "file": "traktorland-2022-fe6.gpx",
+      "strava_url": "https://www.strava.com/segments/9676519"
+    }
+  ]
+}

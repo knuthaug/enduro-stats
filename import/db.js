@@ -246,31 +246,35 @@ class Db {
 
   async insertRider (rider) {
     const client = await this.pool.connect()
-    const query = 'WITH inserted as (INSERT INTO riders(name, gender, club, team, uid) VALUES($1, $2, $3, $4, $5) ON CONFLICT(name, gender) DO NOTHING RETURNING *) select id FROM inserted'
-    const values = [rider.name, rider.gender, rider.club, rider.team, rider.uid]
+    const { id, club } = await this.findRider(rider.name, rider.gender)
 
-    try {
-      const res = await client.query(query, values)
-      // console.log(res.rows)
-      if (res.rows.length === 1) {
-        logger.info(`Inserted rider ${res.rows[0].id}`)
-        return res.rows[0].id
-      } else {
-        const { id, club } = await this.findRider(rider.name, rider.gender)
-        logger.info(`Found existing rider rider ${id} (club=${club} | rider.club=${rider.club})`)
+    if(id) {
+      // found rider
+      logger.info(`Found existing rider rider ${id} (club=${club} | rider.club=${rider.club})`)
 
-        if ((typeof club === 'undefined' && rider.club !== '') && club !== rider.club) {
-          logger.info(`updating club for rider ${id}, setting club=${rider.club}`)
-          await this.updateClub(id, rider.club)
-        }
-
-        return id
+      if ((typeof club === 'undefined' && rider.club !== '') && club !== rider.club) {
+        logger.info(`updating club for rider ${id}, setting club=${rider.club}`)
+        await this.updateClub(id, rider.club)
       }
-    } catch (error) {
-      logger.error(`Error for inserting rider: query:${query}: values: ${values}`)
-      logger.error(error)
-    } finally {
-      await client.release()
+      await client.release();
+      return id;
+    } else {
+      const query = 'WITH inserted as (INSERT INTO riders(name, gender, club, team, uid) VALUES($1, $2, $3, $4, $5) ON CONFLICT(name, gender) DO NOTHING RETURNING *) select id FROM inserted'
+      const values = [rider.name, rider.gender, rider.club, rider.team, rider.uid]
+
+      try {
+        const res = await client.query(query, values)
+        // console.log(res.rows)
+        if (res.rows.length === 1) {
+          logger.info(`Inserted rider ${res.rows[0].id}`)
+          return res.rows[0].id
+        } 
+      } catch (error) {
+        logger.error(`Error for inserting rider: query:${query}: values: ${values}`)
+        logger.error(error)
+      } finally {
+        await client.release()
+      }
     }
   }
 
@@ -347,7 +351,7 @@ class Db {
   async findRider (name, gender) {
     const query = 'SELECT id FROM riders where name = $1 AND gender = $2'
     const values = [name, gender]
-    const val = await this.findAll(query, values, `Error: could not find rider for name='${name}' and and gender=${gender}`)
+    const val = await this.findAll(query, values, `Error: could not find rider for name='${name}' and gender=${gender}`)
     return { id: val.id, club: val.club, uid: val.uid, gender: val.gender, name: val.name }
   }
 
