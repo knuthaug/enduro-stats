@@ -266,7 +266,7 @@ class Db {
         const res = await client.query(query, values)
         // console.log(res.rows)
         if (res.rows.length === 1) {
-          logger.info(`Inserted rider ${res.rows[0].id}`)
+          logger.info(`Inserted new rider ${res.rows[0].id} ${rider.name}, ${rider.club} ${rider.uid}`)
           return res.rows[0].id
         } 
       } catch (error) {
