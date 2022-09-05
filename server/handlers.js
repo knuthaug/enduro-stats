@@ -288,8 +288,8 @@ async function ridersHandler (req) {
   }
 }
 
-function cleanAnchor(string) {
-  return string.replaceAll(' ', '-');
+function cleanAnchor(str) {
+  return str.replaceAll(' ', '-');
 }
 
 async function searchHandler (req, res) {
