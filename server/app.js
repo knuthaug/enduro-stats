@@ -32,6 +32,7 @@ handlebars.registerHelper('isDSQ', helpers.isDSQ)
 handlebars.registerHelper('isError', helpers.isError)
 handlebars.registerHelper('isOK', helpers.isOK)
 handlebars.registerHelper('title', helpers.title)
+handlebars.registerHelper('anchor', helpers.anchor)
 handlebars.registerHelper('formatPercent', helpers.formatPercent)
 handlebars.registerHelper('inc', helpers.inc)
 

@@ -144,7 +144,7 @@ async function raceHandler (req) {
   const [stages, results, graphs] = resultViewMapper(raceClasses, raceResults)
   const noResults = Object.values(results).length > 0
 
-  const sortedClasses = Object.keys(results).sort()
+  const sortedClasses = Object.keys(results).sort().map((e) => { return{ name: e, anchor: cleanAnchor(e)} })
 
   Object.keys(graphs).forEach((cl) => {
     graphs[cl] = JSON.stringify(graphs[cl])
@@ -176,7 +176,7 @@ async function seriesHandler (req) {
 
   const allRaces = await db.racesBySeriesAndYear(race.series, race.year)
   const results = seriesMapper.mapToSeries(allRaces, race.series)
-  const sortedClasses = results.map(r => r.name).sort()
+  const sortedClasses = results.map(r => r.name).sort().map((r) => { return { name: r, anchor: cleanAnchor(r)}});
 
   const series = {
     name: race.series,
@@ -286,6 +286,10 @@ async function ridersHandler (req) {
     active: 'ryttere',
     docTitle: 'Alle ryttere : Norsk enduro'
   }
+}
+
+function cleanAnchor(string) {
+  return string.replaceAll(' ', '-');
 }
 
 async function searchHandler (req, res) {

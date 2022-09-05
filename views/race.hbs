@@ -10,7 +10,7 @@
       </div>
       {{#if noResults}}
       <div class="col-7">
-        {{#each sortedClasses}}<a class="btn btn-outline-light mr-1 mt-2" title="Hopp til resultater for {{this}}" href="#{{this}}">{{this}}</a> {{/each}}<a class="btn btn-outline-light mr-1 mt-2" title="Alle klasser i en liste" href="/ritt/{{race.uid}}/full">Alle klasser</a>
+        {{#each sortedClasses}}<a class="btn btn-outline-light mr-1 mt-2" title="Hopp til resultater for {{this.name}}" href="#{{this.anchor}}">{{this.name}}</a> {{/each}}<a class="btn btn-outline-light mr-1 mt-2" title="Alle klasser i en liste" href="/ritt/{{race.uid}}/full">Alle klasser</a>
       </div>
       {{/if}}
     </div>
@@ -35,7 +35,7 @@
 {{#if race.byline_text}}<div class="space"></div>{{/if}}
 {{#each results}}
 <div class="row">
-  <div class="col-11"> <h3><a class="none" name="{{@key}}">{{@key}}</a> </h3></div>
+  <div class="col-11"> <h3><a class="none" name="{{anchor @key}}">{{@key}}</a> </h3></div>
   <div class="col-1"><a class="toplink" data-toggle="tooltip" data-original-title="Tilbake til toppen" href="#top">{{>icon type='pil'}}</a></div>
 </div>
 <div class="row">
