@@ -1,54 +1,54 @@
 {
   "name": "Harstad Enduro Race",
-  "Year": 2022,
+  "year": 2022,
   "date": "2022-09-04",
   "text": "",
-  "lat": 68.7372,
-  "long": 16.5183,
-  "zoom": 13,
+  "lat": 68.7965,
+  "long": 16.5174,
+  "zoom": 12,
   "links": [
     {
       "type": "results",
       "desc": "Originale resultater",
-      "url": "https://live.eqtiming.com/57615?fbclid=IwAR2IcBmxiKrQxw-pnOq1hsgYo6_romRrHcTzIotIyxDyWJ-EpS7y7Mgioyg#series"
+    "url": "https://live.eqtiming.com/63406#series:1283-847227-1-"
     }
   ],
   "details": [
     {
       "name": "FE 1",
-      "strava_name": "FE1 HER 21",
+      "strava_name": "HER 22 Fe1",
       "file": "harstad-2022-fe1.gpx",
-      "strava_url": "https://www.strava.com/segments/29672317"
+    "strava_url": "https://www.strava.com/segments/32756328"
     },
     {
       "name": "FE 2",
-      "strava_name": "FE2 HER 21",
+      "strava_name": "Svartdalsåsen-Fjellveien",
       "file": "harstad-2022-fe2.gpx",
-      "strava_url": "https://www.strava.com/segments/29672376"
+      "strava_url": "https://www.strava.com/segments/15338785"
     },
     {
       "name": "FE 3",
-      "strava_name": "FE3 HER 21",
+      "strava_name": "HER 22 FE3",
       "file": "harstad-2022-fe3.gpx",
-      "strava_url": "https://www.strava.com/segments/29672398"
+      "strava_url": "https://www.strava.com/segments/32548664"
     },
     {
       "name": "FE 4",
-      "strava_name": "FE4 HER 21",
+      "strava_name": "HER 22 FE4",
       "file": "harstad-2022-fe4.gpx",
-      "strava_url": "https://www.strava.com/segments/29673886"
+      "strava_url": "https://www.strava.com/segments/32756463"
     },
     {
       "name": "FE 5",
-      "strava_name": "FE5 HER 21",
+      "strava_name": "HER 22 FE5",
       "file": "harstad-2022-fe5.gpx",
-      "strava_url": "https://www.strava.com/segments/29673886"
+      "strava_url": "https://www.strava.com/segments/32548675"
     },
     {
       "name": "FE 6",
-      "strava_name": "FE56 HER 21",
+      "strava_name": "",
       "file": "harstad-2022-fe6.gpx",
-      "strava_url": "https://www.strava.com/segments/29673886"
+      "strava_url": ""
     }
   ]
 }
