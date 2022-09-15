@@ -26,7 +26,7 @@ class Converter {
       return 'Menn master'
     } else if (/master kvinner|kvinner master/i.test(name)) {
       return 'Kvinner master'
-    } else if (/Kvinner Åpen.*17+/i.test(name) || /Menn Åpen.*17+|Menn trim/i.test(name) || /.*Elduro.*/i.test(name) || /M\s?17-18/.test(name) || /Kvinner U23/.test(name) || /.* Åpen.*?el.*?/i.test(name)) {
+    } else if (/Kvinner Åpen.*17+/i.test(name) || /Menn Åpen.*17+|Menn trim/i.test(name) || /.*Elduro.*/i.test(name) || /M\s?17-18/.test(name) || /Kvinner U23/.test(name) || /.* Åpen.*?el.*?/i.test(name) || /Åpen klasse .*/i.test(name)) {
       return name
     } else if (/K\s?17+/.test(name)) {
       return 'Kvinner senior'

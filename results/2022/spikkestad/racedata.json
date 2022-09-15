@@ -2,12 +2,23 @@
   "name": "Spikkestad enduro",
   "year": 2022,
   "date": "2022-09-11",
+  "series": "NC",
   "text": "Norgescup-enduro på Spikkestad, andre året på rad.",
   "links": [
     {
       "type": "results",
       "desc": "Originale resultater",
-      "url": ""
-    }
+    "url": "https://live.eqtiming.com/61461#result:235744-0-1-1-1-"
+  },
+    {
+    "type": "images",
+    "desc": "Bilder fra Pål Westgaard",
+    "url": "https://www.facebook.com/pal.westgaard/posts/pfbid02x6Pect6QvmmFUBD9BcC1Rz3JAize3TBVJcHZFp3YeekjL5mUYwJN7M6h94GV3vcHl"
+  },
+    {
+    "type": "images",
+    "desc": "Bilder fra Eirik Johannessen",
+    "url": "https://eirikjohannessen.smugmug.com/Spikkestad-Enduro/n-spVDXs/"
+  }
   ]
 }
