@@ -6,6 +6,9 @@
   "text": "Norgescup-enduro på Spikkestad, for andre året på rad.",
   "byline_text": "Jon Borgersen",
   "byline_url": "http://jonborgersen.com/",
+  "lat": 59.7516,
+  "long": 10.3419,
+  "zoom": 12,
   "links": [
     {
       "type": "results",
@@ -21,6 +24,32 @@
     "type": "images",
     "desc": "Bilder fra Eirik Johannessen",
     "url": "https://eirikjohannessen.smugmug.com/Spikkestad-Enduro/n-spVDXs/"
+  }
+  ],
+  "details": [
+    {
+    "name": "FE 1",
+    "strava_name": "",
+    "file": "spikkestad-2022-fe1.gpx",
+    "strava_url": ""
+  },
+    {
+    "name": "FE 2",
+    "strava_name": "",
+    "file": "spikkestad-2022-fe2.gpx",
+    "strava_url": ""
+  },
+    {
+    "name": "FE 3",
+    "strava_name": "",
+    "file": "spikkestad-2022-fe3.gpx",
+    "strava_url": ""
+  },
+    {
+    "name": "FE 4",
+    "strava_name": "",
+    "file": "spikkestad-2022-fe4.gpx",
+    "strava_url": ""
   }
   ]
 }
