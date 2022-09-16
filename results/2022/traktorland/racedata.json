@@ -7,6 +7,15 @@
   "lat": 60.5783,
   "long": 10.3533,
   "zoom": 14,
+  "byline_text": "Jon Borgersen",
+  "byline_url": "http://jonborgersen.com/",
+  "links": [
+    {
+    "type": "images",
+    "desc": "Bilder fra Jon Borgersen",
+    "url": "http://jonborgersen.com/traktorland-enduro-2022"
+  }
+  ],
   "details": [
     {
       "name": "FE 1",
