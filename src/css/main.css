@@ -22,8 +22,8 @@ body {
   font-size: 85%;
 }
 
-h2 {
-  letter-spacing: 0.1rem;
+h2, h3 {
+  letter-spacing: 0.02em;
 }
 
 h4.detail {
@@ -82,9 +82,7 @@ th {
   height: 60px;
 }
 
-.byline {
-  text-align: right;
-}
+
 
 .float {
   float: right;
@@ -339,10 +337,34 @@ table[data-sortable] th[data-sorted-direction="ascending"]:after {
 }
 
 .text-image {
-  float:left;
-  padding-right: 1rem;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-bottom: 0;
   vertical-align: top;
 }
+
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}
+
+.byline {
+  text-align: right;
+}
+
+.ingress {
+  font-size: 115%;
+  letter-spacing: 0.03em;
+  line-height:1.4em;
+}
+
+.ingress .byline {
+  font-size: 80%;
+}
+
 
 #searchField {
   width: 17rem;

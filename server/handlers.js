@@ -249,10 +249,10 @@ async function fullRaceHandler(req) {
 }
 
 async function calendarHandler(req) {
-  const year = req.params.year || 2021;
+  const year = req.params.year || 2022;
 
   return {
-    template: year === 2021 ? "cal.hbs" : `cal-${year}.hbs`,
+    template: year === 2022 ? "cal.hbs" : `cal-${year}.hbs`,
     status: 200,
     active: "cal",
     title: `Rittkalender ${year}`,
@@ -261,19 +261,26 @@ async function calendarHandler(req) {
   };
 }
 
+async function changelogHandler(req) {
+
+  return {
+    template: 'changelog.hbs',
+    status: 200,
+    title: 'Endringer på norskenduro',
+    docTitle: 'Norsk enduro: endringer',
+    description: 'Tekniske endringer om funksjonalitet og resultater'
+  };
+}
+
 async function indexHandler() {
-  log.debug("request for /");
-  const races = await db.findRaces(10);
-  const { raceCount, riderCount, stageCount } = await db.statCounts();
+  const races = await db.findRaces(12);
+
   return {
     status: 200,
     races,
-    raceCount,
-    riderCount,
-    stageCount,
     docTitle: "Norsk enduro",
     description:
-      "Resultater, statistikk og informasjon om ritt og ryttere i norske enduroritt.",
+      "Resultater, statistikk og nyheter om ritt og ryttere i norske enduroritt.",
   };
 }
 
@@ -544,4 +551,5 @@ module.exports = {
   calendarHandler,
   seriesHandler,
   riderSeriesHandler,
+  changelogHandler
 };

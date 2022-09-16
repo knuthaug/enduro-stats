@@ -77,6 +77,7 @@ app.get('/api/graph/compare', jsonHandler(handlers.compareGraphHandler))
 app.get('/api/graph/rider/:uid', jsonHandler(handlers.riderGraphHandler))
 app.get('/api/series/rider/:uid', jsonHandler(handlers.riderSeriesHandler))
 app.get('/kalender', handler('cal.hbs', handlers.calendarHandler))
+app.get('/endringer', handler('changelog.hbs', handlers.changelogHandler))
 app.get('/kalender/:year', dynamicHandler(handlers.calendarHandler))
 app.post('/sok/', handler('search.hbs', handlers.searchHandler, 100))
 

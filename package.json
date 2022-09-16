@@ -5,10 +5,11 @@
   "main": "index.js",
   "scripts": {
     "precommit": "npm run test",
-    "watch": "npm-watch foo",
+    "watch": "npm-watch server",
     "build-watch": "npm-watch build",
     "clean": "rimraf bundlemap-js.json server/dist/js server/dist/css",
     "foo": "npm run clean && npm run build:css && npm run build:js && npm start",
+    "server": "npm start",
     "start": "node index.js",
     "test": "NODE_ENV=test ./node_modules/tap/bin/run.js --no-coverage --no-coverage-report test/**",
     "test:integration": "NODE_ENV=test ./node_modules/tap/bin/run.js --no-check-coverage --no-coverage-report -R spec integration-test/*_test.js",
@@ -108,6 +109,20 @@
         "src/js",
         "src/css",
         "config",
+        "views/",
+        "views/partials",
+        "views/layouts"
+      ],
+      "extensions": "js,json,css,handlebars",
+      "ignore": [
+        "node_modules",
+        "server/dist/js",
+        "server/dist/css"
+      ]
+    },
+    "server": {
+      "patterns": [
+        "server/*.js",
         "views/",
         "views/partials",
         "views/layouts"
