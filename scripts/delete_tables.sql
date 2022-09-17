@@ -9,3 +9,4 @@ drop table raw_results;
 drop table riders;
 drop table stages;
 drop table races;
+drop table articles;

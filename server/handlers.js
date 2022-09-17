@@ -261,23 +261,36 @@ async function calendarHandler(req) {
   };
 }
 
-async function changelogHandler(req) {
-
+async function articleHandler(req) {
+  const article = await db.findArticle(req.params.id);
   return {
-    template: 'changelog.hbs',
+    template: "article.hbs",
+    article,
     status: 200,
-    title: 'Endringer på norskenduro',
-    docTitle: 'Norsk enduro: endringer',
-    description: 'Tekniske endringer om funksjonalitet og resultater'
+    title: article.title,
+    docTitle: article.title,
+    description: `Artikkel om ${article.title}`,
+  };
+}
+
+async function changelogHandler(req) {
+  return {
+    template: "changelog.hbs",
+    status: 200,
+    title: "Endringer på norskenduro",
+    docTitle: "Norsk enduro: endringer",
+    description: "Tekniske endringer om funksjonalitet og resultater",
   };
 }
 
 async function indexHandler() {
   const races = await db.findRaces(12);
+  const plugs = await db.frontpagePlugs();
 
   return {
     status: 200,
     races,
+    plugs,
     docTitle: "Norsk enduro",
     description:
       "Resultater, statistikk og nyheter om ritt og ryttere i norske enduroritt.",
@@ -551,5 +564,6 @@ module.exports = {
   calendarHandler,
   seriesHandler,
   riderSeriesHandler,
-  changelogHandler
+  changelogHandler,
+  articleHandler,
 };

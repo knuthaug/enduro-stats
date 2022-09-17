@@ -1,28 +1,43 @@
-
 <div class="row">
   <div class="col-lg-2"></div>
-  <div class="col-lg-4 col-12">
+    {{#each plugs}}
+    {{#compare @index '===' 2}}
+    <div class="col-lg-8 col-12">
+    {{else}}
+    <div class="col-lg-4 col-12">
+    {{/compare}}
+
     <div class="frontpage-plug">
-      <h3><a href="/artikler/1"> Norgescup sammenlagt før siste runde</a></h3>
+      <h3><a href="/artikler/{{id}}">{{frontpage_title}}</a></h3>
       <div class="ingress">
+        {{#if frontpage_image_url}}
         <figure class="text-image right">
-          <img width="250" src="{{imageUrl}}/plugs/bastnes-spikkestad.jpg" alt="Annette Bastnes på Spikkestad enduro"/>
-          <figcaption class="byline"><a href="http://jonborgersen.com/"> Foto: Jon Borgersen</a></figcaption>
+          <img width="250" src="{{../imageUrl}}{{frontpage_image_url}}"/>
+          {{#if frontpage_image_byline}}
+          <figcaption class="byline">
+            {{#if frontpage_image_byline_url}}
+            <a href="{{frontpage_image_byline_url}}">
+            {{/if}}
+              Foto: {{frontpage_image_byline}} {{#if frontpage_image_byline_url}}</a>{{/if}}
+            </figcaption>
+            {{/if}}
         </figure>
-Den første Norgescupen i enduro er ganske åpen i herreklassene for junior og senior, mens kvinner senior allerede er avgjort før siste runde. Mange trodde det også var Norgescup for master, men det viser seg å ikke stemme. 
+        {{/if}}
+        {{frontpage_ingress}}{{@index}}
       </div>
     </div>
-  </div>
-  <div class="col-lg-4 col-12">
-    <div class="frontpage-plug">
-      <h3><a href="/artikler/2"> Trysil runder av sesongen 2022</a></h3>
-      <p class="ingress">
-        Trysil enduro runder av sesongen 2022, som i fjor, med høstfarger og fete stier i et av Norges stisykkelmekka. 
-      </p>
     </div>
-  </div>
+    {{#compare @index '===' 1}}
+    <div class="col-2"></div>
+    </div>
+    <div class="row" style="height: 3 0px;"></div>
+    <div class="row">
+      <div class="col-2"></div>
+      {{/compare}}
+    {{/each}}
   <div class="col-2"></div>
 </div>
+
 <div class="row" style="height: 3 0px;"></div>
 <div class="row">
   <div class="col-lg-2"></div>
