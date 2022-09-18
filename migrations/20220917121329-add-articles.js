@@ -58,6 +58,10 @@ exports.up = function (db) {
       type: "string",
       notNull: true,
     },
+    permalink: {
+      type: "string",
+      notNull: true,
+    },
   });
 };
 

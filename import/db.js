@@ -162,7 +162,7 @@ class Db {
 
   async insertArticle(article) {
     const query =
-      "INSERT INTO articles(frontpage_title, frontpage_ingress, frontpage_image_url, frontpage_image_byline, frontpage_image_byline_url, body, date, title) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)";
+      "INSERT INTO articles(frontpage_title, frontpage_ingress, frontpage_image_url, frontpage_image_byline, frontpage_image_byline_url, body, date, title, permalink) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)";
     return this.insert(query, [
       article.frontpage_title,
       article.frontpage_ingress,
@@ -172,6 +172,7 @@ class Db {
       article.body,
       article.date,
       article.title,
+      article.permalink,
     ]);
   }
 

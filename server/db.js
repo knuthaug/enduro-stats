@@ -65,13 +65,14 @@ class Db {
 
   async frontpagePlugs() {
     const query =
-      "SELECT id, frontpage_title, frontpage_ingress, frontpage_image_url, frontpage_image_byline, frontpage_image_byline_url, date from articles order by id ASC limit 3";
+      "SELECT id, frontpage_title, frontpage_ingress, frontpage_image_url, frontpage_image_byline, frontpage_image_byline_url, date, permalink from articles order by id ASC limit 3";
     return this.find(query);
   }
 
   async findArticle(id) {
-    const sanitizedId = /(\d+)/.exec(id)[0];
-    const query = "SELECT id, date, body, title from articles where id = $1";
+    const sanitizedId = /([a-z]+-?)+/.exec(id)[0];
+    const query =
+      "SELECT id, date, body, title from articles where permalink = $1";
     const rows = await this.find(query, [sanitizedId]);
     return rows[0];
   }
