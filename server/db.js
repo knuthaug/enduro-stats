@@ -65,7 +65,7 @@ class Db {
 
   async frontpagePlugs() {
     const query =
-      "SELECT id, frontpage_title, frontpage_ingress, frontpage_image_url, frontpage_image_byline, frontpage_image_byline_url, date, permalink from articles order by id ASC limit 3";
+      "SELECT id, frontpage_title, frontpage_ingress, frontpage_image_url, frontpage_image_byline, frontpage_image_byline_url, date, permalink from articles order by date ASC limit 3";
     return this.find(query);
   }
 
