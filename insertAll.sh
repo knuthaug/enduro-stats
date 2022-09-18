@@ -236,5 +236,8 @@ node import/importer.js -m -f results/2022/nittedal/nittedal-2022.csv
 echo "  Spikkestad"
 node import/importer.js -m -f results/2022/spikkestad/spikkestad-2022.csv
 
+echo "  Trysil"
+node import/importer.js -m -f results/2022/trysil/trysil-2022.csv
+
 psql -U endurostats endurostats < scripts/byline.sql
 
