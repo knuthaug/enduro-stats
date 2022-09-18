@@ -1,17 +1,50 @@
 <div class="row">
   <div class="col-lg-2"></div>
-  <div class="col-lg-8 col-12">
-    <h2>Resultater for {{raceCount}} ritt, {{stageCount}} etapper, {{riderCount}} ryttere</h2>
-  </div>
-  <div class="col-lg-2"></div>
+    {{#each plugs}}
+    {{#compare @index '===' 2}}
+    <div class="col-lg-8 col-12">
+    {{else}}
+    <div class="col-lg-4 col-12">
+    {{/compare}}
+
+    <div class="frontpage-plug">
+      <h3><a href="/artikler/{{permalink}}">{{frontpage_title}}</a></h3>
+      <div class="ingress">
+        {{#if frontpage_image_url}}
+        <figure class="text-image right">
+          <img width="250" src="{{../imageUrl}}{{frontpage_image_url}}"/>
+          {{#if frontpage_image_byline}}
+          <figcaption class="byline">
+            {{#if frontpage_image_byline_url}}
+            <a href="{{frontpage_image_byline_url}}">
+            {{/if}}
+              Foto: {{frontpage_image_byline}} {{#if frontpage_image_byline_url}}</a>{{/if}}
+            </figcaption>
+            {{/if}}
+        </figure>
+        {{/if}}
+        {{frontpage_ingress}}
+      </div>
+    </div>
+    </div>
+    {{#compare @index '===' 1}}
+    <div class="col-2"></div>
+    </div>
+    <div class="row" style="height: 3 0px;"></div>
+    <div class="row">
+      <div class="col-2"></div>
+      {{/compare}}
+    {{/each}}
+  <div class="col-2"></div>
 </div>
 
+<div class="row" style="height: 3 0px;"></div>
 <div class="row">
   <div class="col-lg-2"></div>
   <div class="col-lg-2 col-12">
     <h3>Siste resultater</h3>
     {{#each races}}
-    <a href="/ritt/{{uid}}">{{name}} {{year}}</a><br/>
+      <a href="/ritt/{{uid}}">{{name}} {{year}}</a><br/>
     {{/each}}
   </div>
   <div class="col-lg-6 col-12">
@@ -20,26 +53,16 @@
       <figcaption class="byline"><a href="http://jonborgersen.com/"> Foto: Jon Borgersen</a></figcaption>
     </figure>
   </div>
-  <div class="col-2"></div>
 </div>
 <div class="row">
   <div class="col-lg-2"></div>
   <div class="col-lg-8 col-12">
-    <p>
-      På dette nettstedet kan du grave deg (nesten) så dypt du ønsker i norske enduro-resultater. Det er også en hel haug andre muligheter for tallnerding på resultatene dine og andres. Husk å trykke på + i tabellene, for det ligger det ekstra snadder og venter på deg. Eller kanskje du bare vil finne ut om det er noen fremgang fra ritt til ritt, selv om du kanskje best kan karakteriseres som listefyll? Noen av oss må jo ta den rollen også.</p>
-    <p>Per nå er ikke alle rittene samlet her, da resultatene ikke lenger er å oppdrive på det regulære internettet, eller er svært mangelfulle. Sitter du på resultatene fra noen av rittene som mangler, hører jeg gjerne fra deg! Se listen av ritt som mangler <a href="/om">her</a>.
-    </p>
     <div class="frontpage-news">
-      <h3>Nyheter</h3>
+      <h3>Teknisk oppdateringer</h3>
       <p><h5>2022-06-13 Norgescup sammenlagt</h5>Poengberegning for Norgescupen er nå lagt inn, følg linken fra ritt-siden for f.eks NesbyEnduro (foreløpig eneste ritt i NC).</p>
       <p><h5>2021-09-07 Første ritt inkludert!</h5>Knut Lønnqvist har gravd frem resultatene fra det aller første rittet i Nesbyen, våren 2012. </p>
       <p><h5>2021-06-29 Sesongen er i gang!</h5>Endurosesongen 2021 er offisielt i gang med Ekstremsportveko Enduro. </p>
-      <p><h5>2020-03-22 Detaljer for ryttere på serier sammenlagt</h5>På siden for sammenlagtresultater for serier, har nå hver rytter en + ved navnet. Denne viser plasseringer i alle serier og alle år rytteren har resultater, samt snitt-plassering for hvert år. </p>
-      <p><h5>2020-02-20 Ny side - serier sammenlagt</h5>På siden for resultater for ritt er det nå en lenke til sammenlagt-poeng for serien det året rittet ble arrangert, om det var en del av en serie. 80/20 og Østafjells bruker samme poengberegning. <a href="/serie/55f5304c186e2c0b5c4c11d68f6f6aa5">Eksempel</a></p>
-    <p><h5>2020-01-10 Ny graf</h5>På rytter siden finnes det nå en graf som viser andel tid bak etappevinner i prosenter per etappe, for alle ritt man har deltatt i. Mere detaljer vises under grafen når man velger denne. </p>
-    <p><h5>2019-12-26 Gradienter</h5> Bedre visualisering av gradienter for etappene under etappe-detaljer, begregnet ut fra ti og ti gps-punkter i løypa.</p>
-    <p><h5>2019-12-18 Etappedetaljer</h5> Alle ritt for 2019 har fått etappedetaljer (link ved rittet navn på toppen av resultatsiden) som viser hvilke stier som har vært etapper på et kart, med høydeprofil og data om etappen under. </p>
-    <p><h5>2019-11-10 Bilder</h5> Ryttersiden viser nå bilder av rytteren fra en av de åpne billedgalleriene med bilder fra rittene, dersom de er funnet og kan brukes. I skrivende stund har ca. 500 ryttere bilder av seg. Det er også bilder på rittsidene for 2019-rittene.</p>
+      Se <a href="/endringer">endringlisten</a> for alle tekniske nyheter om resultater og funksjonalitet.
     </div>
   </div>
   <div class="col-lg-2"></div>

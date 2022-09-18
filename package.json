@@ -5,10 +5,11 @@
   "main": "index.js",
   "scripts": {
     "precommit": "npm run test",
-    "watch": "npm-watch foo",
+    "watch": "npm-watch client",
     "build-watch": "npm-watch build",
     "clean": "rimraf bundlemap-js.json server/dist/js server/dist/css",
-    "foo": "npm run clean && npm run build:css && npm run build:js && npm start",
+    "client": "npm run clean && npm run build:css && npm run build:js && npm start",
+    "server": "npm start",
     "start": "node index.js",
     "test": "NODE_ENV=test ./node_modules/tap/bin/run.js --no-coverage --no-coverage-report test/**",
     "test:integration": "NODE_ENV=test ./node_modules/tap/bin/run.js --no-check-coverage --no-coverage-report -R spec integration-test/*_test.js",
@@ -39,7 +40,7 @@
     "babel": "6.23.0",
     "babel-loader": "8.0.4",
     "bootstrap": "4.5.3",
-    "command-line-args": "5.0.2",
+    "command-line-args": "5.2.1",
     "copy-webpack-plugin": "6.1.0",
     "css-loader": "5.2.4",
     "css-what": ">=5.0.1",
@@ -82,7 +83,9 @@
     "supervisor": "latest",
     "tap": "16.0.1",
     "webpack": "5.59.0",
-    "webpack-cli": "4.9.1"
+    "webpack-cli": "4.9.1",
+    "gray-matter": "4.0.3",
+    "marked": "4.1.0"
   },
   "dependencies": {
     "convict": "6.2.3",
@@ -102,12 +105,26 @@
     "build": {
       "patterns": []
     },
-    "foo": {
+    "client": {
       "patterns": [
         "server/*.js",
         "src/js",
         "src/css",
         "config",
+        "views/",
+        "views/partials",
+        "views/layouts"
+      ],
+      "extensions": "js,json,css,handlebars",
+      "ignore": [
+        "node_modules",
+        "server/dist/js",
+        "server/dist/css"
+      ]
+    },
+    "server": {
+      "patterns": [
+        "server/*.js",
         "views/",
         "views/partials",
         "views/layouts"

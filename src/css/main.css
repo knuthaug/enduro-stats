@@ -1,5 +1,4 @@
-@import 'bootstrap.min.css';
-
+@import "bootstrap.min.css";
 
 /* Sticky footer styles
 -------------------------------------------------- */
@@ -22,8 +21,29 @@ body {
   font-size: 85%;
 }
 
-h2 {
-  letter-spacing: 0.1rem;
+.article .date {
+  font-style: italic;
+  font-size: 90%;
+}
+
+.article p:first-of-type {
+  width: 65%;
+  font-size: 120%;
+  line-height: 1.6rem;
+  letter-spacing: 0.02rem;
+  padding-bottom: 20px;
+  padding-top: 10px;
+}
+
+.article p {
+  line-height: 1.5rem;
+  letter-spacing: 0.02rem;
+  margin-bottom: 18px;
+}
+
+h2,
+h3 {
+  letter-spacing: 0.02em;
 }
 
 h4.detail {
@@ -34,7 +54,8 @@ th {
   letter-spacing: 0.08rem;
 }
 
-.navbar-brand:hover, .navbar-brand:focus {
+.navbar-brand:hover,
+.navbar-brand:focus {
   text-decoration: none;
   border-bottom: 0;
 }
@@ -51,7 +72,7 @@ th {
 .backdrop-overlay img {
   margin: 0;
   width: 100%;
-  opacity: 0.30;
+  opacity: 0.3;
 }
 
 .front-text {
@@ -82,10 +103,6 @@ th {
   height: 60px;
 }
 
-.byline {
-  text-align: right;
-}
-
 .float {
   float: right;
 }
@@ -100,9 +117,9 @@ th {
 }
 
 .navbar .nav-link {
-  padding: 0.60rem 0 0.25rem 0;
+  padding: 0.6rem 0 0.25rem 0;
   font-weight: 500;
-  border-bottom: 0.20rem solid transparent;
+  border-bottom: 0.2rem solid transparent;
 }
 
 .navbar-dark .navbar-nav .nav-link {
@@ -125,7 +142,9 @@ margin-bottom-large {
   padding-top: 25px;
 }
 
-a.none, a.none:focus, a.none:hover {
+a.none,
+a.none:focus,
+a.none:hover {
   border-bottom: 0;
 }
 
@@ -133,7 +152,6 @@ a {
   color: #fff;
   text-decoration: none;
   padding-bottom: 0.4px;
-
 }
 
 main a[href] {
@@ -165,7 +183,8 @@ a.toplink {
   display: block;
 }
 
-.race-details, .series-details {
+.race-details,
+.series-details {
   transition: all 0.3s ease;
 }
 
@@ -190,7 +209,8 @@ a.toplink {
   transition: all 0.3s ease;
 }
 
-.shower, .icon {
+.shower,
+.icon {
   cursor: pointer;
 }
 
@@ -238,10 +258,12 @@ li .race-detail .race-graph {
 
 .table thead th {
   vertical-align: bottom;
-/*  border-bottom: 2px solid #212529;*/
+  /*  border-bottom: 2px solid #212529;*/
 }
 
-.table-dark td, .table-dark th, .table-dark thead th {
+.table-dark td,
+.table-dark th,
+.table-dark thead th {
   border-color: #fff;
 }
 
@@ -298,7 +320,6 @@ table[data-sortable] th[data-sorted-direction="ascending"]:after {
   margin-top: 3px;
 }
 
-
 .padded-link {
   margin-left: 1rem;
 }
@@ -307,7 +328,9 @@ table[data-sortable] th[data-sorted-direction="ascending"]:after {
   margin-top: 1.5rem;
 }
 
-.list-group, .list-group-item, .list-group-item-dark {
+.list-group,
+.list-group-item,
+.list-group-item-dark {
   background-color: #333;
   color: #fff;
 }
@@ -339,9 +362,32 @@ table[data-sortable] th[data-sorted-direction="ascending"]:after {
 }
 
 .text-image {
-  float:left;
-  padding-right: 1rem;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-bottom: 0;
   vertical-align: top;
+}
+
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}
+
+.byline {
+  text-align: right;
+}
+
+.ingress {
+  font-size: 115%;
+  letter-spacing: 0.03em;
+  line-height: 1.4em;
+}
+
+.ingress .byline {
+  font-size: 80%;
 }
 
 #searchField {
@@ -361,7 +407,8 @@ table[data-sortable] th[data-sorted-direction="ascending"]:after {
   padding: 2px;
 }
 
-.stagerank, .smaller {
+.stagerank,
+.smaller {
   font-size: 80%;
 }
 
@@ -387,7 +434,7 @@ table[data-sortable] th[data-sorted-direction="ascending"]:after {
 }
 
 .btn {
-  padding: 0.200rem 0.5rem;
+  padding: 0.2rem 0.5rem;
 }
 
 a.btn {
