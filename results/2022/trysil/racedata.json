@@ -3,5 +3,22 @@
   "year": 2022,
   "date": "2022-09-18",
   "series": "NC",
-  "text": "Norgescup-avslutning i Trysil rett før høsten trår til for alvor. Nye stier på programmet denne gangen. Tidene på etappe 4 er ca. 4:36 for høye grunnet usynkroniserte klokker på tidtagingsutstyret. Men alle har samme differanse, så rekkefølge skal være korrekt. "
+  "text": "Norgescup-avslutning i Trysil rett før høsten trår til for alvor. Nye stier på programmet denne gangen. Tidene på etappe 4 er ca. 4:36 for høye grunnet usynkroniserte klokker på tidtagingsutstyret. Men alle har samme differanse, så rekkefølge skal være korrekt. ",
+  "links": [
+    {
+    "type": "results",
+    "desc": "Originale resultater",
+    "url": "https://www.trysil.com/contentassets/7290abeae3134750bc5a1083652052b0/trysil-enduro-2022-total.pdf"
+  },
+    {
+    "type": "images",
+    "desc": "Bilder fra Alex Backsæther",
+    "url": "https://drive.google.com/drive/folders/1kvXXTg3fkpKzZ1WHbKIwuwuO7vT28R7y?fbclid=IwAR2x_Qzj9QPtMK17BjBmo2LZNZIvrHmHbhp2Jf1v9lFla3IX0cwfAHqlTr8"
+  },
+    {
+    "type": "images",
+    "desc": "Bilder fra Jonas Sjögren",
+    "url": "https://drive.google.com/drive/folders/10PQffjpwjhROd2LOgEt1WN0UXP3dY5gC?fbclid=IwAR0UnXDexy7uZBiVHXu6foXU-Hg99plvm5Tjd-jIshD5eUKkwQ4dtj1XVLc"
+  }
+  ]
 }
