@@ -173,7 +173,6 @@ async function raceHandler(req) {
 }
 
 async function seriesHandler(req) {
-  log.debug(`request for ${req.path}`);
   const race = await db.findRace(req.params.uid);
 
   if (!race.id) {

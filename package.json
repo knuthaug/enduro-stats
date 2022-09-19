@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "precommit": "npm run test",
-    "watch": "npm-watch client",
+    "watch:server": "npm-watch server",
+    "watch:client": "npm-watch client",
     "build-watch": "npm-watch build",
     "clean": "rimraf bundlemap-js.json server/dist/js server/dist/css",
     "client": "npm run clean && npm run build:css && npm run build:js && npm start",

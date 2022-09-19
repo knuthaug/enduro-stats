@@ -6,7 +6,12 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-12">Sammenlagt for de historiske seriene Østafjells enduroserie og 80/20 enduro series er beregnet med maksimalt 4 tellende ritt og samme poengskala som (i det minste) Østafjells-serien brukte i 2019. Det kan være små forskjeller rundt hvordan det faktisk ble beregnet et gitt år, men disse sidene bruker samme metode for alle år, og begge serier. Explorer og funduro-klasser er ikke med i sammenlagt-beregningene.(Alle poeng for serien i året i parantes). Norgescupen fra 2022 bruker NCFs poengskala for norgescup, felles for utfor, enduro, rundbane og maraton. </div>
+    <div class="col-12">Sammenlagt for de historiske seriene Østafjells enduroserie og 80/20 enduro series er
+      beregnet med maksimalt 4 tellende ritt og samme poengskala som (i det minste) Østafjells-serien
+      brukte i 2019. Det kan være små forskjeller rundt hvordan det faktisk ble beregnet et gitt år,
+      men disse sidene bruker samme metode for alle år, og begge serier. Explorer og funduro-klasser
+      er ikke med i sammenlagt-beregningene.(Alle poeng for serien i året i parantes). Norgescupen
+      fra 2022 bruker NCFs poengskala for norgescup, felles for utfor, enduro, rundbane og maraton. </div>
   </div>
   <div class="row">
     <div class="col-12">
@@ -17,8 +22,8 @@
             <th scope="col""></th>
             <th scope="col" data-sortable-type="numeric">Plass</th>
             <th scope="col">Navn</th>
-            {{#each allRaces}}
-              <th scope="col" data-sortable-type="numeric">{{this}}</th>
+            {{#each allRaceNames}}
+              <th scope="col" data-sortable-type="numeric"><a href="/ritt/{{this.uid}}">{{this.name}}</a></th>
             {{/each}}
             <th>Totalt</th>
           </thead>
