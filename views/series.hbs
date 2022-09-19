@@ -34,7 +34,7 @@
                 <td>{{seriesrank}}</td>
                 <td><a href="/rytter/{{uid}}">{{name}}</a></td>
                 {{#each races}}
-                  <td>{{#compare rank '===' 0}}-{{else}}{{../points}} <span class="stagerank">({{../rank}}/{{../totalInClass}})</span>{{/compare}}</td>
+                  <td>{{#compare rank '===' 0}}-{{else}}{{../points}} <span class="stagerank">({{#compare ../status '!==' 'OK'}}{{../status}}{{else}}{{../rank}}/{{../totalInClass}}{{/compare}})</span>{{/compare}}</td>
                 {{/each}}
                 <td>{{totalPoints}} {{#compare ../../series.name '!==' 'NC'}}<span class="stagerank">({{../maxTotalPoints}})</span>{{/compare}}</td>
               </tr>

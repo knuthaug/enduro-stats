@@ -63,6 +63,7 @@ function mapToSeriesForRider(data) {
 }
 
 function mapToSeries(data, seriesName) {
+  //console.log(data);
   const classes = [...new Set(data.map((r) => r.class))];
   const raceNames = data
     .slice()
@@ -93,8 +94,14 @@ function mapToSeries(data, seriesName) {
         riderRows[found].races.push({
           name: result.race_name,
           rank: result.final_rank,
+          status: result.final_status,
           totalInClass: totalInClass(resultsForClass, result.race_name),
-          points: pointsForClass(className, result.final_rank, seriesName),
+          points: pointsForClass(
+            className,
+            result.final_rank,
+            result.final_status,
+            seriesName
+          ),
         });
       } else {
         riderRows.push({
@@ -104,8 +111,14 @@ function mapToSeries(data, seriesName) {
             {
               name: result.race_name,
               rank: result.final_rank,
+              status: result.final_status,
               totalInClass: totalInClass(resultsForClass, result.race_name),
-              points: pointsForClass(className, result.final_rank, seriesName),
+              points: pointsForClass(
+                className,
+                result.final_rank,
+                result.final_status,
+                seriesName
+              ),
             },
           ],
         });
@@ -124,6 +137,7 @@ function mapToSeries(data, seriesName) {
               name: race,
               rank: 0,
               points: 0,
+              status: "OK",
             });
           }
         });
@@ -199,7 +213,11 @@ function indexOfSmallest(array) {
   return lowest;
 }
 
-function pointsForClass(cls, place, series) {
+function pointsForClass(cls, place, status, series) {
+  if (status !== "OK") {
+    return 0;
+  }
+
   if (series && series === "NC") {
     return pointsNC[place];
   }
