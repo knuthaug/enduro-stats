@@ -141,8 +141,10 @@ function mapToSeries(data, seriesName) {
 
         let pointsRaces = r.races.slice(0);
 
-        while (pointsRaces.length > 4) {
-          pointsRaces.splice(indexOfSmallest(pointsRaces), 1);
+        if (seriesName !== "NC") {
+          while (pointsRaces.length > 4) {
+            pointsRaces.splice(indexOfSmallest(pointsRaces), 1);
+          }
         }
 
         r.totalPoints = pointsRaces.reduce(function (sum, value) {
