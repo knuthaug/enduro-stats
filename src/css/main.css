@@ -26,6 +26,11 @@ body {
   font-size: 90%;
 }
 
+.frontpage-date {
+  font-style: italic;
+  font-size: 90%;
+}
+
 .article p:first-of-type {
   width: 65%;
   font-size: 120%;

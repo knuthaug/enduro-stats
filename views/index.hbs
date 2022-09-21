@@ -8,7 +8,12 @@
     {{/compare}}
 
     <div class="frontpage-plug">
-      <h3><a href="/artikler/{{permalink}}">{{frontpage_title}}</a></h3>
+      {{#compare @index '===' 0}}
+        <h1><a href="/artikler/{{../permalink}}">{{../frontpage_title}}</a></h1>
+    {{else}}
+        <h3><a href="/artikler/{{../permalink}}">{{../frontpage_title}}</a></h3>
+     {{/compare}}
+
       <div class="ingress">
         {{#if frontpage_image_url}}
         <figure class="text-image right">
@@ -23,7 +28,7 @@
             {{/if}}
         </figure>
         {{/if}}
-        {{frontpage_ingress}}
+        <div class="frontpage-date">{{date}}</div> {{frontpage_ingress}}
       </div>
     </div>
     </div>
