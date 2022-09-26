@@ -4,6 +4,9 @@
   "date": "2022-09-18",
   "series": "NC",
   "text": "Norgescup-avslutning i Trysil rett før høsten trår til for alvor. Nye stier på programmet denne gangen. Tidene på etappe 4 er ca. 4:36 for høye grunnet usynkroniserte klokker på tidtagingsutstyret. Men alle har samme differanse, så rekkefølge skal være korrekt. ",
+  "lat": 61.3195,
+  "long": 12.2772,
+  "zoom": 12,
   "links": [
     {
     "type": "results",
@@ -19,6 +22,43 @@
     "type": "images",
     "desc": "Bilder fra Jonas Sjögren",
     "url": "https://drive.google.com/drive/folders/10PQffjpwjhROd2LOgEt1WN0UXP3dY5gC?fbclid=IwAR0UnXDexy7uZBiVHXu6foXU-Hg99plvm5Tjd-jIshD5eUKkwQ4dtj1XVLc"
+  },
+    {
+    "type": "images",
+    "desc": "Bilder fra Jon Borgersen",
+    "url": "http://jonborgersen.com/trysil-enduro-2022/#1"
+  }
+  ],
+  "details": [
+    {
+    "name": "FE 1",
+    "strava_name": "",
+    "file": "trysil-2022-fe1.gpx",
+    "strava_url": ""
+  },
+    {
+    "name": "FE 2",
+    "strava_name": "",
+    "file": "trysil-2022-fe2.gpx",
+    "strava_url": ""
+  },
+    {
+    "name": "FE 3",
+    "strava_name": "",
+    "file": "trysil-2022-fe3.gpx",
+    "strava_url": ""
+  },
+    {
+    "name": "FE 4",
+    "strava_name": "(ae) Sti-DH: Ørådalen sør",
+    "file": "trysil-2022-fe4.gpx",
+    "strava_url": "https://www.strava.com/segments/7396303"
+  },
+    {
+    "name": "FE 5",
+    "strava_name": "Rodeo",
+    "file": "trysil-2022-fe5.gpx",
+    "strava_url": "https://www.strava.com/segments/29919172"
   }
   ]
 }
