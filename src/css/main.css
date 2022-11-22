@@ -573,6 +573,10 @@ table.counted tbody tr:before {
   margin-top: 20px;
 }
 
+.frontpage-plug h1 a, .frontpage-plug h2 a, .frontpage-plug h3 a,  {
+  border: none;
+}
+
 .frontpage-news h5 {
   color: #ccc;
 }
