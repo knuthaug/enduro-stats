@@ -4,6 +4,7 @@ coverage
 */.DS_Store
 .DS_Store
 logs
+dump*
 database.json
 server/dist
 scripts/restore_to_aws.sh
