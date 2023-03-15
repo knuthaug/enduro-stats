@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "articles:add": "node ./scripts/articles.mjs --add",
     "precommit": "npm run test",
     "watch:server": "npm-watch server",
     "watch:client": "npm-watch client",
