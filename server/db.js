@@ -70,7 +70,7 @@ class Db {
   }
 
   async findArticle(id) {
-    const sanitizedId = /([a-z]+-?)+/.exec(id)[0];
+    const sanitizedId = /([a-z0-9]+-?)+/.exec(id)[0];
     const query =
       "SELECT id, date, body, title from articles where permalink = $1";
     const rows = await this.find(query, [sanitizedId]);
