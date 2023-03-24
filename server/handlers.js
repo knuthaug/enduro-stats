@@ -1,23 +1,23 @@
-const log = require("./log");
-const Db = require("./db");
-const resultViewMapper = require("./resultViewMapper");
-const fullResultViewMapper = require("./fullResultViewMapper");
-const seriesMapper = require("./seriesResultMapper.js");
-const raceViewMapper = require("./raceViewMapper.js");
-const { riderViewMapper } = require("./riderViewMapper");
-const compareAsc = require("date-fns/compare_asc");
-const parse = require("date-fns/parse");
-const { percentRanks } = require("../lib/percent_ranks");
-const { toNumber } = require("./riderViewMapper.js");
-const comparisonMapper = require("./comparisonMapper");
-const comparisonGraphMapper = require("./comparisonGraphMapper");
-const { convertTimeToMs } = require("../lib/time.js");
+const log = require('./log');
+const Db = require('./db');
+const resultViewMapper = require('./resultViewMapper');
+const fullResultViewMapper = require('./fullResultViewMapper');
+const seriesMapper = require('./seriesResultMapper.js');
+const raceViewMapper = require('./raceViewMapper.js');
+const { riderViewMapper } = require('./riderViewMapper');
+const compareAsc = require('date-fns/compare_asc');
+const parse = require('date-fns/parse');
+const { percentRanks } = require('../lib/percent_ranks');
+const { toNumber } = require('./riderViewMapper.js');
+const comparisonMapper = require('./comparisonMapper');
+const comparisonGraphMapper = require('./comparisonGraphMapper');
+const { convertTimeToMs } = require('../lib/time.js');
 
 const db = new Db();
 
 async function manifestHandler(req) {
   return {
-    name: "Norsk enduro",
+    name: 'Norsk enduro',
   };
 }
 
@@ -49,7 +49,7 @@ async function mapHandler(req) {
     title: `Kart ${race.name}: Norsk enduro`,
     docTitle: `Etappedetaljer for ${race.name}`,
     description:
-      "Resultater, statistikk og informasjon om ritt og ryttere i norske enduroritt.",
+      'Resultater, statistikk og informasjon om ritt og ryttere i norske enduroritt.',
     map: true,
   };
 }
@@ -66,8 +66,8 @@ async function racesHandler(req) {
   return {
     status: 200,
     races,
-    active: "ritt",
-    docTitle: "Alle ritt : Norsk enduro",
+    active: 'ritt',
+    docTitle: 'Alle ritt : Norsk enduro',
   };
 }
 
@@ -92,7 +92,7 @@ async function compareHandler(req) {
     status: 200,
     ridersData,
     riders,
-    docTitle: "Sammenligne ryttere : Norsk enduro",
+    docTitle: 'Sammenligne ryttere : Norsk enduro',
     graphObject: JSON.stringify(graphObject),
   };
 }
@@ -117,15 +117,15 @@ async function compareGraphHandler(req) {
 
   const ridersData = await db.raceResultsForRaceAndRiders(race, riders);
 
-  if (type === "places") {
+  if (type === 'places') {
     return comparisonGraphMapper.places(ridersData);
   }
 
-  if (type === "times") {
+  if (type === 'times') {
     return comparisonGraphMapper.timeBehind(ridersData);
   }
 
-  if (type === "acc-times") {
+  if (type === 'acc-times') {
     return comparisonGraphMapper.accTimeBehind(ridersData);
   }
 
@@ -166,7 +166,7 @@ async function raceHandler(req) {
     graphs,
     sortedClasses,
     noResults,
-    active: "ritt",
+    active: 'ritt',
     docTitle: `${race.name} ${race.year} : Norsk enduro`,
     description: `Resultater og statistikk for ${race.name} ${race.year}`,
   };
@@ -200,7 +200,7 @@ async function seriesHandler(req) {
     sortedClasses,
     race,
     backdrop: true,
-    active: "ritt",
+    active: 'ritt',
     docTitle: `${series.name} ${series.year} : Norsk enduro`,
     description: `Sammenlagtresultater for  ${series.name} ${series.year}`,
   };
@@ -231,7 +231,7 @@ async function fullRaceHandler(req) {
 
   if (riders.length > results.length) {
     message =
-      "Ryttere i klasser med færre etapper enn maksimalt antall, er filtrert ut av total-listen da de automatisk får kortest totaltid. Bruk vanlig resultatvisning for å se resultater for disse klassene.";
+      'Ryttere i klasser med færre etapper enn maksimalt antall, er filtrert ut av total-listen da de automatisk får kortest totaltid. Bruk vanlig resultatvisning for å se resultater for disse klassene.';
   }
 
   return {
@@ -242,7 +242,7 @@ async function fullRaceHandler(req) {
     message,
     noResults,
     links,
-    active: "ritt",
+    active: 'ritt',
     docTitle: `${race.name} ${race.year} : Norsk enduro`,
   };
 }
@@ -251,9 +251,9 @@ async function calendarHandler(req) {
   const year = req.params.year || 2022;
 
   return {
-    template: year === 2022 ? "cal.hbs" : `cal-${year}.hbs`,
+    template: year === 2022 ? 'cal.hbs' : `cal-${year}.hbs`,
     status: 200,
-    active: "cal",
+    active: 'cal',
     title: `Rittkalender ${year}`,
     docTitle: `Norsk enduro: Rittkalender for sesongen ${year}`,
     description: `Rittkalender for sesongen ${year}`,
@@ -263,7 +263,7 @@ async function calendarHandler(req) {
 async function articleHandler(req) {
   const article = await db.findArticle(req.params.id);
   return {
-    template: "article.hbs",
+    template: 'article.hbs',
     article,
     status: 200,
     title: article.title,
@@ -274,11 +274,11 @@ async function articleHandler(req) {
 
 async function changelogHandler(req) {
   return {
-    template: "changelog.hbs",
+    template: 'changelog.hbs',
     status: 200,
-    title: "Endringer på norskenduro",
-    docTitle: "Norsk enduro: endringer",
-    description: "Tekniske endringer om funksjonalitet og resultater",
+    title: 'Endringer på norskenduro',
+    docTitle: 'Norsk enduro: endringer',
+    description: 'Tekniske endringer om funksjonalitet og resultater',
   };
 }
 
@@ -290,42 +290,42 @@ async function indexHandler() {
     status: 200,
     races,
     plugs,
-    docTitle: "Norsk enduro",
+    docTitle: 'Norsk enduro',
     description:
-      "Resultater, statistikk og nyheter om ritt og ryttere i norske enduroritt.",
+      'Resultater, statistikk og nyheter om ritt og ryttere i norske enduroritt.',
   };
 }
 
 async function rankHandler(req) {
   log.debug(`request for ${req.path}`);
-  const men = await db.riderRanks("M");
-  const women = await db.riderRanks("F");
+  const men = await db.riderRanks('M');
+  const women = await db.riderRanks('F');
   return {
     status: 200,
     men,
     women,
-    active: "rank",
-    docTitle: "Rytter-ranking : Norsk enduro",
+    active: 'rank',
+    docTitle: 'Rytter-ranking : Norsk enduro',
   };
 }
 
 async function ridersHandler(req) {
   const riders = await db.findAllRiders().then((data) => {
     return data.filter((r) => {
-      return r.count !== "0";
+      return r.count !== '0';
     });
   });
 
   return {
     status: 200,
     riders,
-    active: "ryttere",
-    docTitle: "Alle ryttere : Norsk enduro",
+    active: 'ryttere',
+    docTitle: 'Alle ryttere : Norsk enduro',
   };
 }
 
 function cleanAnchor(str) {
-  return str.replace(/ /g, "-");
+  return str.replace(/ /g, '-');
 }
 
 async function searchHandler(req, res) {
@@ -338,7 +338,7 @@ async function searchHandler(req, res) {
   return {
     status: 200,
     results,
-    docTitle: "Søketreff : Norsk enduro",
+    docTitle: 'Søketreff : Norsk enduro',
   };
 }
 
@@ -368,7 +368,7 @@ async function riderGraphHandler(req) {
     return {
       status: 404,
       message:
-        "Rytteren finnes i databasen, men det fantes ingen ritt for denne rytteren (noe som tyder på en feil et sted hos oss)",
+        'Rytteren finnes i databasen, men det fantes ingen ritt for denne rytteren (noe som tyder på en feil et sted hos oss)',
     };
   }
 
@@ -381,17 +381,17 @@ async function riderGraphHandler(req) {
 
   const results = percentRanks(races, ridersPerClass);
 
-  if (type === "percent") {
+  if (type === 'percent') {
     return resultsToPercentChart(results);
-  } else if (type === "column") {
+  } else if (type === 'column') {
     return resultsToColumnChart(results);
   }
   return resultsToPlacesChart(results);
 }
 
 async function riderHandler(req) {
-  // 410 gone for people who wnat to be deleted
-  if (req.params.uid === "9bf7ef23cda096ef922d2a78cdb9723a") {
+  // 410 gone for people who want to be deleted
+  if (req.params.uid === '9bf7ef23cda096ef922d2a78cdb9723a') {
     return { status: 410 };
   }
 
@@ -407,7 +407,7 @@ async function riderHandler(req) {
     return {
       status: 404,
       message:
-        "Rytteren finnes i databasen, men det fantes ingen ritt for denne rytteren (noe som tyder på en feil et sted hos oss)",
+        'Rytteren finnes i databasen, men det fantes ingen ritt for denne rytteren (noe som tyder på en feil et sted hos oss)',
     };
   }
 
@@ -430,11 +430,11 @@ async function riderHandler(req) {
     numRaces,
     startYear,
     year,
-    portrait: rider.image_mode === "portrait",
+    portrait: rider.image_mode === 'portrait',
     avg,
     score,
     results,
-    active: "ryttere",
+    active: 'ryttere',
     docTitle: `${rider.name} : Norsk enduro`,
     description: `Ritt-historikk for ${rider.name}, ${rider.club}`,
   };
@@ -506,7 +506,7 @@ function resultsToColumnChart(results) {
 function resultsToPlacesChart(results) {
   return results
     .map((e) => {
-      if (e.time !== "DNS" && e.time !== "DNF") {
+      if (e.time !== 'DNS' && e.time !== 'DNF') {
         return {
           x: e.date,
           y: e.rank,
@@ -517,7 +517,7 @@ function resultsToPlacesChart(results) {
       }
     })
     .filter((e) => {
-      return typeof e !== "undefined";
+      return typeof e !== 'undefined';
     })
     .sort((a, b) => {
       return compareAsc(a.properDate, b.properDate);
@@ -527,7 +527,7 @@ function resultsToPlacesChart(results) {
 function resultsToPercentChart(results) {
   return results
     .map((e) => {
-      if (e.time !== "DNS" && e.time !== "DNF") {
+      if (e.time !== 'DNS' && e.time !== 'DNF') {
         return {
           x: e.date,
           y: (e.rank / e.count) * 100,
@@ -538,7 +538,7 @@ function resultsToPercentChart(results) {
       }
     })
     .filter((e) => {
-      return typeof e !== "undefined";
+      return typeof e !== 'undefined';
     })
     .sort((a, b) => {
       return compareAsc(a.properDate, b.properDate);
