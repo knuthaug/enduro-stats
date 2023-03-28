@@ -1,4 +1,4 @@
-@import "bootstrap.min.css";
+@import 'bootstrap.min.css';
 
 /* Sticky footer styles
 -------------------------------------------------- */
@@ -281,11 +281,11 @@ li .race-detail .race-graph {
   padding: 4px;
 }
 
-table[data-sortable].sortable-theme-dark th[data-sorted="true"] {
+table[data-sortable].sortable-theme-dark th[data-sorted='true'] {
   background: #2e2e2e;
 }
 
-table[data-sortable] th:not([data-sortable="false"]) {
+table[data-sortable] th:not([data-sortable='false']) {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -297,7 +297,7 @@ table[data-sortable] th:not([data-sortable="false"]) {
 }
 
 table[data-sortable] th:after {
-  content: "";
+  content: '';
   visibility: hidden;
   display: inline-block;
   vertical-align: inherit;
@@ -311,16 +311,16 @@ table[data-sortable] th:after {
   float: right;
 }
 /* line 40, ../sass/_sortable.sass */
-table[data-sortable] th[data-sorted="true"]:after {
+table[data-sortable] th[data-sorted='true']:after {
   visibility: visible;
 }
 /* line 43, ../sass/_sortable.sass */
-table[data-sortable] th[data-sorted-direction="descending"]:after {
+table[data-sortable] th[data-sorted-direction='descending']:after {
   border-top-color: inherit;
   margin-top: 8px;
 }
 /* line 47, ../sass/_sortable.sass */
-table[data-sortable] th[data-sorted-direction="ascending"]:after {
+table[data-sortable] th[data-sorted-direction='ascending']:after {
   border-bottom-color: inherit;
   margin-top: 3px;
 }
@@ -573,10 +573,28 @@ table.counted tbody tr:before {
   margin-top: 20px;
 }
 
-.frontpage-plug h1 a, .frontpage-plug h2 a, .frontpage-plug h3 a,  {
+.frontpage-plug h1 a,
+.frontpage-plug h2 a,
+.frontpage-plug h3 a {
   border: none;
 }
 
 .frontpage-news h5 {
   color: #ccc;
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
