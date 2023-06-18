@@ -4,6 +4,47 @@
   "date": "2023-06-17",
   "text": "Første runde av Norgescupen 2023, om mulig enda tørrere stier enn i fjor. ",
   "series": "NC",
+  "lat": 59.7805,
+  "long": 10.1089,
+  "zoom": 13,
+  "details": [
+    {
+    "name": "FE 1",
+    "strava_name": "",
+    "file": "drammen-2023-fe1.gpx",
+    "strava_url": ""
+  },
+    {
+    "name": "FE 2",
+    "strava_name": "",
+    "file": "drammen-2023-fe2.gpx",
+    "strava_url": ""
+  },
+    {
+    "name": "FE 3",
+    "strava_name": "",
+    "file": "drammen-2023-fe3.gpx",
+    "strava_url": ""
+  },
+    {
+    "name": "FE 4",
+    "strava_name": "",
+    "file": "drammen-2023-fe4.gpx",
+    "strava_url": ""
+  },
+    {
+    "name": "FE 5",
+    "strava_name": "",
+    "file": "drammen-2023-fe5.gpx",
+    "strava_url": ""
+  },
+    {
+    "name": "FE 6",
+    "strava_name": "",
+    "file": "drammen-2023-fe6.gpx",
+    "strava_url": ""
+  }
+  ],
   "links": [
     {
       "type": "results",
