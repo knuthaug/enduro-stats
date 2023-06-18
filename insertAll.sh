@@ -239,5 +239,10 @@ node import/importer.js -m -f results/2022/spikkestad/spikkestad-2022.csv
 echo "  Trysil"
 node import/importer.js -m -f results/2022/trysil/trysil-2022.csv
 
+echo "2023"
+echo "  Drammenduro"
+node import/importer.js -m -f results/2023/drammen/drammen-2023.csv
+
+
 psql -U endurostats endurostats < scripts/byline.sql
 
