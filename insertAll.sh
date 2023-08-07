@@ -243,6 +243,9 @@ echo "2023"
 echo "  Drammenduro"
 node import/importer.js -m -f results/2023/drammen/drammen-2023.csv
 
+echo "  Veko"
+node import/importer.js -m -f results/2023/veko/veko-2023.csv
+
 
 psql -U endurostats endurostats < scripts/byline.sql
 
