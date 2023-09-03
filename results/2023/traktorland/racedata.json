@@ -1,0 +1,48 @@
+{
+  "name": "Traktorland enduro",
+  "year": 2023,
+  "date": "2023-08-27",
+  "series": "NC",
+  "text": "NM og Norgescuprunde på gården til Peter og værgudene var ikke med på laget i år. Episk våte og tunge forhold.",
+  "lat": 60.5783,
+  "long": 10.3533,
+  "zoom": 14,
+  "details": [
+    {
+      "name": "FE 1",
+      "strava_name": "FE1 Einars sti 2021",
+      "file": "traktorland-2023-fe1.gpx",
+    "strava_url": "https://www.strava.com/segments/29650710"
+    },
+    {
+      "name": "FE 2",
+      "strava_name": "Traktorland Enduro 2022 FE2",
+      "file": "traktorland-2023-fe2.gpx",
+      "strava_url": "https://www.strava.com/segments/32763860"
+    },
+    {
+      "name": "FE 3",
+      "strava_name": "Hilde Gilde",
+      "file": "traktorland-2023-fe3.gpx",
+      "strava_url": "https://www.strava.com/segments/35073840"
+    },
+    {
+      "name": "FE 4",
+      "strava_name": "",
+      "file": "traktorland-2023-fe4.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 5",
+      "strava_name": "",
+      "file": "traktorland-2023-fe5.gpx",
+      "strava_url": ""
+    },
+    {
+      "name": "FE 6",
+      "strava_name": "",
+      "file": "traktorland-2023-fe6.gpx",
+      "strava_url": ""
+    }
+  ]
+}

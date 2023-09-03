@@ -246,6 +246,11 @@ node import/importer.js -m -f results/2023/drammen/drammen-2023.csv
 echo "  Veko"
 node import/importer.js -m -f results/2023/veko/veko-2023.csv
 
+echo "  Traktorland"
+node import/importer.js -m -f results/2023/traktorland/traktorland-2023.csv
+
+echo "  Harstad"
+node import/importer.js -f results/2023/harstad/harstad-2023.csv
 
 psql -U endurostats endurostats < scripts/byline.sql
 
