@@ -1,3 +1,8 @@
 {
-
+  "database": {
+    "host": "manny.db.elephantsql.com",
+    "username": "lifhxukm",
+    "database": "lifhxukm",
+    "password": "D91HaM-UWv6z-8DI7T98PAMRWIuR7GS5"
+  }
 }
