@@ -36,6 +36,7 @@ const subs = {
   'Bjørn Kvande': 'Bjørn Jarle Kvande',
   'Emil Aamil Carlson': 'Emil Aamli Carlson',
   'Emily Benham': 'Emily Benham-Kvåle',
+  'Jon Eid': 'Jon Vassbø Eid',
   'Emily Benham Kvåle': 'Emily Benham-Kvåle',
   'Frank Jonny Brenn': 'Frank Jonny Brenno',
   'Frode Kristian Ditlefsen': 'Frode Kristian Møller Ditlefsen',

@@ -121,7 +121,7 @@ class Db {
     ) {
       // special case for races with only youth
       classPrefix = gender === 'F' ? 'K%' : 'M%';
-    } else if (raceUid === '5760c4ce2fa8314cb992493dd99aa626') {
+    } else if (raceUid === '5760c4ce2fa8314cb992493dd99aa626' || raceUid === '15f02667332f4a1c3eba7984e4dec34b') {
       classPrefix = gender === 'F' ? 'Jenter%' : 'Gutter%';
     } else {
       classPrefix = gender === 'F' ? 'Kvinner%' : 'Menn%';
