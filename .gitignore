@@ -21,3 +21,4 @@ sync-cdn
 !.elasticbeanstalk/*.global.yml
 cdn
 raw_images
+config/production-config.json
