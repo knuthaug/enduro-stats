@@ -258,5 +258,8 @@ node import/importer.js -m -f results/2023/mistberget/mistberget-2023.csv
 echo "  Nittedal"
 node import/importer.js -m -f results/2023/nittedal/nittedal-2023.csv
 
+echo "  Lillehammer"
+node import/importer.js -a -f results/2023/lillehammer/lillehammer-2023.csv
+
 psql -U endurostats endurostats < scripts/byline.sql
 
