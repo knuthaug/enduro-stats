@@ -1,44 +1,44 @@
-const bundleMapJs = require("../bundlemap-js.json");
-const bundleMapCss = require("../bundlemap-css.json");
+const bundleMapJs = require('../bundlemap-js.json')
+const bundleMapCss = require('../bundlemap-css.json')
 
-function replaceJs(fileName) {
-  const jsEntry = bundleMapJs[fileName.replace(/.js$/, "")];
+function replaceJs (fileName) {
+  const jsEntry = bundleMapJs[fileName.replace(/.js$/, '')]
 
   if (jsEntry) {
-    return jsEntry.js;
+    return jsEntry.js
   }
 
-  return fileName;
+  return fileName
 }
 
-function replaceCss(fileName) {
-  const cssEntry = bundleMapCss[fileName];
+function replaceCss (fileName) {
+  const cssEntry = bundleMapCss[fileName]
 
-  return cssEntry || fileName;
+  return cssEntry || fileName
 }
 
-function hashedAssets(fileName) {
-  if (fileName.includes(".js")) {
-    return replaceJs(fileName);
+function hashedAssets (fileName) {
+  if (fileName.includes('.js')) {
+    return replaceJs(fileName)
   }
 
-  if (fileName.includes(".css")) {
-    return replaceCss(fileName);
+  if (fileName.includes('.css')) {
+    return replaceCss(fileName)
   }
 
-  return fileName;
+  return fileName
 }
 
 /* global arguments */
 const compare = (left, operator, right, options) => {
   if (arguments.length < 3) {
-    throw new Error('Handlebars Helper "compare" needs 3 parameters');
+    throw new Error('Handlebars Helper "compare" needs 3 parameters')
   }
 
   if (options === undefined) {
-    options = right;
-    right = operator;
-    operator = "===";
+    options = right
+    right = operator
+    operator = '==='
   }
 
   /*eslint-disable */
@@ -88,80 +88,80 @@ const compare = (left, operator, right, options) => {
   if (!operators[operator]) {
     throw new Error(
       `Handlebars Helper "compare" doesn't know the operator ${operator}`
-    );
+    )
   }
 
-  const result = operators[operator](left, right);
+  const result = operators[operator](left, right)
   if (result) {
-    return options.fn(this);
+    return options.fn(this)
   }
-  return options.inverse(this);
-};
-
-function propFor(num, key) {
-  return `stage${num}_${key}`;
+  return options.inverse(this)
 }
 
-function toJson(arg) {
-  return JSON.stringify(arg);
+function propFor (num, key) {
+  return `stage${num}_${key}`
 }
 
-function formatPercent(arg) {
-  return arg.toFixed(1);
+function toJson (arg) {
+  return JSON.stringify(arg)
 }
 
-function isDNF(obj, stage) {
-  return obj[`stage${stage}_time`] === "DNF";
+function formatPercent (arg) {
+  return arg.toFixed(1)
 }
 
-function isDNS(obj, stage) {
-  return obj[`stage${stage}_time`] === "DNS";
+function isDNF (obj, stage) {
+  return obj[`stage${stage}_time`] === 'DNF'
 }
 
-function isDSQ(obj, stage) {
-  return obj[`stage${stage}_time`] === "DSQ";
+function isDNS (obj, stage) {
+  return obj[`stage${stage}_time`] === 'DNS'
 }
 
-function isError(obj, stage) {
-  return obj[`stage${stage}_time`] === "ERROR";
+function isDSQ (obj, stage) {
+  return obj[`stage${stage}_time`] === 'DSQ'
 }
 
-function cat(one, two) {
-  return `${one}${two}`;
+function isError (obj, stage) {
+  return obj[`stage${stage}_time`] === 'ERROR'
 }
 
-function isOK(obj, stage) {
+function cat (one, two) {
+  return `${one}${two}`
+}
+
+function isOK (obj, stage) {
   return (
-    obj[`stage${stage}_time`] !== "DNF" &&
-    obj[`stage${stage}_time`] !== "DSQ" &&
-    obj[`stage${stage}_time`] !== "DNS" &&
-    obj[`stage${stage}_time`] !== "ERROR" &&
-    typeof obj[`stage${stage}_time`] !== "undefined"
-  );
+    obj[`stage${stage}_time`] !== 'DNF' &&
+    obj[`stage${stage}_time`] !== 'DSQ' &&
+    obj[`stage${stage}_time`] !== 'DNS' &&
+    obj[`stage${stage}_time`] !== 'ERROR' &&
+    typeof obj[`stage${stage}_time`] !== 'undefined'
+  )
 }
 
-function inc(value) {
-  return parseInt(value, 10) + 1;
+function inc (value) {
+  return parseInt(value, 10) + 1
 }
 
-function title(status) {
-  if (status === "DNS") {
-    return "Rytteren startet ikke rittet";
+function title (status) {
+  if (status === 'DNS') {
+    return 'Rytteren startet ikke rittet'
   }
 
-  if (status === "DNF") {
-    return "Rytteren fullførte ikke rittet";
+  if (status === 'DNF') {
+    return 'Rytteren fullførte ikke rittet'
   }
 
-  if (status === "DSQ") {
-    return "Rytteren ble diskvalifisert";
+  if (status === 'DSQ') {
+    return 'Rytteren ble diskvalifisert'
   }
 
-  return "";
+  return ''
 }
 
-function anchor(str) {
-  return str.replace(/ /g, "-");
+function anchor (str) {
+  return str.replace(/ /g, '-')
 }
 
 module.exports = {
@@ -178,5 +178,5 @@ module.exports = {
   isError,
   isOK,
   cat,
-  inc,
-};
+  inc
+}

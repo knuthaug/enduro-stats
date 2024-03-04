@@ -3,7 +3,7 @@ const config = require('../config')
 
 let logger
 
-if(config.get('env') !== 'test') {
+if (config.get('env') !== 'test') {
   logger = pino(pino.destination('./logs/import.log'), {
     name: 'enduro-stats-import',
     level: config.get('import.loglevel')

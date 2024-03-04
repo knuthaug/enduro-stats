@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
   selectors.forEach((element) => {
     element.addEventListener('change', (event) => {
       const target = event.currentTarget
-      let els = target.parentNode.childNodes
+      const els = target.parentNode.childNodes
 
       for (let i = 0; i < els.length; i++) {
         if (els[i].nodeName === 'DIV') {
@@ -30,7 +30,6 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
   setupShowHideRace()
 })
-
 
 function setupShowHideRace () {
   [...document.querySelectorAll('.race-shower')]
@@ -63,8 +62,8 @@ function timeFormatter () {
   return `<span>${this.series.name}<br/>${this.point.x} etappe: ${value} ${secondLabel(value)} bak</span>`
 }
 
-function secondLabel(value) {
-  return value  === '1.0' ? 'sekund' : 'sekunder'
+function secondLabel (value) {
+  return value === '1.0' ? 'sekund' : 'sekunder'
 }
 
 function setupRaceDetailGraph (element) {
@@ -79,7 +78,7 @@ function setupRaceDetailGraph (element) {
     tooltip: {
       formatter: function () {
         const value = Math.abs(this.point.y).toFixed(1)
-        if(this.point.y < 0 ) {
+        if (this.point.y < 0) {
           return `<span>${this.series.name}<br/>${this.point.x} etappe: ${value} ${secondLabel(value)} foran</span>`
         }
         return `<span>${this.series.name}<br/>${this.point.x} etappe: ${value} ${secondLabel(value)} bak</span>`
@@ -119,7 +118,7 @@ function setupRaceDetailGraph (element) {
   })
 }
 
-function title(type) {
+function title (type) {
   if (type === 'places') {
     return 'Etappeplasseringer'
   }
@@ -129,8 +128,6 @@ function title(type) {
   }
 
   return 'Total tid bak'
-
-
 }
 
 function setupRaceGraph (element, graph) {
@@ -156,7 +153,7 @@ function setupRaceGraph (element, graph) {
       series: data
     })
   } else {
-    const data = JSON.parse(element.getAttribute(`data-object-places`))
+    const data = JSON.parse(element.getAttribute('data-object-places'))
 
     Highcharts.chart(element.getAttribute('id'), {
       chart: charts.chartOptions(),

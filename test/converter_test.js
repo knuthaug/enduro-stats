@@ -21,8 +21,6 @@ tap.test('Menn åpen klasse el-sykkel is not converted', async t => {
   t.end()
 })
 
-
-
 tap.test('Menn junior', async t => {
   const conv = new Converter()
   t.equal(conv.className('Menn jr'), 'Menn junior', 'class name is converted')

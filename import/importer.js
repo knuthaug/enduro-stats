@@ -56,7 +56,7 @@ const dir = options.dir
 if (dir) {
   fs.readdir(dir, async function (err, items) {
     let raceName, raceYear, raceId, raceDate
-    for (var i = 0; i < items.length; i++) {
+    for (let i = 0; i < items.length; i++) {
       const { raceName, raceYear, raceId, raceDate } = await readSingleStageFile(items[i])
     }
 

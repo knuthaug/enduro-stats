@@ -1,21 +1,20 @@
-function create() {
-
-  function isEvent(key, value) {
-    return key.startsWith("on") && typeof value === 'function'
+function create () {
+  function isEvent (key, value) {
+    return key.startsWith('on') && typeof value === 'function'
   }
 
-  function eventName(k) {
+  function eventName (k) {
     return k.substr(2).toLowerCase()
   }
-  function isString(s) {
-    return typeof s === "string"
+  function isString (s) {
+    return typeof s === 'string'
   }
 
-  function attrs(el, props) {
-    for (let [key, val] of Object.entries(props)) {
+  function attrs (el, props) {
+    for (const [key, val] of Object.entries(props)) {
       if (isEvent(key, val)) {
         el.addEventListener(eventName(key), val)
-      } else if (key === "class") {
+      } else if (key === 'class') {
         const classes = Array.isArray(val) ? val : [val]
         el.classList.add(...classes)
       } else {
@@ -28,8 +27,8 @@ function create() {
   return new Proxy(
     {},
     {
-      get(_, tag) {
-        return function createElement(props = {}, children = []) {
+      get (_, tag) {
+        return function createElement (props = {}, children = []) {
           if (Array.isArray(props)) {
             children = props
             props = {}
@@ -42,7 +41,7 @@ function create() {
             children = [children]
           }
           const el = attrs(document.createElement(tag), props)
-          children.forEach(function(i) {
+          children.forEach(function (i) {
             if (isString(i)) {
               el.appendChild(document.createTextNode(i))
             } else {

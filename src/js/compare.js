@@ -3,7 +3,7 @@ const { convertMsToTime } = require('../../lib/time.js')
 const charts = require('./charts.js')
 const ui = require('./ui.js')
 
-const {input, li, i, a, option } = ui.create()
+const { input, li, i, a, option } = ui.create()
 
 document.addEventListener('DOMContentLoaded', function (event) {
   feather.replace()
@@ -12,12 +12,12 @@ document.addEventListener('DOMContentLoaded', function (event) {
   setupSelectors()
 })
 
-function setupSelectors() {
+function setupSelectors () {
   const selectors = document.querySelectorAll('.graph-selector')
   selectors.forEach((element) => {
     element.addEventListener('change', (event) => {
       const target = event.currentTarget
-      let els = target.parentNode.childNodes
+      const els = target.parentNode.childNodes
 
       for (let i = 0; i < els.length; i++) {
         if (els[i].nodeName === 'DIV') {
@@ -38,10 +38,10 @@ function setupShowHiders () {
       element.addEventListener('click', e => {
         const cur = e.currentTarget
         cur.classList.toggle('plus-rotate')
-        let el = cur.parentNode.nextSibling.nextSibling
+        const el = cur.parentNode.nextSibling.nextSibling
         el.classList.toggle('hide')
-        //console.log(el)
-        if(!el.classList.contains('hide')) {
+        // console.log(el)
+        if (!el.classList.contains('hide')) {
           const id = el.querySelectorAll('.race-graph')[0].getAttribute('id')
           const selector = document.getElementById(`selector-${id}`)
           const type = selector.options[selector.selectedIndex].value
@@ -51,7 +51,7 @@ function setupShowHiders () {
     })
 }
 
-async function fetchData(id) {
+async function fetchData (id) {
   const el = document.getElementById(id)
   const race = el.getAttribute('data-race')
   const selector = document.getElementById(`selector-${id}`)
@@ -66,15 +66,15 @@ async function fetchData(id) {
     .then(json => json)
 }
 
-function yAxisTitle(type) {
-  if ( type === 'times' || type === 'acc-times') {
+function yAxisTitle (type) {
+  if (type === 'times' || type === 'acc-times') {
     return 'Sekunder'
   }
 
   return 'Plass'
 }
 
-function title(type) {
+function title (type) {
   if (type === 'times') {
     return 'Tid bak'
   }
@@ -86,18 +86,18 @@ function title(type) {
   return 'Etappeplasseringer'
 }
 
-function findFormatter(type) {
+function findFormatter (type) {
   if (type === 'times' || type === 'acc-times') {
-      return function() {
-        return `<span>${this.series.name}<br/>${this.point.x} etappe: ${Math.abs(this.point.y)} sekunder ${this.point.y < 0 ? 'foran' : 'bak'} innbyrdes vinner</span>`
-      }
+    return function () {
+      return `<span>${this.series.name}<br/>${this.point.x} etappe: ${Math.abs(this.point.y)} sekunder ${this.point.y < 0 ? 'foran' : 'bak'} innbyrdes vinner</span>`
+    }
   }
-  return function() {
+  return function () {
     return `<span>${this.series.name}<br/>${this.point.x} etappe: ${this.point.y === 0 ? 'DNF' : this.point.y + '. plass'}</span>`
   }
 }
 
-async function setupRaceDetailGraph(id, type) {
+async function setupRaceDetailGraph (id, type) {
   Highcharts.chart(id, {
     chart: charts.chartOptions(),
     tooltip: {
@@ -158,30 +158,30 @@ function setupCompareSearch () {
   setupRaceGraph(document.getElementById('races-graph'))
 }
 
-function searchOnKeyup(event) {
+function searchOnKeyup (event) {
   if (event.code) {
     compareSearchHint(event)
   }
 }
 
-function formOnSubmit(event) {
+function formOnSubmit (event) {
   const search = document.getElementById('compare-search-field')
   if (search.getAttribute('data-uid')) {
     search.setAttribute('value', search.getAttribute('data-uid'))
   }
 }
 
-function searchFieldOnChange(e) {
+function searchFieldOnChange (e) {
   const search = document.getElementById('compare-search-field')
   let uid
   let name
 
-  let inputValue = search.value
-  let options = document.getElementById('compare-search-list').children
+  const inputValue = search.value
+  const options = document.getElementById('compare-search-list').children
   let i = options.length
 
   while (i--) {
-    let option = options[i]
+    const option = options[i]
 
     if (option.value === inputValue) {
       uid = option.getAttribute('data-uid')
@@ -199,39 +199,38 @@ function searchFieldOnChange(e) {
   const list = document.getElementById('compare-search-list')
 
   while (list.firstChild) {
-    list.removeChild(list.firstChild);
+    list.removeChild(list.firstChild)
   }
   e.preventDefault()
 }
 
-function removeUser(event) {
+function removeUser (event) {
   const form = document.getElementById('compare-search-form')
   const list = document.getElementById('compare-list')
   const item = event.target.closest('.list-group-item')
 
   list.removeChild(item)
-  //find form item
+  // find form item
   const formItem = document.getElementById(`${item.getAttribute('data-uid')}`)
   form.removeChild(formItem)
 }
 
-function addUser(form, uid, name) {
-  const hidden = input({type: 'hidden', name: 'riders', value: uid, id: uid})
+function addUser (form, uid, name) {
+  const hidden = input({ type: 'hidden', name: 'riders', value: uid, id: uid })
   form.appendChild(hidden)
 
   const list = document.getElementById('compare-list')
-  const iEl = i({class: 'icon', onclick: removeUser})
+  const iEl = i({ class: 'icon', onclick: removeUser })
   iEl.innerHTML = feather.icons['x-circle'].toSvg()
-  const listElement = li({'data-uid': uid, class: ['list-group-item-dark', 'list-group-item']}, [iEl, a({href: `/rytter/${uid}`}, name)])
+  const listElement = li({ 'data-uid': uid, class: ['list-group-item-dark', 'list-group-item'] }, [iEl, a({ href: `/rytter/${uid}` }, name)])
   list.appendChild(listElement)
 }
 
 function compareSearchHint (event) {
+  const input = event.target
+  const list = document.getElementById('compare-search-list')
 
-  var input = event.target
-  var list = document.getElementById('compare-search-list')
-
-  var min_characters = 2
+  const min_characters = 2
 
   if (input.value.length < min_characters) {
 
@@ -240,12 +239,12 @@ function compareSearchHint (event) {
 
     window.compareSearchHintXHR.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
-        var response = JSON.parse(this.responseText)
+        const response = JSON.parse(this.responseText)
 
         list.innerHTML = ''
 
         response.forEach(function (item) {
-          list.appendChild(option({'data-uid': item.uid}, item.name))
+          list.appendChild(option({ 'data-uid': item.uid }, item.name))
         })
       }
     }
@@ -260,15 +259,15 @@ function timeFormatter () {
 }
 
 function setupRaceGraph (element) {
-  if(!element) {
+  if (!element) {
     return
   }
 
-  const data = JSON.parse(element.getAttribute(`data-object`))
+  const data = JSON.parse(element.getAttribute('data-object'))
 
   Highcharts.chart(element.getAttribute('id'), {
     chart: charts.chartOptions(),
-        tooltip: {
+    tooltip: {
       formatter: timeFormatter
     },
     title: {
@@ -280,7 +279,7 @@ function setupRaceGraph (element) {
       },
       type: 'datetime',
       labels: {
-        formatter: function() {
+        formatter: function () {
           return convertMsToTime(this.value)
         }
       }
@@ -306,4 +305,3 @@ function setupRaceGraph (element) {
     responsive: charts.responsiveOptions()
   })
 }
-

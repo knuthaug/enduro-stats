@@ -23,11 +23,11 @@ module.exports = function comparisonMapper (data) {
     }
   })
 
-  var sets = racesPerRider.map((r) => {
+  const sets = racesPerRider.map((r) => {
     return r.races
   })
 
-  var intersection = sets.reduce(intersect)
+  const intersection = sets.reduce(intersect)
 
   return intersection.map(r => {
     let race = data.find(d => d.race_uid === r)
@@ -78,7 +78,7 @@ module.exports = function comparisonMapper (data) {
 }
 
 function intersect (a, b) {
-  var t
+  let t
   if (b.length > a.length) {
     t = b
     b = a

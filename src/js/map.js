@@ -46,67 +46,67 @@ const colors = [
 ]
 
 document.addEventListener('DOMContentLoaded', function (event) {
-  //load gpx files
+  // load gpx files
   const json = document.querySelectorAll('[data-gpx]')[0].dataset.gpx.split(',')
   const data = JSON.parse(json)
 
   const parent = document.getElementById('details')
-  var map = createMap(data)
+  const map = createMap(data)
   addFiles(map, data.stageDetails, parent)
 })
 
-function addFiles(map, stages, parent) {
+function addFiles (map, stages, parent) {
   const sortedStages = stages.sort((a, b) => {
     return a.filename.localeCompare(b.filename)
   })
 
-  let current = sortedStages[0]
+  const current = sortedStages[0]
   handleFile(current, parent, map, sortedStages, 0)
 }
 
-function handleFile(o, parent, map, stages, index) {
-    new L.GPX(`https://d1hoqbrdo21qk8.cloudfront.net/gpx/${o.filename}`, {
-      async: true,
-      polyline_options: {
-        color: '#458fd9',
-        opacity: 1,
-        weight: 5,
-        clickable: true,
-        lineCap: 'round'
-      },
-      marker_options: {
-        startIconUrl: '/assets/img/pin-icon-start.png',
-        endIconUrl: '/assets/img/pin-icon-end.png',
-        shadowUrl: '/assets/img/pin-shadow.png',
-        clickable: true
-      }
-    }).on('loaded', function(e) {
-      //map.fitBounds(e.target.getBounds())
-      const g = e.target
-      e.target.bindTooltip(`<h4>${g.get_name()}</h4><p>Lengde: ${Math.round(g.get_distance())} meter, høydemeter: ${Math.round(g.get_elevation_loss())}</p>`, { direction: 'top'})
+function handleFile (o, parent, map, stages, index) {
+  new L.GPX(`https://d1hoqbrdo21qk8.cloudfront.net/gpx/${o.filename}`, {
+    async: true,
+    polyline_options: {
+      color: '#458fd9',
+      opacity: 1,
+      weight: 5,
+      clickable: true,
+      lineCap: 'round'
+    },
+    marker_options: {
+      startIconUrl: '/assets/img/pin-icon-start.png',
+      endIconUrl: '/assets/img/pin-icon-end.png',
+      shadowUrl: '/assets/img/pin-shadow.png',
+      clickable: true
+    }
+  }).on('loaded', function (e) {
+    // map.fitBounds(e.target.getBounds())
+    const g = e.target
+    e.target.bindTooltip(`<h4>${g.get_name()}</h4><p>Lengde: ${Math.round(g.get_distance())} meter, høydemeter: ${Math.round(g.get_elevation_loss())}</p>`, { direction: 'top' })
 
-      //add details
-      parent.appendChild(addCell(g, o))
-      parent.appendChild(div({class: 'row'}, [ addSpace(['col-3']), addSpace(['col-6', 'details-row'])]))
+    // add details
+    parent.appendChild(addCell(g, o))
+    parent.appendChild(div({ class: 'row' }, [addSpace(['col-3']), addSpace(['col-6', 'details-row'])]))
 
-      //graph
-      setupGraph(g.get_name(), g._info.elevation._points)
-      if(stages.length > index + 1) {
-        handleFile(stages[index + 1], parent, map, stages, index + 1)
-      }
-    }).addTo(map)
+    // graph
+    setupGraph(g.get_name(), g._info.elevation._points)
+    if (stages.length > index + 1) {
+      handleFile(stages[index + 1], parent, map, stages, index + 1)
+    }
+  }).addTo(map)
 }
 
-function startPoint(data) {
+function startPoint (data) {
   return data.map(e => e[1]).reduce((acc, current) => {
     return Math.min(acc, current)
   }, 10000) - 25
 }
 
-function gradients(data) {
+function gradients (data) {
   const gradients = []
 
-  for(let i = 0; i < data.length; i += 10) {
+  for (let i = 0; i < data.length; i += 10) {
     const set = data.slice(i, i + 10)
     const gradient = (diff(set[set.length - 1][1], set[0][1]) /
                       diff(set[set.length - 1][0], set[0][0])) * 100
@@ -122,15 +122,15 @@ function gradients(data) {
   return gradients
 }
 
-function interpolate(set) {
+function interpolate (set) {
   const newSet = [set[0]]
-  
-  for(let i = 0; i < set.length - 1; i++) {
+
+  for (let i = 0; i < set.length - 1; i++) {
     const current = set[i]
     const next = set[i + 1]
 
-    if(next[0] > current[0] + 1) {
-      for(let j = current[0]; j < Math.floor(next[0] + 1); j++) {
+    if (next[0] > current[0] + 1) {
+      for (let j = current[0]; j < Math.floor(next[0] + 1); j++) {
         newSet.push([j, current[1]])
       }
     }
@@ -141,32 +141,31 @@ function interpolate(set) {
   })
 }
 
-function colorFromGradient(gradient) {
-  if(isNaN(gradient)) {
+function colorFromGradient (gradient) {
+  if (isNaN(gradient)) {
     gradient = 0
   }
-  for(let color of colors) {
-    if(gradient <= color.range[0] && gradient >= color.range[1] ) {
+  for (const color of colors) {
+    if (gradient <= color.range[0] && gradient >= color.range[1]) {
       return color.color
     }
   }
-  return 'black' //positive gradient
+  return 'black' // positive gradient
 }
 
-function diff(point1, point2) {
+function diff (point1, point2) {
   return point1 - point2
 }
 
-function setupGraph(id, data) {
- 
-  let series = gradients(data)
+function setupGraph (id, data) {
+  const series = gradients(data)
   series.push(
     {
       showInLegend: false,
       data: data,
       type: 'spline',
       pointStart: 1
-    });
+    })
 
   Highcharts.chart(id, {
     chart: charts.chartOptions(),
@@ -188,7 +187,7 @@ function setupGraph(id, data) {
     },
     tooltip: {
       formatter: function () {
-        if(this.series.userOptions.type === 'spline') {
+        if (this.series.userOptions.type === 'spline') {
           return `<span>${Math.abs(this.point.y).toFixed(1)} meter</span>`
         } else {
           return `<span>${this.series.userOptions.name}</span>`
@@ -226,52 +225,51 @@ function setupGraph(id, data) {
   })
 }
 
-function addCell(g, stage) {
-  return div({class: 'row'}, [
+function addCell (g, stage) {
+  return div({ class: 'row' }, [
     addSpace(),
-    div({class: 'col-3'}, [h3({}, g.get_name()), addDetails(g, stage)]),
-    div({class: 'col-7'}, div({class: 'map-chart-container', id: g.get_name()}))
+    div({ class: 'col-3' }, [h3({}, g.get_name()), addDetails(g, stage)]),
+    div({ class: 'col-7' }, div({ class: 'map-chart-container', id: g.get_name() }))
   ])
 }
 
-function addSpace(classes = ['col-1']) {
-  return div({class: classes})
+function addSpace (classes = ['col-1']) {
+  return div({ class: classes })
 }
 
-function addDetails(g, stage) {
-  const gain = g.get_elevation_gain();
+function addDetails (g, stage) {
+  const gain = g.get_elevation_gain()
   const rows = [
     row(g, 'Lengde: ', 'meter', g.get_distance()),
     row(g, 'Høydeforskjell ned/opp: ', 'meter', g.get_elevation_loss(), gain > 0 ? gain : 0),
     row(g, 'Gjennomsnittlig fall: ', '%', (g.get_elevation_loss() / g.get_distance()) * 100),
     rowLink(g, 'GPX-fil: ', 'Last ned', `https://d1hoqbrdo21qk8.cloudfront.net/gpx/${stage.filename}`)
-  ];
+  ]
 
-  if(stage.strava_url) {
+  if (stage.strava_url) {
     rows.push(rowLink(g, 'Stravasegment: ', stage.strava_name, stage.strava_url))
   }
 
   return p({}, rows)
 }
 
-
-function row(g, text, unit, value, value2 = undefined) {
+function row (g, text, unit, value, value2 = undefined) {
   return span([
     strong(text),
     `${Math.round(value)}${value2 !== undefined ? `/${Math.round(value2)}` : ''} ${unit}`,
     br()
-  ]);
+  ])
 }
 
-function rowLink(g, text, urlText, url) {
+function rowLink (g, text, urlText, url) {
   return span([
     strong(text),
-    a({ href: url}, urlText),
+    a({ href: url }, urlText),
     br()
   ])
 }
 
-function createMap(data) {
+function createMap (data) {
   const map = L.map('map').setView(data.center, data.zoom)
   const mtbmapTiles = 'https://mtbmap.no/tiles/osm/mtbmap/{z}/{x}/{y}.jpg'
   const osmTiles = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'

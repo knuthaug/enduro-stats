@@ -19,8 +19,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
 })
 
 function setupSearch () {
-  var form = document.getElementById('searchForm')
-  var search = document.getElementById('searchField')
+  const form = document.getElementById('searchForm')
+  const search = document.getElementById('searchField')
 
   form.addEventListener('submit', function (event) {
     const search = document.getElementById('searchField')
@@ -38,12 +38,12 @@ function setupSearch () {
   search.addEventListener('change', function (e) {
     let _value = null
 
-    let inputValue = search.value
-    let options = document.getElementById('searchList').children
+    const inputValue = search.value
+    const options = document.getElementById('searchList').children
     let i = options.length
 
     while (i--) {
-      let option = options[i]
+      const option = options[i]
 
       if (option.value === inputValue) {
         _value = option.getAttribute('data-uid')
@@ -66,11 +66,11 @@ function setupSearch () {
 function searchHint (event) {
   // retireve the input element
 
-  var input = event.target
-  var list = document.getElementById('searchList')
+  const input = event.target
+  const list = document.getElementById('searchList')
 
   // minimum number of characters before we start to generate suggestions
-  var min_characters = 2
+  const min_characters = 2
 
   if (input.value.length < min_characters) {
 
@@ -81,14 +81,14 @@ function searchHint (event) {
     window.searchHintXHR.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
         // We're expecting a json response so we convert it to an object
-        var response = JSON.parse(this.responseText)
+        const response = JSON.parse(this.responseText)
 
         // clear any previously loaded options in the datalist
         list.innerHTML = ''
 
         response.forEach(function (item) {
           // Create a new <option> element.
-          var option = document.createElement('option')
+          const option = document.createElement('option')
           option.setAttribute('data-uid', item.uid)
           // option.value = item.uid
           option.appendChild(document.createTextNode(item.name))

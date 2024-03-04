@@ -1,4 +1,4 @@
-  /**
+/**
  * @fileOverview Super-class for converters with common methods shared between mylaps and eq converters
  * @name converter.js
  * @author  Knut Haugen

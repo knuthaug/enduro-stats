@@ -2,7 +2,7 @@ const inquirer = require('inquirer')
 const cmd = require('command-line-args')
 
 const Db = require('../import/db.js')
-var fs = require('fs')
+const fs = require('fs')
 const db = new Db()
 
 const bylineMap = {

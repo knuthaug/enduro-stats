@@ -1,4 +1,4 @@
-function chartOptions() {
+function chartOptions () {
   return {
     borderColor: '#000000',
     borderWidth: 1,
@@ -9,16 +9,15 @@ function chartOptions() {
   }
 }
 
-function smallChartTitleStyle() {
+function smallChartTitleStyle () {
   return {
     color: '#FFFFFF',
     'font-size': '90%',
     fontWeight: 'normal'
   }
-
 }
 
-function responsiveOptions() {
+function responsiveOptions () {
   return {
     rules: [{
       condition: {
@@ -31,7 +30,7 @@ function responsiveOptions() {
   }
 }
 
-function legendOptions() {
+function legendOptions () {
   return {
     layout: 'horizontal',
     align: 'center',
