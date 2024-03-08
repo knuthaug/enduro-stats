@@ -167,6 +167,8 @@ const subs = {
   "Tobias Sandengen": "Tobias Hoel Sandengen",
   "Tor Andre Vedvik": "Tor André Vedvik",
   "Tord Kylling": "Tord Irgens Kylling",
+  "Sten Andre Stenkjaer": "Sten André Stenkjær",
+  "Sten Andre Stenkjær": "Sten André Stenkjær",
 };
 
 function check(name) {
