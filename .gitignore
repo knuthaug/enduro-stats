@@ -1,4 +1,5 @@
 node_modules
+.tap
 .nyc_output
 coverage
 */.DS_Store
