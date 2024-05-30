@@ -264,5 +264,10 @@ node import/importer.js -a -f results/2023/lillehammer/lillehammer-2023.csv
 echo "  Trysil"
 node import/importer.js -m -f results/2023/trysil/trysil-2023.csv
 
+echo "2024"
+
+echo "  Mistberget"
+node import/importer.js -m -f results/2024/mistberget/mistberget-2024.csv
+
 psql -U endurostats endurostats < scripts/byline.sql
 
