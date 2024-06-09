@@ -119,7 +119,8 @@ class Db {
       raceUid === "0d9c144ca0063d89c64b9e263276efbe" ||
       raceUid === "304e3006ee720111aa924c8d94c63bb4" ||
       raceUid === "a3966012ce9fed148867b8d84510783c" ||
-      raceUid === "1c74599b065ae7f54513df47e5779203"
+      raceUid === "1c74599b065ae7f54513df47e5779203" ||
+      raceUid === "eee46f6360aa66c0a575bc35dfb3073b"
     ) {
       // special case for races with only youth
       classPrefix = gender === "F" ? "K%" : "M%";
