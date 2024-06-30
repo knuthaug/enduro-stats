@@ -33,7 +33,8 @@ class Converter {
       /M\s?17-18/.test(name) ||
       /Kvinner U23/.test(name) ||
       /.* Åpen.*?el.*?/i.test(name) ||
-      /Åpen klasse .*/i.test(name)
+      /Åpen klasse .*/i.test(name) ||
+      /Menn El-sykkel/i.test(name)
     ) {
       return name;
     } else if (/K\s?17\+/.test(name)) {
