@@ -272,6 +272,9 @@ node import/importer.js -m -f results/2024/mistberget/mistberget-2024.csv
 echo "  Lillehammer"
 node import/importer.js -a -f results/2024/lillehammer/lillehammer-2024.csv
 
+echo "  Veko"
+node import/importer.js -m -f results/2024/veko/veko-2024.csv
+
 echo "  Drammen"
 node import/importer.js -m -f results/2024/drammen/drammen-2024.csv
 
