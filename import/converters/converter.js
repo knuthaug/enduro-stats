@@ -34,7 +34,8 @@ class Converter {
       /Kvinner U23/.test(name) ||
       /.* Åpen.*?el.*?/i.test(name) ||
       /Åpen klasse .*/i.test(name) ||
-      /Menn El-sykkel/i.test(name)
+      /Menn El-sykkel/i.test(name) ||
+      /Menn U21|Kvinner U21/i.test(name)
     ) {
       return name;
     } else if (/K\s?17\+/.test(name)) {
