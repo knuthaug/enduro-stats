@@ -1,9 +1,9 @@
-const pino = require('pino')
-const config = require('../config')
+const pino = require("pino");
+const config = require("../config");
 
 const logger = pino({
-  name: 'enduro-stats',
-  level: config.get('loglevel')
-})
+  name: "enduro-stats",
+  level: config.get("loglevel"),
+});
 
-module.exports = logger
+module.exports = logger;
