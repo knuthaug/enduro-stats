@@ -50,7 +50,7 @@
     "db-migrate": "0.11.12",
     "db-migrate-pg": "1.2.2",
     "deep-freeze": "0.0.1",
-    "dvlp": "11.0.0",
+    "dvlp": "16.4.2",
     "feather-icons": "4.9.0",
     "glob-parent": ">=6.0.1",
     "got": ">=12.5.3",
