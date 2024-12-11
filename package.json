@@ -41,7 +41,7 @@
     "await-fs": "1.0.0",
     "babel": "6.23.0",
     "babel-loader": "8.0.4",
-    "bootstrap": "4.5.3",
+    "bootstrap": "5.0.0",
     "command-line-args": "5.2.1",
     "copy-webpack-plugin": "6.1.0",
     "css-loader": "5.2.4",
