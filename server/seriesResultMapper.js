@@ -1,5 +1,5 @@
-const { parse, compareAsc } = require("date-fns");
-
+import { compareAsc } from "date-fns/compareAsc";
+import { parse } from "date-fns/parse";
 function mapToSeriesForRider(data) {
   const results = [];
 
@@ -265,7 +265,4 @@ Array.min = function (array) {
   return Math.min.apply(Math, array);
 };
 
-module.exports = {
-  mapToSeries,
-  mapToSeriesForRider,
-};
+export { mapToSeries, mapToSeriesForRider };

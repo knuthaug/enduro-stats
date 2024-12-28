@@ -1,6 +1,7 @@
 /* global Highcharts */
 
-const { format, parse } = require("date-fns");
+const { format } = require("date-fns/format");
+const { parseISO } = require("date-fns/parseISO");
 const feather = require("feather-icons");
 const charts = require("./charts.js");
 
@@ -179,7 +180,7 @@ async function newGraph(id, uid, graph) {
       type: "datetime",
       labels: {
         formatter: function () {
-          return format(parse(data[this.value].x), "YYYY");
+          return format(parseISO(data[this.value].x), "yyyy");
         },
         step: 1,
       },

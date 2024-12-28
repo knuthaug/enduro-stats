@@ -1,5 +1,6 @@
 const { convertMsToTime } = require("../lib/time.js");
-const { parse, compareDesc } = require("date-fns");
+const { parseISO } = require("date-fns/parseISO");
+const { compareDesc } = require("date-fns/compareDesc");
 
 module.exports = function comparisonMapper(data) {
   // races for each rider
@@ -81,7 +82,7 @@ module.exports = function comparisonMapper(data) {
         riders: raceResultsForRiders,
       };
     })
-    .sort((a, b) => compareDesc(parse(a.date), parse(b.date)));
+    .sort((a, b) => compareDesc(parseISO(a.date), parseISO(b.date)));
 };
 
 function intersect(a, b) {
