@@ -1,5 +1,4 @@
-const compareAsc = require("date-fns/compareAsc");
-const parse = require("date-fns/parse");
+const { parse, compareAsc } = require("date-fns");
 
 function mapToSeriesForRider(data) {
   const results = [];

@@ -1,6 +1,5 @@
 const { convertMsToTime } = require("../lib/time.js");
-const compareDesc = require("date-fns/compareDesc");
-const parse = require("date-fns/parse");
+const { parse, compareDesc } = require("date-fns");
 
 module.exports = function comparisonMapper(data) {
   // races for each rider
