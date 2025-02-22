@@ -52,6 +52,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
     console.log("Web Vitals", values);
     writeVitals(values);
   }, 1500);
+
+  writeHit();
 });
 
 async function getToken(page) {
