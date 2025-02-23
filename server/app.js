@@ -50,7 +50,6 @@ app.register(pointOfView, {
   layout: "../views/layouts/main.hbs",
   options: {
     partials: {
-      analytics: "partials/analytics.hbs",
       icon: "partials/icon.hbs",
       "rider-bio": "partials/rider-bio.hbs",
       "rider-graph": "partials/rider-graph.hbs",
