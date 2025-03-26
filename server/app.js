@@ -1,8 +1,8 @@
 const Fastify = require("fastify");
-const fastifyStatic = require("fastify-static");
-const compression = require("fastify-compress");
-const pointOfView = require("point-of-view");
-const formbody = require("fastify-formbody");
+const fastifyStatic = require("@fastify/static");
+const compression = require("@fastify/compress");
+const pointOfView = require("@fastify/view");
+const formbody = require("@fastify/formbody");
 const handlebars = require("handlebars");
 const config = require("../config");
 const path = require("path");
@@ -50,7 +50,6 @@ app.register(pointOfView, {
   layout: "../views/layouts/main.hbs",
   options: {
     partials: {
-      analytics: "partials/analytics.hbs",
       icon: "partials/icon.hbs",
       "rider-bio": "partials/rider-bio.hbs",
       "rider-graph": "partials/rider-graph.hbs",
