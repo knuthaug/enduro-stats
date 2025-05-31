@@ -181,7 +181,7 @@ async function calculateComplete(dirName) {
       return r.count !== "0";
     });
   });
-  await calculateRankings(allRiders, raceYear, raceId, raceDate);
+  //await calculateRankings(allRiders, raceYear, raceId, raceDate);
 
   db.destroy();
 }
