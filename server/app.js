@@ -79,7 +79,6 @@ app.get(
 );
 app.get("/rytter/:uid", handler("rider.hbs", handlers.riderHandler));
 app.get("/ryttere", handler("riders.hbs", handlers.ridersHandler));
-app.get("/ranking", handler("rank.hbs", handlers.rankHandler));
 app.get("/sammenlign", handler("compare.hbs", handlers.compareHandler));
 app.get("/kart/:uid", handler("map.hbs", handlers.mapHandler));
 app.get("/api/search", jsonHandler(handlers.jsonSearchHandler));

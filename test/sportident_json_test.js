@@ -1,5 +1,5 @@
 const tap = require("tap");
-const { SportidentJson } = require("../import/converters/sportident_json.js");
+const { SportidentJson } = require("../import/converters/sportident_json.mjs");
 const path = require("path");
 
 tap.test("parse complete result file", async (t) => {

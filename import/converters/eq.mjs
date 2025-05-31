@@ -13,7 +13,7 @@ import { check } from "../spellcheck.js";
 import { convertMsToTime, convertTimeToMs } from "../../lib/time.js";
 import Converter from "./converter.js";
 
-class EqConverter extends Converter {
+export class EqConverter extends Converter {
   /**
    * A parser/converter for eq timing race results, with one result per line
    * @constructor
@@ -227,5 +227,3 @@ class EqConverter extends Converter {
     return "OK";
   }
 }
-
-export { EqConverter };

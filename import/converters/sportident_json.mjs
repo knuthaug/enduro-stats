@@ -12,7 +12,7 @@ import { DNS_STATUS, OK_STATUS } from "../constants.js";
 import { check, checkClub } from "../spellcheck.js";
 import Converter from "./converter.js";
 import lib from "./lib.js";
-class SportidentJson extends Converter {
+export class SportidentJson extends Converter {
   /**
    * A parser/converter for mylaps race results, with multiple stages on one line
    * @constructor
@@ -163,5 +163,3 @@ class SportidentJson extends Converter {
     });
   }
 }
-
-export { SportidentJson };

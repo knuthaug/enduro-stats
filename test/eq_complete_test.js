@@ -1,5 +1,5 @@
 const tap = require("tap");
-const { EqConverter } = require("../import/converters/eq.js");
+const { EqConverter } = require("../import/converters/eq.mjs");
 const path = require("path");
 
 tap.test("parse complete result file", async (t) => {

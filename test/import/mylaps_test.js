@@ -1,5 +1,5 @@
 const tap = require("tap");
-const { Mylaps } = require("../../import/converters/mylaps.js");
+const { Mylaps } = require("../../import/converters/mylaps.mjs");
 const path = require("path");
 
 tap.test("parse complete result file", async (t) => {

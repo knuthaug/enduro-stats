@@ -1,17 +1,17 @@
-const md5 = require("md5");
-const Db = require("./db.js");
-const { Eq } = require("./converters/eq.js");
-const { Mylaps } = require("./converters/mylaps.js");
-const { Sportident } = require("./converters/sportident.js");
-const { SportidentJson } = require("./converters/sportident_json.js");
-const fs = require("fs");
+import md5 from "md5";
+import Db from "./db.js";
+import { EqConverter } from "./converters/eq.mjs";
+import { Mylaps } from "./converters/mylaps.mjs";
+import { Sportident } from "./converters/sportident.mjs";
+import { SportidentJson } from "./converters/sportident_json.mjs";
+import fs from "fs";
 import * as afs from "node:fs/promises";
-const path = require("path");
-const AccumulatedStageCalculations = require("./accumulated_stage_calculations.js");
-const NormalStageCalculations = require("./normal_stage_calculations.js");
-const logger = require("./logger.js");
-const cmd = require("command-line-args");
-const { allRidersRankings } = require("../lib/ranking");
+import path from "path";
+import AccumulatedStageCalculations from "./accumulated_stage_calculations.js";
+import NormalStageCalculations from "./normal_stage_calculations.js";
+import logger from "./logger.js";
+import cmd from "command-line-args";
+import { allRidersRankings } from "../lib/ranking.cjs";
 
 const db = new Db();
 const accCalc = new AccumulatedStageCalculations();
@@ -194,7 +194,7 @@ async function readCompleteRaceFile(filename, datafile, mode) {
   let data = {};
   let parser;
   if (mode === "eq") {
-    parser = new Eq(filename, {
+    parser = new EqConverter(filename, {
       mode: "complete",
       datafile,
       acc: options.accumulate,
@@ -240,7 +240,10 @@ async function readCompleteRaceFile(filename, datafile, mode) {
 
 async function readSingleStageFile(filename) {
   const fullName = path.join(dir, filename);
-  const eq = new Eq(fullName, { mode: "normal", acc: options.accumulate });
+  const eq = new EqConverter(fullName, {
+    mode: "normal",
+    acc: options.accumulate,
+  });
   await eq.load();
   const data = await eq.parse();
   const raceId = await db.insertRace(data.race, data.stages[0].number);

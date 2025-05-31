@@ -21,7 +21,7 @@ import { check } from "../spellcheck.js";
 import Converter from "./converter.js";
 import lib from "./lib.js";
 
-class Mylaps extends Converter {
+export class Mylaps extends Converter {
   /**
    * A parser/converter for mylaps race results, with multiple stages on one line
    * @constructor
@@ -78,12 +78,14 @@ class Mylaps extends Converter {
 
     race.uid = this.checksum(race.name + race.year);
     const stages = await this.parseStages();
+    logger.info("found stages:", stages);
     return { race, stages };
   }
 
   async parseStages() {
     const raw = await csv(this.file, { separator: ";" });
     const stages = this.findStages(raw);
+    logger.info("found stages in raw:", JSON.stringify(stages));
 
     for (let i = 0; i < stages.length; i++) {
       const stage = stages[i];
@@ -183,5 +185,3 @@ class Mylaps extends Converter {
     return stages;
   }
 }
-
-export { Mylaps };

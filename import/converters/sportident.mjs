@@ -20,7 +20,7 @@ import { DNS_STATUS } from "../constants.js";
 import { check } from "../spellcheck.js";
 import Converter from "./converter.js";
 import lib from "./lib.js";
-class Sportident extends Converter {
+export class Sportident extends Converter {
   /**
    * A parser/converter for mylaps race results, with multiple stages on one line
    * @constructor
@@ -185,5 +185,3 @@ class Sportident extends Converter {
     return stages;
   }
 }
-
-export { Sportident };
