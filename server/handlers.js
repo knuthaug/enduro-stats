@@ -389,7 +389,7 @@ async function riderGraphHandler(req) {
 }
 
 async function riderHandler(req) {
-  // 410 gone for people who wnat to be deleted
+  // 410 gone for people who want to be deleted
   if (req.params.uid === "9bf7ef23cda096ef922d2a78cdb9723a") {
     return { status: 410 };
   }
@@ -420,7 +420,7 @@ async function riderHandler(req) {
   const ridersPerClass = await db.ridersForClassAndRace(raceIds);
 
   const results = percentRanks(races, ridersPerClass);
-  const { year, avg, score } = await db.riderRanking(rider.id);
+  //const { year, avg, score } = await db.riderRanking(rider.id);
   const startYear = results[results.length - 1].year;
 
   return {
@@ -428,10 +428,7 @@ async function riderHandler(req) {
     rider,
     numRaces,
     startYear,
-    year,
     portrait: rider.image_mode === "portrait",
-    avg,
-    score,
     results,
     active: "ryttere",
     docTitle: `${rider.name} : Norsk enduro`,
