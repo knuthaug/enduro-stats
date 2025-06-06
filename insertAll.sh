@@ -293,7 +293,10 @@ node import/importer.mjs -m -f results/2024/trysil/trysil-2024.csv
 echo "  2025"
 
 echo "  Sørmarka"
-#node import/importer.mjs -m -f results/2025/sormarka/sormarka-2025.csv
+node import/importer.mjs -m -f results/2025/sormarka/sormarka-2025.csv
+
+echo "  Modum"
+node import/importer.mjs -m -f results/2025/modum/modum-2025.csv
 
 
 psql -U endurostats endurostats < scripts/byline.sql
