@@ -290,7 +290,7 @@ node import/importer.mjs -m -f results/2024/nittedal/nittedal-2024.csv
 echo "  Trysil"
 node import/importer.mjs -m -f results/2024/trysil/trysil-2024.csv
 
-echo "  2025"
+echo "2025"
 
 echo "  Sørmarka"
 node import/importer.mjs -m -f results/2025/sormarka/sormarka-2025.csv
