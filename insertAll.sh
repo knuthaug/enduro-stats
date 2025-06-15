@@ -298,6 +298,10 @@ node import/importer.mjs -m -f results/2025/sormarka/sormarka-2025.csv
 echo "  Modum"
 node import/importer.mjs -m -f results/2025/modum/modum-2025.csv
 
+echo "  Drammen"
+node import/importer.mjs -m -f results/2025/drammen/drammen-2025.csv
+
+
 
 psql -U endurostats endurostats < scripts/byline.sql
 
