@@ -97,7 +97,7 @@
     "@fastify/view": "10.0.1",
     "handlebars": "4.7.8",
     "inquirer": "7.3.3",
-    "morgan": "1.10.0",
+    "morgan": "1.10.1",
     "needle": "3.2.0",
     "pg": "8.16.0",
     "pino": "9.7.0"
