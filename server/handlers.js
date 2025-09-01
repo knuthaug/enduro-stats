@@ -421,7 +421,7 @@ async function riderHandler(req) {
 
   const results = percentRanks(races, ridersPerClass);
   //const { year, avg, score } = await db.riderRanking(rider.id);
-  const startYear = results[results.length - 1].year;
+  const startYear = results[0].year;
 
   return {
     status: 200,
