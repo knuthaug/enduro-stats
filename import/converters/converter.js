@@ -35,9 +35,12 @@ class Converter {
       /.* Åpen.*?el.*?/i.test(name) ||
       /Åpen klasse .*/i.test(name) ||
       /Menn El-sykkel/i.test(name) ||
+      /Kvinner El-sykkel/i.test(name) ||
       /Menn U21|Kvinner U21/i.test(name)
     ) {
       return name;
+    } else if (/^Kvinner sport/i.test(name)) {
+      return "Kvinner sport";
     } else if (/K\s?17\+/.test(name)) {
       return "Kvinner senior";
     } else if (/M\s?17\+/.test(name)) {
