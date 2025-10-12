@@ -301,6 +301,9 @@ node import/importer.mjs -m -f results/2025/modum/modum-2025.csv
 echo "  Drammen"
 node import/importer.mjs -m -f results/2025/drammen/drammen-2025.csv
 
+echo "  Harstad"
+node import/importer.mjs -m -f results/2025/harstad/harstad-2025.csv
+
 echo "  Trysil"
 node import/importer.mjs -m -f results/2025/trysil/trysil-2025.csv
  
