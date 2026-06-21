@@ -307,6 +307,9 @@ node import/importer.mjs -m -f results/2025/harstad/harstad-2025.csv
 echo "  Trysil"
 node import/importer.mjs -m -f results/2025/trysil/trysil-2025.csv
  
+ echo "2026
+echo "  Drammen"
+node import/importer.mjs -m -f results/2026/drammen/drammen-2026.csv
 
 psql -U endurostats endurostats < scripts/byline.sql
 
