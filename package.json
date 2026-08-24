@@ -68,7 +68,7 @@
     "npm-watch": "0.13.0",
     "nth-check": "^3.0.1",
     "popper.js": "1.16.1",
-    "postcss": "8.5.10",
+    "postcss": "8.5.23",
     "postcss-cli": "8.3.1",
     "postcss-hash": "3.0.0",
     "postcss-import": "14.0.2",
